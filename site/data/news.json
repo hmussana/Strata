@@ -1,5 +1,5 @@
 {
- "generated": "2026-09-28T19:41:38Z",
+ "generated": "2026-09-28T20:00:47Z",
  "retentionDays": 45,
  "llmEnriched": 0,
  "sources": [
@@ -10,7 +10,7 @@
    "ok": true,
    "count": 15,
    "error": null,
-   "lastOk": "2026-09-28T19:41:38Z"
+   "lastOk": "2026-09-28T20:00:47Z"
   },
   {
    "id": "deepmind",
@@ -19,7 +19,7 @@
    "ok": true,
    "count": 10,
    "error": null,
-   "lastOk": "2026-09-28T19:41:38Z"
+   "lastOk": "2026-09-28T20:00:47Z"
   },
   {
    "id": "google-ai",
@@ -28,7 +28,7 @@
    "ok": true,
    "count": 10,
    "error": null,
-   "lastOk": "2026-09-28T19:41:38Z"
+   "lastOk": "2026-09-28T20:00:47Z"
   },
   {
    "id": "hf-blog",
@@ -37,7 +37,7 @@
    "ok": true,
    "count": 15,
    "error": null,
-   "lastOk": "2026-09-28T19:41:38Z"
+   "lastOk": "2026-09-28T20:00:47Z"
   },
   {
    "id": "nvidia-dev",
@@ -46,7 +46,7 @@
    "ok": true,
    "count": 10,
    "error": null,
-   "lastOk": "2026-09-28T19:41:38Z"
+   "lastOk": "2026-09-28T20:00:47Z"
   },
   {
    "id": "msr",
@@ -55,7 +55,7 @@
    "ok": true,
    "count": 9,
    "error": null,
-   "lastOk": "2026-09-28T19:41:38Z"
+   "lastOk": "2026-09-28T20:00:47Z"
   },
   {
    "id": "aws-ml",
@@ -64,7 +64,7 @@
    "ok": true,
    "count": 8,
    "error": null,
-   "lastOk": "2026-09-28T19:41:38Z"
+   "lastOk": "2026-09-28T20:00:47Z"
   },
   {
    "id": "qwen",
@@ -73,16 +73,16 @@
    "ok": true,
    "count": 8,
    "error": null,
-   "lastOk": "2026-09-28T19:41:38Z"
+   "lastOk": "2026-09-28T20:00:47Z"
   },
   {
    "id": "hn",
    "name": "Hacker News (best, AI-filtered)",
    "type": "community",
    "ok": true,
-   "count": 8,
+   "count": 6,
    "error": null,
-   "lastOk": "2026-09-28T19:41:38Z"
+   "lastOk": "2026-09-28T20:00:47Z"
   },
   {
    "id": "localllama",
@@ -91,7 +91,7 @@
    "ok": true,
    "count": 15,
    "error": null,
-   "lastOk": "2026-09-28T19:41:38Z"
+   "lastOk": "2026-09-28T20:00:47Z"
   },
   {
    "id": "simonw",
@@ -100,7 +100,7 @@
    "ok": true,
    "count": 15,
    "error": null,
-   "lastOk": "2026-09-28T19:41:38Z"
+   "lastOk": "2026-09-28T20:00:47Z"
   },
   {
    "id": "hf-papers",
@@ -109,7 +109,7 @@
    "ok": true,
    "count": 15,
    "error": null,
-   "lastOk": "2026-09-28T19:41:38Z"
+   "lastOk": "2026-09-28T20:00:47Z"
   },
   {
    "id": "arxiv-cl",
@@ -118,7 +118,7 @@
    "ok": true,
    "count": 12,
    "error": null,
-   "lastOk": "2026-09-28T19:41:38Z"
+   "lastOk": "2026-09-28T20:00:47Z"
   },
   {
    "id": "latent-space",
@@ -127,7 +127,7 @@
    "ok": true,
    "count": 8,
    "error": null,
-   "lastOk": "2026-09-28T19:41:38Z"
+   "lastOk": "2026-09-28T20:00:47Z"
   },
   {
    "id": "interconnects",
@@ -136,7 +136,7 @@
    "ok": true,
    "count": 8,
    "error": null,
-   "lastOk": "2026-09-28T19:41:38Z"
+   "lastOk": "2026-09-28T20:00:47Z"
   },
   {
    "id": "import-ai",
@@ -145,7 +145,7 @@
    "ok": true,
    "count": 5,
    "error": null,
-   "lastOk": "2026-09-28T19:41:38Z"
+   "lastOk": "2026-09-28T20:00:47Z"
   },
   {
    "id": "verge-ai",
@@ -154,7 +154,7 @@
    "ok": true,
    "count": 10,
    "error": null,
-   "lastOk": "2026-09-28T19:41:38Z"
+   "lastOk": "2026-09-28T20:00:47Z"
   },
   {
    "id": "ars-ai",
@@ -163,7 +163,7 @@
    "ok": true,
    "count": 12,
    "error": null,
-   "lastOk": "2026-09-28T19:41:38Z"
+   "lastOk": "2026-09-28T20:00:47Z"
   },
   {
    "id": "techcrunch-ai",
@@ -172,7 +172,7 @@
    "ok": true,
    "count": 12,
    "error": null,
-   "lastOk": "2026-09-28T19:41:38Z"
+   "lastOk": "2026-09-28T20:00:47Z"
   },
   {
    "id": "mit-tr",
@@ -181,7 +181,7 @@
    "ok": true,
    "count": 8,
    "error": null,
-   "lastOk": "2026-09-28T19:41:38Z"
+   "lastOk": "2026-09-28T20:00:47Z"
   },
   {
    "id": "decoder",
@@ -190,7 +190,7 @@
    "ok": true,
    "count": 10,
    "error": null,
-   "lastOk": "2026-09-28T19:41:38Z"
+   "lastOk": "2026-09-28T20:00:47Z"
   },
   {
    "id": "sth",
@@ -199,7 +199,7 @@
    "ok": true,
    "count": 3,
    "error": null,
-   "lastOk": "2026-09-28T19:41:38Z"
+   "lastOk": "2026-09-28T20:00:47Z"
   },
   {
    "id": "embrace-red",
@@ -208,7 +208,7 @@
    "ok": true,
    "count": 6,
    "error": null,
-   "lastOk": "2026-09-28T19:41:38Z"
+   "lastOk": "2026-09-28T20:00:47Z"
   },
   {
    "id": "rel-ollama",
@@ -217,7 +217,7 @@
    "ok": true,
    "count": 3,
    "error": null,
-   "lastOk": "2026-09-28T19:41:38Z"
+   "lastOk": "2026-09-28T20:00:47Z"
   },
   {
    "id": "rel-vllm",
@@ -226,7 +226,7 @@
    "ok": true,
    "count": 3,
    "error": null,
-   "lastOk": "2026-09-28T19:41:38Z"
+   "lastOk": "2026-09-28T20:00:47Z"
   },
   {
    "id": "rel-opencode",
@@ -235,7 +235,7 @@
    "ok": true,
    "count": 3,
    "error": null,
-   "lastOk": "2026-09-28T19:41:38Z"
+   "lastOk": "2026-09-28T20:00:47Z"
   },
   {
    "id": "rel-claude-code",
@@ -244,7 +244,7 @@
    "ok": true,
    "count": 3,
    "error": null,
-   "lastOk": "2026-09-28T19:41:38Z"
+   "lastOk": "2026-09-28T20:00:47Z"
   }
  ],
  "heat": {
@@ -310,8 +310,8 @@
     "d30": 3
    },
    "frontier-capabilities": {
-    "d7": 6,
-    "prev7": 1,
+    "d7": 5,
+    "prev7": 2,
     "d30": 7
    },
    "vllm": {
@@ -330,8 +330,8 @@
     "d30": 6
    },
    "alignment": {
-    "d7": 8,
-    "prev7": 0,
+    "d7": 7,
+    "prev7": 1,
     "d30": 8
    },
    "lora": {
@@ -460,8 +460,8 @@
     "d30": 1
    },
    "quantization": {
-    "d7": 2,
-    "prev7": 0,
+    "d7": 1,
+    "prev7": 1,
     "d30": 2
    },
    "deepseek": {
@@ -480,8 +480,8 @@
     "d30": 2
    },
    "reasoning-models": {
-    "d7": 4,
-    "prev7": 1,
+    "d7": 3,
+    "prev7": 2,
     "d30": 5
    },
    "speculative-decoding": {
@@ -510,8 +510,8 @@
     "d30": 1
    },
    "rl-reasoning": {
-    "d7": 5,
-    "prev7": 1,
+    "d7": 3,
+    "prev7": 3,
     "d30": 8
    },
    "mlx": {
@@ -561,7 +561,7 @@
     "d30": 52
    },
    "models": {
-    "d7": 131,
+    "d7": 128,
     "d30": 157
    },
    "inference": {
@@ -569,7 +569,7 @@
     "d30": 27
    },
    "security": {
-    "d7": 27,
+    "d7": 26,
     "d30": 31
    },
    "compute": {
@@ -581,7 +581,7 @@
     "d30": 8
    },
    "weights": {
-    "d7": 5,
+    "d7": 4,
     "d30": 5
    },
    "context": {
@@ -1057,7 +1057,7 @@
    "type": "press",
    "published": "2026-09-28T16:43:18Z",
    "summary": "US Government websites among \"dozens of third parties\" OpenAI has recently notified.",
-   "discussion": "84",
+   "discussion": "88",
    "firstSeen": "2026-09-28T19:07:31Z",
    "tags": [
     "frontier-capabilities",
@@ -1116,12 +1116,12 @@
    "type": "community",
    "published": "2026-09-28T16:11:42Z",
    "summary": "",
-   "points": 285,
+   "points": 313,
    "discussion": "https://news.ycombinator.com/item?id=49880312",
    "firstSeen": "2026-09-28T19:32:43Z",
    "tags": [],
    "layers": [],
-   "score": 4.46
+   "score": 4.5
   },
   {
    "id": "99f407dcb7ba",
@@ -1454,7 +1454,7 @@
    "type": "press",
    "published": "2026-09-28T11:00:09Z",
    "summary": "“Microsoft claims to want to be a good neighbor, but the jury is still out.\"",
-   "discussion": "138",
+   "discussion": "139",
    "firstSeen": "2026-09-28T14:09:04Z",
    "tags": [
     "ai-datacenters"
@@ -1568,7 +1568,7 @@
    "type": "community",
    "published": "2026-09-28T08:35:40Z",
    "summary": "",
-   "points": 415,
+   "points": 416,
    "discussion": "https://news.ycombinator.com/item?id=49875148",
    "firstSeen": "2026-09-28T19:32:43Z",
    "tags": [],
@@ -1648,7 +1648,7 @@
    "type": "community",
    "published": "2026-09-28T07:33:29Z",
    "summary": "",
-   "points": 188,
+   "points": 190,
    "discussion": "https://news.ycombinator.com/item?id=49874728",
    "firstSeen": "2026-09-28T19:32:43Z",
    "tags": [
@@ -2495,7 +2495,7 @@
    "type": "community",
    "published": "2026-09-27T16:19:46Z",
    "summary": "",
-   "points": 385,
+   "points": 386,
    "discussion": "https://news.ycombinator.com/item?id=49868083",
    "firstSeen": "2026-09-27T19:40:56Z",
    "tags": [
@@ -5454,7 +5454,7 @@
    "type": "research",
    "published": "2026-09-21T20:00:00Z",
    "summary": "Prefill and decode reward different approaches to quantization: low-precision arithmetic accelerates prompt processing, while compact weights reduce memory traffic during generation. We propose \"disaggregated quantization\" (DQ), which specializes computation formats, weights and storage placement to both of these…",
-   "points": 11,
+   "points": 30,
    "firstSeen": "2026-09-28T19:41:38Z",
    "tags": [
     "quantization"
@@ -5462,7 +5462,7 @@
    "layers": [
     "weights"
    ],
-   "score": 3.68
+   "score": 4.09
   },
   {
    "id": "3a10b48ae769",
