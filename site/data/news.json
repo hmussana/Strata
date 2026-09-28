@@ -1,5 +1,5 @@
 {
- "generated": "2026-09-28T19:10:18Z",
+ "generated": "2026-09-28T19:23:48Z",
  "retentionDays": 45,
  "llmEnriched": 0,
  "sources": [
@@ -10,7 +10,7 @@
    "ok": true,
    "count": 15,
    "error": null,
-   "lastOk": "2026-09-28T19:10:18Z"
+   "lastOk": "2026-09-28T19:23:48Z"
   },
   {
    "id": "deepmind",
@@ -19,7 +19,7 @@
    "ok": true,
    "count": 10,
    "error": null,
-   "lastOk": "2026-09-28T19:10:18Z"
+   "lastOk": "2026-09-28T19:23:48Z"
   },
   {
    "id": "google-ai",
@@ -28,7 +28,7 @@
    "ok": true,
    "count": 10,
    "error": null,
-   "lastOk": "2026-09-28T19:10:18Z"
+   "lastOk": "2026-09-28T19:23:48Z"
   },
   {
    "id": "hf-blog",
@@ -37,7 +37,7 @@
    "ok": true,
    "count": 15,
    "error": null,
-   "lastOk": "2026-09-28T19:10:18Z"
+   "lastOk": "2026-09-28T19:23:48Z"
   },
   {
    "id": "nvidia-dev",
@@ -46,7 +46,7 @@
    "ok": true,
    "count": 10,
    "error": null,
-   "lastOk": "2026-09-28T19:10:18Z"
+   "lastOk": "2026-09-28T19:23:48Z"
   },
   {
    "id": "msr",
@@ -55,7 +55,7 @@
    "ok": true,
    "count": 9,
    "error": null,
-   "lastOk": "2026-09-28T19:10:18Z"
+   "lastOk": "2026-09-28T19:23:48Z"
   },
   {
    "id": "aws-ml",
@@ -64,7 +64,7 @@
    "ok": true,
    "count": 8,
    "error": null,
-   "lastOk": "2026-09-28T19:10:18Z"
+   "lastOk": "2026-09-28T19:23:48Z"
   },
   {
    "id": "qwen",
@@ -73,7 +73,7 @@
    "ok": true,
    "count": 8,
    "error": null,
-   "lastOk": "2026-09-28T19:10:18Z"
+   "lastOk": "2026-09-28T19:23:48Z"
   },
   {
    "id": "hn",
@@ -91,7 +91,7 @@
    "ok": true,
    "count": 15,
    "error": null,
-   "lastOk": "2026-09-28T19:10:18Z"
+   "lastOk": "2026-09-28T19:23:48Z"
   },
   {
    "id": "simonw",
@@ -100,7 +100,7 @@
    "ok": true,
    "count": 15,
    "error": null,
-   "lastOk": "2026-09-28T19:10:18Z"
+   "lastOk": "2026-09-28T19:23:48Z"
   },
   {
    "id": "hf-papers",
@@ -109,7 +109,7 @@
    "ok": true,
    "count": 15,
    "error": null,
-   "lastOk": "2026-09-28T19:10:18Z"
+   "lastOk": "2026-09-28T19:23:48Z"
   },
   {
    "id": "arxiv-cl",
@@ -118,7 +118,7 @@
    "ok": true,
    "count": 12,
    "error": null,
-   "lastOk": "2026-09-28T19:10:18Z"
+   "lastOk": "2026-09-28T19:23:48Z"
   },
   {
    "id": "latent-space",
@@ -127,7 +127,7 @@
    "ok": true,
    "count": 8,
    "error": null,
-   "lastOk": "2026-09-28T19:10:18Z"
+   "lastOk": "2026-09-28T19:23:48Z"
   },
   {
    "id": "interconnects",
@@ -136,7 +136,7 @@
    "ok": true,
    "count": 8,
    "error": null,
-   "lastOk": "2026-09-28T19:10:18Z"
+   "lastOk": "2026-09-28T19:23:48Z"
   },
   {
    "id": "import-ai",
@@ -154,7 +154,7 @@
    "ok": true,
    "count": 10,
    "error": null,
-   "lastOk": "2026-09-28T19:10:18Z"
+   "lastOk": "2026-09-28T19:23:48Z"
   },
   {
    "id": "ars-ai",
@@ -163,7 +163,7 @@
    "ok": true,
    "count": 12,
    "error": null,
-   "lastOk": "2026-09-28T19:10:18Z"
+   "lastOk": "2026-09-28T19:23:48Z"
   },
   {
    "id": "techcrunch-ai",
@@ -172,7 +172,7 @@
    "ok": true,
    "count": 12,
    "error": null,
-   "lastOk": "2026-09-28T19:10:18Z"
+   "lastOk": "2026-09-28T19:23:48Z"
   },
   {
    "id": "mit-tr",
@@ -181,7 +181,7 @@
    "ok": true,
    "count": 8,
    "error": null,
-   "lastOk": "2026-09-28T19:10:18Z"
+   "lastOk": "2026-09-28T19:23:48Z"
   },
   {
    "id": "decoder",
@@ -190,7 +190,7 @@
    "ok": true,
    "count": 10,
    "error": null,
-   "lastOk": "2026-09-28T19:10:18Z"
+   "lastOk": "2026-09-28T19:23:48Z"
   },
   {
    "id": "sth",
@@ -199,7 +199,7 @@
    "ok": true,
    "count": 3,
    "error": null,
-   "lastOk": "2026-09-28T19:10:18Z"
+   "lastOk": "2026-09-28T19:23:48Z"
   },
   {
    "id": "embrace-red",
@@ -208,7 +208,7 @@
    "ok": true,
    "count": 6,
    "error": null,
-   "lastOk": "2026-09-28T19:10:18Z"
+   "lastOk": "2026-09-28T19:23:48Z"
   },
   {
    "id": "rel-ollama",
@@ -217,7 +217,7 @@
    "ok": true,
    "count": 3,
    "error": null,
-   "lastOk": "2026-09-28T19:10:18Z"
+   "lastOk": "2026-09-28T19:23:48Z"
   },
   {
    "id": "rel-vllm",
@@ -226,7 +226,7 @@
    "ok": true,
    "count": 3,
    "error": null,
-   "lastOk": "2026-09-28T19:10:18Z"
+   "lastOk": "2026-09-28T19:23:48Z"
   },
   {
    "id": "rel-opencode",
@@ -235,7 +235,7 @@
    "ok": true,
    "count": 3,
    "error": null,
-   "lastOk": "2026-09-28T19:10:18Z"
+   "lastOk": "2026-09-28T19:23:48Z"
   },
   {
    "id": "rel-claude-code",
@@ -244,7 +244,7 @@
    "ok": true,
    "count": 3,
    "error": null,
-   "lastOk": "2026-09-28T19:10:18Z"
+   "lastOk": "2026-09-28T19:23:48Z"
   }
  ],
  "heat": {
@@ -278,6 +278,16 @@
     "d7": 6,
     "prev7": 0,
     "d30": 6
+   },
+   "moe": {
+    "d7": 5,
+    "prev7": 0,
+    "d30": 5
+   },
+   "qwen": {
+    "d7": 20,
+    "prev7": 0,
+    "d30": 20
    },
    "benchmarks": {
     "d7": 9,
@@ -313,11 +323,6 @@
     "d7": 12,
     "prev7": 2,
     "d30": 15
-   },
-   "qwen": {
-    "d7": 19,
-    "prev7": 0,
-    "d30": 19
    },
    "rtx-rigs": {
     "d7": 6,
@@ -439,11 +444,6 @@
     "prev7": 0,
     "d30": 2
    },
-   "moe": {
-    "d7": 4,
-    "prev7": 0,
-    "d30": 4
-   },
    "gguf": {
     "d7": 2,
     "prev7": 0,
@@ -552,12 +552,12 @@
   },
   "layers": {
    "efficiency": {
-    "d7": 19,
-    "d30": 23
+    "d7": 20,
+    "d30": 24
    },
    "models": {
-    "d7": 117,
-    "d30": 138
+    "d7": 118,
+    "d30": 139
    },
    "serving": {
     "d7": 25,
@@ -719,6 +719,26 @@
     "models"
    ],
    "score": 2.8
+  },
+  {
+   "id": "f914eafa5ad9",
+   "title": "What do you think about ToMoE v2 paper, converting dense model to MoE model at near lossless accuracy? I feel Qwen3.8-27B-A16B or something along those lines would be amazing, though there are architectural hurdles, as well as need folr training data.",
+   "url": "https://www.reddit.com/r/LocalLLaMA/comments/1wsmsnx/what_do_you_think_about_tomoe_v2_paper_converting/",
+   "source": "localllama",
+   "sourceName": "r/LocalLLaMA (top today)",
+   "type": "community",
+   "published": "2026-09-28T18:35:00Z",
+   "summary": "",
+   "firstSeen": "2026-09-28T19:23:48Z",
+   "tags": [
+    "moe",
+    "qwen"
+   ],
+   "layers": [
+    "efficiency",
+    "models"
+   ],
+   "score": 3.2
   },
   {
    "id": "46fca61f4990",
@@ -963,7 +983,7 @@
    "type": "press",
    "published": "2026-09-28T16:43:18Z",
    "summary": "US Government websites among \"dozens of third parties\" OpenAI has recently notified.",
-   "discussion": "81",
+   "discussion": "83",
    "firstSeen": "2026-09-28T19:07:31Z",
    "tags": [
     "frontier-capabilities",
@@ -3214,7 +3234,7 @@
    "type": "press",
    "published": "2026-09-25T19:11:05Z",
    "summary": "\"There is no evidence of any significant, widespread displacement or reduction in hiring.”",
-   "discussion": "142",
+   "discussion": "143",
    "firstSeen": "2026-09-27T19:40:56Z",
    "tags": [],
    "layers": [],
@@ -4031,7 +4051,7 @@
    "type": "press",
    "published": "2026-09-24T14:03:38Z",
    "summary": "Meta says the keychain-sized Muse Charm will ship in December.",
-   "discussion": "137",
+   "discussion": "138",
    "firstSeen": "2026-09-27T19:40:56Z",
    "tags": [
     "consumer-assistants"
