@@ -1,5 +1,5 @@
 {
- "generated": "2026-09-28T20:00:47Z",
+ "generated": "2026-09-28T20:50:46Z",
  "retentionDays": 45,
  "llmEnriched": 0,
  "sources": [
@@ -10,15 +10,15 @@
    "ok": true,
    "count": 15,
    "error": null,
-   "lastOk": "2026-09-28T20:00:47Z"
+   "lastOk": "2026-09-28T20:50:46Z"
   },
   {
    "id": "deepmind",
    "name": "Google DeepMind",
    "type": "lab",
-   "ok": true,
-   "count": 10,
-   "error": null,
+   "ok": false,
+   "count": 0,
+   "error": "ParseError: not well-formed (invalid token): line 1, column 0",
    "lastOk": "2026-09-28T20:00:47Z"
   },
   {
@@ -28,7 +28,7 @@
    "ok": true,
    "count": 10,
    "error": null,
-   "lastOk": "2026-09-28T20:00:47Z"
+   "lastOk": "2026-09-28T20:50:46Z"
   },
   {
    "id": "hf-blog",
@@ -37,7 +37,7 @@
    "ok": true,
    "count": 15,
    "error": null,
-   "lastOk": "2026-09-28T20:00:47Z"
+   "lastOk": "2026-09-28T20:50:46Z"
   },
   {
    "id": "nvidia-dev",
@@ -46,7 +46,7 @@
    "ok": true,
    "count": 10,
    "error": null,
-   "lastOk": "2026-09-28T20:00:47Z"
+   "lastOk": "2026-09-28T20:50:46Z"
   },
   {
    "id": "msr",
@@ -55,7 +55,7 @@
    "ok": true,
    "count": 9,
    "error": null,
-   "lastOk": "2026-09-28T20:00:47Z"
+   "lastOk": "2026-09-28T20:50:46Z"
   },
   {
    "id": "aws-ml",
@@ -64,7 +64,7 @@
    "ok": true,
    "count": 8,
    "error": null,
-   "lastOk": "2026-09-28T20:00:47Z"
+   "lastOk": "2026-09-28T20:50:46Z"
   },
   {
    "id": "qwen",
@@ -73,7 +73,7 @@
    "ok": true,
    "count": 8,
    "error": null,
-   "lastOk": "2026-09-28T20:00:47Z"
+   "lastOk": "2026-09-28T20:50:46Z"
   },
   {
    "id": "hn",
@@ -82,7 +82,7 @@
    "ok": true,
    "count": 6,
    "error": null,
-   "lastOk": "2026-09-28T20:00:47Z"
+   "lastOk": "2026-09-28T20:50:46Z"
   },
   {
    "id": "localllama",
@@ -91,7 +91,7 @@
    "ok": true,
    "count": 15,
    "error": null,
-   "lastOk": "2026-09-28T20:00:47Z"
+   "lastOk": "2026-09-28T20:50:46Z"
   },
   {
    "id": "simonw",
@@ -100,7 +100,7 @@
    "ok": true,
    "count": 15,
    "error": null,
-   "lastOk": "2026-09-28T20:00:47Z"
+   "lastOk": "2026-09-28T20:50:46Z"
   },
   {
    "id": "hf-papers",
@@ -109,7 +109,7 @@
    "ok": true,
    "count": 15,
    "error": null,
-   "lastOk": "2026-09-28T20:00:47Z"
+   "lastOk": "2026-09-28T20:50:46Z"
   },
   {
    "id": "arxiv-cl",
@@ -118,7 +118,7 @@
    "ok": true,
    "count": 12,
    "error": null,
-   "lastOk": "2026-09-28T20:00:47Z"
+   "lastOk": "2026-09-28T20:50:46Z"
   },
   {
    "id": "latent-space",
@@ -127,7 +127,7 @@
    "ok": true,
    "count": 8,
    "error": null,
-   "lastOk": "2026-09-28T20:00:47Z"
+   "lastOk": "2026-09-28T20:50:46Z"
   },
   {
    "id": "interconnects",
@@ -136,7 +136,7 @@
    "ok": true,
    "count": 8,
    "error": null,
-   "lastOk": "2026-09-28T20:00:47Z"
+   "lastOk": "2026-09-28T20:50:46Z"
   },
   {
    "id": "import-ai",
@@ -145,7 +145,7 @@
    "ok": true,
    "count": 5,
    "error": null,
-   "lastOk": "2026-09-28T20:00:47Z"
+   "lastOk": "2026-09-28T20:50:46Z"
   },
   {
    "id": "verge-ai",
@@ -154,7 +154,7 @@
    "ok": true,
    "count": 10,
    "error": null,
-   "lastOk": "2026-09-28T20:00:47Z"
+   "lastOk": "2026-09-28T20:50:46Z"
   },
   {
    "id": "ars-ai",
@@ -163,7 +163,7 @@
    "ok": true,
    "count": 12,
    "error": null,
-   "lastOk": "2026-09-28T20:00:47Z"
+   "lastOk": "2026-09-28T20:50:46Z"
   },
   {
    "id": "techcrunch-ai",
@@ -172,7 +172,7 @@
    "ok": true,
    "count": 12,
    "error": null,
-   "lastOk": "2026-09-28T20:00:47Z"
+   "lastOk": "2026-09-28T20:50:46Z"
   },
   {
    "id": "mit-tr",
@@ -181,7 +181,7 @@
    "ok": true,
    "count": 8,
    "error": null,
-   "lastOk": "2026-09-28T20:00:47Z"
+   "lastOk": "2026-09-28T20:50:46Z"
   },
   {
    "id": "decoder",
@@ -190,7 +190,7 @@
    "ok": true,
    "count": 10,
    "error": null,
-   "lastOk": "2026-09-28T20:00:47Z"
+   "lastOk": "2026-09-28T20:50:46Z"
   },
   {
    "id": "sth",
@@ -199,7 +199,7 @@
    "ok": true,
    "count": 3,
    "error": null,
-   "lastOk": "2026-09-28T20:00:47Z"
+   "lastOk": "2026-09-28T20:50:46Z"
   },
   {
    "id": "embrace-red",
@@ -208,7 +208,7 @@
    "ok": true,
    "count": 6,
    "error": null,
-   "lastOk": "2026-09-28T20:00:47Z"
+   "lastOk": "2026-09-28T20:50:46Z"
   },
   {
    "id": "rel-ollama",
@@ -217,7 +217,7 @@
    "ok": true,
    "count": 3,
    "error": null,
-   "lastOk": "2026-09-28T20:00:47Z"
+   "lastOk": "2026-09-28T20:50:46Z"
   },
   {
    "id": "rel-vllm",
@@ -226,7 +226,7 @@
    "ok": true,
    "count": 3,
    "error": null,
-   "lastOk": "2026-09-28T20:00:47Z"
+   "lastOk": "2026-09-28T20:50:46Z"
   },
   {
    "id": "rel-opencode",
@@ -235,7 +235,7 @@
    "ok": true,
    "count": 3,
    "error": null,
-   "lastOk": "2026-09-28T20:00:47Z"
+   "lastOk": "2026-09-28T20:50:46Z"
   },
   {
    "id": "rel-claude-code",
@@ -244,11 +244,16 @@
    "ok": true,
    "count": 3,
    "error": null,
-   "lastOk": "2026-09-28T20:00:47Z"
+   "lastOk": "2026-09-28T20:50:46Z"
   }
  ],
  "heat": {
   "concepts": {
+   "ollama": {
+    "d7": 6,
+    "prev7": 0,
+    "d30": 6
+   },
    "agent-loop": {
     "d7": 24,
     "prev7": 0,
@@ -285,9 +290,9 @@
     "d30": 5
    },
    "qwen": {
-    "d7": 20,
+    "d7": 21,
     "prev7": 0,
-    "d30": 20
+    "d30": 21
    },
    "benchmarks": {
     "d7": 9,
@@ -344,6 +349,16 @@
     "prev7": 0,
     "d30": 4
    },
+   "llama-cpp": {
+    "d7": 7,
+    "prev7": 0,
+    "d30": 7
+   },
+   "gemma": {
+    "d7": 6,
+    "prev7": 0,
+    "d30": 6
+   },
    "kimi-glm": {
     "d7": 5,
     "prev7": 0,
@@ -363,16 +378,6 @@
     "d7": 2,
     "prev7": 0,
     "d30": 2
-   },
-   "llama-cpp": {
-    "d7": 6,
-    "prev7": 0,
-    "d30": 6
-   },
-   "gemma": {
-    "d7": 5,
-    "prev7": 0,
-    "d30": 5
    },
    "strix-halo": {
     "d7": 3,
@@ -408,11 +413,6 @@
     "d7": 1,
     "prev7": 0,
     "d30": 1
-   },
-   "ollama": {
-    "d7": 4,
-    "prev7": 0,
-    "d30": 4
    },
    "opencode": {
     "d7": 6,
@@ -556,17 +556,17 @@
    }
   },
   "layers": {
+   "inference": {
+    "d7": 29,
+    "d30": 30
+   },
    "agents": {
     "d7": 49,
     "d30": 52
    },
    "models": {
-    "d7": 128,
-    "d30": 157
-   },
-   "inference": {
-    "d7": 26,
-    "d30": 27
+    "d7": 129,
+    "d30": 158
    },
    "security": {
     "d7": 26,
@@ -683,6 +683,56 @@
  ],
  "items": [
   {
+   "id": "4b4cfee992d3",
+   "title": "AMD will acquire Fei-Fei Li’s World Labs for $8.2 billion",
+   "url": "https://techcrunch.com/2026/09/28/amd-will-acquire-fei-fei-lis-world-labs-for-8-2-billion/",
+   "source": "techcrunch-ai",
+   "sourceName": "TechCrunch AI",
+   "type": "press",
+   "published": "2026-09-28T20:39:33Z",
+   "summary": "The acquisition will see World Labs founder Fei-Fei Li join AMD as executive vice president and chief scientist.",
+   "firstSeen": "2026-09-28T20:50:46Z",
+   "tags": [],
+   "layers": [],
+   "score": 1.0
+  },
+  {
+   "id": "bacdfebf19aa",
+   "title": "v0.35.0-rc1",
+   "url": "https://github.com/ollama/ollama/releases/tag/v0.35.0-rc1",
+   "source": "rel-ollama",
+   "sourceName": "Ollama releases",
+   "type": "release",
+   "published": "2026-09-28T20:31:38Z",
+   "summary": "mlx: bound pull stall retries and let the watchdog interrupt them ( #1 …",
+   "firstSeen": "2026-09-28T20:50:46Z",
+   "tags": [
+    "ollama"
+   ],
+   "layers": [
+    "inference"
+   ],
+   "score": 1.6
+  },
+  {
+   "id": "017fd71c2445",
+   "title": "v0.35.0-rc0",
+   "url": "https://github.com/ollama/ollama/releases/tag/v0.35.0-rc0",
+   "source": "rel-ollama",
+   "sourceName": "Ollama releases",
+   "type": "release",
+   "published": "2026-09-28T20:21:01Z",
+   "summary": "feat: add System One scoring API ( #18606)",
+   "firstSeen": "2026-09-28T20:50:46Z",
+   "tags": [
+    "ollama"
+   ],
+   "layers": [
+    "inference"
+   ],
+   "score": 1.6
+  },
+  {
    "id": "342c492ea49c",
    "title": "Shopify opens checkout to browser-based AI agents",
    "url": "https://techcrunch.com/2026/09/28/shopify-opens-checkout-to-browser-based-ai-agents/",
@@ -753,6 +803,20 @@
     "models"
    ],
    "score": 2.8
+  },
+  {
+   "id": "43879af1bfca",
+   "title": "I am concerned about all these disparate hard forks that target specific architectures instead of opening a PR against upstream",
+   "url": "https://www.reddit.com/r/LocalLLaMA/comments/1wsn59w/i_am_concerned_about_all_these_disparate_hard/",
+   "source": "localllama",
+   "sourceName": "r/LocalLLaMA (top today)",
+   "type": "community",
+   "published": "2026-09-28T18:47:59Z",
+   "summary": "Other than the obvious self promotion, is there a practical reason people do this that I am missing? There's dozens of llamacpp forks with silly names that are supposedly \"optimized\" for this or that specific GPU and seem to have zero intention to merge into upstream. Am I missing the real reasons why this happens so…",
+   "firstSeen": "2026-09-28T20:50:46Z",
+   "tags": [],
+   "layers": [],
+   "score": 2.0
   },
   {
    "id": "7627b64443e1",
@@ -1057,7 +1121,7 @@
    "type": "press",
    "published": "2026-09-28T16:43:18Z",
    "summary": "US Government websites among \"dozens of third parties\" OpenAI has recently notified.",
-   "discussion": "88",
+   "discussion": "100",
    "firstSeen": "2026-09-28T19:07:31Z",
    "tags": [
     "frontier-capabilities",
@@ -1116,12 +1180,12 @@
    "type": "community",
    "published": "2026-09-28T16:11:42Z",
    "summary": "",
-   "points": 313,
+   "points": 326,
    "discussion": "https://news.ycombinator.com/item?id=49880312",
    "firstSeen": "2026-09-28T19:32:43Z",
    "tags": [],
    "layers": [],
-   "score": 4.5
+   "score": 4.51
   },
   {
    "id": "99f407dcb7ba",
@@ -1327,7 +1391,7 @@
    "sourceName": "TechCrunch AI",
    "type": "press",
    "published": "2026-09-28T13:38:48Z",
-   "summary": "Instinct has raised a $1 billion Series C, saying 'we're just getting started.' The company is now valued at $10 billion.",
+   "summary": "\"This funding helps us bring Instinct to more people and continue building the future of personal AI. It’s an exciting, creative time, and we're just getting started,\" founder Noah Shinn said in a statement.",
    "firstSeen": "2026-09-28T14:09:04Z",
    "tags": [
     "agent-loop"
@@ -1396,6 +1460,27 @@
    "score": 2.6
   },
   {
+   "id": "5315b5c279f4",
+   "title": "vulkan: fuse qwen4exp's SCALE -> SIGMOID -> SCALE -> hc_post chain by fxgsell · Pull Request #29520 · ggml-org/llama.cpp",
+   "url": "https://www.reddit.com/r/LocalLLaMA/comments/1wsdy6t/vulkan_fuse_qwen4exps_scale_sigmoid_scale_hc_post/",
+   "source": "localllama",
+   "sourceName": "r/LocalLLaMA (top today)",
+   "type": "community",
+   "published": "2026-09-28T12:59:41Z",
+   "summary": "Qwen Flash Next speedup for Vulkan people",
+   "firstSeen": "2026-09-28T20:50:46Z",
+   "tags": [
+    "llama-cpp",
+    "gemma",
+    "qwen"
+   ],
+   "layers": [
+    "inference",
+    "models"
+   ],
+   "score": 3.8
+  },
+  {
    "id": "70768dfb8c37",
    "title": "Import AI 474: Platonic mindspace; TPUs in space; Zhipu starts an outer RSI loop",
    "url": "https://jack-clark.net/2026/09/28/import-ai-474-platonic-mindspace-tpus-in-space-zhipu-starts-an-outer-rsi-loop/",
@@ -1454,7 +1539,7 @@
    "type": "press",
    "published": "2026-09-28T11:00:09Z",
    "summary": "“Microsoft claims to want to be a good neighbor, but the jury is still out.\"",
-   "discussion": "139",
+   "discussion": "148",
    "firstSeen": "2026-09-28T14:09:04Z",
    "tags": [
     "ai-datacenters"
@@ -1568,7 +1653,7 @@
    "type": "community",
    "published": "2026-09-28T08:35:40Z",
    "summary": "",
-   "points": 416,
+   "points": 419,
    "discussion": "https://news.ycombinator.com/item?id=49875148",
    "firstSeen": "2026-09-28T19:32:43Z",
    "tags": [],
@@ -1648,7 +1733,7 @@
    "type": "community",
    "published": "2026-09-28T07:33:29Z",
    "summary": "",
-   "points": 190,
+   "points": 193,
    "discussion": "https://news.ycombinator.com/item?id=49874728",
    "firstSeen": "2026-09-28T19:32:43Z",
    "tags": [
@@ -1657,7 +1742,7 @@
    "layers": [
     "models"
    ],
-   "score": 4.88
+   "score": 4.89
   },
   {
    "id": "216d56bba26c",
@@ -2343,7 +2428,7 @@
    "type": "community",
    "published": "2026-09-27T17:32:02Z",
    "summary": "",
-   "points": 189,
+   "points": 190,
    "discussion": "https://news.ycombinator.com/item?id=49868831",
    "firstSeen": "2026-09-27T19:40:56Z",
    "tags": [
@@ -2495,7 +2580,7 @@
    "type": "community",
    "published": "2026-09-27T16:19:46Z",
    "summary": "",
-   "points": 386,
+   "points": 387,
    "discussion": "https://news.ycombinator.com/item?id=49868083",
    "firstSeen": "2026-09-27T19:40:56Z",
    "tags": [
@@ -2885,7 +2970,7 @@
    "type": "community",
    "published": "2026-09-27T06:19:33Z",
    "summary": "",
-   "points": 625,
+   "points": 626,
    "discussion": "https://news.ycombinator.com/item?id=49863864",
    "firstSeen": "2026-09-27T19:40:56Z",
    "tags": [
@@ -3380,7 +3465,7 @@
    "type": "press",
    "published": "2026-09-25T19:11:05Z",
    "summary": "\"There is no evidence of any significant, widespread displacement or reduction in hiring.”",
-   "discussion": "144",
+   "discussion": "145",
    "firstSeen": "2026-09-27T19:40:56Z",
    "tags": [],
    "layers": [],
@@ -3776,7 +3861,7 @@
    "type": "press",
    "published": "2026-09-25T11:00:28Z",
    "summary": "Vendors rolling out AI have an \"incentive to deny as many claims as possible.\"",
-   "discussion": "279",
+   "discussion": "280",
    "firstSeen": "2026-09-27T19:40:56Z",
    "tags": [],
    "layers": [],
@@ -3869,7 +3954,7 @@
    "type": "research",
    "published": "2026-09-24T20:00:00Z",
    "summary": "Representation autoencoders (RAEs) reuse features from a pretrained visual encoder as reconstruction and diffusion latents, integrating strong visual representations into image generation. However, RAEs still need to decide which encoder layers form the shared latent space for the generator and pixel decoder. This…",
-   "points": 113,
+   "points": 114,
    "firstSeen": "2026-09-28T05:33:24Z",
    "tags": [
     "multimodal"
@@ -5454,7 +5539,7 @@
    "type": "research",
    "published": "2026-09-21T20:00:00Z",
    "summary": "Prefill and decode reward different approaches to quantization: low-precision arithmetic accelerates prompt processing, while compact weights reduce memory traffic during generation. We propose \"disaggregated quantization\" (DQ), which specializes computation formats, weights and storage placement to both of these…",
-   "points": 30,
+   "points": 38,
    "firstSeen": "2026-09-28T19:41:38Z",
    "tags": [
     "quantization"
@@ -5462,7 +5547,7 @@
    "layers": [
     "weights"
    ],
-   "score": 4.09
+   "score": 4.19
   },
   {
    "id": "3a10b48ae769",
