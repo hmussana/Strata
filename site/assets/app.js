@@ -1,4 +1,5 @@
 import { renderDiagram } from './diagrams.js';
+import { icon } from './icons.js';
 
 // ---------------------------------------------------------------- helpers
 const $ = (sel, root = document) => root.querySelector(sel);
@@ -91,7 +92,10 @@ async function init() {
   }
   $('#reviewed').textContent = concepts.reviewed || '–';
   renderStatus();
-  renderLegend();
+  renderJourney();
+  const view = ['both', 'tech', 'threats'].includes(store.get('view')) ? store.get('view') : 'both';
+  $('#tower').dataset.view = view;
+  document.querySelectorAll('.view-toggle [data-view]').forEach((b) => b.setAttribute('aria-pressed', String(b.dataset.view === view)));
   renderPaths();
   renderMap();
   renderFilters();
@@ -101,7 +105,7 @@ async function init() {
   route();
 }
 
-// ---------------------------------------------------------------- status / legend
+// ---------------------------------------------------------------- status
 function renderStatus() {
   const n = state.news;
   const el = $('#status');
@@ -116,9 +120,48 @@ function renderStatus() {
   $('#new-link')?.addEventListener('click', () => { setFilter({ onlyNew: true, days: 0 }); });
 }
 
-function renderLegend() {
-  $('#legend').innerHTML = state.concepts.layers
-    .map((l) => `<span class="l-${esc(l.id)}"><i></i>${esc(l.name)}</span>`).join('');
+// ---------------------------------------------------------------- follow a prompt
+const layerById = (id) => state.concepts.layers.find((l) => l.id === id);
+
+function renderJourney() {
+  const steps = state.concepts.journey || [];
+  $('#mini-tower').innerHTML = state.concepts.layers.filter((l) => !l.pillar).map((l) => `
+    <div class="mt-row l-${esc(l.id)}" data-layer="${esc(l.id)}"><span class="mt-num">L${esc(l.num)}</span><span class="mt-name">${esc(l.name)}</span><span class="packet"></span></div>`).join('');
+  $('#journey-steps').innerHTML = steps.map((s, i) => {
+    const l = layerById(s.layer);
+    return `<li class="j-step l-${esc(s.layer)} ${s.dir === 'up' ? 'up' : ''}" data-step="${i}">
+      <span class="j-num">L${esc(l?.num ?? '')}</span>
+      <div class="j-body"><div class="j-head">${icon(l?.icon)}<strong>${esc(l?.name)}</strong><span class="j-unit">${esc(s.unit)}</span><span class="j-arrow" aria-hidden="true">${s.dir === 'up' ? '↑ up' : '↓ down'}</span></div>
+      <p>${esc(s.text)}</p></div>
+    </li>`;
+  }).join('');
+}
+
+let journeyTimer = null;
+function playJourney() {
+  const items = [...document.querySelectorAll('.j-step')];
+  const btn = $('#journey-play');
+  clearInterval(journeyTimer);
+  items.forEach((el) => el.classList.remove('active', 'done'));
+  if (matchMedia('(prefers-reduced-motion: reduce)').matches) {
+    items.forEach((el) => el.classList.add('done'));
+    return;
+  }
+  let i = 0;
+  btn.textContent = '■ Playing…';
+  const steps = state.concepts.journey || [];
+  const tick = () => {
+    items.forEach((el, j) => { el.classList.toggle('active', j === i); el.classList.toggle('done', j < i); });
+    document.querySelectorAll('.mt-row').forEach((row) => {
+      const hot = steps[i] && row.dataset.layer === steps[i].layer;
+      row.classList.toggle('hot', hot);
+      row.querySelector('.packet').textContent = hot ? `${steps[i].dir === 'up' ? '↑' : '↓'} ${steps[i].unit}` : '';
+    });
+    if (i >= items.length) { clearInterval(journeyTimer); btn.textContent = '↻ Replay'; return; }
+    i += 1;
+  };
+  tick();
+  journeyTimer = setInterval(tick, 1600);
 }
 
 // ---------------------------------------------------------------- learning paths
@@ -179,18 +222,33 @@ function catChips(layer) {
   }).join('');
 }
 
+function techChips(layer) {
+  return (layer.tech || []).map((id) => {
+    const e = state.index.get(id);
+    return e ? `<button class="chip" type="button" data-concept="${esc(id)}">${esc(e.item.name.replace(/ \(.*\)$/, ''))}</button>` : '';
+  }).join('');
+}
+
+function threatPills(layer) {
+  return (layer.threats || []).map((t, i) => `<button class="threat-pill" type="button" data-threat="${esc(layer.id)}:${i}" title="${esc(t.what)}">${icon('warn', 'ico-s')}${esc(t.name)}</button>`).join('');
+}
+
 function renderMap() {
   const layers = state.concepts.layers;
   $('#bands').innerHTML = layers.filter((l) => !l.pillar).map((layer) => {
     const s = layerStats(layer);
     return `<div class="band l-${esc(layer.id)}" id="band-${esc(layer.id)}" data-layer="${esc(layer.id)}">
       <div class="band-head" data-toggle="${esc(layer.id)}">
-        <div>
+        <div class="lnum" aria-hidden="true">L${esc(layer.num)}</div>
+        <div class="licon">${icon(layer.icon)}</div>
+        <div class="ltitle">
           <button class="band-title" type="button" data-toggle="${esc(layer.id)}" aria-expanded="false">${esc(layer.name)}</button>
-          <div class="band-tag">${esc(layer.tagline)}</div>
+          <span class="osi" title="Closest OSI layer">≈ OSI ${esc(layer.osi)}</span>
         </div>
-        <div class="band-cats">${catChips(layer)}</div>
-        <div class="band-meta"><strong>${s.d7}</strong> stories · 7d<br>${s.learned}/${s.total} learned<span class="band-chevron" aria-hidden="true">›</span></div>
+        <div class="lmoves"><span class="moves-label">moves</span><span class="moves">${esc(layer.moves)}</span></div>
+        <div class="lcol col-tech">${techChips(layer)}</div>
+        <div class="lcol col-threats">${threatPills(layer)}</div>
+        <div class="band-meta"><strong>${s.d7}</strong><span>stories · 7d</span><span class="band-chevron" aria-hidden="true">›</span></div>
       </div>
     </div>`;
   }).join('');
@@ -199,15 +257,16 @@ function renderMap() {
   if (pillar) {
     const s = layerStats(pillar);
     $('#pillar').innerHTML = `<div class="pillar l-${esc(pillar.id)}" data-toggle="${esc(pillar.id)}" id="band-${esc(pillar.id)}">
+      <div class="licon">${icon(pillar.icon)}</div>
       <button class="band-title" type="button" data-toggle="${esc(pillar.id)}" aria-expanded="false">${esc(pillar.name)}</button>
       <div class="band-tag">${esc(pillar.tagline)}</div>
       <div class="band-cats">${catChips(pillar)}</div>
-      <div class="pillar-note"><strong>${s.d7}</strong> stories · 7d · ${s.learned}/${s.total} learned<br>Cuts across every layer ↔</div>
+      <div class="pillar-note"><strong>${s.d7}</strong> stories · 7d<br>Spans all seven layers ↕</div>
     </div>`;
   }
 }
 
-function toggleLayer(id, { focusCat = null, forceOpen = false } = {}) {
+function toggleLayer(id, { focusCat = null, forceOpen = false, scroll = true } = {}) {
   const same = state.openLayer === id;
   closeLayer();
   if (same && !forceOpen) return;
@@ -231,7 +290,7 @@ function toggleLayer(id, { focusCat = null, forceOpen = false } = {}) {
     const cat = $(`#cat-${CSS.escape(focusCat)}`);
     cat?.classList.add('flash');
     cat?.scrollIntoView({ behavior: 'smooth', block: 'center' });
-  } else {
+  } else if (scroll) {
     (layer.pillar ? zoom : host).scrollIntoView({ behavior: 'smooth', block: 'start' });
   }
 }
@@ -251,11 +310,33 @@ function itemButton(item) {
   </button>`;
 }
 
+function threatCards(layer) {
+  if (!layer.threats?.length) return '';
+  return `<h3 class="zoom-h" id="threats-${esc(layer.id)}">${icon('warn', 'ico-s')} Threats at this layer</h3>
+    <div class="threats">${layer.threats.map((t) => {
+      const e = t.concept && state.index.get(t.concept);
+      return `<div class="threat">
+        <strong>${esc(t.name)}</strong>
+        <p>${esc(t.what)}</p>
+        <p class="t-ex"><span>Example</span>${esc(t.example)}</p>
+        <p class="t-def"><span>Defence</span>${esc(t.defense)}</p>
+        ${e ? `<button class="chip l-${esc(e.layer.id)}" type="button" data-concept="${esc(t.concept)}">Learn: ${esc(e.item.name)}</button>` : ''}
+      </div>`;
+    }).join('')}</div>`;
+}
+
 function zoomHTML(layer) {
-  return `<div class="zoom-intro">
+  const plain = layer.plain ? `<div class="plain">
+      <div class="plain-text"><span class="plain-label">In plain words</span>${esc(layer.plain)}</div>
+      ${layer.osi ? `<dl class="plain-facts"><div><dt>OSI analogy</dt><dd>${esc(layer.osi)}</dd></div><div><dt>What moves</dt><dd>${esc(layer.moves)}</dd></div></dl>` : ''}
+    </div>` : '';
+  return `${plain}
+    <div class="zoom-intro">
       <div>${(layer.explainer || []).map((p) => `<p>${esc(p)}</p>`).join('')}</div>
       <div>${renderDiagram(layer.diagram)}</div>
     </div>
+    ${threatCards(layer)}
+    <h3 class="zoom-h">Concepts & technologies</h3>
     <div class="cats">${layer.categories.map((cat) => `
       <div class="cat" id="cat-${esc(cat.id)}">
         <h4>${esc(cat.name)}</h4>
@@ -513,6 +594,20 @@ function bindGlobal() {
     }
     if (d.layerOpen) { closeDrawer(); toggleLayer(d.layerOpen, { forceOpen: true, focusCat: d.catFocus }); return; }
     if (d.learn) { toggleLearned(d.learn); return; }
+    if (d.threat) {
+      e.stopPropagation();
+      const [lid] = d.threat.split(':');
+      if (state.openLayer !== lid) toggleLayer(lid, { forceOpen: true, scroll: false });
+      $(`#threats-${CSS.escape(lid)}`)?.scrollIntoView({ behavior: 'smooth', block: 'start' });
+      return;
+    }
+    if (d.view) {
+      $('#tower').dataset.view = d.view;
+      document.querySelectorAll('.view-toggle [data-view]').forEach((b) => b.setAttribute('aria-pressed', String(b.dataset.view === d.view)));
+      store.set('view', d.view);
+      return;
+    }
+    if (t.id === 'journey-play') { playJourney(); return; }
     if (d.path) { startPath(d.path); return; }
     if (d.pathStep !== undefined && state.path) {
       const p = findPath(state.path.id);

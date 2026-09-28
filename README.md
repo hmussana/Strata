@@ -20,15 +20,30 @@ with the latest news tagged onto it every three hours.</p>
 
 Newsletters and feeds tell you *what* happened. They rarely tell you *where it fits*. If you work with LLMs, it is easy to feel permanently behind: new frontier models, agent harnesses, quantisation formats, desktop AI boxes, routers and protocols every week.
 
-Strata is a map first and a news board second. Every story lands on a concept, and every concept sits on a layer, so a headline like "new 4-bit MoE runs on a DGX Spark" becomes three things you can click: *quantisation*, *mixture of experts* and *desktop AI machines*.
+Strata is a map first and a news board second. Every story lands on a concept, and every concept sits on a layer, so a headline like "new 4-bit MoE runs on a DGX Spark" becomes three things you can click: *quantisation* (L2), *mixture of experts* (L3) and *desktop AI machines* (L1).
 
-<p align="center"><img src="site/assets/social-card.png" width="720" alt="Strata: the seven layers of the AI stack"></p>
+## The Strata Model: an OSI model for AI
+
+| # | Layer | ≈ OSI | What moves | Example threat |
+|---|---|---|---|---|
+| 7 | **Agents & Apps** | Application | goals & tasks | excessive agency, the lethal trifecta |
+| 6 | **Tools & Protocols** | Presentation | tool calls (JSON, MCP) | tool poisoning, injection via tool output |
+| 5 | **Context & Memory** | Session | context windows | RAG and memory poisoning |
+| 4 | **Inference & Access** | Transport | token streams | exposed inference servers, key leakage |
+| 3 | **Models** | Network | tokens → predictions | jailbreaks, backdoors |
+| 2 | **Weights & Numerics** | Data link | tensors & bytes | malicious model files |
+| 1 | **Compute** | Physical | FLOPs & bytes/second | GPU memory leakage |
+
+Security, safety and governance run across all seven. Remember it top-down: **A**ll **T**ools **C**an **I**nvoke **M**odels **W**ith **C**ompute.
+
+<p align="center"><img src="site/assets/social-card.png" width="720" alt="The Strata Model: seven layers of AI"></p>
 
 ## What's inside
 
 | | |
 |---|---|
-| **The stack** | Six layers (Hardware → Efficiency & Training → Models → Access & Serving → Context & Tools → Agents) plus a cross-cutting **Security, Safety & Evals** pillar. Click a layer to zoom in; click a concept for an explainer, a diagram, "why it matters", related concepts and its latest news. |
+| **The tower** | The seven layers at a glance, each with its key technologies and threats (toggle *Technologies / Threats / Both*). Click a layer for a plain-words explanation, a diagram, threat cards with real examples and defences, and every concept on that layer. |
+| **Follow a prompt** | An animated walkthrough of one request travelling down the stack to the silicon and back up as an answer. |
 | **Learning paths** | Guided sequences such as *Run models locally*, *Understand agents*, *Pick the right model*, *Secure AI systems* and *Ground models in your data*, with progress saved in your browser. |
 | **News board** | About 25 sources: lab blogs, Hacker News, r/LocalLLaMA, Hugging Face papers, arXiv, respected newsletters, tech press, AI-security research and release notes. Stories are auto-tagged onto the map; filter by layer, source type and time window, or show only stories *new since your last visit*. |
 | **Trending & Radar** | Which concepts are heating up this week versus last, and a **Radar** of terms trending across several sources that the map doesn't cover yet. A weekly workflow turns the Radar into a GitHub issue, so the map keeps pace with the field. |

@@ -10,7 +10,7 @@
   <meta name="theme-color" content="#0d1020">
   <meta property="og:type" content="website">
   <meta property="og:title" content="Strata · the AI stack, mapped and kept current">
-  <meta property="og:description" content="Every layer of the AI stack explained visually, with a news board that keeps it current.">
+  <meta property="og:description" content="The Strata Model: an OSI model for AI. Seven layers, explained visually, with threats per layer and news that keeps it current.">
   <meta property="og:url" content="https://hmussana.github.io/Strata/">
   <meta property="og:image" content="https://hmussana.github.io/Strata/assets/social-card.png">
   <meta name="twitter:card" content="summary_large_image">
@@ -38,24 +38,42 @@
   </header>
 
   <main>
-    <section class="section intro" aria-labelledby="intro-title">
-      <h1 id="intro-title">The AI field moves weekly. <span class="grad">Here's the map.</span></h1>
-      <p class="lede">Strata puts every model, tool, technique and chip on one layered stack, explains each with a diagram, and tags the latest news onto it every few hours. Pick a path to get started, or explore the stack.</p>
-      <div class="paths" id="paths"></div>
-    </section>
-
-    <section class="section" id="map" aria-labelledby="map-title">
-      <div class="section-head">
+    <section class="section hero" id="map" aria-labelledby="map-title">
+      <div class="hero-head">
         <div>
-          <h2 id="map-title">The stack</h2>
-          <p class="lede">Every technology sits on a layer. Click a layer to zoom in, click a concept for an explainer, a diagram and the latest news about it. Badges show stories from the past 7 days.</p>
+          <p class="eyebrow">The Strata Model · an OSI model for AI</p>
+          <h1 id="map-title">Seven layers. <span class="grad">Every AI headline fits one.</span></h1>
         </div>
-        <div class="legend" id="legend"></div>
+        <div class="view-toggle" role="group" aria-label="What to show on each layer">
+          <button type="button" data-view="both" aria-pressed="true">Both</button>
+          <button type="button" data-view="tech" aria-pressed="false">Technologies</button>
+          <button type="button" data-view="threats" aria-pressed="false">Threats</button>
+        </div>
       </div>
-      <div class="map-grid">
+      <div class="map-grid tower" id="tower" data-view="both">
         <div class="bands" id="bands"></div>
         <div class="pillar-wrap" id="pillar"></div>
       </div>
+      <p class="mnemonic">Remember it top-down: <strong>A</strong>ll <strong>T</strong>ools <strong>C</strong>an <strong>I</strong>nvoke <strong>M</strong>odels <strong>W</strong>ith <strong>C</strong>ompute. Click any layer to zoom in; badges count this week's stories.</p>
+    </section>
+
+    <section class="section" id="journey" aria-labelledby="journey-title">
+      <div class="section-head">
+        <div>
+          <h2 id="journey-title">Follow one prompt through the stack</h2>
+          <p class="lede">Like a packet through the OSI layers: down to the silicon, and back up as an answer.</p>
+        </div>
+        <button class="play-btn" id="journey-play" type="button">▶ Play</button>
+      </div>
+      <div class="journey-wrap">
+        <div class="mini-tower" id="mini-tower" aria-hidden="true"></div>
+        <ol class="journey" id="journey-steps"></ol>
+      </div>
+    </section>
+
+    <section class="section" id="start" aria-labelledby="paths-title">
+      <div class="section-head"><h2 id="paths-title">Start here</h2></div>
+      <div class="paths" id="paths"></div>
     </section>
 
     <section class="section" id="news" aria-labelledby="news-title">

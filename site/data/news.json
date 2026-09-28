@@ -455,9 +455,9 @@
     "d30": 2
    },
    "gguf": {
-    "d7": 2,
+    "d7": 1,
     "prev7": 0,
-    "d30": 2
+    "d30": 1
    },
    "quantization": {
     "d7": 2,
@@ -483,6 +483,11 @@
     "d7": 4,
     "prev7": 1,
     "d30": 5
+   },
+   "speculative-decoding": {
+    "d7": 1,
+    "prev7": 0,
+    "d30": 1
    },
    "codex": {
     "d7": 4,
@@ -556,28 +561,32 @@
     "d30": 52
    },
    "models": {
-    "d7": 122,
-    "d30": 145
+    "d7": 131,
+    "d30": 157
    },
-   "efficiency": {
-    "d7": 21,
-    "d30": 25
-   },
-   "serving": {
-    "d7": 25,
-    "d30": 26
+   "inference": {
+    "d7": 26,
+    "d30": 27
    },
    "security": {
     "d7": 27,
     "d30": 31
    },
-   "hardware": {
+   "compute": {
     "d7": 26,
     "d30": 26
    },
+   "tools": {
+    "d7": 7,
+    "d30": 8
+   },
+   "weights": {
+    "d7": 5,
+    "d30": 5
+   },
    "context": {
-    "d7": 9,
-    "d30": 10
+    "d7": 2,
+    "d30": 2
    }
   }
  },
@@ -740,9 +749,8 @@
     "cost-curve"
    ],
    "layers": [
-    "efficiency",
-    "models",
-    "serving"
+    "inference",
+    "models"
    ],
    "score": 2.8
   },
@@ -782,7 +790,6 @@
     "qwen"
    ],
    "layers": [
-    "efficiency",
     "models"
    ],
    "score": 3.2
@@ -1077,8 +1084,8 @@
     "qwen"
    ],
    "layers": [
-    "models",
-    "serving"
+    "inference",
+    "models"
    ],
    "score": 2.8
   },
@@ -1096,7 +1103,7 @@
     "vllm"
    ],
    "layers": [
-    "serving"
+    "inference"
    ],
    "score": 1.6
   },
@@ -1130,7 +1137,7 @@
     "hyperscalers"
    ],
    "layers": [
-    "serving"
+    "inference"
    ],
    "score": 1.6
   },
@@ -1148,7 +1155,7 @@
     "rtx-rigs"
    ],
    "layers": [
-    "hardware"
+    "compute"
    ],
    "score": 2.6
   },
@@ -1214,7 +1221,6 @@
     "lora"
    ],
    "layers": [
-    "efficiency",
     "models"
    ],
    "score": 3.2
@@ -1366,7 +1372,7 @@
     "rtx-rigs"
    ],
    "layers": [
-    "hardware",
+    "compute",
     "models"
    ],
    "score": 3.2
@@ -1405,7 +1411,7 @@
     "tpu"
    ],
    "layers": [
-    "hardware",
+    "compute",
     "models"
    ],
    "score": 3.2
@@ -1454,7 +1460,7 @@
     "ai-datacenters"
    ],
    "layers": [
-    "hardware"
+    "compute"
    ],
    "score": 2.6
   },
@@ -1603,7 +1609,7 @@
     "rtx-rigs"
    ],
    "layers": [
-    "hardware"
+    "compute"
    ],
    "score": 2.6
   },
@@ -1626,10 +1632,10 @@
     "benchmarks"
    ],
    "layers": [
-    "hardware",
+    "compute",
+    "inference",
     "models",
-    "security",
-    "serving"
+    "security"
    ],
    "score": 4.4
   },
@@ -1706,7 +1712,7 @@
     "strix-halo"
    ],
    "layers": [
-    "hardware"
+    "compute"
    ],
    "score": 2.6
   },
@@ -1725,7 +1731,7 @@
     "rtx-rigs"
    ],
    "layers": [
-    "hardware"
+    "compute"
    ],
    "score": 3.2
   },
@@ -1743,7 +1749,7 @@
     "distillation"
    ],
    "layers": [
-    "efficiency"
+    "models"
    ],
    "score": 2.6
   },
@@ -1780,8 +1786,8 @@
     "ollama"
    ],
    "layers": [
-    "hardware",
-    "serving"
+    "compute",
+    "inference"
    ],
    "score": 3.2
   },
@@ -1802,8 +1808,8 @@
    ],
    "layers": [
     "agents",
-    "context",
-    "serving"
+    "inference",
+    "tools"
    ],
    "score": 2.8
   },
@@ -1901,7 +1907,7 @@
    ],
    "layers": [
     "agents",
-    "context"
+    "tools"
    ],
    "score": 2.2
   },
@@ -1951,7 +1957,7 @@
     "distillation"
    ],
    "layers": [
-    "efficiency"
+    "models"
    ],
    "score": 1.6
   },
@@ -2018,7 +2024,7 @@
     "vram-math"
    ],
    "layers": [
-    "hardware",
+    "compute",
     "models"
    ],
    "score": 4.4
@@ -2037,7 +2043,7 @@
     "ai-datacenters"
    ],
    "layers": [
-    "hardware"
+    "compute"
    ],
    "score": 2.6
   },
@@ -2150,9 +2156,9 @@
     "vram-math"
    ],
    "layers": [
-    "efficiency",
-    "hardware",
-    "models"
+    "compute",
+    "models",
+    "weights"
    ],
    "score": 4.4
   },
@@ -2189,8 +2195,8 @@
     "gguf"
    ],
    "layers": [
-    "efficiency",
-    "models"
+    "models",
+    "weights"
    ],
    "score": 3.2
   },
@@ -2227,8 +2233,8 @@
     "gemma"
    ],
    "layers": [
-    "models",
-    "serving"
+    "inference",
+    "models"
    ],
    "score": 3.2
   },
@@ -2248,9 +2254,9 @@
     "vram-math"
    ],
    "layers": [
-    "hardware",
-    "models",
-    "serving"
+    "compute",
+    "inference",
+    "models"
    ],
    "score": 3.8
   },
@@ -2287,7 +2293,7 @@
     "moe"
    ],
    "layers": [
-    "efficiency"
+    "models"
    ],
    "score": 2.6
   },
@@ -2305,7 +2311,7 @@
     "mcp"
    ],
    "layers": [
-    "context"
+    "tools"
    ],
    "score": 2.6
   },
@@ -2400,8 +2406,8 @@
     "llama-cpp"
    ],
    "layers": [
-    "hardware",
-    "serving"
+    "compute",
+    "inference"
    ],
    "score": 3.2
   },
@@ -2435,8 +2441,8 @@
     "gemma"
    ],
    "layers": [
-    "models",
-    "serving"
+    "inference",
+    "models"
    ],
    "score": 3.2
   },
@@ -2474,9 +2480,9 @@
     "llama-cpp"
    ],
    "layers": [
-    "efficiency",
+    "inference",
     "models",
-    "serving"
+    "weights"
    ],
    "score": 3.8
   },
@@ -2575,7 +2581,7 @@
    ],
    "layers": [
     "agents",
-    "hardware",
+    "compute",
     "models"
    ],
    "score": 4.4
@@ -2594,7 +2600,7 @@
     "mcp"
    ],
    "layers": [
-    "context"
+    "tools"
    ],
    "score": 2.6
   },
@@ -2632,7 +2638,7 @@
     "rtx-rigs"
    ],
    "layers": [
-    "hardware",
+    "compute",
     "models"
    ],
    "score": 3.2
@@ -2651,7 +2657,7 @@
     "multi-gpu"
    ],
    "layers": [
-    "hardware"
+    "compute"
    ],
    "score": 2.6
   },
@@ -2760,12 +2766,12 @@
     "qwen",
     "vram-math",
     "agent-loop",
-    "gguf"
+    "speculative-decoding"
    ],
    "layers": [
     "agents",
-    "efficiency",
-    "hardware",
+    "compute",
+    "inference",
     "models"
    ],
    "score": 4.4
@@ -2866,7 +2872,7 @@
     "ai-datacenters"
    ],
    "layers": [
-    "hardware"
+    "compute"
    ],
    "score": 1.6
   },
@@ -3177,8 +3183,8 @@
     "frontier-capabilities"
    ],
    "layers": [
-    "models",
-    "serving"
+    "inference",
+    "models"
    ],
    "score": 4.2
   },
@@ -3196,7 +3202,7 @@
     "ai-datacenters"
    ],
    "layers": [
-    "hardware"
+    "compute"
    ],
    "score": 1.6
   },
@@ -3415,8 +3421,8 @@
     "ai-datacenters"
    ],
    "layers": [
-    "hardware",
-    "serving"
+    "compute",
+    "inference"
    ],
    "score": 2.2
   },
@@ -3531,7 +3537,7 @@
     "rl-reasoning"
    ],
    "layers": [
-    "efficiency"
+    "models"
    ],
    "score": 2.2
   },
@@ -3551,7 +3557,6 @@
     "qwen"
    ],
    "layers": [
-    "efficiency",
     "models"
    ],
    "score": 2.8
@@ -3570,7 +3575,7 @@
     "hyperscalers"
    ],
    "layers": [
-    "serving"
+    "inference"
    ],
    "score": 1.6
   },
@@ -3710,7 +3715,7 @@
     "ollama"
    ],
    "layers": [
-    "serving"
+    "inference"
    ],
    "score": 2.2
   },
@@ -3906,7 +3911,7 @@
    ],
    "layers": [
     "context",
-    "efficiency"
+    "models"
    ],
    "score": 4.5
   },
@@ -3963,7 +3968,7 @@
     "ai-datacenters"
    ],
    "layers": [
-    "hardware"
+    "compute"
    ],
    "score": 2.6
   },
@@ -4035,7 +4040,7 @@
     "tpu"
    ],
    "layers": [
-    "hardware"
+    "compute"
    ],
    "score": 3.2
   },
@@ -4056,8 +4061,8 @@
    ],
    "layers": [
     "agents",
-    "context",
-    "serving"
+    "inference",
+    "tools"
    ],
    "score": 2.8
   },
@@ -4124,7 +4129,7 @@
     "moe"
    ],
    "layers": [
-    "efficiency"
+    "models"
    ],
    "score": 2.6
   },
@@ -4250,8 +4255,8 @@
    ],
    "layers": [
     "agents",
-    "context",
-    "serving"
+    "inference",
+    "tools"
    ],
    "score": 2.8
   },
@@ -4270,8 +4275,8 @@
     "tool-calling"
    ],
    "layers": [
-    "context",
-    "serving"
+    "inference",
+    "tools"
    ],
    "score": 2.2
   },
@@ -4380,7 +4385,6 @@
    ],
    "layers": [
     "agents",
-    "efficiency",
     "models"
    ],
    "score": 5.14
@@ -4522,8 +4526,8 @@
    ],
    "layers": [
     "agents",
-    "models",
-    "serving"
+    "inference",
+    "models"
    ],
    "score": 2.8
   },
@@ -4834,10 +4838,10 @@
    ],
    "layers": [
     "agents",
-    "efficiency",
-    "hardware",
+    "compute",
+    "inference",
     "models",
-    "serving"
+    "weights"
    ],
    "score": 3.4
   },
@@ -4962,12 +4966,11 @@
    "firstSeen": "2026-09-27T19:40:56Z",
    "tags": [
     "context-engineering",
-    "gpt",
-    "kv-cache"
+    "kv-cache",
+    "gpt"
    ],
    "layers": [
     "context",
-    "efficiency",
     "models"
    ],
    "score": 4.8
@@ -5028,7 +5031,7 @@
    ],
    "layers": [
     "agents",
-    "efficiency"
+    "models"
    ],
    "score": 4.76
   },
@@ -5116,7 +5119,7 @@
     "ai-datacenters"
    ],
    "layers": [
-    "hardware"
+    "compute"
    ],
    "score": 2.6
   },
@@ -5135,7 +5138,7 @@
     "ai-datacenters"
    ],
    "layers": [
-    "hardware"
+    "compute"
    ],
    "score": 1.6
   },
@@ -5253,8 +5256,8 @@
     "deepseek"
    ],
    "layers": [
-    "models",
-    "serving"
+    "inference",
+    "models"
    ],
    "score": 2.2
   },
@@ -5310,8 +5313,8 @@
     "gemma"
    ],
    "layers": [
-    "models",
-    "serving"
+    "inference",
+    "models"
    ],
    "score": 3.2
   },
@@ -5330,8 +5333,8 @@
     "open-weights"
    ],
    "layers": [
-    "models",
-    "serving"
+    "inference",
+    "models"
    ],
    "score": 3.2
   },
@@ -5363,7 +5366,7 @@
     "nvidia-stack"
    ],
    "layers": [
-    "serving"
+    "inference"
    ],
    "score": 2.6
   },
@@ -5398,7 +5401,7 @@
     "rl-reasoning"
    ],
    "layers": [
-    "efficiency",
+    "models",
     "security"
    ],
    "score": 4.43
@@ -5438,7 +5441,7 @@
     "rl-reasoning"
    ],
    "layers": [
-    "efficiency"
+    "models"
    ],
    "score": 3.75
   },
@@ -5457,7 +5460,7 @@
     "quantization"
    ],
    "layers": [
-    "efficiency"
+    "weights"
    ],
    "score": 3.68
   },
@@ -5489,7 +5492,7 @@
     "distillation"
    ],
    "layers": [
-    "efficiency"
+    "models"
    ],
    "score": 2.6
   },
@@ -5668,7 +5671,7 @@
     "vllm"
    ],
    "layers": [
-    "serving"
+    "inference"
    ],
    "score": 1.6
   },
@@ -5707,7 +5710,6 @@
     "multimodal"
    ],
    "layers": [
-    "efficiency",
     "models"
    ],
    "score": 4.6
@@ -5969,7 +5971,7 @@
     "rl-reasoning"
    ],
    "layers": [
-    "efficiency"
+    "models"
    ],
    "score": 3.2
   },
@@ -6158,8 +6160,8 @@
     "rl-reasoning"
    ],
    "layers": [
-    "context",
-    "efficiency"
+    "models",
+    "tools"
    ],
    "score": 3.8
   },

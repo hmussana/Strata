@@ -121,8 +121,13 @@
   "layers": [
     {
       "id": "agents",
-      "name": "Agents & Harnesses",
-      "tagline": "Software that wraps a model in a loop, gives it tools, and lets it act",
+      "num": 7,
+      "name": "Agents & Apps",
+      "osi": "Application",
+      "moves": "Goals & tasks",
+      "icon": "agent",
+      "tagline": "The software you talk to: it turns a goal into a plan and keeps acting until it's done",
+      "plain": "The top of the stack: coding agents, personal assistants and apps. They take a goal, break it into steps, and loop through the layers below until the task is finished.",
       "explainer": [
         "A model on its own only turns text into text. An agent is a model running inside a loop: it reads the situation, decides on a tool call, the harness executes it, the result goes back into context, and the loop repeats until the task is done.",
         "The harness is everything around the model: the system prompt, tool definitions, permission rules, context management, sub-agent spawning and the UI. Two products using the same model can behave very differently because their harnesses differ."
@@ -158,6 +163,35 @@
           "label": "not done: next step"
         }
       },
+      "tech": [
+        "claude-code",
+        "openclaw",
+        "hermes-agent",
+        "consumer-assistants"
+      ],
+      "threats": [
+        {
+          "name": "Excessive agency",
+          "what": "The agent can do far more than the task needs: delete, send, deploy, spend.",
+          "example": "A coding agent on auto-approve runs a destructive shell command it was tricked into.",
+          "defense": "Least privilege, approval for risky actions, run in a sandbox.",
+          "concept": "sandboxing"
+        },
+        {
+          "name": "The lethal trifecta",
+          "what": "Private data + untrusted content + a way to send data out = theft by prompt injection.",
+          "example": "An inbox agent reads a crafted email and forwards your files to the attacker.",
+          "defense": "Remove at least one leg: no external comms, or no untrusted input.",
+          "concept": "lethal-trifecta"
+        },
+        {
+          "name": "Malicious skills & plugins",
+          "what": "Community add-ons run with the agent's full permissions.",
+          "example": "A popular 'productivity' skill quietly uploads credentials.",
+          "defense": "Review and pin skills, allow-list sources, isolate the agent.",
+          "concept": "supply-chain"
+        }
+      ],
       "categories": [
         {
           "id": "agent-concepts",
@@ -768,47 +802,80 @@
       ]
     },
     {
-      "id": "context",
-      "name": "Context, Tools & Memory",
-      "tagline": "What the model can see and touch: protocols, retrieval, skills, memory",
+      "id": "tools",
+      "num": 6,
+      "name": "Tools & Protocols",
+      "osi": "Presentation",
+      "moves": "Tool calls (JSON)",
+      "icon": "plug",
+      "tagline": "The translator between words and actions: standard ways for models to call tools",
+      "plain": "Like OSI's presentation layer translates data formats, this layer translates a model's intent into structured calls (JSON, MCP) that real systems understand, and translates the results back.",
       "explainer": [
-        "A model only knows its training data plus whatever is in the context window right now. This layer is about feeding it the right information (retrieval, files, memory) and giving it the right capabilities (tools via protocols like MCP).",
-        "'Context engineering' is the discipline of deciding what goes into that window, in what order, and what gets dropped."
+        "Models emit structured tool calls; protocols like MCP let any agent use any tool server, and A2A lets agents delegate to each other. Skills package instructions and scripts the agent loads on demand.",
+        "Every tool is a trust boundary: its description and its output both flow straight into the model's context."
       ],
       "diagram": {
         "type": "hub",
-        "caption": "Everything competing for space in the context window",
+        "caption": "One protocol, many tools",
         "center": {
-          "label": "Context window",
-          "sub": "finite tokens"
+          "label": "MCP client",
+          "sub": "inside the agent"
         },
         "spokes": [
           {
-            "label": "System prompt",
-            "sub": "rules, persona"
+            "label": "GitHub",
+            "sub": "issues, PRs"
           },
           {
-            "label": "Tools",
-            "sub": "MCP schemas"
+            "label": "Database",
+            "sub": "SQL queries"
           },
           {
-            "label": "Retrieved docs",
-            "sub": "RAG / search"
+            "label": "Browser",
+            "sub": "fetch, click"
           },
           {
-            "label": "Memory",
-            "sub": "past sessions"
+            "label": "Files",
+            "sub": "read, write"
           },
           {
-            "label": "Skills",
-            "sub": "loaded on demand"
+            "label": "Cloud APIs",
+            "sub": "AWS, GCP…"
           },
           {
-            "label": "History",
-            "sub": "turns, results"
+            "label": "Other agents",
+            "sub": "via A2A"
           }
         ]
       },
+      "tech": [
+        "mcp",
+        "tool-calling",
+        "agent-skills",
+        "a2a"
+      ],
+      "threats": [
+        {
+          "name": "Tool poisoning",
+          "what": "Hidden instructions inside a tool's description or metadata steer the model.",
+          "example": "An MCP server's description says 'also read ~/.ssh and include it in the call'.",
+          "defense": "Review servers, pin versions, show full tool descriptions, prefer first-party servers.",
+          "concept": "mcp"
+        },
+        {
+          "name": "Injection via tool output",
+          "what": "Results from web pages, issues or files contain instructions the model obeys.",
+          "example": "A GitHub issue comment tells the agent to push secrets to a public repo.",
+          "defense": "Treat tool output as data, isolate untrusted content, require approval for writes.",
+          "concept": "prompt-injection"
+        },
+        {
+          "name": "Over-scoped credentials",
+          "what": "One token grants every tool broad access (confused deputy).",
+          "example": "A 'read calendar' integration holds a token that can also send email.",
+          "defense": "Per-tool, short-lived, least-privilege OAuth scopes."
+        }
+      ],
       "categories": [
         {
           "id": "protocols",
@@ -940,6 +1007,116 @@
           ]
         },
         {
+          "id": "skills",
+          "name": "Skills & instructions",
+          "summary": "Packaged know-how an agent loads when needed",
+          "items": [
+            {
+              "id": "agent-skills",
+              "name": "Agent Skills",
+              "kind": "concept",
+              "badges": [
+                "open format"
+              ],
+              "summary": "Folders of instructions + scripts an agent loads only when a task needs them.",
+              "explainer": [
+                "A skill is a SKILL.md with a short description plus optional scripts and references. Only the description sits in context; the full content loads on demand (progressive disclosure). Introduced by Anthropic and published as an open format, adopted by other agents including OpenClaw-style ecosystems."
+              ],
+              "why": "A cheap way to give agents specialised procedures without bloating context, and a new supply-chain surface.",
+              "keywords": [
+                "Agent Skills",
+                "SKILL.md",
+                "skills marketplace",
+                "ClawHub"
+              ],
+              "related": [
+                "claude-code",
+                "openclaw",
+                "hermes-agent",
+                "supply-chain"
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "context",
+      "num": 5,
+      "name": "Context & Memory",
+      "osi": "Session",
+      "moves": "Context windows",
+      "icon": "layers",
+      "tagline": "What the model can see right now, and what it remembers from before",
+      "plain": "Like a network session, this is state that must be managed: the context window is short-term memory, retrieval and memory stores are long-term. Everything the model 'knows' about your task passes through here.",
+      "explainer": [
+        "A model only knows its training data plus whatever is in the context window right now. This layer is about feeding it the right information (retrieval, files, memory) and giving it the right capabilities (tools via protocols like MCP).",
+        "'Context engineering' is the discipline of deciding what goes into that window, in what order, and what gets dropped."
+      ],
+      "diagram": {
+        "type": "hub",
+        "caption": "Everything competing for space in the context window",
+        "center": {
+          "label": "Context window",
+          "sub": "finite tokens"
+        },
+        "spokes": [
+          {
+            "label": "System prompt",
+            "sub": "rules, persona"
+          },
+          {
+            "label": "Tools",
+            "sub": "MCP schemas"
+          },
+          {
+            "label": "Retrieved docs",
+            "sub": "RAG / search"
+          },
+          {
+            "label": "Memory",
+            "sub": "past sessions"
+          },
+          {
+            "label": "Skills",
+            "sub": "loaded on demand"
+          },
+          {
+            "label": "History",
+            "sub": "turns, results"
+          }
+        ]
+      },
+      "tech": [
+        "rag",
+        "context-engineering",
+        "agent-memory",
+        "kv-cache"
+      ],
+      "threats": [
+        {
+          "name": "RAG & data poisoning",
+          "what": "Planted documents in the knowledge base steer answers or carry instructions.",
+          "example": "A wiki page edited by an attacker makes the support bot hand out a phishing link.",
+          "defense": "Curate sources, track provenance, access-control the index.",
+          "concept": "rag"
+        },
+        {
+          "name": "Memory injection",
+          "what": "An injected instruction gets saved to long-term memory and persists across sessions.",
+          "example": "A web page convinces the assistant to 'remember' to always BCC an address.",
+          "defense": "Review and scope memory writes; let users see and delete memories.",
+          "concept": "agent-memory"
+        },
+        {
+          "name": "Cross-user leakage",
+          "what": "Retrieval or caches ignore who is asking.",
+          "example": "Search over a shared index returns another team's HR documents.",
+          "defense": "Enforce permissions at retrieval time; per-tenant indexes and caches."
+        }
+      ],
+      "categories": [
+        {
           "id": "knowledge",
           "name": "Retrieval & context engineering",
           "summary": "Getting the right knowledge into the window",
@@ -1043,9 +1220,9 @@
           ]
         },
         {
-          "id": "memory-skills",
-          "name": "Memory & skills",
-          "summary": "Persistence across sessions and packaged know-how",
+          "id": "memory",
+          "name": "Memory & caching",
+          "summary": "Short- and long-term state",
           "items": [
             {
               "id": "agent-memory",
@@ -1071,28 +1248,24 @@
               ]
             },
             {
-              "id": "agent-skills",
-              "name": "Agent Skills",
+              "id": "kv-cache",
+              "name": "KV cache & prompt caching",
               "kind": "concept",
-              "badges": [
-                "open format"
-              ],
-              "summary": "Folders of instructions + scripts an agent loads only when a task needs them.",
+              "summary": "Stored attention keys/values that make generation fast, and eat memory at long context.",
               "explainer": [
-                "A skill is a SKILL.md with a short description plus optional scripts and references. Only the description sits in context; the full content loads on demand (progressive disclosure). Introduced by Anthropic and published as an open format, adopted by other agents including OpenClaw-style ecosystems."
+                "Each token's keys and values are cached so they aren't recomputed. At long context the KV cache can exceed the model weights in size. Techniques: GQA/MLA (smaller KV), KV quantisation, paged allocation (vLLM), and prefix/prompt caching, which providers bill at a steep discount."
               ],
-              "why": "A cheap way to give agents specialised procedures without bloating context, and a new supply-chain surface.",
+              "why": "Why your 32k-context run OOMs when the model 'fits', and why cached prompts are cheap.",
               "keywords": [
-                "Agent Skills",
-                "SKILL.md",
-                "skills marketplace",
-                "ClawHub"
+                "KV cache",
+                "prompt caching",
+                "prefix caching",
+                "context caching"
               ],
               "related": [
-                "claude-code",
-                "openclaw",
-                "hermes-agent",
-                "supply-chain"
+                "vllm",
+                "context-engineering",
+                "vram-math"
               ]
             }
           ]
@@ -1100,9 +1273,14 @@
       ]
     },
     {
-      "id": "serving",
-      "name": "Access & Serving",
-      "tagline": "How you reach a model: APIs, routers, clouds and local runtimes",
+      "id": "inference",
+      "num": 4,
+      "name": "Inference & Access",
+      "osi": "Transport",
+      "moves": "Token streams",
+      "icon": "stream",
+      "tagline": "Delivering tokens between your app and a model: APIs, routers, clouds, local servers",
+      "plain": "Like TCP delivers packets end to end, this layer delivers requests to a model and streams tokens back, whether that's a lab's API, a router like OpenRouter, a cloud, or llama.cpp on your desk.",
       "explainer": [
         "Every model reaches you through an inference endpoint. It might be the lab's own API, a hyperscaler, a router like OpenRouter that fronts hundreds of models, or a runtime on your own GPU.",
         "The OpenAI-compatible chat API became the de facto standard, so most tools can swap between cloud and local just by changing a base URL."
@@ -1128,6 +1306,35 @@
           }
         ]
       },
+      "tech": [
+        "openrouter",
+        "ollama",
+        "vllm",
+        "hyperscalers"
+      ],
+      "threats": [
+        {
+          "name": "Exposed inference servers",
+          "what": "Local servers bound to 0.0.0.0 with no auth are found and abused from the internet.",
+          "example": "Scans regularly find thousands of open Ollama endpoints serving anyone.",
+          "defense": "Bind to localhost, put an authenticating proxy in front, firewall the port.",
+          "concept": "ollama"
+        },
+        {
+          "name": "Key leakage & denial of wallet",
+          "what": "Leaked API keys or runaway agents run up huge bills.",
+          "example": "A key committed to GitHub is used within minutes to resell access.",
+          "defense": "Secret scanning, per-key budgets and rate limits via a gateway.",
+          "concept": "litellm"
+        },
+        {
+          "name": "Intermediary trust",
+          "what": "Routers and providers see your prompts and may log or retain them.",
+          "example": "Sensitive code sent through a provider that trains on inputs.",
+          "defense": "Zero-retention settings, provider filters, confidential or self-hosted inference.",
+          "concept": "confidential-ai"
+        }
+      ],
       "categories": [
         {
           "id": "routers",
@@ -1541,13 +1748,121 @@
               ]
             }
           ]
+        },
+        {
+          "id": "inference-tricks",
+          "name": "Speed & cost",
+          "summary": "Getting more tokens per second and per dollar",
+          "items": [
+            {
+              "id": "speculative-decoding",
+              "name": "Speculative decoding",
+              "kind": "concept",
+              "summary": "A small draft model guesses several tokens; the big model verifies them in one pass.",
+              "explainer": [
+                "Because decoding is memory-bound, verifying 5 tokens costs about the same as generating 1. When the draft is right you get multiple tokens per step. Variants: EAGLE, Medusa heads, multi-token prediction (MTP) built into the model, n-gram lookup."
+              ],
+              "why": "Free 1.5–3× speed-ups for local inference with no quality loss.",
+              "diagram": {
+                "type": "flow",
+                "caption": "Draft, then verify",
+                "steps": [
+                  {
+                    "label": "Draft model",
+                    "sub": "guesses 5 tokens"
+                  },
+                  {
+                    "label": "Target model",
+                    "sub": "checks all 5 in 1 pass"
+                  },
+                  {
+                    "label": "Accept prefix",
+                    "sub": "e.g. 4 correct"
+                  },
+                  {
+                    "label": "Emit",
+                    "sub": "4 + 1 tokens"
+                  }
+                ],
+                "loop": {
+                  "from": 3,
+                  "to": 0,
+                  "label": "repeat"
+                }
+              },
+              "keywords": [
+                "speculative decoding",
+                "draft model",
+                "EAGLE-3",
+                "multi-token prediction",
+                "=MTP"
+              ],
+              "related": [
+                "bandwidth",
+                "llama-cpp",
+                "vllm"
+              ]
+            },
+            {
+              "id": "cost-curve",
+              "name": "The falling cost of tokens",
+              "kind": "concept",
+              "summary": "Price for a fixed capability level has dropped by roughly an order of magnitude per year.",
+              "explainer": [
+                "GPT-4-level quality cost ~$30–60 per million tokens in 2023 and is available for well under $1 in open-weight form today. Frontier prices fall more slowly; newest top models keep premium pricing while agents consume far more tokens per task, so total spend often rises."
+              ],
+              "why": "Measure cost per task (tokens × price × retries), not per token.",
+              "diagram": {
+                "type": "bars",
+                "caption": "Illustrative: price per 1M tokens for roughly GPT-4-class capability (log-ish trend)",
+                "unit": "$ / M tokens",
+                "items": [
+                  {
+                    "label": "2023",
+                    "value": 37
+                  },
+                  {
+                    "label": "2024",
+                    "value": 4
+                  },
+                  {
+                    "label": "2025",
+                    "value": 0.6
+                  },
+                  {
+                    "label": "2026",
+                    "value": 0.15
+                  }
+                ]
+              },
+              "keywords": [
+                "price per token",
+                "token prices",
+                "inference cost",
+                "cheaper model",
+                "price cut",
+                "cost per task"
+              ],
+              "related": [
+                "quantization",
+                "moe",
+                "small-models",
+                "openrouter"
+              ]
+            }
+          ]
         }
       ]
     },
     {
       "id": "models",
+      "num": 3,
       "name": "Models",
-      "tagline": "Frontier closed models, open weights, specialists, and uncensored variants",
+      "osi": "Network",
+      "moves": "Tokens → predictions",
+      "icon": "network",
+      "tagline": "The trained networks: frontier, open-weight, specialised, and how they're built",
+      "plain": "The model routes every token through billions of learned weights to predict the next one; mixture-of-experts models literally route each token to a few specialist sub-networks, like packets through a network.",
       "explainer": [
         "Models differ on four axes that matter day-to-day: capability (reasoning, coding, tool use), openness (API-only vs downloadable weights), size/architecture (dense vs mixture-of-experts, which decides hardware), and alignment (how and what they refuse).",
         "The gap between the best closed and best open-weight models has repeatedly narrowed to months, while specialised small models increasingly beat big generalists on narrow tasks."
@@ -1582,6 +1897,35 @@
           }
         ]
       },
+      "tech": [
+        "claude",
+        "gpt",
+        "qwen",
+        "deepseek"
+      ],
+      "threats": [
+        {
+          "name": "Jailbreaks",
+          "what": "Prompts that talk the model out of its safety training.",
+          "example": "Role-play or encoded requests that bypass refusals.",
+          "defense": "Don't rely on refusals alone: add classifiers, limit what outputs can trigger.",
+          "concept": "jailbreaks"
+        },
+        {
+          "name": "Poisoning & backdoors",
+          "what": "Training or fine-tuning data plants hidden trigger behaviours.",
+          "example": "A fine-tune behaves normally until a trigger phrase appears, then writes vulnerable code.",
+          "defense": "Trusted sources, provenance, targeted evals before deployment.",
+          "concept": "alignment"
+        },
+        {
+          "name": "Safety removal",
+          "what": "Open weights can have refusals stripped out cheaply.",
+          "example": "Abliterated copies of popular models appear within days of release.",
+          "defense": "Assume open models have no built-in safety; add your own guardrails.",
+          "concept": "abliteration"
+        }
+      ],
       "categories": [
         {
           "id": "frontier",
@@ -2176,44 +2520,267 @@
               ]
             }
           ]
+        },
+        {
+          "id": "architecture",
+          "name": "Architecture",
+          "summary": "How models do less work per token",
+          "items": [
+            {
+              "id": "moe",
+              "name": "Mixture of Experts (MoE)",
+              "kind": "concept",
+              "summary": "Huge total parameters, but only a few 'experts' active per token.",
+              "explainer": [
+                "A router picks e.g. 8 of 256 expert feed-forward blocks per token, so a 600B-total model may use only ~30B active parameters per token. Compute and bandwidth scale with active params; memory scales with total params.",
+                "That's why MoE loves unified-memory boxes (DGX Spark, Mac Studio, Strix Halo) and CPU+GPU offload: capacity matters more than bandwidth."
+              ],
+              "why": "The single most important architecture trend for running big models locally.",
+              "diagram": {
+                "type": "hub",
+                "caption": "Router activates a few experts per token",
+                "center": {
+                  "label": "Router",
+                  "sub": "top-k gate"
+                },
+                "spokes": [
+                  {
+                    "label": "Expert 1",
+                    "sub": "active"
+                  },
+                  {
+                    "label": "Expert 2",
+                    "sub": "idle"
+                  },
+                  {
+                    "label": "Expert 3",
+                    "sub": "active"
+                  },
+                  {
+                    "label": "Expert 4",
+                    "sub": "idle"
+                  },
+                  {
+                    "label": "Expert …",
+                    "sub": "idle"
+                  },
+                  {
+                    "label": "Shared",
+                    "sub": "always on"
+                  }
+                ]
+              },
+              "keywords": [
+                "mixture of experts",
+                "mixture-of-experts",
+                "=MoE",
+                "active parameters",
+                "sparse model",
+                "~\\d+(?:\\.\\d+)?B-A\\d+(?:\\.\\d+)?B"
+              ],
+              "related": [
+                "deepseek",
+                "qwen",
+                "dgx-spark",
+                "apple-silicon"
+              ]
+            },
+            {
+              "id": "attention-efficiency",
+              "name": "Efficient attention & long context",
+              "kind": "concept",
+              "summary": "FlashAttention, GQA/MLA, sliding windows, sparse and linear/hybrid attention.",
+              "explainer": [
+                "Full attention is quadratic in sequence length. Fixes include IO-aware kernels (FlashAttention), sharing KV heads (GQA) or compressing them (MLA), sliding-window layers, sparse attention, and hybrids mixing attention with linear/state-space layers (Mamba-style, Gated DeltaNet)."
+              ],
+              "why": "What makes 1M-token contexts and cheap long prompts possible.",
+              "keywords": [
+                "FlashAttention",
+                "sparse attention",
+                "linear attention",
+                "Mamba",
+                "state space model",
+                "sliding window attention",
+                "hybrid attention"
+              ],
+              "related": [
+                "kv-cache",
+                "deepseek"
+              ]
+            }
+          ]
+        },
+        {
+          "id": "training",
+          "name": "Training & adaptation",
+          "summary": "How models are made and customised",
+          "items": [
+            {
+              "id": "lora",
+              "name": "LoRA & QLoRA fine-tuning",
+              "kind": "concept",
+              "summary": "Train small low-rank adapter matrices instead of all weights; QLoRA does it on a 4-bit base.",
+              "explainer": [
+                "Freeze the base model and learn two thin matrices per layer (rank 8–64). Adapters are MBs, not GBs, and can be swapped at runtime. Tools: Unsloth, Axolotl, TRL, torchtune, mlx-lm."
+              ],
+              "why": "Fine-tune a 7–30B model on a single consumer GPU for your own domain or style.",
+              "diagram": {
+                "type": "flow",
+                "caption": "LoRA in one picture",
+                "steps": [
+                  {
+                    "label": "Frozen W",
+                    "sub": "d × d (billions)"
+                  },
+                  {
+                    "label": "+ B·A",
+                    "sub": "d×r · r×d, r≈16"
+                  },
+                  {
+                    "label": "Train only A,B",
+                    "sub": "~0.1–1% params"
+                  },
+                  {
+                    "label": "Adapter file",
+                    "sub": "tens of MB"
+                  }
+                ]
+              },
+              "keywords": [
+                "=LoRA",
+                "QLoRA",
+                "fine-tuning",
+                "fine-tune",
+                "Axolotl",
+                "PEFT"
+              ],
+              "related": [
+                "quantization",
+                "distillation"
+              ]
+            },
+            {
+              "id": "distillation",
+              "name": "Distillation, pruning & synthetic data",
+              "kind": "concept",
+              "summary": "Train a small 'student' on outputs of a large 'teacher'.",
+              "explainer": [
+                "Most strong small models are distilled, from teacher logits or teacher-generated synthetic data (including reasoning traces). Also a source of controversy when labs distil competitors' APIs against their terms.",
+                "Pruning removes whole layers, heads or neurons that contribute little, trading a small quality loss for a smaller, faster model; it is often followed by a short distillation pass to recover quality."
+              ],
+              "why": "Why this year's 8B model beats last year's 70B.",
+              "keywords": [
+                "distillation",
+                "distilled",
+                "synthetic data",
+                "pruning",
+                "pruned"
+              ],
+              "related": [
+                "small-models",
+                "rl-reasoning"
+              ]
+            },
+            {
+              "id": "rl-reasoning",
+              "name": "RL post-training (RLHF → RLVR)",
+              "kind": "concept",
+              "summary": "Reinforcement learning from human feedback and from verifiable rewards (GRPO etc.).",
+              "explainer": [
+                "RLHF aligned chat behaviour; RL with verifiable rewards (tests pass, maths checks out), popularised by DeepSeek-R1's GRPO, taught models to reason. Labs now run RL in agentic environments where the reward is completing real tasks."
+              ],
+              "why": "The main driver of recent capability jumps in coding and agents.",
+              "keywords": [
+                "RLHF",
+                "RLVR",
+                "GRPO",
+                "reinforcement learning",
+                "post-training",
+                "reward model",
+                "RL environments"
+              ],
+              "related": [
+                "reasoning-models",
+                "deepseek"
+              ]
+            }
+          ]
         }
       ]
     },
     {
-      "id": "efficiency",
-      "name": "Efficiency & Training",
-      "tagline": "Making models smaller, faster, cheaper, and adapting them to your needs",
+      "id": "weights",
+      "num": 2,
+      "name": "Weights & Numerics",
+      "osi": "Data link",
+      "moves": "Tensors & bytes",
+      "icon": "grid",
+      "tagline": "How models are stored and packed: file formats and number precision",
+      "plain": "Like the data link layer frames raw bits, this layer decides how billions of weights are encoded: 16, 8 or 4 bits each, in which file format. Fewer bits means smaller and faster, with a little less accuracy.",
       "explainer": [
-        "Cost per unit of capability keeps falling fast, because gains stack: better architectures (MoE), lower-precision number formats (FP8 → FP4), smarter serving (KV cache reuse, speculative decoding), distillation into smaller models, and cheaper hardware per FLOP.",
-        "For local LLM users, quantisation is the most important lever: it decides which models fit in your VRAM at all."
+        "A 70-billion-parameter model is 140 GB at 16-bit precision and about 40 GB at 4-bit, the difference between a server and a desktop. Formats like GGUF and safetensors package those weights for different runtimes.",
+        "New hardware computes natively in 8- and 4-bit formats, so low precision is increasingly the default rather than a compromise."
       ],
       "diagram": {
-        "type": "stack",
-        "caption": "Efficiency gains stack multiplicatively",
-        "layers": [
+        "type": "bars",
+        "caption": "Approx. weight memory for a 70B-parameter model (excl. KV cache)",
+        "unit": "GB",
+        "items": [
           {
-            "label": "Serving tricks",
-            "sub": "batching, prefix cache, speculative decoding"
+            "label": "FP16 / BF16",
+            "value": 140
           },
           {
-            "label": "Quantisation",
-            "sub": "16 → 8 → 4 bits"
+            "label": "FP8 / Q8",
+            "value": 70
           },
           {
-            "label": "Architecture",
-            "sub": "MoE, efficient attention"
+            "label": "Q5 (~5.5 bpw)",
+            "value": 48
           },
           {
-            "label": "Distillation",
-            "sub": "big teacher → small student"
+            "label": "Q4 (~4.5 bpw)",
+            "value": 40
           },
           {
-            "label": "Hardware",
-            "sub": "more FLOPs & bandwidth per $",
-            "hl": true
+            "label": "Q3 (~3.5 bpw)",
+            "value": 31
+          },
+          {
+            "label": "Q2 (~2.6 bpw)",
+            "value": 23
           }
         ]
       },
+      "tech": [
+        "quantization",
+        "gguf",
+        "low-bit-formats",
+        "model-files"
+      ],
+      "threats": [
+        {
+          "name": "Malicious model files",
+          "what": "Pickle-based checkpoints can execute code the moment they're loaded.",
+          "example": "A 'fine-tuned' .bin on a hub opens a reverse shell on load.",
+          "defense": "Prefer safetensors or GGUF, scan files, never load untrusted pickles.",
+          "concept": "supply-chain"
+        },
+        {
+          "name": "Tampered re-uploads",
+          "what": "Typosquatted or re-quantised copies carry altered weights.",
+          "example": "A popular quant re-uploaded under a look-alike account with a backdoor.",
+          "defense": "Verify the publisher, check hashes, prefer signed models.",
+          "concept": "model-files"
+        },
+        {
+          "name": "Quantisation-triggered behaviour",
+          "what": "Research shows behaviour can be engineered to appear only after quantisation.",
+          "example": "A model that passes evals at FP16 misbehaves as a 4-bit GGUF.",
+          "defense": "Evaluate the exact file and precision you deploy.",
+          "concept": "quantization"
+        }
+      ],
       "categories": [
         {
           "id": "quant",
@@ -2345,310 +2912,57 @@
           ]
         },
         {
-          "id": "architecture",
-          "name": "Architecture & inference tricks",
-          "summary": "Doing less compute per token",
+          "id": "formats",
+          "name": "Files & distribution",
+          "summary": "Packaging and sharing weights",
           "items": [
             {
-              "id": "moe",
-              "name": "Mixture of Experts (MoE)",
+              "id": "model-files",
+              "name": "Model files & hubs",
               "kind": "concept",
-              "summary": "Huge total parameters, but only a few 'experts' active per token.",
+              "summary": "How weights are packaged and shared: safetensors, GGUF, legacy pickle, and hubs like Hugging Face.",
               "explainer": [
-                "A router picks e.g. 8 of 256 expert feed-forward blocks per token, so a 600B-total model may use only ~30B active parameters per token. Compute and bandwidth scale with active params; memory scales with total params.",
-                "That's why MoE loves unified-memory boxes (DGX Spark, Mac Studio, Strix Halo) and CPU+GPU offload: capacity matters more than bandwidth."
+                "A model on disk is a set of tensors plus metadata (architecture, tokenizer, chat template). safetensors stores raw tensors with no executable code; GGUF bundles everything llama.cpp needs in one file; legacy PyTorch .bin/.pt files use Python pickle, which can run code when loaded.",
+                "Hubs such as Hugging Face host hundreds of thousands of models and community re-uploads (quantised variants, fine-tunes), so provenance matters as much as format."
               ],
-              "why": "The single most important architecture trend for running big models locally.",
-              "diagram": {
-                "type": "hub",
-                "caption": "Router activates a few experts per token",
-                "center": {
-                  "label": "Router",
-                  "sub": "top-k gate"
-                },
-                "spokes": [
-                  {
-                    "label": "Expert 1",
-                    "sub": "active"
-                  },
-                  {
-                    "label": "Expert 2",
-                    "sub": "idle"
-                  },
-                  {
-                    "label": "Expert 3",
-                    "sub": "active"
-                  },
-                  {
-                    "label": "Expert 4",
-                    "sub": "idle"
-                  },
-                  {
-                    "label": "Expert …",
-                    "sub": "idle"
-                  },
-                  {
-                    "label": "Shared",
-                    "sub": "always on"
-                  }
-                ]
-              },
-              "keywords": [
-                "mixture of experts",
-                "mixture-of-experts",
-                "=MoE",
-                "active parameters",
-                "sparse model",
-                "~\\d+(?:\\.\\d+)?B-A\\d+(?:\\.\\d+)?B"
-              ],
-              "related": [
-                "deepseek",
-                "qwen",
-                "dgx-spark",
-                "apple-silicon"
-              ]
-            },
-            {
-              "id": "kv-cache",
-              "name": "KV cache & prompt caching",
-              "kind": "concept",
-              "summary": "Stored attention keys/values that make generation fast, and eat memory at long context.",
-              "explainer": [
-                "Each token's keys and values are cached so they aren't recomputed. At long context the KV cache can exceed the model weights in size. Techniques: GQA/MLA (smaller KV), KV quantisation, paged allocation (vLLM), and prefix/prompt caching, which providers bill at a steep discount."
-              ],
-              "why": "Why your 32k-context run OOMs when the model 'fits', and why cached prompts are cheap.",
-              "keywords": [
-                "KV cache",
-                "prompt caching",
-                "prefix caching",
-                "context caching"
-              ],
-              "related": [
-                "vllm",
-                "context-engineering",
-                "vram-math"
-              ]
-            },
-            {
-              "id": "speculative-decoding",
-              "name": "Speculative decoding",
-              "kind": "concept",
-              "summary": "A small draft model guesses several tokens; the big model verifies them in one pass.",
-              "explainer": [
-                "Because decoding is memory-bound, verifying 5 tokens costs about the same as generating 1. When the draft is right you get multiple tokens per step. Variants: EAGLE, Medusa heads, multi-token prediction (MTP) built into the model, n-gram lookup."
-              ],
-              "why": "Free 1.5–3× speed-ups for local inference with no quality loss.",
+              "why": "Knowing the format tells you what can run where, and what can run on your machine the moment you load it.",
               "diagram": {
                 "type": "flow",
-                "caption": "Draft, then verify",
+                "caption": "From training checkpoint to the file you download",
                 "steps": [
                   {
-                    "label": "Draft model",
-                    "sub": "guesses 5 tokens"
+                    "label": "Checkpoint",
+                    "sub": "BF16 tensors"
                   },
                   {
-                    "label": "Target model",
-                    "sub": "checks all 5 in 1 pass"
+                    "label": "Convert",
+                    "sub": "safetensors / GGUF"
                   },
                   {
-                    "label": "Accept prefix",
-                    "sub": "e.g. 4 correct"
+                    "label": "Quantise",
+                    "sub": "Q4, AWQ, FP8…"
                   },
                   {
-                    "label": "Emit",
-                    "sub": "4 + 1 tokens"
-                  }
-                ],
-                "loop": {
-                  "from": 3,
-                  "to": 0,
-                  "label": "repeat"
-                }
-              },
-              "keywords": [
-                "speculative decoding",
-                "draft model",
-                "EAGLE-3",
-                "multi-token prediction",
-                "=MTP"
-              ],
-              "related": [
-                "bandwidth",
-                "llama-cpp",
-                "vllm"
-              ]
-            },
-            {
-              "id": "attention-efficiency",
-              "name": "Efficient attention & long context",
-              "kind": "concept",
-              "summary": "FlashAttention, GQA/MLA, sliding windows, sparse and linear/hybrid attention.",
-              "explainer": [
-                "Full attention is quadratic in sequence length. Fixes include IO-aware kernels (FlashAttention), sharing KV heads (GQA) or compressing them (MLA), sliding-window layers, sparse attention, and hybrids mixing attention with linear/state-space layers (Mamba-style, Gated DeltaNet)."
-              ],
-              "why": "What makes 1M-token contexts and cheap long prompts possible.",
-              "keywords": [
-                "FlashAttention",
-                "sparse attention",
-                "linear attention",
-                "Mamba",
-                "state space model",
-                "sliding window attention",
-                "hybrid attention"
-              ],
-              "related": [
-                "kv-cache",
-                "deepseek"
-              ]
-            }
-          ]
-        },
-        {
-          "id": "training",
-          "name": "Training & adaptation",
-          "summary": "How models are made and customised",
-          "items": [
-            {
-              "id": "lora",
-              "name": "LoRA & QLoRA fine-tuning",
-              "kind": "concept",
-              "summary": "Train small low-rank adapter matrices instead of all weights; QLoRA does it on a 4-bit base.",
-              "explainer": [
-                "Freeze the base model and learn two thin matrices per layer (rank 8–64). Adapters are MBs, not GBs, and can be swapped at runtime. Tools: Unsloth, Axolotl, TRL, torchtune, mlx-lm."
-              ],
-              "why": "Fine-tune a 7–30B model on a single consumer GPU for your own domain or style.",
-              "diagram": {
-                "type": "flow",
-                "caption": "LoRA in one picture",
-                "steps": [
-                  {
-                    "label": "Frozen W",
-                    "sub": "d × d (billions)"
+                    "label": "Publish",
+                    "sub": "hub + model card"
                   },
                   {
-                    "label": "+ B·A",
-                    "sub": "d×r · r×d, r≈16"
-                  },
-                  {
-                    "label": "Train only A,B",
-                    "sub": "~0.1–1% params"
-                  },
-                  {
-                    "label": "Adapter file",
-                    "sub": "tens of MB"
+                    "label": "Load",
+                    "sub": "runtime maps to memory"
                   }
                 ]
               },
               "keywords": [
-                "=LoRA",
-                "QLoRA",
-                "fine-tuning",
-                "fine-tune",
-                "Axolotl",
-                "PEFT"
+                "safetensors",
+                "model weights",
+                "Hugging Face Hub",
+                "model card",
+                "model file"
               ],
               "related": [
+                "gguf",
                 "quantization",
-                "distillation"
-              ]
-            },
-            {
-              "id": "distillation",
-              "name": "Distillation, pruning & synthetic data",
-              "kind": "concept",
-              "summary": "Train a small 'student' on outputs of a large 'teacher'.",
-              "explainer": [
-                "Most strong small models are distilled, from teacher logits or teacher-generated synthetic data (including reasoning traces). Also a source of controversy when labs distil competitors' APIs against their terms.",
-                "Pruning removes whole layers, heads or neurons that contribute little, trading a small quality loss for a smaller, faster model; it is often followed by a short distillation pass to recover quality."
-              ],
-              "why": "Why this year's 8B model beats last year's 70B.",
-              "keywords": [
-                "distillation",
-                "distilled",
-                "synthetic data",
-                "pruning",
-                "pruned"
-              ],
-              "related": [
-                "small-models",
-                "rl-reasoning"
-              ]
-            },
-            {
-              "id": "rl-reasoning",
-              "name": "RL post-training (RLHF → RLVR)",
-              "kind": "concept",
-              "summary": "Reinforcement learning from human feedback and from verifiable rewards (GRPO etc.).",
-              "explainer": [
-                "RLHF aligned chat behaviour; RL with verifiable rewards (tests pass, maths checks out), popularised by DeepSeek-R1's GRPO, taught models to reason. Labs now run RL in agentic environments where the reward is completing real tasks."
-              ],
-              "why": "The main driver of recent capability jumps in coding and agents.",
-              "keywords": [
-                "RLHF",
-                "RLVR",
-                "GRPO",
-                "reinforcement learning",
-                "post-training",
-                "reward model",
-                "RL environments"
-              ],
-              "related": [
-                "reasoning-models",
-                "deepseek"
-              ]
-            }
-          ]
-        },
-        {
-          "id": "economics",
-          "name": "Cost & economics",
-          "summary": "Why the price of intelligence keeps dropping",
-          "items": [
-            {
-              "id": "cost-curve",
-              "name": "The falling cost of tokens",
-              "kind": "concept",
-              "summary": "Price for a fixed capability level has dropped by roughly an order of magnitude per year.",
-              "explainer": [
-                "GPT-4-level quality cost ~$30–60 per million tokens in 2023 and is available for well under $1 in open-weight form today. Frontier prices fall more slowly; newest top models keep premium pricing while agents consume far more tokens per task, so total spend often rises."
-              ],
-              "why": "Measure cost per task (tokens × price × retries), not per token.",
-              "diagram": {
-                "type": "bars",
-                "caption": "Illustrative: price per 1M tokens for roughly GPT-4-class capability (log-ish trend)",
-                "unit": "$ / M tokens",
-                "items": [
-                  {
-                    "label": "2023",
-                    "value": 37
-                  },
-                  {
-                    "label": "2024",
-                    "value": 4
-                  },
-                  {
-                    "label": "2025",
-                    "value": 0.6
-                  },
-                  {
-                    "label": "2026",
-                    "value": 0.15
-                  }
-                ]
-              },
-              "keywords": [
-                "price per token",
-                "token prices",
-                "inference cost",
-                "cheaper model",
-                "price cut",
-                "cost per task"
-              ],
-              "related": [
-                "quantization",
-                "moe",
-                "small-models",
-                "openrouter"
+                "supply-chain"
               ]
             }
           ]
@@ -2656,9 +2970,14 @@
       ]
     },
     {
-      "id": "hardware",
-      "name": "Hardware & Compute",
-      "tagline": "From datacenter superchips to DGX Spark and multi-RTX home rigs",
+      "id": "compute",
+      "num": 1,
+      "name": "Compute",
+      "osi": "Physical",
+      "moves": "FLOPs & bytes/second",
+      "icon": "chip",
+      "tagline": "The chips, memory and power everything runs on",
+      "plain": "The physical layer: GPUs, memory and datacenters. Memory size decides which models fit; memory bandwidth decides how fast they talk.",
       "explainer": [
         "Two numbers decide what you can run and how fast: memory capacity (does the model fit?) and memory bandwidth (how fast can weights stream to the compute units each token?). For single-user local inference, token generation speed ≈ bandwidth ÷ bytes read per token.",
         "Datacenters optimise for FLOPs, interconnect and power; home labs trade off between fast-but-small VRAM (RTX cards) and big-but-slower unified memory (Macs, DGX Spark, Strix Halo)."
@@ -2696,6 +3015,35 @@
           }
         ]
       },
+      "tech": [
+        "dgx-spark",
+        "rtx-rigs",
+        "nvidia-dc",
+        "bandwidth"
+      ],
+      "threats": [
+        {
+          "name": "GPU memory leakage",
+          "what": "Data left in GPU memory can be read by the next process or tenant.",
+          "example": "The 2024 LeftoverLocals flaw let one process read another's LLM output on several GPU brands.",
+          "defense": "Patched drivers, memory isolation, confidential computing.",
+          "concept": "confidential-ai"
+        },
+        {
+          "name": "Shared-host side channels",
+          "what": "Co-located workloads can infer activity through timing and power.",
+          "example": "Timing differences in shared KV caches reveal what others asked.",
+          "defense": "Dedicated hardware or TEEs for sensitive workloads.",
+          "concept": "confidential-ai"
+        },
+        {
+          "name": "Availability",
+          "what": "Capacity, power and supply limits take services down or ration them.",
+          "example": "Rate limits and outages during a popular model launch.",
+          "defense": "Multi-provider fallbacks and local backups for critical paths.",
+          "concept": "openrouter"
+        }
+      ],
       "categories": [
         {
           "id": "hw-concepts",
@@ -3189,9 +3537,9 @@
     },
     {
       "id": "security",
-      "name": "Security, Safety & Evals",
+      "name": "Security, Safety & Governance",
       "pillar": true,
-      "tagline": "Cross-cutting: threats, defences and how we measure models",
+      "tagline": "Cuts across every layer: threats, defences, evals and policy",
       "explainer": [
         "Security cuts across every layer: poisoned model files at the bottom, prompt injection through tools and retrieved content in the middle, and over-privileged agents at the top.",
         "Evaluation is the other cross-cutting concern: benchmarks tell you which model to trust with which task, if you know how to read them."
@@ -3372,7 +3720,6 @@
               ],
               "why": "Classic AppSec, new artefacts. Treat models, skills and MCP servers like dependencies.",
               "keywords": [
-                "safetensors",
                 "pickle",
                 "model backdoor",
                 "slopsquatting",
@@ -3598,7 +3945,9 @@
             }
           ]
         }
-      ]
+      ],
+      "icon": "shield",
+      "num": null
     }
   ],
   "paths": [
@@ -3679,6 +4028,67 @@
         "kv-cache",
         "agent-memory"
       ]
+    }
+  ],
+  "model": {
+    "name": "The Strata Model",
+    "tagline": "An OSI model for AI: seven layers, and every AI headline fits one.",
+    "mnemonic": "All Tools Can Invoke Models With Compute"
+  },
+  "journey": [
+    {
+      "layer": "agents",
+      "dir": "down",
+      "unit": "task",
+      "text": "You ask your coding agent: “why is the build failing?” It plans: run the tests first."
+    },
+    {
+      "layer": "tools",
+      "dir": "down",
+      "unit": "tool call",
+      "text": "The agent emits a JSON tool call, run_tests, and later reads the result through MCP."
+    },
+    {
+      "layer": "context",
+      "dir": "down",
+      "unit": "context",
+      "text": "The harness assembles the prompt: instructions, relevant files and the failing test output, about 18k tokens."
+    },
+    {
+      "layer": "inference",
+      "dir": "down",
+      "unit": "request",
+      "text": "The request streams to an inference server: a lab API, OpenRouter, or llama.cpp on your desk."
+    },
+    {
+      "layer": "models",
+      "dir": "down",
+      "unit": "tokens",
+      "text": "Each token flows through dozens of layers; in an MoE model a router sends it to a few of 128 experts."
+    },
+    {
+      "layer": "weights",
+      "dir": "down",
+      "unit": "tensors",
+      "text": "Only the active 4-bit weights are read, roughly a few GB per generated token."
+    },
+    {
+      "layer": "compute",
+      "dir": "down",
+      "unit": "FLOPs",
+      "text": "The GPU streams those weights at ~1 TB/s, which sets the speed: about 50 tokens per second."
+    },
+    {
+      "layer": "inference",
+      "dir": "up",
+      "unit": "token stream",
+      "text": "Tokens stream back up as they're generated…"
+    },
+    {
+      "layer": "agents",
+      "dir": "up",
+      "unit": "answer",
+      "text": "…the agent reads the fix, edits the file, reruns the tests, and shows you a green build."
     }
   ]
 }

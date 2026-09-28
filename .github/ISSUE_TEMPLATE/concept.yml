@@ -13,7 +13,7 @@ body:
     id: layer
     attributes:
       label: Layer
-      options: [Agents & Harnesses, "Context, Tools & Memory", Access & Serving, Models, Efficiency & Training, Hardware & Compute, "Security, Safety & Evals", Not sure]
+      options: ["L7 Agents & Apps", "L6 Tools & Protocols", "L5 Context & Memory", "L4 Inference & Access", "L3 Models", "L2 Weights & Numerics", "L1 Compute", "Security, Safety & Governance", Not sure]
   - type: textarea
     id: details
     attributes:

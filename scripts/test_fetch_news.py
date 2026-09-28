@@ -23,6 +23,26 @@ class ConceptMapTests(unittest.TestCase):
                     for r in i.get("related", []):
                         self.assertIn(r, known, f"{i['id']} -> unknown related id {r}")
 
+    def test_strata_model_layers(self):
+        concepts = json.loads((fn.DATA / "concepts.json").read_text())
+        known = {i["id"] for L in concepts["layers"] for c in L["categories"] for i in c["items"]}
+        layers = [L for L in concepts["layers"] if not L.get("pillar")]
+        self.assertEqual(sorted(L["num"] for L in layers), list(range(1, 8)), "exactly seven numbered layers")
+        layer_ids = {L["id"] for L in concepts["layers"]}
+        for L in layers:
+            for key in ("osi", "moves", "plain", "icon"):
+                self.assertTrue(L.get(key), f"{L['id']} missing {key}")
+            self.assertGreaterEqual(len(L.get("threats", [])), 2, f"{L['id']} needs threats")
+            for t in L.get("tech", []):
+                self.assertIn(t, known, f"{L['id']} tech -> {t}")
+            for th in L["threats"]:
+                for key in ("name", "what", "example", "defense"):
+                    self.assertTrue(th.get(key), f"{L['id']} threat missing {key}")
+                if th.get("concept"):
+                    self.assertIn(th["concept"], known, f"{L['id']} threat -> {th['concept']}")
+        for step in concepts.get("journey", []):
+            self.assertIn(step["layer"], layer_ids)
+
     def test_source_tags_exist(self):
         concepts = json.loads((fn.DATA / "concepts.json").read_text())
         known = {i["id"] for L in concepts["layers"] for c in L["categories"] for i in c["items"]}
@@ -93,7 +113,7 @@ class EndToEndTests(unittest.TestCase):
             spark = by_title["Running Qwen3.5 MoE on a DGX Spark at 40 tok/s"]
             self.assertEqual(spark["points"], 412)
             self.assertIn("dgx-spark", spark["tags"])
-            self.assertIn("hardware", spark["layers"])
+            self.assertIn("compute", spark["layers"])
             self.assertEqual(spark["discussion"], "https://news.ycombinator.com/item?id=1")
 
             arxiv = by_title["Abliteration Revisited"]

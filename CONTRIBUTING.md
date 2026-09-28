@@ -12,7 +12,9 @@ python3 -m unittest discover -s scripts     # must pass before you open a PR
 
 ## Adding or improving a concept
 
-Concepts live in `site/data/concepts.json` under `layers → categories → items`:
+Concepts live in `site/data/concepts.json` under `layers → categories → items`. Each of the seven layers also carries `num`, `osi`, `moves`, `plain`, `tech` (featured concept ids) and `threats` (`name`, `what`, `example`, `defense`, optional `concept`); keep threats concrete, with a real-world example and a practical defence.
+
+
 
 ```jsonc
 {
