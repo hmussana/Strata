@@ -7,13 +7,15 @@ on:
     - cron: "41 7 * * 1"   # Mondays
   workflow_dispatch:
 
-permissions:
-  contents: read
-  issues: write   # open/refresh the single map-review issue
+permissions: {}
 
 jobs:
   review:
     runs-on: ubuntu-latest
+    timeout-minutes: 10
+    permissions:
+      contents: read
+      issues: write   # open/refresh the single map-review issue
     steps:
       - uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1 # v7.0.1
         with:

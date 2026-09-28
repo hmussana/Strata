@@ -19,3 +19,5 @@ You can expect an acknowledgement within a few days. Once a fix is released, rep
 - Feed responses are size-capped; one failing or hostile source can't break a run.
 - Actions are pinned to full commit SHAs and each job gets the minimum permissions it needs. Dependabot proposes updates monthly.
 - Optional LLM output is treated as untrusted: tags are validated against the concept list and summaries are escaped.
+- `main` is protected by the ruleset in `.github/rulesets/protect-main.json` (no deletion, no force-push, linear history). Import it under *Settings → Rules → Rulesets* in a fork.
+- Jobs have timeouts, workflows default to `permissions: {}`, and Dependabot waits 7 days before proposing a newly released action.

@@ -1,0 +1,4 @@
+# Changes to automation and security-relevant files need the maintainer's review
+* @hmussana
+/.github/ @hmussana
+/scripts/ @hmussana
