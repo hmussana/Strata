@@ -84,9 +84,9 @@
     },
     {
       "id": "hn",
-      "name": "Hacker News (AI, 100+ pts)",
+      "name": "Hacker News (best, AI-filtered)",
       "type": "community",
-      "url": "https://hnrss.org/newest?points=100&q=LLM+OR+GPT+OR+Claude+OR+Gemini+OR+OpenAI+OR+Anthropic+OR+%22AI+agent%22+OR+Llama+OR+Qwen+OR+DeepSeek+OR+inference",
+      "url": "https://hnrss.org/best",
       "limit": 25,
       "weight": 2,
       "filter": "ai"
@@ -144,7 +144,7 @@
       "id": "import-ai",
       "name": "Import AI",
       "type": "press",
-      "url": "https://importai.substack.com/feed",
+      "url": "https://jack-clark.net/feed/",
       "limit": 5,
       "weight": 2
     },
