@@ -1,5 +1,5 @@
 {
- "generated": "2026-09-28T19:07:31Z",
+ "generated": "2026-09-28T19:10:18Z",
  "retentionDays": 45,
  "llmEnriched": 0,
  "sources": [
@@ -10,7 +10,7 @@
    "ok": true,
    "count": 15,
    "error": null,
-   "lastOk": "2026-09-28T19:07:31Z"
+   "lastOk": "2026-09-28T19:10:18Z"
   },
   {
    "id": "deepmind",
@@ -19,7 +19,7 @@
    "ok": true,
    "count": 10,
    "error": null,
-   "lastOk": "2026-09-28T19:07:31Z"
+   "lastOk": "2026-09-28T19:10:18Z"
   },
   {
    "id": "google-ai",
@@ -28,7 +28,7 @@
    "ok": true,
    "count": 10,
    "error": null,
-   "lastOk": "2026-09-28T19:07:31Z"
+   "lastOk": "2026-09-28T19:10:18Z"
   },
   {
    "id": "hf-blog",
@@ -37,7 +37,7 @@
    "ok": true,
    "count": 15,
    "error": null,
-   "lastOk": "2026-09-28T19:07:31Z"
+   "lastOk": "2026-09-28T19:10:18Z"
   },
   {
    "id": "nvidia-dev",
@@ -46,7 +46,7 @@
    "ok": true,
    "count": 10,
    "error": null,
-   "lastOk": "2026-09-28T19:07:31Z"
+   "lastOk": "2026-09-28T19:10:18Z"
   },
   {
    "id": "msr",
@@ -55,7 +55,7 @@
    "ok": true,
    "count": 9,
    "error": null,
-   "lastOk": "2026-09-28T19:07:31Z"
+   "lastOk": "2026-09-28T19:10:18Z"
   },
   {
    "id": "aws-ml",
@@ -64,7 +64,7 @@
    "ok": true,
    "count": 8,
    "error": null,
-   "lastOk": "2026-09-28T19:07:31Z"
+   "lastOk": "2026-09-28T19:10:18Z"
   },
   {
    "id": "qwen",
@@ -73,7 +73,7 @@
    "ok": true,
    "count": 8,
    "error": null,
-   "lastOk": "2026-09-28T19:07:31Z"
+   "lastOk": "2026-09-28T19:10:18Z"
   },
   {
    "id": "hn",
@@ -81,7 +81,7 @@
    "type": "community",
    "ok": false,
    "count": 0,
-   "error": "TimeoutError: The read operation timed out",
+   "error": "HTTPError: HTTP Error 502: Bad Gateway",
    "lastOk": "2026-09-28T05:33:24Z"
   },
   {
@@ -91,7 +91,7 @@
    "ok": true,
    "count": 15,
    "error": null,
-   "lastOk": "2026-09-28T19:07:31Z"
+   "lastOk": "2026-09-28T19:10:18Z"
   },
   {
    "id": "simonw",
@@ -100,7 +100,7 @@
    "ok": true,
    "count": 15,
    "error": null,
-   "lastOk": "2026-09-28T19:07:31Z"
+   "lastOk": "2026-09-28T19:10:18Z"
   },
   {
    "id": "hf-papers",
@@ -109,7 +109,7 @@
    "ok": true,
    "count": 15,
    "error": null,
-   "lastOk": "2026-09-28T19:07:31Z"
+   "lastOk": "2026-09-28T19:10:18Z"
   },
   {
    "id": "arxiv-cl",
@@ -118,7 +118,7 @@
    "ok": true,
    "count": 12,
    "error": null,
-   "lastOk": "2026-09-28T19:07:31Z"
+   "lastOk": "2026-09-28T19:10:18Z"
   },
   {
    "id": "latent-space",
@@ -127,7 +127,7 @@
    "ok": true,
    "count": 8,
    "error": null,
-   "lastOk": "2026-09-28T19:07:31Z"
+   "lastOk": "2026-09-28T19:10:18Z"
   },
   {
    "id": "interconnects",
@@ -136,7 +136,7 @@
    "ok": true,
    "count": 8,
    "error": null,
-   "lastOk": "2026-09-28T19:07:31Z"
+   "lastOk": "2026-09-28T19:10:18Z"
   },
   {
    "id": "import-ai",
@@ -154,7 +154,7 @@
    "ok": true,
    "count": 10,
    "error": null,
-   "lastOk": "2026-09-28T19:07:31Z"
+   "lastOk": "2026-09-28T19:10:18Z"
   },
   {
    "id": "ars-ai",
@@ -163,7 +163,7 @@
    "ok": true,
    "count": 12,
    "error": null,
-   "lastOk": "2026-09-28T19:07:31Z"
+   "lastOk": "2026-09-28T19:10:18Z"
   },
   {
    "id": "techcrunch-ai",
@@ -172,7 +172,7 @@
    "ok": true,
    "count": 12,
    "error": null,
-   "lastOk": "2026-09-28T19:07:31Z"
+   "lastOk": "2026-09-28T19:10:18Z"
   },
   {
    "id": "mit-tr",
@@ -181,7 +181,7 @@
    "ok": true,
    "count": 8,
    "error": null,
-   "lastOk": "2026-09-28T19:07:31Z"
+   "lastOk": "2026-09-28T19:10:18Z"
   },
   {
    "id": "decoder",
@@ -190,7 +190,7 @@
    "ok": true,
    "count": 10,
    "error": null,
-   "lastOk": "2026-09-28T19:07:31Z"
+   "lastOk": "2026-09-28T19:10:18Z"
   },
   {
    "id": "sth",
@@ -199,7 +199,7 @@
    "ok": true,
    "count": 3,
    "error": null,
-   "lastOk": "2026-09-28T19:07:31Z"
+   "lastOk": "2026-09-28T19:10:18Z"
   },
   {
    "id": "embrace-red",
@@ -208,7 +208,7 @@
    "ok": true,
    "count": 6,
    "error": null,
-   "lastOk": "2026-09-28T19:07:31Z"
+   "lastOk": "2026-09-28T19:10:18Z"
   },
   {
    "id": "rel-ollama",
@@ -217,7 +217,7 @@
    "ok": true,
    "count": 3,
    "error": null,
-   "lastOk": "2026-09-28T19:07:31Z"
+   "lastOk": "2026-09-28T19:10:18Z"
   },
   {
    "id": "rel-vllm",
@@ -226,7 +226,7 @@
    "ok": true,
    "count": 3,
    "error": null,
-   "lastOk": "2026-09-28T19:07:31Z"
+   "lastOk": "2026-09-28T19:10:18Z"
   },
   {
    "id": "rel-opencode",
@@ -235,7 +235,7 @@
    "ok": true,
    "count": 3,
    "error": null,
-   "lastOk": "2026-09-28T19:07:31Z"
+   "lastOk": "2026-09-28T19:10:18Z"
   },
   {
    "id": "rel-claude-code",
@@ -244,7 +244,7 @@
    "ok": true,
    "count": 3,
    "error": null,
-   "lastOk": "2026-09-28T19:07:31Z"
+   "lastOk": "2026-09-28T19:10:18Z"
   }
  ],
  "heat": {
