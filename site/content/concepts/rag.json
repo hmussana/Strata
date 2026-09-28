@@ -1,0 +1,83 @@
+{
+  "id": "rag",
+  "layer": "orchestration-tooling",
+  "name": "Retrieval-augmented generation (RAG)",
+  "summary": "Look up relevant documents first, then give them to the model to answer from.",
+  "prerequisites": [
+    "next-token-prediction"
+  ],
+  "status": "draft",
+  "lastReviewed": "2026-09-28",
+  "depths": {
+    "D1": {
+      "text": [
+        "If you ask a friend a question about your school, they might check the school website before answering.",
+        "RAG makes the AI look things up first instead of guessing from memory."
+      ],
+      "analogy": "Checking the website before answering."
+    },
+    "D2": {
+      "text": [
+        "Documents are split into chunks and turned into vectors (**embeddings**) stored in an index.",
+        "At question time the question is embedded too; the closest chunks are retrieved, often combined with keyword search and re-ranked, and placed in the prompt.",
+        "The model answers from that context, ideally with citations. Quality depends mostly on retrieval: if the right chunk isn't found, the model can't use it."
+      ],
+      "diagram": {
+        "type": "flow",
+        "numbered": true,
+        "caption": "Answering with retrieval",
+        "steps": [
+          {
+            "label": "Question"
+          },
+          {
+            "label": "Embed",
+            "sub": "to a vector"
+          },
+          {
+            "label": "Search",
+            "sub": "vector + keyword"
+          },
+          {
+            "label": "Re-rank",
+            "sub": "best chunks"
+          },
+          {
+            "label": "Prompt",
+            "sub": "chunks + question"
+          },
+          {
+            "label": "Answer",
+            "sub": "with citations"
+          }
+        ]
+      },
+      "analogy": "An open-book exam.",
+      "analogyBreaks": "In an open-book exam you choose what to read. In RAG the model only sees what retrieval hands it, and it can still blend in its own, possibly wrong, memory.",
+      "predict": {
+        "question": "A RAG assistant gives a wrong answer even though the correct document is in the index. What should you check first?",
+        "options": [
+          "The model's size",
+          "Whether retrieval actually returned the right chunk",
+          "The screen resolution",
+          "The user's typing speed"
+        ],
+        "answer": 1,
+        "explanation": "Most RAG failures are retrieval failures: poor chunking, embeddings or ranking mean the right text never reached the model."
+      }
+    },
+    "D5": {
+      "text": [
+        "Open problems: agentic retrieval where the model decides what to search, long-context models versus retrieval, measuring faithfulness to sources, and poisoning of indexed content."
+      ]
+    }
+  },
+  "sources": [
+    {
+      "title": "Retrieval-Augmented Generation for Knowledge-Intensive NLP Tasks",
+      "url": "https://arxiv.org/abs/2005.11401",
+      "date": "2020",
+      "verify": true
+    }
+  ]
+}

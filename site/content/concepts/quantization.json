@@ -1,0 +1,88 @@
+{
+  "id": "quantization",
+  "layer": "inference-optimization",
+  "name": "Quantization",
+  "summary": "Storing a model's numbers with fewer bits so it's smaller and faster, at a small cost in accuracy.",
+  "prerequisites": [
+    "memory-bandwidth"
+  ],
+  "status": "draft",
+  "lastReviewed": "2026-09-28",
+  "depths": {
+    "D1": {
+      "text": [
+        "Imagine writing a price as £3.99 instead of £3.98765. You lose a tiny bit of detail, but it's much quicker to write and read.",
+        "Quantization does this to the billions of numbers inside an AI so it fits on smaller computers."
+      ],
+      "analogy": "Rounding prices to the nearest penny."
+    },
+    "D2": {
+      "text": [
+        "Model weights are usually trained in 16-bit formats. Quantization maps them to 8, 4 or fewer bits, using a scale factor for each small block of weights.",
+        "Size roughly follows the bits: memory ≈ parameters × bits ÷ 8. Because generation is often limited by memory reads, smaller weights also mean faster generation.",
+        "Quality loss is usually small at 8 bits and grows at lower precision; smarter methods protect the most sensitive weights."
+      ],
+      "diagram": {
+        "type": "bars",
+        "caption": "Weight memory for a 70-billion-parameter model (parameters × bits ÷ 8, weights only)",
+        "unit": "GB",
+        "items": [
+          {
+            "label": "16-bit",
+            "value": 140
+          },
+          {
+            "label": "8-bit",
+            "value": 70
+          },
+          {
+            "label": "4-bit",
+            "value": 35
+          },
+          {
+            "label": "2-bit",
+            "value": 17.5
+          }
+        ]
+      },
+      "analogy": "Rounding prices to the nearest penny.",
+      "analogyBreaks": "Rounding prices loses the same tiny amount everywhere. In a model, a few outlier weights matter far more than the rest, so naive rounding can break a model while careful methods barely change it.",
+      "predict": {
+        "question": "A 7-billion-parameter model stored at 16 bits takes about 14 GB. Roughly how big is it at 4 bits?",
+        "options": [
+          "14 GB",
+          "7 GB",
+          "3.5 GB",
+          "1 GB"
+        ],
+        "answer": 2,
+        "explanation": "7 billion × 4 bits ÷ 8 = 3.5 GB, plus a little overhead for the scale factors."
+      }
+    },
+    "D5": {
+      "text": [
+        "Frontier: 8- and 4-bit number formats supported natively by hardware, quantization-aware training, and how quantization affects long-context accuracy and safety behaviour."
+      ]
+    }
+  },
+  "sources": [
+    {
+      "title": "LLM.int8(): 8-bit Matrix Multiplication for Transformers at Scale",
+      "url": "https://arxiv.org/abs/2208.07339",
+      "date": "2022",
+      "verify": true
+    },
+    {
+      "title": "GPTQ: Accurate Post-Training Quantization for Generative Pre-trained Transformers",
+      "url": "https://arxiv.org/abs/2210.17323",
+      "date": "2022",
+      "verify": true
+    },
+    {
+      "title": "AWQ: Activation-aware Weight Quantization for LLM Compression and Acceleration",
+      "url": "https://arxiv.org/abs/2306.00978",
+      "date": "2023",
+      "verify": true
+    }
+  ]
+}

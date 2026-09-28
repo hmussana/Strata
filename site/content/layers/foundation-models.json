@@ -1,0 +1,37 @@
+{
+  "id": "foundation-models",
+  "order": 5,
+  "name": "Foundation Models",
+  "color": "l5",
+  "icon": "network",
+  "oneLiner": "Large neural networks trained on broad data that can be adapted to many tasks.",
+  "analogy": {
+    "text": "A widely read apprentice: has absorbed a huge library and can attempt almost anything, but needs direction to be useful.",
+    "breaks": "An apprentice remembers what they read. A model stores statistical patterns, not a searchable library, so it can produce fluent text that is simply wrong."
+  },
+  "examples": [
+    "Transformer architecture",
+    "Closed models",
+    "Open-weight models",
+    "Mixture-of-experts"
+  ],
+  "givesAbove": "A general capability, predicting and generating text and other media, packaged as model weights.",
+  "needsBelow": "Training data from Data and large clusters from Cloud & Infrastructure.",
+  "concepts": [
+    "next-token-prediction",
+    "post-training"
+  ],
+  "metaDiagram": {
+    "nodes": [
+      {
+        "concept": "next-token-prediction"
+      },
+      {
+        "concept": "post-training"
+      }
+    ]
+  },
+  "walkthrough": [],
+  "status": "draft",
+  "lastReviewed": "2026-09-28"
+}

@@ -1,0 +1,108 @@
+{
+  "id": "next-token-prediction",
+  "layer": "foundation-models",
+  "name": "How a model predicts the next token",
+  "summary": "A language model reads the text so far, gives every possible next token a probability, picks one, and repeats.",
+  "prerequisites": [],
+  "status": "draft",
+  "lastReviewed": "2026-09-28",
+  "depths": {
+    "D1": {
+      "text": [
+        "Imagine a game: someone says “Once upon a…” and you shout the next word. You'd probably say “time”, because you've heard lots of stories.",
+        "An AI language model plays this game over and over, one small piece of a word at a time. That's how it writes whole answers."
+      ],
+      "analogy": "The finish-the-sentence game.",
+      "narration": "Imagine a game. Someone says: once upon a... and you shout the next word. You'd probably say: time. An AI language model plays this game again and again, one little piece of a word at a time, and that is how it writes whole answers."
+    },
+    "D2": {
+      "text": [
+        "Text is split into **tokens** (words or pieces of words), and each token becomes a list of numbers.",
+        "Those numbers pass through a stack of **transformer layers**. **Attention** lets each position look back at earlier tokens to decide what matters.",
+        "The last layer gives a score to every token in the vocabulary, and **softmax** turns those scores into probabilities.",
+        "One token is chosen, added to the text, and the whole process repeats."
+      ],
+      "diagram": {
+        "type": "flow",
+        "numbered": true,
+        "caption": "One step of text generation",
+        "steps": [
+          {
+            "label": "Tokenize",
+            "sub": "text to tokens"
+          },
+          {
+            "label": "Embed",
+            "sub": "tokens to numbers"
+          },
+          {
+            "label": "Transformer",
+            "sub": "attention + layers"
+          },
+          {
+            "label": "Scores",
+            "sub": "one per token"
+          },
+          {
+            "label": "Softmax",
+            "sub": "to probabilities"
+          },
+          {
+            "label": "Pick",
+            "sub": "and append"
+          }
+        ],
+        "loop": {
+          "from": 5,
+          "to": 0,
+          "label": "repeat for the next token"
+        }
+      },
+      "analogy": "Like the autocomplete on your phone, scaled up enormously.",
+      "analogyBreaks": "Phone autocomplete looks at the last few words. A large model attends to its whole context window at once, and its internal computation can represent plans that go beyond the next word.",
+      "predict": {
+        "question": "Illustrative numbers: the model gives “time” 82%, “midnight” 5%, “a” 3%, and so on. With sampling switched on, will it always pick “time”?",
+        "options": [
+          "Yes, it always picks the top choice",
+          "Usually “time”, but other tokens are picked in proportion to their probability",
+          "It picks at random with equal chances",
+          "It picks the longest word"
+        ],
+        "answer": 1,
+        "explanation": "Sampling draws from the distribution: likely tokens most of the time, less likely ones sometimes. Greedy decoding would always pick the top token."
+      }
+    },
+    "D5": {
+      "text": [
+        "“Just predicting the next word” undersells what happens inside. Interpretability research has found internal features that represent concepts and, in some cases, evidence of planning ahead, such as choosing a rhyme before writing the line.",
+        "Active directions include predicting several tokens at once, speculative decoding, diffusion-style language models that refine a whole sequence, and reinforcement learning that trains models to reason through long chains of tokens before answering."
+      ]
+    }
+  },
+  "sources": [
+    {
+      "title": "Attention Is All You Need",
+      "url": "https://arxiv.org/abs/1706.03762",
+      "date": "2017",
+      "verify": true
+    },
+    {
+      "title": "On the Biology of a Large Language Model",
+      "url": "https://transformer-circuits.pub/2025/attribution-graphs/biology.html",
+      "date": "2025",
+      "verify": true
+    },
+    {
+      "title": "Better & Faster Large Language Models via Multi-token Prediction",
+      "url": "https://arxiv.org/abs/2404.19737",
+      "date": "2024",
+      "verify": true
+    },
+    {
+      "title": "Fast Inference from Transformers via Speculative Decoding",
+      "url": "https://arxiv.org/abs/2211.17192",
+      "date": "2022",
+      "verify": true
+    }
+  ]
+}

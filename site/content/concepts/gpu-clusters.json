@@ -1,0 +1,83 @@
+{
+  "id": "gpu-clusters",
+  "layer": "cloud-infrastructure",
+  "name": "GPU clusters & orchestration",
+  "summary": "Thousands of accelerators networked and scheduled to act as one machine for training or serving.",
+  "prerequisites": [],
+  "status": "draft",
+  "lastReviewed": "2026-09-28",
+  "depths": {
+    "D1": {
+      "text": [
+        "One chip isn't enough to teach a big AI, so we connect thousands together, like a huge orchestra that has to play in perfect time.",
+        "A conductor program decides which chips work on what, and restarts the music if a player stops."
+      ],
+      "analogy": "An enormous orchestra with a conductor."
+    },
+    "D2": {
+      "text": [
+        "Training a large model splits the work across many accelerators: each holds part of the data, part of the model, or both (data, tensor and pipeline parallelism).",
+        "The accelerators exchange results constantly, so fast networking between them is essential.",
+        "Schedulers such as Slurm or Kubernetes assign jobs to machines, and training jobs save checkpoints so a hardware failure doesn't lose weeks of work."
+      ],
+      "diagram": {
+        "type": "flow",
+        "numbered": true,
+        "caption": "Running a large training job",
+        "steps": [
+          {
+            "label": "Submit",
+            "sub": "job request"
+          },
+          {
+            "label": "Schedule",
+            "sub": "allocate nodes"
+          },
+          {
+            "label": "Split",
+            "sub": "data / tensor / pipeline"
+          },
+          {
+            "label": "Sync",
+            "sub": "over the network"
+          },
+          {
+            "label": "Checkpoint",
+            "sub": "save progress"
+          }
+        ],
+        "loop": {
+          "from": 4,
+          "to": 2,
+          "label": "repeat for many steps"
+        }
+      },
+      "analogy": "An orchestra with a conductor keeping everyone in time.",
+      "analogyBreaks": "An orchestra survives a missed note. A synchronised training step waits for the slowest chip, so one failing machine can stall thousands.",
+      "predict": {
+        "question": "Why do large training jobs save checkpoints regularly?",
+        "options": [
+          "To make the model smaller",
+          "With thousands of machines failures are routine, and restarting from scratch would waste time",
+          "For legal reasons",
+          "To speed up each step"
+        ],
+        "answer": 1,
+        "explanation": "At large scale some hardware fails often; checkpoints let the job resume from recent progress."
+      }
+    },
+    "D5": {
+      "text": [
+        "Open problems: keeping utilisation high on ever-larger clusters, training across multiple data centres, and scheduling training and inference workloads on shared hardware."
+      ]
+    }
+  },
+  "sources": [
+    {
+      "title": "Megatron-LM: Training Multi-Billion Parameter Language Models Using Model Parallelism",
+      "url": "https://arxiv.org/abs/1909.08053",
+      "date": "2019",
+      "verify": true
+    }
+  ]
+}

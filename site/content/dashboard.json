@@ -1,0 +1,127 @@
+{
+  "status": "draft",
+  "lastReviewed": "2026-09-28",
+  "indicators": [
+    {
+      "id": "players",
+      "label": "Key players",
+      "kind": "list",
+      "note": "Draft examples for review, not a ranking."
+    },
+    {
+      "id": "maturity",
+      "label": "Maturity",
+      "kind": "scale",
+      "scale": [
+        "Emerging",
+        "Growing",
+        "Mature"
+      ]
+    },
+    {
+      "id": "activity",
+      "label": "News this week",
+      "kind": "measured",
+      "source": "news",
+      "note": "Stories tagged to this layer in the last 7 days by Strata's news feed. A proxy for attention, not investment."
+    },
+    {
+      "id": "investment",
+      "label": "Investment",
+      "kind": "text"
+    }
+  ],
+  "layers": {
+    "physical-energy": {
+      "players": [
+        "TSMC",
+        "Samsung Foundry",
+        "Intel Foundry",
+        "ASML (lithography)"
+      ],
+      "maturity": "PLACEHOLDER",
+      "investment": "PLACEHOLDER"
+    },
+    "compute-hardware": {
+      "players": [
+        "NVIDIA",
+        "AMD",
+        "Google (TPU)",
+        "AWS (Trainium)"
+      ],
+      "maturity": "PLACEHOLDER",
+      "investment": "PLACEHOLDER"
+    },
+    "cloud-infrastructure": {
+      "players": [
+        "AWS",
+        "Microsoft Azure",
+        "Google Cloud",
+        "CoreWeave"
+      ],
+      "maturity": "PLACEHOLDER",
+      "investment": "PLACEHOLDER"
+    },
+    "data": {
+      "players": [
+        "Common Crawl",
+        "Scale AI",
+        "Hugging Face datasets"
+      ],
+      "maturity": "PLACEHOLDER",
+      "investment": "PLACEHOLDER"
+    },
+    "foundation-models": {
+      "players": [
+        "OpenAI",
+        "Anthropic",
+        "Google DeepMind",
+        "Meta",
+        "DeepSeek",
+        "Alibaba (Qwen)"
+      ],
+      "maturity": "PLACEHOLDER",
+      "investment": "PLACEHOLDER"
+    },
+    "inference-optimization": {
+      "players": [
+        "vLLM",
+        "llama.cpp",
+        "OpenRouter",
+        "Together AI"
+      ],
+      "maturity": "PLACEHOLDER",
+      "investment": "PLACEHOLDER"
+    },
+    "orchestration-tooling": {
+      "players": [
+        "LangChain / LangGraph",
+        "LlamaIndex",
+        "MCP ecosystem",
+        "pgvector"
+      ],
+      "maturity": "PLACEHOLDER",
+      "investment": "PLACEHOLDER"
+    },
+    "agents": {
+      "players": [
+        "Claude Code",
+        "OpenAI Codex",
+        "OpenClaw",
+        "Devin"
+      ],
+      "maturity": "PLACEHOLDER",
+      "investment": "PLACEHOLDER"
+    },
+    "applications-interfaces": {
+      "players": [
+        "ChatGPT",
+        "Microsoft Copilot",
+        "GitHub Copilot",
+        "Perplexity"
+      ],
+      "maturity": "PLACEHOLDER",
+      "investment": "PLACEHOLDER"
+    }
+  }
+}

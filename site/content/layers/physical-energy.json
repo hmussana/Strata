@@ -1,0 +1,37 @@
+{
+  "id": "physical-energy",
+  "order": 1,
+  "name": "Physical & Energy",
+  "color": "l1",
+  "icon": "power",
+  "oneLiner": "The power, cooling, buildings and chip factories that everything else physically runs on.",
+  "analogy": {
+    "text": "The land, roads and power lines of a city: invisible until they run out.",
+    "breaks": "Roads can be widened in months. Chip factories and grid connections take years and enormous investment, and advanced chip production is concentrated in very few places, so this layer can bottleneck the whole stack at once."
+  },
+  "examples": [
+    "Data-centre campuses",
+    "Grid connections",
+    "Liquid cooling",
+    "Semiconductor fabs"
+  ],
+  "givesAbove": "Electricity, cooling and floor space, plus the fabricated chips themselves.",
+  "needsBelow": "Nothing in the AI stack: it rests on energy markets, land, water and industrial supply chains.",
+  "concepts": [
+    "datacenter-power",
+    "chip-supply-chain"
+  ],
+  "metaDiagram": {
+    "nodes": [
+      {
+        "concept": "datacenter-power"
+      },
+      {
+        "concept": "chip-supply-chain"
+      }
+    ]
+  },
+  "walkthrough": [],
+  "status": "draft",
+  "lastReviewed": "2026-09-28"
+}

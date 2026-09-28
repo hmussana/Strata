@@ -1,0 +1,79 @@
+{
+  "id": "multi-agent",
+  "layer": "agents",
+  "name": "Multi-agent systems",
+  "summary": "Several agents with different roles or contexts work together on one task.",
+  "prerequisites": [
+    "agent-loop"
+  ],
+  "status": "draft",
+  "lastReviewed": "2026-09-28",
+  "depths": {
+    "D1": {
+      "text": [
+        "Big jobs are easier with a team: one person plans, others do the parts, and someone checks the work.",
+        "Multi-agent systems are teams of AIs."
+      ],
+      "analogy": "A team with a planner, workers and a checker."
+    },
+    "D2": {
+      "text": [
+        "An **orchestrator** agent splits a task and hands pieces to **sub-agents**, each with its own instructions and context window.",
+        "Sub-agents return summaries rather than everything they saw, which keeps the orchestrator's context focused.",
+        "Benefits: parallel work and separation of concerns. Costs: more tokens, coordination errors and harder debugging."
+      ],
+      "diagram": {
+        "type": "hub",
+        "caption": "An orchestrator delegating to sub-agents",
+        "center": {
+          "label": "Orchestrator",
+          "sub": "plans and merges"
+        },
+        "spokes": [
+          {
+            "label": "Researcher",
+            "sub": "gathers facts"
+          },
+          {
+            "label": "Coder",
+            "sub": "writes changes"
+          },
+          {
+            "label": "Tester",
+            "sub": "runs checks"
+          },
+          {
+            "label": "Reviewer",
+            "sub": "critiques"
+          }
+        ]
+      },
+      "analogy": "A team with a planner, workers and a checker.",
+      "analogyBreaks": "Human teammates share background knowledge. Sub-agents share nothing except what's written in their instructions, so vague hand-offs fail silently.",
+      "predict": {
+        "question": "Why might an orchestrator give each sub-agent a fresh context?",
+        "options": [
+          "Only to save electricity",
+          "So each can focus on its piece without filling up the orchestrator's context",
+          "Because models can't share text",
+          "It makes no difference"
+        ],
+        "answer": 1,
+        "explanation": "Separate contexts keep each agent focused and return only conclusions to the lead agent."
+      }
+    },
+    "D5": {
+      "text": [
+        "Open problems: when multi-agent setups beat one strong agent, communication protocols between agents (such as A2A), and agents amplifying each other's mistakes."
+      ]
+    }
+  },
+  "sources": [
+    {
+      "title": "AutoGen: Enabling Next-Gen LLM Applications via Multi-Agent Conversation",
+      "url": "https://arxiv.org/abs/2308.08155",
+      "date": "2023",
+      "verify": true
+    }
+  ]
+}

@@ -1,0 +1,94 @@
+{
+  "relationships": [
+    {
+      "from": "datacenter-power",
+      "to": "gpu-clusters",
+      "type": "enables",
+      "label": "powers and cools"
+    },
+    {
+      "from": "chip-supply-chain",
+      "to": "gpu-accelerators",
+      "type": "enables",
+      "label": "manufactures"
+    },
+    {
+      "from": "gpu-accelerators",
+      "to": "gpu-clusters",
+      "type": "part-of",
+      "label": "networked into"
+    },
+    {
+      "from": "gpu-accelerators",
+      "to": "memory-bandwidth",
+      "type": "depends-on",
+      "label": "limited by"
+    },
+    {
+      "from": "gpu-clusters",
+      "to": "next-token-prediction",
+      "type": "enables",
+      "label": "trains"
+    },
+    {
+      "from": "pretraining-data",
+      "to": "next-token-prediction",
+      "type": "feeds",
+      "label": "teaches"
+    },
+    {
+      "from": "synthetic-data",
+      "to": "post-training",
+      "type": "feeds",
+      "label": "supplies examples"
+    },
+    {
+      "from": "post-training",
+      "to": "next-token-prediction",
+      "type": "depends-on",
+      "label": "starts from"
+    },
+    {
+      "from": "quantization",
+      "to": "next-token-prediction",
+      "type": "optimizes",
+      "label": "shrinks the model"
+    },
+    {
+      "from": "batching-caching",
+      "to": "memory-bandwidth",
+      "type": "depends-on",
+      "label": "shares reads of"
+    },
+    {
+      "from": "quantization",
+      "to": "batching-caching",
+      "type": "optimizes",
+      "label": "frees memory for"
+    },
+    {
+      "from": "rag",
+      "to": "agent-loop",
+      "type": "feeds",
+      "label": "grounds"
+    },
+    {
+      "from": "tool-use",
+      "to": "agent-loop",
+      "type": "enables",
+      "label": "gives actions to"
+    },
+    {
+      "from": "agent-loop",
+      "to": "multi-agent",
+      "type": "part-of",
+      "label": "runs inside each"
+    },
+    {
+      "from": "agent-loop",
+      "to": "copilots",
+      "type": "enables",
+      "label": "powers"
+    }
+  ]
+}

@@ -1,0 +1,76 @@
+{
+  "id": "copilots",
+  "layer": "applications-interfaces",
+  "name": "Assistants & copilots",
+  "summary": "AI built into the places people already work: chat assistants and copilots inside editors, documents and apps.",
+  "prerequisites": [
+    "agent-loop"
+  ],
+  "status": "draft",
+  "lastReviewed": "2026-09-28",
+  "depths": {
+    "D1": {
+      "text": [
+        "A copilot sits next to the pilot and helps, but the pilot is still in charge.",
+        "AI copilots suggest text, code or answers, and you decide what to keep."
+      ],
+      "analogy": "A copilot helping, while the pilot stays in charge."
+    },
+    "D2": {
+      "text": [
+        "Copilots bring model calls into existing tools: code editors, email, documents and search.",
+        "Good designs keep people in control: suggestions appear inline, are easy to accept or reject, and show their sources.",
+        "Behind the interface sit the lower layers: an agent or orchestrated calls, a model endpoint, and infrastructure."
+      ],
+      "diagram": {
+        "type": "stack",
+        "caption": "What sits behind a copilot",
+        "layers": [
+          {
+            "label": "Interface",
+            "sub": "inline suggestions, chat, review"
+          },
+          {
+            "label": "Orchestration",
+            "sub": "context from your document or repo"
+          },
+          {
+            "label": "Model endpoint",
+            "sub": "inference API"
+          },
+          {
+            "label": "Infrastructure",
+            "sub": "clusters, chips, power",
+            "hl": true
+          }
+        ]
+      },
+      "analogy": "A copilot helping, while the pilot stays in charge.",
+      "analogyBreaks": "A human copilot is accountable and consistent. An AI copilot can be confidently wrong in different ways each time, so review matters more, not less.",
+      "predict": {
+        "question": "What is the main job of a copilot's interface design?",
+        "options": [
+          "Hide all AI output",
+          "Make suggestions easy to review, accept or reject",
+          "Maximise the length of text",
+          "Take the user out of the loop"
+        ],
+        "answer": 1,
+        "explanation": "Keeping a person in the loop with low-friction review is the core pattern."
+      }
+    },
+    "D5": {
+      "text": [
+        "Open questions: measuring real productivity effects, over-reliance and skill loss, and interfaces for agents that take actions rather than make suggestions."
+      ]
+    }
+  },
+  "sources": [
+    {
+      "title": "The Impact of AI on Developer Productivity: Evidence from GitHub Copilot",
+      "url": "https://arxiv.org/abs/2302.06590",
+      "date": "2023",
+      "verify": true
+    }
+  ]
+}

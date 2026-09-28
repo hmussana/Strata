@@ -1,0 +1,87 @@
+{
+  "id": "batching-caching",
+  "layer": "inference-optimization",
+  "name": "Batching & KV caching",
+  "summary": "Serving tricks that process many users at once and avoid recomputing work already done.",
+  "prerequisites": [
+    "memory-bandwidth"
+  ],
+  "status": "draft",
+  "lastReviewed": "2026-09-28",
+  "depths": {
+    "D1": {
+      "text": [
+        "A bus carries many people at once instead of one car per person. Batching sends many people's questions through the AI together.",
+        "The AI also keeps notes on what it has already read (a cache), so it doesn't re-read the whole conversation for every word."
+      ],
+      "analogy": "A bus instead of one car per person."
+    },
+    "D2": {
+      "text": [
+        "Each generation step reads the model's weights; putting many requests in one step shares that expensive read across users.",
+        "**Continuous batching** adds and removes requests at every step, so short requests don't wait for long ones.",
+        "The **KV cache** stores intermediate results for tokens already processed, so each new token only does its own share of the work. It grows with context length and number of users, and its memory becomes the limit."
+      ],
+      "diagram": {
+        "type": "flow",
+        "numbered": true,
+        "caption": "Serving many users at once",
+        "steps": [
+          {
+            "label": "Queue",
+            "sub": "incoming requests"
+          },
+          {
+            "label": "Batch step",
+            "sub": "one read of weights"
+          },
+          {
+            "label": "KV cache",
+            "sub": "reuse past work"
+          },
+          {
+            "label": "Tokens out",
+            "sub": "one per request"
+          }
+        ],
+        "loop": {
+          "from": 3,
+          "to": 1,
+          "label": "next step; requests join and leave"
+        }
+      },
+      "analogy": "A bus instead of one car per person.",
+      "analogyBreaks": "A bus waits for passengers to board. Continuous batching lets riders get on and off at every step, and each rider's luggage (their KV cache) takes space that limits how many fit.",
+      "predict": {
+        "question": "Why does serving throughput usually rise when more users are batched together?",
+        "options": [
+          "The model gets smarter",
+          "Each read of the weights from memory is shared by more requests",
+          "Tokens get shorter",
+          "The GPU runs at a higher clock speed"
+        ],
+        "answer": 1,
+        "explanation": "Generation is often limited by memory reads; batching spreads each read over many requests until compute or KV-cache memory becomes the limit."
+      }
+    },
+    "D5": {
+      "text": [
+        "Frontier: paged KV-cache memory management, sharing cached prefixes across users, running the prompt-reading and generation phases on different machines, and compressing the KV cache for very long contexts."
+      ]
+    }
+  },
+  "sources": [
+    {
+      "title": "Efficient Memory Management for Large Language Model Serving with PagedAttention",
+      "url": "https://arxiv.org/abs/2309.06180",
+      "date": "2023",
+      "verify": true
+    },
+    {
+      "title": "Orca: A Distributed Serving System for Transformer-Based Generative Models (OSDI)",
+      "url": "https://www.usenix.org/conference/osdi22/presentation/yu",
+      "date": "2022",
+      "verify": true
+    }
+  ]
+}

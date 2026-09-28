@@ -1,0 +1,89 @@
+{
+  "request": {
+    "title": "Follow a request down the stack",
+    "direction": "down",
+    "steps": [
+      {
+        "layer": "applications-interfaces",
+        "text": "You ask an assistant a question in an app."
+      },
+      {
+        "layer": "agents",
+        "text": "An agent decides it needs to look something up before answering."
+      },
+      {
+        "layer": "orchestration-tooling",
+        "text": "Retrieval finds relevant documents and the prompt is assembled with the available tools."
+      },
+      {
+        "layer": "inference-optimization",
+        "text": "The request reaches a serving endpoint and joins a batch with other users' requests."
+      },
+      {
+        "layer": "foundation-models",
+        "text": "The model's weights score every possible next token, one token at a time."
+      },
+      {
+        "layer": "data",
+        "bypass": true,
+        "text": "Not on the request path: training data shaped the model long before. Fresh documents came from retrieval instead."
+      },
+      {
+        "layer": "cloud-infrastructure",
+        "text": "The serving cluster schedules the work onto available accelerators."
+      },
+      {
+        "layer": "compute-hardware",
+        "text": "GPUs stream the weights from memory and do the matrix maths."
+      },
+      {
+        "layer": "physical-energy",
+        "text": "All of it runs on electricity and cooling inside a data centre."
+      }
+    ]
+  },
+  "capability": {
+    "title": "Capability flows up the stack",
+    "direction": "up",
+    "steps": [
+      {
+        "layer": "physical-energy",
+        "text": "Power, cooling and fabricated chips make large-scale compute possible."
+      },
+      {
+        "layer": "compute-hardware",
+        "text": "Accelerators turn electricity into massively parallel maths."
+      },
+      {
+        "layer": "cloud-infrastructure",
+        "text": "Clusters make that compute rentable and schedulable at scale."
+      },
+      {
+        "layer": "data",
+        "text": "Data is collected, cleaned and prepared for training."
+      },
+      {
+        "layer": "foundation-models",
+        "text": "Training on that data with that compute produces a foundation model."
+      },
+      {
+        "layer": "inference-optimization",
+        "text": "Serving and optimisation make the model fast and affordable to use."
+      },
+      {
+        "layer": "orchestration-tooling",
+        "text": "Retrieval and tools connect the model to your data and actions."
+      },
+      {
+        "layer": "agents",
+        "text": "Agents chain those capabilities into multi-step work."
+      },
+      {
+        "layer": "applications-interfaces",
+        "text": "Applications deliver it to people, and their usage feeds back down."
+      }
+    ]
+  },
+  "status": "draft",
+  "lastReviewed": "2026-09-28"
+}

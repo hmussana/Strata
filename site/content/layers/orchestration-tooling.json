@@ -1,0 +1,37 @@
+{
+  "id": "orchestration-tooling",
+  "order": 7,
+  "name": "Orchestration & Tooling",
+  "color": "l7",
+  "icon": "workflow",
+  "oneLiner": "The glue around a model call: prompts, retrieval, tools, frameworks, evaluation and guardrails.",
+  "analogy": {
+    "text": "A film crew around an actor: scripts, props and cues so the performance fits the scene.",
+    "breaks": "An actor improvises from real understanding of the set. A model only sees what is placed in its context window: if the crew forgets a prop, for the model it doesn't exist."
+  },
+  "examples": [
+    "Prompt templates",
+    "Retrieval and vector databases",
+    "Tool protocols (e.g. MCP)",
+    "Evaluation and guardrail tools"
+  ],
+  "givesAbove": "Reliable, grounded model calls that can use your data and tools.",
+  "needsBelow": "An inference endpoint from Inference & Optimization.",
+  "concepts": [
+    "rag",
+    "tool-use"
+  ],
+  "metaDiagram": {
+    "nodes": [
+      {
+        "concept": "rag"
+      },
+      {
+        "concept": "tool-use"
+      }
+    ]
+  },
+  "walkthrough": [],
+  "status": "draft",
+  "lastReviewed": "2026-09-28"
+}

@@ -1,0 +1,130 @@
+{
+  "title": "The AI Stack",
+  "brand": "Strata",
+  "tagline": "How the AI world fits together, from power plants to the apps you use.",
+  "lastReviewed": "2026-09-28",
+  "staleAfterDays": 90,
+  "layers": [
+    "physical-energy",
+    "compute-hardware",
+    "cloud-infrastructure",
+    "data",
+    "foundation-models",
+    "inference-optimization",
+    "orchestration-tooling",
+    "agents",
+    "applications-interfaces"
+  ],
+  "zoomLevels": [
+    {
+      "id": "Z0",
+      "name": "Landscape",
+      "question": "What is the whole AI world?"
+    },
+    {
+      "id": "Z1",
+      "name": "Stack",
+      "question": "How is it organised?"
+    },
+    {
+      "id": "Z2",
+      "name": "Layer",
+      "question": "How do the parts of one layer fit?"
+    },
+    {
+      "id": "Z3",
+      "name": "Concept",
+      "question": "How does this one thing work?"
+    }
+  ],
+  "depths": [
+    {
+      "id": "D1",
+      "name": "Story",
+      "audience": "Young children and total beginners",
+      "form": "Everyday analogy and a simple picture. No jargon."
+    },
+    {
+      "id": "D2",
+      "name": "Picture",
+      "audience": "Curious beginners",
+      "form": "Annotated diagram with numbered steps. Key terms introduced."
+    },
+    {
+      "id": "D3",
+      "name": "Play",
+      "audience": "Motivated learners",
+      "form": "A guided interactive: change something, see the result."
+    },
+    {
+      "id": "D4",
+      "name": "Mechanism",
+      "audience": "Practitioners",
+      "form": "Open workbench, light maths, pseudo-code, trade-offs."
+    },
+    {
+      "id": "D5",
+      "name": "Frontier",
+      "audience": "Experts",
+      "form": "Where simple models break, open problems, primary sources."
+    }
+  ],
+  "arrows": {
+    "flow": {
+      "label": "Request or data flow",
+      "stroke": "solid",
+      "head": "arrow"
+    },
+    "dependency": {
+      "label": "Depends on",
+      "stroke": "dashed",
+      "head": "arrow"
+    },
+    "primary": {
+      "label": "Primary path",
+      "stroke": "thick",
+      "head": "arrow"
+    },
+    "optimizes": {
+      "label": "Makes cheaper or faster",
+      "stroke": "dotted",
+      "head": "arrow"
+    },
+    "alternative": {
+      "label": "Alternative to",
+      "stroke": "dotted",
+      "head": "none"
+    },
+    "part": {
+      "label": "Part of",
+      "stroke": "solid",
+      "head": "diamond"
+    }
+  },
+  "relationshipTypes": {
+    "feeds": {
+      "label": "feeds",
+      "arrow": "flow"
+    },
+    "enables": {
+      "label": "enables",
+      "arrow": "flow"
+    },
+    "depends-on": {
+      "label": "depends on",
+      "arrow": "dependency"
+    },
+    "optimizes": {
+      "label": "optimizes",
+      "arrow": "optimizes"
+    },
+    "competes-with": {
+      "label": "competes with",
+      "arrow": "alternative"
+    },
+    "part-of": {
+      "label": "part of",
+      "arrow": "part"
+    }
+  }
+}

@@ -16,6 +16,10 @@ with the latest news tagged onto it every three hours.</p>
 
 ---
 
+> **In progress: The AI Stack.** A visual, zoomable explainer (landscape → stack → layer → concept, at depths from
+> "story" to "frontier") is being built at [`/next/`](https://hmussana.github.io/Strata/next/). Its content model is
+> documented in [docs/content-model.md](docs/content-model.md).
+
 ## Why
 
 Newsletters and feeds tell you *what* happened. They rarely tell you *where it fits*. If you work with LLMs, it is easy to feel permanently behind: new frontier models, agent harnesses, quantisation formats, desktop AI boxes, routers and protocols every week.

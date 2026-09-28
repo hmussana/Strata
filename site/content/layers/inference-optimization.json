@@ -1,0 +1,37 @@
+{
+  "id": "inference-optimization",
+  "order": 6,
+  "name": "Inference & Optimization",
+  "color": "l6",
+  "icon": "bolt",
+  "oneLiner": "Running trained models quickly and cheaply for real users: serving, APIs, compression and caching.",
+  "analogy": {
+    "text": "A restaurant kitchen during service: the recipe is fixed, and now it's about getting many plates out fast and affordably.",
+    "breaks": "A kitchen cooks each order separately. Inference servers push many users' requests through the same model step together to use the hardware efficiently."
+  },
+  "examples": [
+    "Model APIs",
+    "Serving engines",
+    "Quantization",
+    "Batching and caching"
+  ],
+  "givesAbove": "A fast, affordable endpoint: send text in, get text out.",
+  "needsBelow": "Model weights from Foundation Models and serving hardware from Cloud & Infrastructure.",
+  "concepts": [
+    "quantization",
+    "batching-caching"
+  ],
+  "metaDiagram": {
+    "nodes": [
+      {
+        "concept": "quantization"
+      },
+      {
+        "concept": "batching-caching"
+      }
+    ]
+  },
+  "walkthrough": [],
+  "status": "draft",
+  "lastReviewed": "2026-09-28"
+}
