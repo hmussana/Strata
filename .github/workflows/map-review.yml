@@ -1,0 +1,33 @@
+name: Weekly map review
+
+# Opens (or refreshes) one issue listing trending terms the concept map doesn't cover yet,
+# so the knowledge map keeps pace with the news. Comment "@claude add these" or edit concepts.json.
+on:
+  schedule:
+    - cron: "41 7 * * 1"   # Mondays
+  workflow_dispatch:
+
+permissions:
+  contents: read
+  issues: write   # open/refresh the single map-review issue
+
+jobs:
+  review:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1 # v7.0.1
+        with:
+          persist-credentials: false
+      - name: Build report
+        run: python3 scripts/map_review.py > report.md
+      - name: Open or update issue
+        env:
+          GH_TOKEN: ${{ github.token }}
+        run: |
+          gh label create map-review --color 8b7cf6 --description "Concept map needs updating" --force
+          num=$(gh issue list --label map-review --state open --json number --jq '.[0].number')
+          if [ -n "$num" ]; then
+            gh issue edit "$num" --body-file report.md
+          else
+            gh issue create --title "Concept map review: trending unmapped terms" --label map-review --body-file report.md
+          fi

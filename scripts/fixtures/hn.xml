@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<rss version="2.0"><channel><title>Hacker News</title>
+<item><title>Running Qwen3.5 MoE on a DGX Spark at 40 tok/s</title>
+<link>https://example.com/spark-qwen?utm_source=hn</link>
+<pubDate>Fri, 25 Sep 2026 10:00:00 +0000</pubDate>
+<comments>https://news.ycombinator.com/item?id=1</comments>
+<description><![CDATA[<p>Article URL: https://example.com/spark-qwen</p><p>Points: 412</p><p># Comments: 150</p>]]></description></item>
+<item><title>My favourite sourdough recipe</title>
+<link>https://example.com/bread</link>
+<pubDate>Fri, 25 Sep 2026 09:00:00 +0000</pubDate>
+<description><![CDATA[<p>Points: 300</p>]]></description></item>
+<item><title>Zephyrix-7 agent framework hits 1.0 with MCP support</title>
+<link>https://example.com/zephyrix</link>
+<pubDate>Sat, 26 Sep 2026 09:00:00 +0000</pubDate>
+<description><![CDATA[<p>Points: 180</p>]]></description></item>
+</channel></rss>

@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom"><title>Simon Willison</title>
+<entry><title>Prompt injection in OpenClaw skills, again</title>
+<link href="https://simonwillison.net/2026/Sep/26/openclaw/" rel="alternate"/>
+<updated>2026-09-26T12:00:00Z</updated><published>2026-09-26T11:00:00Z</published>
+<summary type="html">&lt;p&gt;Another example of the &lt;b&gt;lethal trifecta&lt;/b&gt;. Zephyrix-7 is affected too.&lt;/p&gt;</summary></entry>
+<entry><title>Old post</title><link href="https://simonwillison.net/2020/Jan/1/old/"/>
+<published>2020-01-01T00:00:00Z</published><summary>ancient</summary></entry>
+</feed>

@@ -1,0 +1,16 @@
+name: Suggest a news source
+description: A credible feed that should appear on the news board
+labels: [sources]
+body:
+  - type: input
+    id: url
+    attributes:
+      label: Feed URL (RSS, Atom or JSON)
+    validations:
+      required: true
+  - type: textarea
+    id: why
+    attributes:
+      label: Why is it credible and relevant?
+    validations:
+      required: true

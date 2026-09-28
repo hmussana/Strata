@@ -1,0 +1,256 @@
+{
+  "note": "type: lab | community | research | press | security | release. filter:\"ai\" keeps only items that look AI-related. limit caps items taken per run. weight nudges ranking. drop: title regexes for promos/noise removed from every source.",
+  "drop": [
+    "\\bexhibit table\\b",
+    "\\bDisrupt 20\\d\\d\\b",
+    "\\b(last|final) chance\\b",
+    "\\bgrab your\\b",
+    "\\btickets?\\b",
+    "\\bwebinar\\b",
+    "\\bsponsored\\b",
+    "\\bearly[- ]bird\\b",
+    "^Deal:",
+    "\\bpromo code\\b"
+  ],
+  "sources": [
+    {
+      "id": "openai",
+      "name": "OpenAI News",
+      "type": "lab",
+      "url": "https://openai.com/news/rss.xml",
+      "limit": 15,
+      "weight": 3
+    },
+    {
+      "id": "deepmind",
+      "name": "Google DeepMind",
+      "type": "lab",
+      "url": "https://deepmind.google/blog/rss.xml",
+      "limit": 10,
+      "weight": 3
+    },
+    {
+      "id": "google-ai",
+      "name": "Google AI Blog",
+      "type": "lab",
+      "url": "https://blog.google/technology/ai/rss/",
+      "limit": 10,
+      "weight": 2
+    },
+    {
+      "id": "hf-blog",
+      "name": "Hugging Face Blog",
+      "type": "lab",
+      "url": "https://huggingface.co/blog/feed.xml",
+      "limit": 15,
+      "weight": 2
+    },
+    {
+      "id": "nvidia-dev",
+      "name": "NVIDIA Technical Blog",
+      "type": "lab",
+      "url": "https://developer.nvidia.com/blog/feed",
+      "limit": 10,
+      "weight": 2,
+      "filter": "ai"
+    },
+    {
+      "id": "msr",
+      "name": "Microsoft Research",
+      "type": "lab",
+      "url": "https://www.microsoft.com/en-us/research/feed/",
+      "limit": 10,
+      "weight": 1,
+      "filter": "ai"
+    },
+    {
+      "id": "aws-ml",
+      "name": "AWS Machine Learning Blog",
+      "type": "lab",
+      "url": "https://aws.amazon.com/blogs/machine-learning/feed/",
+      "limit": 8,
+      "weight": 1
+    },
+    {
+      "id": "qwen",
+      "name": "Qwen Blog",
+      "type": "lab",
+      "url": "https://qwenlm.github.io/blog/index.xml",
+      "limit": 8,
+      "weight": 3,
+      "tags": [
+        "qwen"
+      ]
+    },
+    {
+      "id": "hn",
+      "name": "Hacker News (AI, 100+ pts)",
+      "type": "community",
+      "url": "https://hnrss.org/newest?points=100&q=LLM+OR+GPT+OR+Claude+OR+Gemini+OR+OpenAI+OR+Anthropic+OR+%22AI+agent%22+OR+Llama+OR+Qwen+OR+DeepSeek+OR+inference",
+      "limit": 25,
+      "weight": 2,
+      "filter": "ai"
+    },
+    {
+      "id": "localllama",
+      "name": "r/LocalLLaMA (top today)",
+      "type": "community",
+      "url": "https://www.reddit.com/r/LocalLLaMA/top/.rss?t=day",
+      "limit": 15,
+      "weight": 2
+    },
+    {
+      "id": "simonw",
+      "name": "Simon Willison",
+      "type": "community",
+      "url": "https://simonwillison.net/atom/entries/",
+      "limit": 15,
+      "weight": 3
+    },
+    {
+      "id": "hf-papers",
+      "name": "Hugging Face Daily Papers",
+      "type": "research",
+      "url": "https://huggingface.co/api/daily_papers",
+      "format": "hf-papers",
+      "limit": 15,
+      "weight": 2
+    },
+    {
+      "id": "arxiv-cl",
+      "name": "arXiv cs.CL",
+      "type": "research",
+      "url": "https://rss.arxiv.org/rss/cs.CL",
+      "limit": 12,
+      "weight": 1
+    },
+    {
+      "id": "latent-space",
+      "name": "Latent Space",
+      "type": "press",
+      "url": "https://www.latent.space/feed",
+      "limit": 8,
+      "weight": 3
+    },
+    {
+      "id": "interconnects",
+      "name": "Interconnects",
+      "type": "press",
+      "url": "https://www.interconnects.ai/feed",
+      "limit": 8,
+      "weight": 3
+    },
+    {
+      "id": "import-ai",
+      "name": "Import AI",
+      "type": "press",
+      "url": "https://importai.substack.com/feed",
+      "limit": 5,
+      "weight": 2
+    },
+    {
+      "id": "verge-ai",
+      "name": "The Verge AI",
+      "type": "press",
+      "url": "https://www.theverge.com/rss/ai-artificial-intelligence/index.xml",
+      "limit": 15,
+      "weight": 1
+    },
+    {
+      "id": "ars-ai",
+      "name": "Ars Technica AI",
+      "type": "press",
+      "url": "https://arstechnica.com/ai/feed/",
+      "limit": 12,
+      "weight": 2
+    },
+    {
+      "id": "techcrunch-ai",
+      "name": "TechCrunch AI",
+      "type": "press",
+      "url": "https://techcrunch.com/category/artificial-intelligence/feed/",
+      "limit": 12,
+      "weight": 1
+    },
+    {
+      "id": "mit-tr",
+      "name": "MIT Technology Review AI",
+      "type": "press",
+      "url": "https://www.technologyreview.com/topic/artificial-intelligence/feed",
+      "limit": 8,
+      "weight": 2
+    },
+    {
+      "id": "decoder",
+      "name": "The Decoder",
+      "type": "press",
+      "url": "https://the-decoder.com/feed/",
+      "limit": 12,
+      "weight": 1
+    },
+    {
+      "id": "sth",
+      "name": "ServeTheHome",
+      "type": "press",
+      "url": "https://www.servethehome.com/feed/",
+      "limit": 10,
+      "weight": 1,
+      "filter": "ai"
+    },
+    {
+      "id": "embrace-red",
+      "name": "Embrace The Red",
+      "type": "security",
+      "url": "https://embracethered.com/blog/index.xml",
+      "limit": 6,
+      "weight": 3,
+      "tags": [
+        "prompt-injection"
+      ]
+    },
+    {
+      "id": "rel-ollama",
+      "name": "Ollama releases",
+      "type": "release",
+      "url": "https://github.com/ollama/ollama/releases.atom",
+      "limit": 3,
+      "weight": 1,
+      "tags": [
+        "ollama"
+      ]
+    },
+    {
+      "id": "rel-vllm",
+      "name": "vLLM releases",
+      "type": "release",
+      "url": "https://github.com/vllm-project/vllm/releases.atom",
+      "limit": 3,
+      "weight": 1,
+      "tags": [
+        "vllm"
+      ]
+    },
+    {
+      "id": "rel-opencode",
+      "name": "OpenCode releases",
+      "type": "release",
+      "url": "https://github.com/sst/opencode/releases.atom",
+      "limit": 3,
+      "weight": 1,
+      "tags": [
+        "opencode"
+      ]
+    },
+    {
+      "id": "rel-claude-code",
+      "name": "Claude Code releases",
+      "type": "release",
+      "url": "https://github.com/anthropics/claude-code/releases.atom",
+      "limit": 3,
+      "weight": 1,
+      "tags": [
+        "claude-code"
+      ]
+    }
+  ]
+}
