@@ -1,5 +1,5 @@
 {
- "generated": "2026-09-28T19:32:43Z",
+ "generated": "2026-09-28T19:41:38Z",
  "retentionDays": 45,
  "llmEnriched": 0,
  "sources": [
@@ -10,7 +10,7 @@
    "ok": true,
    "count": 15,
    "error": null,
-   "lastOk": "2026-09-28T19:32:43Z"
+   "lastOk": "2026-09-28T19:41:38Z"
   },
   {
    "id": "deepmind",
@@ -19,7 +19,7 @@
    "ok": true,
    "count": 10,
    "error": null,
-   "lastOk": "2026-09-28T19:32:43Z"
+   "lastOk": "2026-09-28T19:41:38Z"
   },
   {
    "id": "google-ai",
@@ -28,7 +28,7 @@
    "ok": true,
    "count": 10,
    "error": null,
-   "lastOk": "2026-09-28T19:32:43Z"
+   "lastOk": "2026-09-28T19:41:38Z"
   },
   {
    "id": "hf-blog",
@@ -37,7 +37,7 @@
    "ok": true,
    "count": 15,
    "error": null,
-   "lastOk": "2026-09-28T19:32:43Z"
+   "lastOk": "2026-09-28T19:41:38Z"
   },
   {
    "id": "nvidia-dev",
@@ -46,7 +46,7 @@
    "ok": true,
    "count": 10,
    "error": null,
-   "lastOk": "2026-09-28T19:32:43Z"
+   "lastOk": "2026-09-28T19:41:38Z"
   },
   {
    "id": "msr",
@@ -55,7 +55,7 @@
    "ok": true,
    "count": 9,
    "error": null,
-   "lastOk": "2026-09-28T19:32:43Z"
+   "lastOk": "2026-09-28T19:41:38Z"
   },
   {
    "id": "aws-ml",
@@ -64,7 +64,7 @@
    "ok": true,
    "count": 8,
    "error": null,
-   "lastOk": "2026-09-28T19:32:43Z"
+   "lastOk": "2026-09-28T19:41:38Z"
   },
   {
    "id": "qwen",
@@ -73,7 +73,7 @@
    "ok": true,
    "count": 8,
    "error": null,
-   "lastOk": "2026-09-28T19:32:43Z"
+   "lastOk": "2026-09-28T19:41:38Z"
   },
   {
    "id": "hn",
@@ -82,7 +82,7 @@
    "ok": true,
    "count": 8,
    "error": null,
-   "lastOk": "2026-09-28T19:32:43Z"
+   "lastOk": "2026-09-28T19:41:38Z"
   },
   {
    "id": "localllama",
@@ -91,7 +91,7 @@
    "ok": true,
    "count": 15,
    "error": null,
-   "lastOk": "2026-09-28T19:32:43Z"
+   "lastOk": "2026-09-28T19:41:38Z"
   },
   {
    "id": "simonw",
@@ -100,7 +100,7 @@
    "ok": true,
    "count": 15,
    "error": null,
-   "lastOk": "2026-09-28T19:32:43Z"
+   "lastOk": "2026-09-28T19:41:38Z"
   },
   {
    "id": "hf-papers",
@@ -109,7 +109,7 @@
    "ok": true,
    "count": 15,
    "error": null,
-   "lastOk": "2026-09-28T19:32:43Z"
+   "lastOk": "2026-09-28T19:41:38Z"
   },
   {
    "id": "arxiv-cl",
@@ -118,7 +118,7 @@
    "ok": true,
    "count": 12,
    "error": null,
-   "lastOk": "2026-09-28T19:32:43Z"
+   "lastOk": "2026-09-28T19:41:38Z"
   },
   {
    "id": "latent-space",
@@ -127,7 +127,7 @@
    "ok": true,
    "count": 8,
    "error": null,
-   "lastOk": "2026-09-28T19:32:43Z"
+   "lastOk": "2026-09-28T19:41:38Z"
   },
   {
    "id": "interconnects",
@@ -136,7 +136,7 @@
    "ok": true,
    "count": 8,
    "error": null,
-   "lastOk": "2026-09-28T19:32:43Z"
+   "lastOk": "2026-09-28T19:41:38Z"
   },
   {
    "id": "import-ai",
@@ -145,7 +145,7 @@
    "ok": true,
    "count": 5,
    "error": null,
-   "lastOk": "2026-09-28T19:32:43Z"
+   "lastOk": "2026-09-28T19:41:38Z"
   },
   {
    "id": "verge-ai",
@@ -154,7 +154,7 @@
    "ok": true,
    "count": 10,
    "error": null,
-   "lastOk": "2026-09-28T19:32:43Z"
+   "lastOk": "2026-09-28T19:41:38Z"
   },
   {
    "id": "ars-ai",
@@ -163,7 +163,7 @@
    "ok": true,
    "count": 12,
    "error": null,
-   "lastOk": "2026-09-28T19:32:43Z"
+   "lastOk": "2026-09-28T19:41:38Z"
   },
   {
    "id": "techcrunch-ai",
@@ -172,7 +172,7 @@
    "ok": true,
    "count": 12,
    "error": null,
-   "lastOk": "2026-09-28T19:32:43Z"
+   "lastOk": "2026-09-28T19:41:38Z"
   },
   {
    "id": "mit-tr",
@@ -181,7 +181,7 @@
    "ok": true,
    "count": 8,
    "error": null,
-   "lastOk": "2026-09-28T19:32:43Z"
+   "lastOk": "2026-09-28T19:41:38Z"
   },
   {
    "id": "decoder",
@@ -190,7 +190,7 @@
    "ok": true,
    "count": 10,
    "error": null,
-   "lastOk": "2026-09-28T19:32:43Z"
+   "lastOk": "2026-09-28T19:41:38Z"
   },
   {
    "id": "sth",
@@ -199,7 +199,7 @@
    "ok": true,
    "count": 3,
    "error": null,
-   "lastOk": "2026-09-28T19:32:43Z"
+   "lastOk": "2026-09-28T19:41:38Z"
   },
   {
    "id": "embrace-red",
@@ -208,7 +208,7 @@
    "ok": true,
    "count": 6,
    "error": null,
-   "lastOk": "2026-09-28T19:32:43Z"
+   "lastOk": "2026-09-28T19:41:38Z"
   },
   {
    "id": "rel-ollama",
@@ -217,7 +217,7 @@
    "ok": true,
    "count": 3,
    "error": null,
-   "lastOk": "2026-09-28T19:32:43Z"
+   "lastOk": "2026-09-28T19:41:38Z"
   },
   {
    "id": "rel-vllm",
@@ -226,7 +226,7 @@
    "ok": true,
    "count": 3,
    "error": null,
-   "lastOk": "2026-09-28T19:32:43Z"
+   "lastOk": "2026-09-28T19:41:38Z"
   },
   {
    "id": "rel-opencode",
@@ -235,7 +235,7 @@
    "ok": true,
    "count": 3,
    "error": null,
-   "lastOk": "2026-09-28T19:32:43Z"
+   "lastOk": "2026-09-28T19:41:38Z"
   },
   {
    "id": "rel-claude-code",
@@ -244,11 +244,16 @@
    "ok": true,
    "count": 3,
    "error": null,
-   "lastOk": "2026-09-28T19:32:43Z"
+   "lastOk": "2026-09-28T19:41:38Z"
   }
  ],
  "heat": {
   "concepts": {
+   "agent-loop": {
+    "d7": 24,
+    "prev7": 0,
+    "d30": 25
+   },
    "gpt": {
     "d7": 46,
     "prev7": 0,
@@ -268,11 +273,6 @@
     "d7": 1,
     "prev7": 0,
     "d30": 1
-   },
-   "agent-loop": {
-    "d7": 23,
-    "prev7": 0,
-    "d30": 24
    },
    "consumer-assistants": {
     "d7": 6,
@@ -460,9 +460,9 @@
     "d30": 2
    },
    "quantization": {
-    "d7": 1,
+    "d7": 2,
     "prev7": 0,
-    "d30": 1
+    "d30": 2
    },
    "deepseek": {
     "d7": 5,
@@ -551,21 +551,21 @@
    }
   },
   "layers": {
+   "agents": {
+    "d7": 49,
+    "d30": 52
+   },
    "models": {
     "d7": 122,
     "d30": 145
    },
    "efficiency": {
-    "d7": 20,
-    "d30": 24
+    "d7": 21,
+    "d30": 25
    },
    "serving": {
     "d7": 25,
     "d30": 26
-   },
-   "agents": {
-    "d7": 48,
-    "d30": 51
    },
    "security": {
     "d7": 27,
@@ -673,6 +673,24 @@
   }
  ],
  "items": [
+  {
+   "id": "342c492ea49c",
+   "title": "Shopify opens checkout to browser-based AI agents",
+   "url": "https://techcrunch.com/2026/09/28/shopify-opens-checkout-to-browser-based-ai-agents/",
+   "source": "techcrunch-ai",
+   "sourceName": "TechCrunch AI",
+   "type": "press",
+   "published": "2026-09-28T19:33:57Z",
+   "summary": "Shopify is expanding WebMCP support to checkout, allowing browser-based AI agents to update order details and complete purchases with a buyer’s authorization.",
+   "firstSeen": "2026-09-28T19:41:38Z",
+   "tags": [
+    "agent-loop"
+   ],
+   "layers": [
+    "agents"
+   ],
+   "score": 1.6
+  },
   {
    "id": "39d67296f725",
    "title": "More than 20 leading AI researchers warn that automated AI research poses extreme risks",
@@ -1032,7 +1050,7 @@
    "type": "press",
    "published": "2026-09-28T16:43:18Z",
    "summary": "US Government websites among \"dozens of third parties\" OpenAI has recently notified.",
-   "discussion": "83",
+   "discussion": "84",
    "firstSeen": "2026-09-28T19:07:31Z",
    "tags": [
     "frontier-capabilities",
@@ -5423,6 +5441,25 @@
     "efficiency"
    ],
    "score": 3.75
+  },
+  {
+   "id": "1cc53dadcad4",
+   "title": "Disaggregated Quantization: Specializing LLM Prefill and Decode",
+   "url": "https://huggingface.co/papers/2609.26333",
+   "source": "hf-papers",
+   "sourceName": "Hugging Face Daily Papers",
+   "type": "research",
+   "published": "2026-09-21T20:00:00Z",
+   "summary": "Prefill and decode reward different approaches to quantization: low-precision arithmetic accelerates prompt processing, while compact weights reduce memory traffic during generation. We propose \"disaggregated quantization\" (DQ), which specializes computation formats, weights and storage placement to both of these…",
+   "points": 11,
+   "firstSeen": "2026-09-28T19:41:38Z",
+   "tags": [
+    "quantization"
+   ],
+   "layers": [
+    "efficiency"
+   ],
+   "score": 3.68
   },
   {
    "id": "3a10b48ae769",
