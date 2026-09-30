@@ -33,5 +33,24 @@
   },
   "walkthrough": [],
   "status": "draft",
-  "lastReviewed": "2026-09-28"
+  "lastReviewed": "2026-09-28",
+  "newsKeywords": [
+    "inference",
+    "model serving",
+    "quantization",
+    "quantisation",
+    "quantized",
+    "GGUF",
+    "vLLM",
+    "llama.cpp",
+    "Ollama",
+    "latency",
+    "tokens per second",
+    "KV cache",
+    "batching",
+    "distillation",
+    "speculative decoding",
+    "price per token",
+    "OpenRouter"
+  ]
 }

@@ -628,8 +628,47 @@
     "d7": 7,
     "d30": 9
    }
+  },
+  "stack": {
+   "physical-energy": {
+    "d7": 8,
+    "prev7": 1
+   },
+   "compute-hardware": {
+    "d7": 21,
+    "prev7": 4
+   },
+   "cloud-infrastructure": {
+    "d7": 21,
+    "prev7": 3
+   },
+   "data": {
+    "d7": 10,
+    "prev7": 0
+   },
+   "foundation-models": {
+    "d7": 139,
+    "prev7": 27
+   },
+   "inference-optimization": {
+    "d7": 43,
+    "prev7": 8
+   },
+   "orchestration-tooling": {
+    "d7": 17,
+    "prev7": 0
+   },
+   "agents": {
+    "d7": 100,
+    "prev7": 14
+   },
+   "applications-interfaces": {
+    "d7": 29,
+    "prev7": 1
+   }
   }
  },
+ "collectedSince": "2026-09-27T19:40:56Z",
  "radar": [
   {
    "term": "Muse",

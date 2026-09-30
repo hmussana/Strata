@@ -29,5 +29,21 @@
   },
   "walkthrough": [],
   "status": "draft",
-  "lastReviewed": "2026-09-28"
+  "lastReviewed": "2026-09-28",
+  "newsKeywords": [
+    "AWS",
+    "Azure",
+    "Google Cloud",
+    "CoreWeave",
+    "GPU cloud",
+    "neocloud",
+    "hyperscaler",
+    "Kubernetes",
+    "Slurm",
+    "compute capacity",
+    "supercomputer",
+    "Bedrock",
+    "Vertex AI",
+    "cluster"
+  ]
 }

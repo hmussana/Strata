@@ -33,5 +33,29 @@
   },
   "walkthrough": [],
   "status": "draft",
-  "lastReviewed": "2026-09-28"
+  "lastReviewed": "2026-09-28",
+  "newsKeywords": [
+    "=LLM",
+    "language model",
+    "foundation model",
+    "transformer",
+    "pretraining",
+    "pre-training",
+    "post-training",
+    "fine-tuning",
+    "RLHF",
+    "reinforcement learning",
+    "open-weight",
+    "open weights",
+    "GPT-5",
+    "Claude",
+    "Gemini",
+    "Llama",
+    "Qwen",
+    "DeepSeek",
+    "Mistral",
+    "multimodal",
+    "mixture of experts",
+    "reasoning model"
+  ]
 }

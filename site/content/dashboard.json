@@ -1,12 +1,12 @@
 {
   "status": "draft",
-  "lastReviewed": "2026-09-28",
+  "lastReviewed": "2026-09-30",
   "indicators": [
     {
       "id": "players",
       "label": "Key players",
       "kind": "list",
-      "note": "Draft examples for review, not a ranking."
+      "definition": "Well-known organisations or projects active in the layer. Draft examples for review, not a ranking or market share."
     },
     {
       "id": "maturity",
@@ -16,112 +16,236 @@
         "Emerging",
         "Growing",
         "Mature"
-      ]
+      ],
+      "definition": "How settled the layer's technology and practice are, using the rubric below. An editorial judgement, not a measurement.",
+      "rubric": {
+        "Emerging": "Core techniques still change quickly, few standards, best practice unsettled.",
+        "Growing": "Established techniques and vendors, but fast change in tooling, methods or prices; standards forming.",
+        "Mature": "Stable technology, established standards and vendors; change is incremental."
+      }
     },
     {
       "id": "activity",
       "label": "News this week",
       "kind": "measured",
       "source": "news",
-      "note": "Stories tagged to this layer in the last 7 days by Strata's news feed. A proxy for attention, not investment."
+      "definition": "Stories in Strata's news feed from the last 7 days that mention this layer's keywords. One story can count for several layers. A proxy for attention, not investment or importance."
     },
     {
       "id": "investment",
       "label": "Investment",
-      "kind": "text"
+      "kind": "text",
+      "definition": "PLACEHOLDER: metric not chosen yet (for example publicly reported capital spending or venture funding, with source and date)."
     }
   ],
   "layers": {
     "physical-energy": {
-      "players": [
-        "TSMC",
-        "Samsung Foundry",
-        "Intel Foundry",
-        "ASML (lithography)"
-      ],
-      "maturity": "PLACEHOLDER",
-      "investment": "PLACEHOLDER"
+      "players": {
+        "value": [
+          "TSMC",
+          "Samsung Foundry",
+          "Intel Foundry",
+          "ASML (lithography)"
+        ],
+        "source": "Draft examples chosen by Strata",
+        "asOf": "2026-09-30"
+      },
+      "maturity": {
+        "value": "Growing",
+        "rationale": "Data centres are a mature industry, but AI-scale power, liquid cooling and grid deals are changing fast.",
+        "source": "Strata editorial judgement (draft, apply the maturity rubric)",
+        "asOf": "2026-09-30"
+      },
+      "investment": {
+        "value": "PLACEHOLDER",
+        "source": "PLACEHOLDER",
+        "asOf": "PLACEHOLDER"
+      }
     },
     "compute-hardware": {
-      "players": [
-        "NVIDIA",
-        "AMD",
-        "Google (TPU)",
-        "AWS (Trainium)"
-      ],
-      "maturity": "PLACEHOLDER",
-      "investment": "PLACEHOLDER"
+      "players": {
+        "value": [
+          "NVIDIA",
+          "AMD",
+          "Google (TPU)",
+          "AWS (Trainium)"
+        ],
+        "source": "Draft examples chosen by Strata",
+        "asOf": "2026-09-30"
+      },
+      "maturity": {
+        "value": "Growing",
+        "rationale": "Established vendors, but new accelerator generations and number formats arrive yearly.",
+        "source": "Strata editorial judgement (draft, apply the maturity rubric)",
+        "asOf": "2026-09-30"
+      },
+      "investment": {
+        "value": "PLACEHOLDER",
+        "source": "PLACEHOLDER",
+        "asOf": "PLACEHOLDER"
+      }
     },
     "cloud-infrastructure": {
-      "players": [
-        "AWS",
-        "Microsoft Azure",
-        "Google Cloud",
-        "CoreWeave"
-      ],
-      "maturity": "PLACEHOLDER",
-      "investment": "PLACEHOLDER"
+      "players": {
+        "value": [
+          "AWS",
+          "Microsoft Azure",
+          "Google Cloud",
+          "CoreWeave"
+        ],
+        "source": "Draft examples chosen by Strata",
+        "asOf": "2026-09-30"
+      },
+      "maturity": {
+        "value": "Growing",
+        "rationale": "Hyperscale cloud is mature; GPU clouds and AI cluster tooling are still evolving quickly.",
+        "source": "Strata editorial judgement (draft, apply the maturity rubric)",
+        "asOf": "2026-09-30"
+      },
+      "investment": {
+        "value": "PLACEHOLDER",
+        "source": "PLACEHOLDER",
+        "asOf": "PLACEHOLDER"
+      }
     },
     "data": {
-      "players": [
-        "Common Crawl",
-        "Scale AI",
-        "Hugging Face datasets"
-      ],
-      "maturity": "PLACEHOLDER",
-      "investment": "PLACEHOLDER"
+      "players": {
+        "value": [
+          "Common Crawl",
+          "Scale AI",
+          "Hugging Face datasets"
+        ],
+        "source": "Draft examples chosen by Strata",
+        "asOf": "2026-09-30"
+      },
+      "maturity": {
+        "value": "Growing",
+        "rationale": "Curation practice is established; licensing, synthetic data and provenance norms are unsettled.",
+        "source": "Strata editorial judgement (draft, apply the maturity rubric)",
+        "asOf": "2026-09-30"
+      },
+      "investment": {
+        "value": "PLACEHOLDER",
+        "source": "PLACEHOLDER",
+        "asOf": "PLACEHOLDER"
+      }
     },
     "foundation-models": {
-      "players": [
-        "OpenAI",
-        "Anthropic",
-        "Google DeepMind",
-        "Meta",
-        "DeepSeek",
-        "Alibaba (Qwen)"
-      ],
-      "maturity": "PLACEHOLDER",
-      "investment": "PLACEHOLDER"
+      "players": {
+        "value": [
+          "OpenAI",
+          "Anthropic",
+          "Google DeepMind",
+          "Meta",
+          "DeepSeek",
+          "Alibaba (Qwen)"
+        ],
+        "source": "Draft examples chosen by Strata",
+        "asOf": "2026-09-30"
+      },
+      "maturity": {
+        "value": "Growing",
+        "rationale": "The transformer recipe is stable, but capabilities and training methods change month to month.",
+        "source": "Strata editorial judgement (draft, apply the maturity rubric)",
+        "asOf": "2026-09-30"
+      },
+      "investment": {
+        "value": "PLACEHOLDER",
+        "source": "PLACEHOLDER",
+        "asOf": "PLACEHOLDER"
+      }
     },
     "inference-optimization": {
-      "players": [
-        "vLLM",
-        "llama.cpp",
-        "OpenRouter",
-        "Together AI"
-      ],
-      "maturity": "PLACEHOLDER",
-      "investment": "PLACEHOLDER"
+      "players": {
+        "value": [
+          "vLLM",
+          "llama.cpp",
+          "OpenRouter",
+          "Together AI"
+        ],
+        "source": "Draft examples chosen by Strata",
+        "asOf": "2026-09-30"
+      },
+      "maturity": {
+        "value": "Growing",
+        "rationale": "Serving engines and quantisation are widely used; techniques and prices still shift rapidly.",
+        "source": "Strata editorial judgement (draft, apply the maturity rubric)",
+        "asOf": "2026-09-30"
+      },
+      "investment": {
+        "value": "PLACEHOLDER",
+        "source": "PLACEHOLDER",
+        "asOf": "PLACEHOLDER"
+      }
     },
     "orchestration-tooling": {
-      "players": [
-        "LangChain / LangGraph",
-        "LlamaIndex",
-        "MCP ecosystem",
-        "pgvector"
-      ],
-      "maturity": "PLACEHOLDER",
-      "investment": "PLACEHOLDER"
+      "players": {
+        "value": [
+          "LangChain / LangGraph",
+          "LlamaIndex",
+          "MCP ecosystem",
+          "pgvector"
+        ],
+        "source": "Draft examples chosen by Strata",
+        "asOf": "2026-09-30"
+      },
+      "maturity": {
+        "value": "Emerging",
+        "rationale": "Standards such as MCP are recent and frameworks churn; best practice is still forming.",
+        "source": "Strata editorial judgement (draft, apply the maturity rubric)",
+        "asOf": "2026-09-30"
+      },
+      "investment": {
+        "value": "PLACEHOLDER",
+        "source": "PLACEHOLDER",
+        "asOf": "PLACEHOLDER"
+      }
     },
     "agents": {
-      "players": [
-        "Claude Code",
-        "OpenAI Codex",
-        "OpenClaw",
-        "Devin"
-      ],
-      "maturity": "PLACEHOLDER",
-      "investment": "PLACEHOLDER"
+      "players": {
+        "value": [
+          "Claude Code",
+          "OpenAI Codex",
+          "OpenClaw",
+          "Devin"
+        ],
+        "source": "Draft examples chosen by Strata",
+        "asOf": "2026-09-30"
+      },
+      "maturity": {
+        "value": "Emerging",
+        "rationale": "Reliability, evaluation and safety for autonomous multi-step work are open problems.",
+        "source": "Strata editorial judgement (draft, apply the maturity rubric)",
+        "asOf": "2026-09-30"
+      },
+      "investment": {
+        "value": "PLACEHOLDER",
+        "source": "PLACEHOLDER",
+        "asOf": "PLACEHOLDER"
+      }
     },
     "applications-interfaces": {
-      "players": [
-        "ChatGPT",
-        "Microsoft Copilot",
-        "GitHub Copilot",
-        "Perplexity"
-      ],
-      "maturity": "PLACEHOLDER",
-      "investment": "PLACEHOLDER"
+      "players": {
+        "value": [
+          "ChatGPT",
+          "Microsoft Copilot",
+          "GitHub Copilot",
+          "Perplexity"
+        ],
+        "source": "Draft examples chosen by Strata",
+        "asOf": "2026-09-30"
+      },
+      "maturity": {
+        "value": "Growing",
+        "rationale": "Chat assistants and copilots are widely adopted; interface patterns for agents are new.",
+        "source": "Strata editorial judgement (draft, apply the maturity rubric)",
+        "asOf": "2026-09-30"
+      },
+      "investment": {
+        "value": "PLACEHOLDER",
+        "source": "PLACEHOLDER",
+        "asOf": "PLACEHOLDER"
+      }
     }
   }
 }

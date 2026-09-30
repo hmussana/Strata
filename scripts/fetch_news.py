@@ -380,6 +380,26 @@ def llm_enrich(items: list[dict], tagger: Tagger) -> int:
 
 # ---------------------------------------------------------------- analytics
 
+def compute_stack_heat(items: list[dict], now: dt.datetime, content: Path | None = None) -> dict:
+    """Stories per layer of The AI Stack (site/content), this week and last week, from each layer's newsKeywords."""
+    content = content or ROOT / "site" / "content"
+    model_path = content / "model.json"
+    if not model_path.exists():
+        return {}
+    heat = {}
+    for lid in json.loads(model_path.read_text())["layers"]:
+        layer = json.loads((content / "layers" / f"{lid}.json").read_text())
+        pat = Tagger._compile(layer.get("newsKeywords", []))
+        counts = {"d7": 0, "prev7": 0}
+        if pat:
+            for it in items:
+                age = (now - parse_date(it["published"])).total_seconds() / 86400
+                if age <= 14 and pat.search(f"{it['title']} {it.get('summary', '')}"):
+                    counts["d7" if age <= 7 else "prev7"] += 1
+        heat[lid] = counts
+    return heat
+
+
 def compute_heat(items: list[dict], now: dt.datetime) -> dict:
     concepts: dict[str, dict] = defaultdict(lambda: {"d7": 0, "prev7": 0, "d30": 0})
     layers: dict[str, dict] = defaultdict(lambda: {"d7": 0, "d30": 0})
@@ -575,7 +595,8 @@ def run(fixtures: Path | None = None, out_path: Path | None = None, now: dt.date
         "retentionDays": RETENTION_DAYS,
         "llmEnriched": enriched,
         "sources": health,
-        "heat": compute_heat(items, now),
+        "heat": {**compute_heat(items, now), "stack": compute_stack_heat(items, now)},
+        "collectedSince": min((it.get("firstSeen", it["published"]) for it in items), default=None),
         "radar": compute_radar(items, tagger, ignore, now),
         "items": items,
     }

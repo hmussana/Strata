@@ -75,9 +75,9 @@ export function concept(route, c) {
 
   return {
     zoom: 'Z3', layer: l.id, title: k.name,
-    crumbs: [{ label: 'Landscape', href: href.landscape(), z: 'Z0' }, { label: 'Stack', href: href.stack(l.id), z: 'Z1' },
+    crumbs: [{ label: 'Landscape', href: href.landscape(l.id), z: 'Z0' }, { label: 'Stack', href: href.stack(l.id), z: 'Z1' },
       { label: l.name, href: href.layer(l.id), z: 'Z2' }, { label: k.name, z: 'Z3' }],
-    html: `<header class="concept-head ${lclass(l)}">
+    html: `<header class="concept-head vt-target ${lclass(l)}">
         <p class="eyebrow">${zoomLabel('Z3')} Concept in <a href="${href.layer(l.id)}">${lnum(l)} ${esc(l.name)}</a></p>
         <h1>${esc(k.name)}</h1>
         <p class="lede">${esc(k.summary)}</p>

@@ -34,7 +34,15 @@ editor. Long text is written as an array of paragraphs. Text fields support a ti
 | `concepts` | ordered concept ids |
 | `metaDiagram.nodes` | concepts shown in the Z2 map; optional `x`/`y` layout hints |
 | `walkthrough` | 3–6 steps: `{ title, text, highlight: [conceptIds] }` |
+| `newsKeywords` | terms that count a news story toward this layer (drives "News this week" on Z0); `=` prefix = case-sensitive |
 | `status`, `lastReviewed` | `draft` or `reviewed`; ISO date, shown on the page |
+
+## Dashboard (Z0)
+
+`indicators` lists 3–6 indicators, each with a `definition` shown in the "About these indicators" panel (maturity
+also has a `rubric`). `layers.<id>.<indicator>` holds `{ value, source, asOf }` (maturity adds a `rationale`); the
+validator rejects values without a source and date. "News this week" is measured, not authored: the news fetcher
+counts stories matching each layer's `newsKeywords`, and trends appear once 14 days have been collected.
 
 ## Concept
 

@@ -124,6 +124,9 @@ class EndToEndTests(unittest.TestCase):
             self.assertEqual(len(papers), 2)
 
             self.assertGreater(data["heat"]["concepts"]["dgx-spark"]["d7"], 0)
+            stack = data["heat"]["stack"]
+            self.assertGreater(stack["compute-hardware"]["d7"], 0, "DGX Spark story counts for Compute Hardware")
+            self.assertEqual(set(stack), set(json.loads((fn.ROOT / "site/content/model.json").read_text())["layers"]))
             self.assertIn("Zephyrix-7", [r["term"] for r in data["radar"]])
 
             feed = (Path(tmp) / "feed.xml").read_text()

@@ -8,7 +8,7 @@
 const enc = encodeURIComponent;
 
 export const href = {
-  landscape: () => '#/',
+  landscape: (focus) => (focus ? `#/?focus=${enc(focus)}` : '#/'),
   stack: (focus) => (focus ? `#/stack?focus=${enc(focus)}` : '#/stack'),
   layer: (id) => `#/layer/${enc(id)}`,
   concept: (id, depth) => `#/concept/${enc(id)}${depth ? `?d=${depth}` : ''}`,

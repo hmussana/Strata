@@ -130,6 +130,9 @@ def validate(data: dict | None = None) -> list[str]:
             err(f"{where}: needs 3-5 examples")
         if not valid_date(l.get("lastReviewed")):
             err(f"{where}: lastReviewed is not an ISO date")
+        kws = l.get("newsKeywords", [])
+        if not isinstance(kws, list) or not all(isinstance(k, str) and k.strip("=~") for k in kws):
+            err(f"{where}: newsKeywords must be a list of non-empty strings")
         if icons is not None and l.get("icon") not in icons:
             err(f"{where}: unknown icon {l.get('icon')}")
         for theme, block in tokens.items():
@@ -222,9 +225,24 @@ def validate(data: dict | None = None) -> list[str]:
     indicator_ids = {i["id"] for i in dash.get("indicators", [])}
     if not 3 <= len(indicator_ids) <= 6:
         err("dashboard.json: needs 3-6 indicators")
+    scale = next((i.get("scale", []) for i in dash.get("indicators", []) if i["id"] == "maturity"), [])
+    for i in dash.get("indicators", []):
+        if not i.get("definition"):
+            err(f"dashboard.json: indicator {i['id']} needs a definition")
     for lid in layer_ids:
-        if lid not in dash.get("layers", {}):
+        entry = dash.get("layers", {}).get(lid)
+        if entry is None:
             err(f"dashboard.json: no entry for layer {lid}")
+            continue
+        for iid in indicator_ids - {"activity"}:
+            v = entry.get(iid)
+            if not isinstance(v, dict) or not all(k in v for k in ("value", "source", "asOf")):
+                err(f"dashboard.json: {lid}.{iid} needs value, source and asOf")
+            elif not valid_date(v["asOf"]):
+                err(f"dashboard.json: {lid}.{iid}.asOf is not a date")
+        mv = (entry.get("maturity") or {}).get("value")
+        if mv is not None and not is_placeholder(mv) and mv not in scale:
+            err(f"dashboard.json: {lid} maturity '{mv}' is not on the scale {scale}")
 
     # contrast (WCAG AA for text-bearing token pairs)
     for theme, t in tokens.items():

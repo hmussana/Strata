@@ -43,6 +43,7 @@ function render(c, route) {
   const view = VIEWS[route.view];
   const out = (view && view(route, c)) || notFound();
   const main = $('#view');
+  document.body.className = out.bodyClass || '';
   main.innerHTML = out.html;
   renderCrumbs(out.crumbs);
   renderMinimap(c, out);
@@ -69,8 +70,29 @@ function setupTheme() {
   });
 }
 
+// Semantic zoom: the clicked element and the new view's matching element share one view-transition name,
+// so the tile visibly becomes the stack row, the row becomes the layer header, the card becomes the concept.
+function setupZoom() {
+  document.addEventListener('click', (e) => {
+    const a = e.target.closest('a[data-zoom]');
+    if (!a) return;
+    document.querySelectorAll('.vt-target').forEach((el) => el.classList.remove('vt-target'));
+    a.classList.add('vt-target');
+  });
+}
+
+// Z0 fills exactly one screen: track the real height of the sticky bar (it can wrap on narrow screens)
+function trackBarHeight() {
+  const bar = document.querySelector('.bar');
+  const set = () => document.documentElement.style.setProperty('--bar-h', `${Math.ceil(bar.getBoundingClientRect().height)}px`);
+  new ResizeObserver(set).observe(bar);
+  set();
+}
+
 async function main() {
   setupTheme();
+  setupZoom();
+  trackBarHeight();
   try {
     const content = await loadContent();
     start((route) => render(content, route));

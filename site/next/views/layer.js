@@ -14,7 +14,7 @@ export function layer(route, c) {
   const below = c.layers.find((x) => x.order === l.order - 1);
   const concepts = l.concepts.map((id) => c.conceptById.get(id)).filter(Boolean);
   const cards = concepts.map((k) => `
-    <a class="concept-card ${lclass(l)}" href="${href.concept(k.id)}">
+    <a class="concept-card ${lclass(l)}" href="${href.concept(k.id)}" data-zoom>
       <strong>${esc(k.name)}</strong>
       <span class="small muted">${esc(k.summary)}</span>
       <span class="depth-dots" aria-label="Written at depths ${DEPTHS.filter((d) => k.depths[d]).join(', ')}">${DEPTHS.map((d) => `<i class="${k.depths[d] ? 'on' : ''}">${d}</i>`).join('')}</span>
@@ -31,8 +31,8 @@ export function layer(route, c) {
   const showBreaks = prefs.depth >= 2;
   return {
     zoom: 'Z2', layer: l.id, title: l.name,
-    crumbs: [{ label: 'Landscape', href: href.landscape(), z: 'Z0' }, { label: 'Stack', href: href.stack(l.id), z: 'Z1' }, { label: l.name, z: 'Z2' }],
-    html: `<header class="layer-head ${lclass(l)}">
+    crumbs: [{ label: 'Landscape', href: href.landscape(l.id), z: 'Z0' }, { label: 'Stack', href: href.stack(l.id), z: 'Z1' }, { label: l.name, z: 'Z2' }],
+    html: `<header class="layer-head vt-target ${lclass(l)}">
         <p class="eyebrow">${zoomLabel('Z2')} ${lnum(l)} Layer ${l.order} of ${c.layers.length}</p>
         <h1>${icon(l.icon)}${esc(l.name)}</h1>
         <p class="lede">${esc(l.oneLiner)}</p>

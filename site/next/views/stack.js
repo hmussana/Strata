@@ -7,7 +7,7 @@ import { esc, lclass, zoomLabel } from '../ui.js';
 export function stack(route, c) {
   const focus = route.params.get('focus');
   const rows = c.topDown.map((l) => `
-    <a class="stack-row ${lclass(l)} ${focus === l.id ? 'focus' : ''}" id="row-${esc(l.id)}" href="${href.layer(l.id)}">
+    <a class="stack-row ${lclass(l)} ${focus === l.id ? 'focus vt-target' : ''}" id="row-${esc(l.id)}" href="${href.layer(l.id)}" data-zoom>
       <span class="stack-num" aria-hidden="true">L${l.order}</span>
       <span class="stack-body">
         <span class="stack-title">${icon(l.icon)}<span>${esc(l.name)}</span><span class="sr-only">, layer ${l.order} of ${c.layers.length}</span></span>
@@ -17,7 +17,7 @@ export function stack(route, c) {
     </a>`).join('');
   return {
     zoom: 'Z1', layer: focus, title: 'The AI stack',
-    crumbs: [{ label: 'Landscape', href: href.landscape(), z: 'Z0' }, { label: 'Stack', z: 'Z1' }],
+    crumbs: [{ label: 'Landscape', href: href.landscape(focus), z: 'Z0' }, { label: 'Stack', z: 'Z1' }],
     html: `<header class="view-head">
         <p class="eyebrow">${zoomLabel('Z1')} The stack</p>
         <h1>How the AI world is organised</h1>
