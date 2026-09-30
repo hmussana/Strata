@@ -74,7 +74,7 @@
       "label": "Research this week",
       "kind": "measured",
       "source": "arxiv",
-      "definition": "New arXiv papers from the last 7 days (categories cs.AI, cs.CL, cs.LG, cs.DC, cs.AR) whose title or abstract matches this layer's keywords. One paper can count for several layers. A proxy for research attention, not quality."
+      "definition": "New arXiv papers from the last 7 announcement days (cs.AI, cs.CL, cs.LG, cs.DC, cs.AR) whose title or abstract matches this layer's research keywords. One paper can count for several layers. Most AI papers concern language models, so Foundation Models dominates. A proxy for research attention, not quality."
     }
   ],
   "layers": {

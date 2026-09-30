@@ -48,5 +48,20 @@
     "annotation",
     "data poisoning",
     "corpus"
+  ],
+  "researchKeywords": [
+    "data curation",
+    "data quality",
+    "synthetic data",
+    "data filtering",
+    "deduplication",
+    "pretraining data",
+    "pre-training data",
+    "pretraining corpus",
+    "data contamination",
+    "data poisoning",
+    "data licensing",
+    "dataset construction",
+    "data mixture"
   ]
 }

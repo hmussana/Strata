@@ -130,9 +130,10 @@ def validate(data: dict | None = None) -> list[str]:
             err(f"{where}: needs 3-5 examples")
         if not valid_date(l.get("lastReviewed")):
             err(f"{where}: lastReviewed is not an ISO date")
-        kws = l.get("newsKeywords", [])
-        if not isinstance(kws, list) or not all(isinstance(k, str) and k.strip("=~") for k in kws):
-            err(f"{where}: newsKeywords must be a list of non-empty strings")
+        for field in ("newsKeywords", "researchKeywords"):
+            kws = l.get(field, [])
+            if not isinstance(kws, list) or not all(isinstance(k, str) and k.strip("=~") for k in kws):
+                err(f"{where}: {field} must be a list of non-empty strings")
         if icons is not None and l.get("icon") not in icons:
             err(f"{where}: unknown icon {l.get('icon')}")
         for theme, block in tokens.items():

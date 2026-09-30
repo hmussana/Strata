@@ -57,5 +57,19 @@
     "multimodal",
     "mixture of experts",
     "reasoning model"
+  ],
+  "researchKeywords": [
+    "=LLM",
+    "large language model",
+    "foundation model",
+    "pretraining",
+    "pre-training",
+    "post-training",
+    "RLHF",
+    "mixture of experts",
+    "mixture-of-experts",
+    "scaling law",
+    "reasoning model",
+    "vision-language model"
   ]
 }

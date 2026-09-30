@@ -380,8 +380,9 @@ def llm_enrich(items: list[dict], tagger: Tagger) -> int:
 
 # ---------------------------------------------------------------- analytics
 
-def stack_patterns(content: Path | None = None) -> dict[str, re.Pattern | None]:
-    """Compiled keyword pattern per layer of The AI Stack (site/content), in layer order."""
+def stack_patterns(content: Path | None = None, field: str = "newsKeywords") -> dict[str, re.Pattern | None]:
+    """Compiled keyword pattern per layer of The AI Stack (site/content), in layer order.
+    `field` picks the keyword list; layers without it fall back to newsKeywords."""
     content = content or ROOT / "site" / "content"
     model_path = content / "model.json"
     if not model_path.exists():
@@ -389,7 +390,7 @@ def stack_patterns(content: Path | None = None) -> dict[str, re.Pattern | None]:
     out = {}
     for lid in json.loads(model_path.read_text())["layers"]:
         layer = json.loads((content / "layers" / f"{lid}.json").read_text())
-        out[lid] = Tagger._compile(layer.get("newsKeywords", []))
+        out[lid] = Tagger._compile(layer.get(field) or layer.get("newsKeywords", []))
     return out
 
 
@@ -553,7 +554,7 @@ def update_research(previous: dict | None, papers: dict[str, str], day: str | No
     if papers:  # arXiv publishes nothing at weekends; don't record empty days
         key = day or now.date().isoformat()
         counts = {lid: (sum(1 for text in papers.values() if pat.search(text)) if pat else 0)
-                  for lid, pat in stack_patterns(content).items()}
+                  for lid, pat in stack_patterns(content, "researchKeywords").items()}
         daily[key] = {"papers": len(papers), "layers": counts}
     cutoff = (now - dt.timedelta(days=RESEARCH_KEEP_DAYS)).date().isoformat()
     daily = {k: v for k, v in sorted(daily.items()) if k >= cutoff}

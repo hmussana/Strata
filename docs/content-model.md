@@ -35,6 +35,7 @@ editor. Long text is written as an array of paragraphs. Text fields support a ti
 | `metaDiagram.nodes` | concepts shown in the Z2 map; optional `x`/`y` layout hints |
 | `walkthrough` | 3–6 steps: `{ title, text, highlight: [conceptIds] }` |
 | `newsKeywords` | terms that count a news story toward this layer (drives "News this week" on Z0); `=` prefix = case-sensitive |
+| `researchKeywords` | optional narrower terms for counting arXiv papers (words like "dataset" appear in most abstracts); falls back to `newsKeywords` |
 | `status`, `lastReviewed` | `draft` or `reviewed`; ISO date, shown on the page |
 
 ## Dashboard (Z0)

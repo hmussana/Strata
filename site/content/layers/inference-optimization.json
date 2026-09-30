@@ -52,5 +52,20 @@
     "speculative decoding",
     "price per token",
     "OpenRouter"
+  ],
+  "researchKeywords": [
+    "efficient inference",
+    "inference efficiency",
+    "model serving",
+    "LLM serving",
+    "quantization",
+    "quantisation",
+    "KV cache",
+    "speculative decoding",
+    "knowledge distillation",
+    "model compression",
+    "pruning",
+    "inference latency",
+    "throughput"
   ]
 }
