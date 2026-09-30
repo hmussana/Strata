@@ -1,5 +1,5 @@
 {
- "generated": "2026-09-30T20:44:12Z",
+ "generated": "2026-09-30T20:55:43Z",
  "retentionDays": 45,
  "llmEnriched": 0,
  "sources": [
@@ -10,7 +10,7 @@
    "ok": true,
    "count": 15,
    "error": null,
-   "lastOk": "2026-09-30T20:44:12Z"
+   "lastOk": "2026-09-30T20:55:43Z"
   },
   {
    "id": "deepmind",
@@ -19,7 +19,7 @@
    "ok": true,
    "count": 10,
    "error": null,
-   "lastOk": "2026-09-30T20:44:12Z"
+   "lastOk": "2026-09-30T20:55:43Z"
   },
   {
    "id": "google-ai",
@@ -28,7 +28,7 @@
    "ok": true,
    "count": 10,
    "error": null,
-   "lastOk": "2026-09-30T20:44:12Z"
+   "lastOk": "2026-09-30T20:55:43Z"
   },
   {
    "id": "hf-blog",
@@ -37,7 +37,7 @@
    "ok": true,
    "count": 15,
    "error": null,
-   "lastOk": "2026-09-30T20:44:12Z"
+   "lastOk": "2026-09-30T20:55:43Z"
   },
   {
    "id": "nvidia-dev",
@@ -46,7 +46,7 @@
    "ok": true,
    "count": 10,
    "error": null,
-   "lastOk": "2026-09-30T20:44:12Z"
+   "lastOk": "2026-09-30T20:55:43Z"
   },
   {
    "id": "msr",
@@ -55,7 +55,7 @@
    "ok": true,
    "count": 10,
    "error": null,
-   "lastOk": "2026-09-30T20:44:12Z"
+   "lastOk": "2026-09-30T20:55:43Z"
   },
   {
    "id": "aws-ml",
@@ -64,7 +64,7 @@
    "ok": true,
    "count": 8,
    "error": null,
-   "lastOk": "2026-09-30T20:44:12Z"
+   "lastOk": "2026-09-30T20:55:43Z"
   },
   {
    "id": "qwen",
@@ -73,7 +73,7 @@
    "ok": true,
    "count": 8,
    "error": null,
-   "lastOk": "2026-09-30T20:44:12Z"
+   "lastOk": "2026-09-30T20:55:43Z"
   },
   {
    "id": "hn",
@@ -82,7 +82,7 @@
    "ok": true,
    "count": 10,
    "error": null,
-   "lastOk": "2026-09-30T20:44:12Z"
+   "lastOk": "2026-09-30T20:55:43Z"
   },
   {
    "id": "localllama",
@@ -91,7 +91,7 @@
    "ok": true,
    "count": 15,
    "error": null,
-   "lastOk": "2026-09-30T20:44:12Z"
+   "lastOk": "2026-09-30T20:55:43Z"
   },
   {
    "id": "simonw",
@@ -100,7 +100,7 @@
    "ok": true,
    "count": 15,
    "error": null,
-   "lastOk": "2026-09-30T20:44:12Z"
+   "lastOk": "2026-09-30T20:55:43Z"
   },
   {
    "id": "hf-papers",
@@ -109,7 +109,7 @@
    "ok": true,
    "count": 15,
    "error": null,
-   "lastOk": "2026-09-30T20:44:12Z"
+   "lastOk": "2026-09-30T20:55:43Z"
   },
   {
    "id": "arxiv-cl",
@@ -118,7 +118,7 @@
    "ok": true,
    "count": 12,
    "error": null,
-   "lastOk": "2026-09-30T20:44:12Z"
+   "lastOk": "2026-09-30T20:55:43Z"
   },
   {
    "id": "latent-space",
@@ -127,7 +127,7 @@
    "ok": true,
    "count": 8,
    "error": null,
-   "lastOk": "2026-09-30T20:44:12Z"
+   "lastOk": "2026-09-30T20:55:43Z"
   },
   {
    "id": "interconnects",
@@ -136,7 +136,7 @@
    "ok": true,
    "count": 8,
    "error": null,
-   "lastOk": "2026-09-30T20:44:12Z"
+   "lastOk": "2026-09-30T20:55:43Z"
   },
   {
    "id": "import-ai",
@@ -145,7 +145,7 @@
    "ok": true,
    "count": 5,
    "error": null,
-   "lastOk": "2026-09-30T20:44:12Z"
+   "lastOk": "2026-09-30T20:55:43Z"
   },
   {
    "id": "verge-ai",
@@ -154,7 +154,7 @@
    "ok": true,
    "count": 10,
    "error": null,
-   "lastOk": "2026-09-30T20:44:12Z"
+   "lastOk": "2026-09-30T20:55:43Z"
   },
   {
    "id": "ars-ai",
@@ -163,7 +163,7 @@
    "ok": true,
    "count": 12,
    "error": null,
-   "lastOk": "2026-09-30T20:44:12Z"
+   "lastOk": "2026-09-30T20:55:43Z"
   },
   {
    "id": "techcrunch-ai",
@@ -172,7 +172,7 @@
    "ok": true,
    "count": 12,
    "error": null,
-   "lastOk": "2026-09-30T20:44:12Z"
+   "lastOk": "2026-09-30T20:55:43Z"
   },
   {
    "id": "mit-tr",
@@ -181,7 +181,7 @@
    "ok": true,
    "count": 8,
    "error": null,
-   "lastOk": "2026-09-30T20:44:12Z"
+   "lastOk": "2026-09-30T20:55:43Z"
   },
   {
    "id": "decoder",
@@ -190,7 +190,7 @@
    "ok": true,
    "count": 10,
    "error": null,
-   "lastOk": "2026-09-30T20:44:12Z"
+   "lastOk": "2026-09-30T20:55:43Z"
   },
   {
    "id": "sth",
@@ -199,7 +199,7 @@
    "ok": true,
    "count": 4,
    "error": null,
-   "lastOk": "2026-09-30T20:44:12Z"
+   "lastOk": "2026-09-30T20:55:43Z"
   },
   {
    "id": "embrace-red",
@@ -208,7 +208,7 @@
    "ok": true,
    "count": 6,
    "error": null,
-   "lastOk": "2026-09-30T20:44:12Z"
+   "lastOk": "2026-09-30T20:55:43Z"
   },
   {
    "id": "rel-ollama",
@@ -217,7 +217,7 @@
    "ok": true,
    "count": 3,
    "error": null,
-   "lastOk": "2026-09-30T20:44:12Z"
+   "lastOk": "2026-09-30T20:55:43Z"
   },
   {
    "id": "rel-vllm",
@@ -226,7 +226,7 @@
    "ok": true,
    "count": 3,
    "error": null,
-   "lastOk": "2026-09-30T20:44:12Z"
+   "lastOk": "2026-09-30T20:55:43Z"
   },
   {
    "id": "rel-opencode",
@@ -235,7 +235,7 @@
    "ok": true,
    "count": 3,
    "error": null,
-   "lastOk": "2026-09-30T20:44:12Z"
+   "lastOk": "2026-09-30T20:55:43Z"
   },
   {
    "id": "rel-claude-code",
@@ -244,7 +244,7 @@
    "ok": true,
    "count": 3,
    "error": null,
-   "lastOk": "2026-09-30T20:44:12Z"
+   "lastOk": "2026-09-30T20:55:43Z"
   }
  ],
  "heat": {
@@ -371,8 +371,8 @@
    },
    "multimodal": {
     "d7": 25,
-    "prev7": 7,
-    "d30": 34
+    "prev7": 8,
+    "d30": 35
    },
    "distillation": {
     "d7": 10,
@@ -598,7 +598,7 @@
   "layers": {
    "models": {
     "d7": 231,
-    "d30": 296
+    "d30": 297
    },
    "compute": {
     "d7": 35,
@@ -648,7 +648,7 @@
    },
    "foundation-models": {
     "d7": 139,
-    "prev7": 27
+    "prev7": 28
    },
    "inference-optimization": {
     "d7": 43,
@@ -660,7 +660,7 @@
    },
    "agents": {
     "d7": 100,
-    "prev7": 14
+    "prev7": 15
    },
    "applications-interfaces": {
     "d7": 29,
@@ -962,7 +962,7 @@
    "type": "press",
    "published": "2026-09-30T20:11:08Z",
    "summary": "So much for Gemini 3.5 Pro.",
-   "discussion": "7",
+   "discussion": "12",
    "firstSeen": "2026-09-30T20:44:12Z",
    "tags": [
     "gemini"
@@ -999,7 +999,7 @@
    "type": "press",
    "published": "2026-09-30T19:31:25Z",
    "summary": "AI is far from a perfect resource. But it seems to hallucinate less than Kennedy.",
-   "discussion": "35",
+   "discussion": "40",
    "firstSeen": "2026-09-30T20:44:12Z",
    "tags": [],
    "layers": [],
@@ -1140,7 +1140,7 @@
    "type": "press",
    "published": "2026-09-30T18:25:04Z",
    "summary": "OpenAI makes others suffer \"the harms of its unsafe decision-making,\" nonprofit says.",
-   "discussion": "38",
+   "discussion": "40",
    "firstSeen": "2026-09-30T20:00:16Z",
    "tags": [
     "gpt",
@@ -1422,7 +1422,7 @@
    "type": "press",
    "published": "2026-09-30T16:03:48Z",
    "summary": "Many sites see just one-tenth of one percent of their advertising revenue from AI payments.",
-   "discussion": "36",
+   "discussion": "38",
    "firstSeen": "2026-09-30T20:00:16Z",
    "tags": [],
    "layers": [],
@@ -1703,7 +1703,7 @@
    "type": "press",
    "published": "2026-09-30T14:06:15Z",
    "summary": "OpenAI is seeking another $30 billion privately as its IPO plans slip.",
-   "discussion": "73",
+   "discussion": "74",
    "firstSeen": "2026-09-30T20:00:16Z",
    "tags": [
     "gpt",
@@ -4809,7 +4809,7 @@
    "type": "research",
    "published": "2026-09-28T20:00:00Z",
    "summary": "Answering questions and completing tasks over large document collections often requires connecting evidence spread across multiple documents, such as a project's approval recorded in one, its requirements in another, and its latest status in a third. Recent LLM agents approach this by iteratively searching the full…",
-   "points": 53,
+   "points": 54,
    "firstSeen": "2026-09-30T12:31:50Z",
    "tags": [
     "agent-loop"
@@ -4817,7 +4817,7 @@
    "layers": [
     "agents"
    ],
-   "score": 4.33
+   "score": 4.34
   },
   {
    "id": "af7a9531f19f",
@@ -4828,7 +4828,7 @@
    "type": "research",
    "published": "2026-09-28T20:00:00Z",
    "summary": "Autonomous agents have made rapid progress in general-purpose computer use, but reliable automation of professional industrial engineering remains out of reach, as engineering workflows demand reasoning over geometric and physical constraints and dependencies preserved across software and design stages. We present…",
-   "points": 41,
+   "points": 43,
    "firstSeen": "2026-09-30T12:31:50Z",
    "tags": [
     "computer-use"
@@ -4836,7 +4836,7 @@
    "layers": [
     "agents"
    ],
-   "score": 4.22
+   "score": 4.24
   },
   {
    "id": "a6c28e6aa524",
@@ -4847,7 +4847,7 @@
    "type": "research",
    "published": "2026-09-28T20:00:00Z",
    "summary": "High-resolution video generation is expensive, as its cost grows rapidly with the number of spatiotemporal tokens. A practical alternative first generates a lower-resolution video and then applies a refiner, but conventional multi-step refinement introduces a second sampling bottleneck. We present SoL-Refiner, a…",
-   "points": 24,
+   "points": 25,
    "firstSeen": "2026-09-30T12:31:50Z",
    "tags": [
     "multimodal"
@@ -4855,7 +4855,7 @@
    "layers": [
     "models"
    ],
-   "score": 4.0
+   "score": 4.01
   },
   {
    "id": "a76b0b490b97",
@@ -4866,7 +4866,7 @@
    "type": "research",
    "published": "2026-09-28T20:00:00Z",
    "summary": "To serve as real-world personal assistants, streaming video models need persistent memory that retains past experiences for later use. Yet existing streaming benchmarks and methods often focus on individual continuous videos or short clips, overlooking that real-world interactions are often intermittent and require…",
-   "points": 24,
+   "points": 26,
    "firstSeen": "2026-09-30T12:31:50Z",
    "tags": [
     "benchmarks"
@@ -4874,7 +4874,7 @@
    "layers": [
     "security"
    ],
-   "score": 4.0
+   "score": 4.03
   },
   {
    "id": "f65183786cf1",
@@ -4919,11 +4919,11 @@
    "type": "research",
    "published": "2026-09-28T20:00:00Z",
    "summary": "An agent that uses tools typically responds to what the user explicitly asks, yet completing the task may require information the user never requested. Work on proactive agents mainly studies whether and when an agent should act on its own, not what information it should pursue. We study a distinct axis of…",
-   "points": 25,
+   "points": 27,
    "firstSeen": "2026-09-30T12:31:50Z",
    "tags": [],
    "layers": [],
-   "score": 3.41
+   "score": 3.45
   },
   {
    "id": "954494d6de14",
@@ -4934,11 +4934,11 @@
    "type": "research",
    "published": "2026-09-28T20:00:00Z",
    "summary": "We introduce Context Language Models (CLMs), language models that natively manage their own context. We implement this by treating the context as a file and allowing the model to make unrestricted updates to this file. This allows the model to learn what is most important to maintain in context, and naturally extends…",
-   "points": 19,
+   "points": 20,
    "firstSeen": "2026-09-30T20:00:16Z",
    "tags": [],
    "layers": [],
-   "score": 3.3
+   "score": 3.32
   },
   {
    "id": "913fcf26ac6f",
@@ -4949,7 +4949,7 @@
    "type": "research",
    "published": "2026-09-28T20:00:00Z",
    "summary": "Long-context reasoning in large language models incurs substantial computation and memory costs. Visual text compression (VTC) reduces input length by rendering text as images, but fixed-resolution rendering creates a compression-performance trade-off: low DPI saves tokens at the expense of legibility, whereas high…",
-   "points": 17,
+   "points": 18,
    "firstSeen": "2026-09-30T20:00:16Z",
    "tags": [
     "context-engineering"
@@ -4957,7 +4957,7 @@
    "layers": [
     "context"
    ],
-   "score": 3.86
+   "score": 3.88
   },
   {
    "id": "a37b0826d622",
@@ -7038,7 +7038,7 @@
    "type": "research",
    "published": "2026-09-27T20:00:00Z",
    "summary": "We present LongCat-DeepResearch, a deep research system that combines an enhanced LongCat model with a multi-agent workflow for producing comprehensive, evidence-grounded reports. The workflow separates global planning from detailed investigation and coordinates revision at the section level. Multiple planning agents…",
-   "points": 40,
+   "points": 41,
    "firstSeen": "2026-09-30T12:31:50Z",
    "tags": [
     "multi-agent"
@@ -7046,7 +7046,7 @@
    "layers": [
     "agents"
    ],
-   "score": 4.21
+   "score": 4.22
   },
   {
    "id": "5a0808072593",
@@ -7057,7 +7057,7 @@
    "type": "research",
    "published": "2026-09-27T20:00:00Z",
    "summary": "Modern LLMs are increasingly capable as autonomous agents, but they follow sequential interaction cycles: read, think, reply or call tools, repeat. Many real-world use cases are not sequential: voice assistants, embodied agents, and monitoring systems receive new inputs while they think or perform another task. Modern…",
-   "points": 47,
+   "points": 50,
    "firstSeen": "2026-09-30T12:31:50Z",
    "tags": [
     "world-models"
@@ -7065,7 +7065,7 @@
    "layers": [
     "models"
    ],
-   "score": 4.28
+   "score": 4.31
   },
   {
    "id": "aac4207135e2",
@@ -7076,7 +7076,7 @@
    "type": "research",
    "published": "2026-09-27T20:00:00Z",
    "summary": "Chunked KV-cache compression reduces the memory and attention costs of long-context inference by compressing windows of consecutive tokens into fewer cache entries at a fixed stride. Such compression also introduces a new positional coordinate: a token's phase, or its position relative to compression-window…",
-   "points": 60,
+   "points": 64,
    "firstSeen": "2026-09-30T20:00:16Z",
    "tags": [
     "kv-cache",
@@ -7085,7 +7085,7 @@
    "layers": [
     "context"
    ],
-   "score": 4.99
+   "score": 5.01
   },
   {
    "id": "80032e73c06a",
@@ -8392,7 +8392,7 @@
    "type": "research",
    "published": "2026-09-25T20:00:00Z",
    "summary": "Spoken conversational systems must recover information from prior interactions (i.e., memory), yet relevant information in speech extends beyond what was said to who said it, how it was spoken, and what was audible, information that exists only in the audio signal and cannot be recovered from a transcript. Beyond what…",
-   "points": 117,
+   "points": 119,
    "firstSeen": "2026-09-30T05:30:05Z",
    "tags": [
     "multimodal"
@@ -8400,7 +8400,7 @@
    "layers": [
     "models"
    ],
-   "score": 4.67
+   "score": 4.68
   },
   {
    "id": "84ec56539640",
@@ -8411,7 +8411,7 @@
    "type": "research",
    "published": "2026-09-25T20:00:00Z",
    "summary": "Long-term memory enables agents to accumulate information and reason across sessions, yet existing research primarily focuses on dyadic text or image-text conversations, leaving long-term memory for multi-party spoken conversations underexplored. This setting requires preserving conversational content, identifying…",
-   "points": 51,
+   "points": 53,
    "firstSeen": "2026-09-30T12:31:50Z",
    "tags": [
     "agent-loop",
@@ -8423,7 +8423,7 @@
     "context",
     "models"
    ],
-   "score": 5.52
+   "score": 5.53
   },
   {
    "id": "8bc0e6fcb798",
@@ -8434,7 +8434,7 @@
    "type": "research",
    "published": "2026-09-25T20:00:00Z",
    "summary": "*Reinforcement learning (RL)* can induce substantial reasoning capabilities in large language models (LLMs), but how much of this capability transfers across model scales, and how quickly, remains unclear. We study the scaling properties of *on-policy distillation (OPD)* across *weak-to-strong*, *same-base*, and…",
-   "points": 83,
+   "points": 94,
    "firstSeen": "2026-09-30T20:00:16Z",
    "tags": [
     "distillation",
@@ -8443,7 +8443,7 @@
    "layers": [
     "models"
    ],
-   "score": 5.12
+   "score": 5.18
   },
   {
    "id": "16601d8d6797",
@@ -9647,6 +9647,25 @@
     "models"
    ],
    "score": 5.0
+  },
+  {
+   "id": "5f24406318a7",
+   "title": "Omni-Decision: Evidence-Ledger Planning for Omni-Modal Agents",
+   "url": "https://huggingface.co/papers/2607.11433",
+   "source": "hf-papers",
+   "sourceName": "Hugging Face Daily Papers",
+   "type": "research",
+   "published": "2026-09-23T20:00:00Z",
+   "summary": "Omni-modal agents must seek evidence across video, audio, web pages, and computation to answer questions. Their main bottleneck is planning: noisy multimodal observations accumulate in conversation history and disrupt later decisions, while multimodal models have limited capacity for multi-step planning. Controlled…",
+   "points": 14,
+   "firstSeen": "2026-09-30T20:55:43Z",
+   "tags": [
+    "multimodal"
+   ],
+   "layers": [
+    "models"
+   ],
+   "score": 3.78
   },
   {
    "id": "05e5c239263b",
