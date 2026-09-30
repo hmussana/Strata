@@ -1,5 +1,5 @@
 {
- "generated": "2026-09-30T21:41:00Z",
+ "generated": "2026-09-30T22:01:16Z",
  "retentionDays": 45,
  "llmEnriched": 0,
  "sources": [
@@ -10,7 +10,7 @@
    "ok": true,
    "count": 15,
    "error": null,
-   "lastOk": "2026-09-30T21:41:00Z"
+   "lastOk": "2026-09-30T22:01:16Z"
   },
   {
    "id": "deepmind",
@@ -19,7 +19,7 @@
    "ok": true,
    "count": 10,
    "error": null,
-   "lastOk": "2026-09-30T21:41:00Z"
+   "lastOk": "2026-09-30T22:01:16Z"
   },
   {
    "id": "google-ai",
@@ -28,7 +28,7 @@
    "ok": true,
    "count": 10,
    "error": null,
-   "lastOk": "2026-09-30T21:41:00Z"
+   "lastOk": "2026-09-30T22:01:16Z"
   },
   {
    "id": "hf-blog",
@@ -37,7 +37,7 @@
    "ok": true,
    "count": 15,
    "error": null,
-   "lastOk": "2026-09-30T21:41:00Z"
+   "lastOk": "2026-09-30T22:01:16Z"
   },
   {
    "id": "nvidia-dev",
@@ -46,7 +46,7 @@
    "ok": true,
    "count": 10,
    "error": null,
-   "lastOk": "2026-09-30T21:41:00Z"
+   "lastOk": "2026-09-30T22:01:16Z"
   },
   {
    "id": "msr",
@@ -55,7 +55,7 @@
    "ok": true,
    "count": 10,
    "error": null,
-   "lastOk": "2026-09-30T21:41:00Z"
+   "lastOk": "2026-09-30T22:01:16Z"
   },
   {
    "id": "aws-ml",
@@ -64,7 +64,7 @@
    "ok": true,
    "count": 8,
    "error": null,
-   "lastOk": "2026-09-30T21:41:00Z"
+   "lastOk": "2026-09-30T22:01:16Z"
   },
   {
    "id": "qwen",
@@ -73,16 +73,16 @@
    "ok": true,
    "count": 8,
    "error": null,
-   "lastOk": "2026-09-30T21:41:00Z"
+   "lastOk": "2026-09-30T22:01:16Z"
   },
   {
    "id": "hn",
    "name": "Hacker News (best, AI-filtered)",
    "type": "community",
    "ok": true,
-   "count": 10,
+   "count": 11,
    "error": null,
-   "lastOk": "2026-09-30T21:41:00Z"
+   "lastOk": "2026-09-30T22:01:16Z"
   },
   {
    "id": "localllama",
@@ -91,7 +91,7 @@
    "ok": true,
    "count": 15,
    "error": null,
-   "lastOk": "2026-09-30T21:41:00Z"
+   "lastOk": "2026-09-30T22:01:16Z"
   },
   {
    "id": "simonw",
@@ -100,7 +100,7 @@
    "ok": true,
    "count": 15,
    "error": null,
-   "lastOk": "2026-09-30T21:41:00Z"
+   "lastOk": "2026-09-30T22:01:16Z"
   },
   {
    "id": "hf-papers",
@@ -109,7 +109,7 @@
    "ok": true,
    "count": 15,
    "error": null,
-   "lastOk": "2026-09-30T21:41:00Z"
+   "lastOk": "2026-09-30T22:01:16Z"
   },
   {
    "id": "arxiv-cl",
@@ -118,7 +118,7 @@
    "ok": true,
    "count": 12,
    "error": null,
-   "lastOk": "2026-09-30T21:41:00Z"
+   "lastOk": "2026-09-30T22:01:16Z"
   },
   {
    "id": "latent-space",
@@ -127,7 +127,7 @@
    "ok": true,
    "count": 8,
    "error": null,
-   "lastOk": "2026-09-30T21:41:00Z"
+   "lastOk": "2026-09-30T22:01:16Z"
   },
   {
    "id": "interconnects",
@@ -136,7 +136,7 @@
    "ok": true,
    "count": 8,
    "error": null,
-   "lastOk": "2026-09-30T21:41:00Z"
+   "lastOk": "2026-09-30T22:01:16Z"
   },
   {
    "id": "import-ai",
@@ -145,7 +145,7 @@
    "ok": true,
    "count": 5,
    "error": null,
-   "lastOk": "2026-09-30T21:41:00Z"
+   "lastOk": "2026-09-30T22:01:16Z"
   },
   {
    "id": "verge-ai",
@@ -154,7 +154,7 @@
    "ok": true,
    "count": 10,
    "error": null,
-   "lastOk": "2026-09-30T21:41:00Z"
+   "lastOk": "2026-09-30T22:01:16Z"
   },
   {
    "id": "ars-ai",
@@ -163,7 +163,7 @@
    "ok": true,
    "count": 12,
    "error": null,
-   "lastOk": "2026-09-30T21:41:00Z"
+   "lastOk": "2026-09-30T22:01:16Z"
   },
   {
    "id": "techcrunch-ai",
@@ -172,7 +172,7 @@
    "ok": true,
    "count": 12,
    "error": null,
-   "lastOk": "2026-09-30T21:41:00Z"
+   "lastOk": "2026-09-30T22:01:16Z"
   },
   {
    "id": "mit-tr",
@@ -181,7 +181,7 @@
    "ok": true,
    "count": 8,
    "error": null,
-   "lastOk": "2026-09-30T21:41:00Z"
+   "lastOk": "2026-09-30T22:01:16Z"
   },
   {
    "id": "decoder",
@@ -190,7 +190,7 @@
    "ok": true,
    "count": 10,
    "error": null,
-   "lastOk": "2026-09-30T21:41:00Z"
+   "lastOk": "2026-09-30T22:01:16Z"
   },
   {
    "id": "sth",
@@ -199,7 +199,7 @@
    "ok": true,
    "count": 4,
    "error": null,
-   "lastOk": "2026-09-30T21:41:00Z"
+   "lastOk": "2026-09-30T22:01:16Z"
   },
   {
    "id": "embrace-red",
@@ -208,7 +208,7 @@
    "ok": true,
    "count": 6,
    "error": null,
-   "lastOk": "2026-09-30T21:41:00Z"
+   "lastOk": "2026-09-30T22:01:16Z"
   },
   {
    "id": "rel-ollama",
@@ -217,7 +217,7 @@
    "ok": true,
    "count": 3,
    "error": null,
-   "lastOk": "2026-09-30T21:41:00Z"
+   "lastOk": "2026-09-30T22:01:16Z"
   },
   {
    "id": "rel-vllm",
@@ -226,7 +226,7 @@
    "ok": true,
    "count": 3,
    "error": null,
-   "lastOk": "2026-09-30T21:41:00Z"
+   "lastOk": "2026-09-30T22:01:16Z"
   },
   {
    "id": "rel-opencode",
@@ -235,7 +235,7 @@
    "ok": true,
    "count": 3,
    "error": null,
-   "lastOk": "2026-09-30T21:41:00Z"
+   "lastOk": "2026-09-30T22:01:16Z"
   },
   {
    "id": "rel-claude-code",
@@ -244,15 +244,15 @@
    "ok": true,
    "count": 3,
    "error": null,
-   "lastOk": "2026-09-30T21:41:00Z"
+   "lastOk": "2026-09-30T22:01:16Z"
   }
  ],
  "heat": {
   "concepts": {
    "agent-loop": {
-    "d7": 52,
+    "d7": 53,
     "prev7": 3,
-    "d30": 56
+    "d30": 57
    },
    "nvidia-stack": {
     "d7": 1,
@@ -274,6 +274,11 @@
     "prev7": 4,
     "d30": 12
    },
+   "qwen": {
+    "d7": 35,
+    "prev7": 1,
+    "d30": 36
+   },
    "strix-halo": {
     "d7": 4,
     "prev7": 1,
@@ -285,9 +290,9 @@
     "d30": 13
    },
    "gpt": {
-    "d7": 78,
+    "d7": 79,
     "prev7": 18,
-    "d30": 102
+    "d30": 103
    },
    "dgx-spark": {
     "d7": 2,
@@ -303,11 +308,6 @@
     "d7": 41,
     "prev7": 5,
     "d30": 48
-   },
-   "qwen": {
-    "d7": 34,
-    "prev7": 1,
-    "d30": 35
    },
    "open-weights": {
     "d7": 15,
@@ -597,16 +597,16 @@
   },
   "layers": {
    "agents": {
-    "d7": 96,
-    "d30": 107
+    "d7": 97,
+    "d30": 108
    },
    "inference": {
     "d7": 48,
     "d30": 55
    },
    "models": {
-    "d7": 233,
-    "d30": 299
+    "d7": 235,
+    "d30": 301
    },
    "compute": {
     "d7": 36,
@@ -631,7 +631,7 @@
   },
   "stack": {
    "physical-energy": {
-    "d7": 8,
+    "d7": 9,
     "prev7": 1
    },
    "compute-hardware": {
@@ -659,11 +659,11 @@
     "prev7": 0
    },
    "agents": {
-    "d7": 101,
+    "d7": 102,
     "prev7": 15
    },
    "applications-interfaces": {
-    "d7": 29,
+    "d7": 30,
     "prev7": 1
    }
   }
@@ -1047,6 +1047,26 @@
    "score": 2.2
   },
   {
+   "id": "b0b41abe5022",
+   "title": "Qwen3.8-27B-pi: Effort-Ordered Reasoning for Agentic Coding",
+   "url": "https://www.reddit.com/r/LocalLLaMA/comments/1wufzrh/qwen3827bpi_effortordered_reasoning_for_agentic/",
+   "source": "localllama",
+   "sourceName": "r/LocalLLaMA (top today)",
+   "type": "community",
+   "published": "2026-09-30T20:32:41Z",
+   "summary": "",
+   "firstSeen": "2026-09-30T22:01:16Z",
+   "tags": [
+    "agent-loop",
+    "qwen"
+   ],
+   "layers": [
+    "agents",
+    "models"
+   ],
+   "score": 3.2
+  },
+  {
    "id": "94349d4a2730",
    "title": "Google announces Gemini 4 Argon AI model, but you can't use it yet",
    "url": "https://arstechnica.com/google/2026/09/google-announces-gemini-4-argon-ai-model-but-you-cant-use-it-yet/",
@@ -1055,7 +1075,7 @@
    "type": "press",
    "published": "2026-09-30T20:11:08Z",
    "summary": "So much for Gemini 3.5 Pro.",
-   "discussion": "23",
+   "discussion": "25",
    "firstSeen": "2026-09-30T20:44:12Z",
    "tags": [
     "gemini"
@@ -1074,7 +1094,7 @@
    "type": "community",
    "published": "2026-09-30T20:04:37Z",
    "summary": "",
-   "points": 453,
+   "points": 643,
    "discussion": "https://news.ycombinator.com/item?id=49913571",
    "firstSeen": "2026-09-30T21:39:06Z",
    "tags": [
@@ -1083,7 +1103,7 @@
    "layers": [
     "models"
    ],
-   "score": 5.26
+   "score": 5.41
   },
   {
    "id": "311e095023e6",
@@ -1112,7 +1132,7 @@
    "type": "press",
    "published": "2026-09-30T19:31:25Z",
    "summary": "AI is far from a perfect resource. But it seems to hallucinate less than Kennedy.",
-   "discussion": "52",
+   "discussion": "56",
    "firstSeen": "2026-09-30T20:44:12Z",
    "tags": [],
    "layers": [],
@@ -1271,7 +1291,7 @@
    "type": "press",
    "published": "2026-09-30T18:25:04Z",
    "summary": "OpenAI makes others suffer \"the harms of its unsafe decision-making,\" nonprofit says.",
-   "discussion": "42",
+   "discussion": "44",
    "firstSeen": "2026-09-30T20:00:16Z",
    "tags": [
     "gpt",
@@ -1683,7 +1703,7 @@
    "type": "community",
    "published": "2026-09-30T15:50:11Z",
    "summary": "",
-   "points": 358,
+   "points": 363,
    "discussion": "https://news.ycombinator.com/item?id=49910553",
    "firstSeen": "2026-09-30T20:00:16Z",
    "tags": [],
@@ -1834,7 +1854,7 @@
    "type": "press",
    "published": "2026-09-30T14:06:15Z",
    "summary": "OpenAI is seeking another $30 billion privately as its IPO plans slip.",
-   "discussion": "74",
+   "discussion": "75",
    "firstSeen": "2026-09-30T20:00:16Z",
    "tags": [
     "gpt",
@@ -2040,7 +2060,7 @@
    "type": "community",
    "published": "2026-09-30T09:55:23Z",
    "summary": "",
-   "points": 551,
+   "points": 567,
    "discussion": "https://news.ycombinator.com/item?id=49906637",
    "firstSeen": "2026-09-30T20:00:16Z",
    "tags": [
@@ -2049,7 +2069,7 @@
    "layers": [
     "tools"
    ],
-   "score": 5.34
+   "score": 5.35
   },
   {
    "id": "f09ec2f1df9e",
@@ -2886,6 +2906,22 @@
    "score": 1.6
   },
   {
+   "id": "ac9e64262f63",
+   "title": "AI needs $6T in annual revenue to justify data centre boom",
+   "url": "https://www.thenationalnews.com/future/technology/2026/09/29/ai-industry-needs-to-earn-6-trillion-by-2031-to-justify-data-centres/",
+   "source": "hn",
+   "sourceName": "Hacker News (best, AI-filtered)",
+   "type": "community",
+   "published": "2026-09-29T19:21:25Z",
+   "summary": "",
+   "points": 218,
+   "discussion": "https://news.ycombinator.com/item?id=49898952",
+   "firstSeen": "2026-09-30T22:01:16Z",
+   "tags": [],
+   "layers": [],
+   "score": 4.34
+  },
+  {
    "id": "fec08784a322",
    "title": "AI Native by Design: Lessons Learned from Building NVIDIA TensorRT Model Connect",
    "url": "https://developer.nvidia.com/blog/ai-native-by-design-lessons-learned-from-building-nvidia-tensorrt-model-connect/",
@@ -3048,7 +3084,7 @@
    "type": "community",
    "published": "2026-09-29T17:31:26Z",
    "summary": "",
-   "points": 241,
+   "points": 242,
    "discussion": "https://news.ycombinator.com/item?id=49897075",
    "firstSeen": "2026-09-30T20:00:16Z",
    "tags": [
@@ -3057,7 +3093,27 @@
    "layers": [
     "models"
    ],
-   "score": 4.98
+   "score": 4.99
+  },
+  {
+   "id": "7f3ada3c2a26",
+   "title": "ChatGPT Pro 500",
+   "url": "https://help.openai.com/en/articles/9793128-about-chatgpt-pro-tiers",
+   "source": "hn",
+   "sourceName": "Hacker News (best, AI-filtered)",
+   "type": "community",
+   "published": "2026-09-29T17:26:27Z",
+   "summary": "",
+   "points": 217,
+   "discussion": "https://news.ycombinator.com/item?id=49896975",
+   "firstSeen": "2026-09-30T22:01:16Z",
+   "tags": [
+    "gpt"
+   ],
+   "layers": [
+    "models"
+   ],
+   "score": 4.94
   },
   {
    "id": "b60a20ba1912",
@@ -3401,7 +3457,7 @@
    "type": "community",
    "published": "2026-09-29T17:07:57Z",
    "summary": "",
-   "points": 743,
+   "points": 744,
    "discussion": "https://news.ycombinator.com/item?id=49896604",
    "firstSeen": "2026-09-29T22:13:32Z",
    "tags": [],
@@ -3417,7 +3473,7 @@
    "type": "community",
    "published": "2026-09-29T17:06:45Z",
    "summary": "",
-   "points": 1041,
+   "points": 1042,
    "discussion": "https://news.ycombinator.com/item?id=49896586",
    "firstSeen": "2026-09-29T18:04:15Z",
    "tags": [
@@ -3493,7 +3549,7 @@
    "type": "community",
    "published": "2026-09-29T16:30:48Z",
    "summary": "",
-   "points": 559,
+   "points": 561,
    "discussion": "https://news.ycombinator.com/item?id=49896050",
    "firstSeen": "2026-09-29T22:13:32Z",
    "tags": [],
@@ -3977,7 +4033,7 @@
    "type": "community",
    "published": "2026-09-29T11:13:54Z",
    "summary": "",
-   "points": 239,
+   "points": 240,
    "discussion": "https://news.ycombinator.com/item?id=49891290",
    "firstSeen": "2026-09-30T20:00:16Z",
    "tags": [],
@@ -4108,7 +4164,7 @@
    "type": "community",
    "published": "2026-09-29T09:03:41Z",
    "summary": "",
-   "points": 421,
+   "points": 422,
    "discussion": "https://news.ycombinator.com/item?id=49890226",
    "firstSeen": "2026-09-29T18:04:15Z",
    "tags": [
@@ -4940,7 +4996,7 @@
    "type": "research",
    "published": "2026-09-28T20:00:00Z",
    "summary": "Answering questions and completing tasks over large document collections often requires connecting evidence spread across multiple documents, such as a project's approval recorded in one, its requirements in another, and its latest status in a third. Recent LLM agents approach this by iteratively searching the full…",
-   "points": 63,
+   "points": 65,
    "firstSeen": "2026-09-30T12:31:50Z",
    "tags": [
     "agent-loop"
@@ -4948,7 +5004,7 @@
    "layers": [
     "agents"
    ],
-   "score": 4.41
+   "score": 4.42
   },
   {
    "id": "af7a9531f19f",
@@ -4959,7 +5015,7 @@
    "type": "research",
    "published": "2026-09-28T20:00:00Z",
    "summary": "Autonomous agents have made rapid progress in general-purpose computer use, but reliable automation of professional industrial engineering remains out of reach, as engineering workflows demand reasoning over geometric and physical constraints and dependencies preserved across software and design stages. We present…",
-   "points": 47,
+   "points": 48,
    "firstSeen": "2026-09-30T12:31:50Z",
    "tags": [
     "computer-use"
@@ -4967,7 +5023,7 @@
    "layers": [
     "agents"
    ],
-   "score": 4.28
+   "score": 4.29
   },
   {
    "id": "a6c28e6aa524",
@@ -5080,7 +5136,7 @@
    "type": "research",
    "published": "2026-09-28T20:00:00Z",
    "summary": "Long-context reasoning in large language models incurs substantial computation and memory costs. Visual text compression (VTC) reduces input length by rendering text as images, but fixed-resolution rendering creates a compression-performance trade-off: low DPI saves tokens at the expense of legibility, whereas high…",
-   "points": 19,
+   "points": 20,
    "firstSeen": "2026-09-30T20:00:16Z",
    "tags": [
     "context-engineering"
@@ -5088,7 +5144,7 @@
    "layers": [
     "context"
    ],
-   "score": 3.9
+   "score": 3.92
   },
   {
    "id": "a37b0826d622",
@@ -7169,7 +7225,7 @@
    "type": "research",
    "published": "2026-09-27T20:00:00Z",
    "summary": "We present LongCat-DeepResearch, a deep research system that combines an enhanced LongCat model with a multi-agent workflow for producing comprehensive, evidence-grounded reports. The workflow separates global planning from detailed investigation and coordinates revision at the section level. Multiple planning agents…",
-   "points": 49,
+   "points": 50,
    "firstSeen": "2026-09-30T12:31:50Z",
    "tags": [
     "multi-agent"
@@ -7177,7 +7233,7 @@
    "layers": [
     "agents"
    ],
-   "score": 4.3
+   "score": 4.31
   },
   {
    "id": "5a0808072593",
@@ -7188,7 +7244,7 @@
    "type": "research",
    "published": "2026-09-27T20:00:00Z",
    "summary": "Modern LLMs are increasingly capable as autonomous agents, but they follow sequential interaction cycles: read, think, reply or call tools, repeat. Many real-world use cases are not sequential: voice assistants, embodied agents, and monitoring systems receive new inputs while they think or perform another task. Modern…",
-   "points": 54,
+   "points": 57,
    "firstSeen": "2026-09-30T12:31:50Z",
    "tags": [
     "world-models"
@@ -7196,7 +7252,7 @@
    "layers": [
     "models"
    ],
-   "score": 4.34
+   "score": 4.36
   },
   {
    "id": "aac4207135e2",
@@ -7207,7 +7263,7 @@
    "type": "research",
    "published": "2026-09-27T20:00:00Z",
    "summary": "Chunked KV-cache compression reduces the memory and attention costs of long-context inference by compressing windows of consecutive tokens into fewer cache entries at a fixed stride. Such compression also introduces a new positional coordinate: a token's phase, or its position relative to compression-window…",
-   "points": 77,
+   "points": 80,
    "firstSeen": "2026-09-30T20:00:16Z",
    "tags": [
     "kv-cache",
@@ -7216,7 +7272,7 @@
    "layers": [
     "context"
    ],
-   "score": 5.09
+   "score": 5.11
   },
   {
    "id": "80032e73c06a",
@@ -8523,7 +8579,7 @@
    "type": "research",
    "published": "2026-09-25T20:00:00Z",
    "summary": "Spoken conversational systems must recover information from prior interactions (i.e., memory), yet relevant information in speech extends beyond what was said to who said it, how it was spoken, and what was audible, information that exists only in the audio signal and cannot be recovered from a transcript. Beyond what…",
-   "points": 122,
+   "points": 124,
    "firstSeen": "2026-09-30T05:30:05Z",
    "tags": [
     "multimodal"
@@ -8531,7 +8587,7 @@
    "layers": [
     "models"
    ],
-   "score": 4.69
+   "score": 4.7
   },
   {
    "id": "84ec56539640",
@@ -8542,7 +8598,7 @@
    "type": "research",
    "published": "2026-09-25T20:00:00Z",
    "summary": "Long-term memory enables agents to accumulate information and reason across sessions, yet existing research primarily focuses on dyadic text or image-text conversations, leaving long-term memory for multi-party spoken conversations underexplored. This setting requires preserving conversational content, identifying…",
-   "points": 60,
+   "points": 61,
    "firstSeen": "2026-09-30T12:31:50Z",
    "tags": [
     "agent-loop",
@@ -8565,7 +8621,7 @@
    "type": "research",
    "published": "2026-09-25T20:00:00Z",
    "summary": "*Reinforcement learning (RL)* can induce substantial reasoning capabilities in large language models (LLMs), but how much of this capability transfers across model scales, and how quickly, remains unclear. We study the scaling properties of *on-policy distillation (OPD)* across *weak-to-strong*, *same-base*, and…",
-   "points": 147,
+   "points": 161,
    "firstSeen": "2026-09-30T20:00:16Z",
    "tags": [
     "distillation",
@@ -8574,7 +8630,7 @@
    "layers": [
     "models"
    ],
-   "score": 5.37
+   "score": 5.41
   },
   {
    "id": "16601d8d6797",
@@ -9166,11 +9222,11 @@
    "type": "research",
    "published": "2026-09-24T20:00:00Z",
    "summary": "General-purpose agents can plan, reason, and act over long horizons, yet their production capabilities remain fragmented across text, images, audio, video, documents, 3D assets, and code. Extending a foundation model to additional modalities ties capability growth to costly model updates, while assembling specialist…",
-   "points": 152,
+   "points": 154,
    "firstSeen": "2026-09-30T12:31:50Z",
    "tags": [],
    "layers": [],
-   "score": 4.18
+   "score": 4.19
   },
   {
    "id": "ee9698a7fdb9",
@@ -11849,24 +11905,6 @@
     "security"
    ],
    "score": 4.8
-  },
-  {
-   "id": "81603460e983",
-   "title": "Qwen 3.8 27B is excellent, but it defaults to wildly overthinking things",
-   "url": "https://simonwillison.net/2026/Aug/16/qwen-38-27b/",
-   "source": "simonw",
-   "sourceName": "Simon Willison",
-   "type": "community",
-   "published": "2026-08-16T22:00:39Z",
-   "summary": "Friday's big release was Qwen 3.8 27B, an Apache 2 licensed 27B parameter vision-capable LLM from Alibaba's Qwen research lab. I've been looking forward to this one: 27B is an excellent size for running a model on a reasonably specced laptop, and its predecessor Qwen 3.6 27B was impressive. Qwen's self-reported…",
-   "firstSeen": "2026-09-27T19:40:56Z",
-   "tags": [
-    "qwen"
-   ],
-   "layers": [
-    "models"
-   ],
-   "score": 3.6
   }
  ]
 }
