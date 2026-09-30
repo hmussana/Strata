@@ -17,7 +17,7 @@ export function landscape(route, c) {
       <span class="ind-investment">${val(d.investment ?? 'PLACEHOLDER')}</span>
     </a>`;
   }).join('');
-  const cc = c.crosscutting.map((x) => `<a class="cc-band c-cc" href="${href.legend()}#cc" title="${esc(x.summary)}">${icon(x.icon, 'ico-s')}<span>${esc(x.name)}</span></a>`).join('');
+  const cc = c.crosscutting.map((x) => `<a class="cc-band c-cc" href="${href.legend()}?section=cc" title="${esc(x.summary)}">${icon(x.icon, 'ico-s')}<span>${esc(x.name)}</span></a>`).join('');
   return {
     zoom: 'Z0', layer: null, title: 'The AI landscape',
     crumbs: [{ label: 'Landscape', z: 'Z0' }],
