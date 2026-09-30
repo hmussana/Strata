@@ -372,3 +372,35 @@ body.is-z0 main { padding-top: 14px; padding-bottom: 14px; }
   .land-head, .land-row { grid-template-columns: minmax(0, 1fr) 120px; }
 }
 .z0 .land-name { font-size: .95rem; line-height: 1.2; }
+
+/* ---------- maturity score + research column ---------- */
+.land-head, .land-row { grid-template-columns: minmax(220px, 1.2fr) minmax(0, 1.4fr) 170px minmax(140px, .85fr) minmax(140px, .85fr); }
+.score { display: grid; grid-template-columns: 28px minmax(50px, 1fr) 70px; align-items: center; gap: 6px; width: 100%; }
+.score-n { font-variant-numeric: tabular-nums; font-weight: 700; text-align: right; font-size: .88rem; }
+.score-bar { width: 100%; height: 10px; display: block; }
+.score-bar .track { fill: var(--surface-2); }
+.score-bar .fill { fill: var(--accent-ink); }
+.score-band { font-size: .76rem; color: var(--muted); }
+.info-pop h3 { font-size: .95rem; margin-top: 18px; }
+.formula code { font-size: .86rem; }
+.criteria { margin: 6px 0; padding-left: 20px; font-size: .9rem; }
+.tbl-wrap { overflow-x: auto; }
+.mat-table { font-size: .82rem; }
+.mat-table th, .mat-table td { padding: 5px 6px; text-align: center; }
+.mat-table th[scope="row"], .mat-table thead th:first-child { text-align: left; white-space: nowrap; }
+.mk-yes { color: var(--l5-ink); font-weight: 700; }
+.mk-partial { color: var(--l4-ink); font-weight: 700; }
+.mk-no { color: var(--l2-ink); font-weight: 700; }
+.mk-score { font-weight: 800; }
+@media (max-width: 1100px) {
+  .land-head, .land-row { grid-template-columns: minmax(200px, 1.2fr) 160px minmax(120px, 1fr) minmax(120px, 1fr); }
+}
+@media (max-width: 860px) {
+  .land-head, .land-row { grid-template-columns: minmax(0, 1fr) 150px; }
+  .land-row .ind-research, .land-head .h-research { display: none; }
+}
+@media (max-width: 720px) {
+  .land-head, .land-row { grid-template-columns: minmax(0, 1fr) 120px; }
+}
+.info-pop { max-width: min(860px, calc(100vw - 32px)); }
+.mat-table th[scope="row"] { text-transform: none; letter-spacing: 0; font-size: .84rem; color: var(--text); font-weight: 600; }

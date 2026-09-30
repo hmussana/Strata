@@ -127,6 +127,12 @@ class EndToEndTests(unittest.TestCase):
             stack = data["heat"]["stack"]
             self.assertGreater(stack["compute-hardware"]["d7"], 0, "DGX Spark story counts for Compute Hardware")
             self.assertEqual(set(stack), set(json.loads((fn.ROOT / "site/content/model.json").read_text())["layers"]))
+
+            research = data["research"]
+            self.assertEqual(research["daily"]["2026-09-25"]["papers"], 2, "cross-listed paper counted once, replacement skipped")
+            self.assertEqual(research["d7"]["compute-hardware"], 1)
+            self.assertEqual(research["d7"]["agents"], 1)
+            self.assertEqual(research["since"], "2026-09-25")
             self.assertIn("Zephyrix-7", [r["term"] for r in data["radar"]])
 
             feed = (Path(tmp) / "feed.xml").read_text()

@@ -225,7 +225,8 @@ def validate(data: dict | None = None) -> list[str]:
     indicator_ids = {i["id"] for i in dash.get("indicators", [])}
     if not 3 <= len(indicator_ids) <= 6:
         err("dashboard.json: needs 3-6 indicators")
-    scale = next((i.get("scale", []) for i in dash.get("indicators", []) if i["id"] == "maturity"), [])
+    measured = {i["id"] for i in dash.get("indicators", []) if i.get("kind") == "measured"}
+    mat = next((i for i in dash.get("indicators", []) if i["id"] == "maturity"), None)
     for i in dash.get("indicators", []):
         if not i.get("definition"):
             err(f"dashboard.json: indicator {i['id']} needs a definition")
@@ -234,15 +235,25 @@ def validate(data: dict | None = None) -> list[str]:
         if entry is None:
             err(f"dashboard.json: no entry for layer {lid}")
             continue
-        for iid in indicator_ids - {"activity"}:
+        for iid in indicator_ids - measured:
             v = entry.get(iid)
             if not isinstance(v, dict) or not all(k in v for k in ("value", "source", "asOf")):
                 err(f"dashboard.json: {lid}.{iid} needs value, source and asOf")
             elif not valid_date(v["asOf"]):
                 err(f"dashboard.json: {lid}.{iid}.asOf is not a date")
-        mv = (entry.get("maturity") or {}).get("value")
-        if mv is not None and not is_placeholder(mv) and mv not in scale:
-            err(f"dashboard.json: {lid} maturity '{mv}' is not on the scale {scale}")
+        if mat:
+            m = entry.get("maturity", {})
+            crit = [c["id"] for c in mat.get("criteria", [])]
+            vals = mat.get("answerValues", {})
+            ans = m.get("answers", {})
+            if sorted(ans) != sorted(crit):
+                err(f"dashboard.json: {lid} maturity must answer exactly the criteria {crit}")
+            elif any(a.get("answer") not in vals or not a.get("why") for a in ans.values()):
+                err(f"dashboard.json: {lid} maturity answers need an answer in {list(vals)} and a 'why'")
+            else:
+                expected = round(mat.get("max", 100) * sum(vals[a["answer"]] for a in ans.values()) / len(crit))
+                if m.get("value") != expected:
+                    err(f"dashboard.json: {lid} maturity value {m.get('value')} doesn't match the formula ({expected})")
 
     # contrast (WCAG AA for text-bearing token pairs)
     for theme, t in tokens.items():
@@ -274,7 +285,8 @@ def walk(node, path=""):
 
 def report(d: dict) -> str:
     out = ["# The AI Stack: content review report", ""]
-    files = {"model.json": d["model"], "dashboard.json": d["dashboard"], "flows.json": d["flows"]}
+    files = {"model.json": d["model"], "dashboard.json": d["dashboard"], "flows.json": d["flows"],
+             "crosscutting.json": {"crosscutting": d["crosscutting"]}}
     files.update({f"layers/{l['id']}.json": l for l in d["layers"]})
     files.update({f"concepts/{c['id']}.json": c for c in d["concepts"]})
     out += ["## Placeholders to fill", ""]

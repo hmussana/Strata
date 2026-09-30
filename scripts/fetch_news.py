@@ -380,16 +380,23 @@ def llm_enrich(items: list[dict], tagger: Tagger) -> int:
 
 # ---------------------------------------------------------------- analytics
 
-def compute_stack_heat(items: list[dict], now: dt.datetime, content: Path | None = None) -> dict:
-    """Stories per layer of The AI Stack (site/content), this week and last week, from each layer's newsKeywords."""
+def stack_patterns(content: Path | None = None) -> dict[str, re.Pattern | None]:
+    """Compiled keyword pattern per layer of The AI Stack (site/content), in layer order."""
     content = content or ROOT / "site" / "content"
     model_path = content / "model.json"
     if not model_path.exists():
         return {}
-    heat = {}
+    out = {}
     for lid in json.loads(model_path.read_text())["layers"]:
         layer = json.loads((content / "layers" / f"{lid}.json").read_text())
-        pat = Tagger._compile(layer.get("newsKeywords", []))
+        out[lid] = Tagger._compile(layer.get("newsKeywords", []))
+    return out
+
+
+def compute_stack_heat(items: list[dict], now: dt.datetime, content: Path | None = None) -> dict:
+    """Stories per layer of The AI Stack, this week and last week, from each layer's newsKeywords."""
+    heat = {}
+    for lid, pat in stack_patterns(content).items():
         counts = {"d7": 0, "prev7": 0}
         if pat:
             for it in items:
@@ -497,6 +504,69 @@ def compute_radar(items: list[dict], tagger: Tagger, ignore: set[str], now: dt.d
     return kept[:24]
 
 
+# ---------------------------------------------------------------- research signal (arXiv)
+
+ARXIV_CATEGORIES = ["cs.AI", "cs.CL", "cs.LG", "cs.DC", "cs.AR"]
+RESEARCH_KEEP_DAYS = 30
+
+
+def fetch_research(fixtures: Path | None) -> tuple[dict[str, str], str | None, list[str]]:
+    """Today's new arXiv announcements across categories: {paper id: title + abstract}, announcement day, errors.
+    Cross-listed papers appear in several category feeds and are counted once; replacements are skipped."""
+    papers: dict[str, str] = {}
+    day, errors = None, []
+    for cat in ARXIV_CATEGORIES:
+        try:
+            if fixtures is not None:
+                path = fixtures / f"arxiv-research-{cat}.xml"
+                if not path.exists():
+                    continue
+                raw = path.read_bytes()
+            else:
+                raw = http_get(f"https://rss.arxiv.org/rss/{cat}")
+            if b"<!ENTITY" in raw[:65536]:
+                raise ValueError("feed declares XML entities")
+            root = ET.fromstring(raw)
+            for el in root.iter():
+                if _local(el.tag) in ("pubdate", "lastbuilddate") and not day:
+                    d = parse_date(_text(el))
+                    day = d.date().isoformat() if d else None
+                if _local(el.tag) != "item":
+                    continue
+                fields = {_local(ch.tag): _text(ch) for ch in el}
+                announce = fields.get("announce_type") or (re.search(r"Announce Type:\s*([\w-]+)", fields.get("description", "")) or [None, ""])[1]
+                if announce.startswith("replace"):
+                    continue
+                m = re.search(r"(\d{4}\.\d{4,5})", fields.get("link", "") + " " + fields.get("guid", ""))
+                if m:
+                    abstract = re.sub(r"^.*?Abstract:\s*", "", strip_html(fields.get("description", ""), 4000))
+                    papers[m.group(1)] = f"{fields.get('title', '')} {abstract}"
+        except Exception as exc:  # noqa: BLE001 - research is optional; keep previous data on failure
+            errors.append(f"{cat}: {type(exc).__name__}: {exc}"[:160])
+    return papers, day, errors
+
+
+def update_research(previous: dict | None, papers: dict[str, str], day: str | None, now: dt.datetime,
+                    errors: list[str], content: Path | None = None) -> dict:
+    research = {"daily": {}, **(previous or {})}
+    daily = dict(research.get("daily", {}))
+    if papers:  # arXiv publishes nothing at weekends; don't record empty days
+        key = day or now.date().isoformat()
+        counts = {lid: (sum(1 for text in papers.values() if pat.search(text)) if pat else 0)
+                  for lid, pat in stack_patterns(content).items()}
+        daily[key] = {"papers": len(papers), "layers": counts}
+    cutoff = (now - dt.timedelta(days=RESEARCH_KEEP_DAYS)).date().isoformat()
+    daily = {k: v for k, v in sorted(daily.items()) if k >= cutoff}
+    week = (now - dt.timedelta(days=7)).date().isoformat()
+    d7: dict[str, int] = defaultdict(int)
+    for k, v in daily.items():
+        if k > week:
+            for lid, n in v["layers"].items():
+                d7[lid] += n
+    return {"categories": ARXIV_CATEGORIES, "daily": daily, "d7": dict(d7),
+            "since": min(daily) if daily else None, "errors": errors}
+
+
 # ---------------------------------------------------------------- atom feed
 
 def write_atom(items: list[dict], tagger: Tagger, path: Path, now: dt.datetime) -> None:
@@ -587,6 +657,11 @@ def run(fixtures: Path | None = None, out_path: Path | None = None, now: dt.date
     items = items[:MAX_ITEMS]
 
     enriched = 0 if reindex else llm_enrich(items, tagger)
+    if reindex:
+        research = previous.get("research")
+    else:
+        papers, day, research_errors = fetch_research(fixtures)
+        research = update_research(previous.get("research"), papers, day, now, research_errors)
     retag(items, tagger, sources)
     ignore = {w.lower() for w in concepts.get("radarIgnore", [])}
 
@@ -597,6 +672,7 @@ def run(fixtures: Path | None = None, out_path: Path | None = None, now: dt.date
         "sources": health,
         "heat": {**compute_heat(items, now), "stack": compute_stack_heat(items, now)},
         "collectedSince": min((it.get("firstSeen", it["published"]) for it in items), default=None),
+        "research": research,
         "radar": compute_radar(items, tagger, ignore, now),
         "items": items,
     }

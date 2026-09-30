@@ -39,10 +39,29 @@ editor. Long text is written as an array of paragraphs. Text fields support a ti
 
 ## Dashboard (Z0)
 
-`indicators` lists 3–6 indicators, each with a `definition` shown in the "About these indicators" panel (maturity
-also has a `rubric`). `layers.<id>.<indicator>` holds `{ value, source, asOf }` (maturity adds a `rationale`); the
-validator rejects values without a source and date. "News this week" is measured, not authored: the news fetcher
-counts stories matching each layer's `newsKeywords`, and trends appear once 14 days have been collected.
+`indicators` lists 3–6 indicators, each with a `definition` shown in the "How these are measured" panel.
+Authored values (`layers.<id>.players`, `layers.<id>.maturity`) hold `{ value, source, asOf }`; the validator rejects
+values without a source and date.
+
+**Maturity** is a 0–100 score from five questions answered `yes` (1), `partial` (0.5) or `no` (0), each with a
+one-line `why`:
+
+```
+score = 100 × (sum of answers) ÷ 5      bands: Emerging 0–39 · Growing 40–69 · Mature 70–100
+```
+
+The criteria, answer values, formula and bands live in `dashboard.json` and are shown on the page with a per-layer
+breakdown table. Store the answers and the resulting `value`; the validator recomputes the score and fails if they
+disagree.
+
+**Measured indicators** are computed by `scripts/fetch_news.py`, not authored:
+
+- *News this week*: stories in the news feed matching each layer's `newsKeywords` (trends after 14 days).
+- *Research this week*: new arXiv papers (cs.AI, cs.CL, cs.LG, cs.DC, cs.AR; cross-listings counted once,
+  replacements skipped) whose title or abstract matches the same keywords, summed over the last 7 announcement days.
+
+**Cost headline**: `crosscutting.json` → `cost.headline` holds one sourced figure (Big Tech quarterly capital spending
+from company filings), updated by hand each quarter.
 
 ## Concept
 

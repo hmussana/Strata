@@ -19,7 +19,14 @@
       "name": "Cost & Economics",
       "icon": "coin",
       "pattern": "grid",
-      "summary": "Energy, chips, training runs and per-token prices: cost shapes decisions at every layer."
+      "summary": "Energy, chips, training runs and per-token prices: cost shapes decisions at every layer.",
+      "headline": {
+        "label": "Big Tech capital spending, last reported quarter",
+        "value": "PLACEHOLDER",
+        "note": "Combined capital expenditure reported by Microsoft, Alphabet, Amazon and Meta. Not all of it is AI, and filings don't split it by layer.",
+        "source": "PLACEHOLDER: quarterly filings (Form 10-Q / 10-K) of the four companies",
+        "asOf": "PLACEHOLDER"
+      }
     },
     {
       "id": "governance",

@@ -11,18 +11,56 @@
     {
       "id": "maturity",
       "label": "Maturity",
-      "kind": "scale",
-      "scale": [
-        "Emerging",
-        "Growing",
-        "Mature"
+      "kind": "score",
+      "max": 100,
+      "definition": "A 0–100 score from five yes / partial / no questions about the layer. An editorial assessment using a fixed formula, not a market measurement.",
+      "criteria": [
+        {
+          "id": "standards",
+          "label": "Standards",
+          "question": "Are there established open standards or widely shared formats?"
+        },
+        {
+          "id": "vendors",
+          "label": "Choice",
+          "question": "Do three or more vendors or projects offer interchangeable options?"
+        },
+        {
+          "id": "interfaces",
+          "label": "Stable interfaces",
+          "question": "Have the core interfaces stayed compatible for 12 months or more?"
+        },
+        {
+          "id": "adoption",
+          "label": "Adoption",
+          "question": "Is it in broad production use across industries?"
+        },
+        {
+          "id": "practice",
+          "label": "Settled practice",
+          "question": "Has the recommended way of doing things been stable for 12 months or more?"
+        }
       ],
-      "definition": "How settled the layer's technology and practice are, using the rubric below. An editorial judgement, not a measurement.",
-      "rubric": {
-        "Emerging": "Core techniques still change quickly, few standards, best practice unsettled.",
-        "Growing": "Established techniques and vendors, but fast change in tooling, methods or prices; standards forming.",
-        "Mature": "Stable technology, established standards and vendors; change is incremental."
-      }
+      "answerValues": {
+        "yes": 1,
+        "partial": 0.5,
+        "no": 0
+      },
+      "formula": "score = 100 × (sum of answers) ÷ 5, where yes = 1, partial = 0.5, no = 0",
+      "bands": [
+        {
+          "min": 0,
+          "label": "Emerging"
+        },
+        {
+          "min": 40,
+          "label": "Growing"
+        },
+        {
+          "min": 70,
+          "label": "Mature"
+        }
+      ]
     },
     {
       "id": "activity",
@@ -32,10 +70,11 @@
       "definition": "Stories in Strata's news feed from the last 7 days that mention this layer's keywords. One story can count for several layers. A proxy for attention, not investment or importance."
     },
     {
-      "id": "investment",
-      "label": "Investment",
-      "kind": "text",
-      "definition": "PLACEHOLDER: metric not chosen yet (for example publicly reported capital spending or venture funding, with source and date)."
+      "id": "research",
+      "label": "Research this week",
+      "kind": "measured",
+      "source": "arxiv",
+      "definition": "New arXiv papers from the last 7 days (categories cs.AI, cs.CL, cs.LG, cs.DC, cs.AR) whose title or abstract matches this layer's keywords. One paper can count for several layers. A proxy for research attention, not quality."
     }
   ],
   "layers": {
@@ -51,15 +90,31 @@
         "asOf": "2026-09-30"
       },
       "maturity": {
-        "value": "Growing",
-        "rationale": "Data centres are a mature industry, but AI-scale power, liquid cooling and grid deals are changing fast.",
-        "source": "Strata editorial judgement (draft, apply the maturity rubric)",
+        "value": 80,
+        "answers": {
+          "standards": {
+            "answer": "yes",
+            "why": "Data-centre design, power and cooling follow long-established engineering standards."
+          },
+          "vendors": {
+            "answer": "yes",
+            "why": "Many builders, utilities and equipment makers compete."
+          },
+          "interfaces": {
+            "answer": "partial",
+            "why": "Rack power densities and liquid cooling are changing designs quickly."
+          },
+          "adoption": {
+            "answer": "yes",
+            "why": "Data centres are core infrastructure everywhere."
+          },
+          "practice": {
+            "answer": "partial",
+            "why": "AI-scale sites are still working out power sourcing and cooling."
+          }
+        },
+        "source": "Strata editorial assessment (draft) using the maturity formula",
         "asOf": "2026-09-30"
-      },
-      "investment": {
-        "value": "PLACEHOLDER",
-        "source": "PLACEHOLDER",
-        "asOf": "PLACEHOLDER"
       }
     },
     "compute-hardware": {
@@ -74,15 +129,31 @@
         "asOf": "2026-09-30"
       },
       "maturity": {
-        "value": "Growing",
-        "rationale": "Established vendors, but new accelerator generations and number formats arrive yearly.",
-        "source": "Strata editorial judgement (draft, apply the maturity rubric)",
+        "value": 70,
+        "answers": {
+          "standards": {
+            "answer": "partial",
+            "why": "Hardware interfaces are standard, but the dominant software stack is proprietary."
+          },
+          "vendors": {
+            "answer": "partial",
+            "why": "Several chip makers exist, but software lock-in limits switching."
+          },
+          "interfaces": {
+            "answer": "yes",
+            "why": "Main programming platforms keep backward compatibility."
+          },
+          "adoption": {
+            "answer": "yes",
+            "why": "Accelerators run nearly all AI training and inference."
+          },
+          "practice": {
+            "answer": "partial",
+            "why": "New number formats and chip generations arrive roughly yearly."
+          }
+        },
+        "source": "Strata editorial assessment (draft) using the maturity formula",
         "asOf": "2026-09-30"
-      },
-      "investment": {
-        "value": "PLACEHOLDER",
-        "source": "PLACEHOLDER",
-        "asOf": "PLACEHOLDER"
       }
     },
     "cloud-infrastructure": {
@@ -97,15 +168,31 @@
         "asOf": "2026-09-30"
       },
       "maturity": {
-        "value": "Growing",
-        "rationale": "Hyperscale cloud is mature; GPU clouds and AI cluster tooling are still evolving quickly.",
-        "source": "Strata editorial judgement (draft, apply the maturity rubric)",
+        "value": 80,
+        "answers": {
+          "standards": {
+            "answer": "yes",
+            "why": "Containers and Kubernetes are widely shared standards."
+          },
+          "vendors": {
+            "answer": "yes",
+            "why": "Hyperscale and specialist GPU clouds compete."
+          },
+          "interfaces": {
+            "answer": "partial",
+            "why": "GPU scheduling and cluster networking tools still evolve fast."
+          },
+          "adoption": {
+            "answer": "yes",
+            "why": "Most AI workloads run in the cloud."
+          },
+          "practice": {
+            "answer": "partial",
+            "why": "Large-scale training operations practices are still maturing."
+          }
+        },
+        "source": "Strata editorial assessment (draft) using the maturity formula",
         "asOf": "2026-09-30"
-      },
-      "investment": {
-        "value": "PLACEHOLDER",
-        "source": "PLACEHOLDER",
-        "asOf": "PLACEHOLDER"
       }
     },
     "data": {
@@ -119,15 +206,31 @@
         "asOf": "2026-09-30"
       },
       "maturity": {
-        "value": "Growing",
-        "rationale": "Curation practice is established; licensing, synthetic data and provenance norms are unsettled.",
-        "source": "Strata editorial judgement (draft, apply the maturity rubric)",
+        "value": 50,
+        "answers": {
+          "standards": {
+            "answer": "partial",
+            "why": "Storage formats are standard; licensing and provenance norms are not."
+          },
+          "vendors": {
+            "answer": "partial",
+            "why": "A handful of dataset and labelling providers."
+          },
+          "interfaces": {
+            "answer": "partial",
+            "why": "Pipelines vary widely between teams."
+          },
+          "adoption": {
+            "answer": "yes",
+            "why": "Every model depends on curated data."
+          },
+          "practice": {
+            "answer": "no",
+            "why": "Synthetic data, licensing and consent practices are unsettled."
+          }
+        },
+        "source": "Strata editorial assessment (draft) using the maturity formula",
         "asOf": "2026-09-30"
-      },
-      "investment": {
-        "value": "PLACEHOLDER",
-        "source": "PLACEHOLDER",
-        "asOf": "PLACEHOLDER"
       }
     },
     "foundation-models": {
@@ -144,15 +247,31 @@
         "asOf": "2026-09-30"
       },
       "maturity": {
-        "value": "Growing",
-        "rationale": "The transformer recipe is stable, but capabilities and training methods change month to month.",
-        "source": "Strata editorial judgement (draft, apply the maturity rubric)",
+        "value": 70,
+        "answers": {
+          "standards": {
+            "answer": "partial",
+            "why": "Weight formats are shared; prompt and chat formats still differ."
+          },
+          "vendors": {
+            "answer": "yes",
+            "why": "Many closed and open-weight model providers."
+          },
+          "interfaces": {
+            "answer": "partial",
+            "why": "Model APIs add features and deprecate versions frequently."
+          },
+          "adoption": {
+            "answer": "yes",
+            "why": "Widely used across industries."
+          },
+          "practice": {
+            "answer": "partial",
+            "why": "The core recipe is stable; post-training methods change fast."
+          }
+        },
+        "source": "Strata editorial assessment (draft) using the maturity formula",
         "asOf": "2026-09-30"
-      },
-      "investment": {
-        "value": "PLACEHOLDER",
-        "source": "PLACEHOLDER",
-        "asOf": "PLACEHOLDER"
       }
     },
     "inference-optimization": {
@@ -167,15 +286,31 @@
         "asOf": "2026-09-30"
       },
       "maturity": {
-        "value": "Growing",
-        "rationale": "Serving engines and quantisation are widely used; techniques and prices still shift rapidly.",
-        "source": "Strata editorial judgement (draft, apply the maturity rubric)",
+        "value": 80,
+        "answers": {
+          "standards": {
+            "answer": "yes",
+            "why": "An OpenAI-compatible API is a de facto shared interface."
+          },
+          "vendors": {
+            "answer": "yes",
+            "why": "Many serving engines and API providers."
+          },
+          "interfaces": {
+            "answer": "partial",
+            "why": "Serving features and optimisations change quickly."
+          },
+          "adoption": {
+            "answer": "yes",
+            "why": "Every AI product runs inference."
+          },
+          "practice": {
+            "answer": "partial",
+            "why": "Quantisation and caching techniques keep moving."
+          }
+        },
+        "source": "Strata editorial assessment (draft) using the maturity formula",
         "asOf": "2026-09-30"
-      },
-      "investment": {
-        "value": "PLACEHOLDER",
-        "source": "PLACEHOLDER",
-        "asOf": "PLACEHOLDER"
       }
     },
     "orchestration-tooling": {
@@ -190,15 +325,31 @@
         "asOf": "2026-09-30"
       },
       "maturity": {
-        "value": "Emerging",
-        "rationale": "Standards such as MCP are recent and frameworks churn; best practice is still forming.",
-        "source": "Strata editorial judgement (draft, apply the maturity rubric)",
+        "value": 40,
+        "answers": {
+          "standards": {
+            "answer": "partial",
+            "why": "Tool protocols such as MCP are recent."
+          },
+          "vendors": {
+            "answer": "yes",
+            "why": "Many frameworks and vector databases."
+          },
+          "interfaces": {
+            "answer": "no",
+            "why": "Framework APIs change frequently."
+          },
+          "adoption": {
+            "answer": "partial",
+            "why": "Growing, but many projects are still pilots."
+          },
+          "practice": {
+            "answer": "no",
+            "why": "Best practice for retrieval, evaluation and guardrails is still forming."
+          }
+        },
+        "source": "Strata editorial assessment (draft) using the maturity formula",
         "asOf": "2026-09-30"
-      },
-      "investment": {
-        "value": "PLACEHOLDER",
-        "source": "PLACEHOLDER",
-        "asOf": "PLACEHOLDER"
       }
     },
     "agents": {
@@ -213,15 +364,31 @@
         "asOf": "2026-09-30"
       },
       "maturity": {
-        "value": "Emerging",
-        "rationale": "Reliability, evaluation and safety for autonomous multi-step work are open problems.",
-        "source": "Strata editorial judgement (draft, apply the maturity rubric)",
+        "value": 30,
+        "answers": {
+          "standards": {
+            "answer": "no",
+            "why": "Agent-to-agent and agent instruction formats are only emerging."
+          },
+          "vendors": {
+            "answer": "yes",
+            "why": "Many agent products and frameworks."
+          },
+          "interfaces": {
+            "answer": "no",
+            "why": "Agent APIs and harness behaviours change often."
+          },
+          "adoption": {
+            "answer": "partial",
+            "why": "Coding agents are widespread; other agents are early."
+          },
+          "practice": {
+            "answer": "no",
+            "why": "Reliable autonomy, evaluation and safety are open problems."
+          }
+        },
+        "source": "Strata editorial assessment (draft) using the maturity formula",
         "asOf": "2026-09-30"
-      },
-      "investment": {
-        "value": "PLACEHOLDER",
-        "source": "PLACEHOLDER",
-        "asOf": "PLACEHOLDER"
       }
     },
     "applications-interfaces": {
@@ -236,15 +403,31 @@
         "asOf": "2026-09-30"
       },
       "maturity": {
-        "value": "Growing",
-        "rationale": "Chat assistants and copilots are widely adopted; interface patterns for agents are new.",
-        "source": "Strata editorial judgement (draft, apply the maturity rubric)",
+        "value": 70,
+        "answers": {
+          "standards": {
+            "answer": "partial",
+            "why": "Web and app standards apply; AI interface patterns are new."
+          },
+          "vendors": {
+            "answer": "yes",
+            "why": "Many assistants and copilots."
+          },
+          "interfaces": {
+            "answer": "partial",
+            "why": "Products change features and pricing often."
+          },
+          "adoption": {
+            "answer": "yes",
+            "why": "Chat assistants and copilots are widely used."
+          },
+          "practice": {
+            "answer": "partial",
+            "why": "Patterns for review and trust are still settling."
+          }
+        },
+        "source": "Strata editorial assessment (draft) using the maturity formula",
         "asOf": "2026-09-30"
-      },
-      "investment": {
-        "value": "PLACEHOLDER",
-        "source": "PLACEHOLDER",
-        "asOf": "PLACEHOLDER"
       }
     }
   }
