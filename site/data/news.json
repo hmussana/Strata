@@ -1,5 +1,5 @@
 {
- "generated": "2026-09-30T21:39:06Z",
+ "generated": "2026-09-30T21:41:00Z",
  "retentionDays": 45,
  "llmEnriched": 0,
  "sources": [
@@ -10,7 +10,7 @@
    "ok": true,
    "count": 15,
    "error": null,
-   "lastOk": "2026-09-30T21:39:06Z"
+   "lastOk": "2026-09-30T21:41:00Z"
   },
   {
    "id": "deepmind",
@@ -19,7 +19,7 @@
    "ok": true,
    "count": 10,
    "error": null,
-   "lastOk": "2026-09-30T21:39:06Z"
+   "lastOk": "2026-09-30T21:41:00Z"
   },
   {
    "id": "google-ai",
@@ -28,7 +28,7 @@
    "ok": true,
    "count": 10,
    "error": null,
-   "lastOk": "2026-09-30T21:39:06Z"
+   "lastOk": "2026-09-30T21:41:00Z"
   },
   {
    "id": "hf-blog",
@@ -37,7 +37,7 @@
    "ok": true,
    "count": 15,
    "error": null,
-   "lastOk": "2026-09-30T21:39:06Z"
+   "lastOk": "2026-09-30T21:41:00Z"
   },
   {
    "id": "nvidia-dev",
@@ -46,7 +46,7 @@
    "ok": true,
    "count": 10,
    "error": null,
-   "lastOk": "2026-09-30T21:39:06Z"
+   "lastOk": "2026-09-30T21:41:00Z"
   },
   {
    "id": "msr",
@@ -55,7 +55,7 @@
    "ok": true,
    "count": 10,
    "error": null,
-   "lastOk": "2026-09-30T21:39:06Z"
+   "lastOk": "2026-09-30T21:41:00Z"
   },
   {
    "id": "aws-ml",
@@ -64,7 +64,7 @@
    "ok": true,
    "count": 8,
    "error": null,
-   "lastOk": "2026-09-30T21:39:06Z"
+   "lastOk": "2026-09-30T21:41:00Z"
   },
   {
    "id": "qwen",
@@ -73,7 +73,7 @@
    "ok": true,
    "count": 8,
    "error": null,
-   "lastOk": "2026-09-30T21:39:06Z"
+   "lastOk": "2026-09-30T21:41:00Z"
   },
   {
    "id": "hn",
@@ -82,7 +82,7 @@
    "ok": true,
    "count": 10,
    "error": null,
-   "lastOk": "2026-09-30T21:39:06Z"
+   "lastOk": "2026-09-30T21:41:00Z"
   },
   {
    "id": "localllama",
@@ -91,7 +91,7 @@
    "ok": true,
    "count": 15,
    "error": null,
-   "lastOk": "2026-09-30T21:39:06Z"
+   "lastOk": "2026-09-30T21:41:00Z"
   },
   {
    "id": "simonw",
@@ -100,7 +100,7 @@
    "ok": true,
    "count": 15,
    "error": null,
-   "lastOk": "2026-09-30T21:39:06Z"
+   "lastOk": "2026-09-30T21:41:00Z"
   },
   {
    "id": "hf-papers",
@@ -109,7 +109,7 @@
    "ok": true,
    "count": 15,
    "error": null,
-   "lastOk": "2026-09-30T21:39:06Z"
+   "lastOk": "2026-09-30T21:41:00Z"
   },
   {
    "id": "arxiv-cl",
@@ -118,7 +118,7 @@
    "ok": true,
    "count": 12,
    "error": null,
-   "lastOk": "2026-09-30T21:39:06Z"
+   "lastOk": "2026-09-30T21:41:00Z"
   },
   {
    "id": "latent-space",
@@ -127,7 +127,7 @@
    "ok": true,
    "count": 8,
    "error": null,
-   "lastOk": "2026-09-30T21:39:06Z"
+   "lastOk": "2026-09-30T21:41:00Z"
   },
   {
    "id": "interconnects",
@@ -136,7 +136,7 @@
    "ok": true,
    "count": 8,
    "error": null,
-   "lastOk": "2026-09-30T21:39:06Z"
+   "lastOk": "2026-09-30T21:41:00Z"
   },
   {
    "id": "import-ai",
@@ -145,7 +145,7 @@
    "ok": true,
    "count": 5,
    "error": null,
-   "lastOk": "2026-09-30T21:39:06Z"
+   "lastOk": "2026-09-30T21:41:00Z"
   },
   {
    "id": "verge-ai",
@@ -154,7 +154,7 @@
    "ok": true,
    "count": 10,
    "error": null,
-   "lastOk": "2026-09-30T21:39:06Z"
+   "lastOk": "2026-09-30T21:41:00Z"
   },
   {
    "id": "ars-ai",
@@ -163,7 +163,7 @@
    "ok": true,
    "count": 12,
    "error": null,
-   "lastOk": "2026-09-30T21:39:06Z"
+   "lastOk": "2026-09-30T21:41:00Z"
   },
   {
    "id": "techcrunch-ai",
@@ -172,7 +172,7 @@
    "ok": true,
    "count": 12,
    "error": null,
-   "lastOk": "2026-09-30T21:39:06Z"
+   "lastOk": "2026-09-30T21:41:00Z"
   },
   {
    "id": "mit-tr",
@@ -181,7 +181,7 @@
    "ok": true,
    "count": 8,
    "error": null,
-   "lastOk": "2026-09-30T21:39:06Z"
+   "lastOk": "2026-09-30T21:41:00Z"
   },
   {
    "id": "decoder",
@@ -190,7 +190,7 @@
    "ok": true,
    "count": 10,
    "error": null,
-   "lastOk": "2026-09-30T21:39:06Z"
+   "lastOk": "2026-09-30T21:41:00Z"
   },
   {
    "id": "sth",
@@ -199,7 +199,7 @@
    "ok": true,
    "count": 4,
    "error": null,
-   "lastOk": "2026-09-30T21:39:06Z"
+   "lastOk": "2026-09-30T21:41:00Z"
   },
   {
    "id": "embrace-red",
@@ -208,7 +208,7 @@
    "ok": true,
    "count": 6,
    "error": null,
-   "lastOk": "2026-09-30T21:39:06Z"
+   "lastOk": "2026-09-30T21:41:00Z"
   },
   {
    "id": "rel-ollama",
@@ -217,7 +217,7 @@
    "ok": true,
    "count": 3,
    "error": null,
-   "lastOk": "2026-09-30T21:39:06Z"
+   "lastOk": "2026-09-30T21:41:00Z"
   },
   {
    "id": "rel-vllm",
@@ -226,7 +226,7 @@
    "ok": true,
    "count": 3,
    "error": null,
-   "lastOk": "2026-09-30T21:39:06Z"
+   "lastOk": "2026-09-30T21:41:00Z"
   },
   {
    "id": "rel-opencode",
@@ -235,7 +235,7 @@
    "ok": true,
    "count": 3,
    "error": null,
-   "lastOk": "2026-09-30T21:39:06Z"
+   "lastOk": "2026-09-30T21:41:00Z"
   },
   {
    "id": "rel-claude-code",
@@ -244,7 +244,7 @@
    "ok": true,
    "count": 3,
    "error": null,
-   "lastOk": "2026-09-30T21:39:06Z"
+   "lastOk": "2026-09-30T21:41:00Z"
   }
  ],
  "heat": {
@@ -684,9 +684,9 @@
      "physical-energy": 11,
      "compute-hardware": 97,
      "cloud-infrastructure": 34,
-     "data": 429,
-     "foundation-models": 1077,
-     "inference-optimization": 452,
+     "data": 42,
+     "foundation-models": 686,
+     "inference-optimization": 155,
      "orchestration-tooling": 202,
      "agents": 332,
      "applications-interfaces": 49
@@ -697,9 +697,9 @@
    "physical-energy": 11,
    "compute-hardware": 97,
    "cloud-infrastructure": 34,
-   "data": 429,
-   "foundation-models": 1077,
-   "inference-optimization": 452,
+   "data": 42,
+   "foundation-models": 686,
+   "inference-optimization": 155,
    "orchestration-tooling": 202,
    "agents": 332,
    "applications-interfaces": 49
@@ -1271,7 +1271,7 @@
    "type": "press",
    "published": "2026-09-30T18:25:04Z",
    "summary": "OpenAI makes others suffer \"the harms of its unsafe decision-making,\" nonprofit says.",
-   "discussion": "41",
+   "discussion": "42",
    "firstSeen": "2026-09-30T20:00:16Z",
    "tags": [
     "gpt",
@@ -7207,7 +7207,7 @@
    "type": "research",
    "published": "2026-09-27T20:00:00Z",
    "summary": "Chunked KV-cache compression reduces the memory and attention costs of long-context inference by compressing windows of consecutive tokens into fewer cache entries at a fixed stride. Such compression also introduces a new positional coordinate: a token's phase, or its position relative to compression-window…",
-   "points": 76,
+   "points": 77,
    "firstSeen": "2026-09-30T20:00:16Z",
    "tags": [
     "kv-cache",
@@ -8565,7 +8565,7 @@
    "type": "research",
    "published": "2026-09-25T20:00:00Z",
    "summary": "*Reinforcement learning (RL)* can induce substantial reasoning capabilities in large language models (LLMs), but how much of this capability transfers across model scales, and how quickly, remains unclear. We study the scaling properties of *on-policy distillation (OPD)* across *weak-to-strong*, *same-base*, and…",
-   "points": 146,
+   "points": 147,
    "firstSeen": "2026-09-30T20:00:16Z",
    "tags": [
     "distillation",
@@ -9166,7 +9166,7 @@
    "type": "research",
    "published": "2026-09-24T20:00:00Z",
    "summary": "General-purpose agents can plan, reason, and act over long horizons, yet their production capabilities remain fragmented across text, images, audio, video, documents, 3D assets, and code. Extending a foundation model to additional modalities ties capability growth to costly model updates, while assembling specialist…",
-   "points": 151,
+   "points": 152,
    "firstSeen": "2026-09-30T12:31:50Z",
    "tags": [],
    "layers": [],
