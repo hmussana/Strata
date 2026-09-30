@@ -25,7 +25,7 @@ class ContentTests(unittest.TestCase):
     def test_report_lists_placeholders(self):
         rep = vc.report(self.data)
         self.assertIn("dashboard.json", rep)
-        self.assertIn("maturity", rep)
+        self.assertIn("investment.value", rep)
         self.assertIn("Drafts awaiting review", rep)
 
 if __name__ == "__main__":
