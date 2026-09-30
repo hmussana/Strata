@@ -49,11 +49,12 @@ function render(c, route) {
   renderMinimap(c, out);
   document.title = `${out.title} · The AI Stack`;
   $('#announce').textContent = `${out.title}${out.zoom ? `, zoom level ${out.zoom}` : ''}`;
-  out.mount?.(main);
-  // same concept, different depth: keep focus on the depth dial; otherwise move to the new view
+  // same concept, different depth: keep focus on the depth dial; otherwise move to the new view.
+  // Reset scroll before mount() so views can scroll to their own focus point.
   const sameConcept = previous?.view === 'concept' && route.view === 'concept' && previous.id === route.id;
+  if (!sameConcept && previous) { window.scrollTo(0, 0); main.focus({ preventScroll: true }); }
+  out.mount?.(main);
   if (sameConcept) main.querySelector('.depth-opt[aria-checked="true"]')?.focus({ preventScroll: true });
-  else if (previous) { window.scrollTo(0, 0); main.focus({ preventScroll: true }); }
   previous = route;
 }
 
@@ -77,7 +78,7 @@ function setupZoom() {
     const a = e.target.closest('a[data-zoom]');
     if (!a) return;
     document.querySelectorAll('.vt-target').forEach((el) => el.classList.remove('vt-target'));
-    a.classList.add('vt-target');
+    (a.closest('[data-zoom-root]') || a).classList.add('vt-target');
   });
 }
 

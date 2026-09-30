@@ -215,13 +215,28 @@ def validate(data: dict | None = None) -> list[str]:
     for cc in d["crosscutting"]:
         if icons is not None and cc.get("icon") not in icons:
             err(f"crosscutting: unknown icon {cc.get('icon')}")
-    for name in ("request", "capability"):
+    order_of = {l["id"]: l["order"] for l in layers}
+    for name, direction in (("request", "down"), ("capability", "up")):
         flow = d["flows"].get(name, {})
         if not flow.get("steps"):
             err(f"flows.json: {name} has no steps")
+        if flow.get("direction") != direction:
+            err(f"flows.json: {name} must have direction '{direction}'")
+        orders = []
         for s in flow.get("steps", []):
             if s.get("layer") not in layer_ids:
                 err(f"flows.json: {name} step references unknown layer {s.get('layer')}")
+            else:
+                orders.append(order_of[s["layer"]])
+            if not s.get("text"):
+                err(f"flows.json: {name} step needs text")
+        want = sorted(orders, reverse=direction == "down")
+        if orders != want or len(set(orders)) != len(orders):
+            err(f"flows.json: {name} steps must move strictly {direction} the stack, one layer at a time")
+        for key in ("intro", "outro"):
+            part = flow.get(key)
+            if part and (part.get("anchor") not in ("top", "bottom", *layer_ids) or not part.get("text")):
+                err(f"flows.json: {name}.{key} needs text and an anchor of top, bottom or a layer id")
     dash = d["dashboard"]
     indicator_ids = {i["id"] for i in dash.get("indicators", [])}
     if not 3 <= len(indicator_ids) <= 6:

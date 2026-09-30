@@ -40,7 +40,16 @@
         "layer": "physical-energy",
         "text": "All of it runs on electricity and cooling inside a data centre."
       }
-    ]
+    ],
+    "intro": {
+      "anchor": "top",
+      "text": "One question travels down through every layer needed to answer it. Step through it, or press Play."
+    },
+    "outro": {
+      "anchor": "top",
+      "dir": "up",
+      "text": "The answer streams back up the same path, a few tokens at a time, until it appears on your screen."
+    }
   },
   "capability": {
     "title": "Capability flows up the stack",
@@ -82,7 +91,15 @@
         "layer": "applications-interfaces",
         "text": "Applications deliver it to people, and their usage feeds back down."
       }
-    ]
+    ],
+    "intro": {
+      "anchor": "bottom",
+      "text": "Capability is built from the ground up: each layer turns what's below it into something the layer above can use."
+    },
+    "outro": {
+      "anchor": "top",
+      "text": "People use the result, and their usage and feedback flow back down to shape what gets built next."
+    }
   },
   "status": "draft",
   "lastReviewed": "2026-09-28"

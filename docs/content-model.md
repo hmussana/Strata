@@ -85,6 +85,18 @@ Each depth holds: `text` (paragraphs), optional `diagram` (spec, see below), `in
 "from *label* to", e.g. "Pretraining data *teaches* next-token prediction". Concepts don't store their own related
 lists; they're derived from this file so maps and links never drift apart.
 
+## Flows (Z1)
+
+`flows.json` holds two step-through flows shown on the stack:
+
+- `request` (`direction: "down"`): a question travelling from the app to the chips. Steps must move strictly down,
+  one layer at a time; `bypass: true` marks a layer the request skips (Data), drawn dashed.
+- `capability` (`direction: "up"`): how each layer builds on the one below. Steps must move strictly up.
+
+Each flow may have an `intro` and `outro` (`{ anchor: "top" | "bottom" | layerId, text, dir? }`); `top` is the
+"People" cap above the stack and `bottom` the foundation below it. The validator enforces direction and ordering.
+Every step is deep-linkable: `#/stack?flow=request&step=4`.
+
 ## Diagrams
 
 Diagrams are generated from specs so they stay consistent and update with the data:
