@@ -1,0 +1,48 @@
+{
+  "crosscutting": [
+    {
+      "id": "safety",
+      "name": "Safety & Alignment",
+      "icon": "shield",
+      "pattern": "diag",
+      "summary": "Making models and agents behave as intended and avoid harm, from training data to deployed apps."
+    },
+    {
+      "id": "evaluation",
+      "name": "Evaluation",
+      "icon": "target",
+      "pattern": "dots",
+      "summary": "Measuring what systems can do and how reliably, at every layer: benchmarks, red-teaming, production monitoring."
+    },
+    {
+      "id": "cost",
+      "name": "Cost & Economics",
+      "icon": "coin",
+      "pattern": "grid",
+      "summary": "Energy, chips, training runs and per-token prices: cost shapes decisions at every layer.",
+      "headline": {
+        "label": "Big Tech capital spending, last reported quarter",
+        "value": "PLACEHOLDER",
+        "note": "Combined capital expenditure reported by Microsoft, Alphabet, Amazon and Meta. Not all of it is AI, and filings don't split it by layer.",
+        "source": "PLACEHOLDER: quarterly filings (Form 10-Q / 10-K) of the four companies",
+        "asOf": "PLACEHOLDER"
+      }
+    },
+    {
+      "id": "governance",
+      "name": "Governance & Regulation",
+      "icon": "scale",
+      "pattern": "vert",
+      "summary": "Laws, standards, licences and export controls that constrain what can be built and deployed."
+    },
+    {
+      "id": "security",
+      "name": "Security",
+      "icon": "lock",
+      "pattern": "cross",
+      "summary": "Protecting every layer from attack: supply chain, infrastructure, model files, prompt injection and agent permissions."
+    }
+  ],
+  "status": "draft",
+  "lastReviewed": "2026-09-28"
+}

@@ -1,0 +1,79 @@
+{
+  "id": "memory-bandwidth",
+  "layer": "compute-hardware",
+  "name": "Memory & bandwidth (HBM)",
+  "summary": "How fast data reaches the chip often limits AI speed more than the chip's raw arithmetic.",
+  "prerequisites": [],
+  "status": "draft",
+  "lastReviewed": "2026-09-28",
+  "depths": {
+    "D1": {
+      "text": [
+        "Imagine a super-fast cook who has to wait for ingredients to come through a narrow door. The cook's speed doesn't matter if the door is slow.",
+        "For AI, the ingredients are the model's numbers, and the door is memory bandwidth."
+      ],
+      "analogy": "A fast cook waiting at a narrow pantry door."
+    },
+    "D2": {
+      "text": [
+        "Generating each token means reading the model's active weights from memory. If those weights take tens of gigabytes, every new token moves that much data.",
+        "High-bandwidth memory (HBM) stacks memory chips right next to the processor so data moves far faster than with ordinary memory.",
+        "Rule of thumb for a single user: tokens per second is roughly memory bandwidth divided by the bytes of weights read per token."
+      ],
+      "diagram": {
+        "type": "flow",
+        "numbered": true,
+        "caption": "Why generation is often memory-bound",
+        "steps": [
+          {
+            "label": "Weights",
+            "sub": "in memory"
+          },
+          {
+            "label": "Read",
+            "sub": "limited by bandwidth"
+          },
+          {
+            "label": "Compute",
+            "sub": "fast, often waiting"
+          },
+          {
+            "label": "One token",
+            "sub": "then repeat"
+          }
+        ],
+        "loop": {
+          "from": 3,
+          "to": 0,
+          "label": "every token re-reads the weights"
+        }
+      },
+      "analogy": "A narrow door between the pantry and the kitchen.",
+      "analogyBreaks": "A pantry door moves each ingredient once. A model's weights are re-read for every single token, so the same data crosses the 'door' over and over; batching many users shares each trip.",
+      "predict": {
+        "question": "You halve the size of a model's weights (16-bit to 8-bit) on the same hardware. Roughly what happens to single-user generation speed?",
+        "options": [
+          "No change",
+          "About twice as fast",
+          "Half as fast",
+          "Ten times faster"
+        ],
+        "answer": 1,
+        "explanation": "If generation is limited by memory reads, moving half as many bytes per token roughly doubles tokens per second; in practice a bit less."
+      }
+    },
+    "D5": {
+      "text": [
+        "Where it's heading: faster HBM generations, designs with much more on-chip memory, and algorithmic tricks such as speculative decoding that get more tokens out of each memory read."
+      ]
+    }
+  },
+  "sources": [
+    {
+      "title": "Roofline: an insightful visual performance model (Williams, Waterman, Patterson)",
+      "url": "https://doi.org/10.1145/1498765.1498785",
+      "date": "2009",
+      "verify": true
+    }
+  ]
+}

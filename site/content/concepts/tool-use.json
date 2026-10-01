@@ -1,0 +1,84 @@
+{
+  "id": "tool-use",
+  "layer": "orchestration-tooling",
+  "name": "Tool use & protocols (MCP)",
+  "summary": "Letting a model call functions and services through structured requests, standardised by protocols such as MCP.",
+  "prerequisites": [],
+  "status": "draft",
+  "lastReviewed": "2026-09-28",
+  "depths": {
+    "D1": {
+      "text": [
+        "On its own an AI can only talk. Giving it tools is like giving it a phone and a calculator: now it can check the weather or do exact maths.",
+        "It asks in a special format, and a program does the actual work."
+      ],
+      "analogy": "Handing someone a phone and a calculator."
+    },
+    "D2": {
+      "text": [
+        "Developers describe each tool with a name, a description and a schema for its arguments.",
+        "When a tool would help, the model outputs a structured **tool call** instead of prose; the application runs the tool and returns the result to the model.",
+        "Protocols such as the **Model Context Protocol (MCP)** standardise how tools and data sources are offered to AI applications, so one integration works across many clients."
+      ],
+      "diagram": {
+        "type": "flow",
+        "numbered": true,
+        "caption": "One tool call",
+        "steps": [
+          {
+            "label": "Tool list",
+            "sub": "names + schemas"
+          },
+          {
+            "label": "Tool call",
+            "sub": "structured request"
+          },
+          {
+            "label": "Execute",
+            "sub": "by the application"
+          },
+          {
+            "label": "Result",
+            "sub": "back into context"
+          },
+          {
+            "label": "Continue",
+            "sub": "model answers"
+          }
+        ]
+      },
+      "analogy": "Handing someone a phone and a calculator.",
+      "analogyBreaks": "A person decides whether to believe what they hear on the phone. Models tend to treat tool results as trustworthy, so malicious text inside a result can steer them (prompt injection).",
+      "predict": {
+        "question": "Who actually runs a tool call?",
+        "options": [
+          "The model itself",
+          "The application or client that receives the call",
+          "The user's keyboard",
+          "The GPU"
+        ],
+        "answer": 1,
+        "explanation": "The model only produces a structured request; the surrounding application decides whether and how to run it, which is also where permissions belong."
+      }
+    },
+    "D5": {
+      "text": [
+        "Open problems: securing tool ecosystems against poisoned tools and over-broad permissions, authentication for remote tools, and agents discovering tools on the fly."
+      ]
+    }
+  },
+  "sources": [
+    {
+      "title": "Toolformer: Language Models Can Teach Themselves to Use Tools",
+      "url": "https://arxiv.org/abs/2302.04761",
+      "date": "2023",
+      "verify": true
+    },
+    {
+      "title": "Model Context Protocol specification",
+      "url": "https://modelcontextprotocol.io",
+      "date": "ongoing",
+      "verify": true
+    }
+  ]
+}

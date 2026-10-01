@@ -1,0 +1,73 @@
+{
+  "id": "gpu-accelerators",
+  "layer": "compute-hardware",
+  "name": "GPUs & AI accelerators",
+  "summary": "Chips built to do enormous numbers of simple multiplications in parallel, the core operation of neural networks.",
+  "prerequisites": [],
+  "status": "draft",
+  "lastReviewed": "2026-09-28",
+  "depths": {
+    "D1": {
+      "text": [
+        "A normal computer brain (a CPU) is like one very clever person doing sums one after another. A GPU is like a stadium full of people each doing one small sum at the same time.",
+        "AI needs billions of small sums, so the stadium wins."
+      ],
+      "analogy": "One clever person versus a stadium full of helpers."
+    },
+    "D2": {
+      "text": [
+        "Neural networks mostly multiply large grids of numbers (matrices). GPUs and other accelerators contain thousands of simple cores and specialised matrix units that do these multiplications in parallel.",
+        "They also use lower-precision number formats (16-, 8- or even 4-bit) to fit more maths per second and more numbers in memory.",
+        "Software platforms such as CUDA or ROCm let frameworks like PyTorch use the hardware without chip-level code."
+      ],
+      "diagram": {
+        "type": "compare",
+        "caption": "CPU versus GPU, in one picture",
+        "columns": [
+          {
+            "title": "CPU",
+            "points": [
+              "A few powerful cores",
+              "Great at long chains of dependent steps",
+              "Handles the operating system and logic"
+            ]
+          },
+          {
+            "title": "GPU / accelerator",
+            "points": [
+              "Thousands of simple cores",
+              "Same operation on lots of data at once",
+              "Built around matrix maths"
+            ]
+          }
+        ]
+      },
+      "analogy": "A CPU is a few expert chefs; a GPU is a huge team of line cooks all chopping at once.",
+      "analogyBreaks": "Line cooks work independently. GPU cores run the same instruction on different data in lockstep, so work that can't be split evenly wastes most of the team.",
+      "predict": {
+        "question": "Which kind of work benefits most from a GPU?",
+        "options": [
+          "One long chain of steps where each depends on the last",
+          "Millions of independent multiplications",
+          "Reading a single small file",
+          "Waiting for user input"
+        ],
+        "answer": 1,
+        "explanation": "GPUs win when the same operation applies to lots of data at once, which is exactly what matrix multiplication is."
+      }
+    },
+    "D5": {
+      "text": [
+        "Frontier questions: specialised inference chips versus general-purpose GPUs, how far low-precision formats can go without hurting quality, and whether memory bandwidth rather than arithmetic becomes the permanent bottleneck."
+      ]
+    }
+  },
+  "sources": [
+    {
+      "title": "Making Deep Learning Go Brrrr From First Principles (Horace He)",
+      "url": "https://horace.io/brrr_intro.html",
+      "date": "2022",
+      "verify": true
+    }
+  ]
+}

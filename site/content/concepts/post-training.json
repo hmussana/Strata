@@ -1,0 +1,92 @@
+{
+  "id": "post-training",
+  "layer": "foundation-models",
+  "name": "Post-training: from predictor to assistant",
+  "summary": "Fine-tuning and reinforcement learning that turn a raw text predictor into a helpful, safer assistant.",
+  "prerequisites": [
+    "next-token-prediction"
+  ],
+  "status": "draft",
+  "lastReviewed": "2026-09-28",
+  "depths": {
+    "D1": {
+      "text": [
+        "After reading the whole library, the AI knows a lot but doesn't know how to be helpful yet.",
+        "Post-training is like manners and practice lessons: people show it good answers and reward the helpful ones."
+      ],
+      "analogy": "Manners and practice lessons after reading the library."
+    },
+    "D2": {
+      "text": [
+        "A pretrained model continues text; it doesn't naturally follow instructions.",
+        "**Supervised fine-tuning** trains it on example conversations that show the behaviour we want.",
+        "**Preference learning** (such as RLHF) trains it to prefer answers people rate higher, and **reinforcement learning with checkable rewards** trains reasoning on problems whose answers can be verified."
+      ],
+      "diagram": {
+        "type": "flow",
+        "numbered": true,
+        "caption": "From pretrained model to assistant",
+        "steps": [
+          {
+            "label": "Pretrained",
+            "sub": "predicts text"
+          },
+          {
+            "label": "Fine-tune",
+            "sub": "on demonstrations"
+          },
+          {
+            "label": "Preferences",
+            "sub": "reward model"
+          },
+          {
+            "label": "RL",
+            "sub": "checkable tasks"
+          },
+          {
+            "label": "Assistant",
+            "sub": "follows instructions"
+          }
+        ]
+      },
+      "analogy": "Lessons for a well-read apprentice.",
+      "analogyBreaks": "An apprentice understands why feedback is given. A model only optimises the reward signal, so a flawed reward can teach flattery or shortcuts (reward hacking).",
+      "predict": {
+        "question": "A reward model accidentally gives higher scores to longer answers. What will reinforcement learning tend to produce?",
+        "options": [
+          "Shorter answers",
+          "Unnecessarily long answers",
+          "No change",
+          "Answers in another language"
+        ],
+        "answer": 1,
+        "explanation": "Models optimise what the reward measures, so a length bias in the reward shows up as verbosity: a classic reward-hacking example."
+      }
+    },
+    "D5": {
+      "text": [
+        "Open problems: reward hacking and sycophancy, supervising models on tasks too hard for people to grade, and how much capability comes from post-training versus pretraining."
+      ]
+    }
+  },
+  "sources": [
+    {
+      "title": "Training language models to follow instructions with human feedback (InstructGPT)",
+      "url": "https://arxiv.org/abs/2203.02155",
+      "date": "2022",
+      "verify": true
+    },
+    {
+      "title": "Constitutional AI: Harmlessness from AI Feedback",
+      "url": "https://arxiv.org/abs/2212.08073",
+      "date": "2022",
+      "verify": true
+    },
+    {
+      "title": "DeepSeek-R1: Incentivizing Reasoning Capability in LLMs via Reinforcement Learning",
+      "url": "https://arxiv.org/abs/2501.12948",
+      "date": "2025",
+      "verify": true
+    }
+  ]
+}

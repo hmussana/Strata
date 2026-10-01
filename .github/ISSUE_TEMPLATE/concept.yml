@@ -1,0 +1,23 @@
+name: Suggest a concept or correction
+description: Something missing from the map, outdated or wrong
+labels: [content]
+body:
+  - type: input
+    id: concept
+    attributes:
+      label: Concept
+      description: Name of the technology, technique or product (or the existing concept to fix)
+    validations:
+      required: true
+  - type: dropdown
+    id: layer
+    attributes:
+      label: Layer
+      options: ["L7 Agents & Apps", "L6 Tools & Protocols", "L5 Context & Memory", "L4 Inference & Access", "L3 Models", "L2 Weights & Numerics", "L1 Compute", "Security, Safety & Governance", Not sure]
+  - type: textarea
+    id: details
+    attributes:
+      label: What should it say?
+      description: A one-line summary, why it matters, and official sources (docs, papers, announcements).
+    validations:
+      required: true

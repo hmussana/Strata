@@ -1,0 +1,4094 @@
+{
+  "reviewed": "2026-09-28",
+  "note": "Baseline knowledge map. The news feed tags incoming stories against the keywords below; the Radar panel surfaces terms that are trending but not yet mapped here.",
+  "radarIgnore": [
+    "AI-generated",
+    "Altman",
+    "Amazon",
+    "Amazon's",
+    "AMD",
+    "America",
+    "American",
+    "Android",
+    "Apple",
+    "Apple's",
+    "arXiv",
+    "Ask",
+    "Berkeley",
+    "Bloomberg",
+    "CEO",
+    "CEOs",
+    "China",
+    "Chinese",
+    "Congress",
+    "Court",
+    "CPU",
+    "Discussion",
+    "Elon",
+    "Episode",
+    "Europe",
+    "European",
+    "Francisco",
+    "GitHub",
+    "Google",
+    "Google's",
+    "GPU",
+    "GPUs",
+    "Guys",
+    "Hacker",
+    "Harvard",
+    "Help",
+    "HN",
+    "House",
+    "Huang",
+    "IBM",
+    "India",
+    "Intel",
+    "iOS",
+    "Japan",
+    "JavaScript",
+    "Jensen",
+    "Judge",
+    "Language",
+    "Large",
+    "Linux",
+    "LocalLLaMA",
+    "macOS",
+    "Meta",
+    "Meta's",
+    "Microsoft",
+    "Microsoft's",
+    "MIT",
+    "Musk",
+    "Nadella",
+    "Netflix",
+    "News",
+    "Newsletter",
+    "Node",
+    "NVIDIA",
+    "Nvidia",
+    "Nvidia's",
+    "OpenAI's",
+    "Oracle",
+    "Pentagon",
+    "PhD",
+    "Pichai",
+    "Podcast",
+    "President",
+    "Python",
+    "Question",
+    "Reddit",
+    "Reuters",
+    "Review",
+    "RL",
+    "Rust",
+    "Salesforce",
+    "Sam",
+    "Samsung",
+    "San",
+    "Senate",
+    "Senator",
+    "Series",
+    "Show",
+    "Silicon",
+    "SNL",
+    "SpaceX",
+    "Spotify",
+    "Stanford",
+    "Startup",
+    "Startups",
+    "Street",
+    "Substack",
+    "TechCrunch",
+    "Tesla",
+    "Trump",
+    "Tutorial",
+    "Twitter",
+    "TypeScript",
+    "Uber",
+    "UN",
+    "Valley",
+    "Verge",
+    "Wall",
+    "Washington",
+    "White",
+    "Wikipedia",
+    "Windows",
+    "Wired",
+    "YouTube",
+    "Zuckerberg"
+  ],
+  "layers": [
+    {
+      "id": "agents",
+      "num": 7,
+      "name": "Agents & Apps",
+      "osi": "Application",
+      "moves": "Goals & tasks",
+      "icon": "agent",
+      "tagline": "The software you talk to: it turns a goal into a plan and keeps acting until it's done",
+      "plain": "The top of the stack: coding agents, personal assistants and apps. They take a goal, break it into steps, and loop through the layers below until the task is finished.",
+      "explainer": [
+        "A model on its own only turns text into text. An agent is a model running inside a loop: it reads the situation, decides on a tool call, the harness executes it, the result goes back into context, and the loop repeats until the task is done.",
+        "The harness is everything around the model: the system prompt, tool definitions, permission rules, context management, sub-agent spawning and the UI. Two products using the same model can behave very differently because their harnesses differ."
+      ],
+      "diagram": {
+        "type": "flow",
+        "caption": "The core agent loop every harness implements",
+        "steps": [
+          {
+            "label": "Goal",
+            "sub": "user task"
+          },
+          {
+            "label": "Think",
+            "sub": "model plans"
+          },
+          {
+            "label": "Act",
+            "sub": "tool call"
+          },
+          {
+            "label": "Observe",
+            "sub": "tool result"
+          },
+          {
+            "label": "Done?",
+            "sub": "stop or loop"
+          }
+        ],
+        "loop": {
+          "from": 4,
+          "to": 1,
+          "label": "not done: next step"
+        }
+      },
+      "tech": [
+        "claude-code",
+        "openclaw",
+        "hermes-agent",
+        "consumer-assistants"
+      ],
+      "threats": [
+        {
+          "name": "Excessive agency",
+          "what": "The agent can do far more than the task needs: delete, send, deploy, spend.",
+          "example": "A coding agent on auto-approve runs a destructive shell command it was tricked into.",
+          "defense": "Least privilege, approval for risky actions, run in a sandbox.",
+          "concept": "sandboxing"
+        },
+        {
+          "name": "The lethal trifecta",
+          "what": "Private data + untrusted content + a way to send data out = theft by prompt injection.",
+          "example": "An inbox agent reads a crafted email and forwards your files to the attacker.",
+          "defense": "Remove at least one leg: no external comms, or no untrusted input.",
+          "concept": "lethal-trifecta"
+        },
+        {
+          "name": "Malicious skills & plugins",
+          "what": "Community add-ons run with the agent's full permissions.",
+          "example": "A popular 'productivity' skill quietly uploads credentials.",
+          "defense": "Review and pin skills, allow-list sources, isolate the agent.",
+          "concept": "supply-chain"
+        }
+      ],
+      "categories": [
+        {
+          "id": "agent-concepts",
+          "name": "How agents work",
+          "summary": "The mental models behind every agent product",
+          "items": [
+            {
+              "id": "agent-loop",
+              "name": "The agent loop",
+              "kind": "concept",
+              "summary": "Model → tool call → result → model, repeated until the goal is met.",
+              "explainer": [
+                "Modern models are trained to emit structured tool calls. The harness parses them, runs the tool (shell, file edit, browser, API), and appends the output to the conversation. The model sees the result and picks the next action.",
+                "Everything else, including planning, reflection and to-do lists, is a variation on this loop. Long-running agents also need context management: summarising or compacting old turns so the window doesn't overflow."
+              ],
+              "why": "Once you see the loop, every agent product becomes easy to compare: which tools does it expose, who approves actions, and how does it manage context?",
+              "diagram": {
+                "type": "sequence",
+                "caption": "One turn of an agent loop",
+                "actors": [
+                  "User",
+                  "Harness",
+                  "Model",
+                  "Tool"
+                ],
+                "messages": [
+                  {
+                    "from": 0,
+                    "to": 1,
+                    "label": "\"fix the failing test\""
+                  },
+                  {
+                    "from": 1,
+                    "to": 2,
+                    "label": "prompt + tool schemas"
+                  },
+                  {
+                    "from": 2,
+                    "to": 1,
+                    "label": "tool_use: run_tests"
+                  },
+                  {
+                    "from": 1,
+                    "to": 3,
+                    "label": "execute (if permitted)"
+                  },
+                  {
+                    "from": 3,
+                    "to": 1,
+                    "label": "stdout / exit code"
+                  },
+                  {
+                    "from": 1,
+                    "to": 2,
+                    "label": "tool_result"
+                  },
+                  {
+                    "from": 2,
+                    "to": 1,
+                    "label": "tool_use: edit_file …"
+                  },
+                  {
+                    "from": 1,
+                    "to": 0,
+                    "label": "final answer"
+                  }
+                ]
+              },
+              "keywords": [
+                "agent loop",
+                "agentic loop",
+                "tool use loop",
+                "ReAct",
+                "AI agent",
+                "agentic"
+              ],
+              "related": [
+                "agent-harness",
+                "tool-calling",
+                "context-engineering"
+              ]
+            },
+            {
+              "id": "agent-harness",
+              "name": "Harness vs model",
+              "kind": "concept",
+              "summary": "The scaffolding around a model: prompts, tools, permissions, memory and UI.",
+              "explainer": [
+                "Benchmarks increasingly report model + harness pairs, because the harness matters. A good harness decides which tools exist, how files are read (whole vs. chunks), when to compact context, how to recover from errors, and when to ask the human.",
+                "Model-agnostic harnesses (OpenCode, Aider, Cline, OpenClaw) let you plug in any model through an API or local runtime; vendor harnesses (Claude Code, Codex, Gemini CLI) are tuned for their own models."
+              ],
+              "why": "When a model feels 'dumb' in one tool and brilliant in another, the harness is usually the difference.",
+              "diagram": {
+                "type": "stack",
+                "caption": "Anatomy of a harness",
+                "layers": [
+                  {
+                    "label": "UI / channel",
+                    "sub": "terminal, IDE, chat app, messaging"
+                  },
+                  {
+                    "label": "Policy",
+                    "sub": "permissions, sandbox, approvals"
+                  },
+                  {
+                    "label": "Orchestration",
+                    "sub": "loop, sub-agents, retries, compaction"
+                  },
+                  {
+                    "label": "Tools & context",
+                    "sub": "MCP servers, skills, files, memory"
+                  },
+                  {
+                    "label": "Model API",
+                    "sub": "any provider or local runtime",
+                    "hl": true
+                  }
+                ]
+              },
+              "keywords": [
+                "agent harness",
+                "scaffolding",
+                "agent scaffold"
+              ],
+              "related": [
+                "agent-loop",
+                "claude-code",
+                "opencode",
+                "openclaw"
+              ]
+            },
+            {
+              "id": "multi-agent",
+              "name": "Sub-agents & orchestration",
+              "kind": "concept",
+              "summary": "An orchestrator agent delegates to specialised sub-agents with their own context.",
+              "explainer": [
+                "A lead agent splits work and spawns sub-agents, each with a fresh context window and a narrow brief (search the codebase, review this diff, research this topic). Only their conclusions come back, which keeps the lead's context clean.",
+                "The trade-off is cost and coordination: parallel agents burn more tokens and can duplicate or contradict each other."
+              ],
+              "why": "It's how agents tackle tasks bigger than one context window.",
+              "diagram": {
+                "type": "hub",
+                "caption": "Orchestrator with parallel sub-agents",
+                "center": {
+                  "label": "Orchestrator",
+                  "sub": "plans + merges"
+                },
+                "spokes": [
+                  {
+                    "label": "Researcher",
+                    "sub": "web search"
+                  },
+                  {
+                    "label": "Explorer",
+                    "sub": "reads code"
+                  },
+                  {
+                    "label": "Coder",
+                    "sub": "writes patch"
+                  },
+                  {
+                    "label": "Reviewer",
+                    "sub": "checks diff"
+                  }
+                ]
+              },
+              "keywords": [
+                "multi-agent",
+                "subagent",
+                "sub-agent",
+                "orchestrator agent",
+                "agent swarm",
+                "agent teams"
+              ],
+              "related": [
+                "agent-loop",
+                "a2a",
+                "langgraph"
+              ]
+            }
+          ]
+        },
+        {
+          "id": "coding-agents",
+          "name": "Coding agents",
+          "summary": "Agents that read, edit, run and test code in your repo",
+          "items": [
+            {
+              "id": "claude-code",
+              "name": "Claude Code",
+              "kind": "product",
+              "badges": [
+                "Anthropic",
+                "CLI / IDE / web"
+              ],
+              "summary": "Anthropic's agentic coding tool: terminal, IDE, desktop and cloud sessions.",
+              "explainer": [
+                "Runs the agent loop over your repository with shell, file-edit, search and web tools, plus MCP servers, skills, hooks, sub-agents and permission modes. It also exists as the Claude Agent SDK so you can build your own agents on the same harness."
+              ],
+              "why": "A reference design for what a production coding harness looks like.",
+              "keywords": [
+                "Claude Code"
+              ],
+              "related": [
+                "claude-agent-sdk",
+                "agent-skills",
+                "mcp",
+                "claude"
+              ],
+              "links": [
+                {
+                  "label": "Docs",
+                  "url": "https://docs.claude.com/en/docs/claude-code/overview"
+                }
+              ]
+            },
+            {
+              "id": "codex",
+              "name": "OpenAI Codex",
+              "kind": "product",
+              "badges": [
+                "OpenAI",
+                "CLI / cloud"
+              ],
+              "summary": "OpenAI's coding agent: open-source Codex CLI plus cloud tasks in ChatGPT.",
+              "explainer": [
+                "Codex CLI is an open-source terminal agent tuned for OpenAI's GPT/Codex models; the cloud version runs tasks in sandboxed containers and returns pull requests."
+              ],
+              "why": "The main alternative ecosystem to Claude Code; compare harness choices side by side.",
+              "keywords": [
+                "Codex CLI",
+                "OpenAI Codex",
+                "Codex"
+              ],
+              "related": [
+                "gpt",
+                "agent-harness"
+              ],
+              "links": [
+                {
+                  "label": "GitHub",
+                  "url": "https://github.com/openai/codex"
+                }
+              ]
+            },
+            {
+              "id": "opencode",
+              "name": "OpenCode",
+              "kind": "project",
+              "badges": [
+                "open source",
+                "any model"
+              ],
+              "summary": "Open-source, provider-agnostic terminal coding agent with a TUI.",
+              "explainer": [
+                "OpenCode talks to many providers (Anthropic, OpenAI, Google, OpenRouter, local OpenAI-compatible servers such as Ollama or llama.cpp) behind one client/server architecture, so the same workflow runs against frontier or local models."
+              ],
+              "why": "The easiest way to point a serious coding harness at your own local models.",
+              "keywords": [
+                "OpenCode",
+                "opencode"
+              ],
+              "related": [
+                "openrouter",
+                "ollama",
+                "llama-cpp",
+                "agent-harness"
+              ],
+              "links": [
+                {
+                  "label": "Site",
+                  "url": "https://opencode.ai"
+                }
+              ]
+            },
+            {
+              "id": "gemini-cli",
+              "name": "Gemini CLI",
+              "kind": "project",
+              "badges": [
+                "Google",
+                "open source"
+              ],
+              "summary": "Google's open-source terminal agent for Gemini models.",
+              "explainer": [
+                "Open-source CLI agent with MCP support and a generous free tier tied to a Google account; tuned for Gemini's long context."
+              ],
+              "why": "Useful when you want huge-context repo analysis cheaply.",
+              "keywords": [
+                "Gemini CLI"
+              ],
+              "related": [
+                "gemini",
+                "mcp"
+              ],
+              "links": [
+                {
+                  "label": "GitHub",
+                  "url": "https://github.com/google-gemini/gemini-cli"
+                }
+              ]
+            },
+            {
+              "id": "ai-ides",
+              "name": "AI IDEs (Cursor, Windsurf, Copilot)",
+              "kind": "product",
+              "badges": [
+                "editor"
+              ],
+              "summary": "Editors with built-in agents, completions and background tasks.",
+              "explainer": [
+                "Cursor, Windsurf, GitHub Copilot (agent mode and coding agent) and Zed integrate agents directly into the editor, mixing fast tab completion with longer agentic tasks and multiple model choices."
+              ],
+              "why": "Where most developers first meet agents; the UX patterns spread from here.",
+              "keywords": [
+                "=Cursor",
+                "Windsurf",
+                "GitHub Copilot",
+                "Copilot agent",
+                "Zed editor"
+              ],
+              "related": [
+                "claude-code",
+                "codex"
+              ]
+            },
+            {
+              "id": "oss-coding-agents",
+              "name": "Cline, Aider, Roo & co",
+              "kind": "project",
+              "badges": [
+                "open source",
+                "any model"
+              ],
+              "summary": "Open-source, bring-your-own-model coding agents (VS Code extensions and CLIs).",
+              "explainer": [
+                "Aider pioneered git-native pair programming in the terminal; Cline, Roo Code, Kilo Code and Continue live inside VS Code. All accept API keys for any provider or a local endpoint."
+              ],
+              "why": "Good for local-LLM experiments and for seeing how harness design choices affect results.",
+              "keywords": [
+                "Aider",
+                "Cline",
+                "Roo Code",
+                "Kilo Code",
+                "Continue.dev",
+                "coding agent"
+              ],
+              "related": [
+                "opencode",
+                "openrouter",
+                "coding-models"
+              ]
+            }
+          ]
+        },
+        {
+          "id": "personal-agents",
+          "name": "Personal & always-on agents",
+          "summary": "Self-hosted assistants that live in your chat apps and act on your behalf",
+          "diagram": {
+            "type": "compare",
+            "caption": "Two philosophies of self-hosted personal agents",
+            "columns": [
+              {
+                "title": "OpenClaw",
+                "points": [
+                  "Gateway that connects many chat channels",
+                  "Skills + tools on your own machine",
+                  "Any model: API or local",
+                  "Huge community skill ecosystem",
+                  "Power ≈ risk: broad local access"
+                ]
+              },
+              {
+                "title": "Hermes Agent",
+                "points": [
+                  "Nous Research, open source",
+                  "Persistent memory across sessions",
+                  "Learns and saves new skills itself",
+                  "Runs on a server / VPS, reachable from chat",
+                  "Model-agnostic, OpenRouter-friendly"
+                ]
+              }
+            ]
+          },
+          "items": [
+            {
+              "id": "openclaw",
+              "name": "OpenClaw",
+              "kind": "project",
+              "badges": [
+                "open source",
+                "self-hosted"
+              ],
+              "summary": "Open-source personal agent you run yourself, driven from WhatsApp, Telegram, Slack, Discord and more.",
+              "explainer": [
+                "OpenClaw (formerly Clawdbot / Moltbot) is a local gateway that connects messaging channels to an agent with shell, browser, file and calendar-style tools, extended through community 'skills'. It works with frontier APIs or local models.",
+                "Its popularity also made it a case study in agent security: exposed gateways, malicious skills and prompt injection via incoming messages are real risks when an agent has broad access to your machine."
+              ],
+              "why": "The poster child of the 'always-on personal agent' wave, and of its attack surface.",
+              "keywords": [
+                "OpenClaw",
+                "Clawdbot",
+                "Moltbot",
+                "Moltbook"
+              ],
+              "related": [
+                "hermes-agent",
+                "lethal-trifecta",
+                "prompt-injection",
+                "agent-skills"
+              ],
+              "links": [
+                {
+                  "label": "GitHub",
+                  "url": "https://github.com/openclaw/openclaw"
+                }
+              ]
+            },
+            {
+              "id": "hermes-agent",
+              "name": "Hermes Agent",
+              "kind": "project",
+              "badges": [
+                "Nous Research",
+                "open source"
+              ],
+              "summary": "Nous Research's self-improving, server-hosted agent with persistent memory.",
+              "explainer": [
+                "Hermes Agent emphasises a learning loop: it keeps long-term memory about you and your projects and can write reusable skills from tasks it completes. It runs on a server or VPS and is reachable from chat platforms or the CLI, with any model provider."
+              ],
+              "why": "Contrasts with OpenClaw: less 'control my laptop', more 'a persistent assistant that gets better over time'.",
+              "keywords": [
+                "Hermes Agent",
+                "Nous Research"
+              ],
+              "related": [
+                "openclaw",
+                "agent-memory",
+                "agent-skills",
+                "uncensored-models"
+              ],
+              "links": [
+                {
+                  "label": "GitHub",
+                  "url": "https://github.com/NousResearch/hermes-agent"
+                }
+              ]
+            },
+            {
+              "id": "computer-use",
+              "name": "Computer & browser use",
+              "kind": "concept",
+              "summary": "Agents that operate GUIs and browsers via screenshots, clicks and typing.",
+              "explainer": [
+                "Frontier models can read screenshots and emit mouse/keyboard actions, and browser agents (ChatGPT agent, Claude in Chrome, Comet, Browser Use) navigate the web for you. Powerful, but every web page becomes a potential prompt-injection source."
+              ],
+              "why": "Unlocks automation of apps without APIs, and multiplies the injection surface.",
+              "keywords": [
+                "computer use",
+                "browser agent",
+                "Browser Use",
+                "operator agent",
+                "agentic browser",
+                "Comet browser",
+                "computer-use agent",
+                "GUI agent"
+              ],
+              "related": [
+                "prompt-injection",
+                "frontier-capabilities"
+              ]
+            },
+            {
+              "id": "consumer-assistants",
+              "name": "Consumer AI assistants",
+              "kind": "product",
+              "summary": "ChatGPT, Gemini, Claude, Meta AI, Copilot, Siri and Alexa+: assistants in apps, phones, glasses and PCs.",
+              "explainer": [
+                "The mass-market face of LLMs. Assistants increasingly bundle memory, voice, web search, shopping and agent modes, and ship on new form factors such as smart glasses and AI PCs.",
+                "Under the hood they are the same agent loop and models described elsewhere on this map, wrapped in product, safety and data-retention policies."
+              ],
+              "why": "Most AI news is about these products; mapping them to the underlying layers makes the headlines easier to parse.",
+              "keywords": [
+                "ChatGPT app",
+                "Meta AI",
+                "Microsoft Copilot",
+                "Copilot+",
+                "Siri",
+                "Alexa+",
+                "smart glasses",
+                "AI assistant",
+                "AI chatbot",
+                "Gemini app"
+              ],
+              "related": [
+                "agent-loop",
+                "agent-memory",
+                "frontier-capabilities"
+              ]
+            }
+          ]
+        },
+        {
+          "id": "agent-frameworks",
+          "name": "Frameworks & automation",
+          "summary": "Libraries and platforms for building your own agents and workflows",
+          "items": [
+            {
+              "id": "claude-agent-sdk",
+              "name": "Claude Agent SDK",
+              "kind": "product",
+              "badges": [
+                "Anthropic",
+                "Python / TS"
+              ],
+              "summary": "The Claude Code harness as a library for building custom agents.",
+              "explainer": [
+                "Gives you the same loop, tools, permissions, MCP, sub-agents and context compaction that power Claude Code, so you can build domain agents (security triage, ops runbooks) without writing a harness."
+              ],
+              "why": "Fastest path from 'I want an agent for X' to a working one.",
+              "keywords": [
+                "Claude Agent SDK",
+                "Agent SDK"
+              ],
+              "related": [
+                "claude-code",
+                "mcp",
+                "agent-harness"
+              ]
+            },
+            {
+              "id": "openai-agents-sdk",
+              "name": "OpenAI Agents SDK",
+              "kind": "product",
+              "badges": [
+                "OpenAI"
+              ],
+              "summary": "Lightweight framework for agents, handoffs, guardrails and tracing.",
+              "explainer": [
+                "Python/TS SDK built around agents, tools, handoffs between agents and built-in tracing; pairs with the Responses API."
+              ],
+              "why": "Common choice for OpenAI-centric stacks.",
+              "keywords": [
+                "Agents SDK",
+                "Responses API",
+                "AgentKit"
+              ],
+              "related": [
+                "gpt",
+                "multi-agent"
+              ]
+            },
+            {
+              "id": "langgraph",
+              "name": "LangGraph & friends",
+              "kind": "project",
+              "badges": [
+                "open source"
+              ],
+              "summary": "Graph/state-machine frameworks: LangGraph, CrewAI, PydanticAI, AutoGen, Mastra.",
+              "explainer": [
+                "These model an agent as explicit states and transitions (or roles in a crew), giving you deterministic control, checkpoints and human-in-the-loop steps. More code than an SDK harness, but more predictable."
+              ],
+              "why": "Pick these when you need auditability and strict control flow (compliance, security workflows).",
+              "keywords": [
+                "LangGraph",
+                "LangChain",
+                "CrewAI",
+                "PydanticAI",
+                "AutoGen",
+                "Mastra",
+                "LlamaIndex"
+              ],
+              "related": [
+                "multi-agent",
+                "rag"
+              ]
+            },
+            {
+              "id": "workflow-automation",
+              "name": "n8n, Dify & workflow tools",
+              "kind": "product",
+              "badges": [
+                "low-code",
+                "self-hostable"
+              ],
+              "summary": "Visual workflow builders that add LLM and agent nodes to classic automation.",
+              "explainer": [
+                "n8n, Dify, Flowise and Zapier/Make let you wire triggers → LLM steps → actions visually. Deterministic pipelines with an LLM at specific steps are often more reliable than a free-roaming agent."
+              ],
+              "why": "Great for home-lab automation with local models.",
+              "keywords": [
+                "n8n",
+                "Dify",
+                "Flowise",
+                "Zapier",
+                "Make.com"
+              ],
+              "related": [
+                "ollama",
+                "mcp"
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "tools",
+      "num": 6,
+      "name": "Tools & Protocols",
+      "osi": "Presentation",
+      "moves": "Tool calls (JSON)",
+      "icon": "plug",
+      "tagline": "The translator between words and actions: standard ways for models to call tools",
+      "plain": "Like OSI's presentation layer translates data formats, this layer translates a model's intent into structured calls (JSON, MCP) that real systems understand, and translates the results back.",
+      "explainer": [
+        "Models emit structured tool calls; protocols like MCP let any agent use any tool server, and A2A lets agents delegate to each other. Skills package instructions and scripts the agent loads on demand.",
+        "Every tool is a trust boundary: its description and its output both flow straight into the model's context."
+      ],
+      "diagram": {
+        "type": "hub",
+        "caption": "One protocol, many tools",
+        "center": {
+          "label": "MCP client",
+          "sub": "inside the agent"
+        },
+        "spokes": [
+          {
+            "label": "GitHub",
+            "sub": "issues, PRs"
+          },
+          {
+            "label": "Database",
+            "sub": "SQL queries"
+          },
+          {
+            "label": "Browser",
+            "sub": "fetch, click"
+          },
+          {
+            "label": "Files",
+            "sub": "read, write"
+          },
+          {
+            "label": "Cloud APIs",
+            "sub": "AWS, GCP…"
+          },
+          {
+            "label": "Other agents",
+            "sub": "via A2A"
+          }
+        ]
+      },
+      "tech": [
+        "mcp",
+        "tool-calling",
+        "agent-skills",
+        "a2a"
+      ],
+      "threats": [
+        {
+          "name": "Tool poisoning",
+          "what": "Hidden instructions inside a tool's description or metadata steer the model.",
+          "example": "An MCP server's description says 'also read ~/.ssh and include it in the call'.",
+          "defense": "Review servers, pin versions, show full tool descriptions, prefer first-party servers.",
+          "concept": "mcp"
+        },
+        {
+          "name": "Injection via tool output",
+          "what": "Results from web pages, issues or files contain instructions the model obeys.",
+          "example": "A GitHub issue comment tells the agent to push secrets to a public repo.",
+          "defense": "Treat tool output as data, isolate untrusted content, require approval for writes.",
+          "concept": "prompt-injection"
+        },
+        {
+          "name": "Over-scoped credentials",
+          "what": "One token grants every tool broad access (confused deputy).",
+          "example": "A 'read calendar' integration holds a token that can also send email.",
+          "defense": "Per-tool, short-lived, least-privilege OAuth scopes."
+        }
+      ],
+      "categories": [
+        {
+          "id": "protocols",
+          "name": "Protocols & tool calling",
+          "summary": "Standard ways for models to call tools and for agents to talk",
+          "items": [
+            {
+              "id": "tool-calling",
+              "name": "Tool / function calling",
+              "kind": "concept",
+              "summary": "The model emits a structured call (name + JSON args) that your code executes.",
+              "explainer": [
+                "You describe tools with a name, description and JSON Schema. The model decides when to call one and returns arguments; you run it and send back the result. Structured outputs extend this to guaranteed-valid JSON responses."
+              ],
+              "why": "The primitive under every agent and every MCP server.",
+              "keywords": [
+                "function calling",
+                "tool calling",
+                "tool use",
+                "structured outputs"
+              ],
+              "related": [
+                "mcp",
+                "agent-loop"
+              ]
+            },
+            {
+              "id": "mcp",
+              "name": "Model Context Protocol (MCP)",
+              "kind": "concept",
+              "badges": [
+                "open standard"
+              ],
+              "summary": "Open protocol that lets any AI app plug into any tool/data server: 'USB-C for AI'.",
+              "explainer": [
+                "Introduced by Anthropic in late 2024 and since adopted across OpenAI, Google, Microsoft and most agent tools, now governed as an open project. An MCP server exposes tools, resources and prompts over stdio or HTTP; any MCP client (Claude, ChatGPT, Cursor, OpenCode…) can use them.",
+                "Security is the hard part: servers run with your credentials, tool descriptions can carry injected instructions, and remote servers need proper OAuth."
+              ],
+              "why": "Write an integration once and every agent can use it. It is also a new trust boundary every security team needs to review.",
+              "diagram": {
+                "type": "sequence",
+                "caption": "An MCP tool call",
+                "actors": [
+                  "Host app",
+                  "MCP client",
+                  "MCP server",
+                  "Your system"
+                ],
+                "messages": [
+                  {
+                    "from": 1,
+                    "to": 2,
+                    "label": "initialize / list_tools"
+                  },
+                  {
+                    "from": 2,
+                    "to": 1,
+                    "label": "tools + JSON schemas"
+                  },
+                  {
+                    "from": 0,
+                    "to": 1,
+                    "label": "model wants: query_db"
+                  },
+                  {
+                    "from": 1,
+                    "to": 2,
+                    "label": "tools/call {args}"
+                  },
+                  {
+                    "from": 2,
+                    "to": 3,
+                    "label": "SQL / API call"
+                  },
+                  {
+                    "from": 3,
+                    "to": 2,
+                    "label": "rows"
+                  },
+                  {
+                    "from": 2,
+                    "to": 1,
+                    "label": "result content"
+                  },
+                  {
+                    "from": 1,
+                    "to": 0,
+                    "label": "back into context"
+                  }
+                ]
+              },
+              "keywords": [
+                "=MCP",
+                "Model Context Protocol",
+                "MCP server"
+              ],
+              "related": [
+                "tool-calling",
+                "a2a",
+                "supply-chain",
+                "prompt-injection"
+              ],
+              "links": [
+                {
+                  "label": "Spec",
+                  "url": "https://modelcontextprotocol.io"
+                }
+              ]
+            },
+            {
+              "id": "a2a",
+              "name": "Agent-to-agent (A2A)",
+              "kind": "concept",
+              "summary": "Protocols for agents from different vendors to discover and delegate to each other.",
+              "explainer": [
+                "Google's A2A (now a Linux Foundation project) defines 'agent cards' for discovery and a task lifecycle for delegating work between agents. MCP connects agents to tools; A2A connects agents to agents."
+              ],
+              "why": "Matters once agents cross organisational boundaries, which brings identity and authZ questions.",
+              "keywords": [
+                "=A2A",
+                "agent-to-agent",
+                "Agent2Agent"
+              ],
+              "related": [
+                "mcp",
+                "multi-agent"
+              ]
+            }
+          ]
+        },
+        {
+          "id": "skills",
+          "name": "Skills & instructions",
+          "summary": "Packaged know-how an agent loads when needed",
+          "items": [
+            {
+              "id": "agent-skills",
+              "name": "Agent Skills",
+              "kind": "concept",
+              "badges": [
+                "open format"
+              ],
+              "summary": "Folders of instructions + scripts an agent loads only when a task needs them.",
+              "explainer": [
+                "A skill is a SKILL.md with a short description plus optional scripts and references. Only the description sits in context; the full content loads on demand (progressive disclosure). Introduced by Anthropic and published as an open format, adopted by other agents including OpenClaw-style ecosystems."
+              ],
+              "why": "A cheap way to give agents specialised procedures without bloating context, and a new supply-chain surface.",
+              "keywords": [
+                "Agent Skills",
+                "SKILL.md",
+                "skills marketplace",
+                "ClawHub"
+              ],
+              "related": [
+                "claude-code",
+                "openclaw",
+                "hermes-agent",
+                "supply-chain"
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "context",
+      "num": 5,
+      "name": "Context & Memory",
+      "osi": "Session",
+      "moves": "Context windows",
+      "icon": "layers",
+      "tagline": "What the model can see right now, and what it remembers from before",
+      "plain": "Like a network session, this is state that must be managed: the context window is short-term memory, retrieval and memory stores are long-term. Everything the model 'knows' about your task passes through here.",
+      "explainer": [
+        "A model only knows its training data plus whatever is in the context window right now. This layer is about feeding it the right information (retrieval, files, memory) and giving it the right capabilities (tools via protocols like MCP).",
+        "'Context engineering' is the discipline of deciding what goes into that window, in what order, and what gets dropped."
+      ],
+      "diagram": {
+        "type": "hub",
+        "caption": "Everything competing for space in the context window",
+        "center": {
+          "label": "Context window",
+          "sub": "finite tokens"
+        },
+        "spokes": [
+          {
+            "label": "System prompt",
+            "sub": "rules, persona"
+          },
+          {
+            "label": "Tools",
+            "sub": "MCP schemas"
+          },
+          {
+            "label": "Retrieved docs",
+            "sub": "RAG / search"
+          },
+          {
+            "label": "Memory",
+            "sub": "past sessions"
+          },
+          {
+            "label": "Skills",
+            "sub": "loaded on demand"
+          },
+          {
+            "label": "History",
+            "sub": "turns, results"
+          }
+        ]
+      },
+      "tech": [
+        "rag",
+        "context-engineering",
+        "agent-memory",
+        "kv-cache"
+      ],
+      "threats": [
+        {
+          "name": "RAG & data poisoning",
+          "what": "Planted documents in the knowledge base steer answers or carry instructions.",
+          "example": "A wiki page edited by an attacker makes the support bot hand out a phishing link.",
+          "defense": "Curate sources, track provenance, access-control the index.",
+          "concept": "rag"
+        },
+        {
+          "name": "Memory injection",
+          "what": "An injected instruction gets saved to long-term memory and persists across sessions.",
+          "example": "A web page convinces the assistant to 'remember' to always BCC an address.",
+          "defense": "Review and scope memory writes; let users see and delete memories.",
+          "concept": "agent-memory"
+        },
+        {
+          "name": "Cross-user leakage",
+          "what": "Retrieval or caches ignore who is asking.",
+          "example": "Search over a shared index returns another team's HR documents.",
+          "defense": "Enforce permissions at retrieval time; per-tenant indexes and caches."
+        }
+      ],
+      "categories": [
+        {
+          "id": "knowledge",
+          "name": "Retrieval & context engineering",
+          "summary": "Getting the right knowledge into the window",
+          "items": [
+            {
+              "id": "rag",
+              "name": "RAG (retrieval-augmented generation)",
+              "kind": "concept",
+              "summary": "Search your data, paste the best chunks into the prompt, then generate.",
+              "explainer": [
+                "Documents are chunked and embedded into vectors. At query time the question is embedded, the nearest chunks are retrieved (often mixed with keyword search and a reranker) and inserted into the prompt.",
+                "Agentic RAG lets the model decide what to search and iterate, which is basically the agent loop with a search tool."
+              ],
+              "why": "Still the standard way to ground a model in private data, especially for small local models.",
+              "diagram": {
+                "type": "flow",
+                "caption": "Classic RAG pipeline",
+                "steps": [
+                  {
+                    "label": "Question"
+                  },
+                  {
+                    "label": "Embed",
+                    "sub": "vector"
+                  },
+                  {
+                    "label": "Retrieve",
+                    "sub": "vector + BM25"
+                  },
+                  {
+                    "label": "Rerank",
+                    "sub": "top-k"
+                  },
+                  {
+                    "label": "Generate",
+                    "sub": "LLM + chunks"
+                  }
+                ]
+              },
+              "keywords": [
+                "=RAG",
+                "retrieval-augmented",
+                "retrieval augmented",
+                "GraphRAG",
+                "agentic RAG"
+              ],
+              "related": [
+                "vector-dbs",
+                "embeddings",
+                "context-engineering"
+              ]
+            },
+            {
+              "id": "vector-dbs",
+              "name": "Vector databases",
+              "kind": "product",
+              "summary": "Stores for embeddings with fast nearest-neighbour search.",
+              "explainer": [
+                "Dedicated (Qdrant, Weaviate, Milvus, Chroma, Pinecone, LanceDB) or bolted onto what you already run (pgvector, OpenSearch, Redis). For most projects, pgvector is enough."
+              ],
+              "why": "Pick boring infrastructure; the retrieval quality lives in chunking and reranking.",
+              "keywords": [
+                "vector database",
+                "pgvector",
+                "Qdrant",
+                "Weaviate",
+                "Milvus",
+                "Pinecone",
+                "Chroma",
+                "LanceDB"
+              ],
+              "related": [
+                "rag",
+                "embeddings"
+              ]
+            },
+            {
+              "id": "context-engineering",
+              "name": "Context engineering",
+              "kind": "concept",
+              "summary": "Designing what goes into the context window, and what gets compacted or dropped.",
+              "explainer": [
+                "Long contexts degrade: models attend less reliably to the middle, and costs grow per turn. Context engineering covers compaction, just-in-time retrieval, sub-agents with isolated context, prompt caching, and keeping tool outputs short."
+              ],
+              "why": "The skill that separates flaky agents from reliable ones.",
+              "keywords": [
+                "context engineering",
+                "context window",
+                "context rot",
+                "compaction",
+                "prompt caching",
+                "long context"
+              ],
+              "related": [
+                "rag",
+                "agent-memory",
+                "multi-agent",
+                "kv-cache"
+              ]
+            }
+          ]
+        },
+        {
+          "id": "memory",
+          "name": "Memory & caching",
+          "summary": "Short- and long-term state",
+          "items": [
+            {
+              "id": "agent-memory",
+              "name": "Agent memory",
+              "kind": "concept",
+              "summary": "Facts and preferences persisted between sessions and recalled when relevant.",
+              "explainer": [
+                "Implemented as files (CLAUDE.md, AGENTS.md, memory directories), vector stores or knowledge graphs (Mem0, Letta, Zep). The agent writes memories and retrieves them later. Memory is also a persistence vector for injected instructions."
+              ],
+              "why": "What turns a stateless chatbot into an assistant that knows you.",
+              "keywords": [
+                "agent memory",
+                "long-term memory",
+                "Mem0",
+                "Letta",
+                "AGENTS.md",
+                "CLAUDE.md"
+              ],
+              "related": [
+                "hermes-agent",
+                "agent-skills",
+                "context-engineering"
+              ]
+            },
+            {
+              "id": "kv-cache",
+              "name": "KV cache & prompt caching",
+              "kind": "concept",
+              "summary": "Stored attention keys/values that make generation fast, and eat memory at long context.",
+              "explainer": [
+                "Each token's keys and values are cached so they aren't recomputed. At long context the KV cache can exceed the model weights in size. Techniques: GQA/MLA (smaller KV), KV quantisation, paged allocation (vLLM), and prefix/prompt caching, which providers bill at a steep discount."
+              ],
+              "why": "Why your 32k-context run OOMs when the model 'fits', and why cached prompts are cheap.",
+              "keywords": [
+                "KV cache",
+                "prompt caching",
+                "prefix caching",
+                "context caching"
+              ],
+              "related": [
+                "vllm",
+                "context-engineering",
+                "vram-math"
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "inference",
+      "num": 4,
+      "name": "Inference & Access",
+      "osi": "Transport",
+      "moves": "Token streams",
+      "icon": "stream",
+      "tagline": "Delivering tokens between your app and a model: APIs, routers, clouds, local servers",
+      "plain": "Like TCP delivers packets end to end, this layer delivers requests to a model and streams tokens back, whether that's a lab's API, a router like OpenRouter, a cloud, or llama.cpp on your desk.",
+      "explainer": [
+        "Every model reaches you through an inference endpoint. It might be the lab's own API, a hyperscaler, a router like OpenRouter that fronts hundreds of models, or a runtime on your own GPU.",
+        "The OpenAI-compatible chat API became the de facto standard, so most tools can swap between cloud and local just by changing a base URL."
+      ],
+      "diagram": {
+        "type": "flow",
+        "caption": "One client, many possible back-ends",
+        "steps": [
+          {
+            "label": "Your app / agent"
+          },
+          {
+            "label": "OpenAI-compatible API",
+            "sub": "base_url + key"
+          },
+          {
+            "label": "Router / gateway",
+            "sub": "OpenRouter, LiteLLM"
+          },
+          {
+            "label": "Back-end",
+            "sub": "lab API · cloud · local GPU"
+          }
+        ]
+      },
+      "tech": [
+        "openrouter",
+        "ollama",
+        "vllm",
+        "hyperscalers"
+      ],
+      "threats": [
+        {
+          "name": "Exposed inference servers",
+          "what": "Local servers bound to 0.0.0.0 with no auth are found and abused from the internet.",
+          "example": "Scans regularly find thousands of open Ollama endpoints serving anyone.",
+          "defense": "Bind to localhost, put an authenticating proxy in front, firewall the port.",
+          "concept": "ollama"
+        },
+        {
+          "name": "Key leakage & denial of wallet",
+          "what": "Leaked API keys or runaway agents run up huge bills.",
+          "example": "A key committed to GitHub is used within minutes to resell access.",
+          "defense": "Secret scanning, per-key budgets and rate limits via a gateway.",
+          "concept": "litellm"
+        },
+        {
+          "name": "Intermediary trust",
+          "what": "Routers and providers see your prompts and may log or retain them.",
+          "example": "Sensitive code sent through a provider that trains on inputs.",
+          "defense": "Zero-retention settings, provider filters, confidential or self-hosted inference.",
+          "concept": "confidential-ai"
+        }
+      ],
+      "categories": [
+        {
+          "id": "routers",
+          "name": "Routers & gateways",
+          "summary": "One API key, many models and providers",
+          "items": [
+            {
+              "id": "openrouter",
+              "name": "OpenRouter",
+              "kind": "product",
+              "badges": [
+                "hosted",
+                "pay-per-token"
+              ],
+              "summary": "Unified API and marketplace for hundreds of models across dozens of providers.",
+              "explainer": [
+                "One OpenAI-compatible endpoint and one bill. OpenRouter routes each request to a provider serving that model, with fallbacks, price or latency sorting, and provider filters (e.g. no data retention). Many open-weight models are served by several providers at different prices and quantisations.",
+                "Its public usage rankings are also a good signal of which models developers actually use."
+              ],
+              "why": "Try any new model the day it ships without new accounts, and compare cost per task.",
+              "diagram": {
+                "type": "hub",
+                "caption": "OpenRouter as a routing layer",
+                "center": {
+                  "label": "OpenRouter",
+                  "sub": "1 key · 1 API"
+                },
+                "spokes": [
+                  {
+                    "label": "Anthropic",
+                    "sub": "Claude"
+                  },
+                  {
+                    "label": "OpenAI",
+                    "sub": "GPT"
+                  },
+                  {
+                    "label": "Google",
+                    "sub": "Gemini"
+                  },
+                  {
+                    "label": "Together / Fireworks",
+                    "sub": "open weights"
+                  },
+                  {
+                    "label": "Groq / Cerebras",
+                    "sub": "fast inference"
+                  },
+                  {
+                    "label": "DeepSeek / Qwen",
+                    "sub": "first-party"
+                  }
+                ]
+              },
+              "keywords": [
+                "OpenRouter"
+              ],
+              "related": [
+                "litellm",
+                "openai-compat",
+                "opencode",
+                "fast-inference"
+              ],
+              "links": [
+                {
+                  "label": "Rankings",
+                  "url": "https://openrouter.ai/rankings"
+                }
+              ]
+            },
+            {
+              "id": "litellm",
+              "name": "LiteLLM & self-hosted gateways",
+              "kind": "project",
+              "badges": [
+                "open source",
+                "self-hosted"
+              ],
+              "summary": "Run your own OpenAI-compatible proxy in front of cloud and local models.",
+              "explainer": [
+                "LiteLLM (and alternatives like Portkey, Kong AI Gateway, Cloudflare AI Gateway) gives you keys per user, budgets, logging, caching and fallbacks, all under your control."
+              ],
+              "why": "The enterprise/home-lab pattern: one internal endpoint, policy and audit in one place.",
+              "keywords": [
+                "LiteLLM",
+                "AI gateway",
+                "Portkey",
+                "LLM gateway"
+              ],
+              "related": [
+                "openrouter",
+                "openai-compat"
+              ]
+            },
+            {
+              "id": "openai-compat",
+              "name": "OpenAI-compatible API",
+              "kind": "concept",
+              "summary": "The /v1/chat/completions shape nearly every server and client speaks.",
+              "explainer": [
+                "llama.cpp server, Ollama, vLLM, LM Studio, OpenRouter and most providers expose it. Switching a tool from cloud to local is often just OPENAI_BASE_URL=http://localhost:8080/v1. Anthropic's Messages API and OpenAI's Responses API are the richer native alternatives."
+              ],
+              "why": "The glue that makes the local-LLM ecosystem work with mainstream tools.",
+              "keywords": [
+                "OpenAI-compatible",
+                "chat completions API"
+              ],
+              "related": [
+                "llama-cpp",
+                "ollama",
+                "vllm",
+                "openrouter"
+              ]
+            }
+          ]
+        },
+        {
+          "id": "cloud",
+          "name": "Cloud platforms",
+          "summary": "Hyperscalers, neoclouds and speed-specialists",
+          "items": [
+            {
+              "id": "hyperscalers",
+              "name": "Bedrock, Vertex, Azure AI Foundry",
+              "kind": "product",
+              "badges": [
+                "enterprise"
+              ],
+              "summary": "Managed model access inside AWS, Google Cloud and Azure, with your IAM, VPC and billing.",
+              "explainer": [
+                "Same models (Claude on Bedrock and Vertex, GPT on Azure, Gemini on Vertex, plus open weights) wrapped in cloud-native identity, private networking, guardrails, logging and data-residency controls."
+              ],
+              "diagram": {
+                "type": "compare",
+                "caption": "Where the flagship models live",
+                "columns": [
+                  {
+                    "title": "AWS Bedrock",
+                    "points": [
+                      "Claude, Llama, Mistral, Nova, open weights",
+                      "IAM + PrivateLink",
+                      "Guardrails, AgentCore"
+                    ]
+                  },
+                  {
+                    "title": "Google Vertex AI",
+                    "points": [
+                      "Gemini, Claude, Gemma, open weights",
+                      "IAM + VPC-SC",
+                      "Agent Builder"
+                    ]
+                  },
+                  {
+                    "title": "Azure AI Foundry",
+                    "points": [
+                      "GPT, Claude, Grok, open weights",
+                      "Entra ID + Private Link",
+                      "Agent Service"
+                    ]
+                  }
+                ]
+              },
+              "why": "The compliance-friendly way to ship LLM features inside an existing cloud estate.",
+              "keywords": [
+                "Bedrock",
+                "Vertex AI",
+                "Azure AI Foundry",
+                "Azure OpenAI",
+                "AgentCore"
+              ],
+              "related": [
+                "claude",
+                "gpt",
+                "gemini"
+              ]
+            },
+            {
+              "id": "neoclouds",
+              "name": "Neoclouds & open-model hosts",
+              "kind": "product",
+              "summary": "GPU clouds and inference APIs focused on open-weight models.",
+              "explainer": [
+                "CoreWeave, Lambda, Nebius and Crusoe rent GPUs; Together, Fireworks, DeepInfra, Baseten and Hugging Face Inference serve open-weight models per token, often with fine-tuning."
+              ],
+              "why": "Where open-weight models become cheap APIs, and where you rent H100/B200 hours for fine-tuning.",
+              "keywords": [
+                "CoreWeave",
+                "Together AI",
+                "Fireworks AI",
+                "DeepInfra",
+                "Baseten",
+                "Nebius",
+                "Lambda Labs",
+                "neocloud"
+              ],
+              "related": [
+                "openrouter",
+                "open-weights"
+              ]
+            },
+            {
+              "id": "fast-inference",
+              "name": "Groq, Cerebras & fast inference",
+              "kind": "product",
+              "summary": "Custom silicon serving open models at hundreds to thousands of tokens/sec.",
+              "explainer": [
+                "Groq's LPUs and Cerebras' wafer-scale chips keep weights in on-chip SRAM, sidestepping the memory-bandwidth wall that limits GPUs on single-stream decode. SambaNova is in the same space."
+              ],
+              "why": "Speed changes UX: agents that finish in seconds instead of minutes.",
+              "keywords": [
+                "Groq",
+                "Cerebras",
+                "SambaNova",
+                "tokens per second"
+              ],
+              "related": [
+                "bandwidth",
+                "openrouter"
+              ]
+            }
+          ]
+        },
+        {
+          "id": "local-runtimes",
+          "name": "Local runtimes",
+          "summary": "Engines that run models on your own hardware",
+          "diagram": {
+            "type": "compare",
+            "caption": "Which local runtime when?",
+            "columns": [
+              {
+                "title": "Single user, desktop",
+                "points": [
+                  "llama.cpp: max control, GGUF, CPU+GPU split",
+                  "Ollama: one-command pull & run",
+                  "LM Studio: GUI, MLX on Mac"
+                ]
+              },
+              {
+                "title": "Throughput / multi-user",
+                "points": [
+                  "vLLM: PagedAttention, batching",
+                  "SGLang: fast structured + agent workloads",
+                  "TensorRT-LLM / NIM: NVIDIA-optimised"
+                ]
+              },
+              {
+                "title": "Niche but great",
+                "points": [
+                  "MLX: Apple Silicon native",
+                  "ExLlamaV3: EXL3 quants on NVIDIA",
+                  "KTransformers: huge MoE on CPU+GPU"
+                ]
+              }
+            ]
+          },
+          "items": [
+            {
+              "id": "llama-cpp",
+              "name": "llama.cpp",
+              "kind": "project",
+              "badges": [
+                "open source",
+                "C/C++"
+              ],
+              "summary": "The foundational C/C++ inference engine behind GGUF and most desktop LLM apps.",
+              "explainer": [
+                "Runs on CPU, CUDA, ROCm, Metal, Vulkan and SYCL, splits layers between GPU and RAM, supports speculative decoding and ships an OpenAI-compatible llama-server. Ollama and LM Studio build on its core (ggml)."
+              ],
+              "why": "If you're tuning local inference, this is where the knobs are.",
+              "keywords": [
+                "llama.cpp",
+                "llama-server",
+                "ggml",
+                "GGUF"
+              ],
+              "related": [
+                "gguf",
+                "ollama",
+                "lm-studio",
+                "multi-gpu"
+              ],
+              "links": [
+                {
+                  "label": "GitHub",
+                  "url": "https://github.com/ggml-org/llama.cpp"
+                }
+              ]
+            },
+            {
+              "id": "ollama",
+              "name": "Ollama",
+              "kind": "project",
+              "badges": [
+                "open source"
+              ],
+              "summary": "Docker-like 'pull and run' UX for local models with a REST API.",
+              "explainer": [
+                "ollama run <model> downloads a quantised model and serves it on localhost:11434 with an OpenAI-compatible endpoint. Modelfiles set parameters and templates. Easiest on-ramp, with fewer knobs than raw llama.cpp."
+              ],
+              "why": "The default local back-end most tools integrate with first.",
+              "keywords": [
+                "Ollama"
+              ],
+              "related": [
+                "llama-cpp",
+                "openai-compat",
+                "opencode"
+              ],
+              "links": [
+                {
+                  "label": "Site",
+                  "url": "https://ollama.com"
+                }
+              ]
+            },
+            {
+              "id": "lm-studio",
+              "name": "LM Studio",
+              "kind": "product",
+              "badges": [
+                "desktop app"
+              ],
+              "summary": "Desktop GUI for discovering, running and serving local models (GGUF and MLX).",
+              "explainer": [
+                "Browse Hugging Face, see which quant fits your VRAM, chat, and expose a local server. Uses llama.cpp and Apple MLX engines."
+              ],
+              "why": "Fastest way to test whether a model/quant is usable on a given machine.",
+              "keywords": [
+                "LM Studio"
+              ],
+              "related": [
+                "llama-cpp",
+                "mlx",
+                "gguf"
+              ]
+            },
+            {
+              "id": "vllm",
+              "name": "vLLM & SGLang",
+              "kind": "project",
+              "badges": [
+                "open source",
+                "production"
+              ],
+              "summary": "High-throughput servers with continuous batching and paged KV cache.",
+              "explainer": [
+                "vLLM introduced PagedAttention (KV cache managed like virtual-memory pages), enabling many concurrent requests per GPU. SGLang adds RadixAttention prefix caching and is strong for agentic/structured workloads. Both support tensor parallelism across GPUs and AWQ/GPTQ/FP8 quants."
+              ],
+              "why": "What you run when your home rig serves several agents at once, and what most clouds run in production.",
+              "keywords": [
+                "vLLM",
+                "SGLang",
+                "PagedAttention",
+                "continuous batching"
+              ],
+              "related": [
+                "kv-cache",
+                "multi-gpu",
+                "awq-gptq"
+              ],
+              "links": [
+                {
+                  "label": "vLLM",
+                  "url": "https://github.com/vllm-project/vllm"
+                }
+              ]
+            },
+            {
+              "id": "mlx",
+              "name": "Apple MLX",
+              "kind": "project",
+              "badges": [
+                "Apple Silicon"
+              ],
+              "summary": "Apple's array framework; mlx-lm runs and fine-tunes LLMs natively on Macs.",
+              "explainer": [
+                "Uses unified memory directly, so a 512 GB Mac Studio can load models no single consumer GPU can. Supports quantisation and LoRA fine-tuning."
+              ],
+              "why": "The best option if your local box is a Mac.",
+              "keywords": [
+                "=MLX",
+                "mlx-lm"
+              ],
+              "related": [
+                "apple-silicon",
+                "lm-studio"
+              ]
+            },
+            {
+              "id": "nvidia-stack",
+              "name": "TensorRT-LLM, NIM & Dynamo",
+              "kind": "product",
+              "badges": [
+                "NVIDIA"
+              ],
+              "summary": "NVIDIA's optimised inference stack and prebuilt model containers.",
+              "explainer": [
+                "TensorRT-LLM compiles models into optimised kernels (FP8/NVFP4), NIM packages them as ready-to-run containers, and Dynamo orchestrates disaggregated prefill/decode across GPU clusters."
+              ],
+              "why": "Squeezes the most out of NVIDIA hardware, including DGX Spark.",
+              "keywords": [
+                "TensorRT-LLM",
+                "NVIDIA NIM",
+                "NVIDIA Dynamo",
+                "Triton Inference Server"
+              ],
+              "related": [
+                "dgx-spark",
+                "low-bit-formats"
+              ]
+            }
+          ]
+        },
+        {
+          "id": "inference-tricks",
+          "name": "Speed & cost",
+          "summary": "Getting more tokens per second and per dollar",
+          "items": [
+            {
+              "id": "speculative-decoding",
+              "name": "Speculative decoding",
+              "kind": "concept",
+              "summary": "A small draft model guesses several tokens; the big model verifies them in one pass.",
+              "explainer": [
+                "Because decoding is memory-bound, verifying 5 tokens costs about the same as generating 1. When the draft is right you get multiple tokens per step. Variants: EAGLE, Medusa heads, multi-token prediction (MTP) built into the model, n-gram lookup."
+              ],
+              "why": "Free 1.5–3× speed-ups for local inference with no quality loss.",
+              "diagram": {
+                "type": "flow",
+                "caption": "Draft, then verify",
+                "steps": [
+                  {
+                    "label": "Draft model",
+                    "sub": "guesses 5 tokens"
+                  },
+                  {
+                    "label": "Target model",
+                    "sub": "checks all 5 in 1 pass"
+                  },
+                  {
+                    "label": "Accept prefix",
+                    "sub": "e.g. 4 correct"
+                  },
+                  {
+                    "label": "Emit",
+                    "sub": "4 + 1 tokens"
+                  }
+                ],
+                "loop": {
+                  "from": 3,
+                  "to": 0,
+                  "label": "repeat"
+                }
+              },
+              "keywords": [
+                "speculative decoding",
+                "draft model",
+                "EAGLE-3",
+                "multi-token prediction",
+                "=MTP"
+              ],
+              "related": [
+                "bandwidth",
+                "llama-cpp",
+                "vllm"
+              ]
+            },
+            {
+              "id": "cost-curve",
+              "name": "The falling cost of tokens",
+              "kind": "concept",
+              "summary": "Price for a fixed capability level has dropped by roughly an order of magnitude per year.",
+              "explainer": [
+                "GPT-4-level quality cost ~$30–60 per million tokens in 2023 and is available for well under $1 in open-weight form today. Frontier prices fall more slowly; newest top models keep premium pricing while agents consume far more tokens per task, so total spend often rises."
+              ],
+              "why": "Measure cost per task (tokens × price × retries), not per token.",
+              "diagram": {
+                "type": "bars",
+                "caption": "Illustrative: price per 1M tokens for roughly GPT-4-class capability (log-ish trend)",
+                "unit": "$ / M tokens",
+                "items": [
+                  {
+                    "label": "2023",
+                    "value": 37
+                  },
+                  {
+                    "label": "2024",
+                    "value": 4
+                  },
+                  {
+                    "label": "2025",
+                    "value": 0.6
+                  },
+                  {
+                    "label": "2026",
+                    "value": 0.15
+                  }
+                ]
+              },
+              "keywords": [
+                "price per token",
+                "token prices",
+                "inference cost",
+                "cheaper model",
+                "price cut",
+                "cost per task"
+              ],
+              "related": [
+                "quantization",
+                "moe",
+                "small-models",
+                "openrouter"
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "models",
+      "num": 3,
+      "name": "Models",
+      "osi": "Network",
+      "moves": "Tokens → predictions",
+      "icon": "network",
+      "tagline": "The trained networks: frontier, open-weight, specialised, and how they're built",
+      "plain": "The model routes every token through billions of learned weights to predict the next one; mixture-of-experts models literally route each token to a few specialist sub-networks, like packets through a network.",
+      "explainer": [
+        "Models differ on four axes that matter day-to-day: capability (reasoning, coding, tool use), openness (API-only vs downloadable weights), size/architecture (dense vs mixture-of-experts, which decides hardware), and alignment (how and what they refuse).",
+        "The gap between the best closed and best open-weight models has repeatedly narrowed to months, while specialised small models increasingly beat big generalists on narrow tasks."
+      ],
+      "diagram": {
+        "type": "compare",
+        "caption": "The model landscape at a glance",
+        "columns": [
+          {
+            "title": "Frontier (closed)",
+            "points": [
+              "Claude, GPT, Gemini, Grok",
+              "Best at long agentic tasks",
+              "API only, pay per token"
+            ]
+          },
+          {
+            "title": "Open weights",
+            "points": [
+              "Qwen, DeepSeek, Kimi, GLM, gpt-oss, Gemma, Llama, Mistral",
+              "Download, run, fine-tune",
+              "Months behind the frontier"
+            ]
+          },
+          {
+            "title": "Specialists",
+            "points": [
+              "Coding, vision, embeddings, speech",
+              "Small and fast",
+              "Often run locally"
+            ]
+          }
+        ]
+      },
+      "tech": [
+        "claude",
+        "gpt",
+        "qwen",
+        "deepseek"
+      ],
+      "threats": [
+        {
+          "name": "Jailbreaks",
+          "what": "Prompts that talk the model out of its safety training.",
+          "example": "Role-play or encoded requests that bypass refusals.",
+          "defense": "Don't rely on refusals alone: add classifiers, limit what outputs can trigger.",
+          "concept": "jailbreaks"
+        },
+        {
+          "name": "Poisoning & backdoors",
+          "what": "Training or fine-tuning data plants hidden trigger behaviours.",
+          "example": "A fine-tune behaves normally until a trigger phrase appears, then writes vulnerable code.",
+          "defense": "Trusted sources, provenance, targeted evals before deployment.",
+          "concept": "alignment"
+        },
+        {
+          "name": "Safety removal",
+          "what": "Open weights can have refusals stripped out cheaply.",
+          "example": "Abliterated copies of popular models appear within days of release.",
+          "defense": "Assume open models have no built-in safety; add your own guardrails.",
+          "concept": "abliteration"
+        }
+      ],
+      "categories": [
+        {
+          "id": "frontier",
+          "name": "Frontier models",
+          "summary": "The most capable closed models from the big labs",
+          "items": [
+            {
+              "id": "frontier-capabilities",
+              "name": "What 'frontier' means now",
+              "kind": "concept",
+              "summary": "Reasoning, multi-hour agentic tasks, tool use, computer use and long context.",
+              "explainer": [
+                "Frontier releases now compete on: extended thinking / reasoning effort controls, reliability over long autonomous tasks (measured e.g. by METR's time-horizon work and SWE-bench/Terminal-Bench), native tool and computer use, 1M-token-class context, and multimodality.",
+                "Releases come as families (large/medium/small) at different price points, and 'reasoning effort' knobs let you trade cost for quality per request."
+              ],
+              "why": "Helps you read launch posts: look at agentic benchmarks and price per task, not just chat quality.",
+              "diagram": {
+                "type": "stack",
+                "caption": "Capability layers labs compete on",
+                "layers": [
+                  {
+                    "label": "Autonomy",
+                    "sub": "hours-long tasks, self-correction"
+                  },
+                  {
+                    "label": "Agentic tool use",
+                    "sub": "coding, browsing, computer use"
+                  },
+                  {
+                    "label": "Reasoning",
+                    "sub": "test-time thinking"
+                  },
+                  {
+                    "label": "Multimodal + long context",
+                    "sub": "images, audio, 1M tokens"
+                  },
+                  {
+                    "label": "Base language modelling",
+                    "sub": "pretraining at scale",
+                    "hl": true
+                  }
+                ]
+              },
+              "keywords": [
+                "frontier model",
+                "frontier AI",
+                "state-of-the-art model",
+                "=SOTA"
+              ],
+              "related": [
+                "reasoning-models",
+                "benchmarks",
+                "computer-use"
+              ]
+            },
+            {
+              "id": "claude",
+              "name": "Claude (Anthropic)",
+              "kind": "model",
+              "badges": [
+                "closed"
+              ],
+              "summary": "Anthropic's model family (Opus / Sonnet / Haiku and newer tiers), strong at coding and agents.",
+              "explainer": [
+                "Known for agentic coding, long-horizon tool use and safety research. Available via Anthropic's API, Bedrock, Vertex and Azure."
+              ],
+              "why": "A default choice for coding agents.",
+              "keywords": [
+                "Claude",
+                "Anthropic",
+                "Claude Opus",
+                "Claude Sonnet",
+                "Claude Haiku"
+              ],
+              "related": [
+                "claude-code",
+                "hyperscalers"
+              ]
+            },
+            {
+              "id": "gpt",
+              "name": "GPT (OpenAI)",
+              "kind": "model",
+              "badges": [
+                "closed"
+              ],
+              "summary": "OpenAI's GPT family behind ChatGPT, Codex and the API.",
+              "explainer": [
+                "Unified models with automatic or configurable reasoning effort, plus specialised Codex variants for coding. OpenAI also released open-weight gpt-oss models."
+              ],
+              "why": "The most widely deployed family; sets the API conventions others copy.",
+              "keywords": [
+                "OpenAI",
+                "ChatGPT",
+                "GPT-5",
+                "GPT-6",
+                "=GPT",
+                "o3",
+                "o4-mini"
+              ],
+              "related": [
+                "codex",
+                "gpt-oss",
+                "openai-agents-sdk"
+              ]
+            },
+            {
+              "id": "gemini",
+              "name": "Gemini (Google)",
+              "kind": "model",
+              "badges": [
+                "closed"
+              ],
+              "summary": "Google DeepMind's natively multimodal family with very long context.",
+              "explainer": [
+                "Pro / Flash / Flash-Lite tiers, strong multimodal (video, audio) understanding and 1M+ token context, deeply integrated with Google Cloud and Workspace."
+              ],
+              "why": "Great price/performance for bulk and long-document work.",
+              "keywords": [
+                "Gemini",
+                "Google DeepMind",
+                "DeepMind"
+              ],
+              "related": [
+                "gemini-cli",
+                "gemma",
+                "tpu"
+              ]
+            },
+            {
+              "id": "grok",
+              "name": "Grok (xAI)",
+              "kind": "model",
+              "badges": [
+                "closed"
+              ],
+              "summary": "xAI's models, trained on the Colossus supercluster and integrated with X.",
+              "explainer": [
+                "Competitive frontier models with real-time X data access; older generations have been released as open weights."
+              ],
+              "why": "Another frontier contender; often first to push huge training clusters.",
+              "keywords": [
+                "Grok",
+                "xAI",
+                "Colossus"
+              ],
+              "related": [
+                "nvidia-dc"
+              ]
+            }
+          ]
+        },
+        {
+          "id": "open-weights",
+          "name": "Open-weight models",
+          "summary": "Models you can download, run and fine-tune",
+          "items": [
+            {
+              "id": "open-weights",
+              "name": "Open weights vs open source",
+              "kind": "concept",
+              "summary": "Downloadable weights under a licence, not necessarily open data or code.",
+              "explainer": [
+                "Most 'open' models release weights (often Apache-2.0 or MIT, sometimes custom licences with usage limits) but not training data. Fully open efforts (AI2's OLMo, some Hugging Face models) release data and recipes too.",
+                "Chinese labs (Qwen, DeepSeek, Moonshot, Zhipu, MiniMax) have been the most prolific releasers of top open-weight models."
+              ],
+              "why": "Licence and provenance matter for commercial and security-sensitive use.",
+              "keywords": [
+                "open-weight",
+                "open weights",
+                "open-source model",
+                "OLMo",
+                "Hugging Face",
+                "open models",
+                "open model"
+              ],
+              "related": [
+                "qwen",
+                "deepseek",
+                "uncensored-models"
+              ]
+            },
+            {
+              "id": "qwen",
+              "name": "Qwen (Alibaba)",
+              "kind": "model",
+              "badges": [
+                "open weights"
+              ],
+              "summary": "Huge open family, from tiny to giant MoE, plus coder, vision and embedding variants.",
+              "explainer": [
+                "Qwen releases span sub-1B to hundreds of billions of parameters, dense and MoE, with specialised Coder, VL (vision) and Embedding models. A local-LLM community favourite for quality per GB."
+              ],
+              "why": "Often the best model that fits your VRAM.",
+              "keywords": [
+                "Qwen",
+                "Qwen3",
+                "Qwen3.5",
+                "Alibaba Qwen",
+                "QwQ"
+              ],
+              "related": [
+                "coding-models",
+                "moe",
+                "gguf"
+              ]
+            },
+            {
+              "id": "deepseek",
+              "name": "DeepSeek",
+              "kind": "model",
+              "badges": [
+                "open weights",
+                "MIT"
+              ],
+              "summary": "Chinese lab whose V3/R1 MoE models reset expectations on training cost and open reasoning.",
+              "explainer": [
+                "DeepSeek popularised fine-grained MoE with Multi-head Latent Attention and showed RL-trained open reasoning (R1). Subsequent releases continued pushing efficiency such as sparse attention and very low API prices."
+              ],
+              "why": "A bellwether for efficiency techniques that spread across the industry.",
+              "keywords": [
+                "DeepSeek",
+                "DeepSeek-V3",
+                "DeepSeek-R1",
+                "DeepSeek V4"
+              ],
+              "related": [
+                "moe",
+                "rl-reasoning",
+                "attention-efficiency"
+              ]
+            },
+            {
+              "id": "kimi-glm",
+              "name": "Kimi, GLM, MiniMax & more",
+              "kind": "model",
+              "badges": [
+                "open weights"
+              ],
+              "summary": "Large open MoE models from Moonshot, Zhipu (Z.ai) and MiniMax, strong at agentic coding.",
+              "explainer": [
+                "Moonshot's Kimi K2 line, Zhipu's GLM-4.x and MiniMax's M-series are large MoE models tuned for tool use and coding, popular on OpenRouter and in open coding harnesses at a fraction of frontier prices. Xiaomi (MiMo), Tencent (Hunyuan) and Baidu (ERNIE) release open models in the same space."
+              ],
+              "why": "Near-frontier agentic performance at open-weight prices.",
+              "keywords": [
+                "Kimi",
+                "Moonshot AI",
+                "Kimi K2",
+                "GLM-4",
+                "GLM-5",
+                "Zhipu",
+                "Z.ai",
+                "MiniMax",
+                "MiMo",
+                "Xiaomi MiMo",
+                "Hunyuan",
+                "ERNIE"
+              ],
+              "related": [
+                "openrouter",
+                "coding-models",
+                "moe"
+              ]
+            },
+            {
+              "id": "gpt-oss",
+              "name": "gpt-oss",
+              "kind": "model",
+              "badges": [
+                "open weights",
+                "Apache-2.0"
+              ],
+              "summary": "OpenAI's open-weight reasoning MoE models (20B and 120B) shipped in MXFP4.",
+              "explainer": [
+                "Released in August 2025; the 120B fits on a single 80 GB GPU (or a DGX Spark / 128 GB unified-memory box) thanks to native 4-bit MXFP4 expert weights."
+              ],
+              "why": "A strong reasoning model that runs on high-end home hardware.",
+              "keywords": [
+                "gpt-oss"
+              ],
+              "related": [
+                "low-bit-formats",
+                "dgx-spark",
+                "moe"
+              ]
+            },
+            {
+              "id": "gemma",
+              "name": "Gemma, Llama, Mistral",
+              "kind": "model",
+              "badges": [
+                "open weights"
+              ],
+              "summary": "Western open families: Google's Gemma, Meta's Llama, Mistral's models.",
+              "explainer": [
+                "Gemma is small, multimodal and efficient; Llama kick-started the open-weight era (with Meta's strategy since shifting); Mistral (France) ships Apache-licensed models including Devstral for coding and Magistral for reasoning."
+              ],
+              "why": "Relevant for licensing/provenance-sensitive deployments.",
+              "keywords": [
+                "Gemma",
+                "Llama 4",
+                "Llama",
+                "Mistral",
+                "Mistral AI",
+                "Devstral",
+                "Magistral"
+              ],
+              "related": [
+                "small-models",
+                "coding-models"
+              ]
+            }
+          ]
+        },
+        {
+          "id": "specialized",
+          "name": "Specialised models",
+          "summary": "Right tool for the job: coding, reasoning, vision, embeddings, small",
+          "items": [
+            {
+              "id": "coding-models",
+              "name": "Coding models",
+              "kind": "model",
+              "summary": "Models trained or tuned for code generation and agentic software work.",
+              "explainer": [
+                "Frontier coding leaders sit inside closed families; open options include Qwen3-Coder, Devstral, GLM and Kimi variants. Agentic coding requires reliable tool calling and long context, not just code completion. Small FIM (fill-in-the-middle) models still power tab-completion."
+              ],
+              "why": "Pick by harness benchmark (SWE-bench, Terminal-Bench) and by what fits your GPU.",
+              "keywords": [
+                "coding model",
+                "Qwen3-Coder",
+                "Codestral",
+                "Devstral",
+                "code model",
+                "SWE-bench"
+              ],
+              "related": [
+                "benchmarks",
+                "oss-coding-agents",
+                "qwen"
+              ]
+            },
+            {
+              "id": "reasoning-models",
+              "name": "Reasoning / thinking models",
+              "kind": "concept",
+              "summary": "Models that 'think' in hidden tokens before answering; quality scales with test-time compute.",
+              "explainer": [
+                "Trained with reinforcement learning on verifiable problems (maths, code), these models produce a long chain of thought before the answer. You pay for thinking tokens, and many APIs expose an effort or budget knob."
+              ],
+              "why": "More thinking ≠ always better; tune effort per task to control cost and latency.",
+              "diagram": {
+                "type": "bars",
+                "caption": "Illustrative: same question, different reasoning budgets (tokens generated)",
+                "unit": "tokens",
+                "items": [
+                  {
+                    "label": "No thinking",
+                    "value": 300
+                  },
+                  {
+                    "label": "Low effort",
+                    "value": 2000
+                  },
+                  {
+                    "label": "Medium",
+                    "value": 8000
+                  },
+                  {
+                    "label": "High",
+                    "value": 30000
+                  }
+                ]
+              },
+              "keywords": [
+                "reasoning model",
+                "thinking model",
+                "test-time compute",
+                "chain of thought",
+                "extended thinking",
+                "reasoning effort"
+              ],
+              "related": [
+                "rl-reasoning",
+                "frontier-capabilities"
+              ]
+            },
+            {
+              "id": "multimodal",
+              "name": "Vision, speech & generative media",
+              "kind": "model",
+              "summary": "Vision-language models, speech (ASR/TTS) and image/video generators.",
+              "explainer": [
+                "VLMs (Qwen-VL, Gemma, frontier models) read screenshots, charts and documents; Whisper-class ASR and new TTS models enable voice agents; diffusion and autoregressive models generate images and video (Flux, Veo, Sora, Wan)."
+              ],
+              "why": "Voice + vision make agents usable away from the keyboard.",
+              "keywords": [
+                "vision-language",
+                "=VLM",
+                "multimodal",
+                "Whisper",
+                "text-to-speech",
+                "=TTS",
+                "speech-to-text",
+                "FLUX.1",
+                "=Veo",
+                "=Sora",
+                "image generation",
+                "video generation"
+              ],
+              "related": [
+                "computer-use",
+                "small-models"
+              ]
+            },
+            {
+              "id": "embeddings",
+              "name": "Embeddings & rerankers",
+              "kind": "model",
+              "summary": "Small models that turn text into vectors (embedders) or score relevance (rerankers).",
+              "explainer": [
+                "Qwen3-Embedding, BGE, Nomic, Jina, EmbeddingGemma and API offerings. Check the MTEB leaderboard; a reranker on top of retrieval often matters more than the embedder."
+              ],
+              "why": "The quiet workhorses of every RAG system, and cheap to run locally.",
+              "keywords": [
+                "embedding model",
+                "embeddings",
+                "reranker",
+                "MTEB"
+              ],
+              "related": [
+                "rag",
+                "vector-dbs"
+              ]
+            },
+            {
+              "id": "small-models",
+              "name": "Small & on-device models",
+              "kind": "model",
+              "summary": "Sub-10B models for laptops, phones and edge: Phi, Gemma, SmolLM, Qwen small.",
+              "explainer": [
+                "Distilled from larger teachers, small models handle classification, extraction, routing and simple chat at negligible cost, on-device via Apple Intelligence, Gemini Nano, or llama.cpp/MLX."
+              ],
+              "why": "Many pipeline steps don't need a frontier model; small models are where cost falls fastest.",
+              "keywords": [
+                "small language model",
+                "=SLM",
+                "on-device",
+                "Phi-4",
+                "SmolLM",
+                "edge AI",
+                "Gemini Nano"
+              ],
+              "related": [
+                "distillation",
+                "quantization"
+              ]
+            },
+            {
+              "id": "world-models",
+              "name": "World models & physical AI",
+              "kind": "concept",
+              "summary": "Models that predict how environments evolve, powering robotics, simulation and embodied agents.",
+              "explainer": [
+                "World models learn to predict the next state of an environment (video frames, physics, robot sensor data) given actions. Vision-language-action (VLA) models map camera input and instructions to robot motor commands.",
+                "Labs and NVIDIA pitch 'physical AI' as the next frontier after chat and coding: humanoid robots, autonomous machines and simulation-trained policies (Isaac, Cosmos, Genie-style interactive worlds)."
+              ],
+              "why": "Explains the robotics and 'world model' headlines that don't fit the chatbot mental model.",
+              "diagram": {
+                "type": "flow",
+                "caption": "How a robot policy uses a world model",
+                "steps": [
+                  {
+                    "label": "Sensors",
+                    "sub": "camera, joints"
+                  },
+                  {
+                    "label": "World model",
+                    "sub": "predicts outcomes"
+                  },
+                  {
+                    "label": "Policy / VLA",
+                    "sub": "chooses action"
+                  },
+                  {
+                    "label": "Actuators",
+                    "sub": "move"
+                  },
+                  {
+                    "label": "New state",
+                    "sub": "observed"
+                  }
+                ],
+                "loop": {
+                  "from": 4,
+                  "to": 1,
+                  "label": "closed loop"
+                }
+              },
+              "keywords": [
+                "world model",
+                "world models",
+                "physical AI",
+                "robotics",
+                "humanoid",
+                "embodied",
+                "vision-language-action",
+                "=VLA",
+                "Isaac Sim",
+                "Cosmos",
+                "Genie"
+              ],
+              "related": [
+                "multimodal",
+                "reasoning-models",
+                "nvidia-dc"
+              ]
+            }
+          ]
+        },
+        {
+          "id": "uncensored",
+          "name": "Uncensored & alignment-modified",
+          "summary": "Models with refusals removed or reduced, and what that means",
+          "items": [
+            {
+              "id": "uncensored-models",
+              "name": "Uncensored fine-tunes",
+              "kind": "concept",
+              "summary": "Community fine-tunes trained to follow instructions without refusing (Dolphin, Hermes, etc.).",
+              "explainer": [
+                "Built by fine-tuning open models on data without refusals, or with 'steerable' system prompts (Nous Research's Hermes models are a known example of user-aligned models). Popular for fiction, security research and privacy-sensitive local use.",
+                "Trade-offs: no safety layer, sometimes lower quality, and legal/ethical responsibility shifts entirely to the operator."
+              ],
+              "why": "Useful for offensive-security research and fiction where aligned models refuse, but deploy with your own guardrails.",
+              "keywords": [
+                "uncensored",
+                "Dolphin",
+                "Hermes 4",
+                "Hermes 3",
+                "unfiltered model"
+              ],
+              "related": [
+                "abliteration",
+                "guardrails",
+                "hermes-agent"
+              ]
+            },
+            {
+              "id": "abliteration",
+              "name": "Abliteration",
+              "kind": "concept",
+              "summary": "Removing the 'refusal direction' from a model's activations without retraining.",
+              "explainer": [
+                "Research found refusals are largely mediated by a single direction in the residual stream. Abliteration estimates that direction (harmful vs harmless prompts) and projects it out of the weights. Cheap, and it can slightly degrade the model."
+              ],
+              "why": "Shows how thin weight-level safety can be, which is useful context for threat-modelling open models.",
+              "diagram": {
+                "type": "flow",
+                "caption": "How abliteration works",
+                "steps": [
+                  {
+                    "label": "Prompt pairs",
+                    "sub": "harmful vs harmless"
+                  },
+                  {
+                    "label": "Record activations",
+                    "sub": "per layer"
+                  },
+                  {
+                    "label": "Find direction",
+                    "sub": "mean difference"
+                  },
+                  {
+                    "label": "Orthogonalise",
+                    "sub": "project out of weights"
+                  },
+                  {
+                    "label": "Model",
+                    "sub": "rarely refuses"
+                  }
+                ]
+              },
+              "keywords": [
+                "abliteration",
+                "abliterated",
+                "refusal direction"
+              ],
+              "related": [
+                "uncensored-models",
+                "jailbreaks"
+              ]
+            }
+          ]
+        },
+        {
+          "id": "architecture",
+          "name": "Architecture",
+          "summary": "How models do less work per token",
+          "items": [
+            {
+              "id": "moe",
+              "name": "Mixture of Experts (MoE)",
+              "kind": "concept",
+              "summary": "Huge total parameters, but only a few 'experts' active per token.",
+              "explainer": [
+                "A router picks e.g. 8 of 256 expert feed-forward blocks per token, so a 600B-total model may use only ~30B active parameters per token. Compute and bandwidth scale with active params; memory scales with total params.",
+                "That's why MoE loves unified-memory boxes (DGX Spark, Mac Studio, Strix Halo) and CPU+GPU offload: capacity matters more than bandwidth."
+              ],
+              "why": "The single most important architecture trend for running big models locally.",
+              "diagram": {
+                "type": "hub",
+                "caption": "Router activates a few experts per token",
+                "center": {
+                  "label": "Router",
+                  "sub": "top-k gate"
+                },
+                "spokes": [
+                  {
+                    "label": "Expert 1",
+                    "sub": "active"
+                  },
+                  {
+                    "label": "Expert 2",
+                    "sub": "idle"
+                  },
+                  {
+                    "label": "Expert 3",
+                    "sub": "active"
+                  },
+                  {
+                    "label": "Expert 4",
+                    "sub": "idle"
+                  },
+                  {
+                    "label": "Expert …",
+                    "sub": "idle"
+                  },
+                  {
+                    "label": "Shared",
+                    "sub": "always on"
+                  }
+                ]
+              },
+              "keywords": [
+                "mixture of experts",
+                "mixture-of-experts",
+                "=MoE",
+                "active parameters",
+                "sparse model",
+                "~\\d+(?:\\.\\d+)?B-A\\d+(?:\\.\\d+)?B"
+              ],
+              "related": [
+                "deepseek",
+                "qwen",
+                "dgx-spark",
+                "apple-silicon"
+              ]
+            },
+            {
+              "id": "attention-efficiency",
+              "name": "Efficient attention & long context",
+              "kind": "concept",
+              "summary": "FlashAttention, GQA/MLA, sliding windows, sparse and linear/hybrid attention.",
+              "explainer": [
+                "Full attention is quadratic in sequence length. Fixes include IO-aware kernels (FlashAttention), sharing KV heads (GQA) or compressing them (MLA), sliding-window layers, sparse attention, and hybrids mixing attention with linear/state-space layers (Mamba-style, Gated DeltaNet)."
+              ],
+              "why": "What makes 1M-token contexts and cheap long prompts possible.",
+              "keywords": [
+                "FlashAttention",
+                "sparse attention",
+                "linear attention",
+                "Mamba",
+                "state space model",
+                "sliding window attention",
+                "hybrid attention"
+              ],
+              "related": [
+                "kv-cache",
+                "deepseek"
+              ]
+            }
+          ]
+        },
+        {
+          "id": "training",
+          "name": "Training & adaptation",
+          "summary": "How models are made and customised",
+          "items": [
+            {
+              "id": "lora",
+              "name": "LoRA & QLoRA fine-tuning",
+              "kind": "concept",
+              "summary": "Train small low-rank adapter matrices instead of all weights; QLoRA does it on a 4-bit base.",
+              "explainer": [
+                "Freeze the base model and learn two thin matrices per layer (rank 8–64). Adapters are MBs, not GBs, and can be swapped at runtime. Tools: Unsloth, Axolotl, TRL, torchtune, mlx-lm."
+              ],
+              "why": "Fine-tune a 7–30B model on a single consumer GPU for your own domain or style.",
+              "diagram": {
+                "type": "flow",
+                "caption": "LoRA in one picture",
+                "steps": [
+                  {
+                    "label": "Frozen W",
+                    "sub": "d × d (billions)"
+                  },
+                  {
+                    "label": "+ B·A",
+                    "sub": "d×r · r×d, r≈16"
+                  },
+                  {
+                    "label": "Train only A,B",
+                    "sub": "~0.1–1% params"
+                  },
+                  {
+                    "label": "Adapter file",
+                    "sub": "tens of MB"
+                  }
+                ]
+              },
+              "keywords": [
+                "=LoRA",
+                "QLoRA",
+                "fine-tuning",
+                "fine-tune",
+                "Axolotl",
+                "PEFT"
+              ],
+              "related": [
+                "quantization",
+                "distillation"
+              ]
+            },
+            {
+              "id": "distillation",
+              "name": "Distillation, pruning & synthetic data",
+              "kind": "concept",
+              "summary": "Train a small 'student' on outputs of a large 'teacher'.",
+              "explainer": [
+                "Most strong small models are distilled, from teacher logits or teacher-generated synthetic data (including reasoning traces). Also a source of controversy when labs distil competitors' APIs against their terms.",
+                "Pruning removes whole layers, heads or neurons that contribute little, trading a small quality loss for a smaller, faster model; it is often followed by a short distillation pass to recover quality."
+              ],
+              "why": "Why this year's 8B model beats last year's 70B.",
+              "keywords": [
+                "distillation",
+                "distilled",
+                "synthetic data",
+                "pruning",
+                "pruned"
+              ],
+              "related": [
+                "small-models",
+                "rl-reasoning"
+              ]
+            },
+            {
+              "id": "rl-reasoning",
+              "name": "RL post-training (RLHF → RLVR)",
+              "kind": "concept",
+              "summary": "Reinforcement learning from human feedback and from verifiable rewards (GRPO etc.).",
+              "explainer": [
+                "RLHF aligned chat behaviour; RL with verifiable rewards (tests pass, maths checks out), popularised by DeepSeek-R1's GRPO, taught models to reason. Labs now run RL in agentic environments where the reward is completing real tasks."
+              ],
+              "why": "The main driver of recent capability jumps in coding and agents.",
+              "keywords": [
+                "RLHF",
+                "RLVR",
+                "GRPO",
+                "reinforcement learning",
+                "post-training",
+                "reward model",
+                "RL environments"
+              ],
+              "related": [
+                "reasoning-models",
+                "deepseek"
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "weights",
+      "num": 2,
+      "name": "Weights & Numerics",
+      "osi": "Data link",
+      "moves": "Tensors & bytes",
+      "icon": "grid",
+      "tagline": "How models are stored and packed: file formats and number precision",
+      "plain": "Like the data link layer frames raw bits, this layer decides how billions of weights are encoded: 16, 8 or 4 bits each, in which file format. Fewer bits means smaller and faster, with a little less accuracy.",
+      "explainer": [
+        "A 70-billion-parameter model is 140 GB at 16-bit precision and about 40 GB at 4-bit, the difference between a server and a desktop. Formats like GGUF and safetensors package those weights for different runtimes.",
+        "New hardware computes natively in 8- and 4-bit formats, so low precision is increasingly the default rather than a compromise."
+      ],
+      "diagram": {
+        "type": "bars",
+        "caption": "Approx. weight memory for a 70B-parameter model (excl. KV cache)",
+        "unit": "GB",
+        "items": [
+          {
+            "label": "FP16 / BF16",
+            "value": 140
+          },
+          {
+            "label": "FP8 / Q8",
+            "value": 70
+          },
+          {
+            "label": "Q5 (~5.5 bpw)",
+            "value": 48
+          },
+          {
+            "label": "Q4 (~4.5 bpw)",
+            "value": 40
+          },
+          {
+            "label": "Q3 (~3.5 bpw)",
+            "value": 31
+          },
+          {
+            "label": "Q2 (~2.6 bpw)",
+            "value": 23
+          }
+        ]
+      },
+      "tech": [
+        "quantization",
+        "gguf",
+        "low-bit-formats",
+        "model-files"
+      ],
+      "threats": [
+        {
+          "name": "Malicious model files",
+          "what": "Pickle-based checkpoints can execute code the moment they're loaded.",
+          "example": "A 'fine-tuned' .bin on a hub opens a reverse shell on load.",
+          "defense": "Prefer safetensors or GGUF, scan files, never load untrusted pickles.",
+          "concept": "supply-chain"
+        },
+        {
+          "name": "Tampered re-uploads",
+          "what": "Typosquatted or re-quantised copies carry altered weights.",
+          "example": "A popular quant re-uploaded under a look-alike account with a backdoor.",
+          "defense": "Verify the publisher, check hashes, prefer signed models.",
+          "concept": "model-files"
+        },
+        {
+          "name": "Quantisation-triggered behaviour",
+          "what": "Research shows behaviour can be engineered to appear only after quantisation.",
+          "example": "A model that passes evals at FP16 misbehaves as a 4-bit GGUF.",
+          "defense": "Evaluate the exact file and precision you deploy.",
+          "concept": "quantization"
+        }
+      ],
+      "categories": [
+        {
+          "id": "quant",
+          "name": "Quantisation",
+          "summary": "Fewer bits per weight → smaller, faster models",
+          "items": [
+            {
+              "id": "quantization",
+              "name": "Quantisation basics",
+              "kind": "concept",
+              "summary": "Store weights in 8/4/3-bit numbers instead of 16-bit; lose a little quality, save a lot of memory.",
+              "explainer": [
+                "Memory ≈ parameters × bits ÷ 8. A 70B model is ~140 GB at FP16 but ~40 GB at 4-bit, the difference between a server and two consumer GPUs. Quality loss is small down to ~4 bits for big models and grows fast below ~3 bits, especially for small models.",
+                "Weight-only quants (GGUF, AWQ, GPTQ, EXL3) mainly save memory and bandwidth; FP8/FP4 compute formats also speed up the maths on newer GPUs."
+              ],
+              "why": "Rule of thumb: the biggest model you can fit at ~4-bit usually beats a smaller model at 8-bit.",
+              "diagram": {
+                "type": "bars",
+                "caption": "Approx. weight memory for a 70B-parameter model (excl. KV cache)",
+                "unit": "GB",
+                "items": [
+                  {
+                    "label": "FP16 / BF16",
+                    "value": 140
+                  },
+                  {
+                    "label": "FP8 / Q8",
+                    "value": 70
+                  },
+                  {
+                    "label": "Q5 (~5.5 bpw)",
+                    "value": 48
+                  },
+                  {
+                    "label": "Q4 (~4.5 bpw)",
+                    "value": 40
+                  },
+                  {
+                    "label": "Q3 (~3.5 bpw)",
+                    "value": 31
+                  },
+                  {
+                    "label": "Q2 (~2.6 bpw)",
+                    "value": 23
+                  }
+                ]
+              },
+              "keywords": [
+                "quantization",
+                "quantisation",
+                "quantized",
+                "quantised",
+                "4-bit",
+                "8-bit",
+                "bits per weight"
+              ],
+              "related": [
+                "gguf",
+                "awq-gptq",
+                "low-bit-formats",
+                "vram-math"
+              ]
+            },
+            {
+              "id": "gguf",
+              "name": "GGUF & k-quants",
+              "kind": "concept",
+              "summary": "llama.cpp's single-file model format with Q2–Q8 'k-quant' and i-quant levels.",
+              "explainer": [
+                "Names like Q4_K_M or IQ3_XXS encode bits and method. 'Imatrix' quants use calibration data to protect important weights; 'dynamic' quants (e.g. Unsloth's) keep sensitive layers at higher precision. Q4_K_M is the common sweet spot."
+              ],
+              "why": "The format you'll download most for local models.",
+              "keywords": [
+                "GGUF",
+                "Q4_K_M",
+                "imatrix",
+                "k-quant",
+                "Unsloth"
+              ],
+              "related": [
+                "llama-cpp",
+                "quantization"
+              ]
+            },
+            {
+              "id": "awq-gptq",
+              "name": "AWQ, GPTQ & EXL3",
+              "kind": "concept",
+              "summary": "GPU-oriented quantisation methods used by vLLM, SGLang and ExLlama.",
+              "explainer": [
+                "GPTQ uses second-order error correction layer by layer; AWQ protects activation-salient weights; EXL3 (ExLlamaV3, based on QTIP-style trellis coding) allows fractional bits-per-weight for precise VRAM targeting."
+              ],
+              "why": "Use these instead of GGUF when serving on NVIDIA with vLLM or ExLlama.",
+              "keywords": [
+                "=AWQ",
+                "GPTQ",
+                "EXL2",
+                "EXL3",
+                "ExLlama",
+                "bitsandbytes"
+              ],
+              "related": [
+                "vllm",
+                "quantization"
+              ]
+            },
+            {
+              "id": "low-bit-formats",
+              "name": "FP8, FP4, NVFP4 & MXFP4",
+              "kind": "concept",
+              "summary": "Hardware-native low-precision number formats for training and inference.",
+              "explainer": [
+                "Hopper added FP8 tensor cores; Blackwell adds FP4 (NVFP4, and the OCP MXFP4 standard) with fine-grained block scaling. Models increasingly ship natively in these formats (e.g. gpt-oss in MXFP4), so 'quantised' is becoming the default rather than a compromise."
+              ],
+              "why": "Explains why Blackwell GPUs (RTX 50-series, DGX Spark) are quoted in 'FP4 petaflops'.",
+              "keywords": [
+                "=FP8",
+                "=FP4",
+                "NVFP4",
+                "MXFP4",
+                "microscaling"
+              ],
+              "related": [
+                "nvidia-dc",
+                "dgx-spark",
+                "gpt-oss"
+              ]
+            }
+          ]
+        },
+        {
+          "id": "formats",
+          "name": "Files & distribution",
+          "summary": "Packaging and sharing weights",
+          "items": [
+            {
+              "id": "model-files",
+              "name": "Model files & hubs",
+              "kind": "concept",
+              "summary": "How weights are packaged and shared: safetensors, GGUF, legacy pickle, and hubs like Hugging Face.",
+              "explainer": [
+                "A model on disk is a set of tensors plus metadata (architecture, tokenizer, chat template). safetensors stores raw tensors with no executable code; GGUF bundles everything llama.cpp needs in one file; legacy PyTorch .bin/.pt files use Python pickle, which can run code when loaded.",
+                "Hubs such as Hugging Face host hundreds of thousands of models and community re-uploads (quantised variants, fine-tunes), so provenance matters as much as format."
+              ],
+              "why": "Knowing the format tells you what can run where, and what can run on your machine the moment you load it.",
+              "diagram": {
+                "type": "flow",
+                "caption": "From training checkpoint to the file you download",
+                "steps": [
+                  {
+                    "label": "Checkpoint",
+                    "sub": "BF16 tensors"
+                  },
+                  {
+                    "label": "Convert",
+                    "sub": "safetensors / GGUF"
+                  },
+                  {
+                    "label": "Quantise",
+                    "sub": "Q4, AWQ, FP8…"
+                  },
+                  {
+                    "label": "Publish",
+                    "sub": "hub + model card"
+                  },
+                  {
+                    "label": "Load",
+                    "sub": "runtime maps to memory"
+                  }
+                ]
+              },
+              "keywords": [
+                "safetensors",
+                "model weights",
+                "Hugging Face Hub",
+                "model card",
+                "model file"
+              ],
+              "related": [
+                "gguf",
+                "quantization",
+                "supply-chain"
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "compute",
+      "num": 1,
+      "name": "Compute",
+      "osi": "Physical",
+      "moves": "FLOPs & bytes/second",
+      "icon": "chip",
+      "tagline": "The chips, memory and power everything runs on",
+      "plain": "The physical layer: GPUs, memory and datacenters. Memory size decides which models fit; memory bandwidth decides how fast they talk.",
+      "explainer": [
+        "Two numbers decide what you can run and how fast: memory capacity (does the model fit?) and memory bandwidth (how fast can weights stream to the compute units each token?). For single-user local inference, token generation speed ≈ bandwidth ÷ bytes read per token.",
+        "Datacenters optimise for FLOPs, interconnect and power; home labs trade off between fast-but-small VRAM (RTX cards) and big-but-slower unified memory (Macs, DGX Spark, Strix Halo)."
+      ],
+      "diagram": {
+        "type": "compare",
+        "caption": "Three ways to run big models at home",
+        "columns": [
+          {
+            "title": "Multi-RTX rig",
+            "points": [
+              "2–4× 3090/4090/5090",
+              "Fast: ~1–1.8 TB/s per card",
+              "24–32 GB each; PCIe splits",
+              "Loud, 1–2 kW"
+            ]
+          },
+          {
+            "title": "Unified-memory box",
+            "points": [
+              "DGX Spark / Strix Halo: 128 GB",
+              "Mac Studio: up to 512 GB",
+              "Fits big MoE models",
+              "Slower: ~0.25–0.8 TB/s"
+            ]
+          },
+          {
+            "title": "Rent / API",
+            "points": [
+              "H100/B200 by the hour",
+              "OpenRouter per token",
+              "No capex",
+              "Data leaves your house"
+            ]
+          }
+        ]
+      },
+      "tech": [
+        "dgx-spark",
+        "rtx-rigs",
+        "nvidia-dc",
+        "bandwidth"
+      ],
+      "threats": [
+        {
+          "name": "GPU memory leakage",
+          "what": "Data left in GPU memory can be read by the next process or tenant.",
+          "example": "The 2024 LeftoverLocals flaw let one process read another's LLM output on several GPU brands.",
+          "defense": "Patched drivers, memory isolation, confidential computing.",
+          "concept": "confidential-ai"
+        },
+        {
+          "name": "Shared-host side channels",
+          "what": "Co-located workloads can infer activity through timing and power.",
+          "example": "Timing differences in shared KV caches reveal what others asked.",
+          "defense": "Dedicated hardware or TEEs for sensitive workloads.",
+          "concept": "confidential-ai"
+        },
+        {
+          "name": "Availability",
+          "what": "Capacity, power and supply limits take services down or ration them.",
+          "example": "Rate limits and outages during a popular model launch.",
+          "defense": "Multi-provider fallbacks and local backups for critical paths.",
+          "concept": "openrouter"
+        }
+      ],
+      "categories": [
+        {
+          "id": "hw-concepts",
+          "name": "Hardware fundamentals",
+          "summary": "The maths behind 'will it run and how fast'",
+          "items": [
+            {
+              "id": "bandwidth",
+              "name": "Memory bandwidth is king",
+              "kind": "concept",
+              "summary": "Decode speed ≈ memory bandwidth ÷ bytes of weights read per token.",
+              "explainer": [
+                "Generating each token reads every active weight once. A 40 GB dense model on a 1 TB/s card tops out around 25 tokens/s; the same model on 273 GB/s tops out near 7. MoE helps because only active experts are read.",
+                "Prompt processing (prefill) is compute-bound instead, which is where big GPUs pull far ahead of unified-memory boxes."
+              ],
+              "why": "Lets you predict tokens/sec before buying hardware.",
+              "diagram": {
+                "type": "bars",
+                "caption": "Memory bandwidth (GB/s), approximate vendor specs",
+                "unit": "GB/s",
+                "items": [
+                  {
+                    "label": "B200 (HBM3e)",
+                    "value": 8000
+                  },
+                  {
+                    "label": "H100 SXM",
+                    "value": 3350
+                  },
+                  {
+                    "label": "RTX 5090",
+                    "value": 1792
+                  },
+                  {
+                    "label": "RTX 4090",
+                    "value": 1008
+                  },
+                  {
+                    "label": "RTX 3090",
+                    "value": 936
+                  },
+                  {
+                    "label": "M3 Ultra",
+                    "value": 819
+                  },
+                  {
+                    "label": "DGX Spark",
+                    "value": 273
+                  },
+                  {
+                    "label": "Strix Halo",
+                    "value": 256
+                  }
+                ]
+              },
+              "keywords": [
+                "memory bandwidth",
+                "HBM",
+                "HBM3e",
+                "HBM4",
+                "tokens/s",
+                "tok/s"
+              ],
+              "related": [
+                "vram-math",
+                "moe",
+                "dgx-spark",
+                "rtx-rigs"
+              ]
+            },
+            {
+              "id": "vram-math",
+              "name": "VRAM math",
+              "kind": "concept",
+              "summary": "Weights + KV cache + overhead must fit in fast memory.",
+              "explainer": [
+                "Weights ≈ params × bits/8. KV cache ≈ 2 × layers × KV heads × head_dim × context × bytes (grows with context and concurrent users). Add ~1–2 GB runtime overhead. If it doesn't fit, layers spill to system RAM and speed collapses, except for MoE with smart expert offload."
+              ],
+              "why": "Answer 'which quant, which context length' before downloading 50 GB.",
+              "diagram": {
+                "type": "stack",
+                "caption": "What fills a 24 GB card (e.g. 32B model @ Q4)",
+                "layers": [
+                  {
+                    "label": "Headroom",
+                    "sub": "~1 GB"
+                  },
+                  {
+                    "label": "Runtime overhead",
+                    "sub": "~1.5 GB"
+                  },
+                  {
+                    "label": "KV cache",
+                    "sub": "~3 GB @ 16k ctx"
+                  },
+                  {
+                    "label": "Weights",
+                    "sub": "~18.5 GB",
+                    "hl": true
+                  }
+                ]
+              },
+              "keywords": [
+                "VRAM",
+                "fits in VRAM",
+                "offload",
+                "CPU offload"
+              ],
+              "related": [
+                "quantization",
+                "kv-cache",
+                "bandwidth"
+              ]
+            },
+            {
+              "id": "multi-gpu",
+              "name": "Multi-GPU parallelism",
+              "kind": "concept",
+              "summary": "Split a model across GPUs by layers (pipeline) or within layers (tensor parallel).",
+              "explainer": [
+                "Layer split (llama.cpp default) is simple and tolerant of slow PCIe but GPUs take turns. Tensor parallelism (vLLM, ExLlama, llama.cpp row split) makes all GPUs work each token but needs fast links; NVLink on 3090s or PCIe 4.0/5.0 x8+ helps. Datacenters add NVLink switches and InfiniBand to scale to thousands of GPUs."
+              ],
+              "why": "Decides whether your 2nd and 3rd GPU add speed or just capacity.",
+              "diagram": {
+                "type": "compare",
+                "caption": "Two ways to split a model",
+                "columns": [
+                  {
+                    "title": "Pipeline / layer split",
+                    "points": [
+                      "GPU0: layers 1–40",
+                      "GPU1: layers 41–80",
+                      "Low interconnect needs",
+                      "Adds capacity, not speed"
+                    ]
+                  },
+                  {
+                    "title": "Tensor parallel",
+                    "points": [
+                      "Every layer split across GPUs",
+                      "All-reduce each layer",
+                      "Needs fast PCIe/NVLink",
+                      "Adds capacity and speed"
+                    ]
+                  }
+                ]
+              },
+              "keywords": [
+                "tensor parallel",
+                "tensor parallelism",
+                "pipeline parallel",
+                "NVLink",
+                "multi-GPU",
+                "InfiniBand"
+              ],
+              "related": [
+                "rtx-rigs",
+                "vllm",
+                "llama-cpp"
+              ]
+            }
+          ]
+        },
+        {
+          "id": "desktop-ai",
+          "name": "Desktop AI machines",
+          "summary": "Unified-memory boxes built for local models",
+          "items": [
+            {
+              "id": "dgx-spark",
+              "name": "NVIDIA DGX Spark",
+              "kind": "product",
+              "badges": [
+                "NVIDIA",
+                "GB10"
+              ],
+              "summary": "Compact Grace Blackwell (GB10) workstation: 128 GB unified memory, ~1 PFLOP FP4, CUDA stack.",
+              "explainer": [
+                "20-core Arm CPU + Blackwell GPU sharing 128 GB LPDDR5x (~273 GB/s), ConnectX-7 networking to link two units, and NVIDIA's full software stack (DGX OS, CUDA, NIM). OEM variants come from ASUS, Dell, Lenovo, HP, MSI and others.",
+                "Strength: capacity and CUDA compatibility for fine-tuning, prototyping and big MoE models. Weakness: bandwidth-limited decode on large dense models compared to RTX cards."
+              ],
+              "why": "The 'datacenter dev kit on your desk', a core topic in the local-LLM community.",
+              "diagram": {
+                "type": "stack",
+                "caption": "DGX Spark in layers",
+                "layers": [
+                  {
+                    "label": "Software",
+                    "sub": "DGX OS · CUDA · NIM · PyTorch"
+                  },
+                  {
+                    "label": "Networking",
+                    "sub": "ConnectX-7: pair two Sparks"
+                  },
+                  {
+                    "label": "GB10 superchip",
+                    "sub": "Grace Arm CPU + Blackwell GPU (NVLink-C2C)"
+                  },
+                  {
+                    "label": "128 GB unified LPDDR5x",
+                    "sub": "~273 GB/s shared",
+                    "hl": true
+                  }
+                ]
+              },
+              "keywords": [
+                "DGX Spark",
+                "GB10",
+                "DGX Station",
+                "GB300 desktop",
+                "Project DIGITS"
+              ],
+              "related": [
+                "bandwidth",
+                "moe",
+                "strix-halo",
+                "apple-silicon",
+                "nvidia-stack"
+              ],
+              "links": [
+                {
+                  "label": "NVIDIA",
+                  "url": "https://www.nvidia.com/en-us/products/workstations/dgx-spark/"
+                }
+              ]
+            },
+            {
+              "id": "strix-halo",
+              "name": "AMD Strix Halo (Ryzen AI Max)",
+              "kind": "product",
+              "badges": [
+                "AMD",
+                "x86"
+              ],
+              "summary": "x86 APU with up to 128 GB unified memory (~256 GB/s) in mini-PCs like Framework Desktop.",
+              "explainer": [
+                "Ryzen AI Max+ 395 pairs Zen 5 cores with a large RDNA 3.5 iGPU; up to ~96–112 GB can be given to the GPU. Runs llama.cpp via Vulkan or ROCm. Cheaper than DGX Spark with similar bandwidth, but a less mature software stack."
+              ],
+              "why": "Budget big-memory box for MoE models.",
+              "keywords": [
+                "Strix Halo",
+                "Ryzen AI Max",
+                "Framework Desktop",
+                "ROCm",
+                "Minisforum",
+                "GMKtec",
+                "MS-S1"
+              ],
+              "related": [
+                "dgx-spark",
+                "moe",
+                "amd-instinct"
+              ]
+            },
+            {
+              "id": "apple-silicon",
+              "name": "Apple Silicon Macs",
+              "kind": "product",
+              "badges": [
+                "Apple"
+              ],
+              "summary": "Mac Studio / MacBook Pro with up to 512 GB unified memory and ~800 GB/s bandwidth.",
+              "explainer": [
+                "The M-series Ultra chips offer the most unified memory in a desktop, so they can load huge MoE models. Bandwidth is good, but prefill compute trails NVIDIA. Use MLX or llama.cpp Metal."
+              ],
+              "why": "Quiet, efficient, enormous capacity; prompt processing is the weak spot.",
+              "keywords": [
+                "Mac Studio",
+                "M3 Ultra",
+                "M4 Max",
+                "Apple Silicon",
+                "unified memory"
+              ],
+              "related": [
+                "mlx",
+                "moe",
+                "bandwidth"
+              ]
+            }
+          ]
+        },
+        {
+          "id": "consumer-rigs",
+          "name": "Consumer GPU rigs",
+          "summary": "Stacking RTX cards for local inference",
+          "items": [
+            {
+              "id": "rtx-rigs",
+              "name": "Multi-RTX home rigs",
+              "kind": "concept",
+              "summary": "Two to eight RTX 3090/4090/5090s for 48–256 GB of fast VRAM.",
+              "explainer": [
+                "Used RTX 3090s (24 GB, NVLink-capable) remain the value king; 4090s add compute; the 5090 brings 32 GB and ~1.8 TB/s. Builders use workstation/server boards (Threadripper, EPYC) for PCIe lanes, risers, power-limiting (e.g. 250–300 W per card) and open frames. RTX PRO 6000 Blackwell (96 GB) is the prosumer high end."
+              ],
+              "why": "Still the fastest tokens-per-dollar for dense models at home.",
+              "diagram": {
+                "type": "bars",
+                "caption": "Total VRAM by configuration",
+                "unit": "GB",
+                "items": [
+                  {
+                    "label": "1× 3090/4090",
+                    "value": 24
+                  },
+                  {
+                    "label": "1× 5090",
+                    "value": 32
+                  },
+                  {
+                    "label": "2× 3090",
+                    "value": 48
+                  },
+                  {
+                    "label": "4× 3090",
+                    "value": 96
+                  },
+                  {
+                    "label": "1× RTX PRO 6000",
+                    "value": 96
+                  },
+                  {
+                    "label": "4× 5090",
+                    "value": 128
+                  }
+                ]
+              },
+              "keywords": [
+                "RTX 3090",
+                "RTX 4090",
+                "RTX 5090",
+                "RTX PRO 6000",
+                "GeForce",
+                "multi-GPU rig",
+                "home lab",
+                "=3090",
+                "=4090",
+                "=5090"
+              ],
+              "related": [
+                "multi-gpu",
+                "bandwidth",
+                "vram-math",
+                "llama-cpp"
+              ]
+            }
+          ]
+        },
+        {
+          "id": "datacenter",
+          "name": "Datacenter silicon",
+          "summary": "Where frontier models are trained and served",
+          "items": [
+            {
+              "id": "nvidia-dc",
+              "name": "NVIDIA Hopper → Blackwell → Rubin",
+              "kind": "product",
+              "badges": [
+                "NVIDIA"
+              ],
+              "summary": "H100/H200, B200/GB200/GB300 NVL72 racks, and the Vera Rubin generation.",
+              "explainer": [
+                "Each generation adds lower-precision tensor cores (FP8 → FP4), more HBM, and bigger NVLink domains (72 GPUs acting as one in NVL72 racks). Rubin follows Blackwell on NVIDIA's roughly annual cadence. Power and cooling (liquid, gigawatt campuses) are now the binding constraints."
+              ],
+              "why": "Datacenter roadmaps predict what cheap inference looks like 12–24 months later.",
+              "keywords": [
+                "H100",
+                "H200",
+                "B200",
+                "GB200",
+                "GB300",
+                "Blackwell",
+                "Vera Rubin",
+                "Rubin",
+                "NVL72",
+                "Hopper"
+              ],
+              "related": [
+                "low-bit-formats",
+                "multi-gpu",
+                "bandwidth"
+              ]
+            },
+            {
+              "id": "amd-instinct",
+              "name": "AMD Instinct",
+              "kind": "product",
+              "badges": [
+                "AMD"
+              ],
+              "summary": "MI300X/MI325X/MI355X and the MI400 series, with large HBM and the ROCm stack.",
+              "explainer": [
+                "AMD competes on memory capacity per GPU and price; ROCm maturity and vLLM/SGLang support have improved substantially, with large deployments at OpenAI, Meta, Microsoft and Oracle."
+              ],
+              "why": "The main alternative to NVIDIA; competition drives prices down.",
+              "keywords": [
+                "MI300X",
+                "MI325X",
+                "MI355X",
+                "MI400",
+                "MI450",
+                "AMD Instinct",
+                "ROCm"
+              ],
+              "related": [
+                "strix-halo",
+                "nvidia-dc"
+              ]
+            },
+            {
+              "id": "tpu",
+              "name": "TPUs & custom silicon",
+              "kind": "product",
+              "summary": "Google TPUs, AWS Trainium/Inferentia, Microsoft Maia, Meta MTIA and others.",
+              "explainer": [
+                "Hyperscalers build their own accelerators to cut cost and dependence on NVIDIA. Google trains Gemini on TPUs (and rents them to others such as Anthropic); Anthropic also trains on AWS Trainium clusters."
+              ],
+              "why": "Explains cloud pricing differences and model-provider partnerships.",
+              "keywords": [
+                "=TPU",
+                "Ironwood",
+                "Trainium",
+                "Inferentia",
+                "Maia",
+                "MTIA",
+                "custom silicon",
+                "ASIC"
+              ],
+              "related": [
+                "gemini",
+                "hyperscalers"
+              ]
+            },
+            {
+              "id": "ai-datacenters",
+              "name": "AI datacenters & energy",
+              "kind": "concept",
+              "summary": "Gigawatt-scale 'AI factories', power, cooling and the capex race behind frontier models.",
+              "explainer": [
+                "Frontier training and inference now need campuses measured in gigawatts, with liquid cooling, on-site generation and long-term power deals. Hyperscaler capex runs to hundreds of billions of dollars a year.",
+                "Power availability, grid connections and local opposition (noise, water, emissions) are now as limiting as chip supply."
+              ],
+              "why": "The physical constraint that shapes model prices, release cadence and where AI is built.",
+              "diagram": {
+                "type": "stack",
+                "caption": "What an AI factory is made of",
+                "layers": [
+                  {
+                    "label": "Models & services",
+                    "sub": "training runs, inference APIs"
+                  },
+                  {
+                    "label": "Racks",
+                    "sub": "NVL72-class, liquid cooled"
+                  },
+                  {
+                    "label": "Network",
+                    "sub": "NVLink, InfiniBand, Ethernet"
+                  },
+                  {
+                    "label": "Cooling",
+                    "sub": "liquid loops, chillers, water"
+                  },
+                  {
+                    "label": "Power",
+                    "sub": "grid, turbines, nuclear deals",
+                    "hl": true
+                  }
+                ]
+              },
+              "keywords": [
+                "data center",
+                "data centers",
+                "datacenter",
+                "datacenters",
+                "AI factory",
+                "AI factories",
+                "gigawatt",
+                "capex",
+                "AI infrastructure",
+                "hyperscale"
+              ],
+              "related": [
+                "nvidia-dc",
+                "cost-curve",
+                "tpu"
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "security",
+      "name": "Security, Safety & Governance",
+      "pillar": true,
+      "tagline": "Cuts across every layer: threats, defences, evals and policy",
+      "explainer": [
+        "Security cuts across every layer: poisoned model files at the bottom, prompt injection through tools and retrieved content in the middle, and over-privileged agents at the top.",
+        "Evaluation is the other cross-cutting concern: benchmarks tell you which model to trust with which task, if you know how to read them."
+      ],
+      "diagram": {
+        "type": "stack",
+        "caption": "Attack surface by layer",
+        "layers": [
+          {
+            "label": "Agents",
+            "sub": "over-privileged tools, lethal trifecta"
+          },
+          {
+            "label": "Context & tools",
+            "sub": "prompt injection, malicious MCP servers / skills"
+          },
+          {
+            "label": "Serving",
+            "sub": "exposed endpoints, key leakage, logging"
+          },
+          {
+            "label": "Models",
+            "sub": "jailbreaks, backdoors, abliteration"
+          },
+          {
+            "label": "Supply chain",
+            "sub": "pickle files, typosquatted repos",
+            "hl": true
+          }
+        ]
+      },
+      "categories": [
+        {
+          "id": "threats",
+          "name": "Threats",
+          "summary": "How LLM systems get attacked",
+          "items": [
+            {
+              "id": "prompt-injection",
+              "name": "Prompt injection",
+              "kind": "concept",
+              "summary": "Untrusted text (web pages, emails, tool output) that the model obeys as instructions.",
+              "explainer": [
+                "LLMs don't reliably separate instructions from data. Indirect injection hides instructions in content the agent reads, such as a README, issue comment, calendar invite or MCP tool description. There is no complete fix; mitigations are architectural: least privilege, human approval for risky actions, isolating untrusted content (dual-LLM / CaMeL-style designs)."
+              ],
+              "why": "The SQL injection of the agent era, and the #1 item in OWASP's LLM Top 10.",
+              "diagram": {
+                "type": "sequence",
+                "caption": "Indirect prompt injection via a web page",
+                "actors": [
+                  "User",
+                  "Agent",
+                  "Web page",
+                  "Attacker server"
+                ],
+                "messages": [
+                  {
+                    "from": 0,
+                    "to": 1,
+                    "label": "summarise this page"
+                  },
+                  {
+                    "from": 1,
+                    "to": 2,
+                    "label": "fetch"
+                  },
+                  {
+                    "from": 2,
+                    "to": 1,
+                    "label": "content + hidden 'ignore previous…'"
+                  },
+                  {
+                    "from": 1,
+                    "to": 3,
+                    "label": "exfil ?q=<secrets> (if allowed)"
+                  },
+                  {
+                    "from": 1,
+                    "to": 0,
+                    "label": "innocent-looking summary"
+                  }
+                ]
+              },
+              "keywords": [
+                "prompt injection",
+                "indirect prompt injection",
+                "OWASP LLM",
+                "tool poisoning"
+              ],
+              "related": [
+                "lethal-trifecta",
+                "sandboxing",
+                "mcp",
+                "computer-use"
+              ],
+              "links": [
+                {
+                  "label": "OWASP GenAI",
+                  "url": "https://genai.owasp.org/"
+                }
+              ]
+            },
+            {
+              "id": "lethal-trifecta",
+              "name": "The lethal trifecta",
+              "kind": "concept",
+              "summary": "Private data + untrusted content + an exfiltration channel = data theft.",
+              "explainer": [
+                "Coined by Simon Willison: if an agent can access your private data, is exposed to attacker-controlled content, and can communicate externally (HTTP, email, even image URLs), an injected instruction can steal your data. Remove any one leg to break the attack."
+              ],
+              "why": "A one-line threat model for reviewing any agent deployment, including OpenClaw-style setups.",
+              "diagram": {
+                "type": "hub",
+                "caption": "Remove any leg to break the attack",
+                "center": {
+                  "label": "Exfiltration",
+                  "sub": "when all three meet"
+                },
+                "spokes": [
+                  {
+                    "label": "Private data",
+                    "sub": "files, email, secrets"
+                  },
+                  {
+                    "label": "Untrusted content",
+                    "sub": "web, issues, messages"
+                  },
+                  {
+                    "label": "External comms",
+                    "sub": "HTTP, email, links"
+                  }
+                ]
+              },
+              "keywords": [
+                "lethal trifecta",
+                "data exfiltration",
+                "exfiltration"
+              ],
+              "related": [
+                "prompt-injection",
+                "openclaw",
+                "sandboxing"
+              ],
+              "links": [
+                {
+                  "label": "Simon Willison",
+                  "url": "https://simonwillison.net/2025/Jun/16/the-lethal-trifecta/"
+                }
+              ]
+            },
+            {
+              "id": "jailbreaks",
+              "name": "Jailbreaks",
+              "kind": "concept",
+              "summary": "Prompts that bypass a model's safety training (role-play, encoding, many-shot…).",
+              "explainer": [
+                "Distinct from prompt injection: the user attacks the model's policy, not a third party attacking the user. Labs counter with adversarial training and classifier layers (e.g. constitutional classifiers); open weights can be abliterated outright."
+              ],
+              "why": "Relevant for red-teaming and for deciding what a model-level refusal is worth.",
+              "keywords": [
+                "jailbreak",
+                "jailbreaking",
+                "red teaming",
+                "red-teaming"
+              ],
+              "related": [
+                "abliteration",
+                "guardrails"
+              ]
+            },
+            {
+              "id": "supply-chain",
+              "name": "AI supply-chain risk",
+              "kind": "concept",
+              "summary": "Malicious model files, poisoned datasets, rogue MCP servers, skills and packages.",
+              "explainer": [
+                "Pickle-based checkpoints can execute code on load (prefer safetensors/GGUF); fine-tunes can carry backdoors; MCP servers and agent skills run with your privileges; AI-hallucinated package names get typosquatted ('slopsquatting')."
+              ],
+              "why": "Classic AppSec, new artefacts. Treat models, skills and MCP servers like dependencies.",
+              "keywords": [
+                "pickle",
+                "model backdoor",
+                "slopsquatting",
+                "malicious skill",
+                "malicious MCP",
+                "data poisoning"
+              ],
+              "related": [
+                "mcp",
+                "agent-skills",
+                "openclaw"
+              ]
+            }
+          ]
+        },
+        {
+          "id": "defenses",
+          "name": "Defences",
+          "summary": "Controls that actually help",
+          "items": [
+            {
+              "id": "sandboxing",
+              "name": "Sandboxing & least privilege",
+              "kind": "concept",
+              "summary": "Run agents in containers/VMs with scoped credentials, egress filtering and approvals.",
+              "explainer": [
+                "Effective controls are outside the model: ephemeral containers or microVMs, network allow-lists, read-only mounts, short-lived scoped tokens, permission prompts for destructive actions, and audit logs of every tool call."
+              ],
+              "why": "Classic cloud and container security controls map directly onto agent security.",
+              "keywords": [
+                "sandbox",
+                "sandboxing",
+                "least privilege",
+                "microVM",
+                "egress",
+                "OpenShell",
+                "agent sandbox"
+              ],
+              "related": [
+                "prompt-injection",
+                "lethal-trifecta",
+                "agent-harness"
+              ]
+            },
+            {
+              "id": "guardrails",
+              "name": "Guardrails & classifiers",
+              "kind": "concept",
+              "summary": "Input/output filters: Llama Guard, Prompt Guard, NeMo Guardrails, cloud guardrails.",
+              "explainer": [
+                "Small classifier models screen prompts and responses for policy violations or injection attempts. Useful as a layer, but bypassable, so never the only control."
+              ],
+              "why": "Needed when you deploy uncensored or open models to users.",
+              "keywords": [
+                "guardrails",
+                "Llama Guard",
+                "Prompt Guard",
+                "NeMo Guardrails",
+                "content filter"
+              ],
+              "related": [
+                "uncensored-models",
+                "jailbreaks"
+              ]
+            },
+            {
+              "id": "confidential-ai",
+              "name": "Confidential computing & private inference",
+              "kind": "concept",
+              "summary": "Hardware-isolated enclaves (TEEs) that keep prompts and weights encrypted even from the host.",
+              "explainer": [
+                "CPU TEEs (AMD SEV-SNP, Intel TDX) plus GPU confidential computing (Hopper/Blackwell) let a provider run inference without being able to read your data, verified by remote attestation. Apple Private Cloud Compute and Google Private AI Compute apply the idea to consumer assistants."
+              ],
+              "why": "A path to using cloud models on sensitive data with verifiable, not just contractual, privacy.",
+              "keywords": [
+                "confidential computing",
+                "confidential AI",
+                "private cloud compute",
+                "Private AI Compute",
+                "=TEE",
+                "remote attestation",
+                "SEV-SNP",
+                "=TDX"
+              ],
+              "related": [
+                "sandboxing",
+                "hyperscalers",
+                "nvidia-dc"
+              ]
+            }
+          ]
+        },
+        {
+          "id": "evals",
+          "name": "Evals & benchmarks",
+          "summary": "Measuring what models can do",
+          "items": [
+            {
+              "id": "benchmarks",
+              "name": "Benchmarks that matter",
+              "kind": "concept",
+              "summary": "SWE-bench, Terminal-Bench, ARC-AGI, HLE, GPQA, METR time horizons, LMArena.",
+              "explainer": [
+                "Agentic benchmarks (SWE-bench Verified/Pro, Terminal-Bench, OSWorld, τ-bench) test real tasks with tools; knowledge/reasoning tests (GPQA, Humanity's Last Exam, ARC-AGI) probe raw ability; LMArena ranks by human preference; METR tracks how long a task agents can complete autonomously.",
+                "Watch for contamination and for harness differences between reported scores."
+              ],
+              "why": "Read launch claims critically and pick models per task.",
+              "diagram": {
+                "type": "compare",
+                "caption": "Match the benchmark to your question",
+                "columns": [
+                  {
+                    "title": "Can it do my job?",
+                    "points": [
+                      "SWE-bench",
+                      "Terminal-Bench",
+                      "OSWorld",
+                      "τ-bench"
+                    ]
+                  },
+                  {
+                    "title": "How smart is it?",
+                    "points": [
+                      "GPQA",
+                      "Humanity's Last Exam",
+                      "ARC-AGI",
+                      "AIME"
+                    ]
+                  },
+                  {
+                    "title": "Do people prefer it?",
+                    "points": [
+                      "LMArena",
+                      "OpenRouter usage",
+                      "Your own evals"
+                    ]
+                  }
+                ]
+              },
+              "keywords": [
+                "benchmark",
+                "SWE-bench",
+                "Terminal-Bench",
+                "ARC-AGI",
+                "Humanity's Last Exam",
+                "GPQA",
+                "LMArena",
+                "METR",
+                "OSWorld",
+                "evals",
+                "LLM-as-judge",
+                "LLM-as-a-judge",
+                "hallucination"
+              ],
+              "related": [
+                "frontier-capabilities",
+                "coding-models"
+              ]
+            }
+          ]
+        },
+        {
+          "id": "governance",
+          "name": "Safety research & policy",
+          "summary": "Alignment science, regulation and the legal fights around AI",
+          "items": [
+            {
+              "id": "alignment",
+              "name": "Alignment & interpretability",
+              "kind": "concept",
+              "summary": "Research into making models pursue intended goals, and into understanding what happens inside them.",
+              "explainer": [
+                "Alignment covers training methods (RLHF, constitutional approaches), evaluations for dangerous capabilities and deceptive behaviour ('scheming'), and lab safety frameworks that gate releases.",
+                "Interpretability tries to read the model's internals: sparse autoencoders (SAEs) extract human-readable features, and circuit analysis traces how answers are computed."
+              ],
+              "why": "Explains safety-framework announcements and why some capabilities ship later than others.",
+              "keywords": [
+                "AI safety",
+                "alignment",
+                "interpretability",
+                "sparse autoencoder",
+                "=SAE",
+                "mechanistic interpretability",
+                "superposition",
+                "scheming",
+                "safety framework",
+                "responsible scaling"
+              ],
+              "related": [
+                "rl-reasoning",
+                "jailbreaks",
+                "benchmarks"
+              ]
+            },
+            {
+              "id": "ai-policy",
+              "name": "Regulation, copyright & policy",
+              "kind": "concept",
+              "summary": "AI laws (EU AI Act, US state and federal rules), copyright lawsuits, export controls and government use.",
+              "explainer": [
+                "The EU AI Act phases in obligations for general-purpose models; the US mixes executive action with state laws; China has its own generative-AI rules. Chip export controls shape who can train frontier models.",
+                "Copyright lawsuits over training data (news, books, music, images) and deals licensing that data are reshaping what models can be trained on."
+              ],
+              "why": "Policy decides which models you can use where, and what data they can be trained on.",
+              "keywords": [
+                "AI Act",
+                "regulation",
+                "regulators",
+                "lawsuit",
+                "sued",
+                "suing",
+                "copyright",
+                "export controls",
+                "legislation",
+                "executive order",
+                "antitrust"
+              ],
+              "related": [
+                "open-weights",
+                "alignment",
+                "ai-datacenters"
+              ]
+            }
+          ]
+        }
+      ],
+      "icon": "shield",
+      "num": null
+    }
+  ],
+  "paths": [
+    {
+      "id": "local",
+      "name": "Run models locally",
+      "blurb": "From 'will it fit?' to a fast home setup.",
+      "steps": [
+        "bandwidth",
+        "vram-math",
+        "quantization",
+        "gguf",
+        "moe",
+        "llama-cpp",
+        "ollama",
+        "speculative-decoding",
+        "rtx-rigs",
+        "dgx-spark"
+      ]
+    },
+    {
+      "id": "agents",
+      "name": "Understand agents",
+      "blurb": "How coding and personal agents actually work.",
+      "steps": [
+        "agent-loop",
+        "tool-calling",
+        "agent-harness",
+        "mcp",
+        "context-engineering",
+        "agent-skills",
+        "multi-agent",
+        "claude-code",
+        "opencode",
+        "openclaw"
+      ]
+    },
+    {
+      "id": "choose",
+      "name": "Pick the right model",
+      "blurb": "Read launch claims and choose per task and budget.",
+      "steps": [
+        "frontier-capabilities",
+        "reasoning-models",
+        "open-weights",
+        "benchmarks",
+        "coding-models",
+        "small-models",
+        "openrouter",
+        "cost-curve"
+      ]
+    },
+    {
+      "id": "secure",
+      "name": "Secure AI systems",
+      "blurb": "Threat-model agents, tools and model supply chains.",
+      "steps": [
+        "prompt-injection",
+        "lethal-trifecta",
+        "supply-chain",
+        "mcp",
+        "sandboxing",
+        "confidential-ai",
+        "guardrails",
+        "jailbreaks",
+        "abliteration"
+      ]
+    },
+    {
+      "id": "rag",
+      "name": "Ground models in your data",
+      "blurb": "Retrieval, memory and context that stays accurate.",
+      "steps": [
+        "embeddings",
+        "vector-dbs",
+        "rag",
+        "context-engineering",
+        "kv-cache",
+        "agent-memory"
+      ]
+    }
+  ],
+  "model": {
+    "name": "The Strata Model",
+    "tagline": "An OSI model for AI: seven layers, and every AI headline fits one.",
+    "mnemonic": "All Tools Can Invoke Models With Compute"
+  },
+  "journey": [
+    {
+      "layer": "agents",
+      "dir": "down",
+      "unit": "task",
+      "text": "You ask your coding agent: “why is the build failing?” It plans: run the tests first."
+    },
+    {
+      "layer": "tools",
+      "dir": "down",
+      "unit": "tool call",
+      "text": "The agent emits a JSON tool call, run_tests, and later reads the result through MCP."
+    },
+    {
+      "layer": "context",
+      "dir": "down",
+      "unit": "context",
+      "text": "The harness assembles the prompt: instructions, relevant files and the failing test output, about 18k tokens."
+    },
+    {
+      "layer": "inference",
+      "dir": "down",
+      "unit": "request",
+      "text": "The request streams to an inference server: a lab API, OpenRouter, or llama.cpp on your desk."
+    },
+    {
+      "layer": "models",
+      "dir": "down",
+      "unit": "tokens",
+      "text": "Each token flows through dozens of layers; in an MoE model a router sends it to a few of 128 experts."
+    },
+    {
+      "layer": "weights",
+      "dir": "down",
+      "unit": "tensors",
+      "text": "Only the active 4-bit weights are read, roughly a few GB per generated token."
+    },
+    {
+      "layer": "compute",
+      "dir": "down",
+      "unit": "FLOPs",
+      "text": "The GPU streams those weights at ~1 TB/s, which sets the speed: about 50 tokens per second."
+    },
+    {
+      "layer": "inference",
+      "dir": "up",
+      "unit": "token stream",
+      "text": "Tokens stream back up as they're generated…"
+    },
+    {
+      "layer": "agents",
+      "dir": "up",
+      "unit": "answer",
+      "text": "…the agent reads the fix, edits the file, reruns the tests, and shows you a green build."
+    }
+  ]
+}

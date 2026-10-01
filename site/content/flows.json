@@ -1,0 +1,106 @@
+{
+  "request": {
+    "title": "Follow a request down the stack",
+    "direction": "down",
+    "steps": [
+      {
+        "layer": "applications-interfaces",
+        "text": "You ask an assistant a question in an app."
+      },
+      {
+        "layer": "agents",
+        "text": "An agent decides it needs to look something up before answering."
+      },
+      {
+        "layer": "orchestration-tooling",
+        "text": "Retrieval finds relevant documents and the prompt is assembled with the available tools."
+      },
+      {
+        "layer": "inference-optimization",
+        "text": "The request reaches a serving endpoint and joins a batch with other users' requests."
+      },
+      {
+        "layer": "foundation-models",
+        "text": "The model's weights score every possible next token, one token at a time."
+      },
+      {
+        "layer": "data",
+        "bypass": true,
+        "text": "Not on the request path: training data shaped the model long before. Fresh documents came from retrieval instead."
+      },
+      {
+        "layer": "cloud-infrastructure",
+        "text": "The serving cluster schedules the work onto available accelerators."
+      },
+      {
+        "layer": "compute-hardware",
+        "text": "GPUs stream the weights from memory and do the matrix maths."
+      },
+      {
+        "layer": "physical-energy",
+        "text": "All of it runs on electricity and cooling inside a data centre."
+      }
+    ],
+    "intro": {
+      "anchor": "top",
+      "text": "One question travels down through every layer needed to answer it. Step through it, or press Play."
+    },
+    "outro": {
+      "anchor": "top",
+      "dir": "up",
+      "text": "The answer streams back up the same path, a few tokens at a time, until it appears on your screen."
+    }
+  },
+  "capability": {
+    "title": "Capability flows up the stack",
+    "direction": "up",
+    "steps": [
+      {
+        "layer": "physical-energy",
+        "text": "Power, cooling and fabricated chips make large-scale compute possible."
+      },
+      {
+        "layer": "compute-hardware",
+        "text": "Accelerators turn electricity into massively parallel maths."
+      },
+      {
+        "layer": "cloud-infrastructure",
+        "text": "Clusters make that compute rentable and schedulable at scale."
+      },
+      {
+        "layer": "data",
+        "text": "Data is collected, cleaned and prepared for training."
+      },
+      {
+        "layer": "foundation-models",
+        "text": "Training on that data with that compute produces a foundation model."
+      },
+      {
+        "layer": "inference-optimization",
+        "text": "Serving and optimisation make the model fast and affordable to use."
+      },
+      {
+        "layer": "orchestration-tooling",
+        "text": "Retrieval and tools connect the model to your data and actions."
+      },
+      {
+        "layer": "agents",
+        "text": "Agents chain those capabilities into multi-step work."
+      },
+      {
+        "layer": "applications-interfaces",
+        "text": "Applications deliver it to people, and their usage feeds back down."
+      }
+    ],
+    "intro": {
+      "anchor": "bottom",
+      "text": "Capability is built from the ground up: each layer turns what's below it into something the layer above can use."
+    },
+    "outro": {
+      "anchor": "top",
+      "text": "People use the result, and their usage and feedback flow back down to shape what gets built next."
+    }
+  },
+  "status": "draft",
+  "lastReviewed": "2026-09-28"
+}

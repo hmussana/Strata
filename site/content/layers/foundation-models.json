@@ -1,0 +1,144 @@
+{
+  "id": "foundation-models",
+  "order": 5,
+  "name": "Foundation Models",
+  "color": "l5",
+  "icon": "network",
+  "oneLiner": "Large neural networks trained on broad data that can be adapted to many tasks.",
+  "analogy": {
+    "text": "A widely read apprentice: has absorbed a huge library and can attempt almost anything, but needs direction to be useful.",
+    "breaks": "An apprentice remembers what they read. A model stores statistical patterns, not a searchable library, so it can produce fluent text that is simply wrong."
+  },
+  "examples": [
+    "Transformer architecture",
+    "Closed models",
+    "Open-weight models",
+    "Mixture-of-experts"
+  ],
+  "givesAbove": "A general capability, predicting and generating text and other media, packaged as model weights.",
+  "needsBelow": "Training data from Data and large clusters from Cloud & Infrastructure.",
+  "concepts": [
+    "tokenization",
+    "transformer-attention",
+    "next-token-prediction",
+    "pretraining",
+    "post-training",
+    "open-weights"
+  ],
+  "metaDiagram": {
+    "nodes": [
+      {
+        "concept": "tokenization",
+        "x": 4,
+        "y": 8
+      },
+      {
+        "concept": "transformer-attention",
+        "x": 40,
+        "y": 8
+      },
+      {
+        "concept": "next-token-prediction",
+        "x": 96,
+        "y": 8
+      },
+      {
+        "concept": "pretraining",
+        "x": 22,
+        "y": 92
+      },
+      {
+        "concept": "post-training",
+        "x": 62,
+        "y": 92
+      },
+      {
+        "concept": "open-weights",
+        "x": 100,
+        "y": 50
+      }
+    ]
+  },
+  "walkthrough": [
+    {
+      "title": "Text becomes tokens",
+      "text": "“The cat sat on the” is snapped into tokens, and each token becomes a vector of numbers.",
+      "highlight": [
+        "tokenization"
+      ]
+    },
+    {
+      "title": "Attention mixes in context",
+      "text": "Layer after layer, each token looks back at the earlier ones, so “the” knows a cat is sitting.",
+      "highlight": [
+        "tokenization",
+        "transformer-attention"
+      ]
+    },
+    {
+      "title": "One token is predicted",
+      "text": "The last layer scores every possible next token; “mat” gets the highest probability, and one token is picked.",
+      "highlight": [
+        "transformer-attention",
+        "next-token-prediction"
+      ]
+    },
+    {
+      "title": "Pretraining set the weights",
+      "text": "All of that only works because pretraining tuned billions of weights by predicting the next token across trillions of examples.",
+      "highlight": [
+        "pretraining",
+        "next-token-prediction",
+        "transformer-attention"
+      ]
+    },
+    {
+      "title": "Post-training makes it an assistant, then it's released",
+      "text": "Fine-tuning and feedback turn the predictor into a helpful assistant, released either as open weights or behind an API.",
+      "highlight": [
+        "post-training",
+        "open-weights"
+      ]
+    }
+  ],
+  "status": "draft",
+  "lastReviewed": "2026-10-01",
+  "newsKeywords": [
+    "=LLM",
+    "language model",
+    "foundation model",
+    "transformer",
+    "pretraining",
+    "pre-training",
+    "post-training",
+    "fine-tuning",
+    "RLHF",
+    "reinforcement learning",
+    "open-weight",
+    "open weights",
+    "GPT-5",
+    "Claude",
+    "Gemini",
+    "Llama",
+    "Qwen",
+    "DeepSeek",
+    "Mistral",
+    "multimodal",
+    "mixture of experts",
+    "reasoning model"
+  ],
+  "researchKeywords": [
+    "=LLM",
+    "large language model",
+    "foundation model",
+    "pretraining",
+    "pre-training",
+    "post-training",
+    "RLHF",
+    "mixture of experts",
+    "mixture-of-experts",
+    "scaling law",
+    "reasoning model",
+    "vision-language model"
+  ]
+}

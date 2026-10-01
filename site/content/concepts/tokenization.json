@@ -1,0 +1,80 @@
+{
+  "id": "tokenization",
+  "layer": "foundation-models",
+  "name": "Tokens & tokenization",
+  "summary": "Text is chopped into tokens (common words or pieces of words), and each token becomes a number the model can work with.",
+  "prerequisites": [],
+  "status": "draft",
+  "lastReviewed": "2026-10-01",
+  "depths": {
+    "D1": {
+      "text": [
+        "Before an AI reads anything, it snaps sentences into little pieces called tokens, like snapping a chocolate bar into squares.",
+        "Short, common words are one piece. Long or unusual words get snapped into several pieces."
+      ],
+      "analogy": "Snapping a chocolate bar into squares."
+    },
+    "D2": {
+      "text": [
+        "A **tokenizer** splits text into pieces from a fixed vocabulary, typically tens of thousands to a few hundred thousand entries, learned from which chunks of text appear most often.",
+        "Each token is replaced by an ID number, and each ID by a list of numbers (an **embedding**) that the model actually computes with.",
+        "Token counts matter in practice: prices, speed and context limits are all measured in tokens, and text in some languages needs more tokens per word than English."
+      ],
+      "diagram": {
+        "type": "flow",
+        "numbered": true,
+        "caption": "From text to numbers",
+        "steps": [
+          {
+            "label": "Text",
+            "sub": "The cat sat on the"
+          },
+          {
+            "label": "Split",
+            "sub": "into tokens"
+          },
+          {
+            "label": "Look up",
+            "sub": "token IDs"
+          },
+          {
+            "label": "Embed",
+            "sub": "one vector per token"
+          }
+        ]
+      },
+      "analogy": "Snapping a chocolate bar into squares.",
+      "analogyBreaks": "Chocolate squares are all the same size. Tokens vary in length and are chosen by frequency, so a rare name may split into many fragments, which is one reason models can struggle to count the letters in a word.",
+      "predict": {
+        "question": "Why can the same sentence use more tokens in some languages than in English?",
+        "options": [
+          "Some languages have longer grammar rules",
+          "The tokenizer's vocabulary was learned mostly from English text, so other languages split into smaller pieces",
+          "Models are slower in other languages",
+          "Tokens are always one letter each"
+        ],
+        "answer": 1,
+        "explanation": "Vocabularies favour chunks that were frequent in the training text; languages that were less common get split more finely."
+      }
+    },
+    "D5": {
+      "text": [
+        "Open questions: models that read raw bytes or characters instead of a fixed vocabulary, fairer tokenization across languages, and tasks such as spelling or arithmetic where token boundaries get in the way."
+      ]
+    }
+  },
+  "sources": [
+    {
+      "title": "Neural Machine Translation of Rare Words with Subword Units (byte-pair encoding)",
+      "url": "https://arxiv.org/abs/1508.07909",
+      "date": "2015",
+      "verify": true
+    },
+    {
+      "title": "SentencePiece: A simple and language independent subword tokenizer",
+      "url": "https://arxiv.org/abs/1808.06226",
+      "date": "2018",
+      "verify": true
+    }
+  ]
+}

@@ -1,0 +1,263 @@
+{
+  "id": "next-token-prediction",
+  "layer": "foundation-models",
+  "name": "How a model predicts the next token",
+  "summary": "A language model reads the text so far, gives every possible next token a probability, picks one, and repeats.",
+  "prerequisites": [
+    "tokenization",
+    "transformer-attention"
+  ],
+  "status": "draft",
+  "lastReviewed": "2026-10-01",
+  "depths": {
+    "D1": {
+      "text": [
+        "Let's play a game. I say: “The cat sat on the…” and you shout the next word.",
+        "You'd probably say “mat”. Maybe “floor” or “sofa”. Probably not “moon”!",
+        "An AI language model plays this game again and again, one small piece of a word at a time. That's how it writes whole answers."
+      ],
+      "guide": "Hi, I'm Tok. Let's play the next-word game!",
+      "diagram": {
+        "type": "guess",
+        "prompt": "The cat sat on the",
+        "caption": "Which word comes next? Bigger cards are better guesses.",
+        "options": [
+          {
+            "text": "mat",
+            "size": 3
+          },
+          {
+            "text": "floor",
+            "size": 2
+          },
+          {
+            "text": "sofa",
+            "size": 2
+          },
+          {
+            "text": "moon",
+            "size": 1
+          }
+        ]
+      },
+      "analogy": "The finish-the-sentence game.",
+      "narration": "Let's play a game. I say: the cat sat on the... and you shout the next word. You'd probably say mat. Maybe floor, or sofa. Probably not moon! An AI language model plays this game again and again, one small piece of a word at a time. That's how it writes whole answers."
+    },
+    "D2": {
+      "text": [
+        "Text is split into **tokens** (words or pieces of words), and each token becomes a list of numbers.",
+        "Those numbers pass through a stack of **transformer layers**. **Attention** lets each position look back at earlier tokens to decide what matters.",
+        "The last layer gives a score to every token in the vocabulary, and **softmax** turns those scores into probabilities.",
+        "One token is chosen, added to the text, and the whole process repeats."
+      ],
+      "diagram": {
+        "type": "flow",
+        "numbered": true,
+        "caption": "One step of text generation",
+        "steps": [
+          {
+            "label": "Tokenize",
+            "sub": "text to tokens"
+          },
+          {
+            "label": "Embed",
+            "sub": "tokens to numbers"
+          },
+          {
+            "label": "Transformer",
+            "sub": "attention + layers"
+          },
+          {
+            "label": "Scores",
+            "sub": "one per token"
+          },
+          {
+            "label": "Softmax",
+            "sub": "to probabilities"
+          },
+          {
+            "label": "Pick",
+            "sub": "and append"
+          }
+        ],
+        "loop": {
+          "from": 5,
+          "to": 0,
+          "label": "repeat for the next token"
+        }
+      },
+      "analogy": "Like the autocomplete on your phone, scaled up enormously.",
+      "analogyBreaks": "Phone autocomplete looks at the last few words. A large model attends to its whole context window at once, and its internal computation can represent plans that go beyond the next word.",
+      "predict": {
+        "question": "Illustrative numbers: the model gives “mat” 57%, “floor” 14%, “sofa” 11%, and so on. With sampling switched on, will it always pick “mat”?",
+        "options": [
+          "Yes, it always picks the top choice",
+          "Usually “mat”, but other tokens are picked in proportion to their probability",
+          "It picks at random with equal chances",
+          "It picks the longest word"
+        ],
+        "answer": 1,
+        "explanation": "Sampling draws from the distribution: likely tokens most of the time, less likely ones sometimes. Greedy decoding would always pick the top token."
+      }
+    },
+    "D5": {
+      "text": [
+        "“Just predicting the next word” undersells what happens inside. Interpretability research has found internal features that represent concepts and, in some cases, evidence of planning ahead, such as choosing a rhyme before writing the line.",
+        "Active directions include predicting several tokens at once, speculative decoding, diffusion-style language models that refine a whole sequence, and reinforcement learning that trains models to reason through long chains of tokens before answering."
+      ]
+    },
+    "D3": {
+      "text": [
+        "The model gives every candidate token a **score**; softmax turns scores into probabilities. **Temperature** controls how sharp or flat that distribution is before a token is drawn.",
+        "Try the tasks below. Watch how the bars change, then press **Sample 20** to see what the model would actually write."
+      ],
+      "interactive": "sampling-play",
+      "interactiveConfig": {
+        "prompt": "The cat sat on the",
+        "note": "Illustrative scores for teaching, not taken from a real model.",
+        "tokens": [
+          {
+            "text": "mat",
+            "logit": 4.0
+          },
+          {
+            "text": "floor",
+            "logit": 2.6
+          },
+          {
+            "text": "sofa",
+            "logit": 2.4
+          },
+          {
+            "text": "bed",
+            "logit": 2.0
+          },
+          {
+            "text": "windowsill",
+            "logit": 1.6
+          },
+          {
+            "text": "roof",
+            "logit": 1.0
+          },
+          {
+            "text": "keyboard",
+            "logit": 0.6
+          },
+          {
+            "text": "moon",
+            "logit": -1.0
+          }
+        ]
+      },
+      "tasks": [
+        "Set the temperature to 0.2. Which word wins almost every time?",
+        "Set it to 1.8 and sample again. How often does “moon” appear now?",
+        "Limit to the top 3 tokens. Which words can never be chosen?"
+      ],
+      "analogy": "Temperature is like how adventurous you feel when ordering: low means your usual favourite, high means you might try anything.",
+      "analogyBreaks": "Your adventurousness has reasons. Temperature just divides every score by the same number before softmax: it changes how random the choice is, not how good or creative the options are.",
+      "predict": {
+        "question": "If you raise the temperature from 1.0 to 2.0, what happens to the chance of “moon”?",
+        "options": [
+          "It goes up",
+          "It goes down",
+          "It stays exactly the same",
+          "It becomes zero"
+        ],
+        "answer": 0,
+        "explanation": "Higher temperature flattens the distribution, moving probability from likely tokens to unlikely ones like “moon”."
+      }
+    },
+    "D4": {
+      "text": [
+        "Each candidate token *i* gets a score (logit) *zᵢ*. With temperature *T*, the probability is **pᵢ = exp(zᵢ / T) ÷ Σⱼ exp(zⱼ / T)**.",
+        "**Greedy decoding** always takes the highest *pᵢ*. **Top-k** keeps only the *k* highest-probability tokens and renormalises. **Top-p** (nucleus) keeps the smallest set whose probabilities add up to at least *p*.",
+        "Edit the scores and settings below; every column is computed live from the formula."
+      ],
+      "interactive": "sampling-workbench",
+      "interactiveConfig": {
+        "prompt": "The cat sat on the",
+        "note": "Illustrative scores for teaching, not taken from a real model.",
+        "tokens": [
+          {
+            "text": "mat",
+            "logit": 4.0
+          },
+          {
+            "text": "floor",
+            "logit": 2.6
+          },
+          {
+            "text": "sofa",
+            "logit": 2.4
+          },
+          {
+            "text": "bed",
+            "logit": 2.0
+          },
+          {
+            "text": "windowsill",
+            "logit": 1.6
+          },
+          {
+            "text": "roof",
+            "logit": 1.0
+          },
+          {
+            "text": "keyboard",
+            "logit": 0.6
+          },
+          {
+            "text": "moon",
+            "logit": -1.0
+          }
+        ]
+      },
+      "code": "tokens = tokenize(prompt)\ncache = None                       # KV cache: reuse attention work for earlier tokens\nwhile not done(tokens):\n    logits, cache = model(tokens[-1:], cache)   # one forward pass for the newest token\n    probs = softmax(logits / temperature)\n    probs = top_p(top_k(probs, k), p)            # optional filters, then renormalise\n    next_token = sample(probs)                   # or argmax(probs) for greedy decoding\n    tokens.append(next_token)\nreturn detokenize(tokens)",
+      "tradeoffs": [
+        "Greedy is repeatable but can loop or sound flat; sampling is more varied but less predictable.",
+        "Low temperature suits extraction, code and factual answers; higher temperature suits brainstorming and fiction.",
+        "Top-p adapts to how confident the model is; top-k uses a fixed cut-off regardless of the distribution's shape.",
+        "The KV cache makes each new token cheap to compute but uses memory that grows with context length."
+      ],
+      "predict": {
+        "question": "With top-p = 0.9 and probabilities mat 0.60, floor 0.20, sofa 0.15, bed 0.05, which tokens can be sampled?",
+        "options": [
+          "Only mat",
+          "mat and floor",
+          "mat, floor and sofa",
+          "All four"
+        ],
+        "answer": 2,
+        "explanation": "Cumulative: 0.60, 0.80, 0.95. The first point at or above 0.9 is after sofa, so the nucleus is mat, floor and sofa."
+      }
+    }
+  },
+  "sources": [
+    {
+      "title": "Attention Is All You Need",
+      "url": "https://arxiv.org/abs/1706.03762",
+      "date": "2017",
+      "verify": true
+    },
+    {
+      "title": "On the Biology of a Large Language Model",
+      "url": "https://transformer-circuits.pub/2025/attribution-graphs/biology.html",
+      "date": "2025",
+      "verify": true
+    },
+    {
+      "title": "Better & Faster Large Language Models via Multi-token Prediction",
+      "url": "https://arxiv.org/abs/2404.19737",
+      "date": "2024",
+      "verify": true
+    },
+    {
+      "title": "Fast Inference from Transformers via Speculative Decoding",
+      "url": "https://arxiv.org/abs/2211.17192",
+      "date": "2022",
+      "verify": true
+    }
+  ]
+}

@@ -1,0 +1,46 @@
+{
+  "id": "applications-interfaces",
+  "order": 9,
+  "name": "Applications & Interfaces",
+  "color": "l9",
+  "icon": "app",
+  "oneLiner": "Where people meet AI: chat assistants, copilots inside existing tools, and specialised apps.",
+  "analogy": {
+    "text": "A shopfront: customers see the counter and the product, not the warehouse and supply chain behind it.",
+    "breaks": "A shop sells the same product every time. AI apps produce different output each time, so interfaces must handle uncertainty, errors and human review."
+  },
+  "examples": [
+    "Chat assistants",
+    "Coding copilots",
+    "Office and search integrations",
+    "Vertical apps (legal, health, support)"
+  ],
+  "givesAbove": "Value to people, plus usage and feedback that flow back down the stack.",
+  "needsBelow": "Agents or orchestrated model calls from the layers below.",
+  "concepts": [
+    "copilots"
+  ],
+  "metaDiagram": {
+    "nodes": [
+      {
+        "concept": "copilots"
+      }
+    ]
+  },
+  "walkthrough": [],
+  "status": "draft",
+  "lastReviewed": "2026-09-28",
+  "newsKeywords": [
+    "ChatGPT",
+    "Copilot",
+    "assistant",
+    "chatbot",
+    "Perplexity",
+    "Cursor",
+    "smart glasses",
+    "voice assistant",
+    "consumer app",
+    "enterprise adoption",
+    "AI app"
+  ]
+}

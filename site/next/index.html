@@ -1,0 +1,36 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self'; style-src 'self'; img-src 'self' data:; connect-src 'self'; base-uri 'none'; form-action 'none'">
+  <meta name="referrer" content="no-referrer">
+  <meta name="robots" content="noindex">
+  <title>The AI Stack · Strata</title>
+  <meta name="description" content="A visual, layered explainer of the AI and LLM world, from power and chips to agents and apps, at the depth you choose.">
+  <link rel="icon" href="../assets/icon.svg" type="image/svg+xml">
+  <link rel="stylesheet" href="next.css">
+  <script src="theme-init.js"></script>
+  <script type="module" src="app.js"></script>
+</head>
+<body>
+  <a class="skip" href="#view">Skip to content</a>
+  <header class="bar">
+    <a class="brand" href="#/" aria-label="The AI Stack, landscape">
+      <img src="../assets/icon.svg" width="28" height="28" alt="">
+      <span><strong>The AI Stack</strong><span class="brand-sub">by Strata</span></span>
+    </a>
+    <nav class="crumbs" id="crumbs" aria-label="Breadcrumb"></nav>
+    <div class="bar-actions">
+      <a class="btn-ghost" href="#/legend">Legend</a>
+      <button class="icon-btn" id="theme" type="button" aria-label="Toggle light or dark theme"></button>
+    </div>
+  </header>
+  <div class="shell">
+    <nav class="minimap" id="minimap" aria-label="Where you are in the stack"></nav>
+    <main id="view" tabindex="-1"><p class="muted">Loading…</p></main>
+  </div>
+  <div class="sr-only" aria-live="polite" id="announce"></div>
+  <footer class="site">Preview of the next version of Strata. Content is draft and under review; values marked PLACEHOLDER need real data.</footer>
+</body>
+</html>

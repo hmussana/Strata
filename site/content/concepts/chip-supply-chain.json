@@ -1,0 +1,78 @@
+{
+  "id": "chip-supply-chain",
+  "layer": "physical-energy",
+  "name": "Fabs & the chip supply chain",
+  "summary": "Advanced AI chips depend on a handful of highly specialised factories, tools and materials.",
+  "prerequisites": [],
+  "status": "draft",
+  "lastReviewed": "2026-09-28",
+  "depths": {
+    "D1": {
+      "text": [
+        "Chips are made in special factories called fabs, which are cleaner than a hospital. Only a few places in the world can make the most advanced chips.",
+        "It's like a recipe that needs a special oven that only a few bakeries own."
+      ],
+      "analogy": "A special oven that only a few bakeries have."
+    },
+    "D2": {
+      "text": [
+        "Making an AI accelerator involves chip design, fabrication at a foundry, advanced packaging that places memory right next to the processor, and testing.",
+        "Each step relies on specialised equipment and suppliers, and several steps are concentrated in a small number of companies and countries.",
+        "That concentration is why chip supply shows up in trade policy and export controls."
+      ],
+      "diagram": {
+        "type": "flow",
+        "numbered": true,
+        "caption": "From design to server",
+        "steps": [
+          {
+            "label": "Design",
+            "sub": "chip architecture"
+          },
+          {
+            "label": "Fabrication",
+            "sub": "at a foundry"
+          },
+          {
+            "label": "Packaging",
+            "sub": "joins memory"
+          },
+          {
+            "label": "Test",
+            "sub": "and assembly"
+          },
+          {
+            "label": "Servers",
+            "sub": "into data centres"
+          }
+        ]
+      },
+      "analogy": "Like a relay race where some legs can only be run by one or two athletes in the world.",
+      "analogyBreaks": "In a relay a missing runner can be replaced by a slower one. In chip-making some steps have no practical substitute at all in the short term.",
+      "predict": {
+        "question": "Why can advanced packaging become a bottleneck even when enough chips have been fabricated?",
+        "options": [
+          "Packaging is purely cosmetic",
+          "Memory must be joined to the processor using specialised processes with limited capacity",
+          "Chips don't need packaging",
+          "It only affects phones"
+        ],
+        "answer": 1,
+        "explanation": "AI accelerators place high-bandwidth memory beside the processor using advanced packaging lines, whose capacity is limited and separate from wafer fabrication."
+      }
+    },
+    "D5": {
+      "text": [
+        "Open problems: spreading advanced manufacturing across more regions, the pace of new process generations, and how export controls reshape who can build frontier systems."
+      ]
+    }
+  },
+  "sources": [
+    {
+      "title": "PLACEHOLDER",
+      "url": "PLACEHOLDER",
+      "date": "PLACEHOLDER",
+      "verify": true
+    }
+  ]
+}

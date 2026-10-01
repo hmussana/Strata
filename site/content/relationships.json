@@ -1,0 +1,124 @@
+{
+  "relationships": [
+    {
+      "from": "datacenter-power",
+      "to": "gpu-clusters",
+      "type": "enables",
+      "label": "powers and cools"
+    },
+    {
+      "from": "chip-supply-chain",
+      "to": "gpu-accelerators",
+      "type": "enables",
+      "label": "manufactures"
+    },
+    {
+      "from": "gpu-accelerators",
+      "to": "gpu-clusters",
+      "type": "part-of",
+      "label": "networked into"
+    },
+    {
+      "from": "gpu-accelerators",
+      "to": "memory-bandwidth",
+      "type": "depends-on",
+      "label": "limited by"
+    },
+    {
+      "from": "synthetic-data",
+      "to": "post-training",
+      "type": "feeds",
+      "label": "supplies examples"
+    },
+    {
+      "from": "batching-caching",
+      "to": "memory-bandwidth",
+      "type": "depends-on",
+      "label": "shares reads of"
+    },
+    {
+      "from": "quantization",
+      "to": "batching-caching",
+      "type": "optimizes",
+      "label": "frees memory for"
+    },
+    {
+      "from": "rag",
+      "to": "agent-loop",
+      "type": "feeds",
+      "label": "grounds"
+    },
+    {
+      "from": "tool-use",
+      "to": "agent-loop",
+      "type": "enables",
+      "label": "gives actions to"
+    },
+    {
+      "from": "agent-loop",
+      "to": "multi-agent",
+      "type": "part-of",
+      "label": "runs inside each"
+    },
+    {
+      "from": "agent-loop",
+      "to": "copilots",
+      "type": "enables",
+      "label": "powers"
+    },
+    {
+      "from": "tokenization",
+      "to": "transformer-attention",
+      "type": "feeds",
+      "label": "supplies token vectors to"
+    },
+    {
+      "from": "transformer-attention",
+      "to": "next-token-prediction",
+      "type": "enables",
+      "label": "computes"
+    },
+    {
+      "from": "pretraining",
+      "to": "transformer-attention",
+      "type": "enables",
+      "label": "sets the weights of"
+    },
+    {
+      "from": "pretraining",
+      "to": "next-token-prediction",
+      "type": "depends-on",
+      "label": "uses as its objective"
+    },
+    {
+      "from": "post-training",
+      "to": "pretraining",
+      "type": "depends-on",
+      "label": "starts from"
+    },
+    {
+      "from": "post-training",
+      "to": "open-weights",
+      "type": "feeds",
+      "label": "produces the models released as"
+    },
+    {
+      "from": "pretraining-data",
+      "to": "pretraining",
+      "type": "feeds",
+      "label": "is the input to"
+    },
+    {
+      "from": "gpu-clusters",
+      "to": "pretraining",
+      "type": "enables",
+      "label": "runs"
+    },
+    {
+      "from": "quantization",
+      "to": "open-weights",
+      "type": "optimizes",
+      "label": "shrinks for local use"
+    }
+  ]
+}

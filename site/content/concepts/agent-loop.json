@@ -1,0 +1,85 @@
+{
+  "id": "agent-loop",
+  "layer": "agents",
+  "name": "The agent loop",
+  "summary": "Plan, act with a tool, observe the result, and repeat until the goal is met.",
+  "prerequisites": [
+    "tool-use"
+  ],
+  "status": "draft",
+  "lastReviewed": "2026-09-28",
+  "depths": {
+    "D1": {
+      "text": [
+        "Think of a robot tidying a room: look around, pick one thing up, check where it goes, then look again. It keeps going until the room is tidy.",
+        "An AI agent works the same way, using computer tools instead of hands."
+      ],
+      "analogy": "A robot tidying a room, one item at a time."
+    },
+    "D2": {
+      "text": [
+        "The agent receives a goal. The model reasons about the next step and requests a tool call.",
+        "The harness runs the tool, with permission checks, and feeds the result back into the context.",
+        "The loop repeats until the model decides the task is done, a limit is reached, or a person steps in."
+      ],
+      "diagram": {
+        "type": "flow",
+        "numbered": true,
+        "caption": "The agent loop",
+        "steps": [
+          {
+            "label": "Goal",
+            "sub": "from the user"
+          },
+          {
+            "label": "Think",
+            "sub": "choose next step"
+          },
+          {
+            "label": "Act",
+            "sub": "call a tool"
+          },
+          {
+            "label": "Observe",
+            "sub": "read the result"
+          },
+          {
+            "label": "Done?",
+            "sub": "stop or continue"
+          }
+        ],
+        "loop": {
+          "from": 4,
+          "to": 1,
+          "label": "not done: next step"
+        }
+      },
+      "analogy": "A robot tidying a room.",
+      "analogyBreaks": "A tidying robot can see the whole room. An agent only sees what's in its context, so long tasks need summaries and memory, and details can get lost.",
+      "predict": {
+        "question": "An agent keeps retrying the same failing command. Which safeguard matters most?",
+        "options": [
+          "A bigger monitor",
+          "Step limits and human approval for risky actions",
+          "More colours in the interface",
+          "Faster typing"
+        ],
+        "answer": 1,
+        "explanation": "Loops need stopping conditions and human checkpoints; otherwise errors repeat and costs grow."
+      }
+    },
+    "D5": {
+      "text": [
+        "Open problems: reliability over long tasks, knowing when to stop or ask for help, evaluating agents on realistic work, and containing agents that read untrusted content."
+      ]
+    }
+  },
+  "sources": [
+    {
+      "title": "ReAct: Synergizing Reasoning and Acting in Language Models",
+      "url": "https://arxiv.org/abs/2210.03629",
+      "date": "2022",
+      "verify": true
+    }
+  ]
+}

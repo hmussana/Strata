@@ -1,0 +1,67 @@
+{
+  "id": "data",
+  "order": 4,
+  "name": "Data",
+  "color": "l4",
+  "icon": "database",
+  "oneLiner": "The text, code, images and feedback that models learn from, and how it's collected, cleaned and licensed.",
+  "analogy": {
+    "text": "Ingredients in a recipe: the best chef can't fix spoiled ingredients.",
+    "breaks": "Ingredients get used up; data doesn't, but reusing the same data again and again gives diminishing returns, and this 'ingredient' can carry hidden bias, private details or copyright obligations."
+  },
+  "examples": [
+    "Web crawls",
+    "Curated datasets",
+    "Synthetic data",
+    "Human labels and preferences"
+  ],
+  "givesAbove": "Training corpora and feedback data that shape what a model can do.",
+  "needsBelow": "Storage and compute from Cloud & Infrastructure to collect, filter and deduplicate at scale.",
+  "concepts": [
+    "pretraining-data",
+    "synthetic-data"
+  ],
+  "metaDiagram": {
+    "nodes": [
+      {
+        "concept": "pretraining-data"
+      },
+      {
+        "concept": "synthetic-data"
+      }
+    ]
+  },
+  "walkthrough": [],
+  "status": "draft",
+  "lastReviewed": "2026-09-28",
+  "newsKeywords": [
+    "dataset",
+    "training data",
+    "synthetic data",
+    "data licensing",
+    "copyright",
+    "Common Crawl",
+    "web crawl",
+    "scraping",
+    "data labeling",
+    "data labelling",
+    "annotation",
+    "data poisoning",
+    "corpus"
+  ],
+  "researchKeywords": [
+    "data curation",
+    "data quality",
+    "synthetic data",
+    "data filtering",
+    "deduplication",
+    "pretraining data",
+    "pre-training data",
+    "pretraining corpus",
+    "data contamination",
+    "data poisoning",
+    "data licensing",
+    "dataset construction",
+    "data mixture"
+  ]
+}

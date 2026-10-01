@@ -1,0 +1,84 @@
+{
+  "id": "pretraining-data",
+  "layer": "data",
+  "name": "Pretraining data",
+  "summary": "The huge collection of text and other media a model first learns from, and how it is filtered.",
+  "prerequisites": [],
+  "status": "draft",
+  "lastReviewed": "2026-09-28",
+  "depths": {
+    "D1": {
+      "text": [
+        "Before an AI can talk, it reads an enormous amount: websites, books and code. It's like a child who has read a whole library.",
+        "People try to remove junk and repeated pages first, because the AI learns whatever it reads."
+      ],
+      "analogy": "A child who has read an entire library, including the junk mail."
+    },
+    "D2": {
+      "text": [
+        "Pretraining corpora are assembled from sources such as web crawls, code repositories, books and papers, then filtered.",
+        "Typical steps: extract the text, remove duplicates, filter low-quality or harmful content, detect language, and remove personal data where possible.",
+        "Quality matters as much as quantity: better-curated data can rival much larger, noisier datasets."
+      ],
+      "diagram": {
+        "type": "flow",
+        "numbered": true,
+        "caption": "From the web to training tokens",
+        "steps": [
+          {
+            "label": "Collect",
+            "sub": "crawls, code, books"
+          },
+          {
+            "label": "Extract",
+            "sub": "clean text"
+          },
+          {
+            "label": "Deduplicate",
+            "sub": "remove copies"
+          },
+          {
+            "label": "Filter",
+            "sub": "quality and safety"
+          },
+          {
+            "label": "Mix",
+            "sub": "and tokenize"
+          }
+        ]
+      },
+      "analogy": "Like panning for gold: most of what you scoop up is gravel.",
+      "analogyBreaks": "Gold either is gold or isn't. With data, 'quality' is a judgement call, and filters can remove useful dialects or topics along with the junk.",
+      "predict": {
+        "question": "A web crawl contains the same article copied thousands of times. What's the main risk of training on it unchanged?",
+        "options": [
+          "None",
+          "The model over-weights it and may memorise it word for word",
+          "The model forgets it",
+          "Training becomes cheaper"
+        ],
+        "answer": 1,
+        "explanation": "Duplicates skew what the model learns and increase verbatim memorisation, which is why deduplication is standard."
+      }
+    },
+    "D5": {
+      "text": [
+        "Open questions: the limited supply of high-quality human text, licensing and consent, measuring data quality, and benchmark questions leaking into training data (contamination)."
+      ]
+    }
+  },
+  "sources": [
+    {
+      "title": "The FineWeb Datasets: Decanting the Web for the Finest Text Data at Scale",
+      "url": "https://arxiv.org/abs/2406.17557",
+      "date": "2024",
+      "verify": true
+    },
+    {
+      "title": "Common Crawl",
+      "url": "https://commoncrawl.org",
+      "date": "ongoing",
+      "verify": true
+    }
+  ]
+}

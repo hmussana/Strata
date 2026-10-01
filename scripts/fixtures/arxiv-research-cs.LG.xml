@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<rss xmlns:arxiv="http://arxiv.org/schemas/atom" version="2.0"><channel><title>cs.LG updates on arXiv.org</title>
+<pubDate>Fri, 25 Sep 2026 00:00:00 -0400</pubDate>
+<item><title>Memory-Bound Decoding on the GPU</title><link>https://arxiv.org/abs/2609.10001</link>
+<description>arXiv:2609.10001v1 Announce Type: new Abstract: We study HBM bandwidth limits of GPU inference.</description>
+<arxiv:announce_type>new</arxiv:announce_type></item>
+<item><title>An old paper, revised</title><link>https://arxiv.org/abs/2401.00001</link>
+<description>arXiv:2401.00001v3 Announce Type: replace Abstract: Revised GPU results.</description>
+<arxiv:announce_type>replace</arxiv:announce_type></item>
+<item><title>Planning for LLM agents</title><link>https://arxiv.org/abs/2609.10002</link>
+<description>arXiv:2609.10002v1 Announce Type: cross Abstract: A multi-agent benchmark for coding agents.</description>
+<arxiv:announce_type>cross</arxiv:announce_type></item>
+</channel></rss>

@@ -1,0 +1,51 @@
+{
+  "id": "agents",
+  "order": 8,
+  "name": "Agents",
+  "color": "l8",
+  "icon": "robot",
+  "oneLiner": "Systems that pursue a goal over many steps: plan, act with tools, check the result, repeat.",
+  "analogy": {
+    "text": "A new employee given a goal instead of a script: they work out the steps, use the office tools and check their own work.",
+    "breaks": "An employee builds judgement over months. An agent's 'experience' is only what fits in its context and memory, and it can repeat a mistake confidently."
+  },
+  "examples": [
+    "Coding agents",
+    "Research agents",
+    "Personal assistants",
+    "Multi-agent systems"
+  ],
+  "givesAbove": "Completed multi-step tasks, not just single answers.",
+  "needsBelow": "Tools, retrieval and model calls arranged by Orchestration & Tooling.",
+  "concepts": [
+    "agent-loop",
+    "multi-agent"
+  ],
+  "metaDiagram": {
+    "nodes": [
+      {
+        "concept": "agent-loop"
+      },
+      {
+        "concept": "multi-agent"
+      }
+    ]
+  },
+  "walkthrough": [],
+  "status": "draft",
+  "lastReviewed": "2026-09-28",
+  "newsKeywords": [
+    "AI agent",
+    "agentic",
+    "coding agent",
+    "Claude Code",
+    "Codex",
+    "OpenClaw",
+    "Hermes Agent",
+    "computer use",
+    "browser agent",
+    "multi-agent",
+    "autonomous agent",
+    "agents"
+  ]
+}

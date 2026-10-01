@@ -1,0 +1,49 @@
+{
+  "id": "cloud-infrastructure",
+  "order": 3,
+  "name": "Cloud & Infrastructure",
+  "color": "l3",
+  "icon": "cloud",
+  "oneLiner": "Turns racks of chips into rentable, schedulable clusters for training and serving models.",
+  "analogy": {
+    "text": "A utility company: you plug in and pay for what you use, without owning the power plant.",
+    "breaks": "Unlike electricity, AI capacity isn't interchangeable: specific chips, network layouts and regions matter, and capacity can simply be unavailable."
+  },
+  "examples": [
+    "Hyperscale clouds",
+    "Specialist GPU clouds",
+    "Cluster schedulers (Kubernetes, Slurm)",
+    "Storage and networking fabrics"
+  ],
+  "givesAbove": "On-demand clusters, storage and networking that teams can train and serve models on.",
+  "needsBelow": "Accelerators and interconnect from Compute Hardware, housed and powered by Physical & Energy.",
+  "concepts": [
+    "gpu-clusters"
+  ],
+  "metaDiagram": {
+    "nodes": [
+      {
+        "concept": "gpu-clusters"
+      }
+    ]
+  },
+  "walkthrough": [],
+  "status": "draft",
+  "lastReviewed": "2026-09-28",
+  "newsKeywords": [
+    "AWS",
+    "Azure",
+    "Google Cloud",
+    "CoreWeave",
+    "GPU cloud",
+    "neocloud",
+    "hyperscaler",
+    "Kubernetes",
+    "Slurm",
+    "compute capacity",
+    "supercomputer",
+    "Bedrock",
+    "Vertex AI",
+    "cluster"
+  ]
+}

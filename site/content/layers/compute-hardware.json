@@ -1,0 +1,58 @@
+{
+  "id": "compute-hardware",
+  "order": 2,
+  "name": "Compute Hardware",
+  "color": "l2",
+  "icon": "chip",
+  "oneLiner": "The chips that do the maths: GPUs and other accelerators, their fast memory, and the links between them.",
+  "analogy": {
+    "text": "A kitchen: chips are the cooks, memory is the counter space, and interconnect is how fast cooks can pass dishes to each other.",
+    "breaks": "Cooks work independently. Thousands of accelerators must act as one machine in lockstep, so the network between them matters as much as the chips."
+  },
+  "examples": [
+    "GPUs",
+    "TPUs and custom accelerators",
+    "High-bandwidth memory (HBM)",
+    "Chip-to-chip interconnect"
+  ],
+  "givesAbove": "Raw arithmetic throughput and memory, exposed to software through platforms such as CUDA or ROCm.",
+  "needsBelow": "Power, cooling and fabricated silicon from Physical & Energy.",
+  "concepts": [
+    "gpu-accelerators",
+    "memory-bandwidth"
+  ],
+  "metaDiagram": {
+    "nodes": [
+      {
+        "concept": "gpu-accelerators"
+      },
+      {
+        "concept": "memory-bandwidth"
+      }
+    ]
+  },
+  "walkthrough": [],
+  "status": "draft",
+  "lastReviewed": "2026-09-28",
+  "newsKeywords": [
+    "=GPU",
+    "=TPU",
+    "=HBM",
+    "accelerator",
+    "H100",
+    "H200",
+    "B200",
+    "GB200",
+    "GB300",
+    "Blackwell",
+    "Vera Rubin",
+    "NVLink",
+    "InfiniBand",
+    "Trainium",
+    "MI300X",
+    "MI355X",
+    "DGX",
+    "RTX 5090",
+    "AI chip"
+  ]
+}

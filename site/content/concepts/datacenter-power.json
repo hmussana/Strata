@@ -1,0 +1,83 @@
+{
+  "id": "datacenter-power",
+  "layer": "physical-energy",
+  "name": "Power & cooling for AI data centres",
+  "summary": "AI data centres are limited by how much electricity they can get and how much heat they can remove.",
+  "prerequisites": [],
+  "status": "draft",
+  "lastReviewed": "2026-09-28",
+  "depths": {
+    "D1": {
+      "text": [
+        "Computers get warm when they work hard, like your legs when you run. AI computers work extremely hard, all day and all night, so they need lots of electricity and lots of cooling.",
+        "Building one is a bit like building the power and air-conditioning for a small town, all around one room full of very busy computers."
+      ],
+      "analogy": "A room full of runners: they need lots of food (electricity) and they get hot, so you need big fans and cold water (cooling)."
+    },
+    "D2": {
+      "text": [
+        "Almost all the electricity a chip uses turns into heat, so getting power in and getting heat out are two sides of the same problem.",
+        "AI racks pack far more power into the same floor space than traditional server racks, which is why new facilities increasingly move from air cooling to liquid cooling.",
+        "Where a data centre can be built is often decided by grid connection capacity and permitting time, not by land."
+      ],
+      "diagram": {
+        "type": "flow",
+        "numbered": true,
+        "caption": "Power in, heat out",
+        "steps": [
+          {
+            "label": "Grid",
+            "sub": "power supply"
+          },
+          {
+            "label": "Substation",
+            "sub": "plus backup"
+          },
+          {
+            "label": "Racks",
+            "sub": "chips compute"
+          },
+          {
+            "label": "Heat",
+            "sub": "nearly all energy"
+          },
+          {
+            "label": "Cooling",
+            "sub": "air or liquid"
+          },
+          {
+            "label": "Released",
+            "sub": "air or water"
+          }
+        ]
+      },
+      "analogy": "Like a stadium on match day: the challenge isn't just building it, it's getting enough power in and enough heat out.",
+      "analogyBreaks": "A stadium peaks for a few hours. AI clusters run near full load around the clock, so they need steady supply, not just peak capacity.",
+      "predict": {
+        "question": "Almost all the electricity a GPU consumes ends up as…",
+        "options": [
+          "Stored inside the chip",
+          "Heat",
+          "Light",
+          "Sent back to the grid"
+        ],
+        "answer": 1,
+        "explanation": "Computation dissipates nearly all of its energy as heat, which is why cooling capacity has to grow with power."
+      }
+    },
+    "D5": {
+      "text": [
+        "Open questions include how quickly grids can add capacity, whether on-site generation can close the gap, and how to account for the water used in cooling.",
+        "Whether efficiency gains per computation can keep pace with growth in total demand is actively debated."
+      ]
+    }
+  },
+  "sources": [
+    {
+      "title": "Energy and AI (IEA report)",
+      "url": "https://www.iea.org/reports/energy-and-ai",
+      "date": "2025",
+      "verify": true
+    }
+  ]
+}
