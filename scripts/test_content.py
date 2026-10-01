@@ -28,6 +28,19 @@ class ContentTests(unittest.TestCase):
         entry["value"] += 10
         self.assertTrue(any("doesn't match the formula" in e for e in vc.validate(data)))
 
+    def test_unknown_interactive_and_diagram_are_rejected(self):
+        data = vc.load_all()
+        d2 = data["concepts"][0]["depths"]["D2"]
+        d2["interactive"] = "no-such-explorable"
+        d2["diagram"] = {"type": "no-such-diagram"}
+        errs = vc.validate(data)
+        self.assertTrue(any("unknown interactive" in e for e in errs))
+        self.assertTrue(any("unknown diagram type" in e for e in errs))
+
+    def test_registries_are_read_from_code(self):
+        self.assertIn("sampling-play", vc.explorable_ids())
+        self.assertIn("guess", vc.diagram_types())
+
     def test_report_lists_placeholders(self):
         rep = vc.report(self.data)
         self.assertIn("crosscutting.json", rep)

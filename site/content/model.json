@@ -126,5 +126,9 @@
       "label": "part of",
       "arrow": "part"
     }
+  },
+  "guide": {
+    "name": "Tok",
+    "description": "A friendly token who guides D1 stories. Original artwork, no likeness of any real character."
   }
 }

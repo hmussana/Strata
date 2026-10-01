@@ -1,0 +1,88 @@
+{
+  "id": "transformer-attention",
+  "layer": "foundation-models",
+  "name": "Transformers & attention",
+  "summary": "The architecture behind modern language models: stacked layers in which every token can look back at earlier tokens and pull in what's relevant.",
+  "prerequisites": [
+    "tokenization"
+  ],
+  "status": "draft",
+  "lastReviewed": "2026-10-01",
+  "depths": {
+    "D1": {
+      "text": [
+        "Read this: “The cat sat on the mat because it was tired.” You know “it” means the cat, not the mat.",
+        "Attention is how the AI works that out: for each word it looks back at the earlier words and decides which ones matter most."
+      ],
+      "analogy": "Highlighting the words that matter."
+    },
+    "D2": {
+      "text": [
+        "A transformer is a stack of identical **layers**. Each layer has two parts: **attention**, which mixes in information from other positions, and a **feed-forward network**, which processes each position on its own.",
+        "In attention, each position asks a question (a *query*), compares it with a label on every earlier position (its *key*), and takes a weighted blend of what those positions carry (their *values*). Many attention heads do this in parallel, looking for different patterns.",
+        "In models that generate text, a **causal mask** stops any position from looking ahead at tokens that haven't been written yet."
+      ],
+      "diagram": {
+        "type": "stack",
+        "caption": "One transformer layer, repeated dozens of times",
+        "layers": [
+          {
+            "label": "Output to next layer",
+            "sub": "refined vectors"
+          },
+          {
+            "label": "Feed-forward network",
+            "sub": "processes each position"
+          },
+          {
+            "label": "Attention",
+            "sub": "looks back at earlier tokens",
+            "hl": true
+          },
+          {
+            "label": "Input vectors",
+            "sub": "one per token"
+          }
+        ]
+      },
+      "analogy": "Highlighting the words that matter.",
+      "analogyBreaks": "You highlight a few words once. Attention gives every earlier token some weight, dozens of heads do it at once in every layer, and the result is spread across many layers rather than one clear highlight.",
+      "predict": {
+        "question": "In a model that generates text, can a token pay attention to words that come after it?",
+        "options": [
+          "Yes, always",
+          "No: a causal mask hides later tokens",
+          "Only for the last token",
+          "Only in the first layer"
+        ],
+        "answer": 1,
+        "explanation": "While generating, later tokens don't exist yet, and during training a mask hides them so the model learns to predict without peeking."
+      }
+    },
+    "D5": {
+      "text": [
+        "Open problems: attention's cost grows with the square of the context length, which drives work on efficient kernels, sparse and linear attention, and hybrids with state-space layers; and interpretability research into what individual heads and layers actually compute."
+      ]
+    }
+  },
+  "sources": [
+    {
+      "title": "Attention Is All You Need",
+      "url": "https://arxiv.org/abs/1706.03762",
+      "date": "2017",
+      "verify": true
+    },
+    {
+      "title": "FlashAttention: Fast and Memory-Efficient Exact Attention with IO-Awareness",
+      "url": "https://arxiv.org/abs/2205.14135",
+      "date": "2022",
+      "verify": true
+    },
+    {
+      "title": "Mamba: Linear-Time Sequence Modeling with Selective State Spaces",
+      "url": "https://arxiv.org/abs/2312.00752",
+      "date": "2023",
+      "verify": true
+    }
+  ]
+}

@@ -88,6 +88,17 @@ def icon_names() -> set[str]:
     return set(re.findall(r"^\s{2}([a-z][\w-]*):\s*'", js, re.M))
 
 
+def explorable_ids() -> set[str]:
+    js = (APP / "explorables" / "index.js").read_text()
+    return set(re.findall(r"^\s{2}'([a-z][\w-]*)':", js, re.M))
+
+
+def diagram_types() -> set[str]:
+    js = (APP / "diagrams.js").read_text()
+    m = re.search(r"const RENDERERS = \{([^}]*)\}", js)
+    return {x.strip() for x in m.group(1).split(",") if x.strip()} if m else set()
+
+
 # ---------------------------------------------------------------- validation
 
 def validate(data: dict | None = None) -> list[str]:
@@ -170,6 +181,7 @@ def validate(data: dict | None = None) -> list[str]:
             if p not in concept_by_id:
                 err(f"{where}: unknown prerequisite {p}")
         depths = c.get("depths", {})
+        explorables, dtypes = explorable_ids(), diagram_types()
         for dep in REQUIRED_DEPTHS:
             if dep not in depths:
                 err(f"{where}: required depth {dep} missing")
@@ -181,6 +193,17 @@ def validate(data: dict | None = None) -> list[str]:
                 err(f"{where}: {dep} needs text")
             if dep != "D1" and body.get("analogy") and not body.get("analogyBreaks"):
                 err(f"{where}: {dep} analogy needs an analogyBreaks note (required from D2 up)")
+            if body.get("interactive") and body["interactive"] not in explorables:
+                err(f"{where}: {dep} unknown interactive {body['interactive']} (see site/next/explorables/index.js)")
+            if body.get("interactive") and not isinstance(body.get("interactiveConfig", {}), dict):
+                err(f"{where}: {dep} interactiveConfig must be an object")
+            if body.get("diagram") and body["diagram"].get("type") not in dtypes:
+                err(f"{where}: {dep} unknown diagram type {body['diagram'].get('type')}")
+            if body.get("narration") and dep != "D1":
+                err(f"{where}: narration is only read aloud at D1")
+            for key in ("tasks", "tradeoffs"):
+                if key in body and not (isinstance(body[key], list) and all(isinstance(x, str) for x in body[key])):
+                    err(f"{where}: {dep} {key} must be a list of strings")
             pr = body.get("predict")
             if pr:
                 opts = pr.get("options", [])

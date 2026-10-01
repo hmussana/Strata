@@ -186,11 +186,32 @@ export function describe(d) {
     case 'bars': return (d.items || []).map((i) => `${i.label}: ${i.value} ${d.unit || ''}`);
     case 'compare': return (d.columns || []).map((c) => `${c.title}: ${(c.points || []).join('; ')}`);
     case 'sequence': return (d.messages || []).map((m) => `${d.actors[m.from]} → ${d.actors[m.to]}: ${m.label}`);
+    case 'guess': return [`What comes after “${d.prompt}”?`, ...(d.options || []).map((o, i, all) => `${o.text}${i === 0 ? ' (best guess)' : i === all.length - 1 ? ' (unlikely)' : ''}`)];
     default: return [];
   }
 }
 
-const RENDERERS = { flow, stack, hub, bars, compare, sequence };
+// D1 picture: a sentence with a blank and guess cards; bigger card = better guess (no numbers at D1)
+function guess(d) {
+  const opts = d.options || [];
+  const W = 640, gap = 14;
+  const dims = opts.map((o) => ({ w: 70 + (o.size || 1) * 34, h: 40 + (o.size || 1) * 16, f: 13 + (o.size || 1) * 3 }));
+  const total = dims.reduce((a, b) => a + b.w, 0) + gap * (opts.length - 1);
+  const top = 74, H = top + Math.max(...dims.map((x) => x.h), 0) + 16;
+  let body = `<text x="${W / 2 - 40}" y="40" text-anchor="middle" class="dg-label" font-size="22">${esc(d.prompt)}</text>`;
+  body += `<rect x="${W / 2 + 92}" y="16" width="86" height="34" rx="8" class="dg-box" stroke-dasharray="5 4"/><text x="${W / 2 + 135}" y="40" text-anchor="middle" class="dg-sub" font-size="20">?</text>`;
+  let x = (W - total) / 2;
+  opts.forEach((o, i) => {
+    const { w, h, f } = dims[i];
+    const y = top + (Math.max(...dims.map((q) => q.h)) - h);
+    body += `<g class="dg-node ${i === 0 ? 'dg-hl' : ''}"><rect x="${x}" y="${y}" width="${w}" height="${h}" rx="12" class="dg-box"/>`;
+    body += `<text x="${x + w / 2}" y="${y + h / 2 + f / 3}" text-anchor="middle" class="dg-label" font-size="${f}">${esc(o.text)}</text></g>`;
+    x += w + gap;
+  });
+  return svg(W, H, body, d.caption || 'guess the next word');
+}
+
+const RENDERERS = { flow, stack, hub, bars, compare, sequence, guess };
 
 export function renderDiagram(d, cls = '') {
   if (!d || !RENDERERS[d.type]) return '';

@@ -1,9 +1,11 @@
 // Z3: one concept at the learner's chosen depth. Methods: depth dial (expertise reversal), CPA, analogy with
-// explicit breakpoints (from D2 up), predict-then-reveal, segmenting. D3/D4 explorables arrive in milestone 4.
+// explicit breakpoints (from D2 up), predict-then-reveal, segmenting, explorables (D3 play, D4 workbench),
+// modality (D1 narration through the browser's own speech engine: no audio files, no third parties).
 import { icon } from '../icons.js';
 import { href } from '../router.js';
 import { prefs } from '../store.js';
 import { renderDiagram } from '../diagrams.js';
+import { guide } from '../guide.js';
 import { esc, paras, lclass, lnum, freshness, zoomLabel, isPlaceholder } from '../ui.js';
 
 const DEPTH_IDS = ['D1', 'D2', 'D3', 'D4', 'D5'];
@@ -25,6 +27,15 @@ function predictCard(p) {
     <button type="button" class="btn reveal-btn" disabled>Reveal the answer</button>
     <div class="reveal" hidden aria-live="polite"><p><strong class="verdict"></strong> ${esc(p.explanation)}</p></div>
   </section>`;
+}
+
+const canSpeak = () => 'speechSynthesis' in window && 'SpeechSynthesisUtterance' in window;
+
+function extras(body, l) {
+  return `${body.interactive ? `<div class="explorable ${lclass(l)}" data-interactive="${esc(body.interactive)}"><p class="muted small">Loading the interactive…</p></div>` : ''}
+    ${body.tasks?.length ? `<section class="tasks"><h3>${icon('target', 'ico-s')}Try this</h3><ol>${body.tasks.map((t) => `<li>${esc(t)}</li>`).join('')}</ol></section>` : ''}
+    ${body.code ? `<figure class="code-fig"><figcaption>Pseudo-code</figcaption><pre class="code"><code>${esc(body.code)}</code></pre></figure>` : ''}
+    ${body.tradeoffs?.length ? `<section class="tradeoffs"><h3>${icon('scale', 'ico-s')}Trade-offs</h3><ul>${body.tradeoffs.map((t) => `<li>${esc(t)}</li>`).join('')}</ul></section>` : ''}`;
 }
 
 function sourcesList(k) {
@@ -50,10 +61,14 @@ export function concept(route, c) {
   let content;
   if (body) {
     content = `<div class="depth-body">
-      ${paras(body.text)}
+      ${body.guide ? guide(body.guide, c.model.guide?.name) : ''}
+      ${body.narration ? `<div class="narrate" hidden><button type="button" class="btn" data-narrate aria-pressed="false">${icon('speaker', 'ico-s')}<span>Listen</span></button>
+        <button type="button" class="btn-ghost" data-show-text hidden aria-expanded="false">Show the text</button></div>` : ''}
+      <div class="depth-text">${paras(body.text)}</div>
       ${body.diagram ? renderDiagram(body.diagram, lclass(l)) : ''}
       ${body.analogy ? `<div class="analogy"><span class="label">Analogy</span>${esc(body.analogy)}
         ${depth >= 2 && body.analogyBreaks ? `<div class="breaks"><span class="label">${icon('alert', 'ico-s')}Where this analogy breaks</span>${esc(body.analogyBreaks)}</div>` : ''}</div>` : ''}
+      ${extras(body, l)}
     </div>
     ${body.predict ? predictCard(body.predict) : ''}
     ${depth === 5 ? sourcesList(k) : ''}`;
@@ -89,6 +104,7 @@ export function concept(route, c) {
       ${prereq.length ? `<h2 class="section-title">Helps to know first</h2><div class="related">${prereq.map((p) => `<a class="chip ${lclass(c.layerOf(p.id))}" href="${href.concept(p.id)}">${esc(p.name)}</a>`).join('')}</div>` : ''}
       ${rels ? `<h2 class="section-title">Connected concepts</h2><ul class="rel-list">${rels}</ul>` : ''}`,
     mount: (root) => {
+      if (body) mountExtras(root, body);
       // depth radiogroup: arrow keys move between options
       const radios = [...root.querySelectorAll('.depth-opt')];
       radios.forEach((r, i) => r.addEventListener('keydown', (e) => {
@@ -121,4 +137,38 @@ export function concept(route, c) {
       });
     },
   };
+}
+
+function mountExtras(root, body) {
+  // explorables load on demand from the registry, so concepts without one cost nothing
+  const xp = root.querySelector('[data-interactive]');
+  if (xp) {
+    import('../explorables/index.js').then(({ EXPLORABLES }) => {
+      const load = EXPLORABLES[xp.dataset.interactive];
+      if (!load) throw new Error(`unknown explorable ${xp.dataset.interactive}`);
+      return load().then((fn) => { if (xp.isConnected) fn(xp, body.interactiveConfig || {}); });
+    }).catch(() => { xp.innerHTML = '<p class="pending">This interactive could not load.</p>'; });
+  }
+
+  // D1 narration: hide the words while listening (modality: hear the story, look at the picture); one tap brings them back
+  const box = root.querySelector('.narrate');
+  if (!box || !canSpeak()) return;
+  box.hidden = false;
+  const btn = box.querySelector('[data-narrate]'), show = box.querySelector('[data-show-text]');
+  const text = root.querySelector('.depth-text');
+  const setText = (visible) => { text.hidden = !visible; show.hidden = visible; show.setAttribute('aria-expanded', String(visible)); };
+  const idle = () => { btn.setAttribute('aria-pressed', 'false'); btn.querySelector('span').textContent = 'Listen'; setText(true); };
+  btn.addEventListener('click', () => {
+    if (speechSynthesis.speaking) { speechSynthesis.cancel(); idle(); return; }
+    const u = new SpeechSynthesisUtterance(body.narration);
+    u.rate = 0.95;
+    u.onend = idle;
+    u.onerror = idle;
+    try { speechSynthesis.speak(u); } catch { idle(); return; }
+    btn.setAttribute('aria-pressed', 'true');
+    btn.querySelector('span').textContent = 'Stop';
+    setText(false);
+  });
+  show.addEventListener('click', () => setText(true));
+  window.addEventListener('hashchange', () => speechSynthesis.cancel(), { once: true });
 }

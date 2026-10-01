@@ -32,8 +32,8 @@ editor. Long text is written as an array of paragraphs. Text fields support a ti
 | `examples` | 3–5 example concepts or players |
 | `givesAbove`, `needsBelow` | what flows to the layer above and from the layer below |
 | `concepts` | ordered concept ids |
-| `metaDiagram.nodes` | concepts shown in the Z2 map; optional `x`/`y` layout hints |
-| `walkthrough` | 3–6 steps: `{ title, text, highlight: [conceptIds] }` |
+| `metaDiagram.nodes` | concepts shown in the Z2 concept map; optional `x`/`y` layout hints (0–100) |
+| `walkthrough` | 3–6 steps: `{ title, text, highlight: [conceptIds] }`; edges between highlighted concepts light up too |
 | `newsKeywords` | terms that count a news story toward this layer (drives "News this week" on Z0); `=` prefix = case-sensitive |
 | `researchKeywords` | optional narrower terms for counting arXiv papers (words like "dataset" appear in most abstracts); falls back to `newsKeywords` |
 | `status`, `lastReviewed` | `draft` or `reviewed`; ISO date, shown on the page |
@@ -74,9 +74,31 @@ from company filings), updated by hand each quarter.
 | `sources` | `{ title, url, date, verify }`; shown at D5; `verify: true` = cited from memory, needs checking |
 | `status`, `lastReviewed` | as above |
 
-Each depth holds: `text` (paragraphs), optional `diagram` (spec, see below), `interactive` (component id),
-`narration` (script for text-to-speech at D1), `analogy` + `analogyBreaks` (breaks required from D2 up), and
-`predict` `{ question, options, answer (index), explanation }`. Every concept needs at least one `predict`.
+Each depth holds `text` (paragraphs) plus any of:
+
+| Field | Notes |
+|---|---|
+| `diagram` | a diagram spec (see below) |
+| `analogy`, `analogyBreaks` | breaks required from D2 up |
+| `predict` | `{ question, options, answer (index), explanation }`; every concept needs at least one |
+| `guide` | D1: one line said by the guide character (`model.json` → `guide`) |
+| `narration` | D1 only: script read aloud by the browser's built-in speech engine ("Listen"); the button is hidden where speech isn't supported, and the text hides while it plays with a one-tap "Show the text" |
+| `interactive`, `interactiveConfig` | an explorable id from `site/next/explorables/index.js` and the data it needs; loaded only when the page uses it |
+| `tasks` | "Try this" prompts for the explorable (list of strings) |
+| `code` | pseudo-code, shown as a block (D4) |
+| `tradeoffs` | list of strings (D4) |
+
+**Explorables** live in `site/next/explorables/`. To add one, write a module that exports a mount function and register
+it in `index.js`; the validator rejects ids that aren't registered. `sampling-play` (D3: temperature and top-k with a
+"Sample 20" tally) and `sampling-workbench` (D4: editable scores, each step of the softmax shown, top-p) share one
+module. Example numbers in `interactiveConfig` must be labelled illustrative (`note`).
+
+## Concept map (Z2)
+
+Generated from `relationships.json`: the layer's concepts are nodes, each relationship is an arrow in its type's style
+with its `label` on a pill, and concepts from other layers that connect in appear as dashed "ghost" nodes along the
+top (layers above) or bottom (layers below), placed near what they connect to. Hover, focus or tap a concept to light
+up its connections; the walkthrough steps through `walkthrough`. A text list of every connection sits below the map.
 
 ## Relationship
 
@@ -100,8 +122,9 @@ Every step is deep-linkable: `#/stack?flow=request&step=4`.
 ## Diagrams
 
 Diagrams are generated from specs so they stay consistent and update with the data:
-`flow` (optionally `numbered`, with a `loop`), `stack`, `hub`, `bars`, `compare`, `sequence`. Every diagram gets an
-automatic text alternative for screen readers.
+`flow` (optionally `numbered`, with a `loop`), `stack`, `hub`, `bars`, `compare`, `sequence`, and `guess` (a prompt
+with candidate next words sized by how likely they are; D1). Every diagram gets an automatic text alternative for
+screen readers. The validator rejects types that `site/next/diagrams.js` doesn't render.
 
 ## Accuracy rules
 
@@ -113,7 +136,7 @@ automatic text alternative for screen readers.
 ## Checks
 
 ```bash
-python3 scripts/validate_content.py            # schema, references, depth rules, icons, WCAG AA colour contrast
+python3 scripts/validate_content.py            # schema, references, depth rules, icons, explorable and diagram ids, WCAG AA contrast
 python3 scripts/validate_content.py --report   # placeholders to fill, sources to verify, drafts to review
 ```
 

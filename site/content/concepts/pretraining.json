@@ -1,0 +1,88 @@
+{
+  "id": "pretraining",
+  "layer": "foundation-models",
+  "name": "Pretraining",
+  "summary": "Training a model from scratch on huge amounts of text by asking it, over and over, to predict the next token and correcting its mistakes.",
+  "prerequisites": [
+    "tokenization",
+    "transformer-attention"
+  ],
+  "status": "draft",
+  "lastReviewed": "2026-10-01",
+  "depths": {
+    "D1": {
+      "text": [
+        "Imagine reading millions of books where the next word is always covered. You guess, peek, and learn a tiny bit from every wrong guess.",
+        "Do that trillions of times and you become very good at guessing. That's pretraining."
+      ],
+      "analogy": "Guess the covered word, then peek."
+    },
+    "D2": {
+      "text": [
+        "The training objective is simple: for each position in a batch of text, predict the next token. The difference between the prediction and the real token is the **loss**.",
+        "**Gradient descent** nudges every weight slightly to reduce that loss, batch after batch, on large GPU clusters.",
+        "Loss tends to fall predictably as models, data and compute grow together (**scaling laws**). The result is a **base model** that continues text but doesn't yet follow instructions."
+      ],
+      "diagram": {
+        "type": "flow",
+        "numbered": true,
+        "caption": "The pretraining loop",
+        "steps": [
+          {
+            "label": "Batch",
+            "sub": "of real text"
+          },
+          {
+            "label": "Predict",
+            "sub": "next tokens"
+          },
+          {
+            "label": "Compare",
+            "sub": "loss vs real"
+          },
+          {
+            "label": "Adjust",
+            "sub": "all weights slightly"
+          }
+        ],
+        "loop": {
+          "from": 3,
+          "to": 0,
+          "label": "repeat for trillions of tokens"
+        }
+      },
+      "analogy": "Guess the covered word, then peek.",
+      "analogyBreaks": "A reader understands the story while guessing. The model only adjusts numbers to make the right token more likely; abilities like arithmetic or translation emerge unevenly from that single objective.",
+      "predict": {
+        "question": "You type a question into a freshly pretrained base model. What does it usually do?",
+        "options": [
+          "Answers it helpfully",
+          "Continues the text, perhaps with more questions or an unrelated paragraph",
+          "Refuses",
+          "Does nothing"
+        ],
+        "answer": 1,
+        "explanation": "A base model has only learned to continue text; following instructions comes from post-training."
+      }
+    },
+    "D5": {
+      "text": [
+        "Open questions: how much more high-quality data exists, the balance between model size and training tokens (compute-optimal scaling), whether some abilities emerge suddenly or only look sudden, and how much synthetic data can substitute for human text."
+      ]
+    }
+  },
+  "sources": [
+    {
+      "title": "Scaling Laws for Neural Language Models",
+      "url": "https://arxiv.org/abs/2001.08361",
+      "date": "2020",
+      "verify": true
+    },
+    {
+      "title": "Training Compute-Optimal Large Language Models (Chinchilla)",
+      "url": "https://arxiv.org/abs/2203.15556",
+      "date": "2022",
+      "verify": true
+    }
+  ]
+}

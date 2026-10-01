@@ -1,0 +1,75 @@
+{
+  "id": "open-weights",
+  "layer": "foundation-models",
+  "name": "Open vs closed weights",
+  "summary": "Some models' weights can be downloaded and run anywhere; others can only be reached through the provider's service.",
+  "prerequisites": [
+    "post-training"
+  ],
+  "status": "draft",
+  "lastReviewed": "2026-10-01",
+  "depths": {
+    "D1": {
+      "text": [
+        "Some cake recipes are secret: you can only buy the cake at the shop. Others are published so anyone can bake the cake at home.",
+        "Closed AI models are like the shop cake. Open-weight models are like the published recipe."
+      ],
+      "analogy": "A secret recipe versus a published one."
+    },
+    "D2": {
+      "text": [
+        "**Closed models** are used through an API or app. The provider controls updates, safety measures and how data is handled.",
+        "**Open-weight models** publish the trained weights. Anyone can download them, run them locally, fine-tune them or inspect them, under the terms of their licence, which ranges from permissive to restrictive.",
+        "Open weights aren't the same as open source: the training data and full training code are often not released."
+      ],
+      "diagram": {
+        "type": "compare",
+        "caption": "Two ways models are released",
+        "columns": [
+          {
+            "title": "Closed (API)",
+            "points": [
+              "Use through a provider's service",
+              "Provider controls updates and safeguards",
+              "Nothing to host yourself"
+            ]
+          },
+          {
+            "title": "Open weights",
+            "points": [
+              "Download and run anywhere",
+              "Fine-tune, inspect, run offline",
+              "You're responsible for hosting and safeguards"
+            ]
+          }
+        ]
+      },
+      "analogy": "A secret recipe versus a published one.",
+      "analogyBreaks": "A published recipe lists every ingredient. Most open-weight models publish the finished weights but not the data or full process, so you can bake the cake but not recreate how the recipe was developed.",
+      "predict": {
+        "question": "Which kind of model can you run on your own computer with no internet connection?",
+        "options": [
+          "A closed model reached through an API",
+          "An open-weight model you've downloaded",
+          "Neither",
+          "Both, always"
+        ],
+        "answer": 1,
+        "explanation": "Once downloaded, open weights run on your hardware; closed models live on the provider's servers."
+      }
+    },
+    "D5": {
+      "text": [
+        "Debates: whether releasing powerful weights is safe given that safeguards can be removed, what should count as 'open source AI', and how quickly open models track the closed frontier."
+      ]
+    }
+  },
+  "sources": [
+    {
+      "title": "The Open Source AI Definition 1.0 (Open Source Initiative)",
+      "url": "https://opensource.org/ai/open-source-ai-definition",
+      "date": "2024",
+      "verify": true
+    }
+  ]
+}

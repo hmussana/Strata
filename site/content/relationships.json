@@ -25,34 +25,10 @@
       "label": "limited by"
     },
     {
-      "from": "gpu-clusters",
-      "to": "next-token-prediction",
-      "type": "enables",
-      "label": "trains"
-    },
-    {
-      "from": "pretraining-data",
-      "to": "next-token-prediction",
-      "type": "feeds",
-      "label": "teaches"
-    },
-    {
       "from": "synthetic-data",
       "to": "post-training",
       "type": "feeds",
       "label": "supplies examples"
-    },
-    {
-      "from": "post-training",
-      "to": "next-token-prediction",
-      "type": "depends-on",
-      "label": "starts from"
-    },
-    {
-      "from": "quantization",
-      "to": "next-token-prediction",
-      "type": "optimizes",
-      "label": "shrinks the model"
     },
     {
       "from": "batching-caching",
@@ -89,6 +65,60 @@
       "to": "copilots",
       "type": "enables",
       "label": "powers"
+    },
+    {
+      "from": "tokenization",
+      "to": "transformer-attention",
+      "type": "feeds",
+      "label": "supplies token vectors to"
+    },
+    {
+      "from": "transformer-attention",
+      "to": "next-token-prediction",
+      "type": "enables",
+      "label": "computes"
+    },
+    {
+      "from": "pretraining",
+      "to": "transformer-attention",
+      "type": "enables",
+      "label": "sets the weights of"
+    },
+    {
+      "from": "pretraining",
+      "to": "next-token-prediction",
+      "type": "depends-on",
+      "label": "uses as its objective"
+    },
+    {
+      "from": "post-training",
+      "to": "pretraining",
+      "type": "depends-on",
+      "label": "starts from"
+    },
+    {
+      "from": "post-training",
+      "to": "open-weights",
+      "type": "feeds",
+      "label": "produces the models released as"
+    },
+    {
+      "from": "pretraining-data",
+      "to": "pretraining",
+      "type": "feeds",
+      "label": "is the input to"
+    },
+    {
+      "from": "gpu-clusters",
+      "to": "pretraining",
+      "type": "enables",
+      "label": "runs"
+    },
+    {
+      "from": "quantization",
+      "to": "open-weights",
+      "type": "optimizes",
+      "label": "shrinks for local use"
     }
   ]
 }
