@@ -1,5 +1,5 @@
 {
- "generated": "2026-10-01T07:05:22Z",
+ "generated": "2026-10-01T10:05:39Z",
  "retentionDays": 45,
  "llmEnriched": 0,
  "sources": [
@@ -10,7 +10,7 @@
    "ok": true,
    "count": 15,
    "error": null,
-   "lastOk": "2026-10-01T07:05:22Z"
+   "lastOk": "2026-10-01T10:05:39Z"
   },
   {
    "id": "deepmind",
@@ -19,7 +19,7 @@
    "ok": true,
    "count": 10,
    "error": null,
-   "lastOk": "2026-10-01T07:05:22Z"
+   "lastOk": "2026-10-01T10:05:39Z"
   },
   {
    "id": "google-ai",
@@ -28,7 +28,7 @@
    "ok": true,
    "count": 10,
    "error": null,
-   "lastOk": "2026-10-01T07:05:22Z"
+   "lastOk": "2026-10-01T10:05:39Z"
   },
   {
    "id": "hf-blog",
@@ -37,7 +37,7 @@
    "ok": true,
    "count": 15,
    "error": null,
-   "lastOk": "2026-10-01T07:05:22Z"
+   "lastOk": "2026-10-01T10:05:39Z"
   },
   {
    "id": "nvidia-dev",
@@ -46,7 +46,7 @@
    "ok": true,
    "count": 10,
    "error": null,
-   "lastOk": "2026-10-01T07:05:22Z"
+   "lastOk": "2026-10-01T10:05:39Z"
   },
   {
    "id": "msr",
@@ -55,7 +55,7 @@
    "ok": true,
    "count": 10,
    "error": null,
-   "lastOk": "2026-10-01T07:05:22Z"
+   "lastOk": "2026-10-01T10:05:39Z"
   },
   {
    "id": "aws-ml",
@@ -64,7 +64,7 @@
    "ok": true,
    "count": 8,
    "error": null,
-   "lastOk": "2026-10-01T07:05:22Z"
+   "lastOk": "2026-10-01T10:05:39Z"
   },
   {
    "id": "qwen",
@@ -73,16 +73,16 @@
    "ok": true,
    "count": 8,
    "error": null,
-   "lastOk": "2026-10-01T07:05:22Z"
+   "lastOk": "2026-10-01T10:05:39Z"
   },
   {
    "id": "hn",
    "name": "Hacker News (best, AI-filtered)",
    "type": "community",
    "ok": true,
-   "count": 10,
+   "count": 9,
    "error": null,
-   "lastOk": "2026-10-01T07:05:22Z"
+   "lastOk": "2026-10-01T10:05:39Z"
   },
   {
    "id": "localllama",
@@ -91,7 +91,7 @@
    "ok": true,
    "count": 15,
    "error": null,
-   "lastOk": "2026-10-01T07:05:22Z"
+   "lastOk": "2026-10-01T10:05:39Z"
   },
   {
    "id": "simonw",
@@ -100,7 +100,7 @@
    "ok": true,
    "count": 15,
    "error": null,
-   "lastOk": "2026-10-01T07:05:22Z"
+   "lastOk": "2026-10-01T10:05:39Z"
   },
   {
    "id": "hf-papers",
@@ -109,7 +109,7 @@
    "ok": true,
    "count": 15,
    "error": null,
-   "lastOk": "2026-10-01T07:05:22Z"
+   "lastOk": "2026-10-01T10:05:39Z"
   },
   {
    "id": "arxiv-cl",
@@ -118,7 +118,7 @@
    "ok": true,
    "count": 12,
    "error": null,
-   "lastOk": "2026-10-01T07:05:22Z"
+   "lastOk": "2026-10-01T10:05:39Z"
   },
   {
    "id": "latent-space",
@@ -127,7 +127,7 @@
    "ok": true,
    "count": 8,
    "error": null,
-   "lastOk": "2026-10-01T07:05:22Z"
+   "lastOk": "2026-10-01T10:05:39Z"
   },
   {
    "id": "interconnects",
@@ -136,7 +136,7 @@
    "ok": true,
    "count": 8,
    "error": null,
-   "lastOk": "2026-10-01T07:05:22Z"
+   "lastOk": "2026-10-01T10:05:39Z"
   },
   {
    "id": "import-ai",
@@ -145,7 +145,7 @@
    "ok": true,
    "count": 5,
    "error": null,
-   "lastOk": "2026-10-01T07:05:22Z"
+   "lastOk": "2026-10-01T10:05:39Z"
   },
   {
    "id": "verge-ai",
@@ -154,7 +154,7 @@
    "ok": true,
    "count": 10,
    "error": null,
-   "lastOk": "2026-10-01T07:05:22Z"
+   "lastOk": "2026-10-01T10:05:39Z"
   },
   {
    "id": "ars-ai",
@@ -163,7 +163,7 @@
    "ok": true,
    "count": 12,
    "error": null,
-   "lastOk": "2026-10-01T07:05:22Z"
+   "lastOk": "2026-10-01T10:05:39Z"
   },
   {
    "id": "techcrunch-ai",
@@ -172,7 +172,7 @@
    "ok": true,
    "count": 12,
    "error": null,
-   "lastOk": "2026-10-01T07:05:22Z"
+   "lastOk": "2026-10-01T10:05:39Z"
   },
   {
    "id": "mit-tr",
@@ -181,7 +181,7 @@
    "ok": true,
    "count": 8,
    "error": null,
-   "lastOk": "2026-10-01T07:05:22Z"
+   "lastOk": "2026-10-01T10:05:39Z"
   },
   {
    "id": "decoder",
@@ -190,7 +190,7 @@
    "ok": true,
    "count": 10,
    "error": null,
-   "lastOk": "2026-10-01T07:05:22Z"
+   "lastOk": "2026-10-01T10:05:39Z"
   },
   {
    "id": "sth",
@@ -199,7 +199,7 @@
    "ok": true,
    "count": 4,
    "error": null,
-   "lastOk": "2026-10-01T07:05:22Z"
+   "lastOk": "2026-10-01T10:05:39Z"
   },
   {
    "id": "embrace-red",
@@ -208,7 +208,7 @@
    "ok": true,
    "count": 6,
    "error": null,
-   "lastOk": "2026-10-01T07:05:22Z"
+   "lastOk": "2026-10-01T10:05:39Z"
   },
   {
    "id": "rel-ollama",
@@ -217,7 +217,7 @@
    "ok": true,
    "count": 3,
    "error": null,
-   "lastOk": "2026-10-01T07:05:22Z"
+   "lastOk": "2026-10-01T10:05:39Z"
   },
   {
    "id": "rel-vllm",
@@ -226,7 +226,7 @@
    "ok": true,
    "count": 3,
    "error": null,
-   "lastOk": "2026-10-01T07:05:22Z"
+   "lastOk": "2026-10-01T10:05:39Z"
   },
   {
    "id": "rel-opencode",
@@ -235,7 +235,7 @@
    "ok": true,
    "count": 3,
    "error": null,
-   "lastOk": "2026-10-01T07:05:22Z"
+   "lastOk": "2026-10-01T10:05:39Z"
   },
   {
    "id": "rel-claude-code",
@@ -244,11 +244,31 @@
    "ok": true,
    "count": 3,
    "error": null,
-   "lastOk": "2026-10-01T07:05:22Z"
+   "lastOk": "2026-10-01T10:05:39Z"
   }
  ],
  "heat": {
   "concepts": {
+   "deepseek": {
+    "d7": 9,
+    "prev7": 1,
+    "d30": 10
+   },
+   "sandboxing": {
+    "d7": 6,
+    "prev7": 0,
+    "d30": 6
+   },
+   "vllm": {
+    "d7": 8,
+    "prev7": 3,
+    "d30": 11
+   },
+   "claude": {
+    "d7": 44,
+    "prev7": 5,
+    "d30": 51
+   },
    "gemini": {
     "d7": 14,
     "prev7": 1,
@@ -295,9 +315,9 @@
     "d30": 13
    },
    "agent-loop": {
-    "d7": 54,
+    "d7": 55,
     "prev7": 3,
-    "d30": 58
+    "d30": 59
    },
    "world-models": {
     "d7": 16,
@@ -318,11 +338,6 @@
     "d7": 8,
     "prev7": 0,
     "d30": 8
-   },
-   "claude": {
-    "d7": 43,
-    "prev7": 5,
-    "d30": 50
    },
    "open-weights": {
     "d7": 17,
@@ -419,16 +434,6 @@
     "prev7": 0,
     "d30": 5
    },
-   "deepseek": {
-    "d7": 8,
-    "prev7": 1,
-    "d30": 9
-   },
-   "vllm": {
-    "d7": 7,
-    "prev7": 3,
-    "d30": 10
-   },
    "kimi-glm": {
     "d7": 8,
     "prev7": 2,
@@ -445,9 +450,9 @@
     "d30": 8
    },
    "kv-cache": {
-    "d7": 4,
+    "d7": 5,
     "prev7": 1,
-    "d30": 5
+    "d30": 6
    },
    "embeddings": {
     "d7": 1,
@@ -520,14 +525,9 @@
     "d30": 2
    },
    "quantization": {
-    "d7": 2,
+    "d7": 3,
     "prev7": 1,
-    "d30": 3
-   },
-   "sandboxing": {
-    "d7": 5,
-    "prev7": 0,
-    "d30": 5
+    "d30": 4
    },
    "low-bit-formats": {
     "d7": 2,
@@ -535,9 +535,9 @@
     "d30": 3
    },
    "context-engineering": {
-    "d7": 4,
+    "d7": 5,
     "prev7": 1,
-    "d30": 5
+    "d30": 6
    },
    "tpu": {
     "d7": 2,
@@ -607,32 +607,32 @@
   },
   "layers": {
    "models": {
-    "d7": 255,
-    "d30": 322
-   },
-   "inference": {
-    "d7": 49,
-    "d30": 58
-   },
-   "context": {
-    "d7": 13,
-    "d30": 14
+    "d7": 257,
+    "d30": 324
    },
    "security": {
-    "d7": 37,
-    "d30": 50
+    "d7": 38,
+    "d30": 51
+   },
+   "inference": {
+    "d7": 50,
+    "d30": 59
+   },
+   "context": {
+    "d7": 14,
+    "d30": 15
    },
    "agents": {
-    "d7": 102,
-    "d30": 115
+    "d7": 103,
+    "d30": 116
    },
    "compute": {
     "d7": 39,
     "d30": 42
    },
    "weights": {
-    "d7": 9,
-    "d30": 11
+    "d7": 10,
+    "d30": 12
    },
    "tools": {
     "d7": 8,
@@ -657,11 +657,11 @@
     "prev7": 0
    },
    "foundation-models": {
-    "d7": 167,
+    "d7": 170,
     "prev7": 29
    },
    "inference-optimization": {
-    "d7": 50,
+    "d7": 51,
     "prev7": 8
    },
    "orchestration-tooling": {
@@ -669,7 +669,7 @@
     "prev7": 0
    },
    "agents": {
-    "d7": 114,
+    "d7": 115,
     "prev7": 16
    },
    "applications-interfaces": {
@@ -1003,6 +1003,46 @@
   }
  ],
  "items": [
+  {
+   "id": "5d58ba0bb059",
+   "title": "DeepSeek harness 0.2 - Optional Bundle Architecture, Windows Sandbox improvements, Async Question Mode, Desktop release, Web Search without key",
+   "url": "https://www.reddit.com/r/LocalLLaMA/comments/1wutkgt/deepseek_harness_02_optional_bundle_architecture/",
+   "source": "localllama",
+   "sourceName": "r/LocalLLaMA (top today)",
+   "type": "community",
+   "published": "2026-10-01T07:59:36Z",
+   "summary": "Optional Bundle architecture: Schedule (session-local delayed / timed / interval reminders) was removed from the default set and made an explicit Optional Bundle. This cleanly separates “installed” from “enabled” and is the first systematic use of the Profile + Bundle model for official features. • Windows Sandbox…",
+   "firstSeen": "2026-10-01T10:05:39Z",
+   "tags": [
+    "deepseek",
+    "sandboxing"
+   ],
+   "layers": [
+    "models",
+    "security"
+   ],
+   "score": 3.2
+  },
+  {
+   "id": "9d3f0f527ebd",
+   "title": "v0.31.0rc3: [Model Runner V2] Support randomized dummy inputs (#58411)",
+   "url": "https://github.com/vllm-project/vllm/releases/tag/v0.31.0rc3",
+   "source": "rel-vllm",
+   "sourceName": "vLLM releases",
+   "type": "release",
+   "published": "2026-10-01T07:54:39Z",
+   "summary": "Signed-off-by: Robert Shaw robshaw@redhat.com Co-authored-by: Robert Shaw robshaw@redhat.com Co-authored-by: Claude Opus 5.5 noreply@anthropic.com Co-authored-by: mergify[bot] <37929162+mergify[bot]@users.noreply.github.com> Co-authored-by: Nick Hill nickhill123@gmail.com (cherry picked from commit e5e38ba)",
+   "firstSeen": "2026-10-01T10:05:39Z",
+   "tags": [
+    "vllm",
+    "claude"
+   ],
+   "layers": [
+    "inference",
+    "models"
+   ],
+   "score": 2.2
+  },
   {
    "id": "d579ab095fb7",
    "title": "[AINews] Gemini 4 Argon: GDM’s answer to Astra/Fable, with 1M output",
@@ -1354,6 +1394,20 @@
    "score": 3.2
   },
   {
+   "id": "6ae605c0aa0b",
+   "title": "Best local model for Blender and game dev?",
+   "url": "https://www.reddit.com/r/LocalLLaMA/comments/1wuk9f1/best_local_model_for_blender_and_game_dev/",
+   "source": "localllama",
+   "sourceName": "r/LocalLLaMA (top today)",
+   "type": "community",
+   "published": "2026-09-30T23:35:41Z",
+   "summary": "I have been looking at some local models, but even the smartest ones like GLM5.3 Flash and DSv4 Flash have a hard time creating coherent models in Blender and placing them logically in game engines. Is this something that local models are just too dumb still to do good job at?",
+   "firstSeen": "2026-10-01T10:05:39Z",
+   "tags": [],
+   "layers": [],
+   "score": 2.0
+  },
+  {
    "id": "68b573f6b556",
    "title": "Two open-weights releases: Victoria (Qwen3.8-Flash-Next with 44% of experts cut, 70% Terminal-Bench 2.1, GGUF included) and Maple (a Canada-first fine-tune)",
    "url": "https://www.reddit.com/r/LocalLLaMA/comments/1wujph3/two_openweights_releases_victoria_qwen38flashnext/",
@@ -1624,7 +1678,7 @@
    "type": "press",
    "published": "2026-09-30T20:11:08Z",
    "summary": "So much for Gemini 3.5 Pro.",
-   "discussion": "34",
+   "discussion": "40",
    "firstSeen": "2026-09-30T20:44:12Z",
    "tags": [
     "gemini"
@@ -1643,7 +1697,7 @@
    "type": "community",
    "published": "2026-09-30T20:04:37Z",
    "summary": "",
-   "points": 1241,
+   "points": 1393,
    "discussion": "https://news.ycombinator.com/item?id=49913571",
    "firstSeen": "2026-09-30T21:39:06Z",
    "tags": [
@@ -1652,7 +1706,7 @@
    "layers": [
     "models"
    ],
-   "score": 5.69
+   "score": 5.74
   },
   {
    "id": "311e095023e6",
@@ -1702,7 +1756,7 @@
    "type": "press",
    "published": "2026-09-30T19:31:25Z",
    "summary": "AI is far from a perfect resource. But it seems to hallucinate less than Kennedy.",
-   "discussion": "88",
+   "discussion": "91",
    "firstSeen": "2026-09-30T20:44:12Z",
    "tags": [],
    "layers": [],
@@ -1828,7 +1882,7 @@
    "type": "press",
    "published": "2026-09-30T18:47:01Z",
    "summary": "Trump gets dozens of AI firms to agree to voluntary safety tests.",
-   "discussion": "42",
+   "discussion": "46",
    "firstSeen": "2026-09-30T20:00:16Z",
    "tags": [],
    "layers": [],
@@ -1861,7 +1915,7 @@
    "type": "press",
    "published": "2026-09-30T18:25:04Z",
    "summary": "OpenAI makes others suffer \"the harms of its unsafe decision-making,\" nonprofit says.",
-   "discussion": "56",
+   "discussion": "57",
    "firstSeen": "2026-09-30T20:00:16Z",
    "tags": [
     "gpt",
@@ -2143,7 +2197,7 @@
    "type": "press",
    "published": "2026-09-30T16:03:48Z",
    "summary": "Many sites see just one-tenth of one percent of their advertising revenue from AI payments.",
-   "discussion": "40",
+   "discussion": "41",
    "firstSeen": "2026-09-30T20:00:16Z",
    "tags": [],
    "layers": [],
@@ -2273,12 +2327,12 @@
    "type": "community",
    "published": "2026-09-30T15:50:11Z",
    "summary": "",
-   "points": 383,
+   "points": 386,
    "discussion": "https://news.ycombinator.com/item?id=49910553",
    "firstSeen": "2026-09-30T20:00:16Z",
    "tags": [],
    "layers": [],
-   "score": 4.58
+   "score": 4.59
   },
   {
    "id": "ceaf2ea83ee9",
@@ -2630,7 +2684,7 @@
    "type": "community",
    "published": "2026-09-30T09:55:23Z",
    "summary": "",
-   "points": 630,
+   "points": 643,
    "discussion": "https://news.ycombinator.com/item?id=49906637",
    "firstSeen": "2026-09-30T20:00:16Z",
    "tags": [
@@ -2639,7 +2693,7 @@
    "layers": [
     "tools"
    ],
-   "score": 5.4
+   "score": 5.41
   },
   {
    "id": "f09ec2f1df9e",
@@ -3373,7 +3427,7 @@
    "type": "research",
    "published": "2026-09-29T20:00:00Z",
    "summary": "Modern multimodal models bring generation and understanding into a single unified system, which enables them to provide and learn from their own feedback. Motivated by this unified capacity, we introduce UniEvo-VL, a self-evolving framework for multimodal models to learn from this constructive self-correction feedback…",
-   "points": 64,
+   "points": 133,
    "firstSeen": "2026-10-01T07:05:22Z",
    "tags": [
     "multimodal",
@@ -3382,7 +3436,7 @@
    "layers": [
     "models"
    ],
-   "score": 5.01
+   "score": 5.33
   },
   {
    "id": "80f7a6d1e1a7",
@@ -3393,11 +3447,11 @@
    "type": "research",
    "published": "2026-09-29T20:00:00Z",
    "summary": "Evolutionary search with large language models (LLMs) can stall when progress requires external knowledge the model lacks. Supplying relevant documents helps, but simply adding web search tool can keep returning the same pages as solutions change. We introduce EvoDuet, a bi-level optimization method that co-evolves…",
-   "points": 54,
+   "points": 60,
    "firstSeen": "2026-10-01T07:05:22Z",
    "tags": [],
    "layers": [],
-   "score": 3.74
+   "score": 3.79
   },
   {
    "id": "85a99ba41489",
@@ -3427,11 +3481,11 @@
    "type": "research",
    "published": "2026-09-29T20:00:00Z",
    "summary": "Terminal agents act through stochastic model generations, yet the ability to generate a useful action does not ensure its reliable execution. A poor command (e.g., wrong package install) can change the environment in ways that hinder subsequent progress, even when the model could generate a better alternative. We…",
-   "points": 29,
+   "points": 58,
    "firstSeen": "2026-10-01T07:05:22Z",
    "tags": [],
    "layers": [],
-   "score": 3.48
+   "score": 3.77
   },
   {
    "id": "ef14ecc53dd8",
@@ -3442,11 +3496,11 @@
    "type": "research",
    "published": "2026-09-29T20:00:00Z",
    "summary": "Direct-decision models turn text into low-latency structured labels and scores, making them attractive for classification and automatic evaluation. Yet reliability requires more than accuracy: a model must also use the ordinal decision scale supplied by the user faithfully. We analyze JEV~1.13 and three open KEV…",
-   "points": 27,
+   "points": 29,
    "firstSeen": "2026-10-01T07:05:22Z",
    "tags": [],
    "layers": [],
-   "score": 3.45
+   "score": 3.48
   },
   {
    "id": "45507557a3ac",
@@ -3457,11 +3511,11 @@
    "type": "research",
    "published": "2026-09-29T20:00:00Z",
    "summary": "Self-evolving search agents build their own training curricula by jointly optimizing a proposer that generates questions and a solver that answers them. This closed loop introduces a failure mode we call co-cheating: the proposer and solver increasingly agree on shared errors, so internal reward improves without a…",
-   "points": 21,
+   "points": 73,
    "firstSeen": "2026-10-01T07:05:22Z",
    "tags": [],
    "layers": [],
-   "score": 3.34
+   "score": 3.87
   },
   {
    "id": "bab64e24f68b",
@@ -3472,7 +3526,7 @@
    "type": "research",
    "published": "2026-09-29T20:00:00Z",
    "summary": "An unsuccessful LLM agent rollout contains more information than its final reward: the observations available to the agent, the actions it chose, and the environment's responses. Reusing this experience for learning requires identifying a decision to revise and testing a concrete alternative. We introduce the Agent…",
-   "points": 17,
+   "points": 19,
    "firstSeen": "2026-10-01T07:05:22Z",
    "tags": [
     "rl-reasoning"
@@ -3480,7 +3534,26 @@
    "layers": [
     "models"
    ],
-   "score": 3.86
+   "score": 3.9
+  },
+  {
+   "id": "cc071d1dcdd1",
+   "title": "RSIGame: Autonomous Agentic Game Development with Recursive Self-improvement",
+   "url": "https://huggingface.co/papers/2609.39045",
+   "source": "hf-papers",
+   "sourceName": "Hugging Face Daily Papers",
+   "type": "research",
+   "published": "2026-09-29T20:00:00Z",
+   "summary": "Recent advances in large language models have made automatic game generation increasingly feasible, yet reliably improving generated games beyond a playable version remains challenging. Naive iterative refinement can easily overfit a small set of test cases, producing fragile games with unresolved bugs, missing…",
+   "points": 20,
+   "firstSeen": "2026-10-01T10:05:39Z",
+   "tags": [
+    "agent-loop"
+   ],
+   "layers": [
+    "agents"
+   ],
+   "score": 3.92
   },
   {
    "id": "e859ba036e35",
@@ -3676,7 +3749,7 @@
    "type": "press",
    "published": "2026-09-29T18:11:09Z",
    "summary": "Without a \"full set of safeguards,\" agent accessed \"system information and source code.\"",
-   "discussion": "97",
+   "discussion": "98",
    "firstSeen": "2026-09-29T22:13:32Z",
    "tags": [
     "gpt"
@@ -3772,7 +3845,7 @@
    "type": "community",
    "published": "2026-09-29T17:31:26Z",
    "summary": "",
-   "points": 246,
+   "points": 247,
    "discussion": "https://news.ycombinator.com/item?id=49897075",
    "firstSeen": "2026-09-30T20:00:16Z",
    "tags": [
@@ -4145,7 +4218,7 @@
    "type": "community",
    "published": "2026-09-29T17:07:57Z",
    "summary": "",
-   "points": 751,
+   "points": 755,
    "discussion": "https://news.ycombinator.com/item?id=49896604",
    "firstSeen": "2026-09-29T22:13:32Z",
    "tags": [],
@@ -4237,7 +4310,7 @@
    "type": "community",
    "published": "2026-09-29T16:30:48Z",
    "summary": "",
-   "points": 562,
+   "points": 564,
    "discussion": "https://news.ycombinator.com/item?id=49896050",
    "firstSeen": "2026-09-29T22:13:32Z",
    "tags": [],
@@ -4721,12 +4794,12 @@
    "type": "community",
    "published": "2026-09-29T11:13:54Z",
    "summary": "",
-   "points": 241,
+   "points": 242,
    "discussion": "https://news.ycombinator.com/item?id=49891290",
    "firstSeen": "2026-09-30T20:00:16Z",
    "tags": [],
    "layers": [],
-   "score": 4.38
+   "score": 4.39
   },
   {
    "id": "93ea3aafd35e",
@@ -5843,7 +5916,7 @@
    "type": "research",
    "published": "2026-09-28T20:00:00Z",
    "summary": "On-policy distillation (OPD) trains a student to match the teacher's next-token distributions on the student's own trajectories and has yielded substantial empirical gains. Generalized variants allow the student to surpass the teacher by extrapolating an implicit reward in output space. The language-model head…",
-   "points": 134,
+   "points": 185,
    "firstSeen": "2026-10-01T07:05:22Z",
    "tags": [
     "distillation"
@@ -5851,7 +5924,7 @@
    "layers": [
     "models"
    ],
-   "score": 4.73
+   "score": 4.87
   },
   {
    "id": "640d806c349b",
@@ -5862,11 +5935,11 @@
    "type": "research",
    "published": "2026-09-28T20:00:00Z",
    "summary": "We present AREX-2, an effort to advance the self-improving capability of LLM agents, which we define as the ability to iteratively refine a solution at test time. This ability rests on two complementary capabilities: reflection, which produces a solution better than the current one, and long-horizon execution, which…",
-   "points": 49,
+   "points": 64,
    "firstSeen": "2026-10-01T07:05:22Z",
    "tags": [],
    "layers": [],
-   "score": 3.7
+   "score": 3.81
   },
   {
    "id": "8c5d63e9d8e8",
@@ -5877,7 +5950,7 @@
    "type": "research",
    "published": "2026-09-28T20:00:00Z",
    "summary": "Agent performance depends on both reasoning ability and the environment in which it acts. We study test-time AI-for-AI, asking how a Builder can learn to construct better execution environments for a Target while both models' weights remain fixed. To make the Builder's experience reusable, we introduce Meta-Skill…",
-   "points": 39,
+   "points": 41,
    "firstSeen": "2026-10-01T07:05:22Z",
    "tags": [
     "agent-harness"
@@ -5885,7 +5958,7 @@
    "layers": [
     "agents"
    ],
-   "score": 4.2
+   "score": 4.22
   },
   {
    "id": "f33304f4b136",
@@ -5896,7 +5969,7 @@
    "type": "research",
    "published": "2026-09-28T20:00:00Z",
    "summary": "Large language models (LLMs) are increasingly deployed as agents for multi-step decision-making, yet transfer poorly to unseen environments. World-model methods address this by training agents to predict future observations, at the cost of additional training and errors that compound when predictions are used for…",
-   "points": 17,
+   "points": 37,
    "firstSeen": "2026-10-01T07:05:22Z",
    "tags": [
     "world-models"
@@ -5904,7 +5977,7 @@
    "layers": [
     "models"
    ],
-   "score": 3.86
+   "score": 4.18
   },
   {
    "id": "12efa2078647",
@@ -5963,6 +6036,28 @@
     "models"
    ],
    "score": 4.31
+  },
+  {
+   "id": "971830b98f29",
+   "title": "WUSH-KV: KV Cache Quantization with Data-Adaptive Transforms",
+   "url": "https://huggingface.co/papers/2609.38121",
+   "source": "hf-papers",
+   "sourceName": "Hugging Face Daily Papers",
+   "type": "research",
+   "published": "2026-09-28T20:00:00Z",
+   "summary": "KV cache memory and bandwidth costs grow with context length and batch size, which limits efficient long-context inference. To address this bottleneck, we introduce WUSH-KV for low-bit KV-cache quantization. It adapts WUSH, which constructs a data-aware transform from the second-order statistics of both factors in a…",
+   "points": 12,
+   "firstSeen": "2026-10-01T10:05:39Z",
+   "tags": [
+    "kv-cache",
+    "quantization",
+    "context-engineering"
+   ],
+   "layers": [
+    "context",
+    "weights"
+   ],
+   "score": 4.91
   },
   {
    "id": "a37b0826d622",
@@ -8902,11 +8997,11 @@
    "type": "research",
    "published": "2026-09-26T20:00:00Z",
    "summary": "Masked diffusion language models (MDMs) admit flexible generation orders, making the unmasking strategy an inference decision. Existing methods vary in how they prioritize positions, control parallelism, restrict selection regions, revise predictions, or plan future denoising, yet it remains unclear when these choices…",
-   "points": 13,
+   "points": 14,
    "firstSeen": "2026-10-01T07:05:22Z",
    "tags": [],
    "layers": [],
-   "score": 3.15
+   "score": 3.18
   },
   {
    "id": "e39b9d3f103b",
