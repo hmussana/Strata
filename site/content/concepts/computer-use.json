@@ -77,7 +77,7 @@
       "title": "Computer use tool (Claude API documentation)",
       "url": "https://platform.claude.com/docs/en/agents-and-tools/tool-use/computer-use-tool",
       "date": "2026",
-      "verify": true
+      "verify": false
     },
     {
       "title": "OSWorld: Benchmarking Multimodal Agents for Open-Ended Tasks in Real Computer Environments",

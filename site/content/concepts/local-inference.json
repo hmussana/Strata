@@ -84,7 +84,7 @@
       "title": "llama.cpp: LLM inference in C/C++",
       "url": "https://github.com/ggml-org/llama.cpp",
       "date": "2023",
-      "verify": true
+      "verify": false
     },
     {
       "title": "Ollama documentation: OpenAI compatibility",
