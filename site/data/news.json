@@ -1,5 +1,5 @@
 {
- "generated": "2026-10-02T14:05:04Z",
+ "generated": "2026-10-02T14:13:07Z",
  "retentionDays": 45,
  "llmEnriched": 0,
  "sources": [
@@ -10,15 +10,15 @@
    "ok": true,
    "count": 15,
    "error": null,
-   "lastOk": "2026-10-02T14:05:04Z"
+   "lastOk": "2026-10-02T14:13:07Z"
   },
   {
    "id": "deepmind",
    "name": "Google DeepMind",
    "type": "lab",
-   "ok": true,
-   "count": 10,
-   "error": null,
+   "ok": false,
+   "count": 0,
+   "error": "ParseError: not well-formed (invalid token): line 1, column 0",
    "lastOk": "2026-10-02T14:05:04Z"
   },
   {
@@ -28,7 +28,7 @@
    "ok": true,
    "count": 10,
    "error": null,
-   "lastOk": "2026-10-02T14:05:04Z"
+   "lastOk": "2026-10-02T14:13:07Z"
   },
   {
    "id": "hf-blog",
@@ -37,7 +37,7 @@
    "ok": true,
    "count": 15,
    "error": null,
-   "lastOk": "2026-10-02T14:05:04Z"
+   "lastOk": "2026-10-02T14:13:07Z"
   },
   {
    "id": "nvidia-dev",
@@ -46,7 +46,7 @@
    "ok": true,
    "count": 10,
    "error": null,
-   "lastOk": "2026-10-02T14:05:04Z"
+   "lastOk": "2026-10-02T14:13:07Z"
   },
   {
    "id": "msr",
@@ -55,7 +55,7 @@
    "ok": true,
    "count": 10,
    "error": null,
-   "lastOk": "2026-10-02T14:05:04Z"
+   "lastOk": "2026-10-02T14:13:07Z"
   },
   {
    "id": "aws-ml",
@@ -64,7 +64,7 @@
    "ok": true,
    "count": 8,
    "error": null,
-   "lastOk": "2026-10-02T14:05:04Z"
+   "lastOk": "2026-10-02T14:13:07Z"
   },
   {
    "id": "qwen",
@@ -73,7 +73,7 @@
    "ok": true,
    "count": 8,
    "error": null,
-   "lastOk": "2026-10-02T14:05:04Z"
+   "lastOk": "2026-10-02T14:13:07Z"
   },
   {
    "id": "hn",
@@ -82,7 +82,7 @@
    "ok": true,
    "count": 6,
    "error": null,
-   "lastOk": "2026-10-02T14:05:04Z"
+   "lastOk": "2026-10-02T14:13:07Z"
   },
   {
    "id": "localllama",
@@ -91,7 +91,7 @@
    "ok": true,
    "count": 15,
    "error": null,
-   "lastOk": "2026-10-02T14:05:04Z"
+   "lastOk": "2026-10-02T14:13:07Z"
   },
   {
    "id": "simonw",
@@ -100,7 +100,7 @@
    "ok": true,
    "count": 15,
    "error": null,
-   "lastOk": "2026-10-02T14:05:04Z"
+   "lastOk": "2026-10-02T14:13:07Z"
   },
   {
    "id": "hf-papers",
@@ -109,7 +109,7 @@
    "ok": true,
    "count": 15,
    "error": null,
-   "lastOk": "2026-10-02T14:05:04Z"
+   "lastOk": "2026-10-02T14:13:07Z"
   },
   {
    "id": "arxiv-cl",
@@ -118,7 +118,7 @@
    "ok": true,
    "count": 12,
    "error": null,
-   "lastOk": "2026-10-02T14:05:04Z"
+   "lastOk": "2026-10-02T14:13:07Z"
   },
   {
    "id": "latent-space",
@@ -127,7 +127,7 @@
    "ok": true,
    "count": 8,
    "error": null,
-   "lastOk": "2026-10-02T14:05:04Z"
+   "lastOk": "2026-10-02T14:13:07Z"
   },
   {
    "id": "interconnects",
@@ -136,7 +136,7 @@
    "ok": true,
    "count": 8,
    "error": null,
-   "lastOk": "2026-10-02T14:05:04Z"
+   "lastOk": "2026-10-02T14:13:07Z"
   },
   {
    "id": "import-ai",
@@ -145,7 +145,7 @@
    "ok": true,
    "count": 5,
    "error": null,
-   "lastOk": "2026-10-02T14:05:04Z"
+   "lastOk": "2026-10-02T14:13:07Z"
   },
   {
    "id": "verge-ai",
@@ -154,7 +154,7 @@
    "ok": true,
    "count": 10,
    "error": null,
-   "lastOk": "2026-10-02T14:05:04Z"
+   "lastOk": "2026-10-02T14:13:07Z"
   },
   {
    "id": "ars-ai",
@@ -163,7 +163,7 @@
    "ok": true,
    "count": 12,
    "error": null,
-   "lastOk": "2026-10-02T14:05:04Z"
+   "lastOk": "2026-10-02T14:13:07Z"
   },
   {
    "id": "techcrunch-ai",
@@ -172,7 +172,7 @@
    "ok": true,
    "count": 12,
    "error": null,
-   "lastOk": "2026-10-02T14:05:04Z"
+   "lastOk": "2026-10-02T14:13:07Z"
   },
   {
    "id": "mit-tr",
@@ -181,7 +181,7 @@
    "ok": true,
    "count": 8,
    "error": null,
-   "lastOk": "2026-10-02T14:05:04Z"
+   "lastOk": "2026-10-02T14:13:07Z"
   },
   {
    "id": "decoder",
@@ -190,7 +190,7 @@
    "ok": true,
    "count": 10,
    "error": null,
-   "lastOk": "2026-10-02T14:05:04Z"
+   "lastOk": "2026-10-02T14:13:07Z"
   },
   {
    "id": "sth",
@@ -199,7 +199,7 @@
    "ok": true,
    "count": 5,
    "error": null,
-   "lastOk": "2026-10-02T14:05:04Z"
+   "lastOk": "2026-10-02T14:13:07Z"
   },
   {
    "id": "embrace-red",
@@ -208,7 +208,7 @@
    "ok": true,
    "count": 6,
    "error": null,
-   "lastOk": "2026-10-02T14:05:04Z"
+   "lastOk": "2026-10-02T14:13:07Z"
   },
   {
    "id": "rel-ollama",
@@ -217,7 +217,7 @@
    "ok": true,
    "count": 3,
    "error": null,
-   "lastOk": "2026-10-02T14:05:04Z"
+   "lastOk": "2026-10-02T14:13:07Z"
   },
   {
    "id": "rel-vllm",
@@ -226,7 +226,7 @@
    "ok": true,
    "count": 3,
    "error": null,
-   "lastOk": "2026-10-02T14:05:04Z"
+   "lastOk": "2026-10-02T14:13:07Z"
   },
   {
    "id": "rel-opencode",
@@ -235,7 +235,7 @@
    "ok": true,
    "count": 3,
    "error": null,
-   "lastOk": "2026-10-02T14:05:04Z"
+   "lastOk": "2026-10-02T14:13:07Z"
   },
   {
    "id": "rel-claude-code",
@@ -244,11 +244,16 @@
    "ok": true,
    "count": 3,
    "error": null,
-   "lastOk": "2026-10-02T14:05:04Z"
+   "lastOk": "2026-10-02T14:13:07Z"
   }
  ],
  "heat": {
   "concepts": {
+   "gemma": {
+    "d7": 20,
+    "prev7": 2,
+    "d30": 22
+   },
    "vllm": {
     "d7": 10,
     "prev7": 3,
@@ -283,11 +288,6 @@
     "d7": 22,
     "prev7": 1,
     "d30": 23
-   },
-   "gemma": {
-    "d7": 19,
-    "prev7": 2,
-    "d30": 21
    },
    "multimodal": {
     "d7": 34,
@@ -405,8 +405,8 @@
     "d30": 7
    },
    "consumer-assistants": {
-    "d7": 7,
-    "prev7": 1,
+    "d7": 6,
+    "prev7": 2,
     "d30": 8
    },
    "codex": {
@@ -621,13 +621,13 @@
    }
   },
   "layers": {
+   "models": {
+    "d7": 314,
+    "d30": 389
+   },
    "inference": {
     "d7": 61,
     "d30": 71
-   },
-   "models": {
-    "d7": 313,
-    "d30": 388
    },
    "security": {
     "d7": 46,
@@ -638,7 +638,7 @@
     "d30": 57
    },
    "agents": {
-    "d7": 118,
+    "d7": 117,
     "d30": 134
    },
    "context": {
@@ -672,7 +672,7 @@
     "prev7": 0
    },
    "foundation-models": {
-    "d7": 215,
+    "d7": 216,
     "prev7": 37
    },
    "inference-optimization": {
@@ -688,8 +688,8 @@
     "prev7": 20
    },
    "applications-interfaces": {
-    "d7": 38,
-    "prev7": 5
+    "d7": 37,
+    "prev7": 6
    }
   }
  },
@@ -952,6 +952,16 @@
    ]
   },
   {
+   "term": "Airbnb",
+   "items": 3,
+   "sources": 3,
+   "sample": [
+    "0d142c0352b5",
+    "73fafdf6f45f",
+    "d81483cb0de8"
+   ]
+  },
+  {
    "term": "Atlas",
    "items": 3,
    "sources": 3,
@@ -1022,20 +1032,27 @@
     "9099ca10e7dd",
     "f24d7bd746a7"
    ]
-  },
-  {
-   "term": "DR",
-   "items": 4,
-   "sources": 2,
-   "sample": [
-    "227c6ab55934",
-    "5221f99da236",
-    "660e3af764e3",
-    "ee42c8345e8b"
-   ]
   }
  ],
  "items": [
+  {
+   "id": "d81483cb0de8",
+   "title": "Inside-Out AI: Rebuilding Airbnb Behind the Scenes and Across the Guest Experience",
+   "url": "https://www.latent.space/p/airbnb",
+   "source": "latent-space",
+   "sourceName": "Latent Space",
+   "type": "press",
+   "published": "2026-10-02T14:04:49Z",
+   "summary": "After leading Meta’s Llama models, Ahmad Al-Dahle is now transforming Airbnb with AI — from how its teams develop products to how it serves guests.",
+   "firstSeen": "2026-10-02T14:13:07Z",
+   "tags": [
+    "gemma"
+   ],
+   "layers": [
+    "models"
+   ],
+   "score": 3.6
+  },
   {
    "id": "55ff3a3e484a",
    "title": "Two 96 GB Ascend cards crun Qwen3.8-flash-next hardware notes, vLLM work, benchmarks, and what is next",
@@ -2075,7 +2092,7 @@
    "type": "press",
    "published": "2026-10-01T18:14:30Z",
    "summary": "We checked out the F5 lab getting over 3x the performance from the same GPU cluster using F5 BIG-IP NEXT for Kubernetes The post Touring the F5 BIG-IP Next for Kubernetes Lab to Make AI Clusters More Efficient appeared first on ServeTheHome.",
-   "discussion": "0",
+   "discussion": "1",
    "firstSeen": "2026-10-02T00:46:08Z",
    "tags": [],
    "layers": [],
@@ -3602,7 +3619,7 @@
    "type": "press",
    "published": "2026-09-30T20:11:08Z",
    "summary": "So much for Gemini 3.5 Pro.",
-   "discussion": "62",
+   "discussion": "63",
    "firstSeen": "2026-09-30T20:44:12Z",
    "tags": [
     "gemini"
@@ -3712,11 +3729,11 @@
    "type": "research",
    "published": "2026-09-30T20:00:00Z",
    "summary": "Streaming video LLMs must retain evidence before its relevance to future tasks is known and respond when sufficient evidence becomes available. The challenge is to form reusable factual memory without compromising real-time perception. We introduce OneStreamer, which jointly learns query-independent evidence recording…",
-   "points": 102,
+   "points": 105,
    "firstSeen": "2026-10-02T09:43:30Z",
    "tags": [],
    "layers": [],
-   "score": 4.01
+   "score": 4.03
   },
   {
    "id": "ca27ecbf3b7a",
@@ -3794,6 +3811,21 @@
     "models"
    ],
    "score": 3.68
+  },
+  {
+   "id": "ca41d921766f",
+   "title": "SILSA: Sliding-Window Slice Latents for Topology-Preserving High-Resolution 3D Generation",
+   "url": "https://huggingface.co/papers/2610.02201",
+   "source": "hf-papers",
+   "sourceName": "Hugging Face Daily Papers",
+   "type": "research",
+   "published": "2026-09-30T20:00:00Z",
+   "summary": "High-resolution 3D generation increasingly relies on voxel latents and multi-stage pipelines that first predict active structure and then synthesize local geometry. While effective, this design fragments continuous surfaces into many local tokens, inflates generation cost, and often weakens topological consistency for…",
+   "points": 8,
+   "firstSeen": "2026-10-02T14:13:07Z",
+   "tags": [],
+   "layers": [],
+   "score": 2.95
   },
   {
    "id": "18a1068dfc39",
