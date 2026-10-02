@@ -31,6 +31,16 @@ function predictCard(p) {
 
 const canSpeak = () => 'speechSynthesis' in window && 'SpeechSynthesisUtterance' in window;
 
+// What Listen reads: the D1 text itself (markup stripped), or `narration` where the spoken words must differ
+function spokenText(body) {
+  const src = body.narration || body.text;
+  return (Array.isArray(src) ? src : [src]).join(' ')
+    .replace(/\[([^\]]+)\]\([^)]*\)/g, '$1').replace(/[*`]/g, '').replace(/\s+/g, ' ').trim();
+}
+
+// One utterance per sentence: Chrome silently stops long utterances after about 15 seconds
+const sentences = (text) => text.match(/[^.!?…]+[.!?…]+["'”’)]*|[^.!?…]+$/g)?.map((x) => x.trim()).filter(Boolean) || [];
+
 function extras(body, l) {
   return `${body.interactive ? `<div class="explorable ${lclass(l)}" data-interactive="${esc(body.interactive)}"><p class="muted small">Loading the interactive…</p></div>` : ''}
     ${body.tasks?.length ? `<section class="tasks"><h3>${icon('target', 'ico-s')}Try this</h3><ol>${body.tasks.map((t) => `<li>${esc(t)}</li>`).join('')}</ol></section>` : ''}
@@ -62,7 +72,7 @@ export function concept(route, c) {
   if (body) {
     content = `<div class="depth-body">
       ${body.guide ? guide(body.guide, c.model.guide?.name) : ''}
-      ${body.narration ? `<div class="narrate" hidden><button type="button" class="btn" data-narrate aria-pressed="false">${icon('speaker', 'ico-s')}<span>Listen</span></button>
+      ${did === 'D1' ? `<div class="narrate" hidden><button type="button" class="btn" data-narrate aria-pressed="false">${icon('speaker', 'ico-s')}<span>Listen</span></button>
         <button type="button" class="btn-ghost" data-show-text hidden aria-expanded="false">Show the text</button></div>` : ''}
       <div class="depth-text">${paras(body.text)}</div>
       ${body.diagram ? renderDiagram(body.diagram, lclass(l)) : ''}
@@ -150,21 +160,33 @@ function mountExtras(root, body) {
     }).catch(() => { xp.innerHTML = '<p class="pending">This interactive could not load.</p>'; });
   }
 
-  // D1 narration: hide the words while listening (modality: hear the story, look at the picture); one tap brings them back
+  // D1 Listen: when there is a picture, hide the words while listening (modality: hear the story, look at the picture),
+  // with one tap to bring them back; without a picture the words stay up so early readers can follow along
   const box = root.querySelector('.narrate');
   if (!box || !canSpeak()) return;
   box.hidden = false;
   const btn = box.querySelector('[data-narrate]'), show = box.querySelector('[data-show-text]');
   const text = root.querySelector('.depth-text');
-  const setText = (visible) => { text.hidden = !visible; show.hidden = visible; show.setAttribute('aria-expanded', String(visible)); };
+  const hideText = Boolean(body.diagram);
+  const setText = (visible) => {
+    if (!hideText) return;
+    text.hidden = !visible; show.hidden = visible; show.setAttribute('aria-expanded', String(visible));
+  };
   const idle = () => { btn.setAttribute('aria-pressed', 'false'); btn.querySelector('span').textContent = 'Listen'; setText(true); };
   btn.addEventListener('click', () => {
-    if (speechSynthesis.speaking) { speechSynthesis.cancel(); idle(); return; }
-    const u = new SpeechSynthesisUtterance(body.narration);
-    u.rate = 0.95;
-    u.onend = idle;
-    u.onerror = idle;
-    try { speechSynthesis.speak(u); } catch { idle(); return; }
+    if (speechSynthesis.speaking || speechSynthesis.pending) { speechSynthesis.cancel(); idle(); return; }
+    const parts = sentences(spokenText(body));
+    if (!parts.length) return;
+    try {
+      parts.forEach((part, i) => {
+        const u = new SpeechSynthesisUtterance(part);
+        u.lang = 'en';
+        u.rate = 0.95;
+        if (i === parts.length - 1) u.onend = idle;
+        u.onerror = (e) => { if (e.error !== 'interrupted' && e.error !== 'canceled') { speechSynthesis.cancel(); idle(); } };
+        speechSynthesis.speak(u);
+      });
+    } catch { idle(); return; }
     btn.setAttribute('aria-pressed', 'true');
     btn.querySelector('span').textContent = 'Stop';
     setText(false);
