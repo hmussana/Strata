@@ -1,5 +1,5 @@
 {
- "generated": "2026-10-02T10:10:31Z",
+ "generated": "2026-10-02T10:18:07Z",
  "retentionDays": 45,
  "llmEnriched": 0,
  "sources": [
@@ -10,7 +10,7 @@
    "ok": true,
    "count": 15,
    "error": null,
-   "lastOk": "2026-10-02T10:10:31Z"
+   "lastOk": "2026-10-02T10:18:07Z"
   },
   {
    "id": "deepmind",
@@ -19,7 +19,7 @@
    "ok": true,
    "count": 10,
    "error": null,
-   "lastOk": "2026-10-02T10:10:31Z"
+   "lastOk": "2026-10-02T10:18:07Z"
   },
   {
    "id": "google-ai",
@@ -28,7 +28,7 @@
    "ok": true,
    "count": 10,
    "error": null,
-   "lastOk": "2026-10-02T10:10:31Z"
+   "lastOk": "2026-10-02T10:18:07Z"
   },
   {
    "id": "hf-blog",
@@ -37,7 +37,7 @@
    "ok": true,
    "count": 15,
    "error": null,
-   "lastOk": "2026-10-02T10:10:31Z"
+   "lastOk": "2026-10-02T10:18:07Z"
   },
   {
    "id": "nvidia-dev",
@@ -46,7 +46,7 @@
    "ok": true,
    "count": 10,
    "error": null,
-   "lastOk": "2026-10-02T10:10:31Z"
+   "lastOk": "2026-10-02T10:18:07Z"
   },
   {
    "id": "msr",
@@ -55,7 +55,7 @@
    "ok": true,
    "count": 10,
    "error": null,
-   "lastOk": "2026-10-02T10:10:31Z"
+   "lastOk": "2026-10-02T10:18:07Z"
   },
   {
    "id": "aws-ml",
@@ -64,7 +64,7 @@
    "ok": true,
    "count": 8,
    "error": null,
-   "lastOk": "2026-10-02T10:10:31Z"
+   "lastOk": "2026-10-02T10:18:07Z"
   },
   {
    "id": "qwen",
@@ -73,7 +73,7 @@
    "ok": true,
    "count": 8,
    "error": null,
-   "lastOk": "2026-10-02T10:10:31Z"
+   "lastOk": "2026-10-02T10:18:07Z"
   },
   {
    "id": "hn",
@@ -82,7 +82,7 @@
    "ok": true,
    "count": 8,
    "error": null,
-   "lastOk": "2026-10-02T10:10:31Z"
+   "lastOk": "2026-10-02T10:18:07Z"
   },
   {
    "id": "localllama",
@@ -91,7 +91,7 @@
    "ok": true,
    "count": 15,
    "error": null,
-   "lastOk": "2026-10-02T10:10:31Z"
+   "lastOk": "2026-10-02T10:18:07Z"
   },
   {
    "id": "simonw",
@@ -100,7 +100,7 @@
    "ok": true,
    "count": 15,
    "error": null,
-   "lastOk": "2026-10-02T10:10:31Z"
+   "lastOk": "2026-10-02T10:18:07Z"
   },
   {
    "id": "hf-papers",
@@ -109,7 +109,7 @@
    "ok": true,
    "count": 15,
    "error": null,
-   "lastOk": "2026-10-02T10:10:31Z"
+   "lastOk": "2026-10-02T10:18:07Z"
   },
   {
    "id": "arxiv-cl",
@@ -118,7 +118,7 @@
    "ok": true,
    "count": 12,
    "error": null,
-   "lastOk": "2026-10-02T10:10:31Z"
+   "lastOk": "2026-10-02T10:18:07Z"
   },
   {
    "id": "latent-space",
@@ -127,7 +127,7 @@
    "ok": true,
    "count": 8,
    "error": null,
-   "lastOk": "2026-10-02T10:10:31Z"
+   "lastOk": "2026-10-02T10:18:07Z"
   },
   {
    "id": "interconnects",
@@ -136,7 +136,7 @@
    "ok": true,
    "count": 8,
    "error": null,
-   "lastOk": "2026-10-02T10:10:31Z"
+   "lastOk": "2026-10-02T10:18:07Z"
   },
   {
    "id": "import-ai",
@@ -145,7 +145,7 @@
    "ok": true,
    "count": 5,
    "error": null,
-   "lastOk": "2026-10-02T10:10:31Z"
+   "lastOk": "2026-10-02T10:18:07Z"
   },
   {
    "id": "verge-ai",
@@ -154,7 +154,7 @@
    "ok": true,
    "count": 10,
    "error": null,
-   "lastOk": "2026-10-02T10:10:31Z"
+   "lastOk": "2026-10-02T10:18:07Z"
   },
   {
    "id": "ars-ai",
@@ -163,7 +163,7 @@
    "ok": true,
    "count": 12,
    "error": null,
-   "lastOk": "2026-10-02T10:10:31Z"
+   "lastOk": "2026-10-02T10:18:07Z"
   },
   {
    "id": "techcrunch-ai",
@@ -172,7 +172,7 @@
    "ok": true,
    "count": 12,
    "error": null,
-   "lastOk": "2026-10-02T10:10:31Z"
+   "lastOk": "2026-10-02T10:18:07Z"
   },
   {
    "id": "mit-tr",
@@ -181,7 +181,7 @@
    "ok": true,
    "count": 8,
    "error": null,
-   "lastOk": "2026-10-02T10:10:31Z"
+   "lastOk": "2026-10-02T10:18:07Z"
   },
   {
    "id": "decoder",
@@ -190,7 +190,7 @@
    "ok": true,
    "count": 10,
    "error": null,
-   "lastOk": "2026-10-02T10:10:31Z"
+   "lastOk": "2026-10-02T10:18:07Z"
   },
   {
    "id": "sth",
@@ -199,7 +199,7 @@
    "ok": true,
    "count": 5,
    "error": null,
-   "lastOk": "2026-10-02T10:10:31Z"
+   "lastOk": "2026-10-02T10:18:07Z"
   },
   {
    "id": "embrace-red",
@@ -208,7 +208,7 @@
    "ok": true,
    "count": 6,
    "error": null,
-   "lastOk": "2026-10-02T10:10:31Z"
+   "lastOk": "2026-10-02T10:18:07Z"
   },
   {
    "id": "rel-ollama",
@@ -217,7 +217,7 @@
    "ok": true,
    "count": 3,
    "error": null,
-   "lastOk": "2026-10-02T10:10:31Z"
+   "lastOk": "2026-10-02T10:18:07Z"
   },
   {
    "id": "rel-vllm",
@@ -226,7 +226,7 @@
    "ok": true,
    "count": 3,
    "error": null,
-   "lastOk": "2026-10-02T10:10:31Z"
+   "lastOk": "2026-10-02T10:18:07Z"
   },
   {
    "id": "rel-opencode",
@@ -235,7 +235,7 @@
    "ok": true,
    "count": 3,
    "error": null,
-   "lastOk": "2026-10-02T10:10:31Z"
+   "lastOk": "2026-10-02T10:18:07Z"
   },
   {
    "id": "rel-claude-code",
@@ -244,7 +244,7 @@
    "ok": true,
    "count": 3,
    "error": null,
-   "lastOk": "2026-10-02T10:10:31Z"
+   "lastOk": "2026-10-02T10:18:07Z"
   }
  ],
  "heat": {
@@ -2181,7 +2181,7 @@
    "type": "press",
    "published": "2026-10-01T16:28:04Z",
    "summary": "Adding in a second neural network that guesses the identity of hidden pieces was key.",
-   "discussion": "44",
+   "discussion": "45",
    "firstSeen": "2026-10-01T18:24:40Z",
    "tags": [],
    "layers": [],
@@ -3502,11 +3502,11 @@
    "type": "research",
    "published": "2026-09-30T20:00:00Z",
    "summary": "Streaming video LLMs must retain evidence before its relevance to future tasks is known and respond when sufficient evidence becomes available. The challenge is to form reusable factual memory without compromising real-time perception. We introduce OneStreamer, which jointly learns query-independent evidence recording…",
-   "points": 17,
+   "points": 20,
    "firstSeen": "2026-10-02T09:43:30Z",
    "tags": [],
    "layers": [],
-   "score": 3.26
+   "score": 3.32
   },
   {
    "id": "ca27ecbf3b7a",
@@ -5551,11 +5551,11 @@
    "type": "research",
    "published": "2026-09-29T20:00:00Z",
    "summary": "A robot that observes people interacting with objects should be able to carry out later requests that refer back to those interactions. Such requests may specify a grasp target by the role it played in a past event rather than by its name or appearance. Moreover, the target may no longer be visible when the robot is…",
-   "points": 18,
+   "points": 19,
    "firstSeen": "2026-10-02T09:43:30Z",
    "tags": [],
    "layers": [],
-   "score": 3.28
+   "score": 3.3
   },
   {
    "id": "20e4802c8dae",
@@ -10380,11 +10380,11 @@
    "type": "research",
    "published": "2026-09-27T20:00:00Z",
    "summary": "Robots that learn from a few demonstrations often require two forms of generalization. Compositional generalization recombines skills to solve new tasks, and skill generalization lets the learned policy behind each skill work in new situations. The two depend on each other, yet information is lost between composition…",
-   "points": 44,
+   "points": 47,
    "firstSeen": "2026-10-02T09:43:30Z",
    "tags": [],
    "layers": [],
-   "score": 3.65
+   "score": 3.68
   },
   {
    "id": "80032e73c06a",
@@ -12418,7 +12418,7 @@
    "type": "research",
    "published": "2026-09-24T20:00:00Z",
    "summary": "Decentralized multi-agent path finding (MAPF) with communication requires agents to reach individual goals without collisions under partial observability. Learnable policies trained on expert data provide an effective approach to this problem. However, when several coordinated joint actions are valid in the same…",
-   "points": 13,
+   "points": 14,
    "firstSeen": "2026-10-02T10:10:31Z",
    "tags": [
     "multi-agent"
@@ -12426,7 +12426,7 @@
    "layers": [
     "agents"
    ],
-   "score": 3.75
+   "score": 3.78
   },
   {
    "id": "ee9698a7fdb9",
