@@ -86,7 +86,7 @@
       "title": "OpenRouter documentation: Quickstart",
       "url": "https://openrouter.ai/docs/quickstart",
       "date": "2024",
-      "verify": true
+      "verify": false
     },
     {
       "title": "vLLM documentation: OpenAI-Compatible Server",

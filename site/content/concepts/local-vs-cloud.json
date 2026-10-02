@@ -75,7 +75,7 @@
       "title": "llama.cpp: LLM inference in C/C++ (GitHub)",
       "url": "https://github.com/ggml-org/llama.cpp",
       "date": "2026",
-      "verify": true
+      "verify": false
     },
     {
       "title": "NVIDIA DGX Spark product page",
