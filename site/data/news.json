@@ -1,5 +1,5 @@
 {
- "generated": "2026-10-02T09:43:30Z",
+ "generated": "2026-10-02T10:10:31Z",
  "retentionDays": 45,
  "llmEnriched": 0,
  "sources": [
@@ -10,7 +10,7 @@
    "ok": true,
    "count": 15,
    "error": null,
-   "lastOk": "2026-10-02T09:43:30Z"
+   "lastOk": "2026-10-02T10:10:31Z"
   },
   {
    "id": "deepmind",
@@ -19,7 +19,7 @@
    "ok": true,
    "count": 10,
    "error": null,
-   "lastOk": "2026-10-02T09:43:30Z"
+   "lastOk": "2026-10-02T10:10:31Z"
   },
   {
    "id": "google-ai",
@@ -28,7 +28,7 @@
    "ok": true,
    "count": 10,
    "error": null,
-   "lastOk": "2026-10-02T09:43:30Z"
+   "lastOk": "2026-10-02T10:10:31Z"
   },
   {
    "id": "hf-blog",
@@ -37,7 +37,7 @@
    "ok": true,
    "count": 15,
    "error": null,
-   "lastOk": "2026-10-02T09:43:30Z"
+   "lastOk": "2026-10-02T10:10:31Z"
   },
   {
    "id": "nvidia-dev",
@@ -46,7 +46,7 @@
    "ok": true,
    "count": 10,
    "error": null,
-   "lastOk": "2026-10-02T09:43:30Z"
+   "lastOk": "2026-10-02T10:10:31Z"
   },
   {
    "id": "msr",
@@ -55,7 +55,7 @@
    "ok": true,
    "count": 10,
    "error": null,
-   "lastOk": "2026-10-02T09:43:30Z"
+   "lastOk": "2026-10-02T10:10:31Z"
   },
   {
    "id": "aws-ml",
@@ -64,7 +64,7 @@
    "ok": true,
    "count": 8,
    "error": null,
-   "lastOk": "2026-10-02T09:43:30Z"
+   "lastOk": "2026-10-02T10:10:31Z"
   },
   {
    "id": "qwen",
@@ -73,7 +73,7 @@
    "ok": true,
    "count": 8,
    "error": null,
-   "lastOk": "2026-10-02T09:43:30Z"
+   "lastOk": "2026-10-02T10:10:31Z"
   },
   {
    "id": "hn",
@@ -82,7 +82,7 @@
    "ok": true,
    "count": 8,
    "error": null,
-   "lastOk": "2026-10-02T09:43:30Z"
+   "lastOk": "2026-10-02T10:10:31Z"
   },
   {
    "id": "localllama",
@@ -91,7 +91,7 @@
    "ok": true,
    "count": 15,
    "error": null,
-   "lastOk": "2026-10-02T09:43:30Z"
+   "lastOk": "2026-10-02T10:10:31Z"
   },
   {
    "id": "simonw",
@@ -100,7 +100,7 @@
    "ok": true,
    "count": 15,
    "error": null,
-   "lastOk": "2026-10-02T09:43:30Z"
+   "lastOk": "2026-10-02T10:10:31Z"
   },
   {
    "id": "hf-papers",
@@ -109,7 +109,7 @@
    "ok": true,
    "count": 15,
    "error": null,
-   "lastOk": "2026-10-02T09:43:30Z"
+   "lastOk": "2026-10-02T10:10:31Z"
   },
   {
    "id": "arxiv-cl",
@@ -118,7 +118,7 @@
    "ok": true,
    "count": 12,
    "error": null,
-   "lastOk": "2026-10-02T09:43:30Z"
+   "lastOk": "2026-10-02T10:10:31Z"
   },
   {
    "id": "latent-space",
@@ -127,7 +127,7 @@
    "ok": true,
    "count": 8,
    "error": null,
-   "lastOk": "2026-10-02T09:43:30Z"
+   "lastOk": "2026-10-02T10:10:31Z"
   },
   {
    "id": "interconnects",
@@ -136,7 +136,7 @@
    "ok": true,
    "count": 8,
    "error": null,
-   "lastOk": "2026-10-02T09:43:30Z"
+   "lastOk": "2026-10-02T10:10:31Z"
   },
   {
    "id": "import-ai",
@@ -145,7 +145,7 @@
    "ok": true,
    "count": 5,
    "error": null,
-   "lastOk": "2026-10-02T09:43:30Z"
+   "lastOk": "2026-10-02T10:10:31Z"
   },
   {
    "id": "verge-ai",
@@ -154,7 +154,7 @@
    "ok": true,
    "count": 10,
    "error": null,
-   "lastOk": "2026-10-02T09:43:30Z"
+   "lastOk": "2026-10-02T10:10:31Z"
   },
   {
    "id": "ars-ai",
@@ -163,7 +163,7 @@
    "ok": true,
    "count": 12,
    "error": null,
-   "lastOk": "2026-10-02T09:43:30Z"
+   "lastOk": "2026-10-02T10:10:31Z"
   },
   {
    "id": "techcrunch-ai",
@@ -172,7 +172,7 @@
    "ok": true,
    "count": 12,
    "error": null,
-   "lastOk": "2026-10-02T09:43:30Z"
+   "lastOk": "2026-10-02T10:10:31Z"
   },
   {
    "id": "mit-tr",
@@ -181,7 +181,7 @@
    "ok": true,
    "count": 8,
    "error": null,
-   "lastOk": "2026-10-02T09:43:30Z"
+   "lastOk": "2026-10-02T10:10:31Z"
   },
   {
    "id": "decoder",
@@ -190,7 +190,7 @@
    "ok": true,
    "count": 10,
    "error": null,
-   "lastOk": "2026-10-02T09:43:30Z"
+   "lastOk": "2026-10-02T10:10:31Z"
   },
   {
    "id": "sth",
@@ -199,7 +199,7 @@
    "ok": true,
    "count": 5,
    "error": null,
-   "lastOk": "2026-10-02T09:43:30Z"
+   "lastOk": "2026-10-02T10:10:31Z"
   },
   {
    "id": "embrace-red",
@@ -208,7 +208,7 @@
    "ok": true,
    "count": 6,
    "error": null,
-   "lastOk": "2026-10-02T09:43:30Z"
+   "lastOk": "2026-10-02T10:10:31Z"
   },
   {
    "id": "rel-ollama",
@@ -217,7 +217,7 @@
    "ok": true,
    "count": 3,
    "error": null,
-   "lastOk": "2026-10-02T09:43:30Z"
+   "lastOk": "2026-10-02T10:10:31Z"
   },
   {
    "id": "rel-vllm",
@@ -226,7 +226,7 @@
    "ok": true,
    "count": 3,
    "error": null,
-   "lastOk": "2026-10-02T09:43:30Z"
+   "lastOk": "2026-10-02T10:10:31Z"
   },
   {
    "id": "rel-opencode",
@@ -235,7 +235,7 @@
    "ok": true,
    "count": 3,
    "error": null,
-   "lastOk": "2026-10-02T09:43:30Z"
+   "lastOk": "2026-10-02T10:10:31Z"
   },
   {
    "id": "rel-claude-code",
@@ -244,15 +244,15 @@
    "ok": true,
    "count": 3,
    "error": null,
-   "lastOk": "2026-10-02T09:43:30Z"
+   "lastOk": "2026-10-02T10:10:31Z"
   }
  ],
  "heat": {
   "concepts": {
    "multimodal": {
-    "d7": 33,
+    "d7": 34,
     "prev7": 12,
-    "d30": 47
+    "d30": 48
    },
    "open-weights": {
     "d7": 24,
@@ -275,9 +275,9 @@
     "d30": 10
    },
    "benchmarks": {
-    "d7": 17,
+    "d7": 18,
     "prev7": 4,
-    "d30": 22
+    "d30": 23
    },
    "ollama": {
     "d7": 9,
@@ -329,6 +329,11 @@
     "prev7": 1,
     "d30": 4
    },
+   "deepseek": {
+    "d7": 12,
+    "prev7": 1,
+    "d30": 13
+   },
    "bandwidth": {
     "d7": 8,
     "prev7": 0,
@@ -343,11 +348,6 @@
     "d7": 10,
     "prev7": 2,
     "d30": 13
-   },
-   "deepseek": {
-    "d7": 11,
-    "prev7": 1,
-    "d30": 12
    },
    "dgx-spark": {
     "d7": 4,
@@ -376,8 +376,8 @@
    },
    "multi-agent": {
     "d7": 8,
-    "prev7": 0,
-    "d30": 8
+    "prev7": 1,
+    "d30": 9
    },
    "strix-halo": {
     "d7": 6,
@@ -622,8 +622,8 @@
   },
   "layers": {
    "models": {
-    "d7": 303,
-    "d30": 378
+    "d7": 305,
+    "d30": 380
    },
    "inference": {
     "d7": 59,
@@ -634,12 +634,12 @@
     "d30": 55
    },
    "security": {
-    "d7": 40,
-    "d30": 54
+    "d7": 41,
+    "d30": 55
    },
    "agents": {
     "d7": 118,
-    "d30": 133
+    "d30": 134
    },
    "context": {
     "d7": 19,
@@ -672,7 +672,7 @@
     "prev7": 0
    },
    "foundation-models": {
-    "d7": 209,
+    "d7": 211,
     "prev7": 37
    },
    "inference-optimization": {
@@ -685,7 +685,7 @@
    },
    "agents": {
     "d7": 135,
-    "prev7": 18
+    "prev7": 19
    },
    "applications-interfaces": {
     "d7": 39,
@@ -1034,6 +1034,20 @@
   }
  ],
  "items": [
+  {
+   "id": "b7dd82503263",
+   "title": "AI music maker Suno now generates spoken words",
+   "url": "https://www.theverge.com/ai-artificial-intelligence/1003925/suno-speech-ai-voice-feature-beta-availability",
+   "source": "verge-ai",
+   "sourceName": "The Verge AI",
+   "type": "press",
+   "published": "2026-10-02T09:42:19Z",
+   "summary": "Suno is branching out from the world of AI music, launching a new feature that generates spoken voices based on scripts or prompted descriptions. Speech is now available in public beta across Suno's web and mobile platforms, and allows you to simultaneously generate voiceovers and background music to accompany them…",
+   "firstSeen": "2026-10-02T10:10:31Z",
+   "tags": [],
+   "layers": [],
+   "score": 1.0
+  },
   {
    "id": "d2b8605d6736",
    "title": "Microsoft AI releases new transcription and text-to-speech models for voice agents",
@@ -1399,6 +1413,26 @@
     "inference"
    ],
    "score": 2.8
+  },
+  {
+   "id": "4c41d0de1f5c",
+   "title": "DeepSeek Harness Desktop for macOS and Windows",
+   "url": "https://www.deepseek.com/en/harness/",
+   "source": "hn",
+   "sourceName": "Hacker News (best, AI-filtered)",
+   "type": "community",
+   "published": "2026-10-02T03:11:20Z",
+   "summary": "",
+   "points": 237,
+   "discussion": "https://news.ycombinator.com/item?id=49929489",
+   "firstSeen": "2026-10-02T10:10:31Z",
+   "tags": [
+    "deepseek"
+   ],
+   "layers": [
+    "models"
+   ],
+   "score": 4.98
   },
   {
    "id": "28419c25af77",
@@ -2162,7 +2196,7 @@
    "type": "community",
    "published": "2026-10-01T16:18:57Z",
    "summary": "",
-   "points": 500,
+   "points": 512,
    "discussion": "https://news.ycombinator.com/item?id=49923692",
    "firstSeen": "2026-10-02T00:46:08Z",
    "tags": [
@@ -2172,7 +2206,7 @@
    "layers": [
     "models"
    ],
-   "score": 5.9
+   "score": 5.91
   },
   {
    "id": "a4d5be1f0220",
@@ -2183,7 +2217,7 @@
    "type": "community",
    "published": "2026-10-01T16:01:56Z",
    "summary": "",
-   "points": 323,
+   "points": 329,
    "discussion": "https://news.ycombinator.com/item?id=49923466",
    "firstSeen": "2026-10-02T00:46:08Z",
    "tags": [
@@ -2192,7 +2226,7 @@
    "layers": [
     "context"
    ],
-   "score": 5.11
+   "score": 5.12
   },
   {
    "id": "a80484c2d584",
@@ -3377,7 +3411,7 @@
    "type": "community",
    "published": "2026-09-30T20:04:37Z",
    "summary": "",
-   "points": 1653,
+   "points": 1654,
    "discussion": "https://news.ycombinator.com/item?id=49913571",
    "firstSeen": "2026-09-30T21:39:06Z",
    "tags": [
@@ -3415,11 +3449,11 @@
    "type": "research",
    "published": "2026-09-30T20:00:00Z",
    "summary": "Large language model (LLM) agents can now undertake increasingly complex tasks, but the way they organize interaction history into memory does not ensure a coherent understanding of the current world. We introduce PoS, an inference-time framework that constructs and continually maintains explicit belief states as the…",
-   "points": 57,
+   "points": 59,
    "firstSeen": "2026-10-02T09:43:30Z",
    "tags": [],
    "layers": [],
-   "score": 3.76
+   "score": 3.78
   },
   {
    "id": "36ee8bdf3ffd",
@@ -3449,7 +3483,7 @@
    "type": "research",
    "published": "2026-09-30T20:00:00Z",
    "summary": "An emerging hypothesis about reinforcement learning (RL) post-training of large language models (LLMs) is that it merely sharpens existing behaviors of a base model, improving single-shot accuracy at the cost of solution coverage. Although this trade-off has been observed in math and coding tasks, it need not extend…",
-   "points": 31,
+   "points": 32,
    "firstSeen": "2026-10-02T09:43:30Z",
    "tags": [
     "rl-reasoning"
@@ -3457,7 +3491,7 @@
    "layers": [
     "models"
    ],
-   "score": 4.11
+   "score": 4.12
   },
   {
    "id": "8f020abdf366",
@@ -3468,11 +3502,11 @@
    "type": "research",
    "published": "2026-09-30T20:00:00Z",
    "summary": "Streaming video LLMs must retain evidence before its relevance to future tasks is known and respond when sufficient evidence becomes available. The challenge is to form reusable factual memory without compromising real-time perception. We introduce OneStreamer, which jointly learns query-independent evidence recording…",
-   "points": 13,
+   "points": 17,
    "firstSeen": "2026-10-02T09:43:30Z",
    "tags": [],
    "layers": [],
-   "score": 3.15
+   "score": 3.26
   },
   {
    "id": "ca27ecbf3b7a",
@@ -3502,7 +3536,7 @@
    "type": "research",
    "published": "2026-09-30T20:00:00Z",
    "summary": "For small merchant businesses (SMBs) whose catalogs fit within a long-context LLM, full-catalog prompting offers a compelling alternative to multi-stage retrieval designed primarily for large marketplaces with millions of items. However, fitting the full catalog into the context window does not ensure that the model…",
-   "points": 9,
+   "points": 10,
    "firstSeen": "2026-10-02T09:43:30Z",
    "tags": [
     "context-engineering"
@@ -3510,7 +3544,7 @@
    "layers": [
     "context"
    ],
-   "score": 3.6
+   "score": 3.64
   },
   {
    "id": "94580c0cfb12",
@@ -5532,7 +5566,7 @@
    "type": "research",
    "published": "2026-09-29T20:00:00Z",
    "summary": "Real-world embodied tasks, from everyday activities to professional procedures, require agents to act under physical constraints while tracking evolving object and task states. Tool use sits at the heart of such tasks, as many everyday and professional activities are tool-mediated. Understanding them requires…",
-   "points": 12,
+   "points": 15,
    "firstSeen": "2026-10-02T09:43:30Z",
    "tags": [
     "tool-calling",
@@ -5542,7 +5576,7 @@
     "models",
     "tools"
    ],
-   "score": 4.31
+   "score": 4.4
   },
   {
    "id": "02e72268e592",
@@ -5562,6 +5596,27 @@
    "layers": [
     "models",
     "weights"
+   ],
+   "score": 4.1
+  },
+  {
+   "id": "baf96cc0f438",
+   "title": "PhysVista: Benchmarking Physical Intelligence in VLMs via a Perception-Reasoning-Assessment Loop",
+   "url": "https://huggingface.co/papers/2610.00559",
+   "source": "hf-papers",
+   "sourceName": "Hugging Face Daily Papers",
+   "type": "research",
+   "published": "2026-09-29T20:00:00Z",
+   "summary": "Vision-Language Models (VLMs) have shown strong multimodal reasoning capabilities, yet whether they truly capture the physical consistency underlying real-world dynamics remains unclear. Existing benchmark paradigms often suffer from fragmented evaluation, focusing on isolated cognitive stages while overlooking the…",
+   "points": 7,
+   "firstSeen": "2026-10-02T10:10:31Z",
+   "tags": [
+    "multimodal",
+    "benchmarks"
+   ],
+   "layers": [
+    "models",
+    "security"
    ],
    "score": 4.1
   },
@@ -8159,7 +8214,7 @@
    "type": "research",
    "published": "2026-09-28T20:00:00Z",
    "summary": "Group Relative Policy Optimization (GRPO) is widely used to train reasoning language models, where it computes advantages by centering and normalizing rewards across rollouts of the same prompt. For multiple rewards, GRPO sums the reward components and normalizes the total reward by its within-group standard…",
-   "points": 8,
+   "points": 10,
    "firstSeen": "2026-10-02T09:43:30Z",
    "tags": [
     "rl-reasoning"
@@ -8167,7 +8222,7 @@
    "layers": [
     "models"
    ],
-   "score": 3.55
+   "score": 3.64
   },
   {
    "id": "a37b0826d622",
@@ -12353,6 +12408,25 @@
    "tags": [],
    "layers": [],
    "score": 4.2
+  },
+  {
+   "id": "364430fa259e",
+   "title": "Decentralized Master-Mind: Joint Action Refinement through Iterative Intent Denoising in Multi-Agent Pathfinding",
+   "url": "https://huggingface.co/papers/2609.32019",
+   "source": "hf-papers",
+   "sourceName": "Hugging Face Daily Papers",
+   "type": "research",
+   "published": "2026-09-24T20:00:00Z",
+   "summary": "Decentralized multi-agent path finding (MAPF) with communication requires agents to reach individual goals without collisions under partial observability. Learnable policies trained on expert data provide an effective approach to this problem. However, when several coordinated joint actions are valid in the same…",
+   "points": 13,
+   "firstSeen": "2026-10-02T10:10:31Z",
+   "tags": [
+    "multi-agent"
+   ],
+   "layers": [
+    "agents"
+   ],
+   "score": 3.75
   },
   {
    "id": "ee9698a7fdb9",
