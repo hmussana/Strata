@@ -5,7 +5,7 @@
   "summary": "How fast data reaches the chip often limits AI speed more than the chip's raw arithmetic.",
   "prerequisites": [],
   "status": "draft",
-  "lastReviewed": "2026-09-28",
+  "lastReviewed": "2026-10-02",
   "depths": {
     "D1": {
       "guide": "Watch the narrow door. Does a faster cook help if ingredients arrive slowly?",
@@ -17,7 +17,7 @@
     },
     "D2": {
       "text": [
-        "Generating each token means reading the model's active weights from memory. If those weights take tens of gigabytes, every new token moves that much data.",
+        "Generating each token means reading the model's active weights from memory. If those weights take tens of gigabytes, every new token moves that much data. On a home machine, whether those weights fit in fast memory at all is the first question (see [local AI hardware](#/concept/local-ai-hardware)).",
         "High-bandwidth memory (HBM) stacks memory chips right next to the processor so data moves far faster than with ordinary memory.",
         "Rule of thumb for a single user: tokens per second is roughly memory bandwidth divided by the bytes of weights read per token."
       ],
@@ -61,6 +61,123 @@
         ],
         "answer": 1,
         "explanation": "If generation is limited by memory reads, moving half as many bytes per token roughly doubles tokens per second; in practice a bit less."
+      }
+    },
+    "D3": {
+      "text": [
+        "To write each new token for one user, the chip has to read every weight of the model from memory once. So the speed limit is simple: **tokens per second ≤ memory bandwidth ÷ bytes read per token**.",
+        "Change the model size, the bytes per weight and the bandwidth. Then turn the compute up and down and watch what happens."
+      ],
+      "interactive": "bandwidth-play",
+      "interactiveConfig": {
+        "note": "Illustrative numbers, not measured. Generic model sizes and a made-up accelerator, not real products. The bound counts weight reads only; real speeds are lower.",
+        "models": [
+          {
+            "label": "1B",
+            "params": 1000000000.0
+          },
+          {
+            "label": "8B",
+            "params": 8000000000.0
+          },
+          {
+            "label": "70B",
+            "params": 70000000000.0
+          }
+        ],
+        "bandwidthSteps": [
+          100,
+          200,
+          400,
+          800,
+          1000,
+          1500,
+          2000,
+          3000,
+          4000,
+          6000,
+          8000
+        ],
+        "computeSteps": [
+          50,
+          100,
+          200,
+          400,
+          800,
+          1600
+        ]
+      },
+      "tasks": [
+        "With the 8B model in 16-bit, double the bandwidth. What happens to the upper bound?",
+        "Now move the compute slider all the way down and back up. Does the answer change?",
+        "Switch to 4-bit weights. Why does the bound go up even though the chip is the same?"
+      ],
+      "predict": {
+        "question": "An 8B model in 16-bit runs on memory with 800 GB/s, giving an upper bound of 50 tokens per second for one user. If you double the compute, what happens to that bound?",
+        "options": [
+          "It doubles to 100",
+          "It stays at 50",
+          "It halves to 25",
+          "It goes up a little"
+        ],
+        "answer": 1,
+        "explanation": "Each token needs 16 GB of weights read from memory, and 800 GB/s can only deliver that 50 times a second. The compute was already waiting on memory, so more of it does not help."
+      }
+    },
+    "D4": {
+      "text": [
+        "A **roofline chart** asks one question: how much work does the chip do for each byte it reads? That ratio is the **arithmetic intensity**, in FLOPs per byte.",
+        "Below the **ridge point** (peak compute ÷ bandwidth) the chip is memory-bound and speed follows the bandwidth slope. Above it, the chip is compute-bound and speed hits the flat compute roof.",
+        "Generating for one user does about 2 FLOPs per weight but reads the whole weight, so intensity is tiny. Serving many users in a batch reuses each weight read for every user, which moves the point right."
+      ],
+      "interactive": "bandwidth-workbench",
+      "interactiveConfig": {
+        "note": "Illustrative numbers, not measured. Generic model sizes and a made-up accelerator, not real products. Counts weight reads only (no KV cache), so these are upper bounds from the formula.",
+        "models": [
+          {
+            "label": "8B",
+            "params": 8000000000.0
+          },
+          {
+            "label": "70B",
+            "params": 70000000000.0
+          }
+        ],
+        "bandwidthSteps": [
+          1,
+          2,
+          4,
+          8
+        ],
+        "computeSteps": [
+          250,
+          500,
+          1000,
+          2000
+        ]
+      },
+      "tasks": [
+        "Start at batch 1 and move the batch slider up. At which batch size does the dot reach the roof?",
+        "Switch from 16-bit to 8-bit weights. Why does the ridge now arrive at half the batch size?",
+        "Double the compute. Which batch sizes get faster, and which do not change at all?"
+      ],
+      "code": "flops_per_step = 2 * params * batch          # multiply and add for every weight, per user\nbytes_per_step = params * bytes_per_weight    # weights read once and shared by the batch\nintensity = flops_per_step / bytes_per_step   # = 2 * batch / bytes_per_weight\nridge = peak_flops / bandwidth\nspeed = min(peak_flops, bandwidth * intensity)\ntotal_tokens_per_s = speed / (2 * params)\nper_user_tokens_per_s = total_tokens_per_s / batch",
+      "tradeoffs": [
+        "Bigger batches use the chip better but each user waits for the whole batch's step.",
+        "Lower-precision weights raise intensity and speed, at some cost in accuracy.",
+        "The KV cache adds memory reads that grow with context, so real serving reaches the roof later than this chart shows.",
+        "Faster memory helps memory-bound work; more compute only helps work that is already past the ridge."
+      ],
+      "predict": {
+        "question": "With 16-bit weights, compute of 1,000 TFLOPS and bandwidth of 2 TB/s, the ridge is at 500 FLOPs per byte. About what batch size makes generation compute-bound?",
+        "options": [
+          "1",
+          "32",
+          "About 128",
+          "About 500"
+        ],
+        "answer": 3,
+        "explanation": "Intensity is 2 × batch ÷ 2 bytes, which equals the batch size. It reaches the ridge of 500 at a batch of about 500."
       }
     },
     "D5": {

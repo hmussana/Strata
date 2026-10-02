@@ -1,0 +1,108 @@
+{
+  "id": "embedded-ai",
+  "layer": "applications-interfaces",
+  "name": "AI features inside products",
+  "summary": "AI built into ordinary apps as buttons and features, where the app's own server calls a model API behind the scenes.",
+  "prerequisites": [
+    "rag"
+  ],
+  "status": "draft",
+  "lastReviewed": "2026-10-02",
+  "depths": {
+    "D1": {
+      "guide": "Look at the diagram: which part holds the secret key to the model?",
+      "text": [
+        "Lots of apps now have an AI button: summarise this, tidy my writing, find similar photos.",
+        "There may be no chat box at all. When you press the button, the app quietly asks a model and shows you the answer."
+      ],
+      "analogy": "A café that buys its bread from a bakery: you only see the plate."
+    },
+    "D2": {
+      "text": [
+        "The usual pattern: the app's server builds a prompt from a template plus your data (often found with retrieval), calls a model over an HTTP API, and gets text or structured JSON back to show in the interface.",
+        "The API key stays on the server, never in the web page or phone app. Many products route calls through a gateway that can switch models and providers, using a small, cheap model for simple jobs and a larger one for hard ones.",
+        "Model output is treated as untrusted input: it is checked before it is shown, stored or used to trigger actions, and usage is logged and limited to control cost."
+      ],
+      "diagram": {
+        "type": "sequence",
+        "caption": "What happens when you press \"Summarise\"",
+        "actors": [
+          "Person",
+          "App",
+          "App server",
+          "Model API"
+        ],
+        "messages": [
+          {
+            "from": 0,
+            "to": 1,
+            "label": "taps Summarise"
+          },
+          {
+            "from": 1,
+            "to": 2,
+            "label": "document id"
+          },
+          {
+            "from": 2,
+            "to": 3,
+            "label": "prompt + document"
+          },
+          {
+            "from": 3,
+            "to": 2,
+            "label": "summary as JSON"
+          },
+          {
+            "from": 2,
+            "to": 1,
+            "label": "checked result"
+          },
+          {
+            "from": 1,
+            "to": 0,
+            "label": "shows summary"
+          }
+        ]
+      },
+      "analogy": "A café that buys its bread from a bakery.",
+      "analogyBreaks": "A bakery makes the same loaf every day. A model can return a different or wrong answer, or one steered by text hidden in your document, so the app must check what comes back.",
+      "predict": {
+        "question": "A developer puts the model API key inside their phone app so it can call the model directly. What is the main risk?",
+        "options": [
+          "The app gets slower",
+          "Anyone can extract the key and run up bills or abuse it",
+          "The model gives shorter answers",
+          "None: keys are safe inside apps"
+        ],
+        "answer": 1,
+        "explanation": "Anything shipped to a device can be read. Keep keys on a server you control and give the app only limited access."
+      }
+    },
+    "D5": {
+      "text": [
+        "Open problems: features that demo well but are rarely used, prompt injection through user content that flows into prompts (OWASP lists it first among LLM app risks), checking output quality at scale, and costs that rise with every use."
+      ]
+    }
+  },
+  "sources": [
+    {
+      "title": "Building effective agents (Anthropic)",
+      "url": "https://www.anthropic.com/research/building-effective-agents",
+      "date": "2024-12-19",
+      "verify": false
+    },
+    {
+      "title": "OWASP Top 10 for LLM Applications 2025",
+      "url": "https://genai.owasp.org/llm-top-10/",
+      "date": "2025",
+      "verify": false
+    },
+    {
+      "title": "Messages API request and response examples (Anthropic documentation)",
+      "url": "https://docs.anthropic.com/claude/reference/messages-examples",
+      "date": "2026",
+      "verify": true
+    }
+  ]
+}

@@ -1,0 +1,93 @@
+{
+  "id": "training-vs-inference",
+  "layer": "cloud-infrastructure",
+  "name": "Training vs inference infrastructure",
+  "summary": "Training needs one giant, tightly linked cluster for weeks; serving answers needs many smaller copies close to users, sized for speed and cost per request.",
+  "prerequisites": [
+    "gpu-clusters"
+  ],
+  "status": "draft",
+  "lastReviewed": "2026-10-02",
+  "depths": {
+    "D1": {
+      "guide": "Look at the two columns: which one needs every chip talking at once?",
+      "text": [
+        "Teaching an AI is like building a giant ship: thousands of workers on one huge job for weeks.",
+        "Using the AI is more like running a chain of cafés. Lots of small shops serve people quickly, all day, near where they live."
+      ],
+      "analogy": "Building one ship versus running a chain of cafés."
+    },
+    "D2": {
+      "text": [
+        "**Training** runs one job across thousands of accelerators in one place. They must swap results every step, so the fast network between them matters as much as the chips. Jobs last weeks and the goal is high utilisation.",
+        "**Inference** serves many separate requests. Each copy of the model needs only enough chips to hold its weights and working memory, and copies can sit in different regions. The goals are low latency and low cost per token, and demand rises and falls through the day.",
+        "Inference itself has two phases: reading the prompt (prefill) is compute-heavy, while writing the answer token by token (decode) is limited by memory bandwidth. Some systems now run the two on different machines."
+      ],
+      "diagram": {
+        "type": "compare",
+        "caption": "Two shapes of cluster",
+        "columns": [
+          {
+            "title": "Training",
+            "points": [
+              "One huge job",
+              "Thousands of chips, one site",
+              "Network is critical",
+              "Runs for weeks",
+              "Measured by utilisation"
+            ]
+          },
+          {
+            "title": "Inference",
+            "points": [
+              "Many small requests",
+              "A few chips per model copy",
+              "Spread across regions",
+              "Demand goes up and down",
+              "Measured by latency and cost per token"
+            ]
+          }
+        ]
+      },
+      "analogy": "Building one ship versus running a chain of cafés.",
+      "analogyBreaks": "Cafés and shipyards need different buildings. GPU clusters are more flexible: the same machines can switch between training and serving, and growing amounts of compute now go into inference, for example when models reason for longer before answering.",
+      "predict": {
+        "question": "Which job suffers most if the network between machines is slow?",
+        "options": [
+          "Answering one short chat message on a single machine",
+          "Training a large model across thousands of GPUs",
+          "Storing model files",
+          "Showing a web page"
+        ],
+        "answer": 1,
+        "explanation": "Training synchronises thousands of chips every step, so a slow network makes all of them wait. A single-machine inference request barely uses the cluster network."
+      }
+    },
+    "D5": {
+      "text": [
+        "The line is blurring. Reinforcement learning in post-training mixes the two, generating lots of answers (inference) inside a training loop.",
+        "Reasoning models and agents shift spending towards inference, and it is an open question how to share one fleet between both kinds of work without either waiting."
+      ]
+    }
+  },
+  "sources": [
+    {
+      "title": "Splitwise: Efficient generative LLM inference using phase splitting",
+      "url": "https://arxiv.org/abs/2311.18677",
+      "date": "2023",
+      "verify": true
+    },
+    {
+      "title": "Efficient Memory Management for Large Language Model Serving with PagedAttention",
+      "url": "https://arxiv.org/abs/2309.06180",
+      "date": "2023",
+      "verify": false
+    },
+    {
+      "title": "Megatron-LM: Training Multi-Billion Parameter Language Models Using Model Parallelism",
+      "url": "https://arxiv.org/abs/1909.08053",
+      "date": "2019",
+      "verify": false
+    }
+  ]
+}

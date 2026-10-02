@@ -1,0 +1,91 @@
+{
+  "id": "local-ai-hardware",
+  "layer": "compute-hardware",
+  "name": "Local AI hardware",
+  "summary": "Running models on your own machine: consumer graphics cards, multi-GPU home rigs, or desktop machines with large unified memory. Memory size decides what fits; memory speed decides how fast it runs.",
+  "prerequisites": [
+    "gpu-accelerators",
+    "memory-bandwidth",
+    "number-formats"
+  ],
+  "status": "draft",
+  "lastReviewed": "2026-10-02",
+  "depths": {
+    "D1": {
+      "guide": "Guess first: what stops a home computer running a huge model, speed or space?",
+      "text": [
+        "You can run some AI models on a computer at home instead of in a giant data centre.",
+        "The main question is whether the model fits in the computer's fast memory. If it fits, it runs. If not, it crawls or won't start."
+      ],
+      "analogy": "Whether a sofa fits through your front door, before you worry how fast you can carry it."
+    },
+    "D2": {
+      "text": [
+        "Weight memory is roughly parameters × bits ÷ 8, plus extra room for the context (the KV cache). A 70-billion-parameter model at 4 bits needs about 35 GB for weights alone.",
+        "Home setups take three common shapes. **A consumer graphics card** has very fast memory, but not much of it. **Several cards** in one machine pool their memory, usually splitting the model by layers over PCIe. **Unified-memory machines** let the processor and graphics share one large pool, so bigger models fit, but that memory is usually slower than a graphics card's.",
+        "Once a model fits, single-user speed follows memory bandwidth. If it doesn't fit, tools can spill layers into ordinary system memory, which works but is much slower."
+      ],
+      "diagram": {
+        "type": "compare",
+        "caption": "Two ways to get enough memory at home",
+        "columns": [
+          {
+            "title": "Graphics card(s)",
+            "points": [
+              "Fast dedicated memory (VRAM)",
+              "Limited size per card",
+              "Add cards to pool more memory"
+            ]
+          },
+          {
+            "title": "Unified-memory machine",
+            "points": [
+              "One large shared memory pool",
+              "Bigger models fit in one box",
+              "Usually slower memory, so fewer tokens per second"
+            ]
+          }
+        ]
+      },
+      "analogy": "A sofa and a front door: first it has to fit, then you care how fast you can move it.",
+      "analogyBreaks": "A sofa either fits or it doesn't. A model can be shrunk with quantization or partly kept in slower system memory, so 'fits' is a sliding trade between size, speed and quality.",
+      "predict": {
+        "question": "A 70-billion-parameter model at 4 bits needs about 35 GB for weights. You have one card with 24 GB of VRAM. What happens?",
+        "options": [
+          "It runs at full speed",
+          "It doesn't fit entirely, so you need a second card, a smaller quantization, or a much slower spill into system memory",
+          "The card compresses it automatically with no loss",
+          "It runs faster because the model is larger"
+        ],
+        "answer": 1,
+        "explanation": "35 GB of weights (plus the KV cache) cannot sit in 24 GB of VRAM. The usual fixes are pooling two cards, dropping to fewer bits, or offloading some layers to system memory at a big speed cost. The numbers are illustrative."
+      }
+    },
+    "D5": {
+      "text": [
+        "Rules of thumb break at the edges. Mixture-of-experts models read only part of their weights per token, so they can run fast from slower but larger memory as long as all the weights fit.",
+        "Long contexts add a KV cache that can rival the weights in size, and prompt processing is limited by arithmetic rather than bandwidth, so a machine that generates quickly may still be slow to read a long document. Driver, software and format support often matter as much as the hardware itself."
+      ]
+    }
+  },
+  "sources": [
+    {
+      "title": "llama.cpp: LLM inference in C/C++ (GitHub)",
+      "url": "https://github.com/ggml-org/llama.cpp",
+      "date": "2026",
+      "verify": false
+    },
+    {
+      "title": "MLX: an array framework for Apple silicon (GitHub)",
+      "url": "https://github.com/ml-explore/mlx",
+      "date": "2026",
+      "verify": false
+    },
+    {
+      "title": "NVIDIA DGX Spark product page",
+      "url": "https://www.nvidia.com/en-us/products/workstations/dgx-spark/",
+      "date": "2026",
+      "verify": false
+    }
+  ]
+}

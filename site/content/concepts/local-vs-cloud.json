@@ -1,0 +1,87 @@
+{
+  "id": "local-vs-cloud",
+  "layer": "cloud-infrastructure",
+  "name": "Running locally vs in the cloud",
+  "summary": "Open-weight models can run on your own hardware at home, trading the cloud's scale and convenience for privacy, control and a fixed cost.",
+  "prerequisites": [
+    "gpu-clouds"
+  ],
+  "status": "draft",
+  "lastReviewed": "2026-10-02",
+  "depths": {
+    "D1": {
+      "guide": "Guess first: what limits how big a model fits at home?",
+      "text": [
+        "You can use an AI over the internet, on someone else's computers. Or you can download some AIs and run them on your own computer at home.",
+        "At home, your words stay with you. But your computer is much smaller, so the biggest AIs won't fit."
+      ],
+      "analogy": "Cooking at home versus eating at a restaurant."
+    },
+    "D2": {
+      "text": [
+        "**Cloud** (an API or rented GPUs): the largest and newest models, no hardware to buy, pay per token or per hour, but your data leaves your network and the provider sets the rules.",
+        "**Local** (a desktop with one or more consumer GPUs, or a compact AI workstation): only open-weight models, limited mainly by how much fast memory you have, but private, works offline, no per-token bill, and you choose the model, including fine-tuned or less filtered ones.",
+        "Quantisation is what makes local practical: storing weights with fewer bits lets a bigger model fit in the same memory, at some cost in quality. Tools such as llama.cpp or Ollama handle the download and running."
+      ],
+      "diagram": {
+        "type": "compare",
+        "caption": "Cloud or home?",
+        "columns": [
+          {
+            "title": "Cloud",
+            "points": [
+              "Biggest and newest models",
+              "Pay per token or hour",
+              "Data leaves your network",
+              "Provider's rules and limits",
+              "Nothing to maintain"
+            ]
+          },
+          {
+            "title": "Local",
+            "points": [
+              "Open-weight models that fit in memory",
+              "Upfront hardware, then electricity",
+              "Data stays at home",
+              "You choose the model and settings",
+              "You maintain it"
+            ]
+          }
+        ]
+      },
+      "analogy": "Cooking at home versus eating at a restaurant.",
+      "analogyBreaks": "A home kitchen can cook most dishes a restaurant can. A home machine can't run the largest frontier models at all, and many of those are never released as weights, so local and cloud are often used side by side.",
+      "predict": {
+        "question": "Which change most often lets a home machine run a bigger model?",
+        "options": [
+          "A faster internet connection",
+          "More GPU or unified memory, or a more heavily quantised model",
+          "A bigger monitor",
+          "A faster hard drive only"
+        ],
+        "answer": 1,
+        "explanation": "The weights must fit in fast memory. More memory, or fewer bits per weight, decides the largest model a machine can hold."
+      }
+    },
+    "D5": {
+      "text": [
+        "The simple picture breaks on cost: local looks free per token, but hardware, power and idle time add up, and a busy cloud GPU shared by many users can be cheaper per token.",
+        "Privacy also depends on the details: some cloud providers offer strong data controls, and local setups still need patching and care. Which wins depends on usage, data sensitivity and how fast models outgrow home hardware."
+      ]
+    }
+  },
+  "sources": [
+    {
+      "title": "llama.cpp: LLM inference in C/C++ (GitHub)",
+      "url": "https://github.com/ggml-org/llama.cpp",
+      "date": "2026",
+      "verify": true
+    },
+    {
+      "title": "NVIDIA DGX Spark product page",
+      "url": "https://www.nvidia.com/en-us/products/workstations/dgx-spark/",
+      "date": "2025",
+      "verify": false
+    }
+  ]
+}

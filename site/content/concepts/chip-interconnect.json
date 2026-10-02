@@ -1,0 +1,90 @@
+{
+  "id": "chip-interconnect",
+  "layer": "compute-hardware",
+  "name": "Chip-to-chip interconnect",
+  "summary": "The links that let several accelerators share work. Fast dedicated links let a group of chips act like one big chip; slower general-purpose links make them wait.",
+  "prerequisites": [
+    "gpu-accelerators",
+    "memory-bandwidth"
+  ],
+  "status": "draft",
+  "lastReviewed": "2026-10-02",
+  "depths": {
+    "D1": {
+      "guide": "Two chips share one model. Guess what happens if their link is slow.",
+      "text": [
+        "Big AI models are often too large for one chip, so several chips share the work.",
+        "They must keep passing notes to each other. If the note-passing is slow, the chips sit waiting instead of working."
+      ],
+      "analogy": "Pupils sharing one big puzzle, passing pieces across the table."
+    },
+    "D2": {
+      "text": [
+        "A model can be split across chips in two main ways. **Splitting by layers** sends each chip a run of layers, and only a small bundle of results crosses between them per token. **Splitting inside each layer** (tensor parallelism) makes every chip do part of every layer, so they swap results many times per token.",
+        "General-purpose links such as PCIe connect a GPU to the rest of the computer and are fine for the first kind of split. Dedicated chip-to-chip links (NVLink-style, or open standards such as UALink) are much faster and can join many accelerators into one shared domain, which the second kind of split needs.",
+        "Beyond one box, network fabrics join many such groups into the clusters of the layer above."
+      ],
+      "diagram": {
+        "type": "compare",
+        "caption": "General-purpose link versus dedicated chip-to-chip link",
+        "columns": [
+          {
+            "title": "PCIe-style link",
+            "points": [
+              "Connects a GPU to the whole computer",
+              "Standard in every desktop and server",
+              "Fine when chips swap little data"
+            ]
+          },
+          {
+            "title": "NVLink-style link",
+            "points": [
+              "Built only for chip-to-chip traffic",
+              "Much higher bandwidth, often via switches",
+              "Lets many chips act like one"
+            ]
+          }
+        ]
+      },
+      "analogy": "Passing notes across the table versus everyone writing on one shared whiteboard.",
+      "analogyBreaks": "Note-passing slows a little with each extra pupil. With chips, a slow link can make adding a second chip barely faster, or even slower, because every layer has to wait for the swap.",
+      "predict": {
+        "question": "Two GPUs connected only by PCIe run one model. Which split usually works better?",
+        "options": [
+          "Each GPU does half of every layer, swapping results after each one",
+          "Each GPU takes half of the layers, passing one small result across per token",
+          "Both GPUs hold the whole model and take turns",
+          "It makes no difference"
+        ],
+        "answer": 1,
+        "explanation": "Splitting by layers sends little data across the slow link. Splitting inside every layer needs constant swaps, which is what fast dedicated links are for."
+      }
+    },
+    "D5": {
+      "text": [
+        "The size of the fast-link domain, how many chips can talk at full speed, is now a headline feature of AI systems, and vendors compete with proprietary links against open standards.",
+        "Copper links are reaching their distance limits, so optical links and co-packaged optics are being explored. Communication can also be overlapped with computation, which blurs how much a faster link actually helps a given model."
+      ]
+    }
+  },
+  "sources": [
+    {
+      "title": "Megatron-LM: Training Multi-Billion Parameter Language Models Using Model Parallelism (Shoeybi et al.)",
+      "url": "https://arxiv.org/abs/1909.08053",
+      "date": "2019",
+      "verify": false
+    },
+    {
+      "title": "NVLink and NVLink Switch (NVIDIA)",
+      "url": "https://www.nvidia.com/en-us/data-center/nvlink/",
+      "date": "2026",
+      "verify": false
+    },
+    {
+      "title": "Ultra Accelerator Link (UALink) Consortium",
+      "url": "https://ualinkconsortium.org/",
+      "date": "2026",
+      "verify": false
+    }
+  ]
+}

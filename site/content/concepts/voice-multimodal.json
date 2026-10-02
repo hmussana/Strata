@@ -1,0 +1,90 @@
+{
+  "id": "voice-multimodal",
+  "layer": "applications-interfaces",
+  "name": "Voice & multimodal interfaces",
+  "summary": "Talking to AI out loud and showing it images or video, through phones, cars, speakers and glasses.",
+  "prerequisites": [
+    "tokenization"
+  ],
+  "status": "draft",
+  "lastReviewed": "2026-10-02",
+  "depths": {
+    "D1": {
+      "guide": "Predict: why does a slow reply feel worse when speaking than typing?",
+      "text": [
+        "You can talk to some AIs out loud, and they talk back.",
+        "You can also show them a photo, or point a camera at something, and ask what it is."
+      ],
+      "analogy": "A phone call that can switch to video when you need to show something."
+    },
+    "D2": {
+      "text": [
+        "The older design is a **pipeline**: speech-to-text turns your voice into words, a text model replies, and text-to-speech reads the reply aloud. Each step adds delay, and tone of voice is lost.",
+        "Newer **speech-to-speech** models take audio in and produce audio out directly, so they can reply faster, cope with interruptions and keep emphasis and emotion.",
+        "Images and video work in a similar way: a vision-capable model turns pictures into tokens alongside the text. Voice and cameras make AI usable hands-free, in cars, on glasses and for people who find typing hard."
+      ],
+      "diagram": {
+        "type": "compare",
+        "caption": "Two ways to build a voice assistant",
+        "columns": [
+          {
+            "title": "Pipeline",
+            "points": [
+              "Speech to text",
+              "Text model replies",
+              "Text to speech",
+              "Easy to swap parts; slower; tone lost"
+            ]
+          },
+          {
+            "title": "Speech-to-speech",
+            "points": [
+              "Audio in, audio out",
+              "One model end to end",
+              "Can be interrupted mid-reply",
+              "Faster; harder to inspect"
+            ]
+          }
+        ]
+      },
+      "analogy": "A phone call that can switch to video.",
+      "analogyBreaks": "A friend on video watches continuously and remembers what they saw. Many assistants look at a single photo or a few frames, and can confidently describe things that are not there.",
+      "predict": {
+        "question": "In a voice pipeline, which change most shortens the pause before the assistant starts speaking?",
+        "options": [
+          "A longer system prompt",
+          "Streaming: speak the first words while the rest is still being generated",
+          "Recording in higher quality",
+          "Asking people to talk more slowly"
+        ],
+        "answer": 1,
+        "explanation": "Streaming lets each stage start before the previous one finishes, so the person hears a reply before the full answer exists."
+      }
+    },
+    "D5": {
+      "text": [
+        "Open problems: natural turn-taking and interruptions, the privacy of always-listening microphones and cameras, voice cloning used for fraud, and accents and languages that speech recognisers handle less well."
+      ]
+    }
+  },
+  "sources": [
+    {
+      "title": "Robust Speech Recognition via Large-Scale Weak Supervision (Whisper)",
+      "url": "https://arxiv.org/abs/2212.04356",
+      "date": "2022",
+      "verify": false
+    },
+    {
+      "title": "Moshi: a speech-text foundation model for real-time dialogue",
+      "url": "https://arxiv.org/abs/2410.00037",
+      "date": "2024",
+      "verify": false
+    },
+    {
+      "title": "GPT-4o System Card",
+      "url": "https://arxiv.org/abs/2410.21276",
+      "date": "2024",
+      "verify": false
+    }
+  ]
+}

@@ -5,7 +5,7 @@
   "summary": "AI data centres are limited by how much electricity they can get and how much heat they can remove.",
   "prerequisites": [],
   "status": "draft",
-  "lastReviewed": "2026-09-28",
+  "lastReviewed": "2026-10-02",
   "depths": {
     "D1": {
       "guide": "Feel your legs after a run. What do busy computers need to stay cool?",
@@ -18,8 +18,8 @@
     "D2": {
       "text": [
         "Almost all the electricity a chip uses turns into heat, so getting power in and getting heat out are two sides of the same problem.",
-        "AI racks pack far more power into the same floor space than traditional server racks, which is why new facilities increasingly move from air cooling to liquid cooling.",
-        "Where a data centre can be built is often decided by grid connection capacity and permitting time, not by land."
+        "AI racks pack far more power into the same floor space than traditional server racks, which is why new facilities increasingly move from air cooling to [liquid cooling](#/concept/liquid-cooling).",
+        "Where a data centre can be built is often decided by [grid connection](#/concept/grid-connection) capacity and permitting time, not by land."
       ],
       "diagram": {
         "type": "flow",

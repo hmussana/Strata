@@ -91,7 +91,10 @@ Each depth holds `text` (paragraphs) plus any of:
 **Explorables** live in `site/next/explorables/`. To add one, write a module that exports a mount function and register
 it in `index.js`; the validator rejects ids that aren't registered. `sampling-play` (D3: temperature and top-k with a
 "Sample 20" tally) and `sampling-workbench` (D4: editable scores, each step of the softmax shown, top-p) share one
-module. Example numbers in `interactiveConfig` must be labelled illustrative (`note`).
+module. Example numbers in `interactiveConfig` must be labelled illustrative (`note`). Each module scopes its CSS
+under its own two-letter prefix (`.xa-` attention, `.xb-` bigram, `.xc-` collapse, `.xk-` tokenizer, `.xq-` inference
+calculator, `.xr-` reliability, `.xt-` retrieval) in `next.css`. The site's CSP blocks inline `style=""` attributes,
+so set widths and custom properties from script after rendering (see `data-w` in `tokenizer.js`).
 
 ## Concept map (Z2)
 
@@ -102,7 +105,9 @@ up its connections; the walkthrough steps through `walkthrough`. A text list of 
 map opens with "Show the map".
 
 Keep each map readable: at most 8 concepts and 12 edges per layer, at most 4 ghost nodes per band, and no edge
-crossings or edges passing through a node in the `x`/`y` hints. Dashed borders mean "from another layer" and nothing
+crossings or edges passing through a node in the `x`/`y` hints. Cross-layer edges count on both layers' maps, so
+check both before adding one. A label pill sits at its edge's midpoint and slides along the edge when that spot would
+cover a node or another pill. Dashed borders mean "from another layer" and nothing
 else.
 
 ## Relationship

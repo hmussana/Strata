@@ -1,0 +1,91 @@
+{
+  "id": "speculative-decoding",
+  "layer": "inference-optimization",
+  "name": "Speculative decoding",
+  "summary": "A small, fast model guesses the next few tokens and the big model checks them all at once, giving the same output in fewer slow steps.",
+  "prerequisites": [
+    "next-token-prediction",
+    "memory-bandwidth"
+  ],
+  "status": "draft",
+  "lastReviewed": "2026-10-02",
+  "depths": {
+    "D1": {
+      "guide": "Predict: if the helper guesses wrong, does the final answer get worse?",
+      "text": [
+        "A big AI writes one word at a time, and each word is slow.",
+        "So a small, quick helper guesses the next few words. The big AI checks them all in one go and keeps the ones it agrees with.",
+        "When the helper guesses well, the answer arrives much sooner."
+      ],
+      "analogy": "A junior writes a draft and the expert just ticks or corrects it."
+    },
+    "D2": {
+      "text": [
+        "Generating each token needs a full read of the big model's weights, and the hardware is mostly waiting on memory. Checking several tokens in one pass costs about the same as generating one.",
+        "**Speculative decoding** uses that spare capacity. A small **draft model** proposes a few tokens. The big **target model** scores them all in one pass and keeps the longest run it agrees with, then adds one token of its own.",
+        "With the right acceptance rule the output follows exactly the same probabilities as the big model alone. Only the speed changes, and the gain depends on how often the draft is right."
+      ],
+      "diagram": {
+        "type": "flow",
+        "numbered": true,
+        "caption": "One round of speculative decoding",
+        "steps": [
+          {
+            "label": "Draft",
+            "sub": "small model guesses a few tokens"
+          },
+          {
+            "label": "Check",
+            "sub": "big model scores all in one pass"
+          },
+          {
+            "label": "Keep",
+            "sub": "longest run it agrees with"
+          },
+          {
+            "label": "Add one",
+            "sub": "big model's own next token"
+          }
+        ],
+        "loop": {
+          "from": 3,
+          "to": 0,
+          "label": "next round starts from the kept text"
+        }
+      },
+      "analogy": "A junior writes a draft and the expert just ticks or corrects it.",
+      "analogyBreaks": "An expert editing a draft may let small mistakes through. Here the big model's rule is strict: the final text is distributed exactly as if the big model had written every word itself, so a bad draft only costs time.",
+      "predict": {
+        "question": "The draft model guesses wrong almost every time. What happens?",
+        "options": [
+          "The answer gets worse",
+          "The answer is the same, but there is little or no speed-up",
+          "The big model stops working",
+          "The answer gets shorter"
+        ],
+        "answer": 1,
+        "explanation": "Rejected guesses are replaced by the big model's own choice, so quality is unchanged. The cost is the wasted drafting time, which can make it slightly slower."
+      }
+    },
+    "D5": {
+      "text": [
+        "The gain shrinks when a server is already busy with large batches, because the spare compute that made checking cheap is no longer spare. That is why it shines for single users and local machines.",
+        "Open work includes drafting without a separate model (extra prediction heads, or reusing the big model's own early layers), drafting trees of alternatives instead of one line, and choosing how many tokens to guess as the text gets easier or harder."
+      ]
+    }
+  },
+  "sources": [
+    {
+      "title": "Fast Inference from Transformers via Speculative Decoding",
+      "url": "https://arxiv.org/abs/2211.17192",
+      "date": "2022",
+      "verify": false
+    },
+    {
+      "title": "Accelerating Large Language Model Decoding with Speculative Sampling",
+      "url": "https://arxiv.org/abs/2302.01318",
+      "date": "2023",
+      "verify": false
+    }
+  ]
+}

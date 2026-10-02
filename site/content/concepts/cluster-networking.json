@@ -1,0 +1,94 @@
+{
+  "id": "cluster-networking",
+  "layer": "cloud-infrastructure",
+  "name": "Cluster networking",
+  "summary": "The very fast network that lets thousands of accelerators share results every training step, so the whole cluster behaves like one computer.",
+  "prerequisites": [
+    "gpu-clusters"
+  ],
+  "status": "draft",
+  "lastReviewed": "2026-10-02",
+  "depths": {
+    "D1": {
+      "guide": "Predict: if one cable is slow, how many chips end up waiting?",
+      "text": [
+        "When thousands of chips learn together, they must keep sharing notes, many times a second.",
+        "So they are joined by super fast cables, like a team passing a ball. If one pass is slow, the whole team waits."
+      ],
+      "analogy": "A team passing a ball: one slow pass holds everyone up."
+    },
+    "D2": {
+      "text": [
+        "Inside one server, accelerators talk over a very fast local link. Between servers, a **fabric** of switches connects them, usually **InfiniBand** or high-speed **Ethernet** with RDMA, which moves data straight between memories without the CPU in the way.",
+        "After each training step, every accelerator must combine its results with all the others (a **collective** such as all-reduce). The step can't finish until the slowest transfer does.",
+        "That is why people say the network is the computer: adding chips only helps if the network can keep them fed, and network layout decides which jobs can run where."
+      ],
+      "diagram": {
+        "type": "stack",
+        "caption": "Levels of the network, fastest at the top",
+        "layers": [
+          {
+            "label": "Inside a chip",
+            "sub": "memory and cores on one package"
+          },
+          {
+            "label": "Inside a server",
+            "sub": "a few accelerators on a fast local link"
+          },
+          {
+            "label": "Across a rack or pod",
+            "sub": "switch fabric: InfiniBand or Ethernet",
+            "hl": true
+          },
+          {
+            "label": "Across the data centre",
+            "sub": "more switch layers, more distance"
+          },
+          {
+            "label": "Between data centres",
+            "sub": "long-distance links, much slower"
+          }
+        ]
+      },
+      "analogy": "A team passing a ball: one slow pass holds everyone up.",
+      "analogyBreaks": "A team can improvise around a dropped pass. A synchronised collective can't: one faulty link or congested switch slows every chip in the job, and finding which of thousands of links is to blame is hard.",
+      "predict": {
+        "question": "A cluster doubles its GPUs but keeps the same network. What usually happens to training speed?",
+        "options": [
+          "It doubles",
+          "It rises by less than double, because chips spend more time waiting on the network",
+          "It stays exactly the same",
+          "It falls to zero"
+        ],
+        "answer": 1,
+        "explanation": "More chips means more data to exchange each step. If the network doesn't grow too, the extra chips spend part of their time waiting."
+      }
+    },
+    "D5": {
+      "text": [
+        "Open problems: training across several data centres where links are slower, keeping huge fabrics free of congestion, and spotting failing links before they stall a job.",
+        "InfiniBand and Ethernet compete for AI clusters, and industry groups are extending Ethernet for this workload."
+      ]
+    }
+  },
+  "sources": [
+    {
+      "title": "RDMA over Ethernet for Distributed AI Training at Meta Scale (SIGCOMM 2024)",
+      "url": "https://engineering.fb.com/wp-content/uploads/2024/08/sigcomm24-final246.pdf",
+      "date": "2024",
+      "verify": false
+    },
+    {
+      "title": "The Llama 3 Herd of Models (section on training infrastructure)",
+      "url": "https://arxiv.org/abs/2407.21783",
+      "date": "2024",
+      "verify": false
+    },
+    {
+      "title": "NVIDIA Collective Communications Library (NCCL): Overview",
+      "url": "https://docs.nvidia.com/deeplearning/nccl/user-guide/docs/overview.html",
+      "date": "2025",
+      "verify": false
+    }
+  ]
+}

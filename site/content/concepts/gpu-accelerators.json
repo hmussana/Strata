@@ -5,7 +5,7 @@
   "summary": "Chips built to do enormous numbers of simple multiplications in parallel, the core operation of neural networks.",
   "prerequisites": [],
   "status": "draft",
-  "lastReviewed": "2026-09-28",
+  "lastReviewed": "2026-10-02",
   "depths": {
     "D1": {
       "guide": "Guess first: one genius or a stadium of helpers for a billion sums?",
@@ -18,7 +18,7 @@
     "D2": {
       "text": [
         "Neural networks mostly multiply large grids of numbers (matrices). GPUs and other accelerators contain thousands of simple cores and specialised matrix units that do these multiplications in parallel.",
-        "They also use lower-precision number formats (16-, 8- or even 4-bit) to fit more maths per second and more numbers in memory.",
+        "They also use lower-precision [number formats](#/concept/number-formats) (16-, 8- or even 4-bit) to fit more maths per second and more numbers in memory.",
         "Software platforms such as CUDA or ROCm let frameworks like PyTorch use the hardware without chip-level code."
       ],
       "diagram": {

@@ -1,0 +1,104 @@
+{
+  "id": "agent-harnesses",
+  "layer": "agents",
+  "name": "Agent harnesses",
+  "summary": "The program wrapped around a model that turns it into an agent: it runs tools, asks permission, manages context and keeps memory.",
+  "prerequisites": [
+    "agent-loop",
+    "tool-use"
+  ],
+  "status": "draft",
+  "lastReviewed": "2026-10-02",
+  "depths": {
+    "D1": {
+      "guide": "Guess first: who actually runs the command, the model or the harness?",
+      "text": [
+        "A model on its own can only write words. It cannot open files or press buttons.",
+        "A harness is the program around it. It reads what the model asks for, checks it is allowed, does it, and tells the model what happened."
+      ],
+      "analogy": "A learner driver in a dual-control car: the learner steers, the instructor can brake."
+    },
+    "D2": {
+      "text": [
+        "A **harness** is everything except the model: the loop that calls the model, the tools it is offered, the code that runs those tools, and the rules for what needs a person's approval. Examples include Claude Code, OpenCode, OpenClaw and Hermes Agent.",
+        "It also manages **context**: what goes into each call (instructions, project notes, file contents, tool results) and what gets summarised or dropped as the window fills. Many harnesses plug in extra tools through a standard protocol such as MCP.",
+        "The same model can feel very different in different harnesses. Open harnesses let you choose the model, including one running on your own machine."
+      ],
+      "diagram": {
+        "type": "hub",
+        "caption": "What a harness wraps around the model",
+        "center": {
+          "label": "Harness",
+          "sub": "runs the loop"
+        },
+        "spokes": [
+          {
+            "label": "Model",
+            "sub": "cloud API or local"
+          },
+          {
+            "label": "Tools",
+            "sub": "shell, files, web, MCP"
+          },
+          {
+            "label": "Permissions",
+            "sub": "allow, ask, deny"
+          },
+          {
+            "label": "Context",
+            "sub": "notes, summaries"
+          },
+          {
+            "label": "Memory",
+            "sub": "carried across sessions"
+          }
+        ]
+      },
+      "analogy": "A learner driver in a dual-control car.",
+      "analogyBreaks": "A learner improves with every lesson. A model learns nothing from a session unless the harness writes notes it can read next time, and the 'instructor' is a set of coded rules plus you approving actions.",
+      "predict": {
+        "question": "A harness lets the model run shell commands. Where is the safest place to enforce \"never touch files outside this folder\"?",
+        "options": [
+          "In the system prompt, asked politely",
+          "In the harness's permission checks and sandbox, outside the model",
+          "In the model's weights",
+          "Nowhere: models follow instructions perfectly"
+        ],
+        "answer": 1,
+        "explanation": "Instructions in the prompt can be ignored or overridden by injected text. Rules enforced by code outside the model hold whatever the model says."
+      }
+    },
+    "D5": {
+      "text": [
+        "Open problems: prompt injection, where text in a web page or file steers the agent, is unsolved, so harnesses lean on sandboxes and approvals. Constant approval prompts tempt people to allow everything.",
+        "Context management is still largely hand-tuned, and harnesses are hard to compare because results depend on the model, the tools and the task together."
+      ]
+    }
+  },
+  "sources": [
+    {
+      "title": "Building effective agents (Anthropic)",
+      "url": "https://www.anthropic.com/research/building-effective-agents",
+      "date": "2024-12-19",
+      "verify": false
+    },
+    {
+      "title": "Effective context engineering for AI agents (Anthropic)",
+      "url": "https://www.anthropic.com/engineering/effective-context-engineering-for-ai-agents",
+      "date": "2025-09-29",
+      "verify": false
+    },
+    {
+      "title": "Model Context Protocol specification (2025-06-18)",
+      "url": "https://modelcontextprotocol.io/specification/2025-06-18",
+      "date": "2025-06-18",
+      "verify": false
+    },
+    {
+      "title": "The lethal trifecta for AI agents: private data, untrusted content, and external communication (Simon Willison)",
+      "url": "https://simonwillison.net/2025/Jun/16/the-lethal-trifecta/",
+      "date": "2025-06-16",
+      "verify": false
+    }
+  ]
+}

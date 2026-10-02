@@ -1,0 +1,84 @@
+{
+  "id": "liquid-cooling",
+  "layer": "physical-energy",
+  "name": "Liquid cooling",
+  "summary": "AI racks pack so much power into a small space that fans and cold air can no longer carry the heat away, so water-based cooling is piped right up to the chips.",
+  "prerequisites": ["datacenter-power"],
+  "status": "draft",
+  "lastReviewed": "2026-10-02",
+  "depths": {
+    "D1": {
+      "guide": "Which cools a hot pan faster: blowing on it, or running it under water?",
+      "text": [
+        "AI chips get very hot, and they are squeezed close together.",
+        "Blowing air over them is like blowing on hot soup. It works for a little heat, but not for a lot.",
+        "So builders run cool water through metal plates that touch the chips, and the water carries the heat away."
+      ],
+      "analogy": "Cooling a hot pan under the tap instead of blowing on it."
+    },
+    "D2": {
+      "text": [
+        "Nearly all the electricity a chip uses becomes heat. Air cooling pushes cold air through the rack with fans, but air holds little heat, so very dense racks would need more airflow than is practical.",
+        "Water carries heat far better than air. In **direct-to-chip** cooling, a liquid flows through a **cold plate** pressed onto each processor, then out to a heat exchanger. In **immersion** cooling, whole servers sit in a non-conductive fluid.",
+        "The newest AI systems are designed as liquid-cooled racks from the start, so a building that can only do air cooling may not be able to host them. Most liquid-cooled racks still use some air for parts such as power supplies."
+      ],
+      "diagram": {
+        "type": "compare",
+        "caption": "Air versus liquid cooling",
+        "columns": [
+          {
+            "title": "Air cooling",
+            "points": [
+              "Fans push cold air through the rack",
+              "Air holds little heat, so needs lots of airflow",
+              "Simple and well understood",
+              "Struggles as rack power climbs"
+            ]
+          },
+          {
+            "title": "Liquid cooling",
+            "points": [
+              "Liquid flows through plates on the chips",
+              "Carries far more heat for its volume",
+              "Allows denser racks in less floor space",
+              "Needs pipes, pumps and leak-safe plumbing"
+            ]
+          }
+        ]
+      },
+      "analogy": "Cooling a hot pan under the tap instead of blowing on it.",
+      "analogyBreaks": "Tap water runs once and goes down the drain. Data-centre loops are usually closed: the same liquid circulates, and the heat still has to be dumped somewhere outside, by cooling towers or dry coolers, which may use water of their own.",
+      "predict": {
+        "question": "Why did the newest AI racks move from air to liquid cooling?",
+        "options": [
+          "Liquid cooling makes the chips compute faster",
+          "So much power is packed into each rack that air cannot carry the heat away fast enough",
+          "Fans are too noisy for data centres",
+          "Air cooling uses more electricity than the chips"
+        ],
+        "answer": 1,
+        "explanation": "Packing more chips into one rack concentrates heat. Liquid carries much more heat than the same volume of air, so it can keep up where fans cannot."
+      }
+    },
+    "D5": {
+      "text": [
+        "Open questions: how to retrofit older air-cooled buildings, which liquid approach (cold plates or immersion) wins at even higher densities, and how to reuse the waste heat rather than dumping it.",
+        "Liquid cooling can cut cooling energy, but the water story is subtle: closed loops use little, while the outdoor heat rejection can use a lot, depending on climate and design."
+      ]
+    }
+  },
+  "sources": [
+    {
+      "title": "Best Practices Guide for Energy-Efficient Data Center Design (US DOE FEMP / NREL)",
+      "url": "https://www.energy.gov/sites/default/files/2024-07/best-practice-guide-data-center-design.pdf",
+      "date": "2024",
+      "verify": false
+    },
+    {
+      "title": "NVIDIA GB200 NVL72 (example of a rack-scale, liquid-cooled AI system)",
+      "url": "https://www.nvidia.com/en-us/data-center/gb200-nvl72/",
+      "date": "2024",
+      "verify": false
+    }
+  ]
+}

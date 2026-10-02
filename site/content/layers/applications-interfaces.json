@@ -10,26 +10,78 @@
     "breaks": "A shop sells the same product every time. AI apps produce different output each time, so interfaces must handle uncertainty, errors and human review."
   },
   "examples": [
-    "Chat assistants",
-    "Coding copilots",
-    "Office and search integrations",
+    "Chat assistants (ChatGPT, Claude, Gemini)",
+    "Coding copilots (GitHub Copilot, Cursor)",
+    "Voice assistants and smart glasses",
+    "AI features inside everyday apps",
     "Vertical apps (legal, health, support)"
   ],
   "givesAbove": "Value to people, plus usage and feedback that flow back down the stack.",
   "needsBelow": "Agents or orchestrated model calls from the layers below.",
   "concepts": [
+    "chat-assistants",
+    "voice-multimodal",
+    "embedded-ai",
     "copilots"
   ],
   "metaDiagram": {
     "nodes": [
       {
-        "concept": "copilots"
+        "concept": "voice-multimodal",
+        "x": 75,
+        "y": 5
+      },
+      {
+        "concept": "embedded-ai",
+        "x": 5,
+        "y": 85
+      },
+      {
+        "concept": "copilots",
+        "x": 40,
+        "y": 85
+      },
+      {
+        "concept": "chat-assistants",
+        "x": 75,
+        "y": 85
       }
     ]
   },
-  "walkthrough": [],
+  "walkthrough": [
+    {
+      "title": "Monday starts in a chat app",
+      "text": "Sam asks a chat assistant to plan the week. It searches the web and books a table using a browser agent.",
+      "highlight": [
+        "chat-assistants"
+      ]
+    },
+    {
+      "title": "Hands busy, so Sam talks",
+      "text": "While cooking, Sam asks out loud and shows the phone camera the fridge. Speech and images go in; a spoken reply comes back.",
+      "highlight": [
+        "voice-multimodal",
+        "chat-assistants"
+      ]
+    },
+    {
+      "title": "AI hidden inside an app",
+      "text": "At work, the expenses app has a “summarise receipts” button. Behind it, the app's server calls a model with Sam's own data.",
+      "highlight": [
+        "embedded-ai"
+      ]
+    },
+    {
+      "title": "A copilot in the editor",
+      "text": "In the code editor, a copilot suggests changes and, in agent mode, fixes a bug while Sam reviews the diff.",
+      "highlight": [
+        "copilots",
+        "embedded-ai"
+      ]
+    }
+  ],
   "status": "draft",
-  "lastReviewed": "2026-09-28",
+  "lastReviewed": "2026-10-02",
   "newsKeywords": [
     "ChatGPT",
     "Copilot",

@@ -1,0 +1,98 @@
+{
+  "id": "model-apis",
+  "layer": "inference-optimization",
+  "name": "Model APIs & routers",
+  "summary": "Paying per token to send requests to a hosted model, either directly to a provider or through a router that picks among many providers.",
+  "prerequisites": [
+    "tokenization"
+  ],
+  "status": "draft",
+  "lastReviewed": "2026-10-02",
+  "depths": {
+    "D1": {
+      "guide": "Guess first: what does the router do when one provider is down?",
+      "text": [
+        "Most people never run an AI themselves. Their app sends a message over the internet to a company that runs it, and pays a tiny amount for each word.",
+        "A router is like a taxi app. You ask for a ride, and it picks which company sends the car."
+      ],
+      "analogy": "A taxi app that picks which company sends the car."
+    },
+    "D2": {
+      "text": [
+        "A **model API** is a web endpoint: you send the conversation as JSON and get the reply back, often streamed token by token. You pay per token, usually quoted per million, and input and output tokens are often priced differently.",
+        "Many providers and local servers copy the same request format, often called **OpenAI-compatible**. Switching can be as small as changing the base URL and the model name.",
+        "A **router** or aggregator such as OpenRouter sits in front of many providers. One key and one bill reach many models, and it can send each request to whichever provider is cheaper, faster or currently up."
+      ],
+      "diagram": {
+        "type": "sequence",
+        "caption": "One request through a router",
+        "actors": [
+          "Your app",
+          "Router",
+          "Provider"
+        ],
+        "messages": [
+          {
+            "from": 0,
+            "to": 1,
+            "label": "request: model name + messages"
+          },
+          {
+            "from": 1,
+            "to": 2,
+            "label": "forward to a chosen provider"
+          },
+          {
+            "from": 2,
+            "to": 1,
+            "label": "stream tokens + usage counts"
+          },
+          {
+            "from": 1,
+            "to": 0,
+            "label": "stream reply, bill per token"
+          }
+        ]
+      },
+      "analogy": "A taxi app that picks which company sends the car.",
+      "analogyBreaks": "Any taxi gets you to the same place. Two providers serving the \"same\" model can differ in quantization, context limit and supported features, so the answer you get may depend on which one the router picked.",
+      "predict": {
+        "question": "Why is moving an app from one model provider to another often a small change?",
+        "options": [
+          "All providers run the same hardware",
+          "Many providers accept the same request format, so mostly the URL and model name change",
+          "Models all give identical answers",
+          "Routers translate between human languages"
+        ],
+        "answer": 1,
+        "explanation": "A shared, OpenAI-style request format became a de facto standard, so client code stays the same and only the endpoint, key and model name change."
+      }
+    },
+    "D5": {
+      "text": [
+        "\"OpenAI-compatible\" is a convention, not a formal standard. Tool calling, caching, reasoning settings and error handling still differ between providers, and those differences break apps in subtle ways.",
+        "A router adds a hop that also sees your prompts, so data handling and logging policies matter for both the router and the provider behind it. Per-token prices also hide costs that depend on usage, such as long cached prompts or reasoning tokens you never see."
+      ]
+    }
+  },
+  "sources": [
+    {
+      "title": "OpenAI API reference: Chat Completions",
+      "url": "https://platform.openai.com/docs/api-reference/chat",
+      "date": "2023",
+      "verify": true
+    },
+    {
+      "title": "OpenRouter documentation: Quickstart",
+      "url": "https://openrouter.ai/docs/quickstart",
+      "date": "2024",
+      "verify": true
+    },
+    {
+      "title": "vLLM documentation: OpenAI-Compatible Server",
+      "url": "https://docs.vllm.ai/en/v0.8.3/serving/openai_compatible_server.html",
+      "date": "2025",
+      "verify": false
+    }
+  ]
+}

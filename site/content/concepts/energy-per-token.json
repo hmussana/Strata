@@ -1,0 +1,82 @@
+{
+  "id": "energy-per-token",
+  "layer": "physical-energy",
+  "name": "Energy per token",
+  "summary": "Each answer a model gives costs a little electricity, and how much depends on what you count: the chips, the rest of the server, idle machines and the building's cooling.",
+  "prerequisites": ["datacenter-power"],
+  "status": "draft",
+  "lastReviewed": "2026-10-02",
+  "depths": {
+    "D1": {
+      "guide": "Look at the stack: which part do people usually forget to count?",
+      "text": [
+        "Every word the model writes uses a tiny bit of electricity.",
+        "Most goes to the chips doing the maths. Some goes to the rest of the computer, to machines waiting for work, and to cooling the building.",
+        "A bigger model, or a longer answer, uses more."
+      ],
+      "analogy": "A taxi ride's fuel: the engine, but also the air conditioning and the drive back empty."
+    },
+    "D2": {
+      "text": [
+        "**Energy per token** is the electricity used to produce one token. Measured only at the accelerator it looks smaller; a fuller count adds the host CPU and memory, machines kept idle for spare capacity, and building overhead such as cooling and power conversion.",
+        "That building overhead is captured by **PUE** (power usage effectiveness): total facility energy divided by the energy used by the IT equipment. A PUE close to 1 means little is lost to cooling and conversion.",
+        "Energy per token falls when the same chips serve more tokens: bigger batches, smaller or quantised models and newer, more efficient chips all help. Longer answers, reasoning steps and larger models push it up, so totals can still grow."
+      ],
+      "diagram": {
+        "type": "stack",
+        "caption": "Where one answer's energy goes",
+        "layers": [
+          { "label": "Building overhead", "sub": "cooling, power conversion (PUE)" },
+          { "label": "Idle capacity", "sub": "machines kept ready for peaks" },
+          { "label": "Host system", "sub": "CPU, memory, networking" },
+          { "label": "Accelerators", "sub": "the chips doing the maths", "hl": true }
+        ]
+      },
+      "analogy": "A taxi ride's fuel: the engine, but also the air conditioning and the drive back empty.",
+      "analogyBreaks": "A taxi carries one fare at a time. A server can batch many users' requests together on the same chips, so the energy per token depends heavily on how busy the hardware is.",
+      "predict": {
+        "question": "Two published figures for the same model's energy per answer disagree a lot. What is the most likely reason?",
+        "options": [
+          "One of them used a different language",
+          "They drew the boundary differently, for example one counted only the chips and the other added idle machines and cooling",
+          "Energy cannot be measured for AI",
+          "The model answered more politely in one test"
+        ],
+        "answer": 1,
+        "explanation": "What you include changes the answer. Counting only the accelerator leaves out the host, idle capacity and building overhead, so it gives a lower number."
+      }
+    },
+    "D5": {
+      "text": [
+        "There is no agreed standard boundary or method, so published figures are hard to compare. Real numbers depend on batch size, prompt and answer length, hardware and how busy the servers are.",
+        "Lower energy per token does not guarantee lower total energy: cheaper tokens can mean far more tokens, especially for agents and reasoning models that write long hidden chains of steps."
+      ]
+    }
+  },
+  "sources": [
+    {
+      "title": "Measuring the environmental impact of delivering AI at Google Scale (Elsworth et al.)",
+      "url": "https://arxiv.org/abs/2508.15734",
+      "date": "2025-08-21",
+      "verify": false
+    },
+    {
+      "title": "Power Hungry Processing: Watts Driving the Cost of AI Deployment? (Luccioni et al.)",
+      "url": "https://arxiv.org/abs/2311.16863",
+      "date": "2023",
+      "verify": false
+    },
+    {
+      "title": "From Words to Watts: Benchmarking the Energy Costs of Large Language Model Inference (Samsi et al.)",
+      "url": "https://arxiv.org/abs/2310.03003",
+      "date": "2023-10-04",
+      "verify": false
+    },
+    {
+      "title": "Best Practices Guide for Energy-Efficient Data Center Design (US DOE FEMP / NREL), PUE definition",
+      "url": "https://www.energy.gov/sites/default/files/2024-07/best-practice-guide-data-center-design.pdf",
+      "date": "2024",
+      "verify": false
+    }
+  ]
+}

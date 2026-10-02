@@ -1,0 +1,63 @@
+{
+  "id": "data-provenance",
+  "layer": "data",
+  "name": "Data rights and provenance",
+  "summary": "Tracking where training data came from, what licence it carries and whether its owners opted out, and the legal questions still open.",
+  "prerequisites": ["pretraining-data"],
+  "status": "draft",
+  "lastReviewed": "2026-10-02",
+  "depths": {
+    "D1": {
+      "guide": "Guess first: if a website says 'no robots', does the crawler have to listen?",
+      "text": [
+        "Every piece of training data was made by someone. Some of it is free to use, some has rules, and some owners say no.",
+        "Provenance means keeping a record of where each piece came from, so people can check it was allowed."
+      ],
+      "analogy": "Checking the label on every ingredient: where it came from and whether you may use it."
+    },
+    "D2": {
+      "text": [
+        "**Provenance** is the record of a dataset's sources, licences and processing steps. Many public datasets are re-packaged from others, and licence details often get lost or mislabelled along the way.",
+        "**Opt-outs** let owners signal that they don't want their work used: a `robots.txt` rule aimed at a crawler, website terms, or machine-readable reservations. Honouring them is partly voluntary and partly a legal duty, depending on the country.",
+        "**The law is still settling.** Courts in several countries are weighing whether training on copyrighted work without permission is allowed, and some regions now require model makers to publish summaries of their training data."
+      ],
+      "diagram": {
+        "type": "flow",
+        "numbered": true,
+        "caption": "The questions a piece of data should pass",
+        "steps": [
+          { "label": "Source", "sub": "where did it come from?" },
+          { "label": "Licence", "sub": "what does it allow?" },
+          { "label": "Opt-out", "sub": "did the owner say no?" },
+          { "label": "Personal data", "sub": "remove or protect" },
+          { "label": "Record", "sub": "documented for audit" }
+        ]
+      },
+      "analogy": "Food labelling: every ingredient should be traceable back to the farm, with its allergens listed.",
+      "analogyBreaks": "Food can be recalled from shelves. Once data has shaped a model's weights there is no reliable way to take it back out, so an opt-out mostly affects future training runs.",
+      "predict": {
+        "question": "A website adds a rule blocking AI crawlers today. What happens to models already trained on its pages?",
+        "options": [
+          "They forget the pages automatically",
+          "Nothing changes; the rule only affects future crawls",
+          "They stop working",
+          "Their answers get more accurate"
+        ],
+        "answer": 1,
+        "explanation": "robots.txt is read at crawl time. It cannot reach into weights that already exist, which is why removing data after training ('machine unlearning') is an open research problem."
+      }
+    },
+    "D5": {
+      "text": [
+        "Big legal questions remain open: whether training counts as fair use or falls under text and data mining exceptions, what is owed when a model reproduces training text, and how opt-outs should work at web scale.",
+        "Restricting crawlers protects owners but can shrink the open data commons, favouring organisations that already hold data or can pay for licences."
+      ]
+    }
+  },
+  "sources": [
+    { "title": "The Data Provenance Initiative: A Large Scale Audit of Dataset Licensing & Attribution in AI", "url": "https://arxiv.org/abs/2310.16787", "date": "2023", "verify": false },
+    { "title": "Consent in Crisis: The Rapid Decline of the AI Data Commons", "url": "https://arxiv.org/abs/2407.14933", "date": "2024", "verify": false },
+    { "title": "RFC 9309: Robots Exclusion Protocol", "url": "https://www.rfc-editor.org/rfc/rfc9309", "date": "2022", "verify": false },
+    { "title": "Regulation (EU) 2024/1689 (the AI Act)", "url": "https://eur-lex.europa.eu/eli/reg/2024/1689/oj", "date": "2024", "verify": true }
+  ]
+}

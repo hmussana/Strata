@@ -1,0 +1,96 @@
+{
+  "id": "local-inference",
+  "layer": "inference-optimization",
+  "name": "Local inference runtimes",
+  "summary": "Programs such as llama.cpp, Ollama or LM Studio that run downloaded model files on your own computer instead of a remote service.",
+  "prerequisites": [
+    "open-weights",
+    "quantization"
+  ],
+  "status": "draft",
+  "lastReviewed": "2026-10-02",
+  "depths": {
+    "D1": {
+      "guide": "Look at the stack: which layer decides whether the model fits?",
+      "text": [
+        "Some AI models can be downloaded as one big file, like a film you keep instead of stream.",
+        "A local runtime is the player for that file. It runs the model on your own computer, so your words never leave the house.",
+        "The catch: the file has to fit in your computer's memory."
+      ],
+      "analogy": "Downloading a film instead of streaming it."
+    },
+    "D2": {
+      "text": [
+        "A **local runtime** loads a model's weights into your GPU or CPU memory and generates tokens on your machine. Popular ones include llama.cpp, Ollama and LM Studio.",
+        "Models are usually shared as single files that bundle the weights, the tokenizer and settings such as the chat template. **GGUF** is a common format, and each model is often published in several quantization levels.",
+        "Most runtimes also start a small local server that speaks the same request format as the big cloud APIs, so existing apps and coding tools can point at your machine instead.",
+        "Memory decides what you can run: the weights (parameters × bits ÷ 8) plus the KV cache for your context must fit. Memory bandwidth then sets how fast tokens come out."
+      ],
+      "diagram": {
+        "type": "stack",
+        "caption": "What runs where when a model runs at home",
+        "layers": [
+          {
+            "label": "Your app or chat window",
+            "sub": "sends requests to localhost"
+          },
+          {
+            "label": "Local server",
+            "sub": "API-compatible endpoint"
+          },
+          {
+            "label": "Runtime engine",
+            "sub": "loads weights, generates tokens"
+          },
+          {
+            "label": "Model file (for example GGUF)",
+            "sub": "quantized weights, tokenizer, template"
+          },
+          {
+            "label": "Your GPU or CPU memory",
+            "sub": "everything above must fit here"
+          }
+        ]
+      },
+      "analogy": "Downloading a film instead of streaming it.",
+      "analogyBreaks": "A downloaded film plays the same on any player. A model file can run noticeably differently depending on the quantization level, the runtime's settings and whether the chat template matches, and a big model may not fit at all.",
+      "predict": {
+        "question": "Your GPU has 24 GB of memory. Which model's weights fit with room left for the KV cache?",
+        "options": [
+          "70 billion parameters at 16 bits",
+          "70 billion parameters at 4 bits",
+          "32 billion parameters at 8 bits",
+          "32 billion parameters at 4 bits"
+        ],
+        "answer": 3,
+        "explanation": "Weights ≈ parameters × bits ÷ 8: 140, 35, 32 and 16 GB. Only the last fits in 24 GB with space left over for the KV cache."
+      }
+    },
+    "D5": {
+      "text": [
+        "The simple \"does it fit\" rule hides a lot. Splitting a model across several GPUs, or across GPU and system memory, works but slows generation, and machines with large shared memory change the trade-off between capacity and speed.",
+        "Quality at a given bit width varies by model and by quantization method, and community testing is often the only guide. Mismatched chat templates or tokenizer settings can quietly make a local model worse than the same model in the cloud."
+      ]
+    }
+  },
+  "sources": [
+    {
+      "title": "GGUF file format specification (ggml)",
+      "url": "https://github.com/ggml-org/ggml/blob/master/docs/gguf.md",
+      "date": "2023",
+      "verify": true
+    },
+    {
+      "title": "llama.cpp: LLM inference in C/C++",
+      "url": "https://github.com/ggml-org/llama.cpp",
+      "date": "2023",
+      "verify": true
+    },
+    {
+      "title": "Ollama documentation: OpenAI compatibility",
+      "url": "https://docs.ollama.com/api/openai-compatibility",
+      "date": "2024",
+      "verify": true
+    }
+  ]
+}

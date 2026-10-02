@@ -1,0 +1,99 @@
+{
+  "id": "memory",
+  "layer": "orchestration-tooling",
+  "name": "Memory",
+  "summary": "How an AI application remembers beyond one call: short-term memory in the context window, long-term memory in stores it saves to and searches.",
+  "prerequisites": [
+    "context-engineering"
+  ],
+  "status": "draft",
+  "lastReviewed": "2026-10-02",
+  "depths": {
+    "D1": {
+      "guide": "Guess first: does the model itself remember yesterday's chat?",
+      "text": [
+        "The AI forgets everything when a chat ends. To remember you, the app writes notes in a notebook.",
+        "Next time, it reads the useful notes back to the AI before you start talking."
+      ],
+      "analogy": "A notebook the helper reads before each visit."
+    },
+    "D2": {
+      "text": [
+        "The model's weights do not change while you chat, so all memory lives in the application.",
+        "**Short-term memory** is the conversation inside the context window. When it gets too long, older turns are dropped or **summarised**.",
+        "**Long-term memory** is a store outside the model: facts, preferences and past summaries saved to a file or database, then searched and loaded back into the context when relevant."
+      ],
+      "diagram": {
+        "type": "flow",
+        "numbered": true,
+        "caption": "A memory loop across sessions",
+        "steps": [
+          {
+            "label": "Recall",
+            "sub": "search the store"
+          },
+          {
+            "label": "Load",
+            "sub": "into context"
+          },
+          {
+            "label": "Chat",
+            "sub": "short-term memory"
+          },
+          {
+            "label": "Summarise",
+            "sub": "what mattered"
+          },
+          {
+            "label": "Save",
+            "sub": "to long-term store"
+          }
+        ],
+        "loop": {
+          "from": 4,
+          "to": 0,
+          "label": "next session"
+        }
+      },
+      "analogy": "A notebook the helper reads before each visit.",
+      "analogyBreaks": "A person decides what is worth writing down and notices when a note is out of date. An AI memory system can save wrong or stale facts, or even planted instructions, and then trust them later.",
+      "predict": {
+        "question": "A chat app remembers your name in a new conversation. Where is that memory most likely kept?",
+        "options": [
+          "Inside the model's weights, updated as you chat",
+          "In a store the app saved to, loaded back into the prompt",
+          "In the GPU's cache from last week",
+          "Nowhere: the model guessed it"
+        ],
+        "answer": 1,
+        "explanation": "Weights are fixed at inference time. The app saves facts outside the model and puts them back into the context window when a new chat starts."
+      }
+    },
+    "D5": {
+      "text": [
+        "Hard parts: deciding what to save and what to forget, keeping memories correct as facts change, and stopping injected text from becoming a lasting memory.",
+        "Summaries lose detail, and there is no agreed way yet to test whether long-term memory makes an assistant better or just more confident."
+      ]
+    }
+  },
+  "sources": [
+    {
+      "title": "MemGPT: Towards LLMs as Operating Systems",
+      "url": "https://arxiv.org/abs/2310.08560",
+      "date": "2023",
+      "verify": false
+    },
+    {
+      "title": "Generative Agents: Interactive Simulacra of Human Behavior",
+      "url": "https://arxiv.org/abs/2304.03442",
+      "date": "2023",
+      "verify": false
+    },
+    {
+      "title": "Cognitive Architectures for Language Agents (CoALA)",
+      "url": "https://arxiv.org/abs/2309.02427",
+      "date": "2023",
+      "verify": false
+    }
+  ]
+}

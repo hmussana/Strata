@@ -67,6 +67,86 @@
         "explanation": "Most RAG failures are retrieval failures: poor chunking, embeddings or ranking mean the right text never reached the model."
       }
     },
+    "D3": {
+      "text": [
+        "Before the model sees anything, **retrieval** decides what it reads. The documents are cut into **chunks**, every chunk is scored against the question, and only the top few are pasted into the prompt.",
+        "Here the score is simple word overlap, weighted so rare words count for more (TF-IDF). Real systems use embeddings, which match meaning rather than exact words, but the shape is the same: rank, cut, paste.",
+        "Change the chunk size and how many chunks are kept, then read the box at the bottom. That box is everything the model gets. If the answer is not in it, the model cannot give it."
+      ],
+      "interactive": "retrieval-play",
+      "interactiveConfig": {
+        "note": "Marrow Island and these passages are made up for teaching. The score is a simple word-overlap stand-in for real embeddings.",
+        "chunkSize": 20,
+        "topK": 2,
+        "questions": [
+          {
+            "label": "Last winter ferry",
+            "q": "When does the last ferry back to the mainland leave in winter?",
+            "answer": "3:40 pm"
+          },
+          {
+            "label": "Museum price",
+            "q": "How much is entry to the lighthouse museum for adults?",
+            "answer": "£6"
+          },
+          {
+            "label": "North cliffs in June",
+            "q": "Can I walk the north cliffs in June?",
+            "answer": "May to July"
+          }
+        ],
+        "docs": [
+          {
+            "title": "Getting there",
+            "text": "Marrow Island is reached by ferry from Port Ellin on the mainland. The crossing takes forty minutes. In summer, ferries run every hour from 7 am. Bicycles travel free, but cars must be booked a day ahead."
+          },
+          {
+            "title": "Winter timetable",
+            "text": "In winter, day visitors must plan around the last ferry back to the mainland. It sails from the island harbour at 3:40 pm sharp and does not wait for latecomers. From November to March the timetable is reduced, and morning sailings leave Port Ellin at 8 am and 11 am."
+          },
+          {
+            "title": "Lighthouse museum",
+            "text": "The Marrow Lighthouse Museum opens daily from 10 am to 5 pm, April to October. Entry costs £6 for adults and is free for children under 12. The tower climb has 142 steps and is closed in high wind."
+          },
+          {
+            "title": "Food and money",
+            "text": "The Harbour Kitchen serves fish and chips and vegetarian pies. It is the only café open all year. Card payments work there, but the island has no cash machine, so bring cash for the Saturday market."
+          },
+          {
+            "title": "Coastal path",
+            "text": "The coastal path circles the island in about 11 km and takes most of a day to walk. The stretch along the north cliffs is closed for puffin nesting from May to July."
+          },
+          {
+            "title": "Wildlife",
+            "text": "Puffins nest on the north cliffs each summer. Grey seals haul out on Seal Rock near the lighthouse. Please keep dogs on leads near the colonies and stay behind the rope lines."
+          },
+          {
+            "title": "Places to stay",
+            "text": "There are two places to stay: the Marrow Inn, with eight rooms, and a small campsite behind the dunes. The campsite is closed in winter, and the inn asks for two nights minimum in August."
+          },
+          {
+            "title": "History",
+            "text": "The lighthouse was built in 1874 after the wreck of the Ellin Star. It was automated in 1981, and the keeper's cottage became the museum."
+          }
+        ]
+      },
+      "tasks": [
+        "Pick \"Last winter ferry\" with chunks of 20 words. Is the time in the context? Now raise the chunk size until it is.",
+        "Pick \"North cliffs in June\". No passage says \"June\". Is the answer in the context anyway, and what does the model still have to work out for itself?",
+        "Type your own question using different words from the passages, such as \"seabird breeding season\". What does word overlap miss that meaning-based search might find?"
+      ],
+      "predict": {
+        "question": "The winter timetable says when the last ferry leaves, but at small chunk sizes the system can't find the time. Why?",
+        "options": [
+          "The model doesn't understand times",
+          "The question's words and the time ended up in different chunks, and only the first was retrieved",
+          "The passage is too short to be indexed",
+          "Top k is set too high"
+        ],
+        "answer": 1,
+        "explanation": "The sentence matching the question ends one chunk, and the time sits in the next chunk, which shares no words with the question. The model only sees what retrieval hands over."
+      }
+    },
     "D5": {
       "text": [
         "Open problems: agentic retrieval where the model decides what to search, long-context models versus retrieval, measuring faithfulness to sources, and poisoning of indexed content."

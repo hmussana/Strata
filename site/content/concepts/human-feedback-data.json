@@ -1,0 +1,94 @@
+{
+  "id": "human-feedback-data",
+  "layer": "data",
+  "name": "Human feedback and labelling",
+  "summary": "Example answers and side-by-side ratings written by people, used to teach a model to follow instructions and to prefer better answers.",
+  "prerequisites": [
+    "pretraining-data"
+  ],
+  "status": "draft",
+  "lastReviewed": "2026-10-02",
+  "depths": {
+    "D1": {
+      "guide": "Think first: who decides which of two answers is better?",
+      "text": [
+        "After reading the library, the AI still needs to learn how to help. People write example answers to show it.",
+        "They also look at two answers side by side and pick the better one. Those choices teach the AI what people prefer."
+      ],
+      "analogy": "A teacher marking homework and writing model answers in the margin."
+    },
+    "D2": {
+      "text": [
+        "**Instruction data** is a set of prompts with good answers written by people, used for supervised fine-tuning.",
+        "**Preference data** shows a rater two or more model answers to the same prompt and records which is better. A reward model learns from these choices.",
+        "Who makes it: contracted annotators (often through specialist labelling firms, sometimes in lower-wage countries), paid experts such as programmers or doctors for harder topics, and users clicking thumbs up or down in apps. Increasingly, AI models do some of the rating too."
+      ],
+      "diagram": {
+        "type": "flow",
+        "numbered": true,
+        "caption": "How one preference label is made",
+        "steps": [
+          {
+            "label": "Prompt",
+            "sub": "a real task"
+          },
+          {
+            "label": "Two answers",
+            "sub": "from the model"
+          },
+          {
+            "label": "Human rater",
+            "sub": "picks the better one"
+          },
+          {
+            "label": "Preference pair",
+            "sub": "chosen vs rejected"
+          },
+          {
+            "label": "Reward model",
+            "sub": "learns the pattern"
+          }
+        ]
+      },
+      "analogy": "A teacher marking two essays and saying which one is better.",
+      "analogyBreaks": "A teacher can explain why. A rater often has seconds per pair, may disagree with other raters, and may prefer answers that sound confident or flattering, and the model learns those habits too.",
+      "predict": {
+        "question": "Raters are rushed and tend to pick the answer that sounds more confident, even when it is wrong. What will the trained model tend to do?",
+        "options": [
+          "Admit uncertainty more often",
+          "Sound confident even when it is unsure",
+          "Refuse to answer",
+          "Nothing changes"
+        ],
+        "answer": 1,
+        "explanation": "The model learns what raters reward, not what is true. Rater habits become model habits, which is one source of overconfidence and flattery (sycophancy)."
+      }
+    },
+    "D5": {
+      "text": [
+        "Raters disagree, and whose preferences count is a choice with cultural and political weight. People cannot reliably grade answers to problems harder than they can solve, so feedback on expert tasks is costly and scarce.",
+        "Pay, working conditions and exposure to harmful content for annotators are ongoing concerns, and replacing people with AI raters risks copying a model's own blind spots."
+      ]
+    }
+  },
+  "sources": [
+    {
+      "title": "Deep Reinforcement Learning from Human Preferences",
+      "url": "https://arxiv.org/abs/1706.03741",
+      "date": "2017",
+      "verify": false
+    },
+    {
+      "title": "Training a Helpful and Harmless Assistant with Reinforcement Learning from Human Feedback",
+      "url": "https://arxiv.org/abs/2204.05862",
+      "date": "2022",
+      "verify": false
+    },
+    {
+      "title": "Training language models to follow instructions with human feedback (InstructGPT)",
+      "url": "https://arxiv.org/abs/2203.02155",
+      "date": "2022",
+      "verify": false
+    }
+  ]
+}

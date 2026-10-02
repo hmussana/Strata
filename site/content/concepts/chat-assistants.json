@@ -1,0 +1,89 @@
+{
+  "id": "chat-assistants",
+  "layer": "applications-interfaces",
+  "name": "Chat assistants",
+  "summary": "General-purpose chat apps where you type, talk or upload files, and an assistant answers, writes, searches and uses tools.",
+  "prerequisites": [
+    "post-training"
+  ],
+  "status": "draft",
+  "lastReviewed": "2026-10-02",
+  "depths": {
+    "D1": {
+      "guide": "Guess first: does the chat app remember you, or does the model?",
+      "text": [
+        "A chat assistant is an app where you talk with an AI in a conversation.",
+        "You ask, it answers, and you can ask follow-up questions. Many can also search the web, read your files or make pictures."
+      ],
+      "analogy": "A very well-read help desk that never closes."
+    },
+    "D2": {
+      "text": [
+        "The chat window is the visible part. On every turn the app sends the whole conversation, plus hidden instructions, to the model, because the model itself keeps no memory between calls.",
+        "Modern chat apps, such as ChatGPT, Claude or Gemini, are harnesses too: they add web search, file reading, code running, image tools, connectors to your accounts and saved memories about you.",
+        "One model can be reached in several ways: the maker's own app, a third-party app that lets you switch models, or a local chat app talking to a model on your own machine."
+      ],
+      "diagram": {
+        "type": "stack",
+        "caption": "What sits behind a chat window",
+        "layers": [
+          {
+            "label": "Chat window",
+            "sub": "messages, files, voice"
+          },
+          {
+            "label": "App features",
+            "sub": "search, memory, connectors"
+          },
+          {
+            "label": "Each turn",
+            "sub": "instructions + whole conversation"
+          },
+          {
+            "label": "Model",
+            "sub": "cloud API or local",
+            "hl": true
+          }
+        ]
+      },
+      "analogy": "A very well-read help desk that never closes.",
+      "analogyBreaks": "A help desk worker remembers yesterday's call. The model does not; any memory is notes the app saves and adds to the prompt, which you can usually view and delete.",
+      "predict": {
+        "question": "A very long chat starts to \"forget\" what you said at the start. What is the most likely reason?",
+        "options": [
+          "The model gets tired",
+          "The conversation outgrew the context window, so early parts were trimmed or summarised",
+          "The internet connection dropped",
+          "Chat apps delete messages after an hour"
+        ],
+        "answer": 1,
+        "explanation": "Each turn resends the conversation, and once it no longer fits, the app has to cut or compress the oldest parts."
+      }
+    },
+    "D5": {
+      "text": [
+        "Open questions: how memory and connectors should handle private data, assistants telling people what they want to hear, how much people rely on chat answers for health, legal or money decisions, and how an assistant that reads your email resists instructions hidden in that email."
+      ]
+    }
+  },
+  "sources": [
+    {
+      "title": "Training language models to follow instructions with human feedback (InstructGPT)",
+      "url": "https://arxiv.org/abs/2203.02155",
+      "date": "2022",
+      "verify": false
+    },
+    {
+      "title": "Model Context Protocol specification (2025-06-18)",
+      "url": "https://modelcontextprotocol.io/specification/2025-06-18",
+      "date": "2025-06-18",
+      "verify": false
+    },
+    {
+      "title": "The lethal trifecta for AI agents: private data, untrusted content, and external communication (Simon Willison)",
+      "url": "https://simonwillison.net/2025/Jun/16/the-lethal-trifecta/",
+      "date": "2025-06-16",
+      "verify": false
+    }
+  ]
+}

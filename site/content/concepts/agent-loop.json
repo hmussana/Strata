@@ -69,6 +69,37 @@
         "explanation": "Loops need stopping conditions and human checkpoints; otherwise errors repeat and costs grow."
       }
     },
+    "D3": {
+      "text": [
+        "An agent task is a chain of steps: read a file, call a tool, edit, run a test. The whole task only succeeds if **every** step does.",
+        "If each step succeeds with chance p, and steps fail independently, a task of n steps finishes with chance **p to the power n**. Small per-step errors compound fast.",
+        "A **check and retry** step helps: a test or a second look catches some failures, and the agent gets one more try. Turn it on and watch the curve lift."
+      ],
+      "interactive": "reliability-play",
+      "interactiveConfig": {
+        "p": 0.95,
+        "n": 20,
+        "maxSteps": 50,
+        "catchRate": 0.8,
+        "note": "Pure arithmetic from the formula, assuming each step fails independently. Real agents are messier: failures can be linked, and some mistakes can be undone later. The rates are illustrative, not measured."
+      },
+      "tasks": [
+        "Leave each step at 95% and set 20 steps. How often does the whole task finish?",
+        "Set 50 steps. How good must each step be for the task to finish at least half the time?",
+        "Turn on check and retry at 80%. How much does it lift 20 steps? Now drop the catch rate to 0%."
+      ],
+      "predict": {
+        "question": "Each step of a 20-step task succeeds 95% of the time. Roughly how often does the whole task succeed?",
+        "options": [
+          "About 95%",
+          "About 75%",
+          "About 36%",
+          "About 5%"
+        ],
+        "answer": 2,
+        "explanation": "0.95 multiplied by itself 20 times is about 0.36. Each step looks reliable, but the small chances of failure add up across the chain."
+      }
+    },
     "D5": {
       "text": [
         "Open problems: reliability over long tasks, knowing when to stop or ask for help, evaluating agents on realistic work, and containing agents that read untrusted content."

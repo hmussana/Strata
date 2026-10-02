@@ -66,6 +66,88 @@
         "explanation": "A base model has only learned to continue text; following instructions comes from post-training."
       }
     },
+    "D3": {
+      "text": [
+        "Pretraining is one loop repeated many times: **predict** the next piece of text, **compare** with what really came next, and **nudge** the model's numbers so the right answer gets a little more likely.",
+        "Here is that loop at toy size. The model has one score for every pair of characters, so it can only look one character back. Press **Train** and watch the loss fall and the guesses sharpen."
+      ],
+      "interactive": "bigram-play",
+      "interactiveConfig": {
+        "note": "Same idea as real pretraining, at a scale of about 700 numbers instead of billions.",
+        "text": "the quiet queen sat by the window and watched the rain. she asked a question that no one in the hall could answer. the quick brown fox ran across the field, then the hen and the cat ran after it. there is a thin thread of thought that runs through the whole of this short text: what comes next depends on what came before. after a t you often see an h, and after a q you almost always see a u. a model that learns these habits has learned something true about the text, even if it knows nothing else at all. it cannot spell whole words, but it can guess the next letter better than chance. that is the start of learning to write.",
+        "seed": 7,
+        "lr": 20,
+        "stepsPerClick": 25,
+        "contexts": [
+          "q",
+          "t",
+          "h",
+          " ",
+          "e"
+        ],
+        "start": "t"
+      },
+      "tasks": [
+        "Choose q, then press Train a few times. How sure does the model become about u?",
+        "Choose e. Why does its top guess never get close to 100%?",
+        "Press Write 60 characters before training, then again after 10 clicks of Train. What changed?"
+      ],
+      "predict": {
+        "question": "If you keep pressing Train, how low can the loss go?",
+        "options": [
+          "All the way to zero",
+          "Down to a floor above zero, then it stops",
+          "It falls, then climbs back up",
+          "It never moves"
+        ],
+        "answer": 1,
+        "explanation": "Looking one character back, the model cannot know whether “e” is followed by a space, an r or an n. The best it can do is match how often each follows. That floor is the dashed “best possible” line."
+      }
+    },
+    "D4": {
+      "text": [
+        "The model is a table of scores *W[a][b]*. Softmax turns row *a* into probabilities *p(b|a)* for the character after *a*. The **loss** is the average of −log *p* of the character that really came next, over every pair in the text.",
+        "The gradient for each score is simple: (*n_a* × *p(b|a)* − count(*a*→*b*)) ÷ *N*, where *n_a* is how often *a* appears and *N* is the number of pairs. Gradient descent subtracts the **learning rate** η times that gradient from every score, every step.",
+        "Change η and watch the curve. Too small and it crawls. Too large and each step overshoots, so the loss bounces or climbs."
+      ],
+      "interactive": "bigram-workbench",
+      "interactiveConfig": {
+        "note": "The learning rates look large because the loss is averaged over every pair in the text, which makes each gradient small.",
+        "text": "the quiet queen sat by the window and watched the rain. she asked a question that no one in the hall could answer. the quick brown fox ran across the field, then the hen and the cat ran after it. there is a thin thread of thought that runs through the whole of this short text: what comes next depends on what came before. after a t you often see an h, and after a q you almost always see a u. a model that learns these habits has learned something true about the text, even if it knows nothing else at all. it cannot spell whole words, but it can guess the next letter better than chance. that is the start of learning to write.",
+        "seed": 7,
+        "lr": 20,
+        "contexts": [
+          "q",
+          "t",
+          "h",
+          " ",
+          "e"
+        ]
+      },
+      "tasks": [
+        "Set η to about 2 and press Step ×100. Then Reset, set η back to 20 and do the same. Compare the loss.",
+        "Set η to about 500 and step. What does the curve do, and does the “best possible” line get any closer?",
+        "Choose e and train until the loss stops falling. Compare the Share and p columns. What has the model learned?"
+      ],
+      "code": "W = small_random(V, V)              # W[a][b]: score for b following a\nrepeat steps times:\n    loss, grad = 0, zeros(V, V)\n    for a, b in pairs(text):        # every character and the one after it\n        p = softmax(W[a])           # predict\n        loss -= log(p[b])           # compare\n        grad[a] += p                # push every guess down a little...\n        grad[a][b] -= 1             # ...and the right answer up\n    W -= lr * grad / N              # nudge (N = number of pairs)",
+      "tradeoffs": [
+        "A higher learning rate learns faster until it overshoots; real training warms the rate up and then lowers it over time.",
+        "This toy uses the whole text every step. Real pretraining uses random batches: each step is far cheaper, but noisier.",
+        "Looking one character back caps how good the model can get. Longer context and bigger models lower that floor, at the cost of much more compute.",
+        "Lower training loss is not the goal on its own: a model that memorises its training text can do worse on new text."
+      ],
+      "predict": {
+        "question": "You raise the learning rate from 20 to 500 and train. What happens to the loss?",
+        "options": [
+          "It falls 25 times faster",
+          "It falls a little faster",
+          "It jumps around and ends up higher than where it started",
+          "Nothing changes"
+        ],
+        "answer": 2,
+        "explanation": "Each step moves the scores so far that it overshoots the minimum, so the loss bounces and climbs above the starting value instead of settling."
+      }
+    },
     "D5": {
       "text": [
         "Open questions: how much more high-quality data exists, the balance between model size and training tokens (compute-optimal scaling), whether some abilities emerge suddenly or only look sudden, and how much synthetic data can substitute for human text."

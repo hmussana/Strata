@@ -61,6 +61,37 @@
         "explanation": "Verifiable domains let you keep only the generated examples that pass a check."
       }
     },
+    "D3": {
+      "text": [
+        "What happens if a model learns only from the output of the model before it? This is **model collapse** in miniature, using the simplest possible model: a bell curve with a **mean** and a **spread**.",
+        "Generation 0 is fitted to real data. Each later generation draws a small sample from the previous fit and fits a new curve to that sample. Rare values at the edges, the **tails**, are seldom drawn, so they get lost first.",
+        "Step through the generations and watch the spread shrink. Then mix some real data into each round and see what changes."
+      ],
+      "interactive": "collapse-play",
+      "interactiveConfig": {
+        "seed": 7,
+        "realCount": 200,
+        "sampleSize": 20,
+        "generations": 60,
+        "note": "Toy model: the real data is 200 numbers from a seeded random normal, and each generation refits a normal to 20 points. The run is the same every time. Real models are far richer, and how strongly this happens to them is still being studied."
+      },
+      "tasks": [
+        "Press Next generation a few times, then drag to generation 60. What happens to the spread and to the share beyond ±2?",
+        "Reset, set real data mixed in to 20%, and drag to generation 60. Does the spread still head for zero?",
+        "Try 50% real data. Is the result steadier than at 20%?"
+      ],
+      "predict": {
+        "question": "Each generation is fitted only to 20 points drawn from the previous generation. After 60 generations, what has happened to the spread?",
+        "options": [
+          "It stays about the same",
+          "It grows wider",
+          "It shrinks towards zero",
+          "It flips sign"
+        ],
+        "answer": 2,
+        "explanation": "Each small sample tends to miss the rare values in the tails, and the fitted spread is slightly too small on average. The losses add up, so the curve narrows towards a single point."
+      }
+    },
     "D5": {
       "text": [
         "Open problems: quality loss when models train recursively on their own outputs ('model collapse'), keeping diversity, and legal and terms-of-service questions about learning from other providers' models."

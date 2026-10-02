@@ -10,30 +10,97 @@
     "breaks": "An actor improvises from real understanding of the set. A model only sees what is placed in its context window: if the crew forgets a prop, for the model it doesn't exist."
   },
   "examples": [
-    "Prompt templates",
+    "Prompt and context templates",
     "Retrieval and vector databases",
     "Tool protocols (e.g. MCP)",
-    "Evaluation and guardrail tools"
+    "Memory stores and session summaries",
+    "Guardrail and eval tools (e.g. Llama Guard, promptfoo)"
   ],
   "givesAbove": "Reliable, grounded model calls that can use your data and tools.",
   "needsBelow": "An inference endpoint from Inference & Optimization.",
   "concepts": [
     "rag",
-    "tool-use"
+    "tool-use",
+    "memory",
+    "context-engineering",
+    "guardrails-evals"
   ],
   "metaDiagram": {
     "nodes": [
       {
-        "concept": "rag"
+        "concept": "rag",
+        "x": 64,
+        "y": 8
       },
       {
-        "concept": "tool-use"
+        "concept": "tool-use",
+        "x": 4,
+        "y": 8
+      },
+      {
+        "concept": "memory",
+        "x": 100,
+        "y": 55
+      },
+      {
+        "concept": "context-engineering",
+        "x": 56,
+        "y": 92
+      },
+      {
+        "concept": "guardrails-evals",
+        "x": 44,
+        "y": 44
       }
     ]
   },
-  "walkthrough": [],
+  "walkthrough": [
+    {
+      "title": "A question arrives",
+      "text": "Someone asks their home-lab assistant: “Which driver did I install on the GPU box last month?” The model alone can't know.",
+      "highlight": [
+        "context-engineering"
+      ]
+    },
+    {
+      "title": "Memory and retrieval look it up",
+      "text": "Memory recalls a saved note about the GPU box, and retrieval searches the setup docs for driver notes. Both hand back short passages.",
+      "highlight": [
+        "memory",
+        "rag",
+        "context-engineering"
+      ]
+    },
+    {
+      "title": "A tool checks the live machine",
+      "text": "The model asks for a tool call to read the installed driver version. The application runs it and the result joins the context.",
+      "highlight": [
+        "tool-use",
+        "context-engineering"
+      ]
+    },
+    {
+      "title": "The context is packed and the model answers",
+      "text": "System prompt, tool list, notes, the tool result and the question are trimmed to fit the window, stable parts first so they can be cached.",
+      "highlight": [
+        "context-engineering",
+        "rag",
+        "memory",
+        "tool-use"
+      ]
+    },
+    {
+      "title": "Guardrails check, evals keep score",
+      "text": "Tool output is screened for injected orders, the answer is checked before it is shown, and the same question joins an eval set for the next change.",
+      "highlight": [
+        "guardrails-evals",
+        "tool-use",
+        "context-engineering"
+      ]
+    }
+  ],
   "status": "draft",
-  "lastReviewed": "2026-09-28",
+  "lastReviewed": "2026-10-02",
   "newsKeywords": [
     "=RAG",
     "retrieval",
@@ -49,6 +116,11 @@
     "prompt engineering",
     "guardrails",
     "evals",
-    "DSPy"
+    "DSPy",
+    "context engineering",
+    "system prompt",
+    "context window",
+    "prompt injection",
+    "agent memory"
   ]
 }

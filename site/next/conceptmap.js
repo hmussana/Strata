@@ -61,6 +61,7 @@ export function conceptMap(layer, c) {
   const id = `cm${Math.random().toString(36).slice(2, 7)}`;
   const types = c.model.relationshipTypes, arrows = c.model.arrows;
   let edges = '', labels = '';
+  const placed = [];
   rels.forEach((r) => {
     const a = pos.get(r.from), b = pos.get(r.to);
     if (!a || !b) return;
@@ -69,9 +70,17 @@ export function conceptMap(layer, c) {
     const attrs = edgeAttrs(arrows[types[r.type]?.arrow], id);
     const cls = `cm-edge ${a.ghost || b.ghost ? 'cm-x' : ''}`;
     edges += `<g class="${cls}" data-from="${esc(r.from)}" data-to="${esc(r.to)}"><line x1="${x1.toFixed(1)}" y1="${y1.toFixed(1)}" x2="${x2.toFixed(1)}" y2="${y2.toFixed(1)}" class="${attrs.cls}" ${attrs.head}/></g>`;
-    // every edge, cross-layer ones included, gets its label as a small pill at the midpoint, drawn above the lines
-    const mx = (x1 + x2) / 2, my = (y1 + y2) / 2;
+    // every edge, cross-layer ones included, gets its label as a small pill, drawn above the lines: at the midpoint,
+    // or slid along the edge when the midpoint would cover a node or another label
     const lines = wrap(r.label, 16), lw = Math.max(...lines.map((l) => l.length)) * 6.4 + 12, lh = lines.length * 14 + 6;
+    const at = (f) => [x1 + (x2 - x1) * f, y1 + (y2 - y1) * f];
+    const free = ([x, y]) => {
+      const box = { x: x - lw / 2 - 3, y: y - lh / 2 - 3, w: lw + 6, h: lh + 6 };
+      const hit = (o) => box.x < o.x + o.w && o.x < box.x + box.w && box.y < o.y + o.h && o.y < box.y + box.h;
+      return !placed.some(hit) && ![...pos.values()].some((p) => hit({ x: p.x - p.w / 2, y: p.y - p.h / 2, w: p.w, h: p.h }));
+    };
+    const [mx, my] = [0.5, 0.4, 0.6, 0.32, 0.68, 0.25, 0.75].map(at).find(free) || at(0.5);
+    placed.push({ x: mx - lw / 2, y: my - lh / 2, w: lw, h: lh });
     const t = lines.map((l, i) => `<tspan x="${mx.toFixed(1)}" dy="${i ? 14 : 0}">${esc(l)}</tspan>`).join('');
     labels += `<g class="cm-label" data-from="${esc(r.from)}" data-to="${esc(r.to)}"><rect x="${(mx - lw / 2).toFixed(1)}" y="${(my - lh / 2).toFixed(1)}" width="${lw.toFixed(1)}" height="${lh}" rx="7"/>`
       + `<text x="${mx.toFixed(1)}" y="${(my - lh / 2 + 15).toFixed(1)}" text-anchor="middle">${t}</text></g>`;

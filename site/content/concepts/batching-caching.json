@@ -65,6 +65,102 @@
         "explanation": "Generation is often limited by memory reads; batching spreads each read over many requests until compute or KV-cache memory becomes the limit."
       }
     },
+    "D3": {
+      "text": [
+        "Each step of generation reads the model's weights once. If many users share that step, the expensive read is shared too, so the total output rises almost in step with the batch.",
+        "Each user still waits for the step, and each user's cache also has to be read. Slide the batch size and watch total speed and per-user speed separately."
+      ],
+      "interactive": "batch-play",
+      "interactiveConfig": {
+        "note": "Illustrative numbers, not measured. Generic model sizes and a made-up accelerator, not real products. Speeds are upper bounds from the formula: weights plus each user's KV cache read per step, against compute of 2 FLOPs per weight per user.",
+        "hardware": {
+          "label": "Illustrative accelerator",
+          "bandwidthGBs": 2000,
+          "computeTFLOPS": 250,
+          "memoryGB": 80
+        },
+        "model": {
+          "label": "8B",
+          "params": 8000000000.0,
+          "bytesPerWeight": 2,
+          "layers": 32,
+          "kvHeads": 8,
+          "headDim": 128
+        },
+        "contexts": [
+          250,
+          1000,
+          4000
+        ]
+      },
+      "tasks": [
+        "With 250 tokens per conversation, go from 1 to 32 users. How much does each user's speed drop?",
+        "Keep going to 256 users. What stops the total from rising?",
+        "Switch to 4,000 tokens per conversation. How many users fit before memory runs out?"
+      ],
+      "predict": {
+        "question": "With short conversations, you go from 1 user to 32 users on the same chip. What happens to each user's speed?",
+        "options": [
+          "It falls to a thirty-second",
+          "It drops only a little",
+          "It stays exactly the same",
+          "It goes up"
+        ],
+        "answer": 1,
+        "explanation": "The weights are read once per step for everyone. Only the small per-user cache reads are added, so each user keeps most of their speed while the total rises about 30 times."
+      }
+    },
+    "D4": {
+      "text": [
+        "The **KV cache** stores a key and a value for every past token, in every layer, so the model does not recompute them. Its size is **2 × layers × KV heads × head size × bytes × tokens × users**.",
+        "The weights are a fixed cost. The cache grows with every token of context and every user, so on a busy server it soon overtakes the weights and becomes the memory budget."
+      ],
+      "interactive": "kv-workbench",
+      "interactiveConfig": {
+        "note": "Illustrative model shapes for generic 8B-class and 70B-class models, not real products. Sizes come from the formula; real servers add overheads.",
+        "models": [
+          {
+            "label": "8B-class",
+            "params": 8000000000.0,
+            "weightBits": 16,
+            "layers": 32,
+            "kvHeads": 8,
+            "headDim": 128
+          },
+          {
+            "label": "70B-class",
+            "params": 70000000000.0,
+            "weightBits": 16,
+            "layers": 80,
+            "kvHeads": 8,
+            "headDim": 128
+          }
+        ]
+      },
+      "tasks": [
+        "With the 8B-class model, find a context length and user count where the cache is bigger than the weights.",
+        "Double the context, then double the users instead. Do they cost the same?",
+        "Switch the cache to 8-bit. How many more users fit in the same memory?"
+      ],
+      "code": "kv_per_token = 2 * layers * kv_heads * head_size * bytes   # a key and a value per layer\ncache = kv_per_token * context_tokens * users\nweights = params * weight_bits / 8\nfree = device_memory - weights\nmax_users = free // (kv_per_token * context_tokens)",
+      "tradeoffs": [
+        "Longer contexts and more users both grow the cache in direct proportion.",
+        "Fewer KV heads (grouped-query attention) shrink the cache but change the model.",
+        "A lower-precision cache saves memory at some risk to accuracy.",
+        "Paging the cache in small blocks wastes less memory, and sharing common prefixes avoids storing the same tokens twice."
+      ],
+      "predict": {
+        "question": "For the 8B-class model with a 16-bit cache, about how many tokens in total, across all users, make the cache as big as the 16 GB of weights?",
+        "options": [
+          "About 1,000",
+          "About 12,000",
+          "About 120,000",
+          "About 1.2 million"
+        ],
+        "answer": 2,
+        "explanation": "Each token costs 2 × 32 × 8 × 128 × 2 = 131,072 bytes. 16 GB ÷ 131,072 bytes is about 122,000 tokens: for example 8 users with 16,000 tokens each."
+      }
+    },
     "D5": {
       "text": [
         "Frontier: paged KV-cache memory management, sharing cached prefixes across users, running the prompt-reading and generation phases on different machines, and compressing the KV cache for very long contexts."
