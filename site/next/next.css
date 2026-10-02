@@ -237,6 +237,7 @@ main:focus { outline: none; }
 .dg-edge.dashed { stroke-dasharray: 6 5; }
 .dg-edge.dotted { stroke-dasharray: 1.5 4; stroke-linecap: round; }
 .dg-edge.thick { stroke-width: 4; }
+.dg-edge.thin { stroke-width: 1.1; opacity: .75; }
 .dg-head { fill: var(--muted); }
 .dg-head-open { fill: none; stroke: var(--muted); stroke-width: 1.5; }
 .dg-lifeline { stroke: var(--border); stroke-dasharray: 4 5; }
@@ -526,6 +527,7 @@ body.is-z0 main { padding-top: 14px; padding-bottom: 14px; }
 .cm-svg.cm-dim .cm-edge:not(.is-hi), .cm-svg.cm-dim .cm-label:not(.is-hi) { opacity: .12; }
 .cm-edge.is-hi .dg-edge { stroke: var(--text); opacity: 1; }
 .cm-edge.is-hi .dg-head { fill: var(--text); }
+.cm-edge.is-hi .dg-head-open { stroke: var(--text); }
 .cm-label.is-hi text { fill: var(--text); }
 .cm-label.is-hi rect { stroke: var(--text); }
 .cm-panel { background: var(--surface); border: 1px solid var(--border); border-top: 4px solid var(--c); border-radius: var(--radius); padding: 14px; display: grid; gap: 10px; position: sticky; top: calc(var(--bar-h) + 12px); }
@@ -541,9 +543,22 @@ body.is-z0 main { padding-top: 14px; padding-bottom: 14px; }
 .cm-key svg { width: 75px; height: 12px; }
 .cm-text { margin: 8px 0 4px; }
 .cm-text summary { cursor: pointer; font-size: .9rem; color: var(--muted); min-height: 32px; display: flex; align-items: center; }
+.cm-legend, .cm-text { grid-column: 1 / -1; }
+.cm-text .rel-list li { border-radius: 8px; padding: 2px 4px; transition: background .2s; }
+.cm-text .rel-list li.is-hi { background: var(--c-soft); }
+.cm-show { display: none; justify-self: start; }
 @media (max-width: 900px) {
   .cm-wrap { grid-template-columns: 1fr; }
   .cm-panel { position: static; }
+}
+/* phones: the readable text list leads; the map (wider than the screen) opens on request */
+@media (max-width: 700px) {
+  .cm-text { order: 1; margin: 0; }
+  .cm-show { display: inline-flex; order: 2; }
+  .cm-canvas, .cm-legend { display: none; order: 3; }
+  .cm-wrap.show-map .cm-canvas, .cm-wrap.show-map .cm-legend { display: block; }
+  .cm-wrap.show-map .cm-legend { display: flex; }
+  .cm-panel { order: 4; }
 }
 
 /* ---------- M4: D1 guide + narration ---------- */
@@ -600,6 +615,6 @@ body.is-z0 main { padding-top: 14px; padding-bottom: 14px; }
 .code-fig figcaption { font-size: .78rem; color: var(--muted); margin-bottom: 4px; }
 pre.code { margin: 0; padding: 12px 14px; overflow-x: auto; border-radius: 10px; background: var(--surface-2); border: 1px solid var(--border); font-family: var(--mono); font-size: .86rem; line-height: 1.5; }
 @media (prefers-reduced-motion: reduce) {
-  .xp-fill, .cm-node rect, .cm-node text, .cm-edge, .cm-label { transition: none; }
+  .xp-fill, .cm-node rect, .cm-node text, .cm-edge, .cm-label, .cm-text .rel-list li { transition: none; }
 }
 pre.code code { padding: 0; background: none; border: 0; font-size: inherit; }

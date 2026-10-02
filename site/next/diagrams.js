@@ -26,6 +26,7 @@ function textLines(x, y, lines, cls, size, lh = 1.25) {
 export function markers(id) {
   return `<defs>
     <marker id="${id}-arrow" viewBox="0 0 10 10" refX="9" refY="5" markerUnits="userSpaceOnUse" markerWidth="11" markerHeight="11" orient="auto-start-reverse"><path d="M0,0 L10,5 L0,10 z" class="dg-head"/></marker>
+    <marker id="${id}-open" viewBox="0 0 10 10" refX="9" refY="5" markerUnits="userSpaceOnUse" markerWidth="12" markerHeight="12" orient="auto-start-reverse"><path d="M1,1 L9,5 L1,9" class="dg-head-open"/></marker>
     <marker id="${id}-diamond" viewBox="0 0 12 12" refX="11" refY="6" markerUnits="userSpaceOnUse" markerWidth="13" markerHeight="13" orient="auto"><path d="M1,6 L6,1 L11,6 L6,11 z" class="dg-head-open"/></marker>
   </defs>`;
 }
@@ -33,7 +34,8 @@ export function markers(id) {
 // Stroke class + marker attribute for an arrow spec from model.json
 export function edgeAttrs(spec, id) {
   const stroke = spec?.stroke && spec.stroke !== 'solid' ? spec.stroke : '';
-  const head = spec?.head === 'none' ? '' : `marker-end="url(#${id}-${spec?.head === 'diamond' ? 'diamond' : 'arrow'})"`;
+  const marker = { diamond: 'diamond', open: 'open' }[spec?.head] || 'arrow';
+  const head = spec?.head === 'none' ? '' : `marker-end="url(#${id}-${marker})"`;
   return { cls: `dg-edge ${stroke}`, head };
 }
 

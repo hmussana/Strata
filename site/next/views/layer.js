@@ -29,7 +29,7 @@ export function layer(route, c) {
     const a = c.conceptById.get(r.from), b = c.conceptById.get(r.to);
     const la = c.layerOf(r.from), lb = c.layerOf(r.to);
     const link = (k, kl) => `<a class="chip ${lclass(kl)}" href="${href.concept(k.id)}">${kl.id !== l.id ? `L${kl.order} · ` : ''}${esc(k.name)}</a>`;
-    return `<li>${link(a, la)} <span class="rel-type">→ ${esc(r.label)} →</span> ${link(b, lb)}</li>`;
+    return `<li data-from="${esc(r.from)}" data-to="${esc(r.to)}">${link(a, la)} <span class="rel-type">→ ${esc(r.label)} →</span> ${link(b, lb)}</li>`;
   }).join('');
   const usedArrows = [...new Set(rels.map((r) => c.model.relationshipTypes[r.type]?.arrow))].filter(Boolean);
   const legend = usedArrows.map((a) => {
@@ -58,6 +58,7 @@ export function layer(route, c) {
       ${hasMap ? `
       <h2 class="section-title">How they work together</h2>
       <div class="cm-wrap ${lclass(l)}">
+        <button type="button" class="btn-ghost cm-show" aria-expanded="false">${icon('zoom', 'ico-s')}Show the map</button>
         <div class="cm-canvas">${conceptMap(l, c)}</div>
         <aside class="cm-panel" aria-live="polite">
           <div class="cm-info"><p class="muted">Hover, tab to or tap a concept to see what it connects to. Concepts from neighbouring layers sit along the edges.</p></div>
@@ -67,9 +68,9 @@ export function layer(route, c) {
             </div>
             <button type="button" class="btn cm-start">${icon('bulb', 'ico-s')}Walk me through it <span class="cm-steps">· ${walk.length} steps</span></button>` : ''}
         </aside>
-      </div>
-      <div class="cm-legend small muted">${legend}<span>Every line is also labelled in words.</span></div>
-      <details class="cm-text"><summary>Connections as a text list</summary><ul class="rel-list">${relItems}</ul></details>`
+        <div class="cm-legend small muted">${legend}<span>Every line is also labelled in words.</span></div>
+        <details class="cm-text"><summary>Connections as a text list</summary><ul class="rel-list">${relItems}</ul></details>
+      </div>`
       : (relItems ? `<h2 class="section-title">How they connect</h2><ul class="rel-list">${relItems}</ul>` : '')}
       <div class="neighbours">
         ${below ? `<a class="neighbour ${lclass(below)}" href="${href.layer(below.id)}">${icon('down', 'ico-s')}<span><span class="small muted">Needs from below:</span> ${lnum(below)} ${esc(below.name)}</span></a>` : '<span></span>'}
@@ -81,6 +82,21 @@ export function layer(route, c) {
 
 function mountMap(root, l, c, walk) {
   const svg = root.querySelector('.cm-svg');
+  const wrap = root.querySelector('.cm-wrap');
+  const list = root.querySelector('.cm-text');
+  // the text list lights up with the map, so on phones (where it leads) the walkthrough still shows each step
+  const paint = (ids, edgeOn = () => false) => {
+    highlight(svg, ids, edgeOn);
+    list.querySelectorAll('[data-from]').forEach((li) => li.classList.toggle('is-hi', ids.length > 0 && edgeOn(li.dataset.from, li.dataset.to)));
+  };
+  // phones: the map is wider than the screen, so the readable text list leads and the map opens on request
+  if (matchMedia('(max-width: 700px)').matches) list.open = true;
+  const showBtn = root.querySelector('.cm-show');
+  showBtn.addEventListener('click', () => {
+    const open = wrap.classList.toggle('show-map');
+    showBtn.setAttribute('aria-expanded', String(open));
+    showBtn.lastChild.textContent = open ? 'Hide the map' : 'Show the map';
+  });
   const info = root.querySelector('.cm-info');
   const walkEl = root.querySelector('.cm-walk');
   const startBtn = root.querySelector('.cm-start');
@@ -96,18 +112,18 @@ function mountMap(root, l, c, walk) {
     const k = c.conceptById.get(id), kl = c.layerOf(id);
     const links = c.relsOf(id).map((r) => {
       const other = c.conceptById.get(r.from === id ? r.to : r.from);
-      return `<li>${r.from === id ? `→ ${esc(r.label)} → <strong>${esc(other.name)}</strong>` : `<strong>${esc(other.name)}</strong> → ${esc(r.label)} →`}</li>`;
+      return `<li>${r.from === id ? `→ ${esc(r.label)} → <strong>${esc(other.name)}</strong>` : `<strong>${esc(other.name)}</strong> → ${esc(r.label)} → ${esc(k.name)}`}</li>`;
     }).join('');
     info.innerHTML = `<p class="flow-kicker">${kl.id === l.id ? 'In this layer' : `From L${kl.order} · ${esc(kl.name)}`}</p>
       <h3>${esc(k.name)}</h3><p>${esc(k.summary)}</p><ul class="cm-links">${links}</ul>
       <a class="btn-ghost" href="${href.concept(id)}">Open concept ${icon('zoom', 'ico-s')}</a>`;
-    highlight(svg, [id, ...neighbours(id)], (f, t) => f === id || t === id);
+    paint([id, ...neighbours(id)], (f, t) => f === id || t === id);
   }
 
   function clear() {
     if (step >= 0) return;
     info.innerHTML = defaultInfo;
-    highlight(svg, []);
+    paint([]);
     touchPicked = null;
   }
 
@@ -126,7 +142,7 @@ function mountMap(root, l, c, walk) {
       walkEl.querySelector(step === walk.length - 1 ? '[data-w="exit"]' : '[data-w="next"]').focus();
     }
     const set = new Set(s.highlight || []);
-    highlight(svg, [...set], (f, t) => set.has(f) && set.has(t));
+    paint([...set], (f, t) => set.has(f) && set.has(t));
   }
 
   function endWalk() {

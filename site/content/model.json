@@ -77,8 +77,8 @@
     },
     "dependency": {
       "label": "Depends on",
-      "stroke": "dashed",
-      "head": "arrow"
+      "stroke": "solid",
+      "head": "open"
     },
     "primary": {
       "label": "Primary path",
@@ -92,7 +92,7 @@
     },
     "alternative": {
       "label": "Alternative to",
-      "stroke": "dotted",
+      "stroke": "thin",
       "head": "none"
     },
     "part": {

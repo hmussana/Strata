@@ -100,7 +100,7 @@
       "from": "post-training",
       "to": "open-weights",
       "type": "feeds",
-      "label": "produces the models released as"
+      "label": "is released as"
     },
     {
       "from": "pretraining-data",

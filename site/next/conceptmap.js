@@ -32,9 +32,10 @@ export function conceptMap(layer, c) {
   const above = ghostIds.filter((id) => c.layerOf(id).order > layer.order);
   const below = ghostIds.filter((id) => c.layerOf(id).order < layer.order);
 
-  const top = above.length ? 70 : 20;
+  // ghost bands sit far enough from the main map for a label pill to fit on each cross-layer edge
+  const top = above.length ? 104 : 20;
   const mainH = 340;
-  const H = top + mainH + (below.length ? 90 : 20);
+  const H = top + mainH + (below.length ? 124 : 20);
   const pos = new Map();
   // authored layout hints (0–100) or a simple grid fallback
   const cols = Math.ceil(Math.sqrt(nodes.length || 1));
@@ -68,20 +69,18 @@ export function conceptMap(layer, c) {
     const attrs = edgeAttrs(arrows[types[r.type]?.arrow], id);
     const cls = `cm-edge ${a.ghost || b.ghost ? 'cm-x' : ''}`;
     edges += `<g class="${cls}" data-from="${esc(r.from)}" data-to="${esc(r.to)}"><line x1="${x1.toFixed(1)}" y1="${y1.toFixed(1)}" x2="${x2.toFixed(1)}" y2="${y2.toFixed(1)}" class="${attrs.cls}" ${attrs.head}/></g>`;
-    if (!a.ghost && !b.ghost) {
-      // label as a small pill at the midpoint, drawn above the lines, wrapped to keep it narrow
-      const mx = (x1 + x2) / 2, my = (y1 + y2) / 2;
-      const lines = wrap(r.label, 16), lw = Math.max(...lines.map((l) => l.length)) * 6.4 + 12, lh = lines.length * 14 + 6;
-      const t = lines.map((l, i) => `<tspan x="${mx.toFixed(1)}" dy="${i ? 14 : 0}">${esc(l)}</tspan>`).join('');
-      labels += `<g class="cm-label" data-from="${esc(r.from)}" data-to="${esc(r.to)}"><rect x="${(mx - lw / 2).toFixed(1)}" y="${(my - lh / 2).toFixed(1)}" width="${lw.toFixed(1)}" height="${lh}" rx="7"/>`
-        + `<text x="${mx.toFixed(1)}" y="${(my - lh / 2 + 15).toFixed(1)}" text-anchor="middle">${t}</text></g>`;
-    }
+    // every edge, cross-layer ones included, gets its label as a small pill at the midpoint, drawn above the lines
+    const mx = (x1 + x2) / 2, my = (y1 + y2) / 2;
+    const lines = wrap(r.label, 16), lw = Math.max(...lines.map((l) => l.length)) * 6.4 + 12, lh = lines.length * 14 + 6;
+    const t = lines.map((l, i) => `<tspan x="${mx.toFixed(1)}" dy="${i ? 14 : 0}">${esc(l)}</tspan>`).join('');
+    labels += `<g class="cm-label" data-from="${esc(r.from)}" data-to="${esc(r.to)}"><rect x="${(mx - lw / 2).toFixed(1)}" y="${(my - lh / 2).toFixed(1)}" width="${lw.toFixed(1)}" height="${lh}" rx="7"/>`
+      + `<text x="${mx.toFixed(1)}" y="${(my - lh / 2 + 15).toFixed(1)}" text-anchor="middle">${t}</text></g>`;
   });
 
   let nodeSvg = '';
   for (const [cid, p] of pos) {
     const k = c.conceptById.get(cid), kl = c.layerOf(cid);
-    const lines = wrap(k.name, p.ghost ? 22 : 18);
+    const lines = wrap(k.name, p.ghost ? 19 : 16);
     const lh = p.ghost ? 13 : 15, fs = p.ghost ? 11.5 : 13.5;
     const ty = p.y - ((lines.length - 1) * lh) / 2 + fs / 3;
     const lnum = p.ghost ? `<tspan class="cm-lnum">L${kl.order} </tspan>` : '';

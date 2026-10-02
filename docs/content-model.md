@@ -81,8 +81,8 @@ Each depth holds `text` (paragraphs) plus any of:
 | `diagram` | a diagram spec (see below) |
 | `analogy`, `analogyBreaks` | breaks required from D2 up |
 | `predict` | `{ question, options, answer (index), explanation }`; every concept needs at least one |
-| `guide` | D1: one line said by the guide character (`model.json` → `guide`) |
-| `narration` | D1 only: script read aloud by the browser's built-in speech engine ("Listen"); the button is hidden where speech isn't supported, and the text hides while it plays with a one-tap "Show the text" |
+| `guide` | D1 only: one line said by the guide character (`model.json` → `guide`), 15 words or fewer. It must do work (a predict-first question or a nudge to look at something), never a greeting, and talks about the model in the third person ("the model guesses…"), never "I think" |
+| `narration` | D1 only, optional: what "Listen" says when the spoken words must differ from `text` (acronyms, symbols). Without it, Listen reads the D1 `text` itself. Listen shows on every D1 where the browser can speak, reads one sentence at a time, and hides the words while it plays only when the D1 has a diagram to look at |
 | `interactive`, `interactiveConfig` | an explorable id from `site/next/explorables/index.js` and the data it needs; loaded only when the page uses it |
 | `tasks` | "Try this" prompts for the explorable (list of strings) |
 | `code` | pseudo-code, shown as a block (D4) |
@@ -97,13 +97,18 @@ module. Example numbers in `interactiveConfig` must be labelled illustrative (`n
 
 Generated from `relationships.json`: the layer's concepts are nodes, each relationship is an arrow in its type's style
 with its `label` on a pill, and concepts from other layers that connect in appear as dashed "ghost" nodes along the
-top (layers above) or bottom (layers below), placed near what they connect to. Hover, focus or tap a concept to light
-up its connections; the walkthrough steps through `walkthrough`. A text list of every connection sits below the map.
+top (layers above) or bottom (layers below), placed near what they connect to. Cross-layer edges are labelled too. Hover, focus or tap a concept to light
+up its connections; the walkthrough steps through `walkthrough`. A text list of every connection sits below the map; on phones the list leads (and lights up with the walkthrough) and the
+map opens with "Show the map".
+
+Keep each map readable: at most 8 concepts and 12 edges per layer, at most 4 ghost nodes per band, and no edge
+crossings or edges passing through a node in the `x`/`y` hints. Dashed borders mean "from another layer" and nothing
+else.
 
 ## Relationship
 
 `{ from, to, type, label }`. `type` is one of `feeds`, `enables`, `depends-on`, `optimizes`, `competes-with`,
-`part-of`; each maps to an arrow style in `model.json`. `label` is the words shown on the edge, read as
+`part-of`; each maps to an arrow style in `model.json`. `label` is the words shown on the edge (4 words or fewer, enforced), read as
 "from *label* to", e.g. "Pretraining data *teaches* next-token prediction". Concepts don't store their own related
 lists; they're derived from this file so maps and links never drift apart.
 

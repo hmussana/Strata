@@ -41,6 +41,14 @@ class ContentTests(unittest.TestCase):
         self.assertIn("sampling-play", vc.explorable_ids())
         self.assertIn("guess", vc.diagram_types())
 
+    def test_validator_caps_edge_labels_and_guide_lines(self):
+        data = vc.load_all()
+        data["relationships"][0]["label"] = "one two three four five"
+        data["concepts"][0]["depths"]["D2"]["guide"] = "hello"
+        errs = vc.validate(data)
+        self.assertTrue(any("over 4 words" in e for e in errs))
+        self.assertTrue(any("guide only speaks at D1" in e for e in errs))
+
     def test_report_lists_placeholders(self):
         data = vc.load_all()
         data["crosscutting"][0]["summary"] = vc.PLACEHOLDER

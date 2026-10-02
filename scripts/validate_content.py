@@ -19,6 +19,8 @@ ROOT = Path(__file__).resolve().parent.parent
 CONTENT = ROOT / "site" / "content"
 APP = ROOT / "site" / "next"
 PLACEHOLDER = "PLACEHOLDER"
+MAX_LABEL_WORDS = 4   # concept-map edge labels read as "from <label> to" and must fit a small pill
+MAX_GUIDE_WORDS = 15  # Tok's D1 line is one short prompt, not a second explanation
 REQUIRED_DEPTHS = ("D1", "D2", "D5")
 ALL_DEPTHS = ("D1", "D2", "D3", "D4", "D5")
 AA = 4.5
@@ -201,6 +203,10 @@ def validate(data: dict | None = None) -> list[str]:
                 err(f"{where}: {dep} unknown diagram type {body['diagram'].get('type')}")
             if body.get("narration") and dep != "D1":
                 err(f"{where}: narration is only read aloud at D1")
+            if body.get("guide") and dep != "D1":
+                err(f"{where}: the guide only speaks at D1")
+            if body.get("guide") and len(body["guide"].split()) > MAX_GUIDE_WORDS:
+                err(f"{where}: guide line is over {MAX_GUIDE_WORDS} words")
             for key in ("tasks", "tradeoffs"):
                 if key in body and not (isinstance(body[key], list) and all(isinstance(x, str) for x in body[key])):
                     err(f"{where}: {dep} {key} must be a list of strings")
@@ -230,6 +236,8 @@ def validate(data: dict | None = None) -> list[str]:
             err(f"relationships: unknown type {r.get('type')}")
         if not r.get("label"):
             err(f"relationships: missing label in {r}")
+        elif len(r["label"].split()) > MAX_LABEL_WORDS:
+            err(f"relationships: label '{r['label']}' is over {MAX_LABEL_WORDS} words ({r['from']} -> {r['to']})")
         if key in seen:
             err(f"relationships: duplicate {key}")
         seen.add(key)
@@ -344,6 +352,18 @@ def report(d: dict) -> str:
     drafts = [f"layer: {l['name']}" for l in d["layers"] if l.get("status") == "draft"]
     drafts += [f"concept: {c['name']}" for c in d["concepts"] if c.get("status") == "draft"]
     out += [f"- {x}" for x in drafts] or ["None."]
+    out += ["", "## D1 guide lines to write", ""]
+    out += [f"- {c['name']}" for c in d["concepts"] if c["depths"].get("D1") and not c["depths"]["D1"].get("guide")] or ["None."]
+    out += ["", "## Narration overrides to check", ""]
+    over = []
+    for c in d["concepts"]:
+        d1 = c["depths"].get("D1") or {}
+        if d1.get("narration"):
+            words = lambda v: len((" ".join(v) if isinstance(v, list) else str(v)).split())
+            said, shown = words(d1["narration"]), words(d1["text"])
+            note = "much longer or shorter than the text" if abs(said - shown) > shown * 0.25 else "Listen reads the D1 text; drop it unless the spoken words must differ"
+            over.append(f"- {c['name']}: {note} ({said} vs {shown} words)")
+    out += over or ["None."]
     return "\n".join(out) + "\n"
 
 
