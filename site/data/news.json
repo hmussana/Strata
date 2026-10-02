@@ -1,5 +1,5 @@
 {
- "generated": "2026-10-02T12:15:38Z",
+ "generated": "2026-10-02T13:21:59Z",
  "retentionDays": 45,
  "llmEnriched": 0,
  "sources": [
@@ -10,7 +10,7 @@
    "ok": true,
    "count": 15,
    "error": null,
-   "lastOk": "2026-10-02T12:15:38Z"
+   "lastOk": "2026-10-02T13:21:59Z"
   },
   {
    "id": "deepmind",
@@ -28,7 +28,7 @@
    "ok": true,
    "count": 10,
    "error": null,
-   "lastOk": "2026-10-02T12:15:38Z"
+   "lastOk": "2026-10-02T13:21:59Z"
   },
   {
    "id": "hf-blog",
@@ -37,7 +37,7 @@
    "ok": true,
    "count": 15,
    "error": null,
-   "lastOk": "2026-10-02T12:15:38Z"
+   "lastOk": "2026-10-02T13:21:59Z"
   },
   {
    "id": "nvidia-dev",
@@ -46,7 +46,7 @@
    "ok": true,
    "count": 10,
    "error": null,
-   "lastOk": "2026-10-02T12:15:38Z"
+   "lastOk": "2026-10-02T13:21:59Z"
   },
   {
    "id": "msr",
@@ -55,7 +55,7 @@
    "ok": true,
    "count": 10,
    "error": null,
-   "lastOk": "2026-10-02T12:15:38Z"
+   "lastOk": "2026-10-02T13:21:59Z"
   },
   {
    "id": "aws-ml",
@@ -64,7 +64,7 @@
    "ok": true,
    "count": 8,
    "error": null,
-   "lastOk": "2026-10-02T12:15:38Z"
+   "lastOk": "2026-10-02T13:21:59Z"
   },
   {
    "id": "qwen",
@@ -73,7 +73,7 @@
    "ok": true,
    "count": 8,
    "error": null,
-   "lastOk": "2026-10-02T12:15:38Z"
+   "lastOk": "2026-10-02T13:21:59Z"
   },
   {
    "id": "hn",
@@ -82,7 +82,7 @@
    "ok": true,
    "count": 7,
    "error": null,
-   "lastOk": "2026-10-02T12:15:38Z"
+   "lastOk": "2026-10-02T13:21:59Z"
   },
   {
    "id": "localllama",
@@ -91,7 +91,7 @@
    "ok": true,
    "count": 15,
    "error": null,
-   "lastOk": "2026-10-02T12:15:38Z"
+   "lastOk": "2026-10-02T13:21:59Z"
   },
   {
    "id": "simonw",
@@ -100,7 +100,7 @@
    "ok": true,
    "count": 15,
    "error": null,
-   "lastOk": "2026-10-02T12:15:38Z"
+   "lastOk": "2026-10-02T13:21:59Z"
   },
   {
    "id": "hf-papers",
@@ -109,7 +109,7 @@
    "ok": true,
    "count": 15,
    "error": null,
-   "lastOk": "2026-10-02T12:15:38Z"
+   "lastOk": "2026-10-02T13:21:59Z"
   },
   {
    "id": "arxiv-cl",
@@ -118,7 +118,7 @@
    "ok": true,
    "count": 12,
    "error": null,
-   "lastOk": "2026-10-02T12:15:38Z"
+   "lastOk": "2026-10-02T13:21:59Z"
   },
   {
    "id": "latent-space",
@@ -127,7 +127,7 @@
    "ok": true,
    "count": 8,
    "error": null,
-   "lastOk": "2026-10-02T12:15:38Z"
+   "lastOk": "2026-10-02T13:21:59Z"
   },
   {
    "id": "interconnects",
@@ -136,7 +136,7 @@
    "ok": true,
    "count": 8,
    "error": null,
-   "lastOk": "2026-10-02T12:15:38Z"
+   "lastOk": "2026-10-02T13:21:59Z"
   },
   {
    "id": "import-ai",
@@ -145,7 +145,7 @@
    "ok": true,
    "count": 5,
    "error": null,
-   "lastOk": "2026-10-02T12:15:38Z"
+   "lastOk": "2026-10-02T13:21:59Z"
   },
   {
    "id": "verge-ai",
@@ -154,7 +154,7 @@
    "ok": true,
    "count": 10,
    "error": null,
-   "lastOk": "2026-10-02T12:15:38Z"
+   "lastOk": "2026-10-02T13:21:59Z"
   },
   {
    "id": "ars-ai",
@@ -163,7 +163,7 @@
    "ok": true,
    "count": 12,
    "error": null,
-   "lastOk": "2026-10-02T12:15:38Z"
+   "lastOk": "2026-10-02T13:21:59Z"
   },
   {
    "id": "techcrunch-ai",
@@ -172,7 +172,7 @@
    "ok": true,
    "count": 12,
    "error": null,
-   "lastOk": "2026-10-02T12:15:38Z"
+   "lastOk": "2026-10-02T13:21:59Z"
   },
   {
    "id": "mit-tr",
@@ -181,7 +181,7 @@
    "ok": true,
    "count": 8,
    "error": null,
-   "lastOk": "2026-10-02T12:15:38Z"
+   "lastOk": "2026-10-02T13:21:59Z"
   },
   {
    "id": "decoder",
@@ -190,7 +190,7 @@
    "ok": true,
    "count": 10,
    "error": null,
-   "lastOk": "2026-10-02T12:15:38Z"
+   "lastOk": "2026-10-02T13:21:59Z"
   },
   {
    "id": "sth",
@@ -199,7 +199,7 @@
    "ok": true,
    "count": 5,
    "error": null,
-   "lastOk": "2026-10-02T12:15:38Z"
+   "lastOk": "2026-10-02T13:21:59Z"
   },
   {
    "id": "embrace-red",
@@ -208,7 +208,7 @@
    "ok": true,
    "count": 6,
    "error": null,
-   "lastOk": "2026-10-02T12:15:38Z"
+   "lastOk": "2026-10-02T13:21:59Z"
   },
   {
    "id": "rel-ollama",
@@ -217,7 +217,7 @@
    "ok": true,
    "count": 3,
    "error": null,
-   "lastOk": "2026-10-02T12:15:38Z"
+   "lastOk": "2026-10-02T13:21:59Z"
   },
   {
    "id": "rel-vllm",
@@ -226,7 +226,7 @@
    "ok": true,
    "count": 3,
    "error": null,
-   "lastOk": "2026-10-02T12:15:38Z"
+   "lastOk": "2026-10-02T13:21:59Z"
   },
   {
    "id": "rel-opencode",
@@ -235,7 +235,7 @@
    "ok": true,
    "count": 3,
    "error": null,
-   "lastOk": "2026-10-02T12:15:38Z"
+   "lastOk": "2026-10-02T13:21:59Z"
   },
   {
    "id": "rel-claude-code",
@@ -244,15 +244,35 @@
    "ok": true,
    "count": 3,
    "error": null,
-   "lastOk": "2026-10-02T12:15:38Z"
+   "lastOk": "2026-10-02T13:21:59Z"
   }
  ],
  "heat": {
   "concepts": {
+   "vllm": {
+    "d7": 10,
+    "prev7": 3,
+    "d30": 13
+   },
+   "qwen": {
+    "d7": 51,
+    "prev7": 1,
+    "d30": 52
+   },
    "benchmarks": {
-    "d7": 20,
+    "d7": 22,
     "prev7": 4,
-    "d30": 25
+    "d30": 27
+   },
+   "gpt": {
+    "d7": 93,
+    "prev7": 19,
+    "d30": 118
+   },
+   "alignment": {
+    "d7": 7,
+    "prev7": 7,
+    "d30": 14
    },
    "ai-datacenters": {
     "d7": 15,
@@ -274,11 +294,6 @@
     "prev7": 12,
     "d30": 48
    },
-   "qwen": {
-    "d7": 49,
-    "prev7": 1,
-    "d30": 50
-   },
    "deepseek": {
     "d7": 13,
     "prev7": 1,
@@ -288,11 +303,6 @@
     "d7": 24,
     "prev7": 2,
     "d30": 28
-   },
-   "vllm": {
-    "d7": 9,
-    "prev7": 3,
-    "d30": 12
    },
    "speculative-decoding": {
     "d7": 6,
@@ -419,11 +429,6 @@
     "prev7": 3,
     "d30": 20
    },
-   "gpt": {
-    "d7": 92,
-    "prev7": 19,
-    "d30": 117
-   },
    "claude-code": {
     "d7": 6,
     "prev7": 2,
@@ -483,11 +488,6 @@
     "d7": 7,
     "prev7": 0,
     "d30": 7
-   },
-   "alignment": {
-    "d7": 6,
-    "prev7": 7,
-    "d30": 13
    },
    "world-models": {
     "d7": 19,
@@ -621,21 +621,21 @@
    }
   },
   "layers": {
+   "inference": {
+    "d7": 61,
+    "d30": 71
+   },
+   "models": {
+    "d7": 313,
+    "d30": 388
+   },
    "security": {
-    "d7": 43,
-    "d30": 57
+    "d7": 46,
+    "d30": 60
    },
    "compute": {
     "d7": 52,
     "d30": 57
-   },
-   "inference": {
-    "d7": 60,
-    "d30": 70
-   },
-   "models": {
-    "d7": 310,
-    "d30": 385
    },
    "agents": {
     "d7": 118,
@@ -660,7 +660,7 @@
     "prev7": 3
    },
    "compute-hardware": {
-    "d7": 26,
+    "d7": 27,
     "prev7": 6
    },
    "cloud-infrastructure": {
@@ -676,7 +676,7 @@
     "prev7": 37
    },
    "inference-optimization": {
-    "d7": 61,
+    "d7": 62,
     "prev7": 8
    },
    "orchestration-tooling": {
@@ -876,6 +876,17 @@
    ]
   },
   {
+   "term": "CUDA",
+   "items": 4,
+   "sources": 4,
+   "sample": [
+    "4877741994c9",
+    "55ff3a3e484a",
+    "5c506b1aae8b",
+    "ecc087a7b297"
+   ]
+  },
+  {
    "term": "Luna",
    "items": 4,
    "sources": 4,
@@ -884,6 +895,17 @@
     "3d48e529ad7a",
     "4a34b417a079",
     "7c8d74434d02"
+   ]
+  },
+  {
+   "term": "Journal",
+   "items": 4,
+   "sources": 3,
+   "sample": [
+    "39067a424f03",
+    "907cbfcfae98",
+    "911dfe6cba1b",
+    "c0191b48b316"
    ]
   },
   {
@@ -926,6 +948,16 @@
    "sample": [
     "227c6ab55934",
     "4b4cfee992d3",
+    "f1290f1f0545"
+   ]
+  },
+  {
+   "term": "Atlas",
+   "items": 3,
+   "sources": 3,
+   "sample": [
+    "55ff3a3e484a",
+    "abda39f3393f",
     "f1290f1f0545"
    ]
   },
@@ -992,26 +1024,6 @@
    ]
   },
   {
-   "term": "CUDA",
-   "items": 3,
-   "sources": 3,
-   "sample": [
-    "4877741994c9",
-    "5c506b1aae8b",
-    "ecc087a7b297"
-   ]
-  },
-  {
-   "term": "Journal",
-   "items": 3,
-   "sources": 3,
-   "sample": [
-    "39067a424f03",
-    "907cbfcfae98",
-    "c0191b48b316"
-   ]
-  },
-  {
    "term": "DR",
    "items": 4,
    "sources": 2,
@@ -1021,19 +1033,72 @@
     "660e3af764e3",
     "ee42c8345e8b"
    ]
-  },
-  {
-   "term": "Dario Amodei",
-   "items": 3,
-   "sources": 2,
-   "sample": [
-    "39e6d83733f3",
-    "63f85032962d",
-    "c6f1dde94675"
-   ]
   }
  ],
  "items": [
+  {
+   "id": "55ff3a3e484a",
+   "title": "Two 96 GB Ascend cards crun Qwen3.8-flash-next hardware notes, vLLM work, benchmarks, and what is next",
+   "url": "https://www.reddit.com/r/LocalLLaMA/comments/1wvt1m4/two_96_gb_ascend_cards_crun_qwen38flashnext/",
+   "source": "localllama",
+   "sourceName": "r/LocalLLaMA (top today)",
+   "type": "community",
+   "published": "2026-10-02T12:54:04Z",
+   "summary": "I have been building a somewhat unusual local inference machine around two Huawei Atlas 300I Duo cards. They are relatively inexpensive, passive, dual-accelerator PCIe cards with 96 GB of device memory apiece. They are also absolutely not drop-in CUDA replacements. When I first brought up Qwen3.8 Flash-Next these past…",
+   "firstSeen": "2026-10-02T13:21:59Z",
+   "tags": [
+    "vllm",
+    "qwen",
+    "benchmarks"
+   ],
+   "layers": [
+    "inference",
+    "models",
+    "security"
+   ],
+   "score": 3.8
+  },
+  {
+   "id": "911dfe6cba1b",
+   "title": "Three firings and a fourth departure shake up OpenAI's safety team",
+   "url": "https://the-decoder.com/three-firings-and-a-fourth-departure-shake-up-openais-safety-team/",
+   "source": "decoder",
+   "sourceName": "The Decoder",
+   "type": "press",
+   "published": "2026-10-02T12:51:08Z",
+   "summary": "OpenAI has parted ways with three researchers who allegedly leaked confidential information to an outside AI safety organization, according to the Wall Street Journal. The article Three firings and a fourth departure shake up OpenAI's safety team appeared first on The Decoder.",
+   "discussion": "0",
+   "firstSeen": "2026-10-02T13:21:59Z",
+   "tags": [
+    "gpt",
+    "alignment"
+   ],
+   "layers": [
+    "models",
+    "security"
+   ],
+   "score": 2.2
+  },
+  {
+   "id": "c21569a4f691",
+   "title": "I made my own cybersecurity benchmark and ran Qwen3.8 27B, here's how a local model actually does at hacking",
+   "url": "https://www.reddit.com/r/LocalLLaMA/comments/1wvs8va/i_made_my_own_cybersecurity_benchmark_and_ran/",
+   "source": "localllama",
+   "sourceName": "r/LocalLLaMA (top today)",
+   "type": "community",
+   "published": "2026-10-02T12:15:13Z",
+   "summary": "Hey local AI community, I've been working on this for a while and finally feel ok sharing it. It's a cyber benchmark where the model gets a shell in an isolated docker box and has to find the exact flag. Pwn, web, crypto, rev, forensics, a few real CVEs and some multi-stage ranges. 19 tasks, 6 models, 544 scored…",
+   "firstSeen": "2026-10-02T13:21:59Z",
+   "tags": [
+    "qwen",
+    "benchmarks"
+   ],
+   "layers": [
+    "models",
+    "security"
+   ],
+   "score": 3.2
+  },
   {
    "id": "b3a9a516e91b",
    "title": "AI hallucinations are making entitled customers even worse",
@@ -1115,7 +1180,7 @@
    "sourceName": "r/LocalLLaMA (top today)",
    "type": "community",
    "published": "2026-10-02T10:29:47Z",
-   "summary": "Now you can jev without jev",
+   "summary": "Now you can jev without jev looks like 5 is not enough…",
    "firstSeen": "2026-10-02T12:15:38Z",
    "tags": [
     "llama-cpp",
@@ -1554,7 +1619,7 @@
    "type": "community",
    "published": "2026-10-02T03:11:20Z",
    "summary": "",
-   "points": 259,
+   "points": 278,
    "discussion": "https://news.ycombinator.com/item?id=49929489",
    "firstSeen": "2026-10-02T10:10:31Z",
    "tags": [
@@ -1563,7 +1628,7 @@
    "layers": [
     "models"
    ],
-   "score": 5.01
+   "score": 5.05
   },
   {
    "id": "28419c25af77",
@@ -1820,7 +1885,7 @@
    "type": "press",
    "published": "2026-10-01T20:11:55Z",
    "summary": "The court acknowledges AI search comes with consequences, but it's not an antitrust issue.",
-   "discussion": "14",
+   "discussion": "17",
    "firstSeen": "2026-10-02T00:46:08Z",
    "tags": [
     "ai-policy"
@@ -2327,7 +2392,7 @@
    "type": "community",
    "published": "2026-10-01T16:18:57Z",
    "summary": "",
-   "points": 533,
+   "points": 545,
    "discussion": "https://news.ycombinator.com/item?id=49923692",
    "firstSeen": "2026-10-02T00:46:08Z",
    "tags": [
@@ -2337,7 +2402,7 @@
    "layers": [
     "models"
    ],
-   "score": 5.93
+   "score": 5.94
   },
   {
    "id": "a4d5be1f0220",
@@ -2348,7 +2413,7 @@
    "type": "community",
    "published": "2026-10-01T16:01:56Z",
    "summary": "",
-   "points": 342,
+   "points": 346,
    "discussion": "https://news.ycombinator.com/item?id=49923466",
    "firstSeen": "2026-10-02T00:46:08Z",
    "tags": [
@@ -3542,7 +3607,7 @@
    "type": "community",
    "published": "2026-09-30T20:04:37Z",
    "summary": "",
-   "points": 1656,
+   "points": 1660,
    "discussion": "https://news.ycombinator.com/item?id=49913571",
    "firstSeen": "2026-09-30T21:39:06Z",
    "tags": [
@@ -3633,11 +3698,11 @@
    "type": "research",
    "published": "2026-09-30T20:00:00Z",
    "summary": "Streaming video LLMs must retain evidence before its relevance to future tasks is known and respond when sufficient evidence becomes available. The challenge is to form reusable factual memory without compromising real-time perception. We introduce OneStreamer, which jointly learns query-independent evidence recording…",
-   "points": 62,
+   "points": 87,
    "firstSeen": "2026-10-02T09:43:30Z",
    "tags": [],
    "layers": [],
-   "score": 3.8
+   "score": 3.94
   },
   {
    "id": "ca27ecbf3b7a",
@@ -3686,7 +3751,7 @@
    "type": "research",
    "published": "2026-09-30T20:00:00Z",
    "summary": "Vision language model (VLM) agents can control robots through visual feedback and action primitives, but repeated model invocations and redundant observations incur substantial token overhead. We introduce PyRUA-Lean, an interactive code-execution framework that couples feedback-driven primitive composition with…",
-   "points": 9,
+   "points": 10,
    "firstSeen": "2026-10-02T09:43:30Z",
    "tags": [
     "gpt",
@@ -3695,7 +3760,7 @@
    "layers": [
     "models"
    ],
-   "score": 4.2
+   "score": 4.24
   },
   {
    "id": "d735305da6a4",
@@ -3706,7 +3771,7 @@
    "type": "research",
    "published": "2026-09-30T20:00:00Z",
    "summary": "We study test-time evolution for humanoid loco-manipulation: solving tasks that a controller was never trained for by repurposing its existing skills, improving from its own attempts, and retaining what it learns, without retraining. Our key insight is that a broad controller already holds much of the competence a new…",
-   "points": 7,
+   "points": 10,
    "firstSeen": "2026-10-02T12:15:38Z",
    "tags": [
     "world-models"
@@ -3714,7 +3779,7 @@
    "layers": [
     "models"
    ],
-   "score": 3.5
+   "score": 3.64
   },
   {
    "id": "18a1068dfc39",
@@ -3746,7 +3811,7 @@
    "type": "press",
    "published": "2026-09-30T19:31:25Z",
    "summary": "AI is far from a perfect resource. But it seems to hallucinate less than Kennedy.",
-   "discussion": "122",
+   "discussion": "123",
    "firstSeen": "2026-09-30T20:44:12Z",
    "tags": [],
    "layers": [],
@@ -4337,12 +4402,12 @@
    "type": "community",
    "published": "2026-09-30T15:50:11Z",
    "summary": "",
-   "points": 411,
+   "points": 412,
    "discussion": "https://news.ycombinator.com/item?id=49910553",
    "firstSeen": "2026-09-30T20:00:16Z",
    "tags": [],
    "layers": [],
-   "score": 4.61
+   "score": 4.62
   },
   {
    "id": "ceaf2ea83ee9",
@@ -5667,11 +5732,11 @@
    "type": "research",
    "published": "2026-09-29T20:00:00Z",
    "summary": "AI reviewers can assign different judgments to manuscripts that report the same science in different wording, potentially rewarding rhetorical optimization over scientific improvement. We formulate Rhetorical Robustness as the joint requirement of stability across content-preserving rewrites and discrimination across…",
-   "points": 32,
+   "points": 33,
    "firstSeen": "2026-10-02T09:43:30Z",
    "tags": [],
    "layers": [],
-   "score": 3.52
+   "score": 3.53
   },
   {
    "id": "f9ed3d0d2c1a",
@@ -5682,7 +5747,7 @@
    "type": "research",
    "published": "2026-09-29T20:00:00Z",
    "summary": "Multi-reward reinforcement learning trains large language models to satisfy multiple behavioral objectives simultaneously. Reward-wise normalization, as used in GDPO, preserves reward-specific relative information within rollout groups, but different objectives can still exhibit uneven learning progress. We study this…",
-   "points": 21,
+   "points": 23,
    "firstSeen": "2026-10-02T09:43:30Z",
    "tags": [
     "rl-reasoning"
@@ -5690,7 +5755,7 @@
    "layers": [
     "models"
    ],
-   "score": 3.94
+   "score": 3.98
   },
   {
    "id": "ce4436958e43",
@@ -5716,7 +5781,7 @@
    "type": "research",
    "published": "2026-09-29T20:00:00Z",
    "summary": "Real-world embodied tasks, from everyday activities to professional procedures, require agents to act under physical constraints while tracking evolving object and task states. Tool use sits at the heart of such tasks, as many everyday and professional activities are tool-mediated. Understanding them requires…",
-   "points": 17,
+   "points": 19,
    "firstSeen": "2026-10-02T09:43:30Z",
    "tags": [
     "tool-calling",
@@ -5726,7 +5791,7 @@
     "models",
     "tools"
    ],
-   "score": 4.46
+   "score": 4.5
   },
   {
    "id": "02e72268e592",
@@ -5737,7 +5802,7 @@
    "type": "research",
    "published": "2026-09-29T20:00:00Z",
    "summary": "We present Multimodal Flow, a fully continuous generative model of language and vision. Most unified multimodal models either model both language and quantized images as discrete tokens or combine discrete language prediction with continuous image generation. The former introduces a visual quantization bottleneck. The…",
-   "points": 7,
+   "points": 8,
    "firstSeen": "2026-10-02T09:43:30Z",
    "tags": [
     "multimodal",
@@ -5747,7 +5812,7 @@
     "models",
     "weights"
    ],
-   "score": 4.1
+   "score": 4.15
   },
   {
    "id": "baf96cc0f438",
@@ -8383,7 +8448,7 @@
    "type": "research",
    "published": "2026-09-28T20:00:00Z",
    "summary": "Masked diffusion models (MDMs) generate sequences by progressively unmasking several tokens per denoising step, but their reverse process is typically factorized over positions, limiting sample quality in the few-step regime where diffusion's speed advantage over autoregressive decoding matters most. A recent line of…",
-   "points": 16,
+   "points": 19,
    "firstSeen": "2026-10-02T12:15:38Z",
    "tags": [
     "moe"
@@ -8391,7 +8456,7 @@
    "layers": [
     "models"
    ],
-   "score": 3.83
+   "score": 3.9
   },
   {
    "id": "a37b0826d622",
@@ -10549,11 +10614,11 @@
    "type": "research",
    "published": "2026-09-27T20:00:00Z",
    "summary": "Robots that learn from a few demonstrations often require two forms of generalization. Compositional generalization recombines skills to solve new tasks, and skill generalization lets the learned policy behind each skill work in new situations. The two depend on each other, yet information is lost between composition…",
-   "points": 54,
+   "points": 55,
    "firstSeen": "2026-10-02T09:43:30Z",
    "tags": [],
    "layers": [],
-   "score": 3.74
+   "score": 3.75
   },
   {
    "id": "80032e73c06a",
@@ -12587,7 +12652,7 @@
    "type": "research",
    "published": "2026-09-24T20:00:00Z",
    "summary": "Decentralized multi-agent path finding (MAPF) with communication requires agents to reach individual goals without collisions under partial observability. Learnable policies trained on expert data provide an effective approach to this problem. However, when several coordinated joint actions are valid in the same…",
-   "points": 20,
+   "points": 21,
    "firstSeen": "2026-10-02T10:10:31Z",
    "tags": [
     "multi-agent"
@@ -12595,7 +12660,7 @@
    "layers": [
     "agents"
    ],
-   "score": 3.92
+   "score": 3.94
   },
   {
    "id": "ee9698a7fdb9",
