@@ -78,9 +78,9 @@
   "sources": [
     {
       "title": "OpenAI API reference: Chat Completions",
-      "url": "https://platform.openai.com/docs/api-reference/chat",
+      "url": "https://developers.openai.com/api/reference/resources/chat/",
       "date": "2023",
-      "verify": true
+      "verify": false
     },
     {
       "title": "OpenRouter documentation: Quickstart",

@@ -99,10 +99,10 @@
       "verify": false
     },
     {
-      "title": "Messages API request and response examples (Anthropic documentation)",
-      "url": "https://docs.anthropic.com/claude/reference/messages-examples",
+      "title": "Using the Messages API (Claude API documentation)",
+      "url": "https://platform.claude.com/docs/en/build-with-claude/working-with-messages",
       "date": "2026",
-      "verify": true
+      "verify": false
     }
   ]
 }

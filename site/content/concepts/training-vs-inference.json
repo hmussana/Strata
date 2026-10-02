@@ -75,7 +75,7 @@
       "title": "Splitwise: Efficient generative LLM inference using phase splitting",
       "url": "https://arxiv.org/abs/2311.18677",
       "date": "2023",
-      "verify": true
+      "verify": false
     },
     {
       "title": "Efficient Memory Management for Large Language Model Serving with PagedAttention",
