@@ -1,0 +1,93 @@
+{
+  "id": "context-engineering",
+  "layer": "orchestration-tooling",
+  "name": "Context engineering",
+  "summary": "Choosing what goes into the model's context window, in what order, and what to leave out, because the model sees nothing else.",
+  "prerequisites": [
+    "tokenization",
+    "next-token-prediction"
+  ],
+  "status": "draft",
+  "lastReviewed": "2026-10-02",
+  "depths": {
+    "D1": {
+      "guide": "Look at the packed bag: what got left behind, and why?",
+      "text": [
+        "The AI can only use what is in front of it right now. That space is called its context, and it has a size limit.",
+        "Context engineering is deciding what to put in that space: the instructions, the right notes and the question, in a sensible order."
+      ],
+      "analogy": "Packing a small school bag for the day."
+    },
+    "D2": {
+      "text": [
+        "Every model call is built from parts: a **system prompt** with rules and role, tool descriptions, retrieved documents, memory, the conversation so far and the latest message.",
+        "All of it must fit in the **context window**, which is measured in tokens. Long contexts cost more, run slower, and models can miss details buried in the middle.",
+        "So the application budgets space, trims or summarises old turns, and keeps stable parts (system prompt, tool list) at the start so a cached prefix can be reused."
+      ],
+      "diagram": {
+        "type": "stack",
+        "caption": "One context window, assembled top to bottom",
+        "layers": [
+          {
+            "label": "System prompt",
+            "sub": "role, rules, output format"
+          },
+          {
+            "label": "Tool descriptions",
+            "sub": "names and schemas"
+          },
+          {
+            "label": "Retrieved documents",
+            "sub": "chunks from search (RAG)"
+          },
+          {
+            "label": "Memory",
+            "sub": "summaries and saved facts"
+          },
+          {
+            "label": "Conversation so far",
+            "sub": "trimmed or summarised"
+          },
+          {
+            "label": "Latest message",
+            "sub": "what the user just asked",
+            "hl": true
+          }
+        ]
+      },
+      "analogy": "Packing a small school bag for the day.",
+      "analogyBreaks": "A bag holds things you can dig out later. A model has no bag outside the window: anything left out simply does not exist for that call, and stuffing in more can make it notice less.",
+      "predict": {
+        "question": "An assistant follows its rules early in a long chat, then starts ignoring them. What is a likely cause?",
+        "options": [
+          "The model got tired",
+          "The rules were pushed out or drowned by a growing context",
+          "The GPU ran out of power",
+          "The user typed too fast"
+        ],
+        "answer": 1,
+        "explanation": "As the conversation grows, old turns are trimmed and important instructions can be cut or buried. Keeping key rules in the system prompt and summarising history helps."
+      }
+    },
+    "D5": {
+      "text": [
+        "Bigger context windows do not remove the problem: models use information unevenly across a long context, and quality can drop well before the limit.",
+        "Open questions: how to compact long agent sessions without losing what matters, how to measure whether context was actually used, and how to keep untrusted text from carrying instructions."
+      ]
+    }
+  },
+  "sources": [
+    {
+      "title": "Effective context engineering for AI agents (Anthropic engineering blog)",
+      "url": "https://www.anthropic.com/engineering/effective-context-engineering-for-ai-agents",
+      "date": "2025-09-29",
+      "verify": false
+    },
+    {
+      "title": "Lost in the Middle: How Language Models Use Long Contexts",
+      "url": "https://arxiv.org/abs/2307.03172",
+      "date": "2023",
+      "verify": false
+    }
+  ]
+}

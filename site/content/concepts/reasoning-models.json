@@ -1,0 +1,87 @@
+{
+  "id": "reasoning-models",
+  "layer": "foundation-models",
+  "name": "Reasoning models",
+  "summary": "Models trained to work through a problem step by step before answering, trading extra time and tokens at answer time (test-time compute) for better results on hard tasks.",
+  "prerequisites": [
+    "next-token-prediction",
+    "post-training"
+  ],
+  "status": "draft",
+  "lastReviewed": "2026-10-02",
+  "depths": {
+    "D1": {
+      "guide": "Predict: does the model answer better if it writes its working out first?",
+      "text": [
+        "Some AI models are taught to think out loud before they answer.",
+        "They write rough working, check it and try again, like doing a sum on scrap paper.",
+        "Hard questions take them longer, but they get more of them right."
+      ],
+      "analogy": "Doing a maths problem on scrap paper before writing the answer."
+    },
+    "D2": {
+      "text": [
+        "A reasoning model still predicts one token at a time. The difference is that it first writes a long **chain of thought**: plans, attempts, checks and corrections, often hidden from the user.",
+        "It learns this in post-training, mostly through **reinforcement learning on problems with checkable answers** such as maths and code. Chains that reach correct answers are rewarded, so useful habits like double-checking get stronger.",
+        "Spending more tokens on thinking at answer time is called **test-time compute**. On hard problems, more thinking tends to help, at the cost of slower and more expensive answers."
+      ],
+      "diagram": {
+        "type": "flow",
+        "numbered": true,
+        "caption": "How a reasoning model answers",
+        "steps": [
+          { "label": "Question", "sub": "a hard problem" },
+          { "label": "Think", "sub": "writes a plan" },
+          { "label": "Check", "sub": "spots a mistake" },
+          { "label": "Answer", "sub": "after the working" }
+        ],
+        "loop": { "from": 2, "to": 1, "label": "try again if the check fails" }
+      },
+      "analogy": "Scrap paper before the final answer.",
+      "analogyBreaks": "A student's working shows how they really solved the problem. A model's written chain of thought is more tokens it predicts, and it doesn't always reflect what actually drove the final answer.",
+      "predict": {
+        "question": "You ask a reasoning model a simple greeting and a hard maths puzzle. Which uses more tokens before answering?",
+        "options": [
+          "The greeting",
+          "The maths puzzle",
+          "Both use exactly the same",
+          "Neither: reasoning models never think first"
+        ],
+        "answer": 1,
+        "explanation": "Reasoning models learn to spend more thinking on harder problems. That extra test-time compute is why hard answers are slower and cost more."
+      }
+    },
+    "D5": {
+      "text": [
+        "Open problems: whether the written chain of thought faithfully shows what drove the answer, and how to reward reasoning in areas without checkable answers, such as writing or strategy.",
+        "Models can also overthink easy questions, wasting time and money, so deciding how much to think is itself an active research area."
+      ]
+    }
+  },
+  "sources": [
+    {
+      "title": "Chain-of-Thought Prompting Elicits Reasoning in Large Language Models",
+      "url": "https://arxiv.org/abs/2201.11903",
+      "date": "2022",
+      "verify": false
+    },
+    {
+      "title": "Learning to reason with LLMs (OpenAI)",
+      "url": "https://openai.com/index/learning-to-reason-with-llms/",
+      "date": "2024-09-12",
+      "verify": false
+    },
+    {
+      "title": "DeepSeek-R1: Incentivizing Reasoning Capability in LLMs via Reinforcement Learning",
+      "url": "https://arxiv.org/abs/2501.12948",
+      "date": "2025",
+      "verify": false
+    },
+    {
+      "title": "Scaling LLM Test-Time Compute Optimally can be More Effective than Scaling Model Parameters",
+      "url": "https://arxiv.org/abs/2408.03314",
+      "date": "2024",
+      "verify": false
+    }
+  ]
+}

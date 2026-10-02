@@ -1,0 +1,97 @@
+{
+  "id": "number-formats",
+  "layer": "compute-hardware",
+  "name": "Number formats (FP16, BF16, FP8, FP4)",
+  "summary": "How many bits each number gets inside the chip. Fewer bits mean more maths per second and more numbers per trip from memory, at some cost in precision.",
+  "prerequisites": [
+    "gpu-accelerators"
+  ],
+  "status": "draft",
+  "lastReviewed": "2026-10-02",
+  "depths": {
+    "D1": {
+      "guide": "Count the digits: which is quicker to multiply, 3.14159 or 3.1?",
+      "text": [
+        "Every number inside an AI is stored with a set number of tiny on-off switches called bits.",
+        "Fewer bits is like writing 3.1 instead of 3.14159. It is less exact, but the chip can carry and multiply far more of them at once."
+      ],
+      "analogy": "Writing 3.1 instead of 3.14159 so you can do more sums in the same time."
+    },
+    "D2": {
+      "text": [
+        "A floating-point number splits its bits into a sign, an **exponent** (how big or small the number can be) and a **mantissa** (how many significant digits it keeps). FP32 uses 32 bits, FP16 and BF16 use 16, FP8 uses 8 and FP4 uses 4.",
+        "BF16 keeps the same exponent range as FP32 but fewer digits, which suits neural networks: they care more about range than precision. FP8 comes in two flavours that trade range for digits in the same way.",
+        "Halving the bits roughly doubles how many numbers fit in memory and move per second, and the chip's matrix units can do more multiplications per second in the narrower format. Very small formats such as FP4 share one scale factor across a small block of numbers so they don't run out of range."
+      ],
+      "diagram": {
+        "type": "bars",
+        "caption": "How many numbers fit in one kilobyte (1,024 bytes) in each format",
+        "unit": "numbers",
+        "items": [
+          {
+            "label": "FP32",
+            "value": 256
+          },
+          {
+            "label": "FP16 / BF16",
+            "value": 512
+          },
+          {
+            "label": "FP8",
+            "value": 1024
+          },
+          {
+            "label": "FP4",
+            "value": 2048
+          }
+        ]
+      },
+      "analogy": "Rounding to fewer decimal places so more numbers fit on the page.",
+      "analogyBreaks": "Decimal rounding drops digits evenly. Floating-point formats choose how to split bits between range and precision, and FP4 also needs a shared scale per block, so the format design matters as much as the bit count.",
+      "predict": {
+        "question": "BF16 and FP16 both use 16 bits. Why did BF16 become the favourite for training?",
+        "options": [
+          "It is twice as fast",
+          "It covers the same huge range of sizes as FP32, so very small and very large values don't overflow",
+          "It keeps more significant digits than FP16",
+          "It uses less power because it is newer"
+        ],
+        "answer": 1,
+        "explanation": "BF16 spends 8 bits on the exponent, like FP32, and only 7 on the digits. Training values swing across a wide range, so range matters more than the last few digits."
+      }
+    },
+    "D5": {
+      "text": [
+        "Training below 16 bits is still delicate: FP8 training needs careful per-tensor or per-block scaling, and FP4 training is an active research area.",
+        "Hardware support decides what is fast. A format the chip has no matrix units for gives the memory saving but not the speed-up, which is why software quantization often runs ahead of what the silicon can natively compute.",
+        "Quality loss is uneven: a few outlier values carry much of the meaning, so the same bit count can work well for one model and badly for another."
+      ]
+    }
+  },
+  "sources": [
+    {
+      "title": "Mixed Precision Training (Micikevicius et al.)",
+      "url": "https://arxiv.org/abs/1710.03740",
+      "date": "2017",
+      "verify": false
+    },
+    {
+      "title": "BFloat16: The secret to high performance on Cloud TPUs (Google Cloud)",
+      "url": "https://cloud.google.com/blog/products/ai-machine-learning/bfloat16-the-secret-to-high-performance-on-cloud-tpus",
+      "date": "2019-08-23",
+      "verify": false
+    },
+    {
+      "title": "FP8 Formats for Deep Learning (Micikevicius et al.)",
+      "url": "https://arxiv.org/abs/2209.05433",
+      "date": "2022",
+      "verify": false
+    },
+    {
+      "title": "Microscaling Data Formats for Deep Learning (Rouhani et al.)",
+      "url": "https://arxiv.org/abs/2310.10537",
+      "date": "2023",
+      "verify": false
+    }
+  ]
+}

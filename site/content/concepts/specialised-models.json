@@ -1,0 +1,80 @@
+{
+  "id": "specialised-models",
+  "layer": "foundation-models",
+  "name": "Specialised and fine-tuned models",
+  "summary": "Models adapted for one job, such as coding or a small focused task, by fine-tuning, distillation or community modification of open weights.",
+  "prerequisites": [
+    "post-training",
+    "open-weights"
+  ],
+  "status": "draft",
+  "lastReviewed": "2026-10-02",
+  "depths": {
+    "D1": {
+      "guide": "Guess first: would a small coding model beat a big all-rounder at maths?",
+      "text": [
+        "A general model is like a family doctor who knows a bit of everything.",
+        "Some models get extra training on one subject, such as writing code, so they become specialists.",
+        "Specialists can be smaller and cheaper, but they're weaker outside their subject."
+      ],
+      "analogy": "A family doctor versus a specialist."
+    },
+    "D2": {
+      "text": [
+        "**Fine-tuning** continues training a model on examples from one area, such as code or medical notes. Methods like **LoRA** train only a small add-on, so it can be done on modest hardware.",
+        "**Distillation** trains a small *student* model to copy a big *teacher* model's answers, packing much of the skill into something cheap enough to run locally.",
+        "With open weights, anyone can do this. Community variants include coding models, role-play and language-specific tunes, and **uncensored** models, where refusals are trained out or removed directly from the weights (sometimes called *abliteration*)."
+      ],
+      "diagram": {
+        "type": "hub",
+        "caption": "One base model, many specialised variants",
+        "center": { "label": "Base model", "sub": "general skills" },
+        "spokes": [
+          { "label": "Coding model", "sub": "fine-tuned on code" },
+          { "label": "Small task model", "sub": "one narrow job" },
+          { "label": "Distilled student", "sub": "copies a teacher" },
+          { "label": "Uncensored variant", "sub": "refusals removed" }
+        ]
+      },
+      "analogy": "A family doctor versus a specialist.",
+      "analogyBreaks": "A specialist doctor still keeps their general training. Fine-tuning can quietly erode skills and safety behaviour the base model had, so a specialist model may be worse at things nobody tested.",
+      "predict": {
+        "question": "A community removes the refusal behaviour from an open-weight model. What else is most likely to change?",
+        "options": [
+          "Nothing at all",
+          "It becomes much smarter",
+          "It answers more requests, and some other skills may slip slightly",
+          "It can no longer be run locally"
+        ],
+        "answer": 2,
+        "explanation": "Removing refusals targets one behaviour, but editing or retraining weights can have side effects. It doesn't add knowledge, and the model still runs the same way."
+      }
+    },
+    "D5": {
+      "text": [
+        "Open problems: fine-tuning can undo safety training cheaply, which is a core argument in the open-weights debate. Narrow fine-tunes can also cause surprising behaviour changes far outside the trained topic.",
+        "Specialists also age fast: a new general model can overtake last year's specialist, so the gap between them keeps moving."
+      ]
+    }
+  },
+  "sources": [
+    {
+      "title": "Distilling the Knowledge in a Neural Network",
+      "url": "https://arxiv.org/abs/1503.02531",
+      "date": "2015",
+      "verify": false
+    },
+    {
+      "title": "LoRA: Low-Rank Adaptation of Large Language Models",
+      "url": "https://arxiv.org/abs/2106.09685",
+      "date": "2021",
+      "verify": false
+    },
+    {
+      "title": "Refusal in Language Models Is Mediated by a Single Direction",
+      "url": "https://arxiv.org/abs/2406.11717",
+      "date": "2024",
+      "verify": false
+    }
+  ]
+}

@@ -5,7 +5,7 @@
   "summary": "How fast data reaches the chip often limits AI speed more than the chip's raw arithmetic.",
   "prerequisites": [],
   "status": "draft",
-  "lastReviewed": "2026-09-28",
+  "lastReviewed": "2026-10-02",
   "depths": {
     "D1": {
       "guide": "Watch the narrow door. Does a faster cook help if ingredients arrive slowly?",
@@ -17,7 +17,7 @@
     },
     "D2": {
       "text": [
-        "Generating each token means reading the model's active weights from memory. If those weights take tens of gigabytes, every new token moves that much data.",
+        "Generating each token means reading the model's active weights from memory. If those weights take tens of gigabytes, every new token moves that much data. On a home machine, whether those weights fit in fast memory at all is the first question (see [local AI hardware](#/concept/local-ai-hardware)).",
         "High-bandwidth memory (HBM) stacks memory chips right next to the processor so data moves far faster than with ordinary memory.",
         "Rule of thumb for a single user: tokens per second is roughly memory bandwidth divided by the bytes of weights read per token."
       ],
