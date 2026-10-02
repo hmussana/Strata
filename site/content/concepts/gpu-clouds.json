@@ -69,7 +69,7 @@
     },
     "D5": {
       "text": [
-        "Where it gets harder: capacity for the newest chips is often booked months ahead, so availability can matter more than price.",
+        "Where it gets harder: capacity for the newest chips often has to be reserved weeks or months ahead, so availability can matter more than price.",
         "Specialist GPU clouds depend heavily on a few chip suppliers and large customers, and nobody yet knows how fast today's GPUs will lose their value as newer generations arrive."
       ]
     }
@@ -85,7 +85,7 @@
       "title": "Amazon EC2 User Guide: Capacity Blocks for ML",
       "url": "https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ec2-capacity-blocks.html",
       "date": "2023",
-      "verify": true
+      "verify": false
     }
   ]
 }

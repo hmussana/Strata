@@ -58,6 +58,6 @@
     { "title": "The Data Provenance Initiative: A Large Scale Audit of Dataset Licensing & Attribution in AI", "url": "https://arxiv.org/abs/2310.16787", "date": "2023", "verify": false },
     { "title": "Consent in Crisis: The Rapid Decline of the AI Data Commons", "url": "https://arxiv.org/abs/2407.14933", "date": "2024", "verify": false },
     { "title": "RFC 9309: Robots Exclusion Protocol", "url": "https://www.rfc-editor.org/rfc/rfc9309", "date": "2022", "verify": false },
-    { "title": "Regulation (EU) 2024/1689 (the AI Act)", "url": "https://eur-lex.europa.eu/eli/reg/2024/1689/oj", "date": "2024", "verify": true }
+    { "title": "Regulation (EU) 2024/1689 (the AI Act)", "url": "https://eur-lex.europa.eu/eli/reg/2024/1689/oj", "date": "2024", "verify": false }
   ]
 }

@@ -78,7 +78,7 @@
       "title": "GGUF file format specification (ggml)",
       "url": "https://github.com/ggml-org/ggml/blob/master/docs/gguf.md",
       "date": "2023",
-      "verify": true
+      "verify": false
     },
     {
       "title": "llama.cpp: LLM inference in C/C++",
@@ -90,7 +90,7 @@
       "title": "Ollama documentation: OpenAI compatibility",
       "url": "https://docs.ollama.com/api/openai-compatibility",
       "date": "2024",
-      "verify": true
+      "verify": false
     }
   ]
 }
