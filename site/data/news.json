@@ -1,5 +1,5 @@
 {
- "generated": "2026-10-02T13:27:57Z",
+ "generated": "2026-10-02T13:58:30Z",
  "retentionDays": 45,
  "llmEnriched": 0,
  "sources": [
@@ -10,24 +10,24 @@
    "ok": true,
    "count": 15,
    "error": null,
-   "lastOk": "2026-10-02T13:27:57Z"
+   "lastOk": "2026-10-02T13:58:30Z"
   },
   {
    "id": "deepmind",
    "name": "Google DeepMind",
    "type": "lab",
-   "ok": true,
-   "count": 10,
-   "error": null,
+   "ok": false,
+   "count": 0,
+   "error": "ParseError: not well-formed (invalid token): line 1, column 0",
    "lastOk": "2026-10-02T13:27:57Z"
   },
   {
    "id": "google-ai",
    "name": "Google AI Blog",
    "type": "lab",
-   "ok": true,
-   "count": 10,
-   "error": null,
+   "ok": false,
+   "count": 0,
+   "error": "HTTPError: HTTP Error 500: Internal Server Error",
    "lastOk": "2026-10-02T13:27:57Z"
   },
   {
@@ -37,7 +37,7 @@
    "ok": true,
    "count": 15,
    "error": null,
-   "lastOk": "2026-10-02T13:27:57Z"
+   "lastOk": "2026-10-02T13:58:30Z"
   },
   {
    "id": "nvidia-dev",
@@ -46,7 +46,7 @@
    "ok": true,
    "count": 10,
    "error": null,
-   "lastOk": "2026-10-02T13:27:57Z"
+   "lastOk": "2026-10-02T13:58:30Z"
   },
   {
    "id": "msr",
@@ -55,7 +55,7 @@
    "ok": true,
    "count": 10,
    "error": null,
-   "lastOk": "2026-10-02T13:27:57Z"
+   "lastOk": "2026-10-02T13:58:30Z"
   },
   {
    "id": "aws-ml",
@@ -64,7 +64,7 @@
    "ok": true,
    "count": 8,
    "error": null,
-   "lastOk": "2026-10-02T13:27:57Z"
+   "lastOk": "2026-10-02T13:58:30Z"
   },
   {
    "id": "qwen",
@@ -73,16 +73,16 @@
    "ok": true,
    "count": 8,
    "error": null,
-   "lastOk": "2026-10-02T13:27:57Z"
+   "lastOk": "2026-10-02T13:58:30Z"
   },
   {
    "id": "hn",
    "name": "Hacker News (best, AI-filtered)",
    "type": "community",
    "ok": true,
-   "count": 7,
+   "count": 6,
    "error": null,
-   "lastOk": "2026-10-02T13:27:57Z"
+   "lastOk": "2026-10-02T13:58:30Z"
   },
   {
    "id": "localllama",
@@ -91,7 +91,7 @@
    "ok": true,
    "count": 15,
    "error": null,
-   "lastOk": "2026-10-02T13:27:57Z"
+   "lastOk": "2026-10-02T13:58:30Z"
   },
   {
    "id": "simonw",
@@ -100,7 +100,7 @@
    "ok": true,
    "count": 15,
    "error": null,
-   "lastOk": "2026-10-02T13:27:57Z"
+   "lastOk": "2026-10-02T13:58:30Z"
   },
   {
    "id": "hf-papers",
@@ -109,7 +109,7 @@
    "ok": true,
    "count": 15,
    "error": null,
-   "lastOk": "2026-10-02T13:27:57Z"
+   "lastOk": "2026-10-02T13:58:30Z"
   },
   {
    "id": "arxiv-cl",
@@ -118,7 +118,7 @@
    "ok": true,
    "count": 12,
    "error": null,
-   "lastOk": "2026-10-02T13:27:57Z"
+   "lastOk": "2026-10-02T13:58:30Z"
   },
   {
    "id": "latent-space",
@@ -127,7 +127,7 @@
    "ok": true,
    "count": 8,
    "error": null,
-   "lastOk": "2026-10-02T13:27:57Z"
+   "lastOk": "2026-10-02T13:58:30Z"
   },
   {
    "id": "interconnects",
@@ -136,7 +136,7 @@
    "ok": true,
    "count": 8,
    "error": null,
-   "lastOk": "2026-10-02T13:27:57Z"
+   "lastOk": "2026-10-02T13:58:30Z"
   },
   {
    "id": "import-ai",
@@ -145,7 +145,7 @@
    "ok": true,
    "count": 5,
    "error": null,
-   "lastOk": "2026-10-02T13:27:57Z"
+   "lastOk": "2026-10-02T13:58:30Z"
   },
   {
    "id": "verge-ai",
@@ -154,7 +154,7 @@
    "ok": true,
    "count": 10,
    "error": null,
-   "lastOk": "2026-10-02T13:27:57Z"
+   "lastOk": "2026-10-02T13:58:30Z"
   },
   {
    "id": "ars-ai",
@@ -163,7 +163,7 @@
    "ok": true,
    "count": 12,
    "error": null,
-   "lastOk": "2026-10-02T13:27:57Z"
+   "lastOk": "2026-10-02T13:58:30Z"
   },
   {
    "id": "techcrunch-ai",
@@ -172,7 +172,7 @@
    "ok": true,
    "count": 12,
    "error": null,
-   "lastOk": "2026-10-02T13:27:57Z"
+   "lastOk": "2026-10-02T13:58:30Z"
   },
   {
    "id": "mit-tr",
@@ -181,7 +181,7 @@
    "ok": true,
    "count": 8,
    "error": null,
-   "lastOk": "2026-10-02T13:27:57Z"
+   "lastOk": "2026-10-02T13:58:30Z"
   },
   {
    "id": "decoder",
@@ -190,7 +190,7 @@
    "ok": true,
    "count": 10,
    "error": null,
-   "lastOk": "2026-10-02T13:27:57Z"
+   "lastOk": "2026-10-02T13:58:30Z"
   },
   {
    "id": "sth",
@@ -199,7 +199,7 @@
    "ok": true,
    "count": 5,
    "error": null,
-   "lastOk": "2026-10-02T13:27:57Z"
+   "lastOk": "2026-10-02T13:58:30Z"
   },
   {
    "id": "embrace-red",
@@ -208,7 +208,7 @@
    "ok": true,
    "count": 6,
    "error": null,
-   "lastOk": "2026-10-02T13:27:57Z"
+   "lastOk": "2026-10-02T13:58:30Z"
   },
   {
    "id": "rel-ollama",
@@ -217,7 +217,7 @@
    "ok": true,
    "count": 3,
    "error": null,
-   "lastOk": "2026-10-02T13:27:57Z"
+   "lastOk": "2026-10-02T13:58:30Z"
   },
   {
    "id": "rel-vllm",
@@ -226,7 +226,7 @@
    "ok": true,
    "count": 3,
    "error": null,
-   "lastOk": "2026-10-02T13:27:57Z"
+   "lastOk": "2026-10-02T13:58:30Z"
   },
   {
    "id": "rel-opencode",
@@ -235,7 +235,7 @@
    "ok": true,
    "count": 3,
    "error": null,
-   "lastOk": "2026-10-02T13:27:57Z"
+   "lastOk": "2026-10-02T13:58:30Z"
   },
   {
    "id": "rel-claude-code",
@@ -244,7 +244,7 @@
    "ok": true,
    "count": 3,
    "error": null,
-   "lastOk": "2026-10-02T13:27:57Z"
+   "lastOk": "2026-10-02T13:58:30Z"
   }
  ],
  "heat": {
@@ -680,7 +680,7 @@
     "prev7": 8
    },
    "orchestration-tooling": {
-    "d7": 25,
+    "d7": 28,
     "prev7": 1
    },
    "agents": {
@@ -740,7 +740,7 @@
      "data": 21,
      "foundation-models": 297,
      "inference-optimization": 50,
-     "orchestration-tooling": 78,
+     "orchestration-tooling": 85,
      "agents": 137,
      "applications-interfaces": 25
     }
@@ -753,7 +753,7 @@
    "data": 84,
    "foundation-models": 1365,
    "inference-optimization": 265,
-   "orchestration-tooling": 388,
+   "orchestration-tooling": 395,
    "agents": 668,
    "applications-interfaces": 104
   },
@@ -1619,7 +1619,7 @@
    "type": "community",
    "published": "2026-10-02T03:11:20Z",
    "summary": "",
-   "points": 278,
+   "points": 305,
    "discussion": "https://news.ycombinator.com/item?id=49929489",
    "firstSeen": "2026-10-02T10:10:31Z",
    "tags": [
@@ -1628,7 +1628,7 @@
    "layers": [
     "models"
    ],
-   "score": 5.05
+   "score": 5.09
   },
   {
    "id": "28419c25af77",
@@ -1885,7 +1885,7 @@
    "type": "press",
    "published": "2026-10-01T20:11:55Z",
    "summary": "The court acknowledges AI search comes with consequences, but it's not an antitrust issue.",
-   "discussion": "17",
+   "discussion": "18",
    "firstSeen": "2026-10-02T00:46:08Z",
    "tags": [
     "ai-policy"
@@ -2392,7 +2392,7 @@
    "type": "community",
    "published": "2026-10-01T16:18:57Z",
    "summary": "",
-   "points": 545,
+   "points": 553,
    "discussion": "https://news.ycombinator.com/item?id=49923692",
    "firstSeen": "2026-10-02T00:46:08Z",
    "tags": [
@@ -2413,7 +2413,7 @@
    "type": "community",
    "published": "2026-10-01T16:01:56Z",
    "summary": "",
-   "points": 346,
+   "points": 352,
    "discussion": "https://news.ycombinator.com/item?id=49923466",
    "firstSeen": "2026-10-02T00:46:08Z",
    "tags": [
@@ -2422,7 +2422,7 @@
    "layers": [
     "context"
    ],
-   "score": 5.14
+   "score": 5.15
   },
   {
    "id": "a80484c2d584",
@@ -3607,7 +3607,7 @@
    "type": "community",
    "published": "2026-09-30T20:04:37Z",
    "summary": "",
-   "points": 1660,
+   "points": 1664,
    "discussion": "https://news.ycombinator.com/item?id=49913571",
    "firstSeen": "2026-09-30T21:39:06Z",
    "tags": [
@@ -3698,11 +3698,11 @@
    "type": "research",
    "published": "2026-09-30T20:00:00Z",
    "summary": "Streaming video LLMs must retain evidence before its relevance to future tasks is known and respond when sufficient evidence becomes available. The challenge is to form reusable factual memory without compromising real-time perception. We introduce OneStreamer, which jointly learns query-independent evidence recording…",
-   "points": 88,
+   "points": 100,
    "firstSeen": "2026-10-02T09:43:30Z",
    "tags": [],
    "layers": [],
-   "score": 3.95
+   "score": 4.0
   },
   {
    "id": "ca27ecbf3b7a",
@@ -3751,7 +3751,7 @@
    "type": "research",
    "published": "2026-09-30T20:00:00Z",
    "summary": "Vision language model (VLM) agents can control robots through visual feedback and action primitives, but repeated model invocations and redundant observations incur substantial token overhead. We introduce PyRUA-Lean, an interactive code-execution framework that couples feedback-driven primitive composition with…",
-   "points": 11,
+   "points": 13,
    "firstSeen": "2026-10-02T09:43:30Z",
    "tags": [
     "gpt",
@@ -3760,7 +3760,7 @@
    "layers": [
     "models"
    ],
-   "score": 4.28
+   "score": 4.35
   },
   {
    "id": "d735305da6a4",
@@ -3771,7 +3771,7 @@
    "type": "research",
    "published": "2026-09-30T20:00:00Z",
    "summary": "We study test-time evolution for humanoid loco-manipulation: solving tasks that a controller was never trained for by repurposing its existing skills, improving from its own attempts, and retaining what it learns, without retraining. Our key insight is that a broad controller already holds much of the competence a new…",
-   "points": 10,
+   "points": 11,
    "firstSeen": "2026-10-02T12:15:38Z",
    "tags": [
     "world-models"
@@ -3779,7 +3779,7 @@
    "layers": [
     "models"
    ],
-   "score": 3.64
+   "score": 3.68
   },
   {
    "id": "18a1068dfc39",
@@ -5781,7 +5781,7 @@
    "type": "research",
    "published": "2026-09-29T20:00:00Z",
    "summary": "Real-world embodied tasks, from everyday activities to professional procedures, require agents to act under physical constraints while tracking evolving object and task states. Tool use sits at the heart of such tasks, as many everyday and professional activities are tool-mediated. Understanding them requires…",
-   "points": 19,
+   "points": 20,
    "firstSeen": "2026-10-02T09:43:30Z",
    "tags": [
     "tool-calling",
@@ -5791,7 +5791,7 @@
     "models",
     "tools"
    ],
-   "score": 4.5
+   "score": 4.52
   },
   {
    "id": "02e72268e592",
