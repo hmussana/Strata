@@ -58,6 +58,109 @@
         "explanation": "Vocabularies favour chunks that were frequent in the training text; languages that were less common get split more finely."
       }
     },
+    "D3": {
+      "text": [
+        "A tokenizer chops text into **tokens**: pieces from a fixed vocabulary. Common words become one token; rare words, typos and unfamiliar scripts break into several smaller pieces.",
+        "This toy learns its vocabulary in your browser with **byte-pair encoding (BPE)**, from a few paragraphs of English. Type anything below, or load an example, and watch the token count."
+      ],
+      "interactive": "tokenizer-play",
+      "interactiveConfig": {
+        "note": "Because it only saw English, it exaggerates how badly other languages split; real tokenizers learn from many languages but often still need more tokens for them.",
+        "merges": 400,
+        "corpus": "The weather was lovely this morning, so we walked down to the market by the river. The market is open every day of the week, and on a good day there are more than forty stalls. We bought bread, cheese, apples and a bag of fresh tomatoes. My sister wanted flowers for the table, so we stopped at the flower stall on the way back. The woman who runs it has worked there for years. She told us that the best time to come is early, before the crowds, when the light is soft and the stalls are still being set up.\nAfter lunch we talked about the things we wanted to do over the summer. My brother wants to learn to swim properly. My sister wants to read more books and write a short story of her own. I want to walk the whole length of the river path, from the old mill to the sea. It is a long way, but the path is flat and there are places to stop and rest. We looked at a map and worked out that it would take about three days if we walked from morning until the light started to go.\nIn the evening the weather turned. The wind picked up, the rain started, and we stayed inside with the lights on. We played cards at the kitchen table and talked about the people we had met at the market. It was a good day. Some days are like that: nothing special happens, and that is the best thing about them.\nThe next morning was bright again. We walked back to the market for more bread, and the woman at the flower stall waved when she saw us. We stopped to talk for a while about the weather, the river and the summer ahead.",
+        "examples": [
+          {
+            "label": "English",
+            "text": "The weather was lovely, so we walked to the market."
+          },
+          {
+            "label": "French",
+            "text": "Le temps était beau, alors nous sommes allés au marché."
+          },
+          {
+            "label": "Greek",
+            "text": "Ο καιρός ήταν ωραίος, οπότε περπατήσαμε στην αγορά."
+          },
+          {
+            "label": "Code",
+            "text": "for (let i = 0; i < items.length; i++) total += items[i];"
+          },
+          {
+            "label": "Misspelled",
+            "text": "The wether was lovley, so we wallked to the markit."
+          }
+        ]
+      },
+      "tasks": [
+        "Load the English sentence, then the misspelled one. How many extra tokens do the typos cost?",
+        "Load the Greek sentence. Why do some tokens show as codes like <CE> instead of letters?",
+        "Type a long number such as 1234567. Does it stay one token, or split into chunks?"
+      ],
+      "predict": {
+        "question": "You misspell “walked” as “wallked”. What happens to its token count?",
+        "options": [
+          "It stays the same",
+          "It goes up",
+          "It goes down",
+          "The tokenizer gives an error"
+        ],
+        "answer": 1,
+        "explanation": "The vocabulary has a piece for the common spelling but not the typo, so the typo falls back to smaller pieces. It never fails: every single byte is in the vocabulary."
+      }
+    },
+    "D4": {
+      "text": [
+        "**Byte-pair encoding** builds a vocabulary bottom up. Start with single characters (real tokenizers start with the 256 bytes). Count every adjacent pair across the corpus, weighted by how often each word appears. Merge the most frequent pair into one new token, re-split every word with it, and repeat.",
+        "The vocabulary size is a choice: stop after a few thousand merges, or a few hundred thousand. To split new text, apply the learned merges in the order they were learned.",
+        "Press **Next merge** and watch the pair counts, the words and the vocabulary change together."
+      ],
+      "interactive": "bpe-workbench",
+      "interactiveConfig": {
+        "note": "The word list is the classic toy example from the BPE literature, not real data.",
+        "words": [
+          {
+            "word": "low",
+            "count": 5
+          },
+          {
+            "word": "lower",
+            "count": 2
+          },
+          {
+            "word": "newest",
+            "count": 6
+          },
+          {
+            "word": "widest",
+            "count": 3
+          }
+        ],
+        "testWord": "lowest"
+      },
+      "tasks": [
+        "Before pressing anything, guess which pair is merged first. Then press Next merge to check.",
+        "Keep merging until “lowest” in the test box splits into two tokens. Which two?",
+        "Type “slowness” in the test box. Which pieces does it reuse, and which letters stay alone?"
+      ],
+      "code": "vocab = all single bytes                  # 256 starting tokens\nwords = split_into_words(corpus)          # merges never cross a word boundary\nmerges = []\nrepeat num_merges times:\n    counts = count_adjacent_pairs(words)  # weighted by how often each word appears\n    a, b = most_frequent(counts)\n    new = add_to_vocab(a + b)\n    words = replace_pair(words, a, b, new)\n    merges.append((a, b, new))\n\ndef encode(text):\n    tokens = bytes_of(text)\n    while any adjacent pair has a merge:\n        apply the earliest-learned one\n    return tokens",
+      "tradeoffs": [
+        "A bigger vocabulary means fewer tokens per text (cheaper, more fits in the context), but a bigger embedding table and rare tokens that are seen less in training.",
+        "A tokenizer trained mostly on English splits other languages into more pieces, so the same message costs more and fits less.",
+        "Starting from bytes means no text is ever unknown, but typos and rare words turn into many small pieces.",
+        "The model sees chunks, not letters. That is one reason counting letters, spelling and digit-by-digit arithmetic are harder for it than they look."
+      ],
+      "predict": {
+        "question": "With low ×5, lower ×2, newest ×6 and widest ×3, which pair is merged first?",
+        "options": [
+          "l + o",
+          "o + w",
+          "w + e",
+          "e + s"
+        ],
+        "answer": 3,
+        "explanation": "e + s appears 6 times in newest and 3 times in widest: 9 in all. (s + t also has 9; the tie goes to the pair seen first.) w + e has 8, l + o and o + w have 7."
+      }
+    },
     "D5": {
       "text": [
         "Open questions: models that read raw bytes or characters instead of a fixed vocabulary, fairer tokenization across languages, and tasks such as spelling or arithmetic where token boundaries get in the way."

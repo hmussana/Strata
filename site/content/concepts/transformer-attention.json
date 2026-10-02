@@ -60,6 +60,473 @@
         "explanation": "While generating, later tokens don't exist yet, and during training a mask hides them so the model learns to predict without peeking."
       }
     },
+    "D3": {
+      "text": [
+        "Each word builds a **query** (what it is looking for) and a **key** (what it offers). The query is compared with the keys of earlier words using a dot product, and softmax turns those scores into **attention weights** that add up to 100%.",
+        "A transformer runs many **heads** side by side. Each head has its own queries and keys, so each looks for something different. Choose a word, then switch heads and watch where its attention goes."
+      ],
+      "interactive": "attention-play",
+      "interactiveConfig": {
+        "tokens": [
+          "The",
+          "cat",
+          "sat",
+          "on",
+          "the",
+          "mat",
+          "because",
+          "it",
+          "was",
+          "tired"
+        ],
+        "start": 7,
+        "heads": [
+          {
+            "name": "Who is \"it\"?",
+            "about": "Looks for the animal a word could be about. Only \"it\", \"was\" and \"tired\" ask strongly; the other words have weak queries and spread out.",
+            "q": [
+              [
+                0,
+                0,
+                0.8
+              ],
+              [
+                0,
+                0,
+                0.8
+              ],
+              [
+                0,
+                0,
+                0.8
+              ],
+              [
+                0,
+                0,
+                0.8
+              ],
+              [
+                0,
+                0,
+                0.8
+              ],
+              [
+                0,
+                0,
+                0.8
+              ],
+              [
+                0,
+                0,
+                0.8
+              ],
+              [
+                2.4,
+                0.6,
+                0
+              ],
+              [
+                1.6,
+                0.2,
+                0
+              ],
+              [
+                1.6,
+                0,
+                0
+              ]
+            ],
+            "k": [
+              [
+                0,
+                0,
+                1
+              ],
+              [
+                2.5,
+                0,
+                0.3
+              ],
+              [
+                0,
+                0,
+                0.3
+              ],
+              [
+                0,
+                0,
+                0.3
+              ],
+              [
+                0,
+                0,
+                1
+              ],
+              [
+                0.6,
+                2.5,
+                0.3
+              ],
+              [
+                0,
+                0,
+                0.3
+              ],
+              [
+                0.3,
+                0.3,
+                0.5
+              ],
+              [
+                0,
+                0,
+                0.3
+              ],
+              [
+                0.3,
+                0,
+                0.3
+              ]
+            ]
+          },
+          {
+            "name": "Previous word",
+            "about": "Ignores meaning. Built only from word positions, so each word looks at the one just before it.",
+            "q": [
+              [
+                1.71,
+                -2.66,
+                3.02,
+                -0.93
+              ],
+              [
+                3.16,
+                0.0,
+                3.16,
+                0.0
+              ],
+              [
+                1.71,
+                2.66,
+                3.02,
+                0.93
+              ],
+              [
+                -1.32,
+                2.88,
+                2.61,
+                1.79
+              ],
+              [
+                -3.13,
+                0.45,
+                1.97,
+                2.48
+              ],
+              [
+                -2.07,
+                -2.39,
+                1.15,
+                2.95
+              ],
+              [
+                0.9,
+                -3.03,
+                0.22,
+                3.15
+              ],
+              [
+                3.04,
+                -0.88,
+                -0.72,
+                3.08
+              ],
+              [
+                2.38,
+                2.08,
+                -1.6,
+                2.73
+              ],
+              [
+                -0.46,
+                3.13,
+                -2.33,
+                2.14
+              ]
+            ],
+            "k": [
+              [
+                3.16,
+                0.0,
+                3.16,
+                0.0
+              ],
+              [
+                1.71,
+                2.66,
+                3.02,
+                0.93
+              ],
+              [
+                -1.32,
+                2.88,
+                2.61,
+                1.79
+              ],
+              [
+                -3.13,
+                0.45,
+                1.97,
+                2.48
+              ],
+              [
+                -2.07,
+                -2.39,
+                1.15,
+                2.95
+              ],
+              [
+                0.9,
+                -3.03,
+                0.22,
+                3.15
+              ],
+              [
+                3.04,
+                -0.88,
+                -0.72,
+                3.08
+              ],
+              [
+                2.38,
+                2.08,
+                -1.6,
+                2.73
+              ],
+              [
+                -0.46,
+                3.13,
+                -2.33,
+                2.14
+              ],
+              [
+                -2.88,
+                1.3,
+                -2.86,
+                1.35
+              ]
+            ]
+          },
+          {
+            "name": "Any noun",
+            "about": "Every word looks for nouns. It cannot tell \"cat\" from \"mat\", so \"it\" splits its attention between them.",
+            "q": [
+              [
+                1.5,
+                0.2
+              ],
+              [
+                1.5,
+                0.2
+              ],
+              [
+                1.5,
+                0.2
+              ],
+              [
+                1.5,
+                0.2
+              ],
+              [
+                1.5,
+                0.2
+              ],
+              [
+                1.5,
+                0.2
+              ],
+              [
+                1.5,
+                0.2
+              ],
+              [
+                1.5,
+                0.2
+              ],
+              [
+                1.5,
+                0.2
+              ],
+              [
+                1.5,
+                0.2
+              ]
+            ],
+            "k": [
+              [
+                0,
+                0.5
+              ],
+              [
+                2,
+                0
+              ],
+              [
+                0,
+                0.5
+              ],
+              [
+                0,
+                0.5
+              ],
+              [
+                0,
+                0.5
+              ],
+              [
+                2,
+                0
+              ],
+              [
+                0,
+                0.5
+              ],
+              [
+                0,
+                0.5
+              ],
+              [
+                0,
+                0.5
+              ],
+              [
+                0,
+                0.5
+              ]
+            ]
+          }
+        ],
+        "note": "Illustrative heads: we hand-set small query and key vectors so each head shows one pattern. The weights are real softmax arithmetic on those vectors, not read from a trained model."
+      },
+      "tasks": [
+        "In the “Who is it?” head, choose “it”. Which earlier word gets the most weight?",
+        "Switch to “Any noun” with “it” still chosen. Why is the weight now split between “cat” and “mat”?",
+        "Switch to “Previous word” and step through the sentence with the arrow keys. What does every word look at?"
+      ],
+      "predict": {
+        "question": "When the model reads “it” in “The cat sat on the mat because it was tired”, which words can “it” pay attention to?",
+        "options": [
+          "Only “cat”",
+          "Every word in the sentence, including “was” and “tired”",
+          "“it” itself and the words before it",
+          "Only the word just before it"
+        ],
+        "answer": 2,
+        "explanation": "The causal mask hides later words, so “it” can only look back. It gives every earlier word some weight; a good head puts most of it on “cat”."
+      }
+    },
+    "D4": {
+      "text": [
+        "Stack every token's query into a matrix **Q**, its key into **K** and its value into **V**. Attention is **softmax(QKᵀ ÷ √d) · V**, where *d* is the length of each query and key.",
+        "Row *i* of QKᵀ holds the dot product of token *i*'s query with every key. Dividing by √d stops the scores growing just because the vectors are longer. The **causal mask** sets scores for later tokens to −∞ so softmax gives them zero weight. Each output row is a weighted blend of the value vectors.",
+        "Edit the vectors below; every table is computed live from the formula."
+      ],
+      "interactive": "attention-workbench",
+      "interactiveConfig": {
+        "d": 2,
+        "focus": 4,
+        "tokens": [
+          {
+            "text": "cat",
+            "q": [
+              0,
+              1
+            ],
+            "k": [
+              2,
+              0.2
+            ],
+            "v": [
+              1,
+              0
+            ]
+          },
+          {
+            "text": "sat",
+            "q": [
+              1,
+              0
+            ],
+            "k": [
+              0.3,
+              0.3
+            ],
+            "v": [
+              0,
+              0.5
+            ]
+          },
+          {
+            "text": "on",
+            "q": [
+              0,
+              0
+            ],
+            "k": [
+              0,
+              0.5
+            ],
+            "v": [
+              0,
+              0
+            ]
+          },
+          {
+            "text": "mat",
+            "q": [
+              0,
+              1
+            ],
+            "k": [
+              0.4,
+              2
+            ],
+            "v": [
+              0,
+              1
+            ]
+          },
+          {
+            "text": "it",
+            "q": [
+              2,
+              0.5
+            ],
+            "k": [
+              0.5,
+              0.2
+            ],
+            "v": [
+              0.5,
+              0.5
+            ]
+          }
+        ],
+        "note": "Illustrative 2-number vectors for a cut-down sentence. Real models learn vectors with 64 to 128 numbers per head."
+      },
+      "tasks": [
+        "Look at the row for “it”. Why does its output come out close to the value of “cat”?",
+        "Change the first number of the key for “mat” from 0.4 to 2.5. What happens to the weight “it” gives to “cat”?",
+        "Turn the causal mask off. Which rows change, and which row stays the same?"
+      ],
+      "code": "def attention(Q, K, V, causal=True):\n    d = Q.shape[-1]                      # length of each query and key\n    scores = Q @ K.T / sqrt(d)           # one score for every (query, key) pair\n    if causal:\n        scores[j > i] = -inf             # hide tokens that come later\n    weights = softmax(scores, axis=-1)   # each row adds up to 1\n    return weights @ V                   # blend the values\n\n# multi-head: run several of these with different learned Q, K, V\n# projections, then join the outputs and mix them with one more matrix",
+      "tradeoffs": [
+        "Every token is compared with every other, so the score table grows with the square of the context length.",
+        "The causal mask lets a model train on a whole sentence at once while still learning to predict each word without peeking.",
+        "More heads let a layer look for more patterns at once, but each head works with shorter vectors.",
+        "Attention weights show where a head looked, not why the model gave its answer; reading them as explanations can mislead."
+      ]
+    },
     "D5": {
       "text": [
         "Open problems: attention's cost grows with the square of the context length, which drives work on efficient kernels, sparse and linear attention, and hybrids with state-space layers; and interpretability research into what individual heads and layers actually compute."

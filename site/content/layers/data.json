@@ -10,30 +10,93 @@
     "breaks": "Ingredients get used up; data doesn't, but reusing the same data again and again gives diminishing returns, and this 'ingredient' can carry hidden bias, private details or copyright obligations."
   },
   "examples": [
-    "Web crawls",
-    "Curated datasets",
-    "Synthetic data",
-    "Human labels and preferences"
+    "Web crawls such as Common Crawl",
+    "Curated open datasets such as FineWeb",
+    "Synthetic data from strong models",
+    "Human labelling and preference data",
+    "Data licensing deals and opt-outs"
   ],
   "givesAbove": "Training corpora and feedback data that shape what a model can do.",
   "needsBelow": "Storage and compute from Cloud & Infrastructure to collect, filter and deduplicate at scale.",
   "concepts": [
     "pretraining-data",
-    "synthetic-data"
+    "data-curation",
+    "synthetic-data",
+    "human-feedback-data",
+    "data-provenance"
   ],
   "metaDiagram": {
     "nodes": [
       {
-        "concept": "pretraining-data"
+        "concept": "pretraining-data",
+        "x": 36,
+        "y": 8
       },
       {
-        "concept": "synthetic-data"
+        "concept": "data-curation",
+        "x": 36,
+        "y": 92
+      },
+      {
+        "concept": "synthetic-data",
+        "x": 66,
+        "y": 50
+      },
+      {
+        "concept": "human-feedback-data",
+        "x": 96,
+        "y": 8
+      },
+      {
+        "concept": "data-provenance",
+        "x": 4,
+        "y": 62
       }
     ]
   },
-  "walkthrough": [],
+  "walkthrough": [
+    {
+      "title": "A recipe page is crawled",
+      "text": "A blog post on boiling eggs is scooped up in a web crawl, along with thousands of copies of it on scraper sites.",
+      "highlight": [
+        "pretraining-data"
+      ]
+    },
+    {
+      "title": "Is it allowed?",
+      "text": "Before it's used, someone should check the blog's licence and whether its robots.txt opted out of AI crawlers. If it did, the page is dropped.",
+      "highlight": [
+        "data-provenance",
+        "data-curation"
+      ]
+    },
+    {
+      "title": "Copies out, quality checked, mix set",
+      "text": "Curation keeps one copy, scores the page as useful, and decides how much cooking text sits beside code, maths and books.",
+      "highlight": [
+        "data-curation",
+        "pretraining-data"
+      ]
+    },
+    {
+      "title": "Practice questions are generated",
+      "text": "A model writes new questions and answers about cooking times; curation screens out the ones that are wrong before they reach post-training.",
+      "highlight": [
+        "synthetic-data",
+        "data-curation"
+      ]
+    },
+    {
+      "title": "People pick the better answer",
+      "text": "A rater sees two answers to “How long do I boil an egg?” and picks the clearer one. That choice teaches post-training what people prefer.",
+      "highlight": [
+        "human-feedback-data",
+        "synthetic-data"
+      ]
+    }
+  ],
   "status": "draft",
-  "lastReviewed": "2026-09-28",
+  "lastReviewed": "2026-10-02",
   "newsKeywords": [
     "dataset",
     "training data",

@@ -1,0 +1,63 @@
+{
+  "id": "data-curation",
+  "layer": "data",
+  "name": "Data curation and mixing",
+  "summary": "Removing copies and junk from raw data, then choosing how much of each kind of data a model trains on.",
+  "prerequisites": ["pretraining-data"],
+  "status": "draft",
+  "lastReviewed": "2026-10-02",
+  "depths": {
+    "D1": {
+      "guide": "Guess first: is more data always better, or cleaner data?",
+      "text": [
+        "The web is full of copies, spam and half-broken pages. Curation means sorting through it and keeping the useful parts.",
+        "Then people decide the recipe: how much stories, how much code, how much maths. The mix changes what the AI is good at."
+      ],
+      "analogy": "Sorting a huge pile of second-hand books before stocking a school library."
+    },
+    "D2": {
+      "text": [
+        "**Deduplication** removes exact and near-identical copies, so no page is learned far more often than it deserves.",
+        "**Quality filters** drop junk using simple rules (length, symbols, repeated lines) and small classifier models trained to spot 'good' text, such as educational writing.",
+        "**Mixing** sets the proportions of each source: web, code, books, maths, other languages. Teams test candidate mixes on small models before committing a large training run, because the mix shapes what the final model is good at."
+      ],
+      "diagram": {
+        "type": "flow",
+        "numbered": true,
+        "caption": "Curation is tested in a loop on small models",
+        "steps": [
+          { "label": "Raw pool", "sub": "crawls, code, books" },
+          { "label": "Deduplicate", "sub": "exact and near copies" },
+          { "label": "Filter", "sub": "rules and classifiers" },
+          { "label": "Mix", "sub": "set proportions" },
+          { "label": "Small test model", "sub": "measure results" }
+        ],
+        "loop": { "from": 4, "to": 2, "label": "adjust filters and mix" }
+      },
+      "analogy": "Stocking a library: throw out duplicates and torn copies, then decide how many shelves go to science, stories and maths.",
+      "analogyBreaks": "A librarian can read every book. Curation at this scale is automated, so filters make millions of judgement calls nobody checks, and a 'quality' classifier can quietly drop dialects, minority languages or whole topics.",
+      "predict": {
+        "question": "A team doubles the share of code in the training mix and keeps the total size the same. What is the most likely trade-off?",
+        "options": [
+          "Better at coding, possibly a little weaker at other things",
+          "No change at all",
+          "Worse at coding",
+          "The model stops understanding English"
+        ],
+        "answer": 0,
+        "explanation": "With a fixed budget, more of one source means less of another. The mix is a trade-off, which is why teams test mixes on small models first."
+      }
+    },
+    "D5": {
+      "text": [
+        "There is no agreed definition of data quality, so filters encode the taste of whoever trained them. Results found on small test models do not always hold at full scale.",
+        "Benchmark questions that leak into the pool (contamination) can make a model look better than it is, and checking for them is hard at web scale."
+      ]
+    }
+  },
+  "sources": [
+    { "title": "Deduplicating Training Data Makes Language Models Better", "url": "https://arxiv.org/abs/2107.06499", "date": "2021", "verify": false },
+    { "title": "DataComp-LM: In search of the next generation of training sets for language models", "url": "https://arxiv.org/abs/2406.11794", "date": "2024", "verify": false },
+    { "title": "DoReMi: Optimizing Data Mixtures Speeds Up Language Model Pretraining", "url": "https://arxiv.org/abs/2305.10429", "date": "2023", "verify": false }
+  ]
+}

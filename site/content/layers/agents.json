@@ -10,30 +10,93 @@
     "breaks": "An employee builds judgement over months. An agent's 'experience' is only what fits in its context and memory, and it can repeat a mistake confidently."
   },
   "examples": [
+    "Agent harnesses (Claude Code, OpenCode, OpenClaw, Hermes Agent)",
     "Coding agents",
+    "Computer and browser use",
     "Research agents",
-    "Personal assistants",
     "Multi-agent systems"
   ],
   "givesAbove": "Completed multi-step tasks, not just single answers.",
   "needsBelow": "Tools, retrieval and model calls arranged by Orchestration & Tooling.",
   "concepts": [
     "agent-loop",
+    "agent-harnesses",
+    "coding-agents",
+    "computer-use",
     "multi-agent"
   ],
   "metaDiagram": {
     "nodes": [
       {
-        "concept": "agent-loop"
+        "concept": "coding-agents",
+        "x": 25,
+        "y": 5
       },
       {
-        "concept": "multi-agent"
+        "concept": "computer-use",
+        "x": 75,
+        "y": 5
+      },
+      {
+        "concept": "agent-loop",
+        "x": 5,
+        "y": 55
+      },
+      {
+        "concept": "agent-harnesses",
+        "x": 50,
+        "y": 55
+      },
+      {
+        "concept": "multi-agent",
+        "x": 50,
+        "y": 100
       }
     ]
   },
-  "walkthrough": [],
+  "walkthrough": [
+    {
+      "title": "A goal, not a script",
+      "text": "Someone asks: “fix the failing login test”. The agent loop starts: read the code, choose a step, act, look at the result, repeat.",
+      "highlight": [
+        "agent-loop"
+      ]
+    },
+    {
+      "title": "The harness keeps it safe",
+      "text": "The harness runs each tool call, asks before risky commands, and trims the context so the long task still fits.",
+      "highlight": [
+        "agent-harnesses",
+        "agent-loop"
+      ]
+    },
+    {
+      "title": "A coding agent does the work",
+      "text": "Inside the harness, a coding agent edits two files and reruns the tests until they pass.",
+      "highlight": [
+        "coding-agents",
+        "agent-harnesses"
+      ]
+    },
+    {
+      "title": "Checking the real page",
+      "text": "To be sure, it opens the login page in a browser, takes screenshots and clicks through it, like a person would.",
+      "highlight": [
+        "computer-use",
+        "agent-harnesses"
+      ]
+    },
+    {
+      "title": "Splitting the job",
+      "text": "For a bigger change, a lead agent hands tests and review to sub-agents, each running its own loop.",
+      "highlight": [
+        "multi-agent",
+        "agent-loop"
+      ]
+    }
+  ],
   "status": "draft",
-  "lastReviewed": "2026-09-28",
+  "lastReviewed": "2026-10-02",
   "newsKeywords": [
     "AI agent",
     "agentic",

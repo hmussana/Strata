@@ -1,0 +1,100 @@
+{
+  "id": "coding-agents",
+  "layer": "agents",
+  "name": "Coding agents",
+  "summary": "Agents that work inside a code repository: read files, make edits, run commands and tests, and iterate until the checks pass.",
+  "prerequisites": [
+    "agent-loop",
+    "agent-harnesses"
+  ],
+  "status": "draft",
+  "lastReviewed": "2026-10-02",
+  "depths": {
+    "D1": {
+      "guide": "Predict: why might code be easier for an agent to check than an essay?",
+      "text": [
+        "A coding agent is an AI helper that can change a program by itself.",
+        "It reads the code, makes an edit, then runs tests to see if it worked. If a test fails, it tries again."
+      ],
+      "analogy": "A mechanic who test-drives the car after every fix."
+    },
+    "D2": {
+      "text": [
+        "A coding agent is an agent loop specialised for software. Its tools search and read files, apply edits, run shell commands and tests, and often use git.",
+        "Code suits agents because results can be checked automatically. A failing test or a compiler error is clear feedback the agent can act on in its next step.",
+        "Coding agents run in a terminal, an editor or a cloud sandbox. They work better with project notes (build commands, conventions) and with models tuned for coding."
+      ],
+      "diagram": {
+        "type": "flow",
+        "numbered": true,
+        "caption": "How a coding agent works through a task",
+        "steps": [
+          {
+            "label": "Task",
+            "sub": "issue or request"
+          },
+          {
+            "label": "Explore",
+            "sub": "search, read files"
+          },
+          {
+            "label": "Edit",
+            "sub": "change the code"
+          },
+          {
+            "label": "Test",
+            "sub": "run tests, linters"
+          },
+          {
+            "label": "Review",
+            "sub": "diff for a person"
+          }
+        ],
+        "loop": {
+          "from": 3,
+          "to": 2,
+          "label": "tests fail: fix again"
+        }
+      },
+      "analogy": "A mechanic who test-drives the car after every fix.",
+      "analogyBreaks": "A mechanic understands why the car works. A coding agent can make tests pass without fixing the real problem, for example by weakening a test, so a person still reviews the diff.",
+      "predict": {
+        "question": "Why do coding agents do much better on projects with good automated tests?",
+        "options": [
+          "Tests make the model larger",
+          "Tests give fast, objective feedback the agent can check its work against",
+          "Tests stop the agent reading files",
+          "Agents cannot run code without tests"
+        ],
+        "answer": 1,
+        "explanation": "Each test run tells the agent whether its last step worked, so it can correct itself without waiting for a person."
+      }
+    },
+    "D5": {
+      "text": [
+        "Open problems: benchmarks built from real issues, such as SWE-bench, can leak into training data and miss what makes real work hard. Long tasks in large codebases still drift.",
+        "Agents can game tests, and running generated code and new dependencies on your machine needs sandboxing and review."
+      ]
+    }
+  },
+  "sources": [
+    {
+      "title": "SWE-bench: Can Language Models Resolve Real-World GitHub Issues?",
+      "url": "https://arxiv.org/abs/2310.06770",
+      "date": "2023",
+      "verify": false
+    },
+    {
+      "title": "SWE-agent: Agent-Computer Interfaces Enable Automated Software Engineering",
+      "url": "https://arxiv.org/abs/2405.15793",
+      "date": "2024",
+      "verify": false
+    },
+    {
+      "title": "Building effective agents (Anthropic)",
+      "url": "https://www.anthropic.com/research/building-effective-agents",
+      "date": "2024-12-19",
+      "verify": false
+    }
+  ]
+}

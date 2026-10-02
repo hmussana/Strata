@@ -10,30 +10,96 @@
     "breaks": "Cooks work independently. Thousands of accelerators must act as one machine in lockstep, so the network between them matters as much as the chips."
   },
   "examples": [
-    "GPUs",
-    "TPUs and custom accelerators",
+    "GPUs, TPUs and custom accelerators",
     "High-bandwidth memory (HBM)",
-    "Chip-to-chip interconnect"
+    "Low-precision formats such as BF16, FP8 and FP4",
+    "NVLink-style links and open standards such as UALink",
+    "Home hardware: consumer RTX cards, DGX Spark, Apple silicon"
   ],
   "givesAbove": "Raw arithmetic throughput and memory, exposed to software through platforms such as CUDA or ROCm.",
   "needsBelow": "Power, cooling and fabricated silicon from Physical & Energy.",
   "concepts": [
     "gpu-accelerators",
-    "memory-bandwidth"
+    "number-formats",
+    "memory-bandwidth",
+    "chip-interconnect",
+    "local-ai-hardware"
   ],
   "metaDiagram": {
     "nodes": [
       {
-        "concept": "gpu-accelerators"
+        "concept": "chip-interconnect",
+        "x": 0,
+        "y": 40
       },
       {
-        "concept": "memory-bandwidth"
+        "concept": "gpu-accelerators",
+        "x": 20,
+        "y": 85
+      },
+      {
+        "concept": "number-formats",
+        "x": 40,
+        "y": 10
+      },
+      {
+        "concept": "local-ai-hardware",
+        "x": 65,
+        "y": 10
+      },
+      {
+        "concept": "memory-bandwidth",
+        "x": 95,
+        "y": 85
       }
     ]
   },
-  "walkthrough": [],
+  "walkthrough": [
+    {
+      "title": "A home user wants a 70B model",
+      "text": "Someone wants to run a 70-billion-parameter open model at home. The work is billions of multiplications per token, which is what a GPU's thousands of cores are for.",
+      "highlight": [
+        "gpu-accelerators",
+        "local-ai-hardware"
+      ]
+    },
+    {
+      "title": "Fewer bits per number",
+      "text": "At 16 bits the weights need about 140 GB. Stored at 4 bits they need about 35 GB, and the chip moves and multiplies far more numbers per second.",
+      "highlight": [
+        "number-formats",
+        "gpu-accelerators"
+      ]
+    },
+    {
+      "title": "Fit first, then speed",
+      "text": "35 GB won't fit in one consumer card's memory. Once it fits somewhere, every token re-reads those weights, so memory bandwidth sets the tokens per second.",
+      "highlight": [
+        "local-ai-hardware",
+        "memory-bandwidth",
+        "gpu-accelerators"
+      ]
+    },
+    {
+      "title": "Two cards, one link",
+      "text": "Two cards split the layers between them and pass a small result across PCIe for each token. Splitting inside every layer would need a much faster link.",
+      "highlight": [
+        "chip-interconnect",
+        "gpu-accelerators"
+      ]
+    },
+    {
+      "title": "The same story at data-centre scale",
+      "text": "Frontier models face the same limits, scaled up: low-precision formats, stacked HBM, and NVLink-style links that join many accelerators into the clusters of the layer above.",
+      "highlight": [
+        "number-formats",
+        "memory-bandwidth",
+        "chip-interconnect"
+      ]
+    }
+  ],
   "status": "draft",
-  "lastReviewed": "2026-09-28",
+  "lastReviewed": "2026-10-02",
   "newsKeywords": [
     "=GPU",
     "=TPU",

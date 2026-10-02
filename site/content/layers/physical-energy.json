@@ -11,29 +11,92 @@
   },
   "examples": [
     "Data-centre campuses",
-    "Grid connections",
-    "Liquid cooling",
-    "Semiconductor fabs"
+    "Grid connection queues",
+    "Direct-to-chip liquid cooling",
+    "Semiconductor fabs",
+    "Energy per token and PUE"
   ],
   "givesAbove": "Electricity, cooling and floor space, plus the fabricated chips themselves.",
   "needsBelow": "Nothing in the AI stack: it rests on energy markets, land, water and industrial supply chains.",
   "concepts": [
+    "grid-connection",
     "datacenter-power",
-    "chip-supply-chain"
+    "liquid-cooling",
+    "chip-supply-chain",
+    "energy-per-token"
   ],
   "metaDiagram": {
     "nodes": [
       {
-        "concept": "datacenter-power"
+        "concept": "chip-supply-chain",
+        "x": 4,
+        "y": 10
       },
       {
-        "concept": "chip-supply-chain"
+        "concept": "datacenter-power",
+        "x": 45,
+        "y": 10
+      },
+      {
+        "concept": "energy-per-token",
+        "x": 92,
+        "y": 10
+      },
+      {
+        "concept": "liquid-cooling",
+        "x": 22,
+        "y": 90
+      },
+      {
+        "concept": "grid-connection",
+        "x": 66,
+        "y": 90
       }
     ]
   },
-  "walkthrough": [],
+  "walkthrough": [
+    {
+      "title": "An answer starts as electricity",
+      "text": "Someone asks a chatbot a question. Before any maths happens, the data centre needed a grid connection big enough for a town, which took years to secure.",
+      "highlight": [
+        "grid-connection",
+        "datacenter-power"
+      ]
+    },
+    {
+      "title": "Power in, heat out",
+      "text": "The electricity flows through substations to racks of AI chips, and nearly all of it turns into heat while the chips work out the answer.",
+      "highlight": [
+        "datacenter-power"
+      ]
+    },
+    {
+      "title": "Liquid carries the heat away",
+      "text": "Those racks are so dense that air cannot keep up, so liquid flows through plates on each chip and carries the heat outside.",
+      "highlight": [
+        "liquid-cooling",
+        "datacenter-power"
+      ]
+    },
+    {
+      "title": "Chips from a handful of factories",
+      "text": "The chips doing the work came from a few specialised fabs and packaging lines, which is why supply can run short.",
+      "highlight": [
+        "chip-supply-chain"
+      ]
+    },
+    {
+      "title": "The bill for one answer",
+      "text": "Add up the chips, the server, idle machines and cooling, and you get the energy per token. Making that smaller stretches every megawatt the grid can supply.",
+      "highlight": [
+        "energy-per-token",
+        "datacenter-power",
+        "grid-connection"
+      ]
+    }
+  ],
   "status": "draft",
-  "lastReviewed": "2026-09-28",
+  "lastReviewed": "2026-10-02",
   "newsKeywords": [
     "data center",
     "data centre",

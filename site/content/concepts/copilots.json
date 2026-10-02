@@ -1,13 +1,14 @@
 {
   "id": "copilots",
   "layer": "applications-interfaces",
-  "name": "Assistants & copilots",
-  "summary": "AI built into the places people already work: chat assistants and copilots inside editors, documents and apps.",
+  "name": "Copilots",
+  "summary": "AI built into the tools people already work in, such as code editors, documents and email, suggesting and increasingly acting while the person stays in charge.",
   "prerequisites": [
-    "agent-loop"
+    "agent-loop",
+    "embedded-ai"
   ],
   "status": "draft",
-  "lastReviewed": "2026-09-28",
+  "lastReviewed": "2026-10-02",
   "depths": {
     "D1": {
       "guide": "Think first: who should have the final say, you or the helper?",
@@ -19,8 +20,9 @@
     },
     "D2": {
       "text": [
-        "Copilots bring model calls into existing tools: code editors, email, documents and search.",
+        "Copilots bring model calls into existing tools: code editors, email, documents and search. They are the deepest form of AI built into a product.",
         "Good designs keep people in control: suggestions appear inline, are easy to accept or reject, and show their sources.",
+        "Many copilots now have an agent mode that hands a whole task to a coding agent or other agent, and comes back with changes to review.",
         "Behind the interface sit the lower layers: an agent or orchestrated calls, a model endpoint, and infrastructure."
       ],
       "diagram": {

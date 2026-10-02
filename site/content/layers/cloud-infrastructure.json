@@ -11,25 +11,85 @@
   },
   "examples": [
     "Hyperscale clouds",
-    "Specialist GPU clouds",
+    "Specialist GPU clouds (neoclouds)",
     "Cluster schedulers (Kubernetes, Slurm)",
-    "Storage and networking fabrics"
+    "InfiniBand and Ethernet fabrics",
+    "Local runners (llama.cpp, Ollama)"
   ],
   "givesAbove": "On-demand clusters, storage and networking that teams can train and serve models on.",
   "needsBelow": "Accelerators and interconnect from Compute Hardware, housed and powered by Physical & Energy.",
   "concepts": [
-    "gpu-clusters"
+    "cluster-networking",
+    "gpu-clusters",
+    "gpu-clouds",
+    "training-vs-inference",
+    "local-vs-cloud"
   ],
   "metaDiagram": {
     "nodes": [
       {
-        "concept": "gpu-clusters"
+        "concept": "cluster-networking",
+        "x": 4,
+        "y": 88
+      },
+      {
+        "concept": "gpu-clusters",
+        "x": 26,
+        "y": 50
+      },
+      {
+        "concept": "gpu-clouds",
+        "x": 66,
+        "y": 40
+      },
+      {
+        "concept": "training-vs-inference",
+        "x": 80,
+        "y": 4
+      },
+      {
+        "concept": "local-vs-cloud",
+        "x": 100,
+        "y": 80
       }
     ]
   },
-  "walkthrough": [],
+  "walkthrough": [
+    {
+      "title": "Chips wired into one machine",
+      "text": "A lab wants to train a new model. Thousands of accelerators are linked by a fast network fabric so they can share results every step.",
+      "highlight": [
+        "cluster-networking",
+        "gpu-clusters"
+      ]
+    },
+    {
+      "title": "Renting the cluster",
+      "text": "The lab doesn't own that cluster. It rents it from a GPU cloud, reserving capacity for the weeks the run will take.",
+      "highlight": [
+        "gpu-clusters",
+        "gpu-clouds"
+      ]
+    },
+    {
+      "title": "Training, then serving",
+      "text": "Once trained, the model moves from one giant training job to many small serving copies, sized for fast, cheap answers.",
+      "highlight": [
+        "gpu-clouds",
+        "training-vs-inference"
+      ]
+    },
+    {
+      "title": "Or run it at home",
+      "text": "If the weights are released, a hobbyist can download a quantised version and run it on their own machine instead of renting.",
+      "highlight": [
+        "local-vs-cloud",
+        "gpu-clouds"
+      ]
+    }
+  ],
   "status": "draft",
-  "lastReviewed": "2026-09-28",
+  "lastReviewed": "2026-10-02",
   "newsKeywords": [
     "AWS",
     "Azure",

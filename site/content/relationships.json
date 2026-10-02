@@ -109,16 +109,280 @@
       "label": "is the input to"
     },
     {
-      "from": "gpu-clusters",
-      "to": "pretraining",
+      "from": "agent-harnesses",
+      "to": "agent-loop",
       "type": "enables",
-      "label": "runs"
+      "label": "runs and guards"
+    },
+    {
+      "from": "coding-agents",
+      "to": "agent-harnesses",
+      "type": "depends-on",
+      "label": "runs inside a"
+    },
+    {
+      "from": "computer-use",
+      "to": "agent-harnesses",
+      "type": "depends-on",
+      "label": "sandboxed by"
+    },
+    {
+      "from": "coding-agents",
+      "to": "copilots",
+      "type": "enables",
+      "label": "adds agent mode to"
+    },
+    {
+      "from": "computer-use",
+      "to": "chat-assistants",
+      "type": "enables",
+      "label": "acts on websites for"
+    },
+    {
+      "from": "voice-multimodal",
+      "to": "chat-assistants",
+      "type": "enables",
+      "label": "lets you talk to"
+    },
+    {
+      "from": "embedded-ai",
+      "to": "copilots",
+      "type": "enables",
+      "label": "grows into"
+    },
+    {
+      "from": "rag",
+      "to": "embedded-ai",
+      "type": "feeds",
+      "label": "supplies your data to"
+    },
+    {
+      "from": "cluster-networking",
+      "to": "gpu-clusters",
+      "type": "part-of",
+      "label": "ties together"
+    },
+    {
+      "from": "gpu-clusters",
+      "to": "gpu-clouds",
+      "type": "part-of",
+      "label": "are rented out by"
+    },
+    {
+      "from": "gpu-clouds",
+      "to": "training-vs-inference",
+      "type": "enables",
+      "label": "rents capacity for"
+    },
+    {
+      "from": "local-vs-cloud",
+      "to": "gpu-clouds",
+      "type": "competes-with",
+      "label": "avoids renting from"
+    },
+    {
+      "from": "number-formats",
+      "to": "gpu-accelerators",
+      "type": "optimizes",
+      "label": "packs more maths into"
+    },
+    {
+      "from": "gpu-accelerators",
+      "to": "chip-interconnect",
+      "type": "depends-on",
+      "label": "share work through"
+    },
+    {
+      "from": "chip-interconnect",
+      "to": "gpu-clusters",
+      "type": "enables",
+      "label": "joins chips into"
+    },
+    {
+      "from": "local-ai-hardware",
+      "to": "memory-bandwidth",
+      "type": "depends-on",
+      "label": "sized and paced by"
+    },
+    {
+      "from": "local-ai-hardware",
+      "to": "gpu-accelerators",
+      "type": "depends-on",
+      "label": "uses consumer versions of"
     },
     {
       "from": "quantization",
-      "to": "open-weights",
+      "to": "local-ai-hardware",
       "type": "optimizes",
-      "label": "shrinks for local use"
+      "label": "squeezes models onto"
+    },
+    {
+      "from": "data-curation",
+      "to": "pretraining-data",
+      "type": "optimizes",
+      "label": "dedupes and filters"
+    },
+    {
+      "from": "data-curation",
+      "to": "synthetic-data",
+      "type": "optimizes",
+      "label": "checks and filters"
+    },
+    {
+      "from": "data-provenance",
+      "to": "pretraining-data",
+      "type": "enables",
+      "label": "licenses and documents"
+    },
+    {
+      "from": "data-provenance",
+      "to": "data-curation",
+      "type": "feeds",
+      "label": "supplies opt-outs to"
+    },
+    {
+      "from": "synthetic-data",
+      "to": "human-feedback-data",
+      "type": "competes-with",
+      "label": "partly replaces"
+    },
+    {
+      "from": "human-feedback-data",
+      "to": "post-training",
+      "type": "feeds",
+      "label": "teaches preferences to"
+    },
+    {
+      "from": "gpu-clusters",
+      "to": "data-curation",
+      "type": "enables",
+      "label": "runs classifiers for"
+    },
+    {
+      "from": "post-training",
+      "to": "reasoning-models",
+      "type": "enables",
+      "label": "teaches reasoning to"
+    },
+    {
+      "from": "open-weights",
+      "to": "specialised-models",
+      "type": "enables",
+      "label": "can be fine-tuned into"
+    },
+    {
+      "from": "speculative-decoding",
+      "to": "local-inference",
+      "type": "optimizes",
+      "label": "speeds single-user generation in"
+    },
+    {
+      "from": "quantization",
+      "to": "local-inference",
+      "type": "enables",
+      "label": "fits bigger models into"
+    },
+    {
+      "from": "local-inference",
+      "to": "open-weights",
+      "type": "depends-on",
+      "label": "runs downloaded files of"
+    },
+    {
+      "from": "local-inference",
+      "to": "local-ai-hardware",
+      "type": "depends-on",
+      "label": "runs on"
+    },
+    {
+      "from": "local-inference",
+      "to": "model-apis",
+      "type": "competes-with",
+      "label": "self-hosts instead of"
+    },
+    {
+      "from": "batching-caching",
+      "to": "model-apis",
+      "type": "optimizes",
+      "label": "lowers per-token price of"
+    },
+    {
+      "from": "model-apis",
+      "to": "tool-use",
+      "type": "enables",
+      "label": "exposes function calling for"
+    },
+    {
+      "from": "rag",
+      "to": "context-engineering",
+      "type": "feeds",
+      "label": "supplies passages to"
+    },
+    {
+      "from": "tool-use",
+      "to": "context-engineering",
+      "type": "feeds",
+      "label": "returns results into"
+    },
+    {
+      "from": "memory",
+      "to": "context-engineering",
+      "type": "feeds",
+      "label": "reloads saved facts into"
+    },
+    {
+      "from": "memory",
+      "to": "rag",
+      "type": "depends-on",
+      "label": "searches past notes via"
+    },
+    {
+      "from": "guardrails-evals",
+      "to": "context-engineering",
+      "type": "feeds",
+      "label": "scores changes to"
+    },
+    {
+      "from": "guardrails-evals",
+      "to": "tool-use",
+      "type": "enables",
+      "label": "screens and gates"
+    },
+    {
+      "from": "batching-caching",
+      "to": "context-engineering",
+      "type": "optimizes",
+      "label": "reuses stable prefixes in"
+    },
+    {
+      "from": "grid-connection",
+      "to": "datacenter-power",
+      "type": "feeds",
+      "label": "delivers megawatts to"
+    },
+    {
+      "from": "liquid-cooling",
+      "to": "datacenter-power",
+      "type": "part-of",
+      "label": "removes the heat for"
+    },
+    {
+      "from": "energy-per-token",
+      "to": "datacenter-power",
+      "type": "depends-on",
+      "label": "includes overhead of"
+    },
+    {
+      "from": "energy-per-token",
+      "to": "grid-connection",
+      "type": "optimizes",
+      "label": "stretches each megawatt of"
+    },
+    {
+      "from": "batching-caching",
+      "to": "energy-per-token",
+      "type": "optimizes",
+      "label": "shares chip power across"
     }
   ]
 }

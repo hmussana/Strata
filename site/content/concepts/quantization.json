@@ -60,6 +60,112 @@
         "explanation": "7 billion × 4 bits ÷ 8 = 3.5 GB, plus a little overhead for the scale factors."
       }
     },
+    "D3": {
+      "text": [
+        "Quantization stores each weight with fewer bits. With *b* bits a weight can only take one of a fixed set of values on a grid, so each one is rounded to the nearest grid point.",
+        "Memory follows the bits exactly: **memory = parameters × bits ÷ 8** bytes. The rounding error does not: pick a bit-width below and compare the two."
+      ],
+      "interactive": "quant-play",
+      "interactiveConfig": {
+        "note": "Illustrative weights, not from a real model. Uses one simple symmetric scale for the whole row; real methods are smarter. Memory is for the weights only.",
+        "weights": [
+          0.42,
+          -0.17,
+          0.08,
+          -0.61,
+          0.33,
+          0.95,
+          -0.29,
+          0.12,
+          -0.83,
+          0.51,
+          -0.04,
+          0.26
+        ],
+        "models": [
+          {
+            "label": "8B",
+            "params": 8000000000.0
+          },
+          {
+            "label": "70B",
+            "params": 70000000000.0
+          }
+        ]
+      },
+      "tasks": [
+        "Step from 16 to 8 to 4 bits. How does the memory change each time?",
+        "Now go from 4 to 3 to 2 bits. Watch the dots jump away from the outlines.",
+        "At 2 bits, how many different values can a weight take? Which weights end up exactly zero?"
+      ],
+      "predict": {
+        "question": "Each step down saves the same kind of memory. Which step adds the most rounding error?",
+        "options": [
+          "16 to 8 bits",
+          "8 to 4 bits",
+          "4 to 3 bits",
+          "3 to 2 bits"
+        ],
+        "answer": 3,
+        "explanation": "Each bit removed halves the number of grid points, so the gaps between them double. Going from 3 to 2 bits leaves only three values (minus, zero, plus), and the average error roughly triples."
+      }
+    },
+    "D4": {
+      "text": [
+        "Real quantization splits the weights into **blocks** and gives each block its own **scale**: the block's largest absolute weight divided by the largest grid value. Each weight is stored as a small integer *q = round(w ÷ scale)*.",
+        "One unusually large weight, an **outlier**, sets the scale for its whole block. The grid stretches to reach it, so every ordinary weight in that block rounds badly.",
+        "Smaller blocks contain the damage, but every block stores a 16-bit scale, so the real cost per weight is *bits + 16 ÷ block size*."
+      ],
+      "interactive": "quant-workbench",
+      "interactiveConfig": {
+        "note": "Illustrative weights, not from a real model. Symmetric round-to-nearest with one 16-bit scale per block.",
+        "weights": [
+          0.21,
+          -0.34,
+          0.08,
+          0.45,
+          -0.12,
+          0.3,
+          -0.41,
+          0.17,
+          0.05,
+          -0.27,
+          0.38,
+          -0.09,
+          0.24,
+          -0.46,
+          0.13,
+          -0.2
+        ],
+        "outlier": {
+          "index": 5,
+          "value": 2.0
+        }
+      },
+      "tasks": [
+        "At 4 bits with one block of 16, switch the outlier off and on. What happens to the other weights?",
+        "With the outlier on, shrink the block size step by step. Which blocks' errors fall?",
+        "Compare blocks of 2 with blocks of 16 in stored bits per weight. Is the smallest block worth it?"
+      ],
+      "code": "for block in split(weights, block_size):\n    scale = max(abs(w) for w in block) / (2 ** (bits - 1) - 1)\n    q = [round(w / scale) for w in block]         # small integers, stored in `bits` bits\n    store(q, scale)                                 # plus one 16-bit scale per block\n\n# at run time\nw_approx = q * scale",
+      "tradeoffs": [
+        "Smaller blocks give lower error but spend more memory on scales.",
+        "Lower bit-widths save memory and bandwidth but error grows fast below about 4 bits.",
+        "Outliers can be kept apart in higher precision, at the cost of extra bookkeeping.",
+        "Quantizing after training is cheap; training with quantization in mind keeps more accuracy but costs a training run."
+      ],
+      "predict": {
+        "question": "At 4 bits with the outlier on, the weights sit in one block of 16. What happens to the average error if you split them into blocks of 4?",
+        "options": [
+          "No change",
+          "It falls by about a tenth",
+          "It falls to about a third",
+          "It becomes zero"
+        ],
+        "answer": 2,
+        "explanation": "Only the block holding the outlier keeps the stretched grid. The other three blocks get a tight scale, so the average error falls from about 0.082 to about 0.029."
+      }
+    },
     "D5": {
       "text": [
         "Frontier: 8- and 4-bit number formats supported natively by hardware, quantization-aware training, and how quantization affects long-context accuracy and safety behaviour."

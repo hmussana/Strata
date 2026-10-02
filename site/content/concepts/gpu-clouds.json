@@ -1,0 +1,91 @@
+{
+  "id": "gpu-clouds",
+  "layer": "cloud-infrastructure",
+  "name": "GPU clouds & neoclouds",
+  "summary": "Companies that own huge GPU clusters and rent slices of them by the hour, from big general clouds to specialist GPU-only providers.",
+  "prerequisites": [
+    "gpu-clusters"
+  ],
+  "status": "draft",
+  "lastReviewed": "2026-10-02",
+  "depths": {
+    "D1": {
+      "guide": "Guess first: is it cheaper to rent a GPU for a year or buy one?",
+      "text": [
+        "Most people building AI don't own the giant computers it runs on. They rent them, a bit like hiring a car instead of buying one.",
+        "Some rental companies sell every kind of computer service. Others, called neoclouds, mostly rent out powerful AI chips."
+      ],
+      "analogy": "Hiring a car instead of buying one."
+    },
+    "D2": {
+      "text": [
+        "**Hyperscalers** are the big general clouds: GPUs sit beside storage, databases, identity and networking you may already use, with many regions and compliance certifications.",
+        "**Neoclouds** are specialist GPU clouds. They focus on accelerators, often offer newer chips sooner or simpler pricing, and run fewer other services.",
+        "You can rent **on demand** (pay by the hour, may be unavailable), **reserve** capacity for a fixed period (cheaper per hour, you pay even when idle), or **own** hardware. Renting suits bursty or uncertain workloads; owning pays off only if the GPUs stay busy for years."
+      ],
+      "diagram": {
+        "type": "compare",
+        "caption": "Three ways to get GPUs",
+        "columns": [
+          {
+            "title": "On demand",
+            "points": [
+              "Pay per hour",
+              "Start and stop any time",
+              "Capacity can run out"
+            ]
+          },
+          {
+            "title": "Reserved",
+            "points": [
+              "Commit for weeks to years",
+              "Lower hourly rate",
+              "Pay even when idle"
+            ]
+          },
+          {
+            "title": "Own",
+            "points": [
+              "Big upfront cost",
+              "Full control",
+              "Cheapest only if kept busy"
+            ]
+          }
+        ]
+      },
+      "analogy": "Hiring a car by the day, leasing one, or buying one outright.",
+      "analogyBreaks": "Hire cars are interchangeable and plentiful. The newest GPUs are scarce, can sell out in a region, and large training jobs need thousands of them networked together in one place, which a rental counter can't promise.",
+      "predict": {
+        "question": "A team needs 64 GPUs for a two-week experiment and isn't sure it will need them again. What fits best?",
+        "options": [
+          "Buy the GPUs",
+          "Rent them for the two weeks",
+          "Sign a three-year reservation",
+          "Run it on laptops"
+        ],
+        "answer": 1,
+        "explanation": "Short, uncertain demand suits renting. Buying or long reservations only pay off when the hardware stays busy for a long time."
+      }
+    },
+    "D5": {
+      "text": [
+        "Where it gets harder: capacity for the newest chips is often booked months ahead, so availability can matter more than price.",
+        "Specialist GPU clouds depend heavily on a few chip suppliers and large customers, and nobody yet knows how fast today's GPUs will lose their value as newer generations arrive."
+      ]
+    }
+  },
+  "sources": [
+    {
+      "title": "The NIST Definition of Cloud Computing (SP 800-145)",
+      "url": "https://csrc.nist.gov/pubs/sp/800/145/final",
+      "date": "2011",
+      "verify": false
+    },
+    {
+      "title": "Amazon EC2 User Guide: Capacity Blocks for ML",
+      "url": "https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ec2-capacity-blocks.html",
+      "date": "2023",
+      "verify": true
+    }
+  ]
+}

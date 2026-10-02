@@ -10,30 +10,94 @@
     "breaks": "A kitchen cooks each order separately. Inference servers push many users' requests through the same model step together to use the hardware efficiently."
   },
   "examples": [
-    "Model APIs",
-    "Serving engines",
+    "Model APIs and routers",
+    "Local runtimes and GGUF files",
     "Quantization",
-    "Batching and caching"
+    "Batching and KV caching",
+    "Speculative decoding"
   ],
   "givesAbove": "A fast, affordable endpoint: send text in, get text out.",
   "needsBelow": "Model weights from Foundation Models and serving hardware from Cloud & Infrastructure.",
   "concepts": [
+    "model-apis",
+    "batching-caching",
     "quantization",
-    "batching-caching"
+    "local-inference",
+    "speculative-decoding"
   ],
   "metaDiagram": {
     "nodes": [
       {
-        "concept": "quantization"
+        "concept": "model-apis",
+        "x": 34,
+        "y": 10
       },
       {
-        "concept": "batching-caching"
+        "concept": "batching-caching",
+        "x": 4,
+        "y": 68
+      },
+      {
+        "concept": "quantization",
+        "x": 38,
+        "y": 96
+      },
+      {
+        "concept": "local-inference",
+        "x": 62,
+        "y": 62
+      },
+      {
+        "concept": "speculative-decoding",
+        "x": 100,
+        "y": 94
       }
     ]
   },
-  "walkthrough": [],
+  "walkthrough": [
+    {
+      "title": "A coding question goes out",
+      "text": "A coding tool sends “why does this test fail?” to a model API, perhaps through a router that picks a provider, and pays per token.",
+      "highlight": [
+        "model-apis"
+      ]
+    },
+    {
+      "title": "The provider shares the work",
+      "text": "On the provider's servers the question rides in a batch with many other users' requests, and the KV cache saves re-reading the long code file for every new token.",
+      "highlight": [
+        "model-apis",
+        "batching-caching"
+      ]
+    },
+    {
+      "title": "Smaller numbers, more room",
+      "text": "Quantized weights take less memory, leaving room for more users' caches in each batch.",
+      "highlight": [
+        "quantization",
+        "batching-caching"
+      ]
+    },
+    {
+      "title": "Or ask the same question at home",
+      "text": "The same open model, quantized into a GGUF file, runs in a local runtime on a home GPU. The coding tool just points at localhost instead.",
+      "highlight": [
+        "quantization",
+        "local-inference",
+        "model-apis"
+      ]
+    },
+    {
+      "title": "A small helper speeds it up",
+      "text": "With only one user at home, a small draft model guesses ahead and the big model checks its guesses, so the answer streams out sooner with nothing changed.",
+      "highlight": [
+        "speculative-decoding",
+        "local-inference"
+      ]
+    }
+  ],
   "status": "draft",
-  "lastReviewed": "2026-09-28",
+  "lastReviewed": "2026-10-02",
   "newsKeywords": [
     "inference",
     "model serving",

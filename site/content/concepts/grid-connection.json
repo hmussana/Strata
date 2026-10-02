@@ -1,0 +1,84 @@
+{
+  "id": "grid-connection",
+  "layer": "physical-energy",
+  "name": "Grid connection & energy supply",
+  "summary": "A big AI data centre needs a large, steady supply of electricity, and getting connected to the grid can take years, so power, not chips, often decides where and when one gets built.",
+  "prerequisites": ["datacenter-power"],
+  "status": "draft",
+  "lastReviewed": "2026-10-02",
+  "depths": {
+    "D1": {
+      "guide": "Guess first: which takes longer, building the data centre or connecting its power?",
+      "text": [
+        "A giant AI building needs as much electricity as a town.",
+        "The wires, power stations and big transformers that bring it there take years to build.",
+        "So companies often have to wait for power, or build where spare power already exists."
+      ],
+      "analogy": "Building a new house is quick. Waiting for the water main to reach it is slow."
+    },
+    "D2": {
+      "text": [
+        "A data centre asks the local grid operator for a **connection** of a certain size. The operator studies whether the lines and substations can carry it, and often finds that new **transmission lines**, substations or transformers are needed first.",
+        "Requests join a **connection queue**. New power stations queue too, so both the supply and the demand side can wait years. Grid parts such as large transformers have their own long lead times.",
+        "That is why builders hunt for sites with spare grid capacity, add on-site generation, or agree to cut their load when the grid is stressed. A building can be finished, and chips delivered, long before the power is ready."
+      ],
+      "diagram": {
+        "type": "flow",
+        "numbered": true,
+        "caption": "From request to power on",
+        "steps": [
+          { "label": "Request", "sub": "ask for capacity" },
+          { "label": "Queue", "sub": "wait your turn" },
+          { "label": "Studies", "sub": "can the grid cope?" },
+          { "label": "Upgrades", "sub": "lines, transformers" },
+          { "label": "Power on", "sub": "racks can run" }
+        ]
+      },
+      "analogy": "Building a new house is quick. Waiting for the water main to reach it is slow.",
+      "analogyBreaks": "A water main serves one street. A grid is one shared, balanced system: a big new load can affect prices and reliability for everyone on it, which is why operators study each request so carefully.",
+      "predict": {
+        "question": "A company has the land, the building and the chips. What is most likely to delay switching on a new AI data centre?",
+        "options": [
+          "Writing the software",
+          "Getting a large enough grid connection",
+          "Hiring security guards",
+          "Buying network cables"
+        ],
+        "answer": 1,
+        "explanation": "Grid connection queues, studies and upgrades to lines and transformers can take years, much longer than putting up the building."
+      }
+    },
+    "D5": {
+      "text": [
+        "Open questions: how fast grids can add transmission, whether flexible data centres that slow down at peak times can connect sooner, and who pays for grid upgrades.",
+        "Forecasts of data centre demand vary widely, and many requests in connection queues are speculative and never get built, which makes planning hard for grid operators."
+      ]
+    }
+  },
+  "sources": [
+    {
+      "title": "IEA: Energy and AI, executive summary",
+      "url": "https://www.iea.org/reports/energy-and-ai/executive-summary",
+      "date": "2025",
+      "verify": false
+    },
+    {
+      "title": "IEA commentary: Overcoming energy constraints is key to delivering on Europe's data centre goals",
+      "url": "https://www.iea.org/commentaries/overcoming-energy-constraints-is-key-to-delivering-on-europe-s-data-centre-goals",
+      "date": "2025-11-16",
+      "verify": false
+    },
+    {
+      "title": "Berkeley Lab: Queued Up, 2026 Edition (US interconnection queues)",
+      "url": "https://emp.lbl.gov/publications/queued-2026-edition-characteristics",
+      "date": "2026",
+      "verify": false
+    },
+    {
+      "title": "Berkeley Lab: 2024 United States Data Center Energy Usage Report",
+      "url": "https://eta-publications.lbl.gov/publications/2024-lbnl-data-center-energy-usage-report",
+      "date": "2024-12-19",
+      "verify": false
+    }
+  ]
+}

@@ -11,9 +11,10 @@
   },
   "examples": [
     "Transformer architecture",
-    "Closed models",
-    "Open-weight models",
-    "Mixture-of-experts"
+    "Closed and open-weight models",
+    "Mixture-of-experts",
+    "Reasoning models",
+    "Coding models"
   ],
   "givesAbove": "A general capability, predicting and generating text and other media, packaged as model weights.",
   "needsBelow": "Training data from Data and large clusters from Cloud & Infrastructure.",
@@ -23,7 +24,9 @@
     "next-token-prediction",
     "pretraining",
     "post-training",
-    "open-weights"
+    "open-weights",
+    "reasoning-models",
+    "specialised-models"
   ],
   "metaDiagram": {
     "nodes": [
@@ -49,13 +52,23 @@
       },
       {
         "concept": "post-training",
-        "x": 62,
+        "x": 58,
         "y": 92
       },
       {
         "concept": "open-weights",
         "x": 100,
-        "y": 50
+        "y": 8
+      },
+      {
+        "concept": "specialised-models",
+        "x": 100,
+        "y": 53
+      },
+      {
+        "concept": "reasoning-models",
+        "x": 100,
+        "y": 92
       }
     ]
   },
@@ -99,10 +112,20 @@
         "post-training",
         "open-weights"
       ]
+    },
+    {
+      "title": "Then it's sharpened for a job",
+      "text": "Extra training can teach a model to reason step by step before it answers, and open weights let anyone fine-tune specialists, such as coding models.",
+      "highlight": [
+        "post-training",
+        "reasoning-models",
+        "open-weights",
+        "specialised-models"
+      ]
     }
   ],
   "status": "draft",
-  "lastReviewed": "2026-10-01",
+  "lastReviewed": "2026-10-02",
   "newsKeywords": [
     "=LLM",
     "language model",
