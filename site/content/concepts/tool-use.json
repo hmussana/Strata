@@ -8,6 +8,7 @@
   "lastReviewed": "2026-09-28",
   "depths": {
     "D1": {
+      "guide": "Think first: what can't you do by talking alone?",
       "text": [
         "On its own an AI can only talk. Giving it tools is like giving it a phone and a calculator: now it can check the weather or do exact maths.",
         "It asks in a special format, and a program does the actual work."

@@ -8,6 +8,7 @@
   "lastReviewed": "2026-09-28",
   "depths": {
     "D1": {
+      "guide": "Guess first: one genius or a stadium of helpers for a billion sums?",
       "text": [
         "A normal computer brain (a CPU) is like one very clever person doing sums one after another. A GPU is like a stadium full of people each doing one small sum at the same time.",
         "AI needs billions of small sums, so the stadium wins."

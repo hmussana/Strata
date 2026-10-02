@@ -10,6 +10,7 @@
   "lastReviewed": "2026-09-28",
   "depths": {
     "D1": {
+      "guide": "Think first: does knowing lots of facts make someone a good helper?",
       "text": [
         "After reading the whole library, the AI knows a lot but doesn't know how to be helpful yet.",
         "Post-training is like manners and practice lessons: people show it good answers and reward the helpful ones."

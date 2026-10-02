@@ -8,6 +8,7 @@
   "lastReviewed": "2026-10-01",
   "depths": {
     "D1": {
+      "guide": "Guess first: is a long, unusual word one piece or several?",
       "text": [
         "Before an AI reads anything, it snaps sentences into little pieces called tokens, like snapping a chocolate bar into squares.",
         "Short, common words are one piece. Long or unusual words get snapped into several pieces."

@@ -10,6 +10,7 @@
   "lastReviewed": "2026-09-28",
   "depths": {
     "D1": {
+      "guide": "Which is easier to write, £3.99 or £3.98765? What do you lose?",
       "text": [
         "Imagine writing a price as £3.99 instead of £3.98765. You lose a tiny bit of detail, but it's much quicker to write and read.",
         "Quantization does this to the billions of numbers inside an AI so it fits on smaller computers."

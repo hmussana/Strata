@@ -1,9 +1,10 @@
 // Loads the structured content (site/content) and builds lookup indexes. Content is data only:
 // components never hard-code layers, concepts or relationships.
-const BASE = '../content/';
+// resolved against this module, not the page, so the app works from /next/ or from the site root
+const BASE = new URL('../content/', import.meta.url);
 
 async function get(path) {
-  const res = await fetch(BASE + path, { cache: 'no-cache' });
+  const res = await fetch(new URL(path, BASE), { cache: 'no-cache' });
   if (!res.ok) throw new Error(`${path}: HTTP ${res.status}`);
   return res.json();
 }
@@ -16,7 +17,7 @@ export async function loadContent() {
   ]);
   const concepts = await Promise.all(layers.flatMap((l) => l.concepts).map((id) => get(`concepts/${id}.json`)));
   // measured signals from the news pipeline; optional, the site works without them
-  const news = await fetch('../data/news.json', { cache: 'no-cache' }).then((r) => (r.ok ? r.json() : null)).catch(() => null);
+  const news = await fetch(new URL('../data/news.json', import.meta.url), { cache: 'no-cache' }).then((r) => (r.ok ? r.json() : null)).catch(() => null);
 
   const layerById = new Map(layers.map((l) => [l.id, l]));
   const conceptById = new Map(concepts.map((c) => [c.id, c]));

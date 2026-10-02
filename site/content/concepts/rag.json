@@ -10,6 +10,7 @@
   "lastReviewed": "2026-09-28",
   "depths": {
     "D1": {
+      "guide": "When you're unsure of an answer, what do you do before replying?",
       "text": [
         "If you ask a friend a question about your school, they might check the school website before answering.",
         "RAG makes the AI look things up first instead of guessing from memory."

@@ -10,6 +10,7 @@
   "lastReviewed": "2026-09-28",
   "depths": {
     "D1": {
+      "guide": "Think of a team project. Who plans, who does the work, who checks?",
       "text": [
         "Big jobs are easier with a team: one person plans, others do the parts, and someone checks the work.",
         "Multi-agent systems are teams of AIs."

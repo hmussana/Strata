@@ -10,6 +10,7 @@
   "lastReviewed": "2026-10-01",
   "depths": {
     "D1": {
+      "guide": "Read the sentence slowly. Which word does 'it' point back to?",
       "text": [
         "Read this: “The cat sat on the mat because it was tired.” You know “it” means the cat, not the mat.",
         "Attention is how the AI works that out: for each word it looks back at the earlier words and decides which ones matter most."

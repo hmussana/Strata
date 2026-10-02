@@ -8,6 +8,7 @@
   "lastReviewed": "2026-09-28",
   "depths": {
     "D1": {
+      "guide": "What happens to an orchestra if one player stops? Keep that in mind.",
       "text": [
         "One chip isn't enough to teach a big AI, so we connect thousands together, like a huge orchestra that has to play in perfect time.",
         "A conductor program decides which chips work on what, and restarts the music if a player stops."

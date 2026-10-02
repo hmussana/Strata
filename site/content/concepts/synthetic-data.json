@@ -8,6 +8,7 @@
   "lastReviewed": "2026-09-28",
   "depths": {
     "D1": {
+      "guide": "Think first: could practice questions written by a machine teach another machine?",
       "text": [
         "Sometimes a teacher writes practice questions instead of finding them in books. Synthetic data is AI-written practice material for training other AIs."
       ],

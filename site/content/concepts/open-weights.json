@@ -10,6 +10,7 @@
   "lastReviewed": "2026-10-01",
   "depths": {
     "D1": {
+      "guide": "Guess first: what can you do with a published recipe that a shop cake can't?",
       "text": [
         "Some cake recipes are secret: you can only buy the cake at the shop. Others are published so anyone can bake the cake at home.",
         "Closed AI models are like the shop cake. Open-weight models are like the published recipe."

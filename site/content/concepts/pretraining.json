@@ -11,6 +11,7 @@
   "lastReviewed": "2026-10-01",
   "depths": {
     "D1": {
+      "guide": "Try it: cover the next word in a sentence and guess it.",
       "text": [
         "Imagine reading millions of books where the next word is always covered. You guess, peek, and learn a tiny bit from every wrong guess.",
         "Do that trillions of times and you become very good at guessing. That's pretraining."
