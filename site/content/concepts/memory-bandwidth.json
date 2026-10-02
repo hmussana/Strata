@@ -8,6 +8,7 @@
   "lastReviewed": "2026-09-28",
   "depths": {
     "D1": {
+      "guide": "Watch the narrow door. Does a faster cook help if ingredients arrive slowly?",
       "text": [
         "Imagine a super-fast cook who has to wait for ingredients to come through a narrow door. The cook's speed doesn't matter if the door is slow.",
         "For AI, the ingredients are the model's numbers, and the door is memory bandwidth."

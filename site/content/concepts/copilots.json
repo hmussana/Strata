@@ -10,6 +10,7 @@
   "lastReviewed": "2026-09-28",
   "depths": {
     "D1": {
+      "guide": "Think first: who should have the final say, you or the helper?",
       "text": [
         "A copilot sits next to the pilot and helps, but the pilot is still in charge.",
         "AI copilots suggest text, code or answers, and you decide what to keep."

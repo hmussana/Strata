@@ -10,6 +10,7 @@
   "lastReviewed": "2026-09-28",
   "depths": {
     "D1": {
+      "guide": "Before you read: how would you know when a messy room is finished?",
       "text": [
         "Think of a robot tidying a room: look around, pick one thing up, check where it goes, then look again. It keeps going until the room is tidy.",
         "An AI agent works the same way, using computer tools instead of hands."

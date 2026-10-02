@@ -206,15 +206,15 @@
         "asOf": "2026-09-30"
       },
       "maturity": {
-        "value": 50,
+        "value": 60,
         "answers": {
           "standards": {
             "answer": "partial",
             "why": "Storage formats are standard; licensing and provenance norms are not."
           },
           "vendors": {
-            "answer": "partial",
-            "why": "A handful of dataset and labelling providers."
+            "answer": "yes",
+            "why": "Labs moved between labelling vendors (Scale, Surge, Mercor) in 2025."
           },
           "interfaces": {
             "answer": "partial",
@@ -230,7 +230,7 @@
           }
         },
         "source": "Strata editorial assessment (draft) using the maturity formula",
-        "asOf": "2026-09-30"
+        "asOf": "2026-10-02"
       }
     },
     "foundation-models": {
@@ -325,19 +325,19 @@
         "asOf": "2026-09-30"
       },
       "maturity": {
-        "value": 40,
+        "value": 50,
         "answers": {
           "standards": {
             "answer": "partial",
-            "why": "Tool protocols such as MCP are recent."
+            "why": "MCP is widely adopted and neutrally governed (Linux Foundation), but young."
           },
           "vendors": {
             "answer": "yes",
             "why": "Many frameworks and vector databases."
           },
           "interfaces": {
-            "answer": "no",
-            "why": "Framework APIs change frequently."
+            "answer": "partial",
+            "why": "LangChain and LangGraph reached 1.0 in October 2025 with no breaking changes promised until 2.0; other frameworks still churn."
           },
           "adoption": {
             "answer": "partial",
@@ -349,7 +349,7 @@
           }
         },
         "source": "Strata editorial assessment (draft) using the maturity formula",
-        "asOf": "2026-09-30"
+        "asOf": "2026-10-02"
       }
     },
     "agents": {
@@ -364,11 +364,11 @@
         "asOf": "2026-09-30"
       },
       "maturity": {
-        "value": 30,
+        "value": 40,
         "answers": {
           "standards": {
-            "answer": "no",
-            "why": "Agent-to-agent and agent instruction formats are only emerging."
+            "answer": "partial",
+            "why": "A2A, MCP and AGENTS.md are open and neutrally governed, but all under two years old."
           },
           "vendors": {
             "answer": "yes",
@@ -388,7 +388,7 @@
           }
         },
         "source": "Strata editorial assessment (draft) using the maturity formula",
-        "asOf": "2026-09-30"
+        "asOf": "2026-10-02"
       }
     },
     "applications-interfaces": {

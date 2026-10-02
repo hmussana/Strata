@@ -187,6 +187,8 @@ def validate(data: dict | None = None) -> list[str]:
         for dep in REQUIRED_DEPTHS:
             if dep not in depths:
                 err(f"{where}: required depth {dep} missing")
+        if depths.get("D1") and not depths["D1"].get("guide"):
+            err(f"{where}: D1 needs a guide line (one short prompt from {model.get('guide', {}).get('name', 'the guide')})")
         for dep, body in depths.items():
             if dep not in ALL_DEPTHS:
                 err(f"{where}: unknown depth {dep}")
@@ -352,8 +354,6 @@ def report(d: dict) -> str:
     drafts = [f"layer: {l['name']}" for l in d["layers"] if l.get("status") == "draft"]
     drafts += [f"concept: {c['name']}" for c in d["concepts"] if c.get("status") == "draft"]
     out += [f"- {x}" for x in drafts] or ["None."]
-    out += ["", "## D1 guide lines to write", ""]
-    out += [f"- {c['name']}" for c in d["concepts"] if c["depths"].get("D1") and not c["depths"]["D1"].get("guide")] or ["None."]
     out += ["", "## Narration overrides to check", ""]
     over = []
     for c in d["concepts"]:
@@ -367,9 +367,27 @@ def report(d: dict) -> str:
     return "\n".join(out) + "\n"
 
 
+def strict(d: dict) -> list[str]:
+    """Launch gate for the public homepage: no placeholder, unverified source or draft anywhere."""
+    out = []
+    files = {"model.json": d["model"], "dashboard.json": d["dashboard"], "flows.json": d["flows"],
+             "crosscutting.json": {"crosscutting": d["crosscutting"]}}
+    files.update({f"layers/{l['id']}.json": l for l in d["layers"]})
+    files.update({f"concepts/{c['id']}.json": c for c in d["concepts"]})
+    for name, data in files.items():
+        out += [f"strict: {name} → {path} is a placeholder" for path, value in walk(data) if is_placeholder(value)]
+    for c in d["concepts"]:
+        out += [f"strict: concepts/{c['id']}.json source '{s.get('title')}' is marked verify" for s in c.get("sources", []) if s.get("verify")]
+    for kind, items in (("layer", d["layers"]), ("concept", d["concepts"])):
+        out += [f"strict: {kind} {x['id']} is still a draft" for x in items if x.get("status") == "draft"]
+    return out
+
+
 def main() -> int:
     data = load_all()
     errors = validate(data)
+    if "--strict" in sys.argv:
+        errors += strict(data)
     for e in errors:
         print(f"ERROR {e}", file=sys.stderr)
     if "--report" in sys.argv:

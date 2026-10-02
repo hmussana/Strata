@@ -10,6 +10,7 @@
   "lastReviewed": "2026-09-28",
   "depths": {
     "D1": {
+      "guide": "Guess first: is a bus or a line of cars quicker for fifty people?",
       "text": [
         "A bus carries many people at once instead of one car per person. Batching sends many people's questions through the AI together.",
         "The AI also keeps notes on what it has already read (a cache), so it doesn't re-read the whole conversation for every word."

@@ -134,6 +134,14 @@ button { font: inherit; color: inherit; }
   width: 36px; height: 36px; cursor: pointer; display: grid; place-items: center; font-size: 1rem;
 }
 
+.try-next {
+  border: 1px solid var(--border); background: var(--surface); border-radius: 10px; height: 36px; padding: 0 12px;
+  display: inline-flex; align-items: center; white-space: nowrap; font-size: .9rem; font-weight: 600; text-decoration: none; color: var(--text);
+}
+.try-next:hover, .try-next:focus-visible { background: var(--surface-2); }
+.try-short { display: none; }
+@media (max-width: 640px) { .try-next { font-size: .8rem; padding: 0 8px; } .try-long { display: none; } .try-short { display: inline; } }
+
 /* ---------- sections ---------- */
 main { padding: 0 16px; }
 .section { max-width: 1320px; margin: 28px auto 40px; }

@@ -11,12 +11,12 @@
   "lastReviewed": "2026-10-01",
   "depths": {
     "D1": {
+      "guide": "Before you read: what word would you say comes next?",
       "text": [
         "Let's play a game. I say: “The cat sat on the…” and you shout the next word.",
         "You'd probably say “mat”. Maybe “floor” or “sofa”. Probably not “moon”!",
         "An AI language model plays this game again and again, one small piece of a word at a time. That's how it writes whole answers."
       ],
-      "guide": "Hi, I'm Tok. Let's play the next-word game!",
       "diagram": {
         "type": "guess",
         "prompt": "The cat sat on the",
@@ -40,8 +40,7 @@
           }
         ]
       },
-      "analogy": "The finish-the-sentence game.",
-      "narration": "Let's play a game. I say: the cat sat on the... and you shout the next word. You'd probably say mat. Maybe floor, or sofa. Probably not moon! An AI language model plays this game again and again, one small piece of a word at a time. That's how it writes whole answers."
+      "analogy": "The finish-the-sentence game."
     },
     "D2": {
       "text": [

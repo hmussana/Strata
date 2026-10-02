@@ -49,6 +49,14 @@ class ContentTests(unittest.TestCase):
         self.assertTrue(any("over 4 words" in e for e in errs))
         self.assertTrue(any("guide only speaks at D1" in e for e in errs))
 
+    def test_strict_gate_rejects_drafts_and_verify_flags(self):
+        data = vc.load_all()
+        data["concepts"][0]["status"] = "draft"
+        data["concepts"][0]["sources"][0]["verify"] = True
+        out = vc.strict(data)
+        self.assertTrue(any("still a draft" in e for e in out))
+        self.assertTrue(any("marked verify" in e for e in out))
+
     def test_report_lists_placeholders(self):
         data = vc.load_all()
         data["crosscutting"][0]["summary"] = vc.PLACEHOLDER

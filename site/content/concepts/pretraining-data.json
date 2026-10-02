@@ -8,6 +8,7 @@
   "lastReviewed": "2026-09-28",
   "depths": {
     "D1": {
+      "guide": "Guess first: what happens if the model reads lots of junk?",
       "text": [
         "Before an AI can talk, it reads an enormous amount: websites, books and code. It's like a child who has read a whole library.",
         "People try to remove junk and repeated pages first, because the AI learns whatever it reads."
