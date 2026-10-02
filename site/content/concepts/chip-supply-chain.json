@@ -69,10 +69,40 @@
   },
   "sources": [
     {
-      "title": "PLACEHOLDER",
-      "url": "PLACEHOLDER",
-      "date": "PLACEHOLDER",
-      "verify": true
+      "title": "SIA & BCG: Emerging Resilience in the Semiconductor Supply Chain",
+      "url": "https://www.semiconductors.org/wp-content/uploads/2024/05/Report_Emerging-Resilience-in-the-Semiconductor-Supply-Chain.pdf",
+      "date": "2024",
+      "verify": false
+    },
+    {
+      "title": "SIA & BCG: Strengthening the Global Semiconductor Supply Chain in an Uncertain Era",
+      "url": "https://www.semiconductors.org/wp-content/uploads/2021/05/BCG-x-SIA-Strengthening-the-Global-Semiconductor-Value-Chain-April-2021_1.pdf",
+      "date": "2021",
+      "verify": false
+    },
+    {
+      "title": "ASML Form 20-F, fiscal year 2025",
+      "url": "https://www.sec.gov/Archives/edgar/data/0000937966/000162828026011378/asml-20251231.htm",
+      "date": "2026-02-25",
+      "verify": false
+    },
+    {
+      "title": "BIS rule: Refinements to Controls for Advanced Computing and Semiconductor Manufacturing Items",
+      "url": "https://www.govinfo.gov/content/pkg/FR-2024-12-05/pdf/2024-28270.pdf",
+      "date": "2024-12-05",
+      "verify": false
+    },
+    {
+      "title": "SemiAnalysis: AI Capacity Constraints - CoWoS and HBM Supply Chain",
+      "url": "https://newsletter.semianalysis.com/p/ai-capacity-constraints-cowos-and",
+      "date": "2023-07-05",
+      "verify": false
+    },
+    {
+      "title": "TSMC Q3 2025 earnings call transcript",
+      "url": "https://investor.tsmc.com/english/encrypt/files/encrypt_file/reports/2025-10/6860312f04fd291d0f26b46c1234f84e6332717e/TSMC%203Q25%20Transcript.pdf",
+      "date": "2025-10-16",
+      "verify": false
     }
   ]
 }

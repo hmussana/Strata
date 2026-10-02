@@ -73,7 +73,7 @@
       "title": "AutoGen: Enabling Next-Gen LLM Applications via Multi-Agent Conversation",
       "url": "https://arxiv.org/abs/2308.08155",
       "date": "2023",
-      "verify": true
+      "verify": false
     }
   ]
 }

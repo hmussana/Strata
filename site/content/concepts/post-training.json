@@ -74,19 +74,19 @@
       "title": "Training language models to follow instructions with human feedback (InstructGPT)",
       "url": "https://arxiv.org/abs/2203.02155",
       "date": "2022",
-      "verify": true
+      "verify": false
     },
     {
       "title": "Constitutional AI: Harmlessness from AI Feedback",
       "url": "https://arxiv.org/abs/2212.08073",
       "date": "2022",
-      "verify": true
+      "verify": false
     },
     {
       "title": "DeepSeek-R1: Incentivizing Reasoning Capability in LLMs via Reinforcement Learning",
       "url": "https://arxiv.org/abs/2501.12948",
       "date": "2025",
-      "verify": true
+      "verify": false
     }
   ]
 }

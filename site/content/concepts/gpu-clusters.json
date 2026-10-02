@@ -77,7 +77,7 @@
       "title": "Megatron-LM: Training Multi-Billion Parameter Language Models Using Model Parallelism",
       "url": "https://arxiv.org/abs/1909.08053",
       "date": "2019",
-      "verify": true
+      "verify": false
     }
   ]
 }

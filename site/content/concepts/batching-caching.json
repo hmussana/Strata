@@ -75,13 +75,13 @@
       "title": "Efficient Memory Management for Large Language Model Serving with PagedAttention",
       "url": "https://arxiv.org/abs/2309.06180",
       "date": "2023",
-      "verify": true
+      "verify": false
     },
     {
       "title": "Orca: A Distributed Serving System for Transformer-Based Generative Models (OSDI)",
       "url": "https://www.usenix.org/conference/osdi22/presentation/yu",
       "date": "2022",
-      "verify": true
+      "verify": false
     }
   ]
 }

@@ -68,13 +68,13 @@
       "title": "Neural Machine Translation of Rare Words with Subword Units (byte-pair encoding)",
       "url": "https://arxiv.org/abs/1508.07909",
       "date": "2015",
-      "verify": true
+      "verify": false
     },
     {
-      "title": "SentencePiece: A simple and language independent subword tokenizer",
+      "title": "SentencePiece: A simple and language independent subword tokenizer and detokenizer for Neural Text Processing",
       "url": "https://arxiv.org/abs/1808.06226",
       "date": "2018",
-      "verify": true
+      "verify": false
     }
   ]
 }
