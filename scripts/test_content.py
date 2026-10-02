@@ -42,8 +42,10 @@ class ContentTests(unittest.TestCase):
         self.assertIn("guess", vc.diagram_types())
 
     def test_report_lists_placeholders(self):
-        rep = vc.report(self.data)
-        self.assertIn("crosscutting.json", rep)
+        data = vc.load_all()
+        data["crosscutting"][0]["summary"] = vc.PLACEHOLDER
+        rep = vc.report(data)
+        self.assertIn("`crosscutting.json` → `crosscutting[0].summary`", rep)
         self.assertIn("Drafts awaiting review", rep)
 
 if __name__ == "__main__":

@@ -22,10 +22,10 @@
       "summary": "Energy, chips, training runs and per-token prices: cost shapes decisions at every layer.",
       "headline": {
         "label": "Big Tech capital spending, last reported quarter",
-        "value": "PLACEHOLDER",
-        "note": "Combined capital expenditure reported by Microsoft, Alphabet, Amazon and Meta. Not all of it is AI, and filings don't split it by layer.",
-        "source": "PLACEHOLDER: quarterly filings (Form 10-Q / 10-K) of the four companies",
-        "asOf": "PLACEHOLDER"
+        "value": "About $171 billion (April to June 2026)",
+        "note": "Combined capital expenditure reported by Microsoft, Alphabet, Amazon and Meta, each as the company defines it (Microsoft and Meta include finance leases). Roughly double the same quarter of 2025. Not all of it is AI, and filings don't split it by layer.",
+        "source": "Q2 2026 earnings releases (Microsoft FY26 Q4) of Microsoft, Alphabet, Amazon and Meta, published 22 to 30 July 2026",
+        "asOf": "2026-06-30"
       }
     },
     {
