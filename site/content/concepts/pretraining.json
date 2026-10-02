@@ -76,13 +76,13 @@
       "title": "Scaling Laws for Neural Language Models",
       "url": "https://arxiv.org/abs/2001.08361",
       "date": "2020",
-      "verify": true
+      "verify": false
     },
     {
       "title": "Training Compute-Optimal Large Language Models (Chinchilla)",
       "url": "https://arxiv.org/abs/2203.15556",
       "date": "2022",
-      "verify": true
+      "verify": false
     }
   ]
 }

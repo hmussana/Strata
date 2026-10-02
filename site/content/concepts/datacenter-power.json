@@ -77,7 +77,7 @@
       "title": "Energy and AI (IEA report)",
       "url": "https://www.iea.org/reports/energy-and-ai",
       "date": "2025",
-      "verify": true
+      "verify": false
     }
   ]
 }

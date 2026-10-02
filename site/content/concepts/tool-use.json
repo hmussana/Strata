@@ -72,13 +72,13 @@
       "title": "Toolformer: Language Models Can Teach Themselves to Use Tools",
       "url": "https://arxiv.org/abs/2302.04761",
       "date": "2023",
-      "verify": true
+      "verify": false
     },
     {
       "title": "Model Context Protocol specification",
-      "url": "https://modelcontextprotocol.io",
-      "date": "ongoing",
-      "verify": true
+      "url": "https://modelcontextprotocol.io/specification/2026-07-28/",
+      "date": "2026-07-28",
+      "verify": false
     }
   ]
 }

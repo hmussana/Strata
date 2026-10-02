@@ -239,25 +239,25 @@
       "title": "Attention Is All You Need",
       "url": "https://arxiv.org/abs/1706.03762",
       "date": "2017",
-      "verify": true
+      "verify": false
     },
     {
       "title": "On the Biology of a Large Language Model",
       "url": "https://transformer-circuits.pub/2025/attribution-graphs/biology.html",
       "date": "2025",
-      "verify": true
+      "verify": false
     },
     {
       "title": "Better & Faster Large Language Models via Multi-token Prediction",
       "url": "https://arxiv.org/abs/2404.19737",
       "date": "2024",
-      "verify": true
+      "verify": false
     },
     {
       "title": "Fast Inference from Transformers via Speculative Decoding",
       "url": "https://arxiv.org/abs/2211.17192",
       "date": "2022",
-      "verify": true
+      "verify": false
     }
   ]
 }

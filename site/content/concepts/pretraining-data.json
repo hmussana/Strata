@@ -72,13 +72,13 @@
       "title": "The FineWeb Datasets: Decanting the Web for the Finest Text Data at Scale",
       "url": "https://arxiv.org/abs/2406.17557",
       "date": "2024",
-      "verify": true
+      "verify": false
     },
     {
       "title": "Common Crawl",
       "url": "https://commoncrawl.org",
       "date": "ongoing",
-      "verify": true
+      "verify": false
     }
   ]
 }

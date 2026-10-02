@@ -70,19 +70,19 @@
       "title": "LLM.int8(): 8-bit Matrix Multiplication for Transformers at Scale",
       "url": "https://arxiv.org/abs/2208.07339",
       "date": "2022",
-      "verify": true
+      "verify": false
     },
     {
       "title": "GPTQ: Accurate Post-Training Quantization for Generative Pre-trained Transformers",
       "url": "https://arxiv.org/abs/2210.17323",
       "date": "2022",
-      "verify": true
+      "verify": false
     },
     {
-      "title": "AWQ: Activation-aware Weight Quantization for LLM Compression and Acceleration",
+      "title": "AWQ: Activation-aware Weight Quantization for On-Device LLM Compression and Acceleration",
       "url": "https://arxiv.org/abs/2306.00978",
       "date": "2023",
-      "verify": true
+      "verify": false
     }
   ]
 }
