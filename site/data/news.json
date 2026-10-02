@@ -1,5 +1,5 @@
 {
- "generated": "2026-10-02T13:58:30Z",
+ "generated": "2026-10-02T14:05:04Z",
  "retentionDays": 45,
  "llmEnriched": 0,
  "sources": [
@@ -10,25 +10,25 @@
    "ok": true,
    "count": 15,
    "error": null,
-   "lastOk": "2026-10-02T13:58:30Z"
+   "lastOk": "2026-10-02T14:05:04Z"
   },
   {
    "id": "deepmind",
    "name": "Google DeepMind",
    "type": "lab",
-   "ok": false,
-   "count": 0,
-   "error": "ParseError: not well-formed (invalid token): line 1, column 0",
-   "lastOk": "2026-10-02T13:27:57Z"
+   "ok": true,
+   "count": 10,
+   "error": null,
+   "lastOk": "2026-10-02T14:05:04Z"
   },
   {
    "id": "google-ai",
    "name": "Google AI Blog",
    "type": "lab",
-   "ok": false,
-   "count": 0,
-   "error": "HTTPError: HTTP Error 500: Internal Server Error",
-   "lastOk": "2026-10-02T13:27:57Z"
+   "ok": true,
+   "count": 10,
+   "error": null,
+   "lastOk": "2026-10-02T14:05:04Z"
   },
   {
    "id": "hf-blog",
@@ -37,7 +37,7 @@
    "ok": true,
    "count": 15,
    "error": null,
-   "lastOk": "2026-10-02T13:58:30Z"
+   "lastOk": "2026-10-02T14:05:04Z"
   },
   {
    "id": "nvidia-dev",
@@ -46,7 +46,7 @@
    "ok": true,
    "count": 10,
    "error": null,
-   "lastOk": "2026-10-02T13:58:30Z"
+   "lastOk": "2026-10-02T14:05:04Z"
   },
   {
    "id": "msr",
@@ -55,7 +55,7 @@
    "ok": true,
    "count": 10,
    "error": null,
-   "lastOk": "2026-10-02T13:58:30Z"
+   "lastOk": "2026-10-02T14:05:04Z"
   },
   {
    "id": "aws-ml",
@@ -64,7 +64,7 @@
    "ok": true,
    "count": 8,
    "error": null,
-   "lastOk": "2026-10-02T13:58:30Z"
+   "lastOk": "2026-10-02T14:05:04Z"
   },
   {
    "id": "qwen",
@@ -73,7 +73,7 @@
    "ok": true,
    "count": 8,
    "error": null,
-   "lastOk": "2026-10-02T13:58:30Z"
+   "lastOk": "2026-10-02T14:05:04Z"
   },
   {
    "id": "hn",
@@ -82,7 +82,7 @@
    "ok": true,
    "count": 6,
    "error": null,
-   "lastOk": "2026-10-02T13:58:30Z"
+   "lastOk": "2026-10-02T14:05:04Z"
   },
   {
    "id": "localllama",
@@ -91,7 +91,7 @@
    "ok": true,
    "count": 15,
    "error": null,
-   "lastOk": "2026-10-02T13:58:30Z"
+   "lastOk": "2026-10-02T14:05:04Z"
   },
   {
    "id": "simonw",
@@ -100,7 +100,7 @@
    "ok": true,
    "count": 15,
    "error": null,
-   "lastOk": "2026-10-02T13:58:30Z"
+   "lastOk": "2026-10-02T14:05:04Z"
   },
   {
    "id": "hf-papers",
@@ -109,7 +109,7 @@
    "ok": true,
    "count": 15,
    "error": null,
-   "lastOk": "2026-10-02T13:58:30Z"
+   "lastOk": "2026-10-02T14:05:04Z"
   },
   {
    "id": "arxiv-cl",
@@ -118,7 +118,7 @@
    "ok": true,
    "count": 12,
    "error": null,
-   "lastOk": "2026-10-02T13:58:30Z"
+   "lastOk": "2026-10-02T14:05:04Z"
   },
   {
    "id": "latent-space",
@@ -127,7 +127,7 @@
    "ok": true,
    "count": 8,
    "error": null,
-   "lastOk": "2026-10-02T13:58:30Z"
+   "lastOk": "2026-10-02T14:05:04Z"
   },
   {
    "id": "interconnects",
@@ -136,7 +136,7 @@
    "ok": true,
    "count": 8,
    "error": null,
-   "lastOk": "2026-10-02T13:58:30Z"
+   "lastOk": "2026-10-02T14:05:04Z"
   },
   {
    "id": "import-ai",
@@ -145,7 +145,7 @@
    "ok": true,
    "count": 5,
    "error": null,
-   "lastOk": "2026-10-02T13:58:30Z"
+   "lastOk": "2026-10-02T14:05:04Z"
   },
   {
    "id": "verge-ai",
@@ -154,7 +154,7 @@
    "ok": true,
    "count": 10,
    "error": null,
-   "lastOk": "2026-10-02T13:58:30Z"
+   "lastOk": "2026-10-02T14:05:04Z"
   },
   {
    "id": "ars-ai",
@@ -163,7 +163,7 @@
    "ok": true,
    "count": 12,
    "error": null,
-   "lastOk": "2026-10-02T13:58:30Z"
+   "lastOk": "2026-10-02T14:05:04Z"
   },
   {
    "id": "techcrunch-ai",
@@ -172,7 +172,7 @@
    "ok": true,
    "count": 12,
    "error": null,
-   "lastOk": "2026-10-02T13:58:30Z"
+   "lastOk": "2026-10-02T14:05:04Z"
   },
   {
    "id": "mit-tr",
@@ -181,7 +181,7 @@
    "ok": true,
    "count": 8,
    "error": null,
-   "lastOk": "2026-10-02T13:58:30Z"
+   "lastOk": "2026-10-02T14:05:04Z"
   },
   {
    "id": "decoder",
@@ -190,7 +190,7 @@
    "ok": true,
    "count": 10,
    "error": null,
-   "lastOk": "2026-10-02T13:58:30Z"
+   "lastOk": "2026-10-02T14:05:04Z"
   },
   {
    "id": "sth",
@@ -199,7 +199,7 @@
    "ok": true,
    "count": 5,
    "error": null,
-   "lastOk": "2026-10-02T13:58:30Z"
+   "lastOk": "2026-10-02T14:05:04Z"
   },
   {
    "id": "embrace-red",
@@ -208,7 +208,7 @@
    "ok": true,
    "count": 6,
    "error": null,
-   "lastOk": "2026-10-02T13:58:30Z"
+   "lastOk": "2026-10-02T14:05:04Z"
   },
   {
    "id": "rel-ollama",
@@ -217,7 +217,7 @@
    "ok": true,
    "count": 3,
    "error": null,
-   "lastOk": "2026-10-02T13:58:30Z"
+   "lastOk": "2026-10-02T14:05:04Z"
   },
   {
    "id": "rel-vllm",
@@ -226,7 +226,7 @@
    "ok": true,
    "count": 3,
    "error": null,
-   "lastOk": "2026-10-02T13:58:30Z"
+   "lastOk": "2026-10-02T14:05:04Z"
   },
   {
    "id": "rel-opencode",
@@ -235,7 +235,7 @@
    "ok": true,
    "count": 3,
    "error": null,
-   "lastOk": "2026-10-02T13:58:30Z"
+   "lastOk": "2026-10-02T14:05:04Z"
   },
   {
    "id": "rel-claude-code",
@@ -244,7 +244,7 @@
    "ok": true,
    "count": 3,
    "error": null,
-   "lastOk": "2026-10-02T13:58:30Z"
+   "lastOk": "2026-10-02T14:05:04Z"
   }
  ],
  "heat": {
@@ -1668,6 +1668,20 @@
     "models"
    ],
    "score": 3.2
+  },
+  {
+   "id": "be741e414252",
+   "title": "Introducing ModelHarbor, a self-hosted model library",
+   "url": "https://www.reddit.com/r/LocalLLaMA/comments/1wvi6r0/introducing_modelharbor_a_selfhosted_model_library/",
+   "source": "localllama",
+   "sourceName": "r/LocalLLaMA (top today)",
+   "type": "community",
+   "published": "2026-10-02T02:22:18Z",
+   "summary": "",
+   "firstSeen": "2026-10-02T14:05:04Z",
+   "tags": [],
+   "layers": [],
+   "score": 2.0
   },
   {
    "id": "c07e82716baa",
@@ -3588,7 +3602,7 @@
    "type": "press",
    "published": "2026-09-30T20:11:08Z",
    "summary": "So much for Gemini 3.5 Pro.",
-   "discussion": "61",
+   "discussion": "62",
    "firstSeen": "2026-09-30T20:44:12Z",
    "tags": [
     "gemini"
@@ -3698,11 +3712,11 @@
    "type": "research",
    "published": "2026-09-30T20:00:00Z",
    "summary": "Streaming video LLMs must retain evidence before its relevance to future tasks is known and respond when sufficient evidence becomes available. The challenge is to form reusable factual memory without compromising real-time perception. We introduce OneStreamer, which jointly learns query-independent evidence recording…",
-   "points": 100,
+   "points": 102,
    "firstSeen": "2026-10-02T09:43:30Z",
    "tags": [],
    "layers": [],
-   "score": 4.0
+   "score": 4.01
   },
   {
    "id": "ca27ecbf3b7a",
