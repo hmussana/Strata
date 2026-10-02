@@ -1,5 +1,5 @@
 {
- "generated": "2026-10-02T10:18:07Z",
+ "generated": "2026-10-02T12:15:38Z",
  "retentionDays": 45,
  "llmEnriched": 0,
  "sources": [
@@ -10,15 +10,15 @@
    "ok": true,
    "count": 15,
    "error": null,
-   "lastOk": "2026-10-02T10:18:07Z"
+   "lastOk": "2026-10-02T12:15:38Z"
   },
   {
    "id": "deepmind",
    "name": "Google DeepMind",
    "type": "lab",
-   "ok": true,
-   "count": 10,
-   "error": null,
+   "ok": false,
+   "count": 0,
+   "error": "ParseError: not well-formed (invalid token): line 1, column 0",
    "lastOk": "2026-10-02T10:18:07Z"
   },
   {
@@ -28,7 +28,7 @@
    "ok": true,
    "count": 10,
    "error": null,
-   "lastOk": "2026-10-02T10:18:07Z"
+   "lastOk": "2026-10-02T12:15:38Z"
   },
   {
    "id": "hf-blog",
@@ -37,7 +37,7 @@
    "ok": true,
    "count": 15,
    "error": null,
-   "lastOk": "2026-10-02T10:18:07Z"
+   "lastOk": "2026-10-02T12:15:38Z"
   },
   {
    "id": "nvidia-dev",
@@ -46,7 +46,7 @@
    "ok": true,
    "count": 10,
    "error": null,
-   "lastOk": "2026-10-02T10:18:07Z"
+   "lastOk": "2026-10-02T12:15:38Z"
   },
   {
    "id": "msr",
@@ -55,7 +55,7 @@
    "ok": true,
    "count": 10,
    "error": null,
-   "lastOk": "2026-10-02T10:18:07Z"
+   "lastOk": "2026-10-02T12:15:38Z"
   },
   {
    "id": "aws-ml",
@@ -64,7 +64,7 @@
    "ok": true,
    "count": 8,
    "error": null,
-   "lastOk": "2026-10-02T10:18:07Z"
+   "lastOk": "2026-10-02T12:15:38Z"
   },
   {
    "id": "qwen",
@@ -73,16 +73,16 @@
    "ok": true,
    "count": 8,
    "error": null,
-   "lastOk": "2026-10-02T10:18:07Z"
+   "lastOk": "2026-10-02T12:15:38Z"
   },
   {
    "id": "hn",
    "name": "Hacker News (best, AI-filtered)",
    "type": "community",
    "ok": true,
-   "count": 8,
+   "count": 7,
    "error": null,
-   "lastOk": "2026-10-02T10:18:07Z"
+   "lastOk": "2026-10-02T12:15:38Z"
   },
   {
    "id": "localllama",
@@ -91,7 +91,7 @@
    "ok": true,
    "count": 15,
    "error": null,
-   "lastOk": "2026-10-02T10:18:07Z"
+   "lastOk": "2026-10-02T12:15:38Z"
   },
   {
    "id": "simonw",
@@ -100,7 +100,7 @@
    "ok": true,
    "count": 15,
    "error": null,
-   "lastOk": "2026-10-02T10:18:07Z"
+   "lastOk": "2026-10-02T12:15:38Z"
   },
   {
    "id": "hf-papers",
@@ -109,7 +109,7 @@
    "ok": true,
    "count": 15,
    "error": null,
-   "lastOk": "2026-10-02T10:18:07Z"
+   "lastOk": "2026-10-02T12:15:38Z"
   },
   {
    "id": "arxiv-cl",
@@ -118,7 +118,7 @@
    "ok": true,
    "count": 12,
    "error": null,
-   "lastOk": "2026-10-02T10:18:07Z"
+   "lastOk": "2026-10-02T12:15:38Z"
   },
   {
    "id": "latent-space",
@@ -127,7 +127,7 @@
    "ok": true,
    "count": 8,
    "error": null,
-   "lastOk": "2026-10-02T10:18:07Z"
+   "lastOk": "2026-10-02T12:15:38Z"
   },
   {
    "id": "interconnects",
@@ -136,7 +136,7 @@
    "ok": true,
    "count": 8,
    "error": null,
-   "lastOk": "2026-10-02T10:18:07Z"
+   "lastOk": "2026-10-02T12:15:38Z"
   },
   {
    "id": "import-ai",
@@ -145,7 +145,7 @@
    "ok": true,
    "count": 5,
    "error": null,
-   "lastOk": "2026-10-02T10:18:07Z"
+   "lastOk": "2026-10-02T12:15:38Z"
   },
   {
    "id": "verge-ai",
@@ -154,7 +154,7 @@
    "ok": true,
    "count": 10,
    "error": null,
-   "lastOk": "2026-10-02T10:18:07Z"
+   "lastOk": "2026-10-02T12:15:38Z"
   },
   {
    "id": "ars-ai",
@@ -163,7 +163,7 @@
    "ok": true,
    "count": 12,
    "error": null,
-   "lastOk": "2026-10-02T10:18:07Z"
+   "lastOk": "2026-10-02T12:15:38Z"
   },
   {
    "id": "techcrunch-ai",
@@ -172,7 +172,7 @@
    "ok": true,
    "count": 12,
    "error": null,
-   "lastOk": "2026-10-02T10:18:07Z"
+   "lastOk": "2026-10-02T12:15:38Z"
   },
   {
    "id": "mit-tr",
@@ -181,7 +181,7 @@
    "ok": true,
    "count": 8,
    "error": null,
-   "lastOk": "2026-10-02T10:18:07Z"
+   "lastOk": "2026-10-02T12:15:38Z"
   },
   {
    "id": "decoder",
@@ -190,7 +190,7 @@
    "ok": true,
    "count": 10,
    "error": null,
-   "lastOk": "2026-10-02T10:18:07Z"
+   "lastOk": "2026-10-02T12:15:38Z"
   },
   {
    "id": "sth",
@@ -199,7 +199,7 @@
    "ok": true,
    "count": 5,
    "error": null,
-   "lastOk": "2026-10-02T10:18:07Z"
+   "lastOk": "2026-10-02T12:15:38Z"
   },
   {
    "id": "embrace-red",
@@ -208,7 +208,7 @@
    "ok": true,
    "count": 6,
    "error": null,
-   "lastOk": "2026-10-02T10:18:07Z"
+   "lastOk": "2026-10-02T12:15:38Z"
   },
   {
    "id": "rel-ollama",
@@ -217,7 +217,7 @@
    "ok": true,
    "count": 3,
    "error": null,
-   "lastOk": "2026-10-02T10:18:07Z"
+   "lastOk": "2026-10-02T12:15:38Z"
   },
   {
    "id": "rel-vllm",
@@ -226,7 +226,7 @@
    "ok": true,
    "count": 3,
    "error": null,
-   "lastOk": "2026-10-02T10:18:07Z"
+   "lastOk": "2026-10-02T12:15:38Z"
   },
   {
    "id": "rel-opencode",
@@ -235,7 +235,7 @@
    "ok": true,
    "count": 3,
    "error": null,
-   "lastOk": "2026-10-02T10:18:07Z"
+   "lastOk": "2026-10-02T12:15:38Z"
   },
   {
    "id": "rel-claude-code",
@@ -244,15 +244,45 @@
    "ok": true,
    "count": 3,
    "error": null,
-   "lastOk": "2026-10-02T10:18:07Z"
+   "lastOk": "2026-10-02T12:15:38Z"
   }
  ],
  "heat": {
   "concepts": {
+   "benchmarks": {
+    "d7": 20,
+    "prev7": 4,
+    "d30": 25
+   },
+   "ai-datacenters": {
+    "d7": 15,
+    "prev7": 4,
+    "d30": 19
+   },
+   "llama-cpp": {
+    "d7": 22,
+    "prev7": 1,
+    "d30": 23
+   },
+   "gemma": {
+    "d7": 19,
+    "prev7": 2,
+    "d30": 21
+   },
    "multimodal": {
     "d7": 34,
     "prev7": 12,
     "d30": 48
+   },
+   "qwen": {
+    "d7": 49,
+    "prev7": 1,
+    "d30": 50
+   },
+   "deepseek": {
+    "d7": 13,
+    "prev7": 1,
+    "d30": 14
    },
    "open-weights": {
     "d7": 24,
@@ -273,11 +303,6 @@
     "d7": 10,
     "prev7": 0,
     "d30": 10
-   },
-   "benchmarks": {
-    "d7": 18,
-    "prev7": 4,
-    "d30": 23
    },
    "ollama": {
     "d7": 9,
@@ -319,30 +344,15 @@
     "prev7": 0,
     "d30": 3
    },
-   "llama-cpp": {
-    "d7": 21,
-    "prev7": 1,
-    "d30": 22
-   },
    "mlx": {
     "d7": 3,
     "prev7": 1,
     "d30": 4
    },
-   "deepseek": {
-    "d7": 12,
-    "prev7": 1,
-    "d30": 13
-   },
    "bandwidth": {
     "d7": 8,
     "prev7": 0,
     "d30": 8
-   },
-   "qwen": {
-    "d7": 48,
-    "prev7": 1,
-    "d30": 49
    },
    "kimi-glm": {
     "d7": 10,
@@ -399,11 +409,6 @@
     "prev7": 6,
     "d30": 55
    },
-   "gemma": {
-    "d7": 16,
-    "prev7": 2,
-    "d30": 18
-   },
    "ai-policy": {
     "d7": 7,
     "prev7": 0,
@@ -419,11 +424,6 @@
     "prev7": 19,
     "d30": 117
    },
-   "ai-datacenters": {
-    "d7": 13,
-    "prev7": 4,
-    "d30": 17
-   },
    "claude-code": {
     "d7": 6,
     "prev7": 2,
@@ -435,9 +435,9 @@
     "d30": 1
    },
    "moe": {
-    "d7": 13,
+    "d7": 14,
     "prev7": 1,
-    "d30": 14
+    "d30": 15
    },
    "lora": {
     "d7": 9,
@@ -490,9 +490,9 @@
     "d30": 13
    },
    "world-models": {
-    "d7": 18,
+    "d7": 19,
     "prev7": 9,
-    "d30": 27
+    "d30": 28
    },
    "lm-studio": {
     "d7": 1,
@@ -621,21 +621,21 @@
    }
   },
   "layers": {
-   "models": {
-    "d7": 305,
-    "d30": 380
-   },
-   "inference": {
-    "d7": 59,
-    "d30": 69
+   "security": {
+    "d7": 43,
+    "d30": 57
    },
    "compute": {
-    "d7": 50,
-    "d30": 55
+    "d7": 52,
+    "d30": 57
    },
-   "security": {
-    "d7": 41,
-    "d30": 55
+   "inference": {
+    "d7": 60,
+    "d30": 70
+   },
+   "models": {
+    "d7": 310,
+    "d30": 385
    },
    "agents": {
     "d7": 118,
@@ -656,7 +656,7 @@
   },
   "stack": {
    "physical-energy": {
-    "d7": 11,
+    "d7": 13,
     "prev7": 3
    },
    "compute-hardware": {
@@ -672,11 +672,11 @@
     "prev7": 0
    },
    "foundation-models": {
-    "d7": 211,
+    "d7": 215,
     "prev7": 37
    },
    "inference-optimization": {
-    "d7": 60,
+    "d7": 61,
     "prev7": 8
    },
    "orchestration-tooling": {
@@ -684,12 +684,12 @@
     "prev7": 1
    },
    "agents": {
-    "d7": 135,
-    "prev7": 19
+    "d7": 134,
+    "prev7": 20
    },
    "applications-interfaces": {
-    "d7": 39,
-    "prev7": 4
+    "d7": 38,
+    "prev7": 5
    }
   }
  },
@@ -1035,6 +1035,117 @@
  ],
  "items": [
   {
+   "id": "b3a9a516e91b",
+   "title": "AI hallucinations are making entitled customers even worse",
+   "url": "https://www.theverge.com/report/1002963/ai-hallucinations-customer-service-jobs-agents",
+   "source": "verge-ai",
+   "sourceName": "The Verge AI",
+   "type": "press",
+   "published": "2026-10-02T12:00:00Z",
+   "summary": "Madison, a server in New York City, greets every table by asking about each diner's allergies. Lately, there have been some close calls. \"Sometimes people will tell me they have a shellfish allergy, and I'll come back, and they won't ask me any questions,\" says Madison, who asked that her last name be withheld to […]",
+   "firstSeen": "2026-10-02T12:15:38Z",
+   "tags": [
+    "benchmarks"
+   ],
+   "layers": [
+    "security"
+   ],
+   "score": 1.6
+  },
+  {
+   "id": "f829ccaecea0",
+   "title": "If a data center is camouflaged in the woods, will anyone hate it?",
+   "url": "https://www.theverge.com/tech/1003681/microsoft-data-centers-ai-environment-biomimicry",
+   "source": "verge-ai",
+   "sourceName": "The Verge AI",
+   "type": "press",
+   "published": "2026-10-02T12:00:00Z",
+   "summary": "San Antonio City Councilmember Ric Galvan remembers when data centers first arrived in his city in the 2000s, looking like relatively unassuming office buildings. But that's changed in recent years, as data centers have grown into massive \"hyperscale\" facilities spanning millions of square feet and housing the…",
+   "firstSeen": "2026-10-02T12:15:38Z",
+   "tags": [
+    "ai-datacenters"
+   ],
+   "layers": [
+    "compute"
+   ],
+   "score": 1.6
+  },
+  {
+   "id": "78ffcfd0a288",
+   "title": "Amazon writes scary blog warning communities not to block data centers",
+   "url": "https://www.theverge.com/tech/1003929/amazon-ai-data-center-blog-warning",
+   "source": "verge-ai",
+   "sourceName": "The Verge AI",
+   "type": "press",
+   "published": "2026-10-02T11:52:20Z",
+   "summary": "Amazon is calling for people to support AI data center projects, or risk irreparable harm to the US economy and national security. In a more than 3,000 word blog posted today, Amazon web services CEO Matt Garman pushed back on public concerns around the impact that data centers may have on jobs, power demands, and […]",
+   "firstSeen": "2026-10-02T12:15:38Z",
+   "tags": [
+    "ai-datacenters"
+   ],
+   "layers": [
+    "compute"
+   ],
+   "score": 1.6
+  },
+  {
+   "id": "f2e33959a5f0",
+   "title": "AI beats licensed accountants on speed and accuracy, but still can't close the books without supervision",
+   "url": "https://the-decoder.com/ai-beats-licensed-accountants-on-speed-and-accuracy-but-still-cant-close-the-books-without-supervision/",
+   "source": "decoder",
+   "sourceName": "The Decoder",
+   "type": "press",
+   "published": "2026-10-02T11:15:24Z",
+   "summary": "According to a Mercor study, current AI models now outperform licensed CPAs on structured accounting tasks in both speed and accuracy. Eighteen months ago, they still lagged far behind. On the more demanding APEX Benchmark, though, no model fully completes all the tasks. Without human oversight, AI still can't close…",
+   "discussion": "0",
+   "firstSeen": "2026-10-02T12:15:38Z",
+   "tags": [
+    "benchmarks"
+   ],
+   "layers": [
+    "security"
+   ],
+   "score": 1.6
+  },
+  {
+   "id": "2fc55706f6ae",
+   "title": "llama, server: add /v1/systemone API (models: laya, julia-1, lev, openjev, kev) by ngxson · Pull Request #29818 · ggml-org/llama.cpp",
+   "url": "https://www.reddit.com/r/LocalLLaMA/comments/1wvqbrz/llama_server_add_v1systemone_api_models_laya/",
+   "source": "localllama",
+   "sourceName": "r/LocalLLaMA (top today)",
+   "type": "community",
+   "published": "2026-10-02T10:29:47Z",
+   "summary": "Now you can jev without jev",
+   "firstSeen": "2026-10-02T12:15:38Z",
+   "tags": [
+    "llama-cpp",
+    "gemma"
+   ],
+   "layers": [
+    "inference",
+    "models"
+   ],
+   "score": 3.2
+  },
+  {
+   "id": "88e172b98882",
+   "title": "Does anyone know if any new releases from Mistral are planned?",
+   "url": "https://www.reddit.com/r/LocalLLaMA/comments/1wvpxg8/does_anyone_know_if_any_new_releases_from_mistral/",
+   "source": "localllama",
+   "sourceName": "r/LocalLLaMA (top today)",
+   "type": "community",
+   "published": "2026-10-02T10:05:59Z",
+   "summary": "It’s been a long time since the last models came out. I notice they are selling GLM on the site, and I wonder if they are developing something, given the long silence.",
+   "firstSeen": "2026-10-02T12:15:38Z",
+   "tags": [
+    "gemma"
+   ],
+   "layers": [
+    "models"
+   ],
+   "score": 2.6
+  },
+  {
    "id": "b7dd82503263",
    "title": "AI music maker Suno now generates spoken words",
    "url": "https://www.theverge.com/ai-artificial-intelligence/1003925/suno-speech-ai-voice-feature-beta-availability",
@@ -1081,6 +1192,26 @@
    "tags": [],
    "layers": [],
    "score": 1.0
+  },
+  {
+   "id": "171a61aa053e",
+   "title": "best <40B alternatives to Qwen/Deepseek for (1) Coding (2) Long document QA test",
+   "url": "https://www.reddit.com/r/LocalLLaMA/comments/1wvondv/best_40b_alternatives_to_qwendeepseek_for_1/",
+   "source": "localllama",
+   "sourceName": "r/LocalLLaMA (top today)",
+   "type": "community",
+   "published": "2026-10-02T08:44:17Z",
+   "summary": "Due to some reasons, Qwen/Deepseek Chinese models are NOT allowed in the my workplace. So, what local models, do you think, is the best alternatives to Qwen/Deepseek for (1) Coding (2) Long document QA test (like giving a long medical history of 120k tokens and ask a question based on that medical history) Gemma 31B?…",
+   "firstSeen": "2026-10-02T12:15:38Z",
+   "tags": [
+    "qwen",
+    "deepseek",
+    "gemma"
+   ],
+   "layers": [
+    "models"
+   ],
+   "score": 3.8
   },
   {
    "id": "5a3c2fdeffa2",
@@ -1423,7 +1554,7 @@
    "type": "community",
    "published": "2026-10-02T03:11:20Z",
    "summary": "",
-   "points": 237,
+   "points": 259,
    "discussion": "https://news.ycombinator.com/item?id=49929489",
    "firstSeen": "2026-10-02T10:10:31Z",
    "tags": [
@@ -1432,7 +1563,7 @@
    "layers": [
     "models"
    ],
-   "score": 4.98
+   "score": 5.01
   },
   {
    "id": "28419c25af77",
@@ -2181,7 +2312,7 @@
    "type": "press",
    "published": "2026-10-01T16:28:04Z",
    "summary": "Adding in a second neural network that guesses the identity of hidden pieces was key.",
-   "discussion": "45",
+   "discussion": "46",
    "firstSeen": "2026-10-01T18:24:40Z",
    "tags": [],
    "layers": [],
@@ -2196,7 +2327,7 @@
    "type": "community",
    "published": "2026-10-01T16:18:57Z",
    "summary": "",
-   "points": 512,
+   "points": 533,
    "discussion": "https://news.ycombinator.com/item?id=49923692",
    "firstSeen": "2026-10-02T00:46:08Z",
    "tags": [
@@ -2206,7 +2337,7 @@
    "layers": [
     "models"
    ],
-   "score": 5.91
+   "score": 5.93
   },
   {
    "id": "a4d5be1f0220",
@@ -2217,7 +2348,7 @@
    "type": "community",
    "published": "2026-10-01T16:01:56Z",
    "summary": "",
-   "points": 329,
+   "points": 342,
    "discussion": "https://news.ycombinator.com/item?id=49923466",
    "firstSeen": "2026-10-02T00:46:08Z",
    "tags": [
@@ -2226,7 +2357,7 @@
    "layers": [
     "context"
    ],
-   "score": 5.12
+   "score": 5.14
   },
   {
    "id": "a80484c2d584",
@@ -3411,7 +3542,7 @@
    "type": "community",
    "published": "2026-09-30T20:04:37Z",
    "summary": "",
-   "points": 1654,
+   "points": 1656,
    "discussion": "https://news.ycombinator.com/item?id=49913571",
    "firstSeen": "2026-09-30T21:39:06Z",
    "tags": [
@@ -3464,7 +3595,7 @@
    "type": "research",
    "published": "2026-09-30T20:00:00Z",
    "summary": "How can a world model continuously observe regions beyond the actor's current view? Video world models simulate how an environment evolves from an agent's actions, yet remain actor-centric. Once an object leaves the actor's view, they lose direct evidence of its evolution, often failing to preserve its state and…",
-   "points": 38,
+   "points": 39,
    "firstSeen": "2026-10-02T09:43:30Z",
    "tags": [
     "world-models"
@@ -3472,7 +3603,7 @@
    "layers": [
     "models"
    ],
-   "score": 4.19
+   "score": 4.2
   },
   {
    "id": "5ee0ec80a881",
@@ -3483,7 +3614,7 @@
    "type": "research",
    "published": "2026-09-30T20:00:00Z",
    "summary": "An emerging hypothesis about reinforcement learning (RL) post-training of large language models (LLMs) is that it merely sharpens existing behaviors of a base model, improving single-shot accuracy at the cost of solution coverage. Although this trade-off has been observed in math and coding tasks, it need not extend…",
-   "points": 32,
+   "points": 34,
    "firstSeen": "2026-10-02T09:43:30Z",
    "tags": [
     "rl-reasoning"
@@ -3491,7 +3622,7 @@
    "layers": [
     "models"
    ],
-   "score": 4.12
+   "score": 4.14
   },
   {
    "id": "8f020abdf366",
@@ -3502,11 +3633,11 @@
    "type": "research",
    "published": "2026-09-30T20:00:00Z",
    "summary": "Streaming video LLMs must retain evidence before its relevance to future tasks is known and respond when sufficient evidence becomes available. The challenge is to form reusable factual memory without compromising real-time perception. We introduce OneStreamer, which jointly learns query-independent evidence recording…",
-   "points": 20,
+   "points": 62,
    "firstSeen": "2026-10-02T09:43:30Z",
    "tags": [],
    "layers": [],
-   "score": 3.32
+   "score": 3.8
   },
   {
    "id": "ca27ecbf3b7a",
@@ -3517,7 +3648,7 @@
    "type": "research",
    "published": "2026-09-30T20:00:00Z",
    "summary": "Precise control over camera and object motion is essential for professional video production. Existing methods control objects only coarsely, through image-plane cues that are ambiguous in depth and rotation or through 3D tracks and blobs that lack complete geometry and lose consistency across viewpoint changes. We…",
-   "points": 12,
+   "points": 13,
    "firstSeen": "2026-10-02T09:43:30Z",
    "tags": [
     "world-models"
@@ -3525,7 +3656,7 @@
    "layers": [
     "models"
    ],
-   "score": 3.71
+   "score": 3.75
   },
   {
    "id": "6befe50e7f1a",
@@ -3555,7 +3686,7 @@
    "type": "research",
    "published": "2026-09-30T20:00:00Z",
    "summary": "Vision language model (VLM) agents can control robots through visual feedback and action primitives, but repeated model invocations and redundant observations incur substantial token overhead. We introduce PyRUA-Lean, an interactive code-execution framework that couples feedback-driven primitive composition with…",
-   "points": 7,
+   "points": 9,
    "firstSeen": "2026-10-02T09:43:30Z",
    "tags": [
     "gpt",
@@ -3564,7 +3695,26 @@
    "layers": [
     "models"
    ],
-   "score": 4.1
+   "score": 4.2
+  },
+  {
+   "id": "d735305da6a4",
+   "title": "InterEvolve: Test-Time Evolution of Reward Programs for Humanoid Loco-Manipulation",
+   "url": "https://huggingface.co/papers/2610.02196",
+   "source": "hf-papers",
+   "sourceName": "Hugging Face Daily Papers",
+   "type": "research",
+   "published": "2026-09-30T20:00:00Z",
+   "summary": "We study test-time evolution for humanoid loco-manipulation: solving tasks that a controller was never trained for by repurposing its existing skills, improving from its own attempts, and retaining what it learns, without retraining. Our key insight is that a broad controller already holds much of the competence a new…",
+   "points": 7,
+   "firstSeen": "2026-10-02T12:15:38Z",
+   "tags": [
+    "world-models"
+   ],
+   "layers": [
+    "models"
+   ],
+   "score": 3.5
   },
   {
    "id": "18a1068dfc39",
@@ -3596,7 +3746,7 @@
    "type": "press",
    "published": "2026-09-30T19:31:25Z",
    "summary": "AI is far from a perfect resource. But it seems to hallucinate less than Kennedy.",
-   "discussion": "121",
+   "discussion": "122",
    "firstSeen": "2026-09-30T20:44:12Z",
    "tags": [],
    "layers": [],
@@ -4187,7 +4337,7 @@
    "type": "community",
    "published": "2026-09-30T15:50:11Z",
    "summary": "",
-   "points": 409,
+   "points": 411,
    "discussion": "https://news.ycombinator.com/item?id=49910553",
    "firstSeen": "2026-09-30T20:00:16Z",
    "tags": [],
@@ -5532,7 +5682,7 @@
    "type": "research",
    "published": "2026-09-29T20:00:00Z",
    "summary": "Multi-reward reinforcement learning trains large language models to satisfy multiple behavioral objectives simultaneously. Reward-wise normalization, as used in GDPO, preserves reward-specific relative information within rollout groups, but different objectives can still exhibit uneven learning progress. We study this…",
-   "points": 20,
+   "points": 21,
    "firstSeen": "2026-10-02T09:43:30Z",
    "tags": [
     "rl-reasoning"
@@ -5540,7 +5690,7 @@
    "layers": [
     "models"
    ],
-   "score": 3.92
+   "score": 3.94
   },
   {
    "id": "ce4436958e43",
@@ -5566,7 +5716,7 @@
    "type": "research",
    "published": "2026-09-29T20:00:00Z",
    "summary": "Real-world embodied tasks, from everyday activities to professional procedures, require agents to act under physical constraints while tracking evolving object and task states. Tool use sits at the heart of such tasks, as many everyday and professional activities are tool-mediated. Understanding them requires…",
-   "points": 15,
+   "points": 17,
    "firstSeen": "2026-10-02T09:43:30Z",
    "tags": [
     "tool-calling",
@@ -5576,7 +5726,7 @@
     "models",
     "tools"
    ],
-   "score": 4.4
+   "score": 4.46
   },
   {
    "id": "02e72268e592",
@@ -8225,6 +8375,25 @@
    "score": 3.64
   },
   {
+   "id": "61521c6a37af",
+   "title": "E-MoE: Enhanced Mixture-of-Experts for Non-Factorized Diffusion Language Models",
+   "url": "https://huggingface.co/papers/2609.37533",
+   "source": "hf-papers",
+   "sourceName": "Hugging Face Daily Papers",
+   "type": "research",
+   "published": "2026-09-28T20:00:00Z",
+   "summary": "Masked diffusion models (MDMs) generate sequences by progressively unmasking several tokens per denoising step, but their reverse process is typically factorized over positions, limiting sample quality in the few-step regime where diffusion's speed advantage over autoregressive decoding matters most. A recent line of…",
+   "points": 16,
+   "firstSeen": "2026-10-02T12:15:38Z",
+   "tags": [
+    "moe"
+   ],
+   "layers": [
+    "models"
+   ],
+   "score": 3.83
+  },
+  {
    "id": "a37b0826d622",
    "title": "It's Time to Investigate the AI Labs",
    "url": "https://calnewport.com/its-time-to-investigate-the-ai-labs/",
@@ -10380,11 +10549,11 @@
    "type": "research",
    "published": "2026-09-27T20:00:00Z",
    "summary": "Robots that learn from a few demonstrations often require two forms of generalization. Compositional generalization recombines skills to solve new tasks, and skill generalization lets the learned policy behind each skill work in new situations. The two depend on each other, yet information is lost between composition…",
-   "points": 47,
+   "points": 54,
    "firstSeen": "2026-10-02T09:43:30Z",
    "tags": [],
    "layers": [],
-   "score": 3.68
+   "score": 3.74
   },
   {
    "id": "80032e73c06a",
@@ -12418,7 +12587,7 @@
    "type": "research",
    "published": "2026-09-24T20:00:00Z",
    "summary": "Decentralized multi-agent path finding (MAPF) with communication requires agents to reach individual goals without collisions under partial observability. Learnable policies trained on expert data provide an effective approach to this problem. However, when several coordinated joint actions are valid in the same…",
-   "points": 14,
+   "points": 20,
    "firstSeen": "2026-10-02T10:10:31Z",
    "tags": [
     "multi-agent"
@@ -12426,7 +12595,7 @@
    "layers": [
     "agents"
    ],
-   "score": 3.78
+   "score": 3.92
   },
   {
    "id": "ee9698a7fdb9",
