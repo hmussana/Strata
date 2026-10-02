@@ -1,5 +1,5 @@
 {
- "generated": "2026-10-02T13:21:59Z",
+ "generated": "2026-10-02T13:27:57Z",
  "retentionDays": 45,
  "llmEnriched": 0,
  "sources": [
@@ -10,16 +10,16 @@
    "ok": true,
    "count": 15,
    "error": null,
-   "lastOk": "2026-10-02T13:21:59Z"
+   "lastOk": "2026-10-02T13:27:57Z"
   },
   {
    "id": "deepmind",
    "name": "Google DeepMind",
    "type": "lab",
-   "ok": false,
-   "count": 0,
-   "error": "ParseError: not well-formed (invalid token): line 1, column 0",
-   "lastOk": "2026-10-02T10:18:07Z"
+   "ok": true,
+   "count": 10,
+   "error": null,
+   "lastOk": "2026-10-02T13:27:57Z"
   },
   {
    "id": "google-ai",
@@ -28,7 +28,7 @@
    "ok": true,
    "count": 10,
    "error": null,
-   "lastOk": "2026-10-02T13:21:59Z"
+   "lastOk": "2026-10-02T13:27:57Z"
   },
   {
    "id": "hf-blog",
@@ -37,7 +37,7 @@
    "ok": true,
    "count": 15,
    "error": null,
-   "lastOk": "2026-10-02T13:21:59Z"
+   "lastOk": "2026-10-02T13:27:57Z"
   },
   {
    "id": "nvidia-dev",
@@ -46,7 +46,7 @@
    "ok": true,
    "count": 10,
    "error": null,
-   "lastOk": "2026-10-02T13:21:59Z"
+   "lastOk": "2026-10-02T13:27:57Z"
   },
   {
    "id": "msr",
@@ -55,7 +55,7 @@
    "ok": true,
    "count": 10,
    "error": null,
-   "lastOk": "2026-10-02T13:21:59Z"
+   "lastOk": "2026-10-02T13:27:57Z"
   },
   {
    "id": "aws-ml",
@@ -64,7 +64,7 @@
    "ok": true,
    "count": 8,
    "error": null,
-   "lastOk": "2026-10-02T13:21:59Z"
+   "lastOk": "2026-10-02T13:27:57Z"
   },
   {
    "id": "qwen",
@@ -73,7 +73,7 @@
    "ok": true,
    "count": 8,
    "error": null,
-   "lastOk": "2026-10-02T13:21:59Z"
+   "lastOk": "2026-10-02T13:27:57Z"
   },
   {
    "id": "hn",
@@ -82,7 +82,7 @@
    "ok": true,
    "count": 7,
    "error": null,
-   "lastOk": "2026-10-02T13:21:59Z"
+   "lastOk": "2026-10-02T13:27:57Z"
   },
   {
    "id": "localllama",
@@ -91,7 +91,7 @@
    "ok": true,
    "count": 15,
    "error": null,
-   "lastOk": "2026-10-02T13:21:59Z"
+   "lastOk": "2026-10-02T13:27:57Z"
   },
   {
    "id": "simonw",
@@ -100,7 +100,7 @@
    "ok": true,
    "count": 15,
    "error": null,
-   "lastOk": "2026-10-02T13:21:59Z"
+   "lastOk": "2026-10-02T13:27:57Z"
   },
   {
    "id": "hf-papers",
@@ -109,7 +109,7 @@
    "ok": true,
    "count": 15,
    "error": null,
-   "lastOk": "2026-10-02T13:21:59Z"
+   "lastOk": "2026-10-02T13:27:57Z"
   },
   {
    "id": "arxiv-cl",
@@ -118,7 +118,7 @@
    "ok": true,
    "count": 12,
    "error": null,
-   "lastOk": "2026-10-02T13:21:59Z"
+   "lastOk": "2026-10-02T13:27:57Z"
   },
   {
    "id": "latent-space",
@@ -127,7 +127,7 @@
    "ok": true,
    "count": 8,
    "error": null,
-   "lastOk": "2026-10-02T13:21:59Z"
+   "lastOk": "2026-10-02T13:27:57Z"
   },
   {
    "id": "interconnects",
@@ -136,7 +136,7 @@
    "ok": true,
    "count": 8,
    "error": null,
-   "lastOk": "2026-10-02T13:21:59Z"
+   "lastOk": "2026-10-02T13:27:57Z"
   },
   {
    "id": "import-ai",
@@ -145,7 +145,7 @@
    "ok": true,
    "count": 5,
    "error": null,
-   "lastOk": "2026-10-02T13:21:59Z"
+   "lastOk": "2026-10-02T13:27:57Z"
   },
   {
    "id": "verge-ai",
@@ -154,7 +154,7 @@
    "ok": true,
    "count": 10,
    "error": null,
-   "lastOk": "2026-10-02T13:21:59Z"
+   "lastOk": "2026-10-02T13:27:57Z"
   },
   {
    "id": "ars-ai",
@@ -163,7 +163,7 @@
    "ok": true,
    "count": 12,
    "error": null,
-   "lastOk": "2026-10-02T13:21:59Z"
+   "lastOk": "2026-10-02T13:27:57Z"
   },
   {
    "id": "techcrunch-ai",
@@ -172,7 +172,7 @@
    "ok": true,
    "count": 12,
    "error": null,
-   "lastOk": "2026-10-02T13:21:59Z"
+   "lastOk": "2026-10-02T13:27:57Z"
   },
   {
    "id": "mit-tr",
@@ -181,7 +181,7 @@
    "ok": true,
    "count": 8,
    "error": null,
-   "lastOk": "2026-10-02T13:21:59Z"
+   "lastOk": "2026-10-02T13:27:57Z"
   },
   {
    "id": "decoder",
@@ -190,7 +190,7 @@
    "ok": true,
    "count": 10,
    "error": null,
-   "lastOk": "2026-10-02T13:21:59Z"
+   "lastOk": "2026-10-02T13:27:57Z"
   },
   {
    "id": "sth",
@@ -199,7 +199,7 @@
    "ok": true,
    "count": 5,
    "error": null,
-   "lastOk": "2026-10-02T13:21:59Z"
+   "lastOk": "2026-10-02T13:27:57Z"
   },
   {
    "id": "embrace-red",
@@ -208,7 +208,7 @@
    "ok": true,
    "count": 6,
    "error": null,
-   "lastOk": "2026-10-02T13:21:59Z"
+   "lastOk": "2026-10-02T13:27:57Z"
   },
   {
    "id": "rel-ollama",
@@ -217,7 +217,7 @@
    "ok": true,
    "count": 3,
    "error": null,
-   "lastOk": "2026-10-02T13:21:59Z"
+   "lastOk": "2026-10-02T13:27:57Z"
   },
   {
    "id": "rel-vllm",
@@ -226,7 +226,7 @@
    "ok": true,
    "count": 3,
    "error": null,
-   "lastOk": "2026-10-02T13:21:59Z"
+   "lastOk": "2026-10-02T13:27:57Z"
   },
   {
    "id": "rel-opencode",
@@ -235,7 +235,7 @@
    "ok": true,
    "count": 3,
    "error": null,
-   "lastOk": "2026-10-02T13:21:59Z"
+   "lastOk": "2026-10-02T13:27:57Z"
   },
   {
    "id": "rel-claude-code",
@@ -244,7 +244,7 @@
    "ok": true,
    "count": 3,
    "error": null,
-   "lastOk": "2026-10-02T13:21:59Z"
+   "lastOk": "2026-10-02T13:27:57Z"
   }
  ],
  "heat": {
@@ -3698,11 +3698,11 @@
    "type": "research",
    "published": "2026-09-30T20:00:00Z",
    "summary": "Streaming video LLMs must retain evidence before its relevance to future tasks is known and respond when sufficient evidence becomes available. The challenge is to form reusable factual memory without compromising real-time perception. We introduce OneStreamer, which jointly learns query-independent evidence recording…",
-   "points": 87,
+   "points": 88,
    "firstSeen": "2026-10-02T09:43:30Z",
    "tags": [],
    "layers": [],
-   "score": 3.94
+   "score": 3.95
   },
   {
    "id": "ca27ecbf3b7a",
@@ -3751,7 +3751,7 @@
    "type": "research",
    "published": "2026-09-30T20:00:00Z",
    "summary": "Vision language model (VLM) agents can control robots through visual feedback and action primitives, but repeated model invocations and redundant observations incur substantial token overhead. We introduce PyRUA-Lean, an interactive code-execution framework that couples feedback-driven primitive composition with…",
-   "points": 10,
+   "points": 11,
    "firstSeen": "2026-10-02T09:43:30Z",
    "tags": [
     "gpt",
@@ -3760,7 +3760,7 @@
    "layers": [
     "models"
    ],
-   "score": 4.24
+   "score": 4.28
   },
   {
    "id": "d735305da6a4",
