@@ -1,5 +1,5 @@
 {
- "generated": "2026-10-03T21:12:23Z",
+ "generated": "2026-10-03T23:46:16Z",
  "retentionDays": 45,
  "llmEnriched": 0,
  "sources": [
@@ -10,7 +10,7 @@
    "ok": true,
    "count": 15,
    "error": null,
-   "lastOk": "2026-10-03T21:12:23Z"
+   "lastOk": "2026-10-03T23:46:16Z"
   },
   {
    "id": "deepmind",
@@ -19,7 +19,7 @@
    "ok": true,
    "count": 10,
    "error": null,
-   "lastOk": "2026-10-03T21:12:23Z"
+   "lastOk": "2026-10-03T23:46:16Z"
   },
   {
    "id": "google-ai",
@@ -28,7 +28,7 @@
    "ok": true,
    "count": 10,
    "error": null,
-   "lastOk": "2026-10-03T21:12:23Z"
+   "lastOk": "2026-10-03T23:46:16Z"
   },
   {
    "id": "hf-blog",
@@ -37,7 +37,7 @@
    "ok": true,
    "count": 15,
    "error": null,
-   "lastOk": "2026-10-03T21:12:23Z"
+   "lastOk": "2026-10-03T23:46:16Z"
   },
   {
    "id": "nvidia-dev",
@@ -46,7 +46,7 @@
    "ok": true,
    "count": 10,
    "error": null,
-   "lastOk": "2026-10-03T21:12:23Z"
+   "lastOk": "2026-10-03T23:46:16Z"
   },
   {
    "id": "msr",
@@ -55,7 +55,7 @@
    "ok": true,
    "count": 10,
    "error": null,
-   "lastOk": "2026-10-03T21:12:23Z"
+   "lastOk": "2026-10-03T23:46:16Z"
   },
   {
    "id": "aws-ml",
@@ -64,7 +64,7 @@
    "ok": true,
    "count": 8,
    "error": null,
-   "lastOk": "2026-10-03T21:12:23Z"
+   "lastOk": "2026-10-03T23:46:16Z"
   },
   {
    "id": "qwen",
@@ -73,16 +73,16 @@
    "ok": true,
    "count": 8,
    "error": null,
-   "lastOk": "2026-10-03T21:12:23Z"
+   "lastOk": "2026-10-03T23:46:16Z"
   },
   {
    "id": "hn",
    "name": "Hacker News (best, AI-filtered)",
    "type": "community",
    "ok": true,
-   "count": 7,
+   "count": 8,
    "error": null,
-   "lastOk": "2026-10-03T21:12:23Z"
+   "lastOk": "2026-10-03T23:46:16Z"
   },
   {
    "id": "localllama",
@@ -91,7 +91,7 @@
    "ok": true,
    "count": 15,
    "error": null,
-   "lastOk": "2026-10-03T21:12:23Z"
+   "lastOk": "2026-10-03T23:46:16Z"
   },
   {
    "id": "simonw",
@@ -100,7 +100,7 @@
    "ok": true,
    "count": 15,
    "error": null,
-   "lastOk": "2026-10-03T21:12:23Z"
+   "lastOk": "2026-10-03T23:46:16Z"
   },
   {
    "id": "hf-papers",
@@ -109,7 +109,7 @@
    "ok": true,
    "count": 15,
    "error": null,
-   "lastOk": "2026-10-03T21:12:23Z"
+   "lastOk": "2026-10-03T23:46:16Z"
   },
   {
    "id": "arxiv-cl",
@@ -118,7 +118,7 @@
    "ok": true,
    "count": 0,
    "error": null,
-   "lastOk": "2026-10-03T21:12:23Z"
+   "lastOk": "2026-10-03T23:46:16Z"
   },
   {
    "id": "latent-space",
@@ -127,7 +127,7 @@
    "ok": true,
    "count": 8,
    "error": null,
-   "lastOk": "2026-10-03T21:12:23Z"
+   "lastOk": "2026-10-03T23:46:16Z"
   },
   {
    "id": "interconnects",
@@ -136,7 +136,7 @@
    "ok": true,
    "count": 8,
    "error": null,
-   "lastOk": "2026-10-03T21:12:23Z"
+   "lastOk": "2026-10-03T23:46:16Z"
   },
   {
    "id": "import-ai",
@@ -145,7 +145,7 @@
    "ok": true,
    "count": 5,
    "error": null,
-   "lastOk": "2026-10-03T21:12:23Z"
+   "lastOk": "2026-10-03T23:46:16Z"
   },
   {
    "id": "verge-ai",
@@ -154,7 +154,7 @@
    "ok": true,
    "count": 10,
    "error": null,
-   "lastOk": "2026-10-03T21:12:23Z"
+   "lastOk": "2026-10-03T23:46:16Z"
   },
   {
    "id": "ars-ai",
@@ -163,7 +163,7 @@
    "ok": true,
    "count": 12,
    "error": null,
-   "lastOk": "2026-10-03T21:12:23Z"
+   "lastOk": "2026-10-03T23:46:16Z"
   },
   {
    "id": "techcrunch-ai",
@@ -172,7 +172,7 @@
    "ok": true,
    "count": 12,
    "error": null,
-   "lastOk": "2026-10-03T21:12:23Z"
+   "lastOk": "2026-10-03T23:46:16Z"
   },
   {
    "id": "mit-tr",
@@ -181,7 +181,7 @@
    "ok": true,
    "count": 8,
    "error": null,
-   "lastOk": "2026-10-03T21:12:23Z"
+   "lastOk": "2026-10-03T23:46:16Z"
   },
   {
    "id": "decoder",
@@ -190,7 +190,7 @@
    "ok": true,
    "count": 10,
    "error": null,
-   "lastOk": "2026-10-03T21:12:23Z"
+   "lastOk": "2026-10-03T23:46:16Z"
   },
   {
    "id": "sth",
@@ -199,7 +199,7 @@
    "ok": true,
    "count": 4,
    "error": null,
-   "lastOk": "2026-10-03T21:12:23Z"
+   "lastOk": "2026-10-03T23:46:16Z"
   },
   {
    "id": "embrace-red",
@@ -208,7 +208,7 @@
    "ok": true,
    "count": 6,
    "error": null,
-   "lastOk": "2026-10-03T21:12:23Z"
+   "lastOk": "2026-10-03T23:46:16Z"
   },
   {
    "id": "rel-ollama",
@@ -217,7 +217,7 @@
    "ok": true,
    "count": 3,
    "error": null,
-   "lastOk": "2026-10-03T21:12:23Z"
+   "lastOk": "2026-10-03T23:46:16Z"
   },
   {
    "id": "rel-vllm",
@@ -226,7 +226,7 @@
    "ok": true,
    "count": 3,
    "error": null,
-   "lastOk": "2026-10-03T21:12:23Z"
+   "lastOk": "2026-10-03T23:46:16Z"
   },
   {
    "id": "rel-opencode",
@@ -235,7 +235,7 @@
    "ok": true,
    "count": 3,
    "error": null,
-   "lastOk": "2026-10-03T21:12:23Z"
+   "lastOk": "2026-10-03T23:46:16Z"
   },
   {
    "id": "rel-claude-code",
@@ -244,20 +244,35 @@
    "ok": true,
    "count": 3,
    "error": null,
-   "lastOk": "2026-10-03T21:12:23Z"
+   "lastOk": "2026-10-03T23:46:16Z"
   }
  ],
  "heat": {
   "concepts": {
+   "claude-code": {
+    "d7": 9,
+    "prev7": 3,
+    "d30": 12
+   },
+   "qwen": {
+    "d7": 65,
+    "prev7": 3,
+    "d30": 68
+   },
+   "moe": {
+    "d7": 16,
+    "prev7": 2,
+    "d30": 18
+   },
+   "vram-math": {
+    "d7": 15,
+    "prev7": 0,
+    "d30": 15
+   },
    "bandwidth": {
     "d7": 12,
     "prev7": 0,
     "d30": 12
-   },
-   "qwen": {
-    "d7": 63,
-    "prev7": 3,
-    "d30": 66
    },
    "gpt": {
     "d7": 97,
@@ -265,9 +280,9 @@
     "d30": 129
    },
    "claude": {
-    "d7": 48,
+    "d7": 49,
     "prev7": 13,
-    "d30": 61
+    "d30": 62
    },
    "ai-datacenters": {
     "d7": 15,
@@ -284,15 +299,15 @@
     "prev7": 2,
     "d30": 16
    },
-   "claude-code": {
-    "d7": 8,
-    "prev7": 3,
-    "d30": 11
-   },
    "oss-coding-agents": {
     "d7": 5,
     "prev7": 6,
     "d30": 11
+   },
+   "gguf": {
+    "d7": 7,
+    "prev7": 0,
+    "d30": 7
    },
    "agent-harness": {
     "d7": 4,
@@ -309,11 +324,6 @@
     "prev7": 10,
     "d30": 77
    },
-   "vram-math": {
-    "d7": 13,
-    "prev7": 0,
-    "d30": 13
-   },
    "gemma": {
     "d7": 26,
     "prev7": 2,
@@ -329,11 +339,6 @@
     "prev7": 1,
     "d30": 8
    },
-   "moe": {
-    "d7": 15,
-    "prev7": 2,
-    "d30": 17
-   },
    "awq-gptq": {
     "d7": 2,
     "prev7": 0,
@@ -348,6 +353,16 @@
     "d7": 7,
     "prev7": 0,
     "d30": 7
+   },
+   "vector-dbs": {
+    "d7": 2,
+    "prev7": 0,
+    "d30": 2
+   },
+   "rag": {
+    "d7": 8,
+    "prev7": 0,
+    "d30": 8
    },
    "low-bit-formats": {
     "d7": 4,
@@ -378,11 +393,6 @@
     "d7": 26,
     "prev7": 4,
     "d30": 31
-   },
-   "rag": {
-    "d7": 7,
-    "prev7": 0,
-    "d30": 7
    },
    "frontier-capabilities": {
     "d7": 10,
@@ -493,16 +503,6 @@
     "d7": 1,
     "prev7": 0,
     "d30": 1
-   },
-   "vector-dbs": {
-    "d7": 1,
-    "prev7": 0,
-    "d30": 1
-   },
-   "gguf": {
-    "d7": 6,
-    "prev7": 0,
-    "d30": 6
    },
    "embeddings": {
     "d7": 2,
@@ -626,37 +626,37 @@
    }
   },
   "layers": {
+   "agents": {
+    "d7": 117,
+    "d30": 148
+   },
    "compute": {
-    "d7": 63,
-    "d30": 70
+    "d7": 65,
+    "d30": 72
    },
    "models": {
-    "d7": 331,
-    "d30": 431
+    "d7": 333,
+    "d30": 433
    },
    "inference": {
     "d7": 66,
     "d30": 80
    },
-   "agents": {
-    "d7": 116,
-    "d30": 147
+   "weights": {
+    "d7": 20,
+    "d30": 22
    },
    "tools": {
     "d7": 12,
     "d30": 15
    },
-   "weights": {
+   "context": {
     "d7": 19,
-    "d30": 21
+    "d30": 23
    },
    "security": {
     "d7": 51,
     "d30": 67
-   },
-   "context": {
-    "d7": 18,
-    "d30": 22
    }
   },
   "stack": {
@@ -665,7 +665,7 @@
     "prev7": 5
    },
    "compute-hardware": {
-    "d7": 34,
+    "d7": 35,
     "prev7": 7
    },
    "cloud-infrastructure": {
@@ -677,15 +677,15 @@
     "prev7": 2
    },
    "foundation-models": {
-    "d7": 231,
+    "d7": 233,
     "prev7": 55
    },
    "inference-optimization": {
-    "d7": 66,
+    "d7": 67,
     "prev7": 14
    },
    "orchestration-tooling": {
-    "d7": 32,
+    "d7": 33,
     "prev7": 2
    },
    "agents": {
@@ -781,7 +781,7 @@
   },
   {
    "term": "GB",
-   "items": 28,
+   "items": 30,
    "sources": 2,
    "sample": [
     "0493cf4b2731",
@@ -1052,6 +1052,73 @@
  ],
  "items": [
   {
+   "id": "3ba89625595d",
+   "title": "We're going to need default hard budget caps on pretty much everything",
+   "url": "https://simonwillison.net/2026/Oct/3/default-hard-budget-caps/",
+   "source": "simonw",
+   "sourceName": "Simon Willison",
+   "type": "community",
+   "published": "2026-10-03T23:34:02Z",
+   "summary": "Here's a product feature which the world is going to need a whole lot more of over the coming months and years: default hard budget caps. I'm talking about the feature of pay-by-usage services and APIs that lets you say \"after $X/month, cut this thing off and return errors\". These need to be hard limits. Soft caps…",
+   "firstSeen": "2026-10-03T23:46:16Z",
+   "tags": [],
+   "layers": [],
+   "score": 3.0
+  },
+  {
+   "id": "811b330a28e1",
+   "title": "v2.1.289",
+   "url": "https://github.com/anthropics/claude-code/releases/tag/v2.1.289",
+   "source": "rel-claude-code",
+   "sourceName": "Claude Code releases",
+   "type": "release",
+   "published": "2026-10-03T23:07:17Z",
+   "summary": "What's changed Fixed a deny or ask rule on a nested part of a compound shell command not holding over a user-installed mod's approval on managed machines Fixed the terminal freezing on short code blocks with many unclosed <script> tags or deeply nested ${ substitutions Fixed Read deny rules not applying to files…",
+   "firstSeen": "2026-10-03T23:46:16Z",
+   "tags": [
+    "claude-code"
+   ],
+   "layers": [
+    "agents"
+   ],
+   "score": 1.6
+  },
+  {
+   "id": "89764eae0099",
+   "title": "The Agent Said It Was Done. The Database Disagreed.",
+   "url": "https://huggingface.co/blog/microsoft/thinkingbox",
+   "source": "hf-blog",
+   "sourceName": "Hugging Face Blog",
+   "type": "lab",
+   "published": "2026-10-03T22:56:48Z",
+   "summary": "",
+   "firstSeen": "2026-10-03T23:46:16Z",
+   "tags": [],
+   "layers": [],
+   "score": 2.0
+  },
+  {
+   "id": "978dd65dae0e",
+   "title": "Running Qwen3.8 Flash Next 176B on a 16GB RTX 3080 Laptop + 32GB RAM + SSD",
+   "url": "https://www.reddit.com/r/LocalLLaMA/comments/1wwwmy1/running_qwen38_flash_next_176b_on_a_16gb_rtx_3080/",
+   "source": "localllama",
+   "sourceName": "r/LocalLLaMA (top today)",
+   "type": "community",
+   "published": "2026-10-03T20:06:34Z",
+   "summary": "I wanted to see how far I could push a fairly ordinary laptop with a huge MoE model. Turns out, Qwen3.8 Flash Next 176B can run on: RTX 3080 Laptop — 16GB VRAM 32GB system RAM SSD No 128GB/256GB RAM workstation and no multi-GPU setup. I’m running it with TensorSharp, my open-source local LLM inference engine…",
+   "firstSeen": "2026-10-03T23:46:16Z",
+   "tags": [
+    "qwen",
+    "moe",
+    "vram-math"
+   ],
+   "layers": [
+    "compute",
+    "models"
+   ],
+   "score": 3.8
+  },
+  {
    "id": "e88397a8f4dc",
    "title": "Have you seen the new model that was trained exclusively on jokes?",
    "url": "https://www.reddit.com/r/LocalLLaMA/comments/1wwwko4/have_you_seen_the_new_model_that_was_trained/",
@@ -1174,6 +1241,41 @@
    "tags": [],
    "layers": [],
    "score": 1.0
+  },
+  {
+   "id": "85a452e5b829",
+   "title": "Sopro V2 Turbo 2610: cleaner cloned voices, same 120M model, same CPU speed",
+   "url": "https://www.reddit.com/r/LocalLLaMA/comments/1wwrw0v/sopro_v2_turbo_2610_cleaner_cloned_voices_same/",
+   "source": "localllama",
+   "sourceName": "r/LocalLLaMA (top today)",
+   "type": "community",
+   "published": "2026-10-03T16:48:36Z",
+   "summary": "Follow-up to last month's post. One of the main issues people ran into was roughness or break-up on some cloned voices. 2610 is an interim update focused mostly on improving that. Reduced roughness and break-up on some of the voices that struggled before Same 120M model, same speed (~300 ms to first audio on a laptop…",
+   "firstSeen": "2026-10-03T23:46:16Z",
+   "tags": [],
+   "layers": [],
+   "score": 2.0
+  },
+  {
+   "id": "2755c4e390bc",
+   "title": "Two local Qwen ( 3.8 27b unsloth Q6 and Qwen flash next strata coder) models vs Claude Opus 4.6 on the same 3 coding tasks. One of them tied it. Not here to start a fight, just sharing numbers",
+   "url": "https://www.reddit.com/r/LocalLLaMA/comments/1wwrgx1/two_local_qwen_38_27b_unsloth_q6_and_qwen_flash/",
+   "source": "localllama",
+   "sourceName": "r/LocalLLaMA (top today)",
+   "type": "community",
+   "published": "2026-10-03T16:30:17Z",
+   "summary": "Innanzitutto, due cose per evitare fraintendimenti. Non sto cercando di sostenere che un modello o un'azienda siano migliori. Non ho alcun interesse personale in nessuno di essi. Volevo solo verificare personalmente come si comportano nello stesso contesto lavorativo. E il motivo per cui mi interessa: Utilizzo modelli…",
+   "firstSeen": "2026-10-03T23:46:16Z",
+   "tags": [
+    "qwen",
+    "claude",
+    "gguf"
+   ],
+   "layers": [
+    "models",
+    "weights"
+   ],
+   "score": 3.8
   },
   {
    "id": "f143fce070e1",
@@ -1382,6 +1484,27 @@
    "score": 1.6
   },
   {
+   "id": "a12294e68272",
+   "title": "Replacing vector databases with SQLite and SIMD hypervectors in under 1.2GB VRAM (Hillock)",
+   "url": "https://www.reddit.com/r/LocalLLaMA/comments/1wwn7xf/replacing_vector_databases_with_sqlite_and_simd/",
+   "source": "localllama",
+   "sourceName": "r/LocalLLaMA (top today)",
+   "type": "community",
+   "published": "2026-10-03T13:25:29Z",
+   "summary": "Disclosure: I am the creator of this project. After days of lurking and building up enough karma, I can finally post here. Every time I tried running local RAG on my own machine, I hit the exact same bottlenecks. First, spinning up Chroma or another vector database alongside an 8B model just to chunk and parse…",
+   "firstSeen": "2026-10-03T23:46:16Z",
+   "tags": [
+    "vector-dbs",
+    "vram-math",
+    "rag"
+   ],
+   "layers": [
+    "compute",
+    "context"
+   ],
+   "score": 3.8
+  },
+  {
    "id": "f30db5d0692e",
    "title": "FP8/BF16 users seeing someone run IQ1_S",
    "url": "https://www.reddit.com/r/LocalLLaMA/comments/1wwl9jf/fp8bf16_users_seeing_someone_run_iq1_s/",
@@ -1441,7 +1564,7 @@
    "type": "community",
    "published": "2026-10-03T10:43:51Z",
    "summary": "",
-   "points": 407,
+   "points": 409,
    "discussion": "https://news.ycombinator.com/item?id=49943034",
    "firstSeen": "2026-10-03T21:12:23Z",
    "tags": [],
@@ -1495,7 +1618,7 @@
    "type": "community",
    "published": "2026-10-03T09:36:04Z",
    "summary": "",
-   "points": 374,
+   "points": 470,
    "discussion": "https://news.ycombinator.com/item?id=49942706",
    "firstSeen": "2026-10-03T21:12:23Z",
    "tags": [
@@ -1504,7 +1627,7 @@
    "layers": [
     "models"
    ],
-   "score": 5.17
+   "score": 5.27
   },
   {
    "id": "9644cc15b3ea",
@@ -1869,7 +1992,7 @@
    "type": "press",
    "published": "2026-10-02T23:03:16Z",
    "summary": "Meta says FDA isn't sufficient to Muse reading messages. Apple begs to differ.",
-   "discussion": "176",
+   "discussion": "188",
    "firstSeen": "2026-10-03T05:16:07Z",
    "tags": [
     "agent-loop"
@@ -1992,7 +2115,7 @@
    "type": "press",
    "published": "2026-10-02T20:30:27Z",
    "summary": "Amazon praised for ending NDAs but slammed for downplaying data center pollution.",
-   "discussion": "67",
+   "discussion": "68",
    "firstSeen": "2026-10-02T22:12:05Z",
    "tags": [
     "ai-datacenters"
@@ -2138,7 +2261,7 @@
    "type": "press",
    "published": "2026-10-02T18:39:36Z",
    "summary": "Nvidia’s chip-smuggling problem won’t go away as arrests continue.",
-   "discussion": "41",
+   "discussion": "42",
    "firstSeen": "2026-10-02T22:12:05Z",
    "tags": [],
    "layers": [],
@@ -2212,12 +2335,12 @@
    "type": "community",
    "published": "2026-10-02T18:01:16Z",
    "summary": "",
-   "points": 333,
+   "points": 340,
    "discussion": "https://news.ycombinator.com/item?id=49936575",
    "firstSeen": "2026-10-03T16:15:39Z",
    "tags": [],
    "layers": [],
-   "score": 4.52
+   "score": 4.53
   },
   {
    "id": "5028b5fce374",
@@ -2575,6 +2698,22 @@
    "score": 2.0
   },
   {
+   "id": "b6b70248a0d7",
+   "title": "AI Makes Me Sad",
+   "url": "https://mondobe.com/ai-makes-me-sad",
+   "source": "hn",
+   "sourceName": "Hacker News (best, AI-filtered)",
+   "type": "community",
+   "published": "2026-10-02T15:18:00Z",
+   "summary": "",
+   "points": 190,
+   "discussion": "https://news.ycombinator.com/item?id=49934487",
+   "firstSeen": "2026-10-03T23:46:16Z",
+   "tags": [],
+   "layers": [],
+   "score": 4.28
+  },
+  {
    "id": "af9c8e607b34",
    "title": "AxiomicLabs' new benchmark, Tiny Theory of Mind, meant to gauge small models' theory of mind capabilities, has made it to the front page of Hugging Face's Datasets",
    "url": "https://www.reddit.com/r/LocalLLaMA/comments/1wvw2up/axiomiclabs_new_benchmark_tiny_theory_of_mind/",
@@ -2617,7 +2756,7 @@
    "type": "press",
    "published": "2026-10-02T14:52:16Z",
    "summary": "Initially launched in 2019, the Nvidia Shield TV Pro now retails for $299.99.",
-   "discussion": "101",
+   "discussion": "102",
    "firstSeen": "2026-10-02T17:51:49Z",
    "tags": [],
    "layers": [],
@@ -3266,7 +3405,7 @@
    "type": "community",
    "published": "2026-10-02T03:11:20Z",
    "summary": "",
-   "points": 403,
+   "points": 405,
    "discussion": "https://news.ycombinator.com/item?id=49929489",
    "firstSeen": "2026-10-02T10:10:31Z",
    "tags": [
@@ -3286,12 +3425,12 @@
    "type": "community",
    "published": "2026-10-02T02:51:27Z",
    "summary": "",
-   "points": 316,
+   "points": 324,
    "discussion": "https://news.ycombinator.com/item?id=49929391",
    "firstSeen": "2026-10-03T16:15:39Z",
    "tags": [],
    "layers": [],
-   "score": 4.5
+   "score": 4.51
   },
   {
    "id": "28419c25af77",
@@ -3481,7 +3620,7 @@
    "type": "community",
    "published": "2026-10-01T22:22:21Z",
    "summary": "",
-   "points": 338,
+   "points": 341,
    "discussion": "https://news.ycombinator.com/item?id=49927747",
    "firstSeen": "2026-10-03T05:16:07Z",
    "tags": [
@@ -6171,7 +6310,7 @@
    "type": "press",
    "published": "2026-09-30T15:54:52Z",
    "summary": "Intended to help with biosecurity, it works with a popular AI protein design tool.",
-   "discussion": "32",
+   "discussion": "33",
    "firstSeen": "2026-09-30T20:00:16Z",
    "tags": [],
    "layers": [],
@@ -13935,7 +14074,7 @@
    "type": "research",
    "published": "2026-09-25T20:00:00Z",
    "summary": "Multi-step agents are trained on flat action streams: SFT and RLVR weight every token uniformly and ignore the sub-procedures that recur across tasks, the hierarchy that lets humans plan top-down from reusable routines. This structure sits unused, and flat training uses each scarce trajectory less fully than its…",
-   "points": 32,
+   "points": 37,
    "firstSeen": "2026-10-03T11:37:17Z",
    "tags": [
     "rl-reasoning"
@@ -13943,7 +14082,7 @@
    "layers": [
     "models"
    ],
-   "score": 4.12
+   "score": 4.18
   },
   {
    "id": "16601d8d6797",
@@ -17065,138 +17204,6 @@
    "tags": [],
    "layers": [],
    "score": 1.0
-  },
-  {
-   "id": "7ac3c7a13651",
-   "title": "Import AI 471: Why Hugging Face worries me; space mining; FIve Eyes on AI",
-   "url": "https://jack-clark.net/2026/08/31/import-ai-471-why-hugging-face-worries-me-space-mining-five-eyes-on-ai/",
-   "source": "import-ai",
-   "sourceName": "Import AI",
-   "type": "press",
-   "published": "2026-08-31T13:31:06Z",
-   "summary": "Welcome to Import AI, a newsletter about AI research. Import AI runs on arXiv, cappuccinos, and feedback from readers. If you’d like to support this, please subscribe. Subscribe now Import AI reader giveaway! Upcoming event: Fiction and the Future with Robin SloanI’ll be chatting with my chum Robin Sloan on the…",
-   "discussion": "0",
-   "firstSeen": "2026-09-28T19:32:43Z",
-   "tags": [
-    "open-weights"
-   ],
-   "layers": [
-    "models"
-   ],
-   "score": 2.6
-  },
-  {
-   "id": "d20b99a49a7d",
-   "title": "Understanding ChatGPT Work",
-   "url": "https://simonwillison.net/2026/Aug/30/understanding-chatgpt-work/",
-   "source": "simonw",
-   "sourceName": "Simon Willison",
-   "type": "community",
-   "published": "2026-08-30T23:59:47Z",
-   "summary": "OpenAI announced ChatGPT Work on July 9th, and have been furiously iterating on it ever since. It is an extraordinarily confusing and very powerful product. Here's what I've figured out about it so far. ChatGPT Work is actually two products The more interesting version of ChatGPT Work is the one that runs in the…",
-   "firstSeen": "2026-09-27T19:40:56Z",
-   "tags": [
-    "gpt"
-   ],
-   "layers": [
-    "models"
-   ],
-   "score": 3.6
-  },
-  {
-   "id": "5b132fba12b8",
-   "title": "Gemini Omni 1.1 Flash lets you build with more control",
-   "url": "https://deepmind.google/blog/gemini-omni-1-1-flash-lets-you-build-with-more-control/",
-   "source": "deepmind",
-   "sourceName": "Google DeepMind",
-   "type": "lab",
-   "published": "2026-08-27T16:11:32Z",
-   "summary": "",
-   "firstSeen": "2026-09-27T19:40:56Z",
-   "tags": [
-    "gemini"
-   ],
-   "layers": [
-    "models"
-   ],
-   "score": 3.6
-  },
-  {
-   "id": "0620f79b66d9",
-   "title": "Breaking Claude Code Opus 5 Auto Mode",
-   "url": "https://embracethered.com/blog/posts/2026/breaking-claude-code-opus-5-and-automode/",
-   "source": "embrace-red",
-   "sourceName": "Embrace The Red",
-   "type": "security",
-   "published": "2026-08-27T04:00:00Z",
-   "summary": "In this post, we explore how a simple website summary request hijacks Claude Code Opus 5 in Auto Mode and achieves code execution with 60-80% attack success rate using a small sample size. This is interesting because a third-party evaluation commissioned by Anthropic showed a 0.00% prompt injection attack success rate…",
-   "firstSeen": "2026-09-27T19:40:56Z",
-   "tags": [
-    "claude-code",
-    "claude",
-    "prompt-injection"
-   ],
-   "layers": [
-    "agents",
-    "models",
-    "security"
-   ],
-   "score": 4.8
-  },
-  {
-   "id": "7a2319af6658",
-   "title": "Import AI 470: No rights for machines; automating environment generation with SPADE; and building better GPU kernels with Hawkeye",
-   "url": "https://jack-clark.net/2026/08/24/import-ai-470-no-rights-for-machines-automating-environment-generation-with-spade-and-building-better-gpu-kernels-with-hawkeye/",
-   "source": "import-ai",
-   "sourceName": "Import AI",
-   "type": "press",
-   "published": "2026-08-24T13:12:40Z",
-   "summary": "Welcome to Import AI, a newsletter about AI research. Import AI runs on arXiv, cappuccinos, and feedback from readers. If you’d like to support this, please subscribe. Subscribe now AI is accelerating some types of progress but not others:…A nice METR study lays out where acceleration is showing up…Here’s a little…",
-   "discussion": "0",
-   "firstSeen": "2026-09-28T19:32:43Z",
-   "tags": [
-    "benchmarks"
-   ],
-   "layers": [
-    "security"
-   ],
-   "score": 2.6
-  },
-  {
-   "id": "ed976920bb98",
-   "title": "Broadening access to Skala creates a faster path to predictive DFT",
-   "url": "https://www.microsoft.com/en-us/research/blog/broadening-access-to-skala-creates-a-faster-path-to-predictive-dft/",
-   "source": "msr",
-   "sourceName": "Microsoft Research",
-   "type": "lab",
-   "published": "2026-08-20T16:00:00Z",
-   "summary": "Skala 1.1, the updated deep-learning exchange-correlation functional from Microsoft Research, provides greater accuracy, expanded accessibility across the computational chemistry ecosystem, and a living benchmark to track computational performance. The post Broadening access to Skala creates a faster path to…",
-   "firstSeen": "2026-09-27T19:40:56Z",
-   "tags": [
-    "benchmarks"
-   ],
-   "layers": [
-    "security"
-   ],
-   "score": 1.6
-  },
-  {
-   "id": "986320ef31b6",
-   "title": "Conceptual integrity and counting lines of code",
-   "url": "https://simonwillison.net/2026/Aug/19/conceptual-integrity-and-counting-lines-of-code/",
-   "source": "simonw",
-   "sourceName": "Simon Willison",
-   "type": "community",
-   "published": "2026-08-19T22:46:07Z",
-   "summary": "Last week I recorded an episode of the Talking Postgres podcast with Claire Giordano on the subject of \"How AI is changing software development\". We had a really great conversation. Here are a couple of my highlights from a lightly edited transcript (prompt to Claude: \"very minor edits to remove disfluencies\"). This…",
-   "firstSeen": "2026-09-27T19:40:56Z",
-   "tags": [
-    "claude"
-   ],
-   "layers": [
-    "models"
-   ],
-   "score": 3.6
   }
  ]
 }
