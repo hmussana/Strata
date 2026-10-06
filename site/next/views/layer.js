@@ -7,6 +7,7 @@ import { href } from '../router.js';
 import { prefs } from '../store.js';
 import { arrowSample } from '../diagrams.js';
 import { conceptMap, highlight } from '../conceptmap.js';
+import { layerQuestions } from './quiz.js';
 import { esc, lclass, lnum, freshness, zoomLabel } from '../ui.js';
 
 const DEPTHS = ['D1', 'D2', 'D3', 'D4', 'D5'];
@@ -40,6 +41,7 @@ export function layer(route, c) {
   const walk = l.walkthrough || [];
   const hasMap = (l.metaDiagram?.nodes || []).length > 1;
   const showBreaks = prefs.depth >= 2;
+  const quizN = layerQuestions(c, l.id).length;
 
   return {
     zoom: 'Z2', layer: l.id, title: l.name,
@@ -55,6 +57,7 @@ export function layer(route, c) {
       </header>
       <h2 class="section-title">The parts</h2>
       <div class="concept-grid">${cards || '<p class="pending">No concepts written yet.</p>'}</div>
+      ${quizN ? `<p class="qz-entry"><a class="btn-ghost" href="${href.quiz(l.id)}">${icon('target', 'ico-s')}<span>Check what you know <span class="muted">· ${quizN} questions</span></span></a></p>` : ''}
       ${hasMap ? `
       <h2 class="section-title">How they work together</h2>
       <div class="cm-wrap ${lclass(l)}">

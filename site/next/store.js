@@ -26,3 +26,20 @@ export const prefs = {
     try { localStorage.setItem(PREFIX + 'theme', t); } catch { /* ignore */ }
   },
 };
+
+// Best quiz score per scope ('stack' or a layer id), compared as a share of questions right
+export const quizBest = {
+  get(scope) {
+    const all = read('quizBest', {});
+    const b = all && typeof all === 'object' ? all[scope] : null;
+    return b && Number.isInteger(b.score) && Number.isInteger(b.total) && b.total > 0 && b.score >= 0 && b.score <= b.total ? b : null;
+  },
+  // returns true when this result is a new best
+  record(scope, score, total) {
+    const prev = quizBest.get(scope);
+    if (prev && score / total <= prev.score / prev.total) return false;
+    const all = read('quizBest', {});
+    write('quizBest', { ...(all && typeof all === 'object' ? all : {}), [scope]: { score, total } });
+    return true;
+  },
+};

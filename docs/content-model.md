@@ -144,6 +144,12 @@ screen readers. The validator rejects types that `site/next/diagrams.js` doesn't
 - Name real products only in `examples` or dashboard `players`, not in core explanations.
 - Draft content keeps `status: "draft"` until reviewed. Anything older than `staleAfterDays` is flagged on the page.
 
+## Quiz
+
+`#/quiz` (whole stack: 10 questions, at most 2 per layer) and `#/quiz/<layer>` reuse each concept's D2 `predict`
+question, so a good `predict` (four plausible options, one clear answer, an explanation that teaches) does double
+duty. There are no separate quiz questions to write. Best scores stay in the reader's browser only.
+
 ## Checks
 
 ```bash

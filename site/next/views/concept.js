@@ -21,7 +21,7 @@ function depthSelector(c, k, current, l) {
 
 function predictCard(p) {
   return `<section class="predict" data-answer="${p.answer}" aria-label="Predict, then reveal">
-    <h3>${icon('bulb', 'ico-s')}Predict first</h3>
+    <h2>${icon('bulb', 'ico-s')}Predict first</h2>
     <p class="q">${esc(p.question)}</p>
     <div class="opts">${p.options.map((o, i) => `<button type="button" class="opt" data-i="${i}" aria-pressed="false">${esc(o)}</button>`).join('')}</div>
     <button type="button" class="btn reveal-btn" disabled>Reveal the answer</button>
@@ -43,9 +43,9 @@ const sentences = (text) => text.match(/[^.!?…]+[.!?…]+["'”’)]*|[^.!?…
 
 function extras(body, l) {
   return `${body.interactive ? `<div class="explorable ${lclass(l)}" data-interactive="${esc(body.interactive)}"><p class="muted small">Loading the interactive…</p></div>` : ''}
-    ${body.tasks?.length ? `<section class="tasks"><h3>${icon('target', 'ico-s')}Try this</h3><ol>${body.tasks.map((t) => `<li>${esc(t)}</li>`).join('')}</ol></section>` : ''}
+    ${body.tasks?.length ? `<section class="tasks"><h2>${icon('target', 'ico-s')}Try this</h2><ol>${body.tasks.map((t) => `<li>${esc(t)}</li>`).join('')}</ol></section>` : ''}
     ${body.code ? `<figure class="code-fig"><figcaption>Pseudo-code</figcaption><pre class="code"><code>${esc(body.code)}</code></pre></figure>` : ''}
-    ${body.tradeoffs?.length ? `<section class="tradeoffs"><h3>${icon('scale', 'ico-s')}Trade-offs</h3><ul>${body.tradeoffs.map((t) => `<li>${esc(t)}</li>`).join('')}</ul></section>` : ''}`;
+    ${body.tradeoffs?.length ? `<section class="tradeoffs"><h2>${icon('scale', 'ico-s')}Trade-offs</h2><ul>${body.tradeoffs.map((t) => `<li>${esc(t)}</li>`).join('')}</ul></section>` : ''}`;
 }
 
 function sourcesList(k) {

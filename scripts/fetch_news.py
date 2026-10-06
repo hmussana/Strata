@@ -1,6 +1,6 @@
 #!/usr/bin/env python3
 """Pull AI news from RSS/Atom/JSON sources, tag each story against the concept map,
-and write site/data/news.json for the static site.
+and write site/data/news.json (and the small signals.json the explainer reads) for the static site.
 
 Standard library only, so the GitHub Action needs no dependencies.
 
@@ -678,6 +678,10 @@ def run(fixtures: Path | None = None, out_path: Path | None = None, now: dt.date
         "items": items,
     }
     out_path.write_text(json.dumps(data, ensure_ascii=False, indent=1) + "\n")
+    # the explainer only needs the aggregate signals, about 1% of news.json
+    signals = {k: data[k] for k in ("generated", "collectedSince", "research")}
+    signals["heat"] = {"stack": data["heat"]["stack"]}
+    (out_path.parent / "signals.json").write_text(json.dumps(signals, ensure_ascii=False, separators=(",", ":")) + "\n")
     write_atom(items, tagger, feed_path, now)
     ok = sum(h["ok"] for h in health)
     print(f"wrote {len(items)} items, {ok}/{len(health)} sources ok, {enriched} llm-enriched", file=sys.stderr)

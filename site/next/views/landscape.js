@@ -116,7 +116,7 @@ export function landscape(route, c) {
         <div class="land-cc" role="list" aria-label="Cross-cutting concerns that span every layer">${cc}</div>
       </div>
       <p class="z0-foot small muted">${notes}. ${capex ? `${esc(capex.label)}: ${val(capex.value)}.` : ''}
-        <a href="${href.stack()}" data-zoom>See the whole stack</a></p>
+        <a href="${href.stack()}" data-zoom>See the whole stack</a> · <a href="${href.quiz()}">Check what you know</a></p>
       <div id="ind-info" class="info-pop" popover>
         <h2>How these are measured</h2>
         <dl>${defs}</dl>

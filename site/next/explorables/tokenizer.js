@@ -127,11 +127,11 @@ function mountBench(el, cfg) {
         <thead><tr><th scope="col">Pair</th><th scope="col">Count</th><th scope="col" class="num">n</th></tr></thead>
         <tbody data-pairs></tbody></table></div>
       <div>
-        <h4 class="xk-h">Words, as currently split</h4>
+        <p class="xk-h">Words, as currently split</p>
         <ul class="xk-words" data-words></ul>
       </div>
     </div>
-    <div><h4 class="xk-h">Vocabulary</h4><p class="xk-vocab" data-vocab></p></div>
+    <div><p class="xk-h">Vocabulary</p><p class="xk-vocab" data-vocab></p></div>
     <label class="xk-field"><span class="label">Split a new word with the merges so far</span>
       <input type="text" value="${esc(cfg.testWord || '')}" spellcheck="false" data-test></label>
     <p class="xk-tokens" data-testout></p>

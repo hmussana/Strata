@@ -4,6 +4,7 @@
 //   #/layer/<id>         Z2 inside a layer
 //   #/concept/<id>?d=N   Z3 a concept at depth N
 //   #/legend             visual grammar reference
+//   #/quiz[/<layer>]     expertise check (whole stack, or one layer)
 
 const enc = encodeURIComponent;
 
@@ -13,6 +14,7 @@ export const href = {
   layer: (id) => `#/layer/${enc(id)}`,
   concept: (id, depth) => `#/concept/${enc(id)}${depth ? `?d=${depth}` : ''}`,
   legend: () => '#/legend',
+  quiz: (layerId) => (layerId ? `#/quiz/${enc(layerId)}` : '#/quiz'),
 };
 
 export function parse(hash) {
@@ -25,6 +27,7 @@ export function parse(hash) {
   if (parts[0] === 'layer' && parts[1]) return { view: 'layer', id: parts[1], params };
   if (parts[0] === 'concept' && parts[1]) return { view: 'concept', id: parts[1], params };
   if (parts[0] === 'legend') return { view: 'legend', params };
+  if (parts[0] === 'quiz') return { view: 'quiz', id: parts[1] || null, params };
   return { view: 'notfound', params };
 }
 
