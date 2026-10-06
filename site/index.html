@@ -5,123 +5,42 @@
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self'; style-src 'self'; img-src 'self' data:; connect-src 'self'; base-uri 'none'; form-action 'none'">
   <meta name="referrer" content="no-referrer">
-  <title>Strata · the AI stack, mapped and kept current</title>
-  <meta name="description" content="A visual, self-updating map of the AI and LLM landscape: every concept explained with a diagram, guided learning paths, and a live news board tagged onto the map.">
+  <title>The AI Stack · Strata</title>
+  <meta name="description" content="A visual, layered explainer of the AI and LLM world, from power and chips to agents and apps, at the depth you choose.">
   <meta name="theme-color" content="#0d1020">
+  <link rel="canonical" href="https://hmussana.github.io/Strata/">
   <meta property="og:type" content="website">
-  <meta property="og:title" content="Strata · the AI stack, mapped and kept current">
-  <meta property="og:description" content="The Strata Model: an OSI model for AI. Seven layers, explained visually, with threats per layer and news that keeps it current.">
+  <meta property="og:title" content="The AI Stack · Strata">
+  <meta property="og:description" content="A visual, layered explainer of the AI and LLM world, from power and chips to agents and apps, at the depth you choose.">
   <meta property="og:url" content="https://hmussana.github.io/Strata/">
-  <meta property="og:image" content="https://hmussana.github.io/Strata/assets/social-card.png">
-  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:card" content="summary">
   <link rel="icon" href="assets/icon.svg" type="image/svg+xml">
   <link rel="apple-touch-icon" href="assets/icon-192.png">
   <link rel="alternate" type="application/atom+xml" title="Strata news feed" href="feed.xml">
-  <link rel="stylesheet" href="assets/styles.css">
-  <script type="module" src="assets/app.js"></script>
+  <link rel="stylesheet" href="next/next.css">
+  <script src="next/legacy.js"></script>
+  <script src="next/theme-init.js"></script>
+  <script type="module" src="next/app.js"></script>
 </head>
 <body>
-  <header class="topbar">
-    <a class="brand" href="#" aria-label="Strata home">
-      <img src="assets/icon.svg" alt="" width="30" height="30">
-      <span><strong>Strata</strong> <span class="brand-sub">the AI stack, mapped</span></span>
+  <a class="skip" href="#view">Skip to content</a>
+  <header class="bar">
+    <a class="brand" href="#/" aria-label="The AI Stack, landscape">
+      <img src="assets/icon.svg" width="28" height="28" alt="">
+      <span><strong>The AI Stack</strong><span class="brand-sub">by Strata</span></span>
     </a>
-    <div class="status" id="status" aria-live="polite">Loading…</div>
-    <div class="top-actions">
-      <label class="search">
-        <span class="visually-hidden">Search concepts and news</span>
-        <input id="search" type="search" placeholder="Search concepts & news  ( / )" autocomplete="off">
-      </label>
-      <div class="search-results" id="search-results" hidden></div>
-      <a class="try-next" href="next/"><span class="try-long">Try the new explainer</span><span class="try-short">New explainer</span>&nbsp;→</a>
-      <button class="icon-btn" id="theme-toggle" type="button" aria-label="Toggle colour theme" title="Toggle theme">◐</button>
+    <nav class="crumbs" id="crumbs" aria-label="Breadcrumb"></nav>
+    <div class="bar-actions">
+      <a class="btn-ghost" href="latest/">Latest</a>
+      <a class="btn-ghost" href="#/legend">Legend</a>
+      <button class="icon-btn" id="theme" type="button" aria-label="Toggle light or dark theme"></button>
     </div>
   </header>
-
-  <main>
-    <section class="section hero" id="map" aria-labelledby="map-title">
-      <div class="hero-head">
-        <div>
-          <p class="eyebrow">The Strata Model · an OSI model for AI</p>
-          <h1 id="map-title">Seven layers. <span class="grad">Every AI headline fits one.</span></h1>
-        </div>
-        <div class="view-toggle" role="group" aria-label="What to show on each layer">
-          <button type="button" data-view="both" aria-pressed="true">Both</button>
-          <button type="button" data-view="tech" aria-pressed="false">Technologies</button>
-          <button type="button" data-view="threats" aria-pressed="false">Threats</button>
-        </div>
-      </div>
-      <div class="map-grid tower" id="tower" data-view="both">
-        <div class="bands" id="bands"></div>
-        <div class="pillar-wrap" id="pillar"></div>
-      </div>
-      <p class="mnemonic">Remember it top-down: <strong>A</strong>ll <strong>T</strong>ools <strong>C</strong>an <strong>I</strong>nvoke <strong>M</strong>odels <strong>W</strong>ith <strong>C</strong>ompute. Click any layer to zoom in; badges count this week's stories.</p>
-    </section>
-
-    <section class="section" id="journey" aria-labelledby="journey-title">
-      <div class="section-head">
-        <div>
-          <h2 id="journey-title">Follow one prompt through the stack</h2>
-          <p class="lede">Like a packet through the OSI layers: down to the silicon, and back up as an answer.</p>
-        </div>
-        <button class="play-btn" id="journey-play" type="button">▶ Play</button>
-      </div>
-      <div class="journey-wrap">
-        <div class="mini-tower" id="mini-tower" aria-hidden="true"></div>
-        <ol class="journey" id="journey-steps"></ol>
-      </div>
-    </section>
-
-    <section class="section" id="start" aria-labelledby="paths-title">
-      <div class="section-head"><h2 id="paths-title">Start here</h2></div>
-      <div class="paths" id="paths"></div>
-    </section>
-
-    <section class="section" id="news" aria-labelledby="news-title">
-      <div class="section-head">
-        <div>
-          <h2 id="news-title">News board</h2>
-          <p class="lede">Pulled every few hours from lab blogs, community, research and press, then tagged onto the map above.</p>
-        </div>
-      </div>
-      <div class="news-layout">
-        <div class="news-main">
-          <div class="filters" id="filters"></div>
-          <div class="active-filter" id="active-filter" hidden></div>
-          <div class="news-list" id="news-list"></div>
-          <button class="more-btn" id="more" type="button" hidden>Show more</button>
-        </div>
-        <aside class="news-side">
-          <div class="card">
-            <h3>Trending concepts <span class="muted">· 7 days</span></h3>
-            <div id="trending"></div>
-          </div>
-          <div class="card">
-            <h3>Radar <span class="muted">· not on the map yet</span></h3>
-            <p class="small muted">Terms appearing across several sources in the past 14 days that don't match any mapped concept. Candidates for the next map update.</p>
-            <div id="radar"></div>
-          </div>
-          <div class="card">
-            <details>
-              <summary><h3>Source health</h3></summary>
-              <div id="sources"></div>
-            </details>
-          </div>
-        </aside>
-      </div>
-    </section>
-  </main>
-
-  <footer class="footer">
-    <p>Concept map last reviewed <span id="reviewed">–</span>. News refreshes every 3 hours; the Radar shows what the map is missing.</p>
-    <p>No trackers, no cookies, no third-party requests: your "learned" marks and last visit stay in this browser.
-      <a href="feed.xml">Atom feed</a> · <a href="https://github.com/hmussana/Strata">Source &amp; contributions</a> · Code MIT, content CC BY 4.0.</p>
-  </footer>
-
-  <div class="drawer-backdrop" id="backdrop" hidden></div>
-  <aside class="drawer" id="drawer" aria-hidden="true" aria-labelledby="drawer-title" role="dialog">
-    <button class="icon-btn drawer-close" id="drawer-close" type="button" aria-label="Close">✕</button>
-    <div id="drawer-body"></div>
-  </aside>
+  <div class="shell">
+    <nav class="minimap" id="minimap" aria-label="Where you are in the stack"></nav>
+    <main id="view" tabindex="-1"><p class="muted">Loading…</p></main>
+  </div>
+  <div class="sr-only" aria-live="polite" id="announce"></div>
+  <footer class="site">Pages marked draft haven't had a human review yet. <a href="latest/">Latest news</a> · <a href="feed.xml">Atom feed</a> · <a href="https://github.com/hmussana/Strata">Source &amp; contributions</a> · Code MIT, content CC BY 4.0.</footer>
 </body>
 </html>

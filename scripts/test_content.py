@@ -57,6 +57,14 @@ class ContentTests(unittest.TestCase):
         self.assertTrue(any("still a draft" in e for e in out))
         self.assertTrue(any("marked verify" in e for e in out))
 
+    def test_allow_drafts_keeps_other_strict_checks(self):
+        data = vc.load_all()
+        data["concepts"][0]["status"] = "draft"
+        data["concepts"][0]["sources"][0]["verify"] = True
+        out = vc.strict(data, allow_drafts=True)
+        self.assertFalse(any("still a draft" in e for e in out))
+        self.assertTrue(any("marked verify" in e for e in out))
+
     def test_report_lists_placeholders(self):
         data = vc.load_all()
         data["crosscutting"][0]["summary"] = vc.PLACEHOLDER

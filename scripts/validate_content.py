@@ -367,8 +367,11 @@ def report(d: dict) -> str:
     return "\n".join(out) + "\n"
 
 
-def strict(d: dict) -> list[str]:
-    """Launch gate for the public homepage: no placeholder, unverified source or draft anywhere."""
+def strict(d: dict, allow_drafts: bool = False) -> list[str]:
+    """Launch gate for the public homepage: no placeholder, unverified source or draft anywhere.
+
+    allow_drafts lets draft pages through; they still show their draft badge (the owner chose this for launch).
+    """
     out = []
     files = {"model.json": d["model"], "dashboard.json": d["dashboard"], "flows.json": d["flows"],
              "crosscutting.json": {"crosscutting": d["crosscutting"]}}
@@ -379,7 +382,8 @@ def strict(d: dict) -> list[str]:
     for c in d["concepts"]:
         out += [f"strict: concepts/{c['id']}.json source '{s.get('title')}' is marked verify" for s in c.get("sources", []) if s.get("verify")]
     for kind, items in (("layer", d["layers"]), ("concept", d["concepts"])):
-        out += [f"strict: {kind} {x['id']} is still a draft" for x in items if x.get("status") == "draft"]
+        if not allow_drafts:
+            out += [f"strict: {kind} {x['id']} is still a draft" for x in items if x.get("status") == "draft"]
     return out
 
 
@@ -387,7 +391,7 @@ def main() -> int:
     data = load_all()
     errors = validate(data)
     if "--strict" in sys.argv:
-        errors += strict(data)
+        errors += strict(data, allow_drafts="--allow-drafts" in sys.argv)
     for e in errors:
         print(f"ERROR {e}", file=sys.stderr)
     if "--report" in sys.argv:

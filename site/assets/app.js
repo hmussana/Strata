@@ -74,8 +74,8 @@ async function loadJSON(path) {
 async function init() {
   applyTheme(store.get('theme', null));
   const [concepts, news] = await Promise.all([
-    loadJSON('data/concepts.json'),
-    loadJSON('data/news.json').catch(() => EMPTY_NEWS),
+    loadJSON(new URL('../data/concepts.json', import.meta.url)),
+    loadJSON(new URL('../data/news.json', import.meta.url)).catch(() => EMPTY_NEWS),
   ]);
   state.concepts = concepts;
   state.news = { ...EMPTY_NEWS, ...news };
