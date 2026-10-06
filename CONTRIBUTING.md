@@ -81,4 +81,4 @@ Add an entry to `site/data/sources.json`:
 
 ## Code changes
 
-The site is dependency-free by design: please don't add frameworks, CDNs, web fonts or analytics. Keep the CSP in `site/index.html` intact, escape any data you render, and match the existing style.
+The site is dependency-free by design: please don't add frameworks, CDNs, web fonts or analytics. Keep the CSP in `site/index.html` and `site/latest/index.html` intact, escape any data you render, and match the existing style.

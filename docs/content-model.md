@@ -1,7 +1,8 @@
 # The AI Stack: content model
 
 All content lives in `site/content/` as JSON. Components never hard-code layers, concepts or relationships, so you
-can add and edit content without touching code. Preview at `/next/` while the new site is being built.
+can add and edit content without touching code. The app is the homepage (`site/index.html`, code in `site/next/`);
+the older news map is at `/latest/`.
 
 ```
 site/content/
@@ -148,6 +149,7 @@ screen readers. The validator rejects types that `site/next/diagrams.js` doesn't
 ```bash
 python3 scripts/validate_content.py            # schema, references, depth rules, icons, explorable and diagram ids, WCAG AA contrast
 python3 scripts/validate_content.py --report   # placeholders to fill, sources to verify, drafts to review
+python3 scripts/validate_content.py --strict --allow-drafts   # homepage gate: no placeholder or unverified source (drafts allowed, badged)
 ```
 
 CI runs both on every push and pull request.
