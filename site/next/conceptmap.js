@@ -4,13 +4,16 @@ import { markers, edgeAttrs } from './diagrams.js';
 import { href } from './router.js';
 import { esc, lclass } from './ui.js';
 
-const W = 1000, NW = 160, NH = 62, GW = 150, GH = 40;
+const W = 1000, NW = 160, NH = 62, GW = 166, GH = 44, BAND_W = 150;
 
 function wrap(text, max) {
-  const words = String(text).split(/\s+/), lines = [];
+  // words longer than a line may break after a hyphen ("Retrieval-" / "augmented")
+  const words = String(text).split(/\s+/).flatMap((w) => (w.length > max ? w.split(/(?<=-)/).map((p, i) => (i ? '\u200b' + p : p)) : [w]));
+  const lines = [];
   let line = '';
   for (const w of words) {
-    if (!line) line = w; else if ((line + ' ' + w).length <= max) line += ' ' + w; else { lines.push(line); line = w; }
+    const glued = w.startsWith('\u200b'), word = glued ? w.slice(1) : w, next = line + (glued ? '' : ' ') + word;
+    if (!line) line = word; else if (next.length <= max) line = next; else { lines.push(line); line = word; }
   }
   if (line) lines.push(line);
   return lines.slice(0, 3);
@@ -50,7 +53,7 @@ export function conceptMap(layer, c) {
       const xs = rels.filter((r) => r.from === gid || r.to === gid).map((r) => pos.get(r.from === gid ? r.to : r.from)?.x).filter((x) => x !== undefined);
       return { gid, x: xs.length ? xs.reduce((a, b) => a + b, 0) / xs.length : W / 2 };
     }).sort((a, b) => a.x - b.x);
-    const gap = GW + 16, lo = GW / 2 + 8, hi = W - GW / 2 - 8;
+    const gap = GW + 16, lo = BAND_W + GW / 2, hi = W - GW / 2 - 8; // leave room on the left for the band label
     want.forEach((g, i) => { g.x = Math.max(g.x, lo, i ? want[i - 1].x + gap : lo); });
     for (let i = want.length - 1; i >= 0; i--) want[i].x = Math.min(want[i].x, i < want.length - 1 ? want[i + 1].x - gap : hi);
     want.forEach((g) => pos.set(g.gid, { x: g.x, y, w: GW, h: GH, ghost: true }));
@@ -72,7 +75,7 @@ export function conceptMap(layer, c) {
     edges += `<g class="${cls}" data-from="${esc(r.from)}" data-to="${esc(r.to)}"><line x1="${x1.toFixed(1)}" y1="${y1.toFixed(1)}" x2="${x2.toFixed(1)}" y2="${y2.toFixed(1)}" class="${attrs.cls}" ${attrs.head}/></g>`;
     // every edge, cross-layer ones included, gets its label as a small pill, drawn above the lines: at the midpoint,
     // or slid along the edge when the midpoint would cover a node or another label
-    const lines = wrap(r.label, 16), lw = Math.max(...lines.map((l) => l.length)) * 6.4 + 12, lh = lines.length * 14 + 6;
+    const lines = wrap(r.label, 16), lw = Math.max(...lines.map((l) => l.length)) * 7.5 + 12, lh = lines.length * 15 + 6;
     const at = (f) => [x1 + (x2 - x1) * f, y1 + (y2 - y1) * f];
     const free = ([x, y]) => {
       const box = { x: x - lw / 2 - 3, y: y - lh / 2 - 3, w: lw + 6, h: lh + 6 };
@@ -81,7 +84,7 @@ export function conceptMap(layer, c) {
     };
     const [mx, my] = [0.5, 0.4, 0.6, 0.32, 0.68, 0.25, 0.75].map(at).find(free) || at(0.5);
     placed.push({ x: mx - lw / 2, y: my - lh / 2, w: lw, h: lh });
-    const t = lines.map((l, i) => `<tspan x="${mx.toFixed(1)}" dy="${i ? 14 : 0}">${esc(l)}</tspan>`).join('');
+    const t = lines.map((l, i) => `<tspan x="${mx.toFixed(1)}" dy="${i ? 15 : 0}">${esc(l)}</tspan>`).join('');
     labels += `<g class="cm-label" data-from="${esc(r.from)}" data-to="${esc(r.to)}"><rect x="${(mx - lw / 2).toFixed(1)}" y="${(my - lh / 2).toFixed(1)}" width="${lw.toFixed(1)}" height="${lh}" rx="7"/>`
       + `<text x="${mx.toFixed(1)}" y="${(my - lh / 2 + 15).toFixed(1)}" text-anchor="middle">${t}</text></g>`;
   });
@@ -89,8 +92,10 @@ export function conceptMap(layer, c) {
   let nodeSvg = '';
   for (const [cid, p] of pos) {
     const k = c.conceptById.get(cid), kl = c.layerOf(cid);
-    const lines = wrap(k.name, p.ghost ? 19 : 16);
-    const lh = p.ghost ? 13 : 15, fs = p.ghost ? 11.5 : 13.5;
+    const lines = wrap(k.name, p.ghost ? 17 : 16);
+    // ghost names shrink a little when one long word (e.g. "Retrieval-augmented") would overflow the box
+    const longest = Math.max(...lines.map((l, i) => l.length + (i || !p.ghost ? 0 : 3)));
+    const fs = p.ghost ? Math.min(12.5, (GW - 14) / (longest * 0.56)) : 13.5, lh = p.ghost ? fs + 1.5 : 15;
     const ty = p.y - ((lines.length - 1) * lh) / 2 + fs / 3;
     const lnum = p.ghost ? `<tspan class="cm-lnum">L${kl.order} </tspan>` : '';
     const text = lines.map((l, i) => `<tspan x="${p.x}" dy="${i ? lh : 0}">${i ? '' : lnum}${esc(l)}</tspan>`).join('');
@@ -98,7 +103,7 @@ export function conceptMap(layer, c) {
       <rect x="${p.x - p.w / 2}" y="${p.y - p.h / 2}" width="${p.w}" height="${p.h}" rx="${p.ghost ? 8 : 12}"/>
       <text x="${p.x}" y="${ty}" text-anchor="middle" font-size="${fs}">${text}</text></a>`;
   }
-  const bands = `${above.length ? `<text x="10" y="14" class="cm-band">FROM LAYERS ABOVE</text>` : ''}${below.length ? `<text x="10" y="${H - 64}" class="cm-band">FROM LAYERS BELOW</text>` : ''}`;
+  const bands = `${above.length ? `<text x="10" y="30" class="cm-band"><tspan x="10">FROM LAYERS</tspan><tspan x="10" dy="13">ABOVE</tspan></text>` : ''}${below.length ? `<text x="10" y="${H - 36}" class="cm-band"><tspan x="10">FROM LAYERS</tspan><tspan x="10" dy="13">BELOW</tspan></text>` : ''}`;
   return `<svg class="cm-svg" viewBox="0 0 ${W} ${H}" role="group" aria-label="Concept map of ${esc(layer.name)}">${markers(id)}${bands}<g class="cm-edges">${edges}</g><g class="cm-labels">${labels}</g><g class="cm-nodes">${nodeSvg}</g></svg>`;
 }
 

@@ -16,8 +16,10 @@ export async function loadContent() {
     get('relationships.json'), get('crosscutting.json'), get('flows.json'), get('dashboard.json'),
   ]);
   const concepts = await Promise.all(layers.flatMap((l) => l.concepts).map((id) => get(`concepts/${id}.json`)));
-  // measured signals from the news pipeline; optional, the site works without them
-  const news = await fetch(new URL('../data/news.json', import.meta.url), { cache: 'no-cache' }).then((r) => (r.ok ? r.json() : null)).catch(() => null);
+  // measured signals from the news pipeline; optional, the site works without them. signals.json is the small
+  // aggregate the news bot writes; news.json is the fallback in case it's missing
+  const data = (f) => fetch(new URL(`../data/${f}`, import.meta.url), { cache: 'no-cache' }).then((r) => (r.ok ? r.json() : null)).catch(() => null);
+  const news = (await data('signals.json')) || (await data('news.json'));
 
   const layerById = new Map(layers.map((l) => [l.id, l]));
   const conceptById = new Map(concepts.map((c) => [c.id, c]));

@@ -9,8 +9,9 @@ import { stack } from './views/stack.js';
 import { layer } from './views/layer.js';
 import { concept } from './views/concept.js';
 import { legend } from './views/legend.js';
+import { quiz } from './views/quiz.js';
 
-const VIEWS = { landscape, stack, layer, concept, legend };
+const VIEWS = { landscape, stack, layer, concept, legend, quiz };
 const $ = (s) => document.querySelector(s);
 let previous = null;
 

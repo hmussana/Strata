@@ -42,7 +42,7 @@ export function legend(route, c) {
       <h2 class="section-title">Icons</h2>
       <div class="icon-grid">${icons}</div>
       <h2 class="section-title">Type</h2>
-      <div class="type-scale"><h1>Heading 1</h1><h2>Heading 2</h2><h3>Heading 3</h3><p>Body text for explanations, kept to comfortable line lengths.</p><p class="small muted">Secondary text for metadata.</p><p><code>code and configuration</code></p></div>`,
+      <div class="type-scale"><p class="ts-h1" aria-hidden="true">Heading 1</p><p class="ts-h2" aria-hidden="true">Heading 2</p><p class="ts-h3" aria-hidden="true">Heading 3</p><p>Body text for explanations, kept to comfortable line lengths.</p><p class="small muted">Secondary text for metadata.</p><p><code>code and configuration</code></p></div>`,
     mount: (root) => {
       const section = route.params.get('section');
       if (section) root.querySelector(`#${CSS.escape(section)}`)?.scrollIntoView({ block: 'start' });
