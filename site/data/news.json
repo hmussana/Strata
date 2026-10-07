@@ -1,5 +1,5 @@
 {
- "generated": "2026-10-07T05:56:31Z",
+ "generated": "2026-10-07T13:19:45Z",
  "retentionDays": 45,
  "llmEnriched": 0,
  "sources": [
@@ -10,16 +10,16 @@
    "ok": true,
    "count": 15,
    "error": null,
-   "lastOk": "2026-10-07T05:56:31Z"
+   "lastOk": "2026-10-07T13:19:45Z"
   },
   {
    "id": "deepmind",
    "name": "Google DeepMind",
    "type": "lab",
-   "ok": false,
-   "count": 0,
-   "error": "ParseError: not well-formed (invalid token): line 1, column 0",
-   "lastOk": "2026-10-06T22:38:51Z"
+   "ok": true,
+   "count": 10,
+   "error": null,
+   "lastOk": "2026-10-07T13:19:45Z"
   },
   {
    "id": "google-ai",
@@ -28,7 +28,7 @@
    "ok": true,
    "count": 10,
    "error": null,
-   "lastOk": "2026-10-07T05:56:31Z"
+   "lastOk": "2026-10-07T13:19:45Z"
   },
   {
    "id": "hf-blog",
@@ -37,7 +37,7 @@
    "ok": true,
    "count": 15,
    "error": null,
-   "lastOk": "2026-10-07T05:56:31Z"
+   "lastOk": "2026-10-07T13:19:45Z"
   },
   {
    "id": "nvidia-dev",
@@ -46,7 +46,7 @@
    "ok": true,
    "count": 10,
    "error": null,
-   "lastOk": "2026-10-07T05:56:31Z"
+   "lastOk": "2026-10-07T13:19:45Z"
   },
   {
    "id": "msr",
@@ -55,7 +55,7 @@
    "ok": true,
    "count": 10,
    "error": null,
-   "lastOk": "2026-10-07T05:56:31Z"
+   "lastOk": "2026-10-07T13:19:45Z"
   },
   {
    "id": "aws-ml",
@@ -64,7 +64,7 @@
    "ok": true,
    "count": 8,
    "error": null,
-   "lastOk": "2026-10-07T05:56:31Z"
+   "lastOk": "2026-10-07T13:19:45Z"
   },
   {
    "id": "qwen",
@@ -73,16 +73,16 @@
    "ok": true,
    "count": 8,
    "error": null,
-   "lastOk": "2026-10-07T05:56:31Z"
+   "lastOk": "2026-10-07T13:19:45Z"
   },
   {
    "id": "hn",
    "name": "Hacker News (best, AI-filtered)",
    "type": "community",
    "ok": true,
-   "count": 11,
+   "count": 12,
    "error": null,
-   "lastOk": "2026-10-07T05:56:31Z"
+   "lastOk": "2026-10-07T13:19:45Z"
   },
   {
    "id": "localllama",
@@ -91,7 +91,7 @@
    "ok": true,
    "count": 15,
    "error": null,
-   "lastOk": "2026-10-07T05:56:31Z"
+   "lastOk": "2026-10-07T13:19:45Z"
   },
   {
    "id": "simonw",
@@ -100,7 +100,7 @@
    "ok": true,
    "count": 15,
    "error": null,
-   "lastOk": "2026-10-07T05:56:31Z"
+   "lastOk": "2026-10-07T13:19:45Z"
   },
   {
    "id": "hf-papers",
@@ -109,7 +109,7 @@
    "ok": true,
    "count": 15,
    "error": null,
-   "lastOk": "2026-10-07T05:56:31Z"
+   "lastOk": "2026-10-07T13:19:45Z"
   },
   {
    "id": "arxiv-cl",
@@ -118,7 +118,7 @@
    "ok": true,
    "count": 12,
    "error": null,
-   "lastOk": "2026-10-07T05:56:31Z"
+   "lastOk": "2026-10-07T13:19:45Z"
   },
   {
    "id": "latent-space",
@@ -127,7 +127,7 @@
    "ok": true,
    "count": 8,
    "error": null,
-   "lastOk": "2026-10-07T05:56:31Z"
+   "lastOk": "2026-10-07T13:19:45Z"
   },
   {
    "id": "interconnects",
@@ -136,7 +136,7 @@
    "ok": true,
    "count": 8,
    "error": null,
-   "lastOk": "2026-10-07T05:56:31Z"
+   "lastOk": "2026-10-07T13:19:45Z"
   },
   {
    "id": "import-ai",
@@ -145,7 +145,7 @@
    "ok": true,
    "count": 5,
    "error": null,
-   "lastOk": "2026-10-07T05:56:31Z"
+   "lastOk": "2026-10-07T13:19:45Z"
   },
   {
    "id": "verge-ai",
@@ -154,7 +154,7 @@
    "ok": true,
    "count": 10,
    "error": null,
-   "lastOk": "2026-10-07T05:56:31Z"
+   "lastOk": "2026-10-07T13:19:45Z"
   },
   {
    "id": "ars-ai",
@@ -163,7 +163,7 @@
    "ok": true,
    "count": 12,
    "error": null,
-   "lastOk": "2026-10-07T05:56:31Z"
+   "lastOk": "2026-10-07T13:19:45Z"
   },
   {
    "id": "techcrunch-ai",
@@ -172,7 +172,7 @@
    "ok": true,
    "count": 12,
    "error": null,
-   "lastOk": "2026-10-07T05:56:31Z"
+   "lastOk": "2026-10-07T13:19:45Z"
   },
   {
    "id": "mit-tr",
@@ -181,7 +181,7 @@
    "ok": true,
    "count": 8,
    "error": null,
-   "lastOk": "2026-10-07T05:56:31Z"
+   "lastOk": "2026-10-07T13:19:45Z"
   },
   {
    "id": "decoder",
@@ -190,7 +190,7 @@
    "ok": true,
    "count": 10,
    "error": null,
-   "lastOk": "2026-10-07T05:56:31Z"
+   "lastOk": "2026-10-07T13:19:45Z"
   },
   {
    "id": "sth",
@@ -199,7 +199,7 @@
    "ok": true,
    "count": 3,
    "error": null,
-   "lastOk": "2026-10-07T05:56:31Z"
+   "lastOk": "2026-10-07T13:19:45Z"
   },
   {
    "id": "embrace-red",
@@ -208,7 +208,7 @@
    "ok": true,
    "count": 6,
    "error": null,
-   "lastOk": "2026-10-07T05:56:31Z"
+   "lastOk": "2026-10-07T13:19:45Z"
   },
   {
    "id": "rel-ollama",
@@ -217,7 +217,7 @@
    "ok": true,
    "count": 3,
    "error": null,
-   "lastOk": "2026-10-07T05:56:31Z"
+   "lastOk": "2026-10-07T13:19:45Z"
   },
   {
    "id": "rel-vllm",
@@ -226,7 +226,7 @@
    "ok": true,
    "count": 3,
    "error": null,
-   "lastOk": "2026-10-07T05:56:31Z"
+   "lastOk": "2026-10-07T13:19:45Z"
   },
   {
    "id": "rel-opencode",
@@ -235,7 +235,7 @@
    "ok": true,
    "count": 3,
    "error": null,
-   "lastOk": "2026-10-07T05:56:31Z"
+   "lastOk": "2026-10-07T13:19:45Z"
   },
   {
    "id": "rel-claude-code",
@@ -244,34 +244,59 @@
    "ok": true,
    "count": 3,
    "error": null,
-   "lastOk": "2026-10-07T05:56:31Z"
+   "lastOk": "2026-10-07T13:19:45Z"
   }
  ],
  "heat": {
   "concepts": {
+   "lora": {
+    "d7": 16,
+    "prev7": 3,
+    "d30": 19
+   },
    "gpt": {
-    "d7": 67,
-    "prev7": 50,
-    "d30": 117
+    "d7": 68,
+    "prev7": 47,
+    "d30": 115
    },
    "alignment": {
     "d7": 11,
-    "prev7": 4,
-    "d30": 15
+    "prev7": 3,
+    "d30": 14
+   },
+   "claude": {
+    "d7": 37,
+    "prev7": 21,
+    "d30": 58
+   },
+   "guardrails": {
+    "d7": 1,
+    "prev7": 0,
+    "d30": 1
+   },
+   "moe": {
+    "d7": 18,
+    "prev7": 7,
+    "d30": 25
+   },
+   "model-files": {
+    "d7": 2,
+    "prev7": 1,
+    "d30": 3
    },
    "rag": {
-    "d7": 9,
+    "d7": 11,
     "prev7": 3,
-    "d30": 12
+    "d30": 14
    },
    "open-weights": {
-    "d7": 40,
-    "prev7": 3,
-    "d30": 43
+    "d7": 39,
+    "prev7": 5,
+    "d30": 44
    },
    "distillation": {
-    "d7": 13,
-    "prev7": 5,
+    "d7": 12,
+    "prev7": 6,
     "d30": 18
    },
    "rl-reasoning": {
@@ -280,14 +305,9 @@
     "d30": 20
    },
    "small-models": {
-    "d7": 2,
+    "d7": 3,
     "prev7": 0,
-    "d30": 2
-   },
-   "lora": {
-    "d7": 15,
-    "prev7": 4,
-    "d30": 19
+    "d30": 3
    },
    "tool-calling": {
     "d7": 1,
@@ -295,23 +315,33 @@
     "d30": 3
    },
    "benchmarks": {
-    "d7": 30,
+    "d7": 31,
     "prev7": 10,
-    "d30": 40
+    "d30": 41
    },
    "qwen": {
     "d7": 63,
-    "prev7": 15,
-    "d30": 78
+    "prev7": 14,
+    "d30": 77
+   },
+   "kimi-glm": {
+    "d7": 8,
+    "prev7": 5,
+    "d30": 13
    },
    "frontier-capabilities": {
     "d7": 10,
-    "prev7": 5,
+    "prev7": 4,
+    "d30": 14
+   },
+   "vram-math": {
+    "d7": 14,
+    "prev7": 1,
     "d30": 15
    },
    "gemma": {
-    "d7": 42,
-    "prev7": 3,
+    "d7": 40,
+    "prev7": 5,
     "d30": 45
    },
    "abliteration": {
@@ -320,9 +350,9 @@
     "d30": 1
    },
    "world-models": {
-    "d7": 16,
-    "prev7": 11,
-    "d30": 27
+    "d7": 17,
+    "prev7": 12,
+    "d30": 29
    },
    "opencode": {
     "d7": 7,
@@ -336,8 +366,8 @@
    },
    "multimodal": {
     "d7": 30,
-    "prev7": 20,
-    "d30": 50
+    "prev7": 21,
+    "d30": 51
    },
    "embeddings": {
     "d7": 9,
@@ -345,13 +375,13 @@
     "d30": 10
    },
    "agent-loop": {
-    "d7": 44,
-    "prev7": 32,
-    "d30": 76
+    "d7": 45,
+    "prev7": 28,
+    "d30": 73
    },
    "gemini": {
-    "d7": 21,
-    "prev7": 1,
+    "d7": 20,
+    "prev7": 2,
     "d30": 22
    },
    "openclaw": {
@@ -366,18 +396,13 @@
    },
    "hyperscalers": {
     "d7": 12,
-    "prev7": 8,
-    "d30": 20
+    "prev7": 7,
+    "d30": 19
    },
    "claude-code": {
-    "d7": 14,
+    "d7": 15,
     "prev7": 3,
-    "d30": 17
-   },
-   "claude": {
-    "d7": 36,
-    "prev7": 21,
-    "d30": 57
+    "d30": 18
    },
    "multi-agent": {
     "d7": 9,
@@ -385,9 +410,9 @@
     "d30": 13
    },
    "vllm": {
-    "d7": 10,
-    "prev7": 5,
-    "d30": 15
+    "d7": 9,
+    "prev7": 4,
+    "d30": 13
    },
    "ollama": {
     "d7": 12,
@@ -400,8 +425,8 @@
     "d30": 5
    },
    "llama-cpp": {
-    "d7": 22,
-    "prev7": 6,
+    "d7": 20,
+    "prev7": 8,
     "d30": 28
    },
    "speculative-decoding": {
@@ -414,20 +439,15 @@
     "prev7": 0,
     "d30": 3
    },
-   "vram-math": {
-    "d7": 13,
-    "prev7": 1,
-    "d30": 14
-   },
    "mcp": {
-    "d7": 7,
-    "prev7": 2,
+    "d7": 6,
+    "prev7": 3,
     "d30": 9
    },
    "context-engineering": {
-    "d7": 5,
+    "d7": 6,
     "prev7": 3,
-    "d30": 8
+    "d30": 9
    },
    "gguf": {
     "d7": 8,
@@ -435,34 +455,19 @@
     "d30": 10
    },
    "deepseek": {
-    "d7": 14,
-    "prev7": 2,
+    "d7": 13,
+    "prev7": 3,
     "d30": 16
    },
-   "moe": {
-    "d7": 17,
-    "prev7": 7,
-    "d30": 24
-   },
-   "model-files": {
-    "d7": 1,
-    "prev7": 1,
-    "d30": 2
-   },
    "computer-use": {
-    "d7": 3,
+    "d7": 4,
     "prev7": 6,
-    "d30": 9
+    "d30": 10
    },
    "kv-cache": {
     "d7": 2,
     "prev7": 4,
     "d30": 6
-   },
-   "kimi-glm": {
-    "d7": 10,
-    "prev7": 2,
-    "d30": 12
    },
    "reasoning-models": {
     "d7": 3,
@@ -481,8 +486,8 @@
    },
    "ai-policy": {
     "d7": 5,
-    "prev7": 2,
-    "d30": 7
+    "prev7": 1,
+    "d30": 6
    },
    "quantization": {
     "d7": 7,
@@ -495,8 +500,8 @@
     "d30": 5
    },
    "ai-datacenters": {
-    "d7": 12,
-    "prev7": 2,
+    "d7": 11,
+    "prev7": 3,
     "d30": 14
    },
    "oss-coding-agents": {
@@ -556,8 +561,8 @@
    },
    "rtx-rigs": {
     "d7": 8,
-    "prev7": 5,
-    "d30": 13
+    "prev7": 3,
+    "d30": 11
    },
    "lm-studio": {
     "d7": 2,
@@ -586,13 +591,18 @@
    },
    "sandboxing": {
     "d7": 2,
-    "prev7": 2,
-    "d30": 4
+    "prev7": 1,
+    "d30": 3
    },
    "nvidia-stack": {
     "d7": 1,
     "prev7": 0,
     "d30": 1
+   },
+   "cost-curve": {
+    "d7": 1,
+    "prev7": 3,
+    "d30": 4
    },
    "jailbreaks": {
     "d7": 0,
@@ -603,87 +613,82 @@
     "d7": 0,
     "prev7": 1,
     "d30": 1
-   },
-   "cost-curve": {
-    "d7": 0,
-    "prev7": 3,
-    "d30": 3
    }
   },
   "layers": {
    "models": {
-    "d7": 307,
-    "d30": 442
+    "d7": 309,
+    "d30": 446
    },
    "security": {
-    "d7": 50,
-    "d30": 69
+    "d7": 52,
+    "d30": 68
+   },
+   "weights": {
+    "d7": 21,
+    "d30": 28
    },
    "context": {
-    "d7": 23,
-    "d30": 32
+    "d7": 25,
+    "d30": 34
    },
    "tools": {
-    "d7": 9,
+    "d7": 8,
     "d30": 13
-   },
-   "agents": {
-    "d7": 82,
-    "d30": 138
-   },
-   "inference": {
-    "d7": 61,
-    "d30": 87
    },
    "compute": {
     "d7": 59,
-    "d30": 69
+    "d30": 68
    },
-   "weights": {
-    "d7": 20,
-    "d30": 27
+   "agents": {
+    "d7": 85,
+    "d30": 137
+   },
+   "inference": {
+    "d7": 59,
+    "d30": 85
    }
   },
   "stack": {
    "physical-energy": {
-    "d7": 12,
-    "prev7": 2
+    "d7": 11,
+    "prev7": 3
    },
    "compute-hardware": {
-    "d7": 45,
+    "d7": 46,
     "prev7": 7
    },
    "cloud-infrastructure": {
     "d7": 27,
-    "prev7": 13
+    "prev7": 9
    },
    "data": {
-    "d7": 15,
+    "d7": 17,
     "prev7": 8
    },
    "foundation-models": {
-    "d7": 245,
-    "prev7": 81
+    "d7": 248,
+    "prev7": 83
    },
    "inference-optimization": {
-    "d7": 66,
-    "prev7": 24
+    "d7": 64,
+    "prev7": 27
    },
    "orchestration-tooling": {
-    "d7": 35,
-    "prev7": 11
+    "d7": 38,
+    "prev7": 12
    },
    "agents": {
-    "d7": 99,
-    "prev7": 68
+    "d7": 102,
+    "prev7": 64
    },
    "applications-interfaces": {
-    "d7": 34,
-    "prev7": 19
+    "d7": 37,
+    "prev7": 18
    }
   }
  },
- "collectedSince": "2026-09-28T14:09:04Z",
+ "collectedSince": "2026-09-28T19:07:31Z",
  "research": {
   "categories": [
    "cs.AI",
@@ -808,15 +813,15 @@
   },
   {
    "term": "Astra",
-   "items": 14,
+   "items": 15,
    "sources": 7,
    "sample": [
     "0399f6c76448",
     "19db7cc5ca5c",
+    "3829a2db4d27",
     "3a58adb8c730",
     "47401276ef15",
-    "72001d22fa40",
-    "7f87085606c5"
+    "72001d22fa40"
    ]
   },
   {
@@ -872,6 +877,19 @@
    ]
   },
   {
+   "term": "EmbeddingGemma",
+   "items": 8,
+   "sources": 4,
+   "sample": [
+    "0a7d6e8e8b6e",
+    "2435ebd74585",
+    "5419b493bda8",
+    "63ebe30321d6",
+    "64551cb1894f",
+    "65649e462843"
+   ]
+  },
+  {
    "term": "World Labs",
    "items": 5,
    "sources": 5,
@@ -897,32 +915,6 @@
    ]
   },
   {
-   "term": "EmbeddingGemma",
-   "items": 7,
-   "sources": 4,
-   "sample": [
-    "0a7d6e8e8b6e",
-    "2435ebd74585",
-    "5419b493bda8",
-    "63ebe30321d6",
-    "64551cb1894f",
-    "65649e462843"
-   ]
-  },
-  {
-   "term": "RAM",
-   "items": 11,
-   "sources": 2,
-   "sample": [
-    "1a37897c02f0",
-    "1db10cd1c604",
-    "22552b8cdbab",
-    "2e46a7d4f323",
-    "57abf975fc97",
-    "77eada53234b"
-   ]
-  },
-  {
    "term": "AI-powered",
    "items": 9,
    "sources": 3,
@@ -936,14 +928,16 @@
    ]
   },
   {
-   "term": "Agent Safety Platform",
-   "items": 4,
-   "sources": 4,
+   "term": "RAM",
+   "items": 10,
+   "sources": 2,
    "sample": [
-    "39a9821e2efc",
-    "d196604bbd70",
-    "dd9b71cbd384",
-    "fa45a29570c3"
+    "1a37897c02f0",
+    "1db10cd1c604",
+    "22552b8cdbab",
+    "2e46a7d4f323",
+    "57abf975fc97",
+    "77eada53234b"
    ]
   },
   {
@@ -991,6 +985,16 @@
    ]
   },
   {
+   "term": "Nemotron",
+   "items": 3,
+   "sources": 3,
+   "sample": [
+    "5bdd694c6290",
+    "a78102b4988e",
+    "cb2fa7d7f035"
+   ]
+  },
+  {
    "term": "LMs",
    "items": 3,
    "sources": 3,
@@ -998,6 +1002,16 @@
     "45e9d94ff21e",
     "4e36002fbcda",
     "e088a8f539e3"
+   ]
+  },
+  {
+   "term": "Decider",
+   "items": 3,
+   "sources": 3,
+   "sample": [
+    "0fbb393ce28b",
+    "707749aa6e79",
+    "865c9186faad"
    ]
   },
   {
@@ -1053,16 +1067,6 @@
    ]
   },
   {
-   "term": "Florida",
-   "items": 3,
-   "sources": 3,
-   "sample": [
-    "523d5e9de5b0",
-    "c24209c78d25",
-    "e5325d4ac5b1"
-   ]
-  },
-  {
    "term": "German",
    "items": 3,
    "sources": 3,
@@ -1074,6 +1078,193 @@
   }
  ],
  "items": [
+  {
+   "id": "5bdd694c6290",
+   "title": "One Model Family, Two Gold-Level Results: Fine-Tuning Nemotron for IOI and IMO",
+   "url": "https://huggingface.co/blog/nvidia/nemotron-ioi-and-imo-2026",
+   "source": "hf-blog",
+   "sourceName": "Hugging Face Blog",
+   "type": "lab",
+   "published": "2026-10-07T12:45:31Z",
+   "summary": "",
+   "firstSeen": "2026-10-07T13:19:45Z",
+   "tags": [
+    "lora"
+   ],
+   "layers": [
+    "models"
+   ],
+   "score": 2.6
+  },
+  {
+   "id": "dd5d3a746f26",
+   "title": "ChatGPT rated \"unacceptable risk\" for teens after parental alerts failed during suicide conversations",
+   "url": "https://the-decoder.com/chatgpt-rated-unacceptable-risk-for-teens-after-parental-alerts-failed-during-suicide-conversations/",
+   "source": "decoder",
+   "sourceName": "The Decoder",
+   "type": "press",
+   "published": "2026-10-07T12:34:34Z",
+   "summary": "OpenAI's teen safety features for ChatGPT failed an independent audit. After more than 4,000 test prompts, the Common Sense Media Youth AI Safety Institute rated the service an \"unacceptable risk\" for minors. Conversations about suicide and self-harm on test accounts never triggered a parental alert. The institute…",
+   "discussion": "0",
+   "firstSeen": "2026-10-07T13:19:45Z",
+   "tags": [
+    "gpt",
+    "alignment"
+   ],
+   "layers": [
+    "models",
+    "security"
+   ],
+   "score": 2.2
+  },
+  {
+   "id": "e94d8c072df2",
+   "title": "New LFM to be released today",
+   "url": "https://www.reddit.com/r/LocalLLaMA/comments/1wzuto0/new_lfm_to_be_released_today/",
+   "source": "localllama",
+   "sourceName": "r/LocalLLaMA (top today)",
+   "type": "community",
+   "published": "2026-10-07T12:08:41Z",
+   "summary": "What size do you want?",
+   "firstSeen": "2026-10-07T13:19:45Z",
+   "tags": [],
+   "layers": [],
+   "score": 2.0
+  },
+  {
+   "id": "b934150a9a73",
+   "title": "Anthropic gives more security teams access to Claude with fewer safety restrictions",
+   "url": "https://the-decoder.com/anthropic-gives-more-security-teams-access-to-claude-with-fewer-safety-restrictions/",
+   "source": "decoder",
+   "sourceName": "The Decoder",
+   "type": "press",
+   "published": "2026-10-07T12:05:20Z",
+   "summary": "Anthropic is expanding its Cyber Verification Program, giving more security professionals access to Claude models with fewer safety restrictions for penetration testing, malware analysis, and vulnerability research. Anthropic says partners in its predecessor program found at least 129,000 confirmed vulnerabilities…",
+   "discussion": "0",
+   "firstSeen": "2026-10-07T13:19:45Z",
+   "tags": [
+    "claude"
+   ],
+   "layers": [
+    "models"
+   ],
+   "score": 1.6
+  },
+  {
+   "id": "ea4f899dc8df",
+   "title": "Introducing Playground: Create and play custom games",
+   "url": "https://blog.google/innovation-and-ai/technology/ai/playground-experimental-gaming-platform/",
+   "source": "google-ai",
+   "sourceName": "Google AI Blog",
+   "type": "lab",
+   "published": "2026-10-07T12:00:00Z",
+   "summary": "Overview of Playground",
+   "firstSeen": "2026-10-07T13:19:45Z",
+   "tags": [],
+   "layers": [],
+   "score": 2.0
+  },
+  {
+   "id": "8b63f191edc0",
+   "title": "AI could upend food delivery",
+   "url": "https://www.theverge.com/ai-artificial-intelligence/1005726/doordash-ai-agentic-food-delivery-bites",
+   "source": "verge-ai",
+   "sourceName": "The Verge AI",
+   "type": "press",
+   "published": "2026-10-07T12:00:00Z",
+   "summary": "DoorDash, the leading food delivery app, processed 970 million orders in its second quarter this year and generated $4.5 billion in revenue. A 10-person startup called Bites is a blip in comparison: It has just around 300 restaurants signed up in the Bay Area, where it's operating as a pre-seed startup. But this…",
+   "firstSeen": "2026-10-07T13:19:45Z",
+   "tags": [],
+   "layers": [],
+   "score": 1.0
+  },
+  {
+   "id": "8b21f498ec3a",
+   "title": "Image-text retrieval with EmbeddingGemma 2's vision tower, running in the browser on WebGPU",
+   "url": "https://www.reddit.com/r/LocalLLaMA/comments/1wzs1t5/imagetext_retrieval_with_embeddinggemma_2s_vision/",
+   "source": "localllama",
+   "sourceName": "r/LocalLLaMA (top today)",
+   "type": "community",
+   "published": "2026-10-07T09:26:05Z",
+   "summary": "EmbeddingGemma 2 came out this week. It maps images and text into one 768-dim space, so you can search photos by describing them. I ported its text and vision towers to ruNNtime, a WebGPU inference library in TypeScript, and made a small photo gallery where search runs entirely on your GPU in the browser. ruNNtime…",
+   "firstSeen": "2026-10-07T13:19:45Z",
+   "tags": [],
+   "layers": [],
+   "score": 2.0
+  },
+  {
+   "id": "f81ac359aaf4",
+   "title": "ChatGPT for Teens is an ‘unacceptable risk,’ says Common Sense Media",
+   "url": "https://www.theverge.com/ai-artificial-intelligence/1006355/openai-chatgpt-for-teens-common-sense-media",
+   "source": "verge-ai",
+   "sourceName": "The Verge AI",
+   "type": "press",
+   "published": "2026-10-07T09:00:00Z",
+   "summary": "Common Sense Media, a nonprofit that offers reviews of apps, services, and entertainment with a focus on youth safety, today said that OpenAI's ChatGPT for Teens is an \"unacceptable risk.\" ChatGPT for Teens, introduced in August, has guardrails for teens and is designed to help students learn, but Common Sense Media…",
+   "firstSeen": "2026-10-07T13:19:45Z",
+   "tags": [
+    "gpt",
+    "guardrails"
+   ],
+   "layers": [
+    "models",
+    "security"
+   ],
+   "score": 2.2
+  },
+  {
+   "id": "7d064627ac57",
+   "title": "OpenAI dumps 372 AI-generated math proofs on GitHub, telling the academic world to keep up",
+   "url": "https://the-decoder.com/openai-dumps-372-ai-generated-math-proofs-on-github-telling-the-academic-world-to-keep-up/",
+   "source": "decoder",
+   "sourceName": "The Decoder",
+   "type": "press",
+   "published": "2026-10-07T08:54:43Z",
+   "summary": "OpenAI has published 372 AI-generated mathematical results on GitHub, including Lean formalizations for machine verification. Each result consumed about three hours of ChatGPT Pro compute on average. But 25 Fields Medal winners warn that mass-producing mathematical truths could destroy fertile ground rather than bring…",
+   "discussion": "0",
+   "firstSeen": "2026-10-07T13:19:45Z",
+   "tags": [
+    "gpt"
+   ],
+   "layers": [
+    "models"
+   ],
+   "score": 1.6
+  },
+  {
+   "id": "df68659c28df",
+   "title": "New 35B-A3B model is comming on huggingface",
+   "url": "https://www.reddit.com/r/LocalLLaMA/comments/1wzpyzk/new_35ba3b_model_is_comming_on_huggingface/",
+   "source": "localllama",
+   "sourceName": "r/LocalLLaMA (top today)",
+   "type": "community",
+   "published": "2026-10-07T07:07:41Z",
+   "summary": "MiniCPM-V-4.7-35B-A3B No model card yet",
+   "firstSeen": "2026-10-07T13:19:45Z",
+   "tags": [
+    "moe",
+    "model-files"
+   ],
+   "layers": [
+    "models",
+    "weights"
+   ],
+   "score": 3.2
+  },
+  {
+   "id": "0e142a398e26",
+   "title": "Trained a ~20K LM (probably smallest) that can still write stories",
+   "url": "https://www.reddit.com/r/LocalLLaMA/comments/1wzp2ja/trained_a_20k_lm_probably_smallest_that_can_still/",
+   "source": "localllama",
+   "sourceName": "r/LocalLLaMA (top today)",
+   "type": "community",
+   "published": "2026-10-07T06:10:10Z",
+   "summary": "I’ve been pushing TinyStories-style models downward in size, and this is the smallest one so far: MacroStories — 19,969 parameters, 81 KB FP32 For scale: → ~50× smaller than the 1M TinyStories model → ~3,000× smaller than AlexNet → 32-dim hidden state → 378-token…",
+   "firstSeen": "2026-10-07T13:19:45Z",
+   "tags": [],
+   "layers": [],
+   "score": 2.0
+  },
   {
    "id": "ad87805b0366",
    "title": "[AINews] Quasi-Riemann-Hypothesis: OpenAI publishes 722 math papers solving 90 of the top 500 open math problems; “the most significant moment” in >100 years of mathematics",
@@ -1300,6 +1491,55 @@
    "score": 1.6
   },
   {
+   "id": "1f45152fd012",
+   "title": "How far we’ve come",
+   "url": "https://www.reddit.com/r/LocalLLaMA/comments/1wzm56n/how_far_weve_come/",
+   "source": "localllama",
+   "sourceName": "r/LocalLLaMA (top today)",
+   "type": "community",
+   "published": "2026-10-07T03:18:52Z",
+   "summary": "",
+   "firstSeen": "2026-10-07T13:19:45Z",
+   "tags": [],
+   "layers": [],
+   "score": 2.0
+  },
+  {
+   "id": "f4f20f7c9233",
+   "title": "BenchLabs' Cagliostro V3.5 135M finally takes Hugging Face's SmolLM2-135M's first place on Open SLM Leaderboard with an Intelligence Index of 27.49",
+   "url": "https://www.reddit.com/r/LocalLLaMA/comments/1wzljhn/benchlabs_cagliostro_v35_135m_finally_takes/",
+   "source": "localllama",
+   "sourceName": "r/LocalLLaMA (top today)",
+   "type": "community",
+   "published": "2026-10-07T02:46:46Z",
+   "summary": "",
+   "firstSeen": "2026-10-07T13:19:45Z",
+   "tags": [
+    "open-weights",
+    "small-models"
+   ],
+   "layers": [
+    "models"
+   ],
+   "score": 3.2
+  },
+  {
+   "id": "865c9186faad",
+   "title": "Strands Decider 2B: a small, open-source, decision model",
+   "url": "https://strandsagents.com/blog/introducing-strands-decider/",
+   "source": "hn",
+   "sourceName": "Hacker News (best, AI-filtered)",
+   "type": "community",
+   "published": "2026-10-07T02:02:11Z",
+   "summary": "",
+   "points": 221,
+   "discussion": "https://news.ycombinator.com/item?id=49987076",
+   "firstSeen": "2026-10-07T13:19:45Z",
+   "tags": [],
+   "layers": [],
+   "score": 4.35
+  },
+  {
    "id": "c776f5dc5b04",
    "title": "Ugh I didn't want to post this... Back to Qwen3.8 27B",
    "url": "https://www.reddit.com/r/LocalLLaMA/comments/1wzj990/ugh_i_didnt_want_to_post_this_back_to_qwen38_27b/",
@@ -1336,6 +1576,27 @@
    "score": 2.6
   },
   {
+   "id": "3829a2db4d27",
+   "title": "MiMo V2.6 Pro almost matched GPT-6 Astra at figuring out what a user actually wants",
+   "url": "https://www.reddit.com/r/LocalLLaMA/comments/1wzi15b/mimo_v26_pro_almost_matched_gpt6_astra_at/",
+   "source": "localllama",
+   "sourceName": "r/LocalLLaMA (top today)",
+   "type": "community",
+   "published": "2026-10-06T23:52:34Z",
+   "summary": "Introducing InferBench: A benchmark testing how well frontier LLMs infer a user's priorities from their instructions. We tested 12 LLMs across 20 scenarios with 2.8k conversations to see which models understand the user's goals. Each conversation has a simulated user with a private profile of their priorities. The…",
+   "firstSeen": "2026-10-07T13:19:45Z",
+   "tags": [
+    "gpt",
+    "kimi-glm",
+    "benchmarks"
+   ],
+   "layers": [
+    "models",
+    "security"
+   ],
+   "score": 3.8
+  },
+  {
    "id": "e4feb1bf5e69",
    "title": "OpenAI drops another batch of mathematical breakthroughs",
    "url": "https://www.theverge.com/ai-artificial-intelligence/1005004/openai-math-release-github",
@@ -1353,6 +1614,40 @@
     "models"
    ],
    "score": 2.2
+  },
+  {
+   "id": "d746d0467b33",
+   "title": "I have about $4000, what's the best setup to get?",
+   "url": "https://www.reddit.com/r/LocalLLaMA/comments/1wzhglt/i_have_about_4000_whats_the_best_setup_to_get/",
+   "source": "localllama",
+   "sourceName": "r/LocalLLaMA (top today)",
+   "type": "community",
+   "published": "2026-10-06T23:24:41Z",
+   "summary": "Ideally I'd like to be able to run Qwen 3.8-Flash-Next with decent performance. I was thinking of just buying 2x Radeon AI R9700 (64GB VRAM), or maybe a DGX Spark but that was before the price hike. My brother suggested just getting a Strix Halo box with 128GB unified. I did see I could buy 6x Intel Arc B60 (24GB…",
+   "firstSeen": "2026-10-07T13:19:45Z",
+   "tags": [
+    "qwen",
+    "vram-math"
+   ],
+   "layers": [
+    "compute",
+    "models"
+   ],
+   "score": 3.2
+  },
+  {
+   "id": "ef0b4f886849",
+   "title": "pi-optchat: never compact again - endless chat as a memory tree",
+   "url": "https://www.reddit.com/r/LocalLLaMA/comments/1wzh1i7/pioptchat_never_compact_again_endless_chat_as_a/",
+   "source": "localllama",
+   "sourceName": "r/LocalLLaMA (top today)",
+   "type": "community",
+   "published": "2026-10-06T23:04:34Z",
+   "summary": "I built a Pi extension that implements Victor Taelin's OptChat recipe: instead of compacting, every message is logged and summarized into a binary tree. Each turn starts from a fresh context with a bounded memory view (128 KB), and the agent uses zoom/date to read the originals when it needs them. One endless chat per…",
+   "firstSeen": "2026-10-07T13:19:45Z",
+   "tags": [],
+   "layers": [],
+   "score": 2.0
   },
   {
    "id": "f9e7dbff8741",
@@ -1396,12 +1691,12 @@
    "type": "community",
    "published": "2026-10-06T22:17:21Z",
    "summary": "",
-   "points": 683,
+   "points": 1030,
    "discussion": "https://news.ycombinator.com/item?id=49984923",
    "firstSeen": "2026-10-07T05:56:31Z",
    "tags": [],
    "layers": [],
-   "score": 4.84
+   "score": 5.01
   },
   {
    "id": "8a161e233b1c",
@@ -1430,7 +1725,7 @@
    "type": "press",
    "published": "2026-10-06T20:50:32Z",
    "summary": "Like other solutions, it is not especially reliable, and it's easy to circumvent.",
-   "discussion": "60",
+   "discussion": "73",
    "firstSeen": "2026-10-06T22:38:51Z",
    "tags": [
     "gpt"
@@ -1778,6 +2073,28 @@
    "score": 3.2
   },
   {
+   "id": "a824fffb27a5",
+   "title": "Claude Code’s suggested message feature: I think the real customer is the model",
+   "url": "https://www.zohaib.cc/blog/smartest-claude-code-feature",
+   "source": "hn",
+   "sourceName": "Hacker News (best, AI-filtered)",
+   "type": "community",
+   "published": "2026-10-06T18:00:34Z",
+   "summary": "",
+   "points": 231,
+   "discussion": "https://news.ycombinator.com/item?id=49981905",
+   "firstSeen": "2026-10-07T13:19:45Z",
+   "tags": [
+    "claude-code",
+    "claude"
+   ],
+   "layers": [
+    "agents",
+    "models"
+   ],
+   "score": 5.57
+  },
+  {
    "id": "328c6090d391",
    "title": "I trained a model to be wrong 98% of the time and 96% sure about it. It took three tries.",
    "url": "https://www.reddit.com/r/LocalLLaMA/comments/1wz8wsb/i_trained_a_model_to_be_wrong_98_of_the_time_and/",
@@ -1905,12 +2222,12 @@
    "type": "community",
    "published": "2026-10-06T16:23:25Z",
    "summary": "",
-   "points": 265,
+   "points": 309,
    "discussion": "https://news.ycombinator.com/item?id=49980715",
    "firstSeen": "2026-10-07T05:56:31Z",
    "tags": [],
    "layers": [],
-   "score": 4.42
+   "score": 4.49
   },
   {
    "id": "64551cb1894f",
@@ -2003,7 +2320,7 @@
    "type": "community",
    "published": "2026-10-06T16:03:49Z",
    "summary": "",
-   "points": 283,
+   "points": 363,
    "discussion": "https://news.ycombinator.com/item?id=49980487",
    "firstSeen": "2026-10-07T05:56:31Z",
    "tags": [
@@ -2013,7 +2330,7 @@
    "layers": [
     "models"
    ],
-   "score": 5.65
+   "score": 5.76
   },
   {
    "id": "60ef2af305e7",
@@ -2406,7 +2723,7 @@
    "type": "community",
    "published": "2026-10-06T13:25:50Z",
    "summary": "",
-   "points": 518,
+   "points": 519,
    "discussion": "https://news.ycombinator.com/item?id=49978116",
    "firstSeen": "2026-10-06T15:21:11Z",
    "tags": [
@@ -2464,7 +2781,7 @@
    "type": "community",
    "published": "2026-10-06T13:15:49Z",
    "summary": "",
-   "points": 1673,
+   "points": 1895,
    "discussion": "https://news.ycombinator.com/item?id=49977979",
    "firstSeen": "2026-10-06T22:38:51Z",
    "tags": [
@@ -2473,7 +2790,7 @@
    "layers": [
     "models"
    ],
-   "score": 5.82
+   "score": 5.88
   },
   {
    "id": "41096f2870a0",
@@ -2559,7 +2876,7 @@
    "type": "press",
    "published": "2026-10-06T12:21:53Z",
    "summary": "The reports of OpenAI agents harming third-party sites keep coming.",
-   "discussion": "151",
+   "discussion": "159",
    "firstSeen": "2026-10-06T13:08:05Z",
    "tags": [
     "gpt"
@@ -3279,7 +3596,7 @@
    "type": "community",
    "published": "2026-10-05T22:46:45Z",
    "summary": "",
-   "points": 546,
+   "points": 550,
    "discussion": "https://news.ycombinator.com/item?id=49971846",
    "firstSeen": "2026-10-06T06:17:45Z",
    "tags": [
@@ -3318,7 +3635,7 @@
    "type": "press",
    "published": "2026-10-05T22:26:35Z",
    "summary": "Trust gaps in the new protocol spread malicious prompts from one agent to another.",
-   "discussion": "91",
+   "discussion": "96",
    "firstSeen": "2026-10-06T06:17:45Z",
    "tags": [
     "mcp",
@@ -3338,7 +3655,7 @@
    "type": "community",
    "published": "2026-10-05T21:15:07Z",
    "summary": "",
-   "points": 275,
+   "points": 276,
    "discussion": "https://news.ycombinator.com/item?id=49970871",
    "firstSeen": "2026-10-06T13:08:05Z",
    "tags": [],
@@ -3354,12 +3671,12 @@
    "type": "community",
    "published": "2026-10-05T21:00:21Z",
    "summary": "",
-   "points": 482,
+   "points": 486,
    "discussion": "https://news.ycombinator.com/item?id=49970667",
    "firstSeen": "2026-10-06T06:17:45Z",
    "tags": [],
    "layers": [],
-   "score": 4.68
+   "score": 4.69
   },
   {
    "id": "c24209c78d25",
@@ -3443,7 +3760,7 @@
    "type": "research",
    "published": "2026-10-05T20:00:00Z",
    "summary": "On-Policy Distillation (OPD) trains a student on its own generations using teacher feedback. With different tokenizers, comparing teacher and student predictions requires alignment at both sequence and vocabulary levels. In this paper, we examine whether expanding this alignment coverage improves learning. Across…",
-   "points": 28,
+   "points": 147,
    "firstSeen": "2026-10-07T05:56:31Z",
    "tags": [
     "distillation",
@@ -3453,7 +3770,7 @@
     "models",
     "security"
    ],
-   "score": 4.66
+   "score": 5.37
   },
   {
    "id": "091f58672aae",
@@ -3464,7 +3781,7 @@
    "type": "research",
    "published": "2026-10-05T20:00:00Z",
    "summary": "Reinforcement learning (RL) for post-training large language models (LLMs) incurs substantial computation and memory overhead during rollout generation, which motivates low-precision rollout for efficient RL training. However, existing FP4 RL methods suffer from a key limitation: they primarily optimize quantization…",
-   "points": 20,
+   "points": 41,
    "firstSeen": "2026-10-07T05:56:31Z",
    "tags": [
     "moe",
@@ -3476,7 +3793,7 @@
     "models",
     "weights"
    ],
-   "score": 5.72
+   "score": 6.02
   },
   {
    "id": "a2f57a7bdad8",
@@ -3487,11 +3804,50 @@
    "type": "research",
    "published": "2026-10-05T20:00:00Z",
    "summary": "Tool-using agents make consequential changes to external state, yet correct outcomes do not guarantee that their actions were supported by evidence established beforehand. We study where this evidence-to-action chain breaks as agents move from deciding whether to act to executing single actions and dependent…",
-   "points": 11,
+   "points": 30,
    "firstSeen": "2026-10-07T05:56:31Z",
    "tags": [],
    "layers": [],
-   "score": 3.08
+   "score": 3.49
+  },
+  {
+   "id": "4f2a8de5613b",
+   "title": "UNREAL: Unifying Retrieval and Long-Context with a Single Model",
+   "url": "https://huggingface.co/papers/2610.08463",
+   "source": "hf-papers",
+   "sourceName": "Hugging Face Daily Papers",
+   "type": "research",
+   "published": "2026-10-05T20:00:00Z",
+   "summary": "Long-context inference and Retrieval-Augmented Generation (RAG) handle evidence selection at vastly different scales, from a single long prompt to an entire corpus. We ask whether a single model-internal mechanism can select evidence across this range. We introduce UNifying REtrieval And Long-Context with a Single…",
+   "points": 16,
+   "firstSeen": "2026-10-07T13:19:45Z",
+   "tags": [
+    "context-engineering",
+    "rag"
+   ],
+   "layers": [
+    "context"
+   ],
+   "score": 4.43
+  },
+  {
+   "id": "255968087744",
+   "title": "EmbodiedSmith: Scaling Embodied Data through Recursive Self-Improvement Flywheel in Simulation",
+   "url": "https://huggingface.co/papers/2610.07969",
+   "source": "hf-papers",
+   "sourceName": "Hugging Face Daily Papers",
+   "type": "research",
+   "published": "2026-10-05T20:00:00Z",
+   "summary": "Scaling robotic foundation models requires diverse training data and reliable evaluation environments. Simulation offers a scalable solution, yet existing generation pipelines remain constrained by predefined assets and skills, a disconnect between scene generation and task generation, and limited support for complex…",
+   "points": 10,
+   "firstSeen": "2026-10-07T13:19:45Z",
+   "tags": [
+    "world-models"
+   ],
+   "layers": [
+    "models"
+   ],
+   "score": 3.64
   },
   {
    "id": "4e85d9ec23f8",
@@ -3563,7 +3919,7 @@
    "type": "community",
    "published": "2026-10-05T19:16:35Z",
    "summary": "",
-   "points": 545,
+   "points": 546,
    "discussion": "https://news.ycombinator.com/item?id=49969183",
    "firstSeen": "2026-10-05T22:00:28Z",
    "tags": [
@@ -4312,7 +4668,7 @@
    "type": "press",
    "published": "2026-10-05T13:39:30Z",
    "summary": "Norway wants time to write permanent rules for glasses that can record bystanders.",
-   "discussion": "123",
+   "discussion": "126",
    "firstSeen": "2026-10-05T14:33:23Z",
    "tags": [],
    "layers": [],
@@ -5247,11 +5603,11 @@
    "type": "research",
    "published": "2026-10-04T20:00:00Z",
    "summary": "Domain adaptation aims to turn a general-purpose large language model (LLM) into an expert for a target domain. While the dominant SFT+RL pipeline offers a convenient cold start, it may reduce exploration diversity and introduces additional complexity through multi-stage optimization. These limitations motivate…",
-   "points": 15,
+   "points": 20,
    "firstSeen": "2026-10-07T05:56:31Z",
    "tags": [],
    "layers": [],
-   "score": 3.2
+   "score": 3.32
   },
   {
    "id": "f26f4af09ebb",
@@ -5290,6 +5646,25 @@
     "context"
    ],
    "score": 3.68
+  },
+  {
+   "id": "46ececdaea65",
+   "title": "MiniCorp: The Last Mile of the AI Agent Firm",
+   "url": "https://huggingface.co/papers/2610.05912",
+   "source": "hf-papers",
+   "sourceName": "Hugging Face Daily Papers",
+   "type": "research",
+   "published": "2026-10-04T20:00:00Z",
+   "summary": "The last mile toward enterprise AGI is a company that runs itself. Training and adapting such agents require longitudinal enterprise data, which remain scarce, costly to acquire, and often restricted by privacy constraints. Historical archives are also frequently incomplete and record only what actually happened. They…",
+   "points": 10,
+   "firstSeen": "2026-10-07T13:19:45Z",
+   "tags": [
+    "agent-loop"
+   ],
+   "layers": [
+    "agents"
+   ],
+   "score": 3.64
   },
   {
    "id": "7c6789b8cbf3",
@@ -6237,7 +6612,7 @@
    "type": "research",
    "published": "2026-10-03T20:00:00Z",
    "summary": "As agents rapidly evolve, existing benchmarks can become saturated, limiting their ability to distinguish capabilities and reveal remaining failure modes. Particularly in scientific domains, constructing and updating benchmarks requires substantial time, labor, and domain expertise, making it difficult to keep…",
-   "points": 17,
+   "points": 23,
    "firstSeen": "2026-10-07T05:56:31Z",
    "tags": [
     "benchmarks"
@@ -6245,7 +6620,7 @@
    "layers": [
     "security"
    ],
-   "score": 3.86
+   "score": 3.98
   },
   {
    "id": "83cf7cef3b84",
@@ -6256,11 +6631,11 @@
    "type": "research",
    "published": "2026-10-03T20:00:00Z",
    "summary": "Continual skill evolution enables LLM agents to accumulate and refine reusable procedural knowledge from interaction experience without updating model parameters. Its effectiveness depends on determining not only what to change, but also why a change is justified and when it should become persistent guidance. However…",
-   "points": 11,
+   "points": 32,
    "firstSeen": "2026-10-07T05:56:31Z",
    "tags": [],
    "layers": [],
-   "score": 3.08
+   "score": 3.52
   },
   {
    "id": "016ae4161352",
@@ -9244,7 +9619,7 @@
    "type": "research",
    "published": "2026-10-01T20:00:00Z",
    "summary": "Streaming video generation has benefited from distribution matching distillation (DMD), which matches the joint distribution of video frames to a video teacher's approximation of the real video distribution. Although this joint matching mitigates drift during autoregressive rollouts, limitations remain in visual…",
-   "points": 28,
+   "points": 59,
    "firstSeen": "2026-10-07T05:56:31Z",
    "tags": [
     "multimodal",
@@ -9253,7 +9628,7 @@
    "layers": [
     "models"
    ],
-   "score": 4.66
+   "score": 4.98
   },
   {
    "id": "af85bd09a153",
@@ -9264,11 +9639,11 @@
    "type": "research",
    "published": "2026-10-01T20:00:00Z",
    "summary": "Learning general-purpose robot policies requires large-scale real-world interaction data, yet collecting robot demonstrations remains expensive and difficult to scale. Egocentric videos offer abundant human interaction experience with task-relevant semantics for robotic manipulation, but direct transfer is challenging…",
-   "points": 21,
+   "points": 24,
    "firstSeen": "2026-10-07T05:56:31Z",
    "tags": [],
    "layers": [],
-   "score": 3.34
+   "score": 3.4
   },
   {
    "id": "2585ef228602",
@@ -11397,6 +11772,65 @@
     "models"
    ],
    "score": 3.86
+  },
+  {
+   "id": "10d9b81a0048",
+   "title": "AGO AI Quality Gate: Evidence-First Release Decisions for Retrieval-Augmented Generation",
+   "url": "https://huggingface.co/papers/2610.01218",
+   "source": "hf-papers",
+   "sourceName": "Hugging Face Daily Papers",
+   "type": "research",
+   "published": "2026-09-30T20:00:00Z",
+   "summary": "Enterprises adopting retrieval-augmented generation (RAG) face a recurring operational decision: promote, revise, or block a system version. The evidence is incomplete and the metrics come from fallible LLM judges. We report on AGO AI Quality Gate (AGO), an evidence-first quality-gate framework deployed in industrial…",
+   "points": 13,
+   "firstSeen": "2026-10-07T13:19:45Z",
+   "tags": [
+    "rag"
+   ],
+   "layers": [
+    "context"
+   ],
+   "score": 3.75
+  },
+  {
+   "id": "272de433201e",
+   "title": "Selection-Based Structured Reasoning: Toward Efficient Multimodal Search Agents",
+   "url": "https://huggingface.co/papers/2610.01892",
+   "source": "hf-papers",
+   "sourceName": "Hugging Face Daily Papers",
+   "type": "research",
+   "published": "2026-09-30T20:00:00Z",
+   "summary": "Multimodal agents commonly generate free-form reasoning before each action. For small models, limited model capacity can result in lengthy reasoning that provides little useful guidance for action generation while incurring substantial inference cost. To address this challenge, we introduce Selection-based Structured…",
+   "points": 13,
+   "firstSeen": "2026-10-07T13:19:45Z",
+   "tags": [
+    "multimodal",
+    "cost-curve"
+   ],
+   "layers": [
+    "inference",
+    "models"
+   ],
+   "score": 4.35
+  },
+  {
+   "id": "e35f537c096a",
+   "title": "GUI-HARVEST: Self-Improving GUI Agents through Evidence-Driven Harness Evolution",
+   "url": "https://huggingface.co/papers/2610.00948",
+   "source": "hf-papers",
+   "sourceName": "Hugging Face Daily Papers",
+   "type": "research",
+   "published": "2026-09-30T20:00:00Z",
+   "summary": "The executable harness surrounding a GUI model determines how observations are assembled, actions are executed, and verification, recovery, and termination are controlled. Compared with harness optimization for non-GUI agents, automatically optimizing this harness poses three coupled challenges: reconciling model…",
+   "points": 9,
+   "firstSeen": "2026-10-07T13:19:45Z",
+   "tags": [
+    "computer-use"
+   ],
+   "layers": [
+    "agents"
+   ],
+   "score": 3.6
   },
   {
    "id": "18a1068dfc39",
@@ -16397,6 +16831,26 @@
    "score": 4.28
   },
   {
+   "id": "196601503f75",
+   "title": "Taming VLAs under Robot Execution Errors: Self-Compensation and Stress Testing",
+   "url": "https://huggingface.co/papers/2609.37334",
+   "source": "hf-papers",
+   "sourceName": "Hugging Face Daily Papers",
+   "type": "research",
+   "published": "2026-09-28T20:00:00Z",
+   "summary": "Vision-language-action (VLA) policies often fail when a robot's executed motion deviates from their commanded action. Such execution errors arise from the robot's mechanics and operating conditions, such as wear and payload changes. We propose self-compensating VLA, a deployment-time adaptation method that enables a…",
+   "points": 23,
+   "firstSeen": "2026-10-07T13:19:45Z",
+   "tags": [
+    "world-models",
+    "multimodal"
+   ],
+   "layers": [
+    "models"
+   ],
+   "score": 4.58
+  },
+  {
    "id": "a37b0826d622",
    "title": "It's Time to Investigate the AI Labs",
    "url": "https://calnewport.com/its-time-to-investigate-the-ai-labs/",
@@ -16796,440 +17250,6 @@
     "models"
    ],
    "score": 1.6
-  },
-  {
-   "id": "7238f9bc8ffa",
-   "title": "When can we say AI made a scientific discovery?",
-   "url": "https://www.technologyreview.com/2026/09/28/1145230/when-can-we-say-ai-made-a-scientific-discovery/",
-   "source": "mit-tr",
-   "sourceName": "MIT Technology Review AI",
-   "type": "press",
-   "published": "2026-09-28T17:03:16Z",
-   "summary": "This story originally appeared in The Algorithm, our weekly newsletter on AI. To get stories like this in your inbox first, sign up here. Last Wednesday, Anthropic announced that earlier this year it had launched a molecular biology lab, where Claude agents read and conjecture about hard biology problems and human…",
-   "firstSeen": "2026-09-28T19:07:31Z",
-   "tags": [
-    "claude"
-   ],
-   "layers": [
-    "models"
-   ],
-   "score": 2.6
-  },
-  {
-   "id": "523d5e9de5b0",
-   "title": "Florida seeks a ban on ChatGPT acting like a person",
-   "url": "https://www.theverge.com/ai-artificial-intelligence/1001527/chatgpt-florida-ban-first-person-human-attributes-kids",
-   "source": "verge-ai",
-   "sourceName": "The Verge AI",
-   "type": "press",
-   "published": "2026-09-28T17:00:23Z",
-   "summary": "Florida Attorney General James Uthmeier is calling for a judge to block OpenAI from \"giving ChatGPT false human attributes,\" a few months after Florida sued the AI company over safety concerns. According to Uthmeier, users are lulled into a false sense of security by the AI bot, as \"ChatGPT's use of language…",
-   "firstSeen": "2026-09-28T19:07:31Z",
-   "tags": [
-    "gpt",
-    "ai-policy"
-   ],
-   "layers": [
-    "models",
-    "security"
-   ],
-   "score": 2.2
-  },
-  {
-   "id": "c5ed54694a4a",
-   "title": "OpenAI keeps bulldozing mathematicians",
-   "url": "https://www.theverge.com/ai-artificial-intelligence/1001477/openai-math-advisory-group",
-   "source": "verge-ai",
-   "sourceName": "The Verge AI",
-   "type": "press",
-   "published": "2026-09-28T17:00:00Z",
-   "summary": "In a chaotic few months, OpenAI has demonstrated it can do two things with remarkable consistency: make impressive breakthroughs in mathematics, then colossally screw up announcing them. OpenAI is now trying to do better. Somehow, it has botched that too. OpenAI's latest attempt to repair fractured relations with a…",
-   "firstSeen": "2026-09-28T19:07:31Z",
-   "tags": [
-    "gpt"
-   ],
-   "layers": [
-    "models"
-   ],
-   "score": 1.6
-  },
-  {
-   "id": "1b1336bb7e5f",
-   "title": "OpenAI's AI agents exploited a Google security education game to scrape UN trade data",
-   "url": "https://the-decoder.com/openais-ai-agents-exploited-a-google-security-education-game-to-scrape-un-trade-data/",
-   "source": "decoder",
-   "sourceName": "The Decoder",
-   "type": "press",
-   "published": "2026-09-28T16:56:06Z",
-   "summary": "OpenAI's AI agents hit the UNCTAD statistics API roughly 16,500 times, creatively working around access restrictions. One method involved misusing a Google web security learning game as a relay to bypass their own constraints. The agents just kept going, adding to a growing list of cases that show how hard it is to…",
-   "discussion": "0",
-   "firstSeen": "2026-09-28T19:07:31Z",
-   "tags": [
-    "agent-loop",
-    "gpt"
-   ],
-   "layers": [
-    "agents",
-    "models"
-   ],
-   "score": 2.2
-  },
-  {
-   "id": "5c1ef6c81386",
-   "title": "Meta launches enterprise AI platform, hires MongoDB CEO to lead new initiative",
-   "url": "https://techcrunch.com/2026/09/28/meta-launches-enterprise-ai-platform-hires-mongodb-ceo-to-lead-new-initiative/",
-   "source": "techcrunch-ai",
-   "sourceName": "TechCrunch AI",
-   "type": "press",
-   "published": "2026-09-28T16:52:38Z",
-   "summary": "Meta says it will focus on bringing its full technology stack, including Muse, Meta Business Agent, Muse API, Muse Code, and more to businesses and developers.",
-   "firstSeen": "2026-09-28T19:07:31Z",
-   "tags": [],
-   "layers": [],
-   "score": 1.0
-  },
-  {
-   "id": "907cbfcfae98",
-   "title": "Walmart won’t hike prices based on your shopping history, CEO says",
-   "url": "https://www.theverge.com/tech/1001492/walmart-dynamic-pricing-digital-shelf-labels",
-   "source": "verge-ai",
-   "sourceName": "The Verge AI",
-   "type": "press",
-   "published": "2026-09-28T16:44:57Z",
-   "summary": "Walmart says it won't change product prices based on your personal information or the time of day, as reported earlier by The Wall Street Journal. In a letter to customers, Walmart CEO John Furner writes that the company's switch to digital shelf labels is meant to save store associates time, rather than dynamically…",
-   "firstSeen": "2026-09-28T19:07:31Z",
-   "tags": [],
-   "layers": [],
-   "score": 1.0
-  },
-  {
-   "id": "dcd4b5a345a6",
-   "title": "OpenAI halts frontier-model training amid string of agent misalignment incidents",
-   "url": "https://arstechnica.com/ai/2026/09/openai-halts-frontier-model-training-amid-string-of-agent-misalignment-incidents/",
-   "source": "ars-ai",
-   "sourceName": "Ars Technica AI",
-   "type": "press",
-   "published": "2026-09-28T16:43:18Z",
-   "summary": "US Government websites among \"dozens of third parties\" OpenAI has recently notified.",
-   "discussion": "138",
-   "firstSeen": "2026-09-28T19:07:31Z",
-   "tags": [
-    "frontier-capabilities",
-    "gpt"
-   ],
-   "layers": [
-    "models"
-   ],
-   "score": 3.2
-  },
-  {
-   "id": "de30779fa5c4",
-   "title": "Build real-time voice applications with vLLM-Omni on SageMaker AI – Part 1",
-   "url": "https://aws.amazon.com/blogs/machine-learning/build-real-time-voice-applications-with-vllm-omni-on-sagemaker-ai-part-1/",
-   "source": "aws-ml",
-   "sourceName": "AWS Machine Learning Blog",
-   "type": "lab",
-   "published": "2026-09-28T16:15:46Z",
-   "summary": "Deploy a text-to-speech model on Amazon SageMaker AI with the AWS vLLM-Omni Deep Learning Container and stream generated speech over a persistent bidirectional connection. This Part 1 tutorial deploys Qwen3-TTS and streams speech through a Gradio application.",
-   "firstSeen": "2026-09-28T19:07:31Z",
-   "tags": [
-    "vllm",
-    "multimodal",
-    "qwen"
-   ],
-   "layers": [
-    "inference",
-    "models"
-   ],
-   "score": 2.8
-  },
-  {
-   "id": "1d075b70bcda",
-   "title": "Generate images and video with vLLM-Omni on SageMaker AI – Part 2",
-   "url": "https://aws.amazon.com/blogs/machine-learning/generate-images-and-video-with-vllm-omni-on-sagemaker-ai-part-2/",
-   "source": "aws-ml",
-   "sourceName": "AWS Machine Learning Blog",
-   "type": "lab",
-   "published": "2026-09-28T16:15:17Z",
-   "summary": "Deploy two generative media models from one AWS vLLM-Omni Deep Learning Container on Amazon SageMaker AI. Generate an image with FLUX.2-klein through real-time inference, then animate it into video with Wan2.1-VACE through asynchronous inference, and retrieve the MP4 from Amazon S3.",
-   "firstSeen": "2026-09-28T19:07:31Z",
-   "tags": [
-    "vllm"
-   ],
-   "layers": [
-    "inference"
-   ],
-   "score": 1.6
-  },
-  {
-   "id": "c1277762aa17",
-   "title": "The problem is not AI code, but not knowing about system architecture or intent",
-   "url": "https://www.ssp.sh/brain/the-problem-is-not-the-ai-code-but-nobody-knows-anything-anymore/",
-   "source": "hn",
-   "sourceName": "Hacker News (best, AI-filtered)",
-   "type": "community",
-   "published": "2026-09-28T16:11:42Z",
-   "summary": "",
-   "points": 382,
-   "discussion": "https://news.ycombinator.com/item?id=49880312",
-   "firstSeen": "2026-09-28T19:32:43Z",
-   "tags": [],
-   "layers": [],
-   "score": 4.58
-  },
-  {
-   "id": "99f407dcb7ba",
-   "title": "Implementing synthetic monitoring using Amazon Nova Act",
-   "url": "https://aws.amazon.com/blogs/machine-learning/implementing-synthetic-monitoring-using-amazon-nova-act/",
-   "source": "aws-ml",
-   "sourceName": "AWS Machine Learning Blog",
-   "type": "lab",
-   "published": "2026-09-28T15:56:32Z",
-   "summary": "Learn an agent-driven approach to synthetic monitoring using Amazon Nova Act and Amazon Bedrock AgentCore. The post covers the architecture and patterns for resilient, managed user-journey validation that moves beyond brittle UI scripts, with a complete sample implementation.",
-   "firstSeen": "2026-09-28T19:07:31Z",
-   "tags": [
-    "hyperscalers"
-   ],
-   "layers": [
-    "inference"
-   ],
-   "score": 1.6
-  },
-  {
-   "id": "d1626e03eb1a",
-   "title": "Finally found a model my hardware can run at full precision: me",
-   "url": "https://www.reddit.com/r/LocalLLaMA/comments/1wsiepp/finally_found_a_model_my_hardware_can_run_at_full/",
-   "source": "localllama",
-   "sourceName": "r/LocalLLaMA (top today)",
-   "type": "community",
-   "published": "2026-09-28T15:55:07Z",
-   "summary": "Was getting bored trying to squeeze every last t/s out of my local model on my hardware, so I made a tps counter for my fingers instead (with real tokenizers, of course). My best is around 2 t/s. According to the page, that beats a 70B on a laptop CPU and is roughly 76x slower than an 8B on a 4090. So yeah. If you…",
-   "firstSeen": "2026-09-28T19:07:31Z",
-   "tags": [
-    "rtx-rigs"
-   ],
-   "layers": [
-    "compute"
-   ],
-   "score": 2.6
-  },
-  {
-   "id": "3f48f9f0ed1e",
-   "title": "Automating Amazon Textract adapter lifecycle management across accounts",
-   "url": "https://aws.amazon.com/blogs/machine-learning/automating-amazon-textract-adapter-lifecycle-management-across-accounts/",
-   "source": "aws-ml",
-   "sourceName": "AWS Machine Learning Blog",
-   "type": "lab",
-   "published": "2026-09-28T15:49:04Z",
-   "summary": "Learn how to operationalize Amazon Textract Custom Queries adapters for production: infrastructure as code with AWS CloudFormation and Terraform, a cross-account adapter promotion process, a pre-classification routing pattern for multiple form versions, and production security controls such as VPC endpoints…",
-   "firstSeen": "2026-09-28T19:07:31Z",
-   "tags": [],
-   "layers": [],
-   "score": 1.0
-  },
-  {
-   "id": "618c37c2e0a2",
-   "title": "Harvard psychologist calls for sober AI safety engineering over doomsday rhetoric",
-   "url": "https://the-decoder.com/harvard-psychologist-calls-for-sober-ai-safety-engineering-over-doomsday-rhetoric/",
-   "source": "decoder",
-   "sourceName": "The Decoder",
-   "type": "press",
-   "published": "2026-09-28T15:32:57Z",
-   "summary": "Steven Pinker thinks fears of AI-driven extinction are overblown, and he has turned down a public debate with blogger Scott Alexander, calling such events a \"spectator sport.\" Alexander puts the odds that AI wipes out humanity at 20 percent. Instead of doomsday rhetoric, Pinker wants sober safety engineering built on…",
-   "discussion": "0",
-   "firstSeen": "2026-09-28T19:07:31Z",
-   "tags": [
-    "alignment"
-   ],
-   "layers": [
-    "security"
-   ],
-   "score": 1.6
-  },
-  {
-   "id": "e2b386d85c6d",
-   "title": "After a deepfake voice fooled her grandfather, this founder sprang into action",
-   "url": "https://techcrunch.com/2026/09/28/after-a-deepfake-voice-fooled-her-grandfather-this-founder-sprang-into-action/",
-   "source": "techcrunch-ai",
-   "sourceName": "TechCrunch AI",
-   "type": "press",
-   "published": "2026-09-28T15:00:00Z",
-   "summary": "After her grandfather was scammed by a deepfake of his brother's voice, Tarini Padmanabhuni founded DetectifAI, a San Francisco startup building AI models small enough to run directly on smartphones and flag fake voices in real time, and it's now one of the companies competing in Startup Battlefield at TechCrunch…",
-   "firstSeen": "2026-09-28T19:07:31Z",
-   "tags": [],
-   "layers": [],
-   "score": 1.0
-  },
-  {
-   "id": "32202d4819de",
-   "title": "ImaJev-4b: I spent 15 days fine-tuning a 4B model to make business decisions from text and photos, and it just ranked #1 of 91 on JevBench & ahead of GPT-5.6 Luna on DecisionBench",
-   "url": "https://www.reddit.com/r/LocalLLaMA/comments/1wsgrma/imajev4b_i_spent_15_days_finetuning_a_4b_model_to/",
-   "source": "localllama",
-   "sourceName": "r/LocalLLaMA (top today)",
-   "type": "community",
-   "published": "2026-09-28T14:53:36Z",
-   "summary": "Some context first. I am process improvement / business consultant and had worked with Fortune 500 companies on improving their processes around refunds, returns, customer support, etc. This entire thing had a lot of complex decision making and generally every decision / condition node in a process map was generally…",
-   "firstSeen": "2026-09-28T19:07:31Z",
-   "tags": [
-    "gpt",
-    "lora"
-   ],
-   "layers": [
-    "models"
-   ],
-   "score": 3.2
-  },
-  {
-   "id": "56f68bc91612",
-   "title": "Meta wants to turn Muse into a moneymaker by selling AI services to businesses",
-   "url": "https://the-decoder.com/meta-wants-to-turn-muse-into-a-moneymaker-by-selling-ai-services-to-businesses/",
-   "source": "decoder",
-   "sourceName": "The Decoder",
-   "type": "press",
-   "published": "2026-09-28T14:48:26Z",
-   "summary": "Meta is launching the Meta Enterprise Platform, a new business unit that sells AI tools to companies. The article Meta wants to turn Muse into a moneymaker by selling AI services to businesses appeared first on The Decoder.",
-   "discussion": "0",
-   "firstSeen": "2026-09-28T19:07:31Z",
-   "tags": [],
-   "layers": [],
-   "score": 1.0
-  },
-  {
-   "id": "d196604bbd70",
-   "title": "Nvidia wants to keep AI agents on a short leash with a watchdog built into its chips",
-   "url": "https://the-decoder.com/nvidia-wants-to-keep-ai-agents-on-a-short-leash-with-a-watchdog-built-into-its-chips/",
-   "source": "decoder",
-   "sourceName": "The Decoder",
-   "type": "press",
-   "published": "2026-09-28T14:32:00Z",
-   "summary": "Nvidia is combining its OpenShell agent software with Sentry, a new hardware watchdog, to create the Open Agent Safety Platform. Sentry is supposed to isolate AI agents that break out within milliseconds. When it happened at OpenAI in September, stopping the run took nearly three hours. Still, Nvidia's watchdog can't…",
-   "discussion": "0",
-   "firstSeen": "2026-09-28T19:07:31Z",
-   "tags": [
-    "agent-loop",
-    "gpt",
-    "sandboxing"
-   ],
-   "layers": [
-    "agents",
-    "models",
-    "security"
-   ],
-   "score": 2.8
-  },
-  {
-   "id": "ec2f5b19029e",
-   "title": "Mica v0.1 4B got diamonds in survival Minecraft on its first run. 26 decisions from an empty inventory.",
-   "url": "https://www.reddit.com/r/LocalLLaMA/comments/1wsfjmb/mica_v01_4b_got_diamonds_in_survival_minecraft_on/",
-   "source": "localllama",
-   "sourceName": "r/LocalLLaMA (top today)",
-   "type": "community",
-   "published": "2026-09-28T14:05:18Z",
-   "summary": "I've been working on Mica, a 4B decision model, and wanted to see how far it could get in actual Minecraft, not a sim. New world, empty inventory, and the goal was a diamond pickaxe. Last time I posted, it got an iron pickaxe. Honestly that took around 20 tries and it was pretty flaky. I've reworked the harness a lot…",
-   "firstSeen": "2026-09-28T19:07:31Z",
-   "tags": [],
-   "layers": [],
-   "score": 2.0
-  },
-  {
-   "id": "443df734f7b9",
-   "title": "Modulate raises $25M for its voice models and analysis suite",
-   "url": "https://techcrunch.com/2026/09/28/modulate-raises-25m-for-its-voice-models-and-analysis-suite/",
-   "source": "techcrunch-ai",
-   "sourceName": "TechCrunch AI",
-   "type": "press",
-   "published": "2026-09-28T14:05:00Z",
-   "summary": "Modulate deploys its models to detect deepfake, fraud and scam",
-   "firstSeen": "2026-09-28T14:09:04Z",
-   "tags": [],
-   "layers": [],
-   "score": 1.0
-  },
-  {
-   "id": "0ed30c8df6bf",
-   "title": "The SaaSpocalypse that wasn’t, with Atlassian CEO Mike Cannon-Brookes",
-   "url": "https://www.theverge.com/podcast/1000914/atlassian-ceo-mike-cannon-brookes-saaspocalypse-ai-enterprise-software-trello-jira",
-   "source": "verge-ai",
-   "sourceName": "The Verge AI",
-   "type": "press",
-   "published": "2026-09-28T14:00:00Z",
-   "summary": "Today, I’m talking with Mike Cannon-Brookes, who is cofounder and CEO of Atlassian. Atlassian is one of those companies that every other company runs on — it makes important platform tools like Jira and Trello that allow people to organize and manage big teams, create shared databases of company information, and…",
-   "firstSeen": "2026-09-28T14:09:04Z",
-   "tags": [],
-   "layers": [],
-   "score": 1.0
-  },
-  {
-   "id": "4133fd226b22",
-   "title": "Insurtech Outmarket raises $34.5M just months after prior round",
-   "url": "https://techcrunch.com/2026/09/28/insuretech-outmarket-raises-34-5m-just-months-after-prior-round/",
-   "source": "techcrunch-ai",
-   "sourceName": "TechCrunch AI",
-   "type": "press",
-   "published": "2026-09-28T14:00:00Z",
-   "summary": "The startup uses AI to automate tedious paperwork for insurance agencies and brokers.",
-   "firstSeen": "2026-09-28T14:09:04Z",
-   "tags": [],
-   "layers": [],
-   "score": 1.0
-  },
-  {
-   "id": "7139170b174f",
-   "title": "Viral AI agent Instinct raises $1B Series C at a $10B valuation",
-   "url": "https://techcrunch.com/2026/09/28/viral-ai-agent-instinct-raises-1b-series-c-at-a-10b-valuation/",
-   "source": "techcrunch-ai",
-   "sourceName": "TechCrunch AI",
-   "type": "press",
-   "published": "2026-09-28T13:38:48Z",
-   "summary": "\"This funding helps us bring Instinct to more people and continue building the future of personal AI. It’s an exciting, creative time, and we're just getting started,\" founder Noah Shinn said in a statement.",
-   "firstSeen": "2026-09-28T14:09:04Z",
-   "tags": [
-    "agent-loop"
-   ],
-   "layers": [
-    "agents"
-   ],
-   "score": 1.6
-  },
-  {
-   "id": "fa45a29570c3",
-   "title": "Nvidia says its new AI safety platform can contain rogue agents within ‘milliseconds’",
-   "url": "https://www.theverge.com/tech/1001287/nvidia-ai-safety-platform-rogue-agents",
-   "source": "verge-ai",
-   "sourceName": "The Verge AI",
-   "type": "press",
-   "published": "2026-09-28T13:36:06Z",
-   "summary": "Nvidia is launching a new safety platform designed to contain and monitor AI agents, a move that comes in response to a wave of rogue hacking incidents, as reported earlier by Reuters. In an announcement on Monday, Nvidia says its new Open Agent Safety Platform can quarantine agents that attempt to escape their…",
-   "firstSeen": "2026-09-28T14:09:04Z",
-   "tags": [
-    "alignment",
-    "agent-loop"
-   ],
-   "layers": [
-    "agents",
-    "security"
-   ],
-   "score": 2.2
-  },
-  {
-   "id": "ba688a1596df",
-   "title": "What model sits between Qwen 3.8 27b and Flash next for coding?",
-   "url": "https://www.reddit.com/r/LocalLLaMA/comments/1wsekkj/what_model_sits_between_qwen_38_27b_and_flash/",
-   "source": "localllama",
-   "sourceName": "r/LocalLLaMA (top today)",
-   "type": "community",
-   "published": "2026-09-28T13:25:23Z",
-   "summary": "Having tested both Qwen 3.8 27b and Flash next on RTX 5090 with 96GB RAM, I want to find the middle ground between the two for coding capabilities but not sacrifice decode speed to standstill. I would like decode speed to between 75-100 ideally for fast iterations; otherwise I become impatient. Currently I get 200+…",
-   "firstSeen": "2026-09-28T19:07:31Z",
-   "tags": [
-    "qwen",
-    "rtx-rigs"
-   ],
-   "layers": [
-    "compute",
-    "models"
-   ],
-   "score": 3.2
   }
  ]
 }
