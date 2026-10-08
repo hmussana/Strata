@@ -1,5 +1,5 @@
 {
- "generated": "2026-10-08T22:40:39Z",
+ "generated": "2026-10-08T22:59:08Z",
  "retentionDays": 45,
  "llmEnriched": 0,
  "sources": [
@@ -10,15 +10,15 @@
    "ok": true,
    "count": 15,
    "error": null,
-   "lastOk": "2026-10-08T22:40:39Z"
+   "lastOk": "2026-10-08T22:59:08Z"
   },
   {
    "id": "deepmind",
    "name": "Google DeepMind",
    "type": "lab",
-   "ok": true,
-   "count": 10,
-   "error": null,
+   "ok": false,
+   "count": 0,
+   "error": "ParseError: not well-formed (invalid token): line 1, column 0",
    "lastOk": "2026-10-08T22:40:39Z"
   },
   {
@@ -28,7 +28,7 @@
    "ok": true,
    "count": 10,
    "error": null,
-   "lastOk": "2026-10-08T22:40:39Z"
+   "lastOk": "2026-10-08T22:59:08Z"
   },
   {
    "id": "hf-blog",
@@ -37,7 +37,7 @@
    "ok": true,
    "count": 15,
    "error": null,
-   "lastOk": "2026-10-08T22:40:39Z"
+   "lastOk": "2026-10-08T22:59:08Z"
   },
   {
    "id": "nvidia-dev",
@@ -46,7 +46,7 @@
    "ok": true,
    "count": 10,
    "error": null,
-   "lastOk": "2026-10-08T22:40:39Z"
+   "lastOk": "2026-10-08T22:59:08Z"
   },
   {
    "id": "msr",
@@ -55,7 +55,7 @@
    "ok": true,
    "count": 10,
    "error": null,
-   "lastOk": "2026-10-08T22:40:39Z"
+   "lastOk": "2026-10-08T22:59:08Z"
   },
   {
    "id": "aws-ml",
@@ -64,7 +64,7 @@
    "ok": true,
    "count": 8,
    "error": null,
-   "lastOk": "2026-10-08T22:40:39Z"
+   "lastOk": "2026-10-08T22:59:08Z"
   },
   {
    "id": "qwen",
@@ -73,7 +73,7 @@
    "ok": true,
    "count": 8,
    "error": null,
-   "lastOk": "2026-10-08T22:40:39Z"
+   "lastOk": "2026-10-08T22:59:08Z"
   },
   {
    "id": "hn",
@@ -82,7 +82,7 @@
    "ok": true,
    "count": 10,
    "error": null,
-   "lastOk": "2026-10-08T22:40:39Z"
+   "lastOk": "2026-10-08T22:59:08Z"
   },
   {
    "id": "localllama",
@@ -91,7 +91,7 @@
    "ok": true,
    "count": 15,
    "error": null,
-   "lastOk": "2026-10-08T22:40:39Z"
+   "lastOk": "2026-10-08T22:59:08Z"
   },
   {
    "id": "simonw",
@@ -100,7 +100,7 @@
    "ok": true,
    "count": 15,
    "error": null,
-   "lastOk": "2026-10-08T22:40:39Z"
+   "lastOk": "2026-10-08T22:59:08Z"
   },
   {
    "id": "hf-papers",
@@ -109,7 +109,7 @@
    "ok": true,
    "count": 15,
    "error": null,
-   "lastOk": "2026-10-08T22:40:39Z"
+   "lastOk": "2026-10-08T22:59:08Z"
   },
   {
    "id": "arxiv-cl",
@@ -118,7 +118,7 @@
    "ok": true,
    "count": 12,
    "error": null,
-   "lastOk": "2026-10-08T22:40:39Z"
+   "lastOk": "2026-10-08T22:59:08Z"
   },
   {
    "id": "latent-space",
@@ -127,7 +127,7 @@
    "ok": true,
    "count": 8,
    "error": null,
-   "lastOk": "2026-10-08T22:40:39Z"
+   "lastOk": "2026-10-08T22:59:08Z"
   },
   {
    "id": "interconnects",
@@ -136,7 +136,7 @@
    "ok": true,
    "count": 8,
    "error": null,
-   "lastOk": "2026-10-08T22:40:39Z"
+   "lastOk": "2026-10-08T22:59:08Z"
   },
   {
    "id": "import-ai",
@@ -145,7 +145,7 @@
    "ok": true,
    "count": 5,
    "error": null,
-   "lastOk": "2026-10-08T22:40:39Z"
+   "lastOk": "2026-10-08T22:59:08Z"
   },
   {
    "id": "verge-ai",
@@ -154,7 +154,7 @@
    "ok": true,
    "count": 10,
    "error": null,
-   "lastOk": "2026-10-08T22:40:39Z"
+   "lastOk": "2026-10-08T22:59:08Z"
   },
   {
    "id": "ars-ai",
@@ -163,7 +163,7 @@
    "ok": true,
    "count": 12,
    "error": null,
-   "lastOk": "2026-10-08T22:40:39Z"
+   "lastOk": "2026-10-08T22:59:08Z"
   },
   {
    "id": "techcrunch-ai",
@@ -172,7 +172,7 @@
    "ok": true,
    "count": 12,
    "error": null,
-   "lastOk": "2026-10-08T22:40:39Z"
+   "lastOk": "2026-10-08T22:59:08Z"
   },
   {
    "id": "mit-tr",
@@ -181,7 +181,7 @@
    "ok": true,
    "count": 8,
    "error": null,
-   "lastOk": "2026-10-08T22:40:39Z"
+   "lastOk": "2026-10-08T22:59:08Z"
   },
   {
    "id": "decoder",
@@ -190,7 +190,7 @@
    "ok": true,
    "count": 10,
    "error": null,
-   "lastOk": "2026-10-08T22:40:39Z"
+   "lastOk": "2026-10-08T22:59:08Z"
   },
   {
    "id": "sth",
@@ -199,7 +199,7 @@
    "ok": true,
    "count": 1,
    "error": null,
-   "lastOk": "2026-10-08T22:40:39Z"
+   "lastOk": "2026-10-08T22:59:08Z"
   },
   {
    "id": "embrace-red",
@@ -208,7 +208,7 @@
    "ok": true,
    "count": 6,
    "error": null,
-   "lastOk": "2026-10-08T22:40:39Z"
+   "lastOk": "2026-10-08T22:59:08Z"
   },
   {
    "id": "rel-ollama",
@@ -217,7 +217,7 @@
    "ok": true,
    "count": 3,
    "error": null,
-   "lastOk": "2026-10-08T22:40:39Z"
+   "lastOk": "2026-10-08T22:59:08Z"
   },
   {
    "id": "rel-vllm",
@@ -226,7 +226,7 @@
    "ok": true,
    "count": 3,
    "error": null,
-   "lastOk": "2026-10-08T22:40:39Z"
+   "lastOk": "2026-10-08T22:59:08Z"
   },
   {
    "id": "rel-opencode",
@@ -235,7 +235,7 @@
    "ok": true,
    "count": 3,
    "error": null,
-   "lastOk": "2026-10-08T22:40:39Z"
+   "lastOk": "2026-10-08T22:59:08Z"
   },
   {
    "id": "rel-claude-code",
@@ -244,7 +244,7 @@
    "ok": true,
    "count": 3,
    "error": null,
-   "lastOk": "2026-10-08T22:40:39Z"
+   "lastOk": "2026-10-08T22:59:08Z"
   }
  ],
  "heat": {
@@ -261,13 +261,13 @@
    },
    "world-models": {
     "d7": 14,
-    "prev7": 11,
-    "d30": 25
+    "prev7": 10,
+    "d30": 24
    },
    "gpt": {
-    "d7": 74,
+    "d7": 75,
     "prev7": 28,
-    "d30": 102
+    "d30": 103
    },
    "alignment": {
     "d7": 11,
@@ -290,13 +290,13 @@
     "d30": 21
    },
    "agent-loop": {
-    "d7": 47,
+    "d7": 48,
     "prev7": 18,
-    "d30": 65
+    "d30": 66
    },
    "ollama": {
-    "d7": 16,
-    "prev7": 2,
+    "d7": 15,
+    "prev7": 3,
     "d30": 18
    },
    "open-weights": {
@@ -349,6 +349,16 @@
     "prev7": 2,
     "d30": 12
    },
+   "openai-compat": {
+    "d7": 1,
+    "prev7": 0,
+    "d30": 1
+   },
+   "multimodal": {
+    "d7": 30,
+    "prev7": 19,
+    "d30": 49
+   },
    "codex": {
     "d7": 5,
     "prev7": 2,
@@ -376,23 +386,18 @@
    },
    "quantization": {
     "d7": 8,
-    "prev7": 1,
-    "d30": 9
+    "prev7": 0,
+    "d30": 8
    },
    "rl-reasoning": {
-    "d7": 14,
+    "d7": 15,
     "prev7": 5,
-    "d30": 19
+    "d30": 20
    },
    "openclaw": {
     "d7": 3,
     "prev7": 0,
     "d30": 3
-   },
-   "multimodal": {
-    "d7": 28,
-    "prev7": 20,
-    "d30": 48
    },
    "strix-halo": {
     "d7": 6,
@@ -500,14 +505,14 @@
     "d30": 2
    },
    "distillation": {
-    "d7": 8,
+    "d7": 9,
     "prev7": 8,
-    "d30": 16
+    "d30": 17
    },
    "tool-calling": {
     "d7": 1,
-    "prev7": 1,
-    "d30": 2
+    "prev7": 0,
+    "d30": 1
    },
    "abliteration": {
     "d7": 1,
@@ -627,20 +632,20 @@
   },
   "layers": {
    "models": {
-    "d7": 317,
-    "d30": 441
+    "d7": 320,
+    "d30": 442
    },
    "security": {
     "d7": 46,
     "d30": 68
    },
    "agents": {
-    "d7": 90,
-    "d30": 123
+    "d7": 91,
+    "d30": 124
    },
    "inference": {
     "d7": 67,
-    "d30": 89
+    "d30": 90
    },
    "compute": {
     "d7": 58,
@@ -648,7 +653,7 @@
    },
    "weights": {
     "d7": 23,
-    "d30": 30
+    "d30": 29
    },
    "context": {
     "d7": 19,
@@ -656,7 +661,7 @@
    },
    "tools": {
     "d7": 7,
-    "d30": 10
+    "d30": 9
    }
   },
   "stack": {
@@ -677,20 +682,20 @@
     "prev7": 6
    },
    "foundation-models": {
-    "d7": 245,
-    "prev7": 95
+    "d7": 247,
+    "prev7": 94
    },
    "inference-optimization": {
-    "d7": 67,
-    "prev7": 29
+    "d7": 69,
+    "prev7": 28
    },
    "orchestration-tooling": {
     "d7": 32,
-    "prev7": 15
+    "prev7": 14
    },
    "agents": {
-    "d7": 103,
-    "prev7": 45
+    "d7": 104,
+    "prev7": 44
    },
    "applications-interfaces": {
     "d7": 40,
@@ -1604,6 +1609,27 @@
     "models"
    ],
    "score": 5.13
+  },
+  {
+   "id": "88f6db94b106",
+   "title": "OpenAI-compatible TTS endpoint using OmniVoice: 0.3s response time",
+   "url": "https://www.reddit.com/r/LocalLLaMA/comments/1x0vld1/openaicompatible_tts_endpoint_using_omnivoice_03s/",
+   "source": "localllama",
+   "sourceName": "r/LocalLLaMA (top today)",
+   "type": "community",
+   "published": "2026-10-08T16:31:44Z",
+   "summary": "I want to share a TTS server with an OpenAI-compatible API that generates speech really fast (about 0.3 seconds for a sentence on an RTX 3080) and can clone a voice from a short reference clip. I’ve optimized the server so generation starts quickly, and it processes long text in sequence, paragraph by paragraph. I use…",
+   "firstSeen": "2026-10-08T22:59:08Z",
+   "tags": [
+    "openai-compat",
+    "gpt",
+    "multimodal"
+   ],
+   "layers": [
+    "inference",
+    "models"
+   ],
+   "score": 3.8
   },
   {
    "id": "dfe3686a9321",
@@ -4748,7 +4774,7 @@
    "type": "research",
    "published": "2026-10-06T20:00:00Z",
    "summary": "Dense visual text requires image generators to reproduce long strings across multiple regions with correct placement and legibility. As short-string rendering improves, evaluation must test sustained performance across more demanding scenes. We introduce UltraText Bench, a bilingual benchmark for prompt-only…",
-   "points": 55,
+   "points": 56,
    "firstSeen": "2026-10-08T18:50:08Z",
    "tags": [
     "multimodal",
@@ -4758,7 +4784,7 @@
     "models",
     "security"
    ],
-   "score": 4.95
+   "score": 4.96
   },
   {
    "id": "e586c32013d3",
@@ -4818,6 +4844,27 @@
     "context"
    ],
    "score": 3.88
+  },
+  {
+   "id": "f0fed848bebe",
+   "title": "From Pareto to Preference: Personalized Test-Time Scaling via Amortized Agentic Policy Discovery",
+   "url": "https://huggingface.co/papers/2610.09684",
+   "source": "hf-papers",
+   "sourceName": "Hugging Face Daily Papers",
+   "type": "research",
+   "published": "2026-10-06T20:00:00Z",
+   "summary": "Test-time scaling (TTS) improves the reasoning capabilities of large language models by allocating additional inference computation. Existing approaches to improving TTS efficiency largely optimize accuracy against one resource dimension at a time, advancing either the accuracy--cost or accuracy--latency Pareto…",
+   "points": 16,
+   "firstSeen": "2026-10-08T22:59:08Z",
+   "tags": [
+    "agent-loop",
+    "multimodal"
+   ],
+   "layers": [
+    "agents",
+    "models"
+   ],
+   "score": 4.43
   },
   {
    "id": "2435ebd74585",
@@ -7025,6 +7072,26 @@
    "tags": [],
    "layers": [],
    "score": 3.43
+  },
+  {
+   "id": "77eaf7d3362a",
+   "title": "On-Policy Distillation with Negative-Policy Rollouts",
+   "url": "https://huggingface.co/papers/2610.07874",
+   "source": "hf-papers",
+   "sourceName": "Hugging Face Daily Papers",
+   "type": "research",
+   "published": "2026-10-05T20:00:00Z",
+   "summary": "On-policy distillation (OPD) has been widely studied as a post-training method in which a student model obtains token-level supervision from a stronger teacher on its own rollouts. Recent studies have improved OPD through alternative distillation reward formulations and teacher configurations, while the objective of…",
+   "points": 16,
+   "firstSeen": "2026-10-08T22:59:08Z",
+   "tags": [
+    "distillation",
+    "rl-reasoning"
+   ],
+   "layers": [
+    "models"
+   ],
+   "score": 4.43
   },
   {
    "id": "4e85d9ec23f8",
@@ -17157,63 +17224,6 @@
     "models"
    ],
    "score": 4.36
-  },
-  {
-   "id": "ce4436958e43",
-   "title": "Beyond the Current Scene: Event-Referential Grasping with Active View Selection",
-   "url": "https://huggingface.co/papers/2609.39375",
-   "source": "hf-papers",
-   "sourceName": "Hugging Face Daily Papers",
-   "type": "research",
-   "published": "2026-09-29T20:00:00Z",
-   "summary": "A robot that observes people interacting with objects should be able to carry out later requests that refer back to those interactions. Such requests may specify a grasp target by the role it played in a past event rather than by its name or appearance. Moreover, the target may no longer be visible when the robot is…",
-   "points": 19,
-   "firstSeen": "2026-10-02T09:43:30Z",
-   "tags": [],
-   "layers": [],
-   "score": 3.3
-  },
-  {
-   "id": "20e4802c8dae",
-   "title": "EgoTools: Towards Tool-Centric Reasoning in Real-World Egocentric Videos",
-   "url": "https://huggingface.co/papers/2609.39378",
-   "source": "hf-papers",
-   "sourceName": "Hugging Face Daily Papers",
-   "type": "research",
-   "published": "2026-09-29T20:00:00Z",
-   "summary": "Real-world embodied tasks, from everyday activities to professional procedures, require agents to act under physical constraints while tracking evolving object and task states. Tool use sits at the heart of such tasks, as many everyday and professional activities are tool-mediated. Understanding them requires…",
-   "points": 57,
-   "firstSeen": "2026-10-02T09:43:30Z",
-   "tags": [
-    "tool-calling",
-    "world-models"
-   ],
-   "layers": [
-    "models",
-    "tools"
-   ],
-   "score": 4.96
-  },
-  {
-   "id": "02e72268e592",
-   "title": "Multimodal Flow: Unified Flow Modeling of Language and Vision in Embedding Spaces",
-   "url": "https://huggingface.co/papers/2609.40362",
-   "source": "hf-papers",
-   "sourceName": "Hugging Face Daily Papers",
-   "type": "research",
-   "published": "2026-09-29T20:00:00Z",
-   "summary": "We present Multimodal Flow, a fully continuous generative model of language and vision. Most unified multimodal models either model both language and quantized images as discrete tokens or combine discrete language prediction with continuous image generation. The former introduces a visual quantization bottleneck. The…",
-   "points": 20,
-   "firstSeen": "2026-10-02T09:43:30Z",
-   "tags": [
-    "multimodal",
-    "quantization"
-   ],
-   "layers": [
-    "models",
-    "weights"
-   ],
-   "score": 4.52
   }
  ]
 }
