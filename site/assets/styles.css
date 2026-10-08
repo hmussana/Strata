@@ -109,7 +109,9 @@ button { font: inherit; color: inherit; }
   backdrop-filter: blur(10px); border-bottom: 1px solid var(--border);
 }
 .brand { display: flex; align-items: center; gap: 10px; color: var(--text); text-decoration: none; }
-.brand-sub { color: var(--muted); font-size: .85rem; }
+.brand img { width: 40px; height: 40px; }
+.brand strong { font-size: 1.35rem; }
+.brand-sub { display: block; color: var(--accent); font-size: .85rem; font-weight: 600; }
 .status { color: var(--muted); font-size: .85rem; flex: 1; min-width: 180px; }
 .status .pill-new { background: var(--accent); color: #fff; border-radius: 999px; padding: 1px 8px; font-weight: 600; font-size: .78rem; text-decoration: none; }
 .top-actions { position: relative; display: flex; gap: 8px; align-items: center; }

@@ -582,7 +582,7 @@ def write_atom(items: list[dict], tagger: Tagger, path: Path, now: dt.datetime) 
             el.text = text
         return el
 
-    sub(feed, "title", "Lumai: AI news, layer by layer")
+    sub(feed, "title", "Lumai: AI news")
     sub(feed, "subtitle", "Stories from labs, community, research and press, tagged by concept.")
     sub(feed, "id", SITE_URL)
     sub(feed, "link", href=SITE_URL)

@@ -4,7 +4,7 @@
 
 <h1 align="center">Lumai</h1>
 
-<p align="center"><strong>How AI works, layer by layer.</strong><br>
+<p align="center"><strong>Layered Understanding Model of AI</strong><br>
 Lumai (say "loo-my", from <em>lumen</em>, light) brings light into AI's black box. It teaches <strong>the Lumai Model</strong>,<br>
 short for the <em>Layered Understanding Model of AI</em>: nine layers, named the way the OSI Model names network layers<br>
 (Lumai Layer 1, Physical &amp; Energy, up to Lumai Layer 9, Applications &amp; Interfaces).<br>
@@ -47,7 +47,7 @@ The news feed still files stories on this earlier seven-layer map. The explainer
 
 Security, safety and governance run across all seven. Remember it top-down: **A**ll **T**ools **C**an **I**nvoke **M**odels **W**ith **C**ompute.
 
-<p align="center"><img src="site/assets/social-card-stack.png" width="720" alt="Lumai: how AI works, layer by layer. The nine layers of the Lumai Model."></p>
+<p align="center"><img src="site/assets/social-card-stack.png" width="720" alt="Lumai, the Layered Understanding Model of AI. The nine layers of the Lumai Model."></p>
 
 ## What's inside
 
