@@ -27,7 +27,7 @@ export const val = (v) => (isPlaceholder(v) ? '<span class="ph" title="Placehold
 
 export const lclass = (layer) => `c-${layer.color}`;
 
-export const lnum = (layer) => `<span class="lnum" aria-label="Layer ${layer.order}">L${layer.order}</span>`;
+export const lnum = (layer) => `<span class="lnum" aria-label="Lumai Layer ${layer.order}">L${layer.order}</span>`;
 
 export function freshness(item, model) {
   const out = [];

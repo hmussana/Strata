@@ -24,7 +24,7 @@ function row(l, c, focus, depth) {
   return `<article class="z1-row ${lclass(l)} ${focus === l.id ? 'is-focus vt-target' : ''}" id="row-${esc(l.id)}" data-anchor="${esc(l.id)}" data-zoom-root>
     <div class="z1-num" aria-hidden="true">L${l.order}</div>
     <div class="z1-main">
-      <h2 class="z1-title"><a href="${href.layer(l.id)}" data-zoom>${icon(l.icon)}<span>${esc(l.name)}</span><span class="sr-only">, layer ${l.order} of ${c.layers.length}. Open this layer.</span></a></h2>
+      <h2 class="z1-title"><a href="${href.layer(l.id)}" data-zoom>${icon(l.icon)}<span>${esc(l.name)}</span><span class="sr-only">, Lumai Layer ${l.order} of ${c.layers.length}. Open this layer.</span></a></h2>
       <p>${esc(l.oneLiner)}</p>
     </div>
     <div class="z1-analogy"><span class="label">Think of it as</span>${esc(l.analogy.text)}
@@ -58,11 +58,11 @@ export function stack(route, c) {
   const flowBtn = (id, label, hint) => `<button type="button" data-flow="${id}" aria-pressed="false" title="${hint}">${label}</button>`;
 
   return {
-    zoom: 'Z1', layer: focus, title: 'The AI stack',
+    zoom: 'Z1', layer: focus, title: 'The Lumai Model',
     crumbs: [{ label: 'Landscape', href: href.landscape(focus), z: 'Z0' }, { label: 'Stack', z: 'Z1' }],
     html: `<header class="view-head z1-head">
         <div>
-          <p class="eyebrow">${zoomLabel('Z1')} The stack</p>
+          <p class="eyebrow">${zoomLabel('Z1')} The Lumai Model</p>
           <h1>How the AI world is organised</h1>
           <p class="lede">Each layer builds on the one below and serves the one above. Open any layer, or follow how things move through the stack.</p>
         </div>

@@ -389,8 +389,9 @@ main { padding: 0 16px; }
 .path-steps i.done { background: var(--ok); }
 .path-steps i.cur { background: var(--c, var(--accent)); outline: 1px solid var(--text); }
 .footer a { color: var(--muted); }
+.footer .foot-tag { color: var(--text); }
 
-/* ---------- Strata Model tower ---------- */
+/* ---------- seven-layer news map tower ---------- */
 .hero { margin-top: 30px; }
 .hero-head { display: flex; justify-content: space-between; align-items: flex-end; gap: 16px; flex-wrap: wrap; margin-bottom: 16px; }
 .eyebrow { text-transform: uppercase; letter-spacing: .12em; font-size: .74rem; font-weight: 700; color: var(--accent); margin: 0 0 6px; }

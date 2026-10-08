@@ -47,7 +47,7 @@ export function layer(route, c) {
     zoom: 'Z2', layer: l.id, title: l.name,
     crumbs: [{ label: 'Landscape', href: href.landscape(l.id), z: 'Z0' }, { label: 'Stack', href: href.stack(l.id), z: 'Z1' }, { label: l.name, z: 'Z2' }],
     html: `<header class="layer-head vt-target ${lclass(l)}">
-        <p class="eyebrow">${zoomLabel('Z2')} ${lnum(l)} Layer ${l.order} of ${c.layers.length}</p>
+        <p class="eyebrow">${zoomLabel('Z2')} ${lnum(l)} Lumai Layer ${l.order} of ${c.layers.length}</p>
         <h1>${icon(l.icon)}${esc(l.name)}</h1>
         <p class="lede">${esc(l.oneLiner)}</p>
         ${freshness(l, c.model)}

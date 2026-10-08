@@ -32,7 +32,7 @@ from pathlib import Path
 
 ROOT = Path(__file__).resolve().parent.parent
 DATA = ROOT / "site" / "data"
-USER_AGENT = "Mozilla/5.0 (compatible; strata-newsboard/1.0; +https://github.com/hmussana/Strata)"
+USER_AGENT = "Mozilla/5.0 (compatible; lumai-newsboard/1.0; +https://lumai.how)"
 SITE_URL = (os.environ.get("SITE_URL") or "https://hmussana.github.io/Strata/").rstrip("/") + "/"
 MAX_RESPONSE_BYTES = 8 * 1024 * 1024
 FEED_ITEMS = 60
@@ -381,7 +381,7 @@ def llm_enrich(items: list[dict], tagger: Tagger) -> int:
 # ---------------------------------------------------------------- analytics
 
 def stack_patterns(content: Path | None = None, field: str = "newsKeywords") -> dict[str, re.Pattern | None]:
-    """Compiled keyword pattern per layer of The AI Stack (site/content), in layer order.
+    """Compiled keyword pattern per layer of the Lumai Model (site/content), in layer order.
     `field` picks the keyword list; layers without it fall back to newsKeywords."""
     content = content or ROOT / "site" / "content"
     model_path = content / "model.json"
@@ -395,7 +395,7 @@ def stack_patterns(content: Path | None = None, field: str = "newsKeywords") -> 
 
 
 def compute_stack_heat(items: list[dict], now: dt.datetime, content: Path | None = None) -> dict:
-    """Stories per layer of The AI Stack, this week and last week, from each layer's newsKeywords."""
+    """Stories per layer of the Lumai Model, this week and last week, from each layer's newsKeywords."""
     heat = {}
     for lid, pat in stack_patterns(content).items():
         counts = {"d7": 0, "prev7": 0}
@@ -582,13 +582,13 @@ def write_atom(items: list[dict], tagger: Tagger, path: Path, now: dt.datetime) 
             el.text = text
         return el
 
-    sub(feed, "title", "Strata: AI news, mapped to the stack")
+    sub(feed, "title", "Lumai: AI news, layer by layer")
     sub(feed, "subtitle", "Stories from labs, community, research and press, tagged by concept.")
     sub(feed, "id", SITE_URL)
     sub(feed, "link", href=SITE_URL)
     sub(feed, "link", rel="self", href=SITE_URL + "feed.xml")
     sub(feed, "updated", iso(now))
-    sub(feed, "generator", "Strata")
+    sub(feed, "generator", "Lumai")
     for it in [i for i in items if i.get("tags")][:FEED_ITEMS]:
         entry = sub(feed, "entry")
         sub(entry, "title", it["title"])

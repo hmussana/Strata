@@ -1,4 +1,4 @@
-# The AI Stack: content model
+# The Lumai Model: content model
 
 All content lives in `site/content/` as JSON. Components never hard-code layers, concepts or relationships, so you
 can add and edit content without touching code. The app is the homepage (`site/index.html`, code in `site/next/`);
