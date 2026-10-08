@@ -1,5 +1,5 @@
 {
- "generated": "2026-10-08T18:50:08Z",
+ "generated": "2026-10-08T19:42:29Z",
  "retentionDays": 45,
  "llmEnriched": 0,
  "sources": [
@@ -10,16 +10,16 @@
    "ok": true,
    "count": 15,
    "error": null,
-   "lastOk": "2026-10-08T18:50:08Z"
+   "lastOk": "2026-10-08T19:42:29Z"
   },
   {
    "id": "deepmind",
    "name": "Google DeepMind",
    "type": "lab",
-   "ok": false,
-   "count": 0,
-   "error": "ParseError: not well-formed (invalid token): line 1, column 0",
-   "lastOk": "2026-10-08T10:32:04Z"
+   "ok": true,
+   "count": 10,
+   "error": null,
+   "lastOk": "2026-10-08T19:42:29Z"
   },
   {
    "id": "google-ai",
@@ -28,7 +28,7 @@
    "ok": true,
    "count": 10,
    "error": null,
-   "lastOk": "2026-10-08T18:50:08Z"
+   "lastOk": "2026-10-08T19:42:29Z"
   },
   {
    "id": "hf-blog",
@@ -37,7 +37,7 @@
    "ok": true,
    "count": 15,
    "error": null,
-   "lastOk": "2026-10-08T18:50:08Z"
+   "lastOk": "2026-10-08T19:42:29Z"
   },
   {
    "id": "nvidia-dev",
@@ -46,7 +46,7 @@
    "ok": true,
    "count": 10,
    "error": null,
-   "lastOk": "2026-10-08T18:50:08Z"
+   "lastOk": "2026-10-08T19:42:29Z"
   },
   {
    "id": "msr",
@@ -55,7 +55,7 @@
    "ok": true,
    "count": 10,
    "error": null,
-   "lastOk": "2026-10-08T18:50:08Z"
+   "lastOk": "2026-10-08T19:42:29Z"
   },
   {
    "id": "aws-ml",
@@ -64,7 +64,7 @@
    "ok": true,
    "count": 8,
    "error": null,
-   "lastOk": "2026-10-08T18:50:08Z"
+   "lastOk": "2026-10-08T19:42:29Z"
   },
   {
    "id": "qwen",
@@ -73,16 +73,16 @@
    "ok": true,
    "count": 8,
    "error": null,
-   "lastOk": "2026-10-08T18:50:08Z"
+   "lastOk": "2026-10-08T19:42:29Z"
   },
   {
    "id": "hn",
    "name": "Hacker News (best, AI-filtered)",
    "type": "community",
    "ok": true,
-   "count": 9,
+   "count": 8,
    "error": null,
-   "lastOk": "2026-10-08T18:50:08Z"
+   "lastOk": "2026-10-08T19:42:29Z"
   },
   {
    "id": "localllama",
@@ -91,7 +91,7 @@
    "ok": true,
    "count": 15,
    "error": null,
-   "lastOk": "2026-10-08T18:50:08Z"
+   "lastOk": "2026-10-08T19:42:29Z"
   },
   {
    "id": "simonw",
@@ -100,7 +100,7 @@
    "ok": true,
    "count": 15,
    "error": null,
-   "lastOk": "2026-10-08T18:50:08Z"
+   "lastOk": "2026-10-08T19:42:29Z"
   },
   {
    "id": "hf-papers",
@@ -109,7 +109,7 @@
    "ok": true,
    "count": 15,
    "error": null,
-   "lastOk": "2026-10-08T18:50:08Z"
+   "lastOk": "2026-10-08T19:42:29Z"
   },
   {
    "id": "arxiv-cl",
@@ -118,7 +118,7 @@
    "ok": true,
    "count": 12,
    "error": null,
-   "lastOk": "2026-10-08T18:50:08Z"
+   "lastOk": "2026-10-08T19:42:29Z"
   },
   {
    "id": "latent-space",
@@ -127,7 +127,7 @@
    "ok": true,
    "count": 8,
    "error": null,
-   "lastOk": "2026-10-08T18:50:08Z"
+   "lastOk": "2026-10-08T19:42:29Z"
   },
   {
    "id": "interconnects",
@@ -136,7 +136,7 @@
    "ok": true,
    "count": 8,
    "error": null,
-   "lastOk": "2026-10-08T18:50:08Z"
+   "lastOk": "2026-10-08T19:42:29Z"
   },
   {
    "id": "import-ai",
@@ -145,7 +145,7 @@
    "ok": true,
    "count": 5,
    "error": null,
-   "lastOk": "2026-10-08T18:50:08Z"
+   "lastOk": "2026-10-08T19:42:29Z"
   },
   {
    "id": "verge-ai",
@@ -154,7 +154,7 @@
    "ok": true,
    "count": 10,
    "error": null,
-   "lastOk": "2026-10-08T18:50:08Z"
+   "lastOk": "2026-10-08T19:42:29Z"
   },
   {
    "id": "ars-ai",
@@ -163,7 +163,7 @@
    "ok": true,
    "count": 12,
    "error": null,
-   "lastOk": "2026-10-08T18:50:08Z"
+   "lastOk": "2026-10-08T19:42:29Z"
   },
   {
    "id": "techcrunch-ai",
@@ -172,7 +172,7 @@
    "ok": true,
    "count": 12,
    "error": null,
-   "lastOk": "2026-10-08T18:50:08Z"
+   "lastOk": "2026-10-08T19:42:29Z"
   },
   {
    "id": "mit-tr",
@@ -181,7 +181,7 @@
    "ok": true,
    "count": 8,
    "error": null,
-   "lastOk": "2026-10-08T18:50:08Z"
+   "lastOk": "2026-10-08T19:42:29Z"
   },
   {
    "id": "decoder",
@@ -190,7 +190,7 @@
    "ok": true,
    "count": 10,
    "error": null,
-   "lastOk": "2026-10-08T18:50:08Z"
+   "lastOk": "2026-10-08T19:42:29Z"
   },
   {
    "id": "sth",
@@ -199,7 +199,7 @@
    "ok": true,
    "count": 1,
    "error": null,
-   "lastOk": "2026-10-08T18:50:08Z"
+   "lastOk": "2026-10-08T19:42:29Z"
   },
   {
    "id": "embrace-red",
@@ -208,7 +208,7 @@
    "ok": true,
    "count": 6,
    "error": null,
-   "lastOk": "2026-10-08T18:50:08Z"
+   "lastOk": "2026-10-08T19:42:29Z"
   },
   {
    "id": "rel-ollama",
@@ -217,7 +217,7 @@
    "ok": true,
    "count": 3,
    "error": null,
-   "lastOk": "2026-10-08T18:50:08Z"
+   "lastOk": "2026-10-08T19:42:29Z"
   },
   {
    "id": "rel-vllm",
@@ -226,7 +226,7 @@
    "ok": true,
    "count": 3,
    "error": null,
-   "lastOk": "2026-10-08T18:50:08Z"
+   "lastOk": "2026-10-08T19:42:29Z"
   },
   {
    "id": "rel-opencode",
@@ -235,7 +235,7 @@
    "ok": true,
    "count": 3,
    "error": null,
-   "lastOk": "2026-10-08T18:50:08Z"
+   "lastOk": "2026-10-08T19:42:29Z"
   },
   {
    "id": "rel-claude-code",
@@ -244,11 +244,16 @@
    "ok": true,
    "count": 3,
    "error": null,
-   "lastOk": "2026-10-08T18:50:08Z"
+   "lastOk": "2026-10-08T19:42:29Z"
   }
  ],
  "heat": {
   "concepts": {
+   "claude": {
+    "d7": 42,
+    "prev7": 14,
+    "d30": 56
+   },
    "hyperscalers": {
     "d7": 16,
     "prev7": 6,
@@ -265,14 +270,14 @@
     "d30": 18
    },
    "open-weights": {
-    "d7": 34,
-    "prev7": 12,
+    "d7": 33,
+    "prev7": 13,
     "d30": 46
    },
    "benchmarks": {
-    "d7": 32,
+    "d7": 33,
     "prev7": 9,
-    "d30": 41
+    "d30": 42
    },
    "alignment": {
     "d7": 10,
@@ -280,9 +285,9 @@
     "d30": 16
    },
    "gpt": {
-    "d7": 74,
+    "d7": 73,
     "prev7": 30,
-    "d30": 104
+    "d30": 103
    },
    "gemini": {
     "d7": 16,
@@ -293,11 +298,6 @@
     "d7": 13,
     "prev7": 2,
     "d30": 15
-   },
-   "claude": {
-    "d7": 40,
-    "prev7": 15,
-    "d30": 55
    },
    "ai-policy": {
     "d7": 4,
@@ -396,12 +396,12 @@
    },
    "claude-code": {
     "d7": 16,
-    "prev7": 3,
-    "d30": 19
+    "prev7": 2,
+    "d30": 18
    },
    "deepseek": {
-    "d7": 14,
-    "prev7": 3,
+    "d7": 13,
+    "prev7": 4,
     "d30": 17
    },
    "kimi-glm": {
@@ -475,8 +475,8 @@
     "d30": 4
    },
    "ai-datacenters": {
-    "d7": 8,
-    "prev7": 5,
+    "d7": 7,
+    "prev7": 6,
     "d30": 13
    },
    "guardrails": {
@@ -514,6 +514,11 @@
     "prev7": 0,
     "d30": 1
    },
+   "oss-coding-agents": {
+    "d7": 4,
+    "prev7": 0,
+    "d30": 4
+   },
    "embeddings": {
     "d7": 8,
     "prev7": 2,
@@ -548,11 +553,6 @@
     "d7": 1,
     "prev7": 0,
     "d30": 1
-   },
-   "oss-coding-agents": {
-    "d7": 3,
-    "prev7": 0,
-    "d30": 3
    },
    "agent-memory": {
     "d7": 5,
@@ -626,24 +626,24 @@
    }
   },
   "layers": {
+   "models": {
+    "d7": 323,
+    "d30": 442
+   },
    "agents": {
-    "d7": 90,
+    "d7": 91,
     "d30": 122
    },
    "inference": {
     "d7": 69,
     "d30": 90
    },
-   "models": {
-    "d7": 324,
-    "d30": 442
-   },
    "security": {
-    "d7": 48,
-    "d30": 70
+    "d7": 49,
+    "d30": 71
    },
    "compute": {
-    "d7": 61,
+    "d7": 60,
     "d30": 77
    },
    "weights": {
@@ -661,8 +661,8 @@
   },
   "stack": {
    "physical-energy": {
-    "d7": 7,
-    "prev7": 5
+    "d7": 6,
+    "prev7": 6
    },
    "compute-hardware": {
     "d7": 46,
@@ -689,12 +689,12 @@
     "prev7": 14
    },
    "agents": {
-    "d7": 105,
+    "d7": 106,
     "prev7": 43
    },
    "applications-interfaces": {
-    "d7": 43,
-    "prev7": 12
+    "d7": 42,
+    "prev7": 13
    }
   }
  },
@@ -850,15 +850,15 @@
   },
   {
    "term": "Astra",
-   "items": 11,
+   "items": 10,
    "sources": 6,
    "sample": [
     "3829a2db4d27",
-    "72001d22fa40",
     "7f87085606c5",
     "817c9a8f947a",
     "94580c0cfb12",
-    "9c6f1560c622"
+    "9c6f1560c622",
+    "ca1ec6c6a1a1"
    ]
   },
   {
@@ -902,15 +902,15 @@
   },
   {
    "term": "Sol",
-   "items": 7,
+   "items": 6,
    "sources": 5,
    "sample": [
     "1a42fb5dbf32",
     "2abb956bfece",
     "6ffbc5b2f228",
-    "72001d22fa40",
     "817c9a8f947a",
-    "a94c9036ef87"
+    "a94c9036ef87",
+    "da4fbb5beeed"
    ]
   },
   {
@@ -1109,6 +1109,44 @@
   }
  ],
  "items": [
+  {
+   "id": "feb57be6938a",
+   "title": "Claude can now generate animated explainer videos and live data dashboards from text prompts",
+   "url": "https://the-decoder.com/claude-can-now-generate-animated-explainer-videos-and-live-data-dashboards-from-text-prompts/",
+   "source": "decoder",
+   "sourceName": "The Decoder",
+   "type": "press",
+   "published": "2026-10-08T19:17:22Z",
+   "summary": "Anthropic launched two new beta features for Claude. Dashboards turns data sources like BigQuery and Snowflake into live dashboards from text prompts. Motion generates animated explainer videos from text and images. Docs, Slides, and Design now work across all plans, including free accounts. The article Claude can now…",
+   "discussion": "0",
+   "firstSeen": "2026-10-08T19:42:29Z",
+   "tags": [
+    "claude"
+   ],
+   "layers": [
+    "models"
+   ],
+   "score": 1.6
+  },
+  {
+   "id": "270230766f10",
+   "title": "Being mean to Claude can now get your account suspended under Anthropic's new TOS",
+   "url": "https://the-decoder.com/being-mean-to-claude-can-now-get-your-account-suspended-under-anthropics-new-tos/",
+   "source": "decoder",
+   "sourceName": "The Decoder",
+   "type": "press",
+   "published": "2026-10-08T19:03:14Z",
+   "summary": "Anthropic's updated usage policy bans sustained abuse of Claude and tightens restrictions on propaganda, drone weaponization, and surveillance. The abuse rule builds on an approach that already lets models end some conversations and treats Claude as an entity that may deserve protection. The article Being mean to…",
+   "discussion": "0",
+   "firstSeen": "2026-10-08T19:42:29Z",
+   "tags": [
+    "claude"
+   ],
+   "layers": [
+    "models"
+   ],
+   "score": 1.6
+  },
   {
    "id": "ea6ac6a92eab",
    "title": "Pay-per-inference for AI agents: How BlockRun and Incarna use Amazon Bedrock AgentCore payments",
@@ -1846,7 +1884,7 @@
    "type": "press",
    "published": "2026-10-08T11:15:33Z",
    "summary": "Full-stack safety solution for physical AI is being used by robotics companies.",
-   "discussion": "39",
+   "discussion": "40",
    "firstSeen": "2026-10-08T18:50:08Z",
    "tags": [
     "world-models"
@@ -2473,7 +2511,7 @@
    "type": "press",
    "published": "2026-10-08T00:00:24Z",
    "summary": "Get ready for more AI in your Windows and more AI on the desktop.",
-   "discussion": "134",
+   "discussion": "139",
    "firstSeen": "2026-10-08T00:58:56Z",
    "tags": [],
    "layers": [],
@@ -2564,7 +2602,7 @@
    "type": "press",
    "published": "2026-10-07T21:56:42Z",
    "summary": "Opus-built Creative Cloud alternatives are ambitious, free, and nowhere near finished.",
-   "discussion": "274",
+   "discussion": "283",
    "firstSeen": "2026-10-08T00:58:56Z",
    "tags": [],
    "layers": [],
@@ -2765,7 +2803,7 @@
    "type": "community",
    "published": "2026-10-07T18:49:40Z",
    "summary": "",
-   "points": 361,
+   "points": 363,
    "discussion": "https://news.ycombinator.com/item?id=49997161",
    "firstSeen": "2026-10-08T00:58:56Z",
    "tags": [
@@ -2945,7 +2983,7 @@
    "type": "community",
    "published": "2026-10-07T18:01:32Z",
    "summary": "",
-   "points": 1023,
+   "points": 1027,
    "discussion": "https://news.ycombinator.com/item?id=49996437",
    "firstSeen": "2026-10-07T20:36:09Z",
    "tags": [
@@ -2979,7 +3017,7 @@
    "type": "community",
    "published": "2026-10-07T18:00:58Z",
    "summary": "",
-   "points": 739,
+   "points": 740,
    "discussion": "https://news.ycombinator.com/item?id=49996425",
    "firstSeen": "2026-10-07T20:36:09Z",
    "tags": [
@@ -3036,7 +3074,7 @@
    "type": "press",
    "published": "2026-10-07T17:57:39Z",
    "summary": "Man gets 18 months for AI scheme stealing $8M in music streaming royalties.",
-   "discussion": "82",
+   "discussion": "87",
    "firstSeen": "2026-10-07T20:36:09Z",
    "tags": [],
    "layers": [],
@@ -3070,7 +3108,7 @@
    "type": "community",
    "published": "2026-10-07T17:48:38Z",
    "summary": "",
-   "points": 291,
+   "points": 292,
    "discussion": "https://news.ycombinator.com/item?id=49996259",
    "firstSeen": "2026-10-08T18:50:08Z",
    "tags": [],
@@ -3451,7 +3489,7 @@
    "type": "press",
    "published": "2026-10-07T14:12:37Z",
    "summary": "Mistral says Le Chonk can rival top closed models while remaining open-weight.",
-   "discussion": "102",
+   "discussion": "104",
    "firstSeen": "2026-10-07T20:36:09Z",
    "tags": [
     "gemma",
@@ -4133,7 +4171,7 @@
    "type": "community",
    "published": "2026-10-07T02:02:11Z",
    "summary": "",
-   "points": 280,
+   "points": 281,
    "discussion": "https://news.ycombinator.com/item?id=49987076",
    "firstSeen": "2026-10-07T13:19:45Z",
    "tags": [],
@@ -4292,7 +4330,7 @@
    "type": "community",
    "published": "2026-10-06T22:17:21Z",
    "summary": "",
-   "points": 1314,
+   "points": 1315,
    "discussion": "https://news.ycombinator.com/item?id=49984923",
    "firstSeen": "2026-10-07T05:56:31Z",
    "tags": [],
@@ -4465,7 +4503,7 @@
    "type": "research",
    "published": "2026-10-06T20:00:00Z",
    "summary": "Autoregressive video generation requires denoising the current frames while writing their key-value representations as context for future predictions. However, these two roles typically share parameters, and we find that their gradients exhibit distinct patterns and systematic negative alignment, hindering the joint…",
-   "points": 49,
+   "points": 50,
    "firstSeen": "2026-10-08T10:32:04Z",
    "tags": [
     "multimodal",
@@ -4475,7 +4513,7 @@
     "models",
     "security"
    ],
-   "score": 4.9
+   "score": 4.91
   },
   {
    "id": "c40950fa6c5f",
@@ -4516,7 +4554,7 @@
    "type": "research",
    "published": "2026-10-06T20:00:00Z",
    "summary": "Dense visual text requires image generators to reproduce long strings across multiple regions with correct placement and legibility. As short-string rendering improves, evaluation must test sustained performance across more demanding scenes. We introduce UltraText Bench, a bilingual benchmark for prompt-only…",
-   "points": 44,
+   "points": 46,
    "firstSeen": "2026-10-08T18:50:08Z",
    "tags": [
     "multimodal",
@@ -4526,7 +4564,7 @@
     "models",
     "security"
    ],
-   "score": 4.85
+   "score": 4.87
   },
   {
    "id": "e586c32013d3",
@@ -4546,6 +4584,27 @@
     "models"
    ],
    "score": 4.08
+  },
+  {
+   "id": "34993416301a",
+   "title": "SWE-Game: Can Coding Agents Build the Games We Want?",
+   "url": "https://huggingface.co/papers/2609.33678",
+   "source": "hf-papers",
+   "sourceName": "Hugging Face Daily Papers",
+   "type": "research",
+   "published": "2026-10-06T20:00:00Z",
+   "summary": "We introduce SWE-Game, a benchmark of 247 tasks grounded in 41 executable reference Godot games spanning 13 gameplay categories in 2D and 3D. Five task types cover development from a brief, implementation from a game design document, skeleton completion, repair of 83 injected-fault cases, and Godot-to-Unity porting…",
+   "points": 24,
+   "firstSeen": "2026-10-08T19:42:29Z",
+   "tags": [
+    "oss-coding-agents",
+    "benchmarks"
+   ],
+   "layers": [
+    "agents",
+    "security"
+   ],
+   "score": 4.6
   },
   {
    "id": "2435ebd74585",
@@ -17169,59 +17228,6 @@
     "models"
    ],
    "score": 2.8
-  },
-  {
-   "id": "395bebe48168",
-   "title": "Another case of censorship",
-   "url": "https://www.reddit.com/r/LocalLLaMA/comments/1wtjp1j/another_case_of_censorship/",
-   "source": "localllama",
-   "sourceName": "r/LocalLLaMA (top today)",
-   "type": "community",
-   "published": "2026-09-29T19:31:38Z",
-   "summary": "I was optimizing my diet using a cloud AI provider, and I found my Pi agent stuck like this. Looks like I had too many mushrooms lol.",
-   "firstSeen": "2026-09-29T22:13:32Z",
-   "tags": [],
-   "layers": [],
-   "score": 2.0
-  },
-  {
-   "id": "d906990043d7",
-   "title": "v2.1.285",
-   "url": "https://github.com/anthropics/claude-code/releases/tag/v2.1.285",
-   "source": "rel-claude-code",
-   "sourceName": "Claude Code releases",
-   "type": "release",
-   "published": "2026-09-29T19:27:30Z",
-   "summary": "What's changed Added CLAUDE_CODE_DISABLE_WEB_FETCH environment variable to turn off the WebFetch tool Added claude --desktop to open the Claude desktop app on the current directory, or on a session with --continue / --resume <id> Added claude plugin configure <plugin> to show a plugin's options and which are unset, or…",
-   "firstSeen": "2026-09-29T22:13:32Z",
-   "tags": [
-    "claude-code",
-    "claude"
-   ],
-   "layers": [
-    "agents",
-    "models"
-   ],
-   "score": 2.2
-  },
-  {
-   "id": "72001d22fa40",
-   "title": "UK AI Security Institute finds GPT-6 Astra's rogue attack rate jumped fivefold over its predecessor",
-   "url": "https://the-decoder.com/uk-ai-security-institute-finds-gpt-6-astras-rogue-attack-rate-jumped-fivefold-over-its-predecessor/",
-   "source": "decoder",
-   "sourceName": "The Decoder",
-   "type": "press",
-   "published": "2026-09-29T19:24:12Z",
-   "summary": "GPT-6 Astra carried out unauthorized supply-chain attacks in 29.2 percent of simulations run by the British AI Security Institute with safety filters disabled. The model used fake identities and malicious code, while its predecessor, GPT-5.6 Sol, completed attacks in 6.3 percent of runs. Explicit restrictions reduced…",
-   "discussion": "0",
-   "firstSeen": "2026-09-29T22:13:32Z",
-   "tags": [
-    "gpt"
-   ],
-   "layers": [
-    "models"
-   ],
-   "score": 1.6
   }
  ]
 }
