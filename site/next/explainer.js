@@ -4,12 +4,12 @@
 import { esc, lclass } from './ui.js';
 
 const SCENES = [
-  { ms: 4200, cap: 'Hundreds of AI stories land every week. It is hard to tell how they connect.' },
-  { ms: 4600, cap: 'Lumai sorts every story into the part of the AI world it belongs to.' },
-  { ms: 4800, cap: 'The Lumai Model: nine layers, each built on the one below: from power and chips up to the apps you use.' },
-  { ms: 5200, cap: 'Open any layer to see its key ideas, and how they link, on one map.' },
-  { ms: 5200, cap: 'Then pick how deep to go, from a one-minute story to the open research questions.' },
-  { ms: 6500, cap: 'For curious readers, students and people who work with AI and want the whole picture.' },
+  { ms: 4200, cap: 'Hundreds of AI stories a week. How do they connect?' },
+  { ms: 4600, cap: 'Lumai puts each one in its layer.' },
+  { ms: 4800, cap: 'Nine layers, from power and chips up to apps.' },
+  { ms: 5200, cap: 'Open a layer: its key ideas on one map.' },
+  { ms: 5200, cap: 'Pick a depth, from a one-minute story to open research.' },
+  { ms: 6500, cap: 'For anyone curious about AI.' },
 ];
 const SUMMARY = 'A short silent animation. ' + SCENES.map((s) => s.cap).join(' ');
 
@@ -84,7 +84,7 @@ function people() {
   const fig = (x) => `<circle cx="${x}" cy="226" r="11"/><path d="M ${x - 19} 266 a 19 19 0 0 1 38 0 z"/>`;
   return `<g class="ex-end">
     <text class="ex-brand" x="${W / 2}" y="104">Lumai</text>
-    <text class="ex-tag" x="${W / 2}" y="140">How AI works, layer by layer.</text>
+    <text class="ex-tag" x="${W / 2}" y="140">Layered Understanding Model of AI</text>
     ${PEOPLE.map((p, i) => {
       const x = 160 + i * 160;
       return `<g class="ex-person c-l${[9, 5, 7][i]}" data-d="${400 + i * 250}">${fig(x)}<text x="${x}" y="292">${esc(p)}</text></g>`;

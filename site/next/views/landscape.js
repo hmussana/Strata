@@ -4,7 +4,6 @@
 // layer names visible so later screens build on familiar terms). Every row is a zoom target into Z1.
 import { icon } from '../icons.js';
 import { href } from '../router.js';
-import { prefs } from '../store.js';
 import { explainerHtml, mountExplainer } from '../explainer.js';
 import { esc, val, lclass, lnum, freshness, zoomLabel, isPlaceholder } from '../ui.js';
 
@@ -101,31 +100,25 @@ export function landscape(route, c) {
   return {
     zoom: 'Z0', layer: focus, title: 'The AI landscape', bodyClass: 'is-z0',
     crumbs: [{ label: 'Landscape', z: 'Z0' }],
-    html: `<div class="z0">
-      <section class="intro has-film" id="intro" aria-labelledby="intro-title" ${prefs.introHidden ? 'hidden' : ''}>
-        ${explainerHtml(c)}
-        <div class="intro-side">
-          <div class="intro-text">
-            <h2 id="intro-title">What is Lumai?</h2>
-            <p>Lumai (say "loo-my", from <i>lumen</i>, light) shines a light into AI's black box. It is a visual guide to how today's AI works, from the power plants and chips at the bottom to the chatbots and agents at the top.
-              It's for anyone who wants the whole picture without a computer science degree, and for people who work with AI and want to see how the parts fit.</p>
-          </div>
-          <ol class="intro-steps">
-            <li><strong>Pick a layer</strong> below to see its main ideas on one map.</li>
-            <li><strong>Open an idea</strong> and choose how deep to go, from a one-minute story to the open research questions.</li>
-            <li><strong>Check what you know</strong> with a <a href="${href.quiz()}">short quiz</a>, or follow the <a href="news/">AI news feed</a>.</li>
-          </ol>
-          <button class="btn-ghost intro-hide" type="button" data-intro="hide">Got it, hide this</button>
+    html: `<section class="hero" id="intro" aria-labelledby="intro-title">
+      ${explainerHtml(c)}
+      <div class="hero-side">
+        <h1 id="intro-title">See how AI works.</h1>
+        <p class="hero-sub">Nine layers, from power plants to apps. Go as deep as you like.</p>
+        <div class="hero-act">
+          <button class="btn" type="button" data-to-layers>Explore the layers ↓</button>
+          <a class="btn-ghost" href="${href.quiz()}">Take the quiz</a>
         </div>
-      </section>
+      </div>
+    </section>
+    <div class="z0" id="layers">
       <header class="z0-head">
         <div>
           <p class="eyebrow">${zoomLabel('Z0')} Landscape</p>
-          <p class="tagline">How AI works, layer by layer.</p>
-          <h1>The whole AI world, in nine layers</h1>
-          <p class="lede">The Lumai Model runs from power plants to the apps you use; each layer builds on the one below. Select a layer to zoom in.</p>
+          <h2>The whole AI world, in nine layers</h2>
+          <p class="lede">Select a layer to zoom in.</p>
         </div>
-        <div class="z0-actions">${freshness(dash, c.model)}<button class="btn-ghost" type="button" data-intro="show" ${prefs.introHidden ? '' : 'hidden'}>What is this?</button><button class="btn-ghost" type="button" popovertarget="ind-info">${icon('bulb', 'ico-s')}How these are measured</button></div>
+        <div class="z0-actions">${freshness(dash, c.model)}<button class="btn-ghost" type="button" popovertarget="ind-info">${icon('bulb', 'ico-s')}How these are measured</button></div>
       </header>
       <div class="land">
         <div class="land-rows" role="list" aria-label="Layers, top to bottom">
@@ -145,16 +138,13 @@ export function landscape(route, c) {
       </div>
     </div>`,
     mount(root) {
-      const intro = root.querySelector('#intro'), show = root.querySelector('[data-intro="show"]');
-      const set = (hidden) => {
-        prefs.introHidden = hidden;
-        intro.hidden = hidden; show.hidden = !hidden;
-        (hidden ? show : intro.querySelector('h2')).focus?.();
-      };
-      intro.querySelector('h2').tabIndex = -1;
-      root.querySelector('[data-intro="hide"]').addEventListener('click', () => set(true));
-      show.addEventListener('click', () => set(false));
-      mountExplainer(intro.querySelector('.ex'));
+      root.querySelector('[data-to-layers]').addEventListener('click', () => {
+        const head = root.querySelector('#layers');
+        head.scrollIntoView({ behavior: matchMedia('(prefers-reduced-motion: reduce)').matches ? 'auto' : 'smooth' });
+        head.querySelector('.land-row')?.focus({ preventScroll: true });
+      });
+      mountExplainer(root.querySelector('.ex'));
+      if (focus) root.querySelector('#layers').scrollIntoView();
     },
   };
 }
