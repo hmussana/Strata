@@ -1,7 +1,10 @@
 {
-  "title": "The AI Stack",
-  "brand": "Strata",
-  "tagline": "How the AI world fits together, from power plants to the apps you use.",
+  "title": "The Lumai Model",
+  "formalName": "Layered Understanding Model of AI",
+  "brand": "Lumai",
+  "domain": "lumai.how",
+  "tagline": "How AI works, layer by layer.",
+  "summary": "How the AI world fits together, from power plants to the apps you use.",
   "lastReviewed": "2026-09-28",
   "staleAfterDays": 90,
   "layers": [

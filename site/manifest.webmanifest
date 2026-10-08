@@ -1,0 +1,15 @@
+{
+  "name": "Lumai: How AI works, layer by layer",
+  "short_name": "Lumai",
+  "description": "A visual explainer of the Lumai Model (Layered Understanding Model of AI), from power and chips to agents and apps.",
+  "start_url": "./",
+  "scope": "./",
+  "display": "standalone",
+  "background_color": "#0d1020",
+  "theme_color": "#0d1020",
+  "icons": [
+    { "src": "assets/icon.svg", "sizes": "any", "type": "image/svg+xml" },
+    { "src": "assets/icon-192.png", "sizes": "192x192", "type": "image/png" },
+    { "src": "assets/icon-512.png", "sizes": "512x512", "type": "image/png" }
+  ]
+}

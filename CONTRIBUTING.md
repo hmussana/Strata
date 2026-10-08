@@ -1,4 +1,4 @@
-# Contributing to Strata
+# Contributing to Lumai
 
 Thanks for helping keep the map current. Most contributions are edits to two JSON files, and no build tools are needed.
 

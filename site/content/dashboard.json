@@ -67,7 +67,7 @@
       "label": "News this week",
       "kind": "measured",
       "source": "news",
-      "definition": "Stories in Strata's news feed from the last 7 days that mention this layer's keywords. One story can count for several layers. A proxy for attention, not investment or importance."
+      "definition": "Stories in Lumai's news feed from the last 7 days that mention this layer's keywords. One story can count for several layers. A proxy for attention, not investment or importance."
     },
     {
       "id": "research",
@@ -86,7 +86,7 @@
           "Intel Foundry",
           "ASML (lithography)"
         ],
-        "source": "Draft examples chosen by Strata",
+        "source": "Draft examples chosen by Lumai",
         "asOf": "2026-09-30"
       },
       "maturity": {
@@ -113,7 +113,7 @@
             "why": "AI-scale sites are still working out power sourcing and cooling."
           }
         },
-        "source": "Strata editorial assessment (draft) using the maturity formula",
+        "source": "Lumai editorial assessment (draft) using the maturity formula",
         "asOf": "2026-09-30"
       }
     },
@@ -125,7 +125,7 @@
           "Google (TPU)",
           "AWS (Trainium)"
         ],
-        "source": "Draft examples chosen by Strata",
+        "source": "Draft examples chosen by Lumai",
         "asOf": "2026-09-30"
       },
       "maturity": {
@@ -152,7 +152,7 @@
             "why": "New number formats and chip generations arrive roughly yearly."
           }
         },
-        "source": "Strata editorial assessment (draft) using the maturity formula",
+        "source": "Lumai editorial assessment (draft) using the maturity formula",
         "asOf": "2026-09-30"
       }
     },
@@ -164,7 +164,7 @@
           "Google Cloud",
           "CoreWeave"
         ],
-        "source": "Draft examples chosen by Strata",
+        "source": "Draft examples chosen by Lumai",
         "asOf": "2026-09-30"
       },
       "maturity": {
@@ -191,7 +191,7 @@
             "why": "Large-scale training operations practices are still maturing."
           }
         },
-        "source": "Strata editorial assessment (draft) using the maturity formula",
+        "source": "Lumai editorial assessment (draft) using the maturity formula",
         "asOf": "2026-09-30"
       }
     },
@@ -202,7 +202,7 @@
           "Scale AI",
           "Hugging Face datasets"
         ],
-        "source": "Draft examples chosen by Strata",
+        "source": "Draft examples chosen by Lumai",
         "asOf": "2026-09-30"
       },
       "maturity": {
@@ -229,7 +229,7 @@
             "why": "Synthetic data, licensing and consent practices are unsettled."
           }
         },
-        "source": "Strata editorial assessment (draft) using the maturity formula",
+        "source": "Lumai editorial assessment (draft) using the maturity formula",
         "asOf": "2026-10-02"
       }
     },
@@ -243,7 +243,7 @@
           "DeepSeek",
           "Alibaba (Qwen)"
         ],
-        "source": "Draft examples chosen by Strata",
+        "source": "Draft examples chosen by Lumai",
         "asOf": "2026-09-30"
       },
       "maturity": {
@@ -270,7 +270,7 @@
             "why": "The core recipe is stable; post-training methods change fast."
           }
         },
-        "source": "Strata editorial assessment (draft) using the maturity formula",
+        "source": "Lumai editorial assessment (draft) using the maturity formula",
         "asOf": "2026-09-30"
       }
     },
@@ -282,7 +282,7 @@
           "OpenRouter",
           "Together AI"
         ],
-        "source": "Draft examples chosen by Strata",
+        "source": "Draft examples chosen by Lumai",
         "asOf": "2026-09-30"
       },
       "maturity": {
@@ -309,7 +309,7 @@
             "why": "Quantisation and caching techniques keep moving."
           }
         },
-        "source": "Strata editorial assessment (draft) using the maturity formula",
+        "source": "Lumai editorial assessment (draft) using the maturity formula",
         "asOf": "2026-09-30"
       }
     },
@@ -321,7 +321,7 @@
           "MCP ecosystem",
           "pgvector"
         ],
-        "source": "Draft examples chosen by Strata",
+        "source": "Draft examples chosen by Lumai",
         "asOf": "2026-09-30"
       },
       "maturity": {
@@ -348,7 +348,7 @@
             "why": "Best practice for retrieval, evaluation and guardrails is still forming."
           }
         },
-        "source": "Strata editorial assessment (draft) using the maturity formula",
+        "source": "Lumai editorial assessment (draft) using the maturity formula",
         "asOf": "2026-10-02"
       }
     },
@@ -360,7 +360,7 @@
           "OpenClaw",
           "Devin"
         ],
-        "source": "Draft examples chosen by Strata",
+        "source": "Draft examples chosen by Lumai",
         "asOf": "2026-09-30"
       },
       "maturity": {
@@ -387,7 +387,7 @@
             "why": "Reliable autonomy, evaluation and safety are open problems."
           }
         },
-        "source": "Strata editorial assessment (draft) using the maturity formula",
+        "source": "Lumai editorial assessment (draft) using the maturity formula",
         "asOf": "2026-10-02"
       }
     },
@@ -399,7 +399,7 @@
           "GitHub Copilot",
           "Perplexity"
         ],
-        "source": "Draft examples chosen by Strata",
+        "source": "Draft examples chosen by Lumai",
         "asOf": "2026-09-30"
       },
       "maturity": {
@@ -426,7 +426,7 @@
             "why": "Patterns for review and trust are still settling."
           }
         },
-        "source": "Strata editorial assessment (draft) using the maturity formula",
+        "source": "Lumai editorial assessment (draft) using the maturity formula",
         "asOf": "2026-09-30"
       }
     }

@@ -1,4 +1,4 @@
-// The AI Stack: app shell. Loads content, routes between zoom levels, keeps breadcrumb + minimap in sync.
+// Lumai: app shell. Loads content, routes between zoom levels, keeps breadcrumb + minimap in sync.
 import { loadContent } from './content.js';
 import { start, href } from './router.js';
 import { prefs } from './store.js';
@@ -14,6 +14,9 @@ import { quiz } from './views/quiz.js';
 const VIEWS = { landscape, stack, layer, concept, legend, quiz };
 const $ = (s) => document.querySelector(s);
 let previous = null;
+let lastZoom = null;
+const ZOOM_DEPTH = { Z0: 0, Z1: 1, Z2: 2, Z3: 3 };
+const reducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)');
 
 function notFound() {
   return {
@@ -35,7 +38,7 @@ function renderCrumbs(crumbs) {
 function renderMinimap(c, out) {
   const zoomBtn = (z, label, target) => `<a class="mm-btn" href="${target}" ${out.zoom === z ? 'aria-current="page"' : ''} title="${label}">${z}</a>`;
   const layers = c.topDown.map((l) => `<a class="mm-layer ${lclass(l)}" href="${href.layer(l.id)}" ${out.layer === l.id ? 'aria-current="location"' : ''}
-      aria-label="Layer ${l.order}: ${esc(l.name)}" title="L${l.order} · ${esc(l.name)}">${l.order}</a>`).join('');
+      aria-label="Lumai Layer ${l.order}: ${esc(l.name)}" title="L${l.order} · ${esc(l.name)}">${l.order}</a>`).join('');
   $('#minimap').innerHTML = `<div class="mm-zoom">${zoomBtn('Z0', 'Landscape', href.landscape())}${zoomBtn('Z1', 'Stack', href.stack())}</div>
     <div class="mm-label">Layers</div>${layers}`;
 }
@@ -48,13 +51,15 @@ function render(c, route) {
   main.innerHTML = out.html;
   renderCrumbs(out.crumbs);
   renderMinimap(c, out);
-  document.title = `${out.title} · The AI Stack`;
+  document.title = `${out.title} · Lumai`;
   $('#announce').textContent = `${out.title}${out.zoom ? `, zoom level ${out.zoom}` : ''}`;
   // same concept, different depth: keep focus on the depth dial; otherwise move to the new view.
   // Reset scroll before mount() so views can scroll to their own focus point.
   const sameConcept = previous?.view === 'concept' && route.view === 'concept' && previous.id === route.id;
   if (!sameConcept && previous) { window.scrollTo(0, 0); main.focus({ preventScroll: true }); }
   out.mount?.(main);
+  if (lastZoom && ZOOM_DEPTH[out.zoom] > ZOOM_DEPTH[lastZoom]) shine();
+  lastZoom = out.zoom || lastZoom;
   if (sameConcept) main.querySelector('.depth-opt[aria-checked="true"]')?.focus({ preventScroll: true });
   previous = route;
 }
@@ -81,6 +86,23 @@ function setupZoom() {
     document.querySelectorAll('.vt-target').forEach((el) => el.classList.remove('vt-target'));
     (a.closest('[data-zoom-root]') || a).classList.add('vt-target');
   });
+}
+
+// Lumai's light motif: zooming in sends a soft beam of light down through the page, like light passing through the
+// layers. It sits on top of the per-layer colours (never replaces them) and is skipped entirely under reduced motion.
+function shine() {
+  if (reducedMotion.matches) return;
+  let beam = document.querySelector('.beam');
+  if (!beam) {
+    beam = document.createElement('div');
+    beam.className = 'beam';
+    beam.setAttribute('aria-hidden', 'true');
+    beam.addEventListener('animationend', () => beam.classList.remove('is-on'));
+    document.body.append(beam);
+  }
+  beam.classList.remove('is-on');
+  void beam.offsetWidth; // restart the animation on quick successive zooms
+  beam.classList.add('is-on');
 }
 
 // Z0 fills exactly one screen: track the real height of the sticky bar (it can wrap on narrow screens)

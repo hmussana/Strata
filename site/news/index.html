@@ -5,27 +5,33 @@
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self'; style-src 'self'; img-src 'self' data:; connect-src 'self'; base-uri 'none'; form-action 'none'">
   <meta name="referrer" content="no-referrer">
-  <title>Strata · AI news feed</title>
+  <title>AI news feed · Lumai</title>
   <meta name="description" content="The latest AI news from labs, papers and the community, refreshed every three hours and sorted by where each story fits in the AI stack.">
   <meta name="theme-color" content="#0d1020">
   <meta property="og:type" content="website">
-  <meta property="og:title" content="Strata · AI news feed">
+  <meta property="og:site_name" content="Lumai">
+  <meta property="og:title" content="AI news feed · Lumai">
   <meta property="og:description" content="The latest AI news from labs, papers and the community, refreshed every three hours and sorted by where each story fits in the AI stack.">
-  <meta property="og:url" content="https://hmussana.github.io/Strata/news/">
-  <link rel="canonical" href="https://hmussana.github.io/Strata/news/">
-  <meta property="og:image" content="https://hmussana.github.io/Strata/assets/social-card.png">
+  <meta property="og:url" content="https://lumai.how/news/">
+  <link rel="canonical" href="https://lumai.how/news/">
+  <link rel="manifest" href="../manifest.webmanifest">
+  <meta property="og:image" content="https://lumai.how/assets/social-card-stack.png">
+  <meta property="og:image:alt" content="Lumai: how AI works, layer by layer.">
   <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="AI news feed · Lumai">
+  <meta name="twitter:description" content="The latest AI news from labs, papers and the community, refreshed every three hours and sorted by where each story fits in the AI stack.">
+  <meta name="twitter:image" content="https://lumai.how/assets/social-card-stack.png">
   <link rel="icon" href="../assets/icon.svg" type="image/svg+xml">
   <link rel="apple-touch-icon" href="../assets/icon-192.png">
-  <link rel="alternate" type="application/atom+xml" title="Strata news feed" href="../feed.xml">
+  <link rel="alternate" type="application/atom+xml" title="Lumai news feed" href="../feed.xml">
   <link rel="stylesheet" href="../assets/styles.css">
   <script type="module" src="../assets/app.js"></script>
 </head>
 <body>
   <header class="topbar">
-    <a class="brand" href="#" aria-label="Strata home">
+    <a class="brand" href="#" aria-label="Lumai news home">
       <img src="../assets/icon.svg" alt="" width="30" height="30">
-      <span><strong>Strata</strong> <span class="brand-sub">the AI stack, mapped</span></span>
+      <span><strong>Lumai</strong> <span class="brand-sub">AI news, layer by layer</span></span>
     </a>
     <div class="status" id="status" aria-live="polite">Loading…</div>
     <div class="top-actions">
@@ -34,17 +40,17 @@
         <input id="search" type="search" placeholder="Search concepts & news  ( / )" autocomplete="off">
       </label>
       <div class="search-results" id="search-results" hidden></div>
-      <a class="try-next" href="../"><span class="try-long">← The AI Stack explainer</span><span class="try-short">← Explainer</span></a>
+      <a class="try-next" href="../"><span class="try-long">← The Lumai Model explainer</span><span class="try-short">← Explainer</span></a>
       <button class="icon-btn" id="theme-toggle" type="button" aria-label="Toggle colour theme" title="Toggle theme">◐</button>
     </div>
   </header>
 
   <main>
     <section class="section news-intro" aria-labelledby="page-title">
-      <p class="eyebrow">Strata · AI news feed</p>
+      <p class="eyebrow">Lumai · AI news feed</p>
       <h1 id="page-title">The latest AI news, sorted by where it fits</h1>
-      <p>Stories from labs, papers and the community, refreshed every three hours and tagged to a layer of the stack. To learn how the pieces work, head to <a href="../">The AI Stack explainer</a>.</p>
-      <p class="small muted">This feed still files stories on Strata's earlier seven-layer map, shown further down. The explainer uses nine layers.</p>
+      <p>Stories from labs, papers and the community, refreshed every three hours and tagged to a layer of the stack. To learn how the pieces work, head to <a href="../">the Lumai Model explainer</a>.</p>
+      <p class="small muted">This feed still files stories on Lumai's earlier seven-layer news map, shown further down. The explainer uses the nine layers of the Lumai Model.</p>
     </section>
 
     <section class="section" id="news" aria-labelledby="news-title">
@@ -84,7 +90,7 @@
     <section class="section hero" id="map" aria-labelledby="map-title">
       <div class="hero-head">
         <div>
-          <p class="eyebrow">The Strata Model · an OSI model for AI</p>
+          <p class="eyebrow">The seven-layer news map · an OSI-style map for AI</p>
           <h2 id="map-title">Seven layers. <span class="grad">Every AI headline fits one.</span></h2>
         </div>
         <div class="view-toggle" role="group" aria-label="What to show on each layer">
@@ -122,6 +128,7 @@
   </main>
 
   <footer class="footer">
+    <p class="foot-tag"><strong>Lumai</strong> · How AI works, layer by layer.</p>
     <p>Concept map last reviewed <span id="reviewed">–</span>. News refreshes every 3 hours; the Radar shows what the map is missing.</p>
     <p>No trackers, no cookies, no third-party requests: your "learned" marks and last visit stay in this browser.
       <a href="../feed.xml">Atom feed</a> · <a href="https://github.com/hmussana/Strata">Source &amp; contributions</a> · Code MIT, content CC BY 4.0.</p>

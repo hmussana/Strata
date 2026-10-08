@@ -1,7 +1,5 @@
 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64">
+  <!-- Placeholder Lumai mark: a plain "L". Replace this file (and icon-192.png, icon-512.png) with the final logo. -->
   <rect width="64" height="64" rx="14" fill="#12162b"/>
-  <path d="M10 18c9-6 17 4 27 0s12-4 17-1v7c-5-3-8-3-17 1s-18-6-27 0z" fill="#a58cff"/>
-  <path d="M10 29c9-6 17 4 27 0s12-4 17-1v7c-5-3-8-3-17 1s-18-6-27 0z" fill="#5eaaf5"/>
-  <path d="M10 40c9-6 17 4 27 0s12-4 17-1v7c-5-3-8-3-17 1s-18-6-27 0z" fill="#2cc4b4"/>
-  <path d="M10 51c9-6 17 4 27 0s12-4 17-1v5H10z" fill="#f0a93b"/>
+  <path d="M21 13h9v29h16v9H21z" fill="#ffe3a3"/>
 </svg>
