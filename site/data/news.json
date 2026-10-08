@@ -1,5 +1,5 @@
 {
- "generated": "2026-10-08T19:42:29Z",
+ "generated": "2026-10-08T20:10:31Z",
  "retentionDays": 45,
  "llmEnriched": 0,
  "sources": [
@@ -10,7 +10,7 @@
    "ok": true,
    "count": 15,
    "error": null,
-   "lastOk": "2026-10-08T19:42:29Z"
+   "lastOk": "2026-10-08T20:10:31Z"
   },
   {
    "id": "deepmind",
@@ -19,7 +19,7 @@
    "ok": true,
    "count": 10,
    "error": null,
-   "lastOk": "2026-10-08T19:42:29Z"
+   "lastOk": "2026-10-08T20:10:31Z"
   },
   {
    "id": "google-ai",
@@ -28,7 +28,7 @@
    "ok": true,
    "count": 10,
    "error": null,
-   "lastOk": "2026-10-08T19:42:29Z"
+   "lastOk": "2026-10-08T20:10:31Z"
   },
   {
    "id": "hf-blog",
@@ -37,7 +37,7 @@
    "ok": true,
    "count": 15,
    "error": null,
-   "lastOk": "2026-10-08T19:42:29Z"
+   "lastOk": "2026-10-08T20:10:31Z"
   },
   {
    "id": "nvidia-dev",
@@ -46,7 +46,7 @@
    "ok": true,
    "count": 10,
    "error": null,
-   "lastOk": "2026-10-08T19:42:29Z"
+   "lastOk": "2026-10-08T20:10:31Z"
   },
   {
    "id": "msr",
@@ -55,7 +55,7 @@
    "ok": true,
    "count": 10,
    "error": null,
-   "lastOk": "2026-10-08T19:42:29Z"
+   "lastOk": "2026-10-08T20:10:31Z"
   },
   {
    "id": "aws-ml",
@@ -64,7 +64,7 @@
    "ok": true,
    "count": 8,
    "error": null,
-   "lastOk": "2026-10-08T19:42:29Z"
+   "lastOk": "2026-10-08T20:10:31Z"
   },
   {
    "id": "qwen",
@@ -73,7 +73,7 @@
    "ok": true,
    "count": 8,
    "error": null,
-   "lastOk": "2026-10-08T19:42:29Z"
+   "lastOk": "2026-10-08T20:10:31Z"
   },
   {
    "id": "hn",
@@ -82,7 +82,7 @@
    "ok": true,
    "count": 8,
    "error": null,
-   "lastOk": "2026-10-08T19:42:29Z"
+   "lastOk": "2026-10-08T20:10:31Z"
   },
   {
    "id": "localllama",
@@ -91,7 +91,7 @@
    "ok": true,
    "count": 15,
    "error": null,
-   "lastOk": "2026-10-08T19:42:29Z"
+   "lastOk": "2026-10-08T20:10:31Z"
   },
   {
    "id": "simonw",
@@ -100,7 +100,7 @@
    "ok": true,
    "count": 15,
    "error": null,
-   "lastOk": "2026-10-08T19:42:29Z"
+   "lastOk": "2026-10-08T20:10:31Z"
   },
   {
    "id": "hf-papers",
@@ -109,7 +109,7 @@
    "ok": true,
    "count": 15,
    "error": null,
-   "lastOk": "2026-10-08T19:42:29Z"
+   "lastOk": "2026-10-08T20:10:31Z"
   },
   {
    "id": "arxiv-cl",
@@ -118,7 +118,7 @@
    "ok": true,
    "count": 12,
    "error": null,
-   "lastOk": "2026-10-08T19:42:29Z"
+   "lastOk": "2026-10-08T20:10:31Z"
   },
   {
    "id": "latent-space",
@@ -127,7 +127,7 @@
    "ok": true,
    "count": 8,
    "error": null,
-   "lastOk": "2026-10-08T19:42:29Z"
+   "lastOk": "2026-10-08T20:10:31Z"
   },
   {
    "id": "interconnects",
@@ -136,7 +136,7 @@
    "ok": true,
    "count": 8,
    "error": null,
-   "lastOk": "2026-10-08T19:42:29Z"
+   "lastOk": "2026-10-08T20:10:31Z"
   },
   {
    "id": "import-ai",
@@ -145,7 +145,7 @@
    "ok": true,
    "count": 5,
    "error": null,
-   "lastOk": "2026-10-08T19:42:29Z"
+   "lastOk": "2026-10-08T20:10:31Z"
   },
   {
    "id": "verge-ai",
@@ -154,7 +154,7 @@
    "ok": true,
    "count": 10,
    "error": null,
-   "lastOk": "2026-10-08T19:42:29Z"
+   "lastOk": "2026-10-08T20:10:31Z"
   },
   {
    "id": "ars-ai",
@@ -163,7 +163,7 @@
    "ok": true,
    "count": 12,
    "error": null,
-   "lastOk": "2026-10-08T19:42:29Z"
+   "lastOk": "2026-10-08T20:10:31Z"
   },
   {
    "id": "techcrunch-ai",
@@ -172,7 +172,7 @@
    "ok": true,
    "count": 12,
    "error": null,
-   "lastOk": "2026-10-08T19:42:29Z"
+   "lastOk": "2026-10-08T20:10:31Z"
   },
   {
    "id": "mit-tr",
@@ -181,7 +181,7 @@
    "ok": true,
    "count": 8,
    "error": null,
-   "lastOk": "2026-10-08T19:42:29Z"
+   "lastOk": "2026-10-08T20:10:31Z"
   },
   {
    "id": "decoder",
@@ -190,7 +190,7 @@
    "ok": true,
    "count": 10,
    "error": null,
-   "lastOk": "2026-10-08T19:42:29Z"
+   "lastOk": "2026-10-08T20:10:31Z"
   },
   {
    "id": "sth",
@@ -199,7 +199,7 @@
    "ok": true,
    "count": 1,
    "error": null,
-   "lastOk": "2026-10-08T19:42:29Z"
+   "lastOk": "2026-10-08T20:10:31Z"
   },
   {
    "id": "embrace-red",
@@ -208,7 +208,7 @@
    "ok": true,
    "count": 6,
    "error": null,
-   "lastOk": "2026-10-08T19:42:29Z"
+   "lastOk": "2026-10-08T20:10:31Z"
   },
   {
    "id": "rel-ollama",
@@ -217,7 +217,7 @@
    "ok": true,
    "count": 3,
    "error": null,
-   "lastOk": "2026-10-08T19:42:29Z"
+   "lastOk": "2026-10-08T20:10:31Z"
   },
   {
    "id": "rel-vllm",
@@ -226,7 +226,7 @@
    "ok": true,
    "count": 3,
    "error": null,
-   "lastOk": "2026-10-08T19:42:29Z"
+   "lastOk": "2026-10-08T20:10:31Z"
   },
   {
    "id": "rel-opencode",
@@ -235,7 +235,7 @@
    "ok": true,
    "count": 3,
    "error": null,
-   "lastOk": "2026-10-08T19:42:29Z"
+   "lastOk": "2026-10-08T20:10:31Z"
   },
   {
    "id": "rel-claude-code",
@@ -244,20 +244,40 @@
    "ok": true,
    "count": 3,
    "error": null,
-   "lastOk": "2026-10-08T19:42:29Z"
+   "lastOk": "2026-10-08T20:10:31Z"
   }
  ],
  "heat": {
   "concepts": {
+   "gpt": {
+    "d7": 74,
+    "prev7": 27,
+    "d30": 101
+   },
+   "alignment": {
+    "d7": 11,
+    "prev7": 6,
+    "d30": 17
+   },
+   "claude-code": {
+    "d7": 17,
+    "prev7": 2,
+    "d30": 19
+   },
    "claude": {
-    "d7": 42,
+    "d7": 43,
     "prev7": 14,
-    "d30": 56
+    "d30": 57
+   },
+   "opencode": {
+    "d7": 7,
+    "prev7": 3,
+    "d30": 10
    },
    "hyperscalers": {
     "d7": 16,
-    "prev7": 6,
-    "d30": 22
+    "prev7": 5,
+    "d30": 21
    },
    "agent-loop": {
     "d7": 48,
@@ -275,23 +295,13 @@
     "d30": 46
    },
    "benchmarks": {
-    "d7": 33,
-    "prev7": 9,
+    "d7": 30,
+    "prev7": 12,
     "d30": 42
    },
-   "alignment": {
-    "d7": 10,
-    "prev7": 6,
-    "d30": 16
-   },
-   "gpt": {
-    "d7": 73,
-    "prev7": 30,
-    "d30": 103
-   },
    "gemini": {
-    "d7": 16,
-    "prev7": 11,
+    "d7": 15,
+    "prev7": 12,
     "d30": 27
    },
    "multi-agent": {
@@ -315,8 +325,8 @@
     "d30": 13
    },
    "qwen": {
-    "d7": 63,
-    "prev7": 15,
+    "d7": 62,
+    "prev7": 16,
     "d30": 78
    },
    "vram-math": {
@@ -360,8 +370,8 @@
     "d30": 9
    },
    "rl-reasoning": {
-    "d7": 15,
-    "prev7": 6,
+    "d7": 14,
+    "prev7": 7,
     "d30": 21
    },
    "openclaw": {
@@ -370,13 +380,13 @@
     "d30": 3
    },
    "multimodal": {
-    "d7": 32,
-    "prev7": 19,
-    "d30": 51
+    "d7": 28,
+    "prev7": 24,
+    "d30": 52
    },
    "world-models": {
-    "d7": 13,
-    "prev7": 11,
+    "d7": 12,
+    "prev7": 12,
     "d30": 24
    },
    "strix-halo": {
@@ -391,13 +401,8 @@
    },
    "computer-use": {
     "d7": 3,
-    "prev7": 4,
-    "d30": 7
-   },
-   "claude-code": {
-    "d7": 16,
-    "prev7": 2,
-    "d30": 18
+    "prev7": 3,
+    "d30": 6
    },
    "deepseek": {
     "d7": 13,
@@ -413,11 +418,6 @@
     "d7": 3,
     "prev7": 1,
     "d30": 4
-   },
-   "opencode": {
-    "d7": 6,
-    "prev7": 3,
-    "d30": 9
    },
    "lora": {
     "d7": 12,
@@ -465,8 +465,8 @@
     "d30": 1
    },
    "rag": {
-    "d7": 7,
-    "prev7": 7,
+    "d7": 6,
+    "prev7": 8,
     "d30": 14
    },
    "nvidia-dc": {
@@ -500,9 +500,9 @@
     "d30": 2
    },
    "distillation": {
-    "d7": 11,
-    "prev7": 6,
-    "d30": 17
+    "d7": 8,
+    "prev7": 8,
+    "d30": 16
    },
    "tool-calling": {
     "d7": 1,
@@ -627,20 +627,20 @@
   },
   "layers": {
    "models": {
-    "d7": 323,
-    "d30": 442
+    "d7": 317,
+    "d30": 441
+   },
+   "security": {
+    "d7": 47,
+    "d30": 72
    },
    "agents": {
-    "d7": 91,
-    "d30": 122
+    "d7": 93,
+    "d30": 123
    },
    "inference": {
     "d7": 69,
-    "d30": 90
-   },
-   "security": {
-    "d7": 49,
-    "d30": 71
+    "d30": 89
    },
    "compute": {
     "d7": 60,
@@ -651,7 +651,7 @@
     "d30": 30
    },
    "context": {
-    "d7": 19,
+    "d7": 18,
     "d30": 31
    },
    "tools": {
@@ -670,26 +670,26 @@
    },
    "cloud-infrastructure": {
     "d7": 28,
-    "prev7": 13
+    "prev7": 12
    },
    "data": {
-    "d7": 19,
-    "prev7": 5
+    "d7": 17,
+    "prev7": 7
    },
    "foundation-models": {
-    "d7": 255,
-    "prev7": 89
+    "d7": 248,
+    "prev7": 96
    },
    "inference-optimization": {
-    "d7": 70,
-    "prev7": 26
+    "d7": 67,
+    "prev7": 28
    },
    "orchestration-tooling": {
-    "d7": 32,
-    "prev7": 14
+    "d7": 31,
+    "prev7": 15
    },
    "agents": {
-    "d7": 106,
+    "d7": 105,
     "prev7": 43
    },
    "applications-interfaces": {
@@ -901,19 +901,6 @@
    ]
   },
   {
-   "term": "Sol",
-   "items": 6,
-   "sources": 5,
-   "sample": [
-    "1a42fb5dbf32",
-    "2abb956bfece",
-    "6ffbc5b2f228",
-    "817c9a8f947a",
-    "a94c9036ef87",
-    "da4fbb5beeed"
-   ]
-  },
-  {
    "term": "GLM",
    "items": 10,
    "sources": 3,
@@ -961,6 +948,18 @@
     "1a42fb5dbf32",
     "32b7f1f6bd93",
     "876648c3358f"
+   ]
+  },
+  {
+   "term": "Sol",
+   "items": 5,
+   "sources": 4,
+   "sample": [
+    "1a42fb5dbf32",
+    "6ffbc5b2f228",
+    "817c9a8f947a",
+    "a94c9036ef87",
+    "da4fbb5beeed"
    ]
   },
   {
@@ -1109,6 +1108,64 @@
   }
  ],
  "items": [
+  {
+   "id": "301544ff1a07",
+   "title": "Fired OpenAI safety researchers dispute misconduct claims, warn of chilling effect",
+   "url": "https://techcrunch.com/2026/10/08/fired-openai-safety-researchers-dispute-misconduct-claims-warn-of-chilling-effect/",
+   "source": "techcrunch-ai",
+   "sourceName": "TechCrunch AI",
+   "type": "press",
+   "published": "2026-10-08T20:04:26Z",
+   "summary": "Three fired OpenAI safety researchers dispute allegations of mishandling sensitive information, warning in an open letter that their dismissals are creating a chilling effect on the company’s AI safety culture.",
+   "firstSeen": "2026-10-08T20:10:31Z",
+   "tags": [
+    "gpt",
+    "alignment"
+   ],
+   "layers": [
+    "models",
+    "security"
+   ],
+   "score": 2.2
+  },
+  {
+   "id": "99aff9c7a194",
+   "title": "v2.1.295",
+   "url": "https://github.com/anthropics/claude-code/releases/tag/v2.1.295",
+   "source": "rel-claude-code",
+   "sourceName": "Claude Code releases",
+   "type": "release",
+   "published": "2026-10-08T19:48:38Z",
+   "summary": "What's changed Added onFailure: \"block\" for command and HTTP hooks: a hook that can't start, times out, or exits with an unexpected code blocks the action instead of letting it through Added Program Status Protocol (OSC 7501) support: terminals that implement it can show whether Claude Code is working, waiting on you…",
+   "firstSeen": "2026-10-08T20:10:31Z",
+   "tags": [
+    "claude-code",
+    "claude"
+   ],
+   "layers": [
+    "agents",
+    "models"
+   ],
+   "score": 2.2
+  },
+  {
+   "id": "6dc18a171cb4",
+   "title": "v2.0.26",
+   "url": "https://github.com/anomalyco/opencode/releases/tag/v2.0.26",
+   "source": "rel-opencode",
+   "sourceName": "OpenCode releases",
+   "type": "release",
+   "published": "2026-10-08T19:45:43Z",
+   "summary": "release: v2.0.26",
+   "firstSeen": "2026-10-08T20:10:31Z",
+   "tags": [
+    "opencode"
+   ],
+   "layers": [
+    "agents"
+   ],
+   "score": 1.6
+  },
   {
    "id": "feb57be6938a",
    "title": "Claude can now generate animated explainer videos and live data dashboards from text prompts",
@@ -1884,7 +1941,7 @@
    "type": "press",
    "published": "2026-10-08T11:15:33Z",
    "summary": "Full-stack safety solution for physical AI is being used by robotics companies.",
-   "discussion": "40",
+   "discussion": "42",
    "firstSeen": "2026-10-08T18:50:08Z",
    "tags": [
     "world-models"
@@ -2511,7 +2568,7 @@
    "type": "press",
    "published": "2026-10-08T00:00:24Z",
    "summary": "Get ready for more AI in your Windows and more AI on the desktop.",
-   "discussion": "139",
+   "discussion": "142",
    "firstSeen": "2026-10-08T00:58:56Z",
    "tags": [],
    "layers": [],
@@ -2602,7 +2659,7 @@
    "type": "press",
    "published": "2026-10-07T21:56:42Z",
    "summary": "Opus-built Creative Cloud alternatives are ambitious, free, and nowhere near finished.",
-   "discussion": "283",
+   "discussion": "285",
    "firstSeen": "2026-10-08T00:58:56Z",
    "tags": [],
    "layers": [],
@@ -3523,7 +3580,7 @@
    "type": "press",
    "published": "2026-10-07T14:00:08Z",
    "summary": "The new SynthID website can now identify AI content from Google, OpenAI, and more.",
-   "discussion": "32",
+   "discussion": "33",
    "firstSeen": "2026-10-07T20:36:09Z",
    "tags": [
     "gpt"
@@ -4554,7 +4611,7 @@
    "type": "research",
    "published": "2026-10-06T20:00:00Z",
    "summary": "Dense visual text requires image generators to reproduce long strings across multiple regions with correct placement and legibility. As short-string rendering improves, evaluation must test sustained performance across more demanding scenes. We introduce UltraText Bench, a bilingual benchmark for prompt-only…",
-   "points": 46,
+   "points": 48,
    "firstSeen": "2026-10-08T18:50:08Z",
    "tags": [
     "multimodal",
@@ -4564,7 +4621,7 @@
     "models",
     "security"
    ],
-   "score": 4.87
+   "score": 4.89
   },
   {
    "id": "e586c32013d3",
@@ -14936,6 +14993,25 @@
    "score": 4.86
   },
   {
+   "id": "d4bc4b0a0db6",
+   "title": "VIEScore2: Unified Image Evaluation with Spatially Grounded Explanations",
+   "url": "https://huggingface.co/papers/2610.00994",
+   "source": "hf-papers",
+   "sourceName": "Hugging Face Daily Papers",
+   "type": "research",
+   "published": "2026-09-30T20:00:00Z",
+   "summary": "Existing synthetic image evaluators typically provide only a scalar quality score and do not identify the image regions that support it. We introduce VIEScore2, a unified evaluator for image generation and editing tasks with optional conditioning images. VIEScore2 represents an image as an N x N grid and jointly…",
+   "points": 24,
+   "firstSeen": "2026-10-08T20:10:31Z",
+   "tags": [
+    "multimodal"
+   ],
+   "layers": [
+    "models"
+   ],
+   "score": 4.0
+  },
+  {
    "id": "18a1068dfc39",
    "title": "Update: Strix Halo + R9700 with llama-halo-hybrid - now beats DGX Spark",
    "url": "https://www.reddit.com/r/LocalLLaMA/comments/1wuet5g/update_strix_halo_r9700_with_llamahalohybrid_now/",
@@ -17151,83 +17227,6 @@
     "models"
    ],
    "score": 4.17
-  },
-  {
-   "id": "d3466e30d3e9",
-   "title": "ReSAIL: Mitigating Collapse in Iterative Agent Self-Distillation",
-   "url": "https://huggingface.co/papers/2609.39306",
-   "source": "hf-papers",
-   "sourceName": "Hugging Face Daily Papers",
-   "type": "research",
-   "published": "2026-09-29T20:00:00Z",
-   "summary": "Iterative self-distillation enables LLM agents to learn from successive deployments, offering a path toward recursive self-improvement (RSI). Yet our experiments with existing methods reveal a collapse in deployment performance across cycles, while task performance with privileged information (PI) also declines. We…",
-   "points": 29,
-   "firstSeen": "2026-10-08T10:32:04Z",
-   "tags": [
-    "distillation"
-   ],
-   "layers": [
-    "models"
-   ],
-   "score": 4.08
-  },
-  {
-   "id": "e859ba036e35",
-   "title": "OpenAI repotedly in talks to raise $30B round at $1.4T valuation",
-   "url": "https://techcrunch.com/2026/09/29/openai-repotedly-in-talks-to-raise-30b-round-at-1-4t-valuation/",
-   "source": "techcrunch-ai",
-   "sourceName": "TechCrunch AI",
-   "type": "press",
-   "published": "2026-09-29T19:52:37Z",
-   "summary": "The new round is anticipated to be the company's last before its delayed 2027 public debut.",
-   "firstSeen": "2026-09-29T22:13:32Z",
-   "tags": [
-    "gpt"
-   ],
-   "layers": [
-    "models"
-   ],
-   "score": 1.6
-  },
-  {
-   "id": "9ce258e5a60b",
-   "title": "OpenAI reportedly in talks to raise $30B round at $1.4T valuation",
-   "url": "https://techcrunch.com/2026/09/29/openai-reportedly-in-talks-to-raise-30b-round-at-1-4t-valuation/",
-   "source": "techcrunch-ai",
-   "sourceName": "TechCrunch AI",
-   "type": "press",
-   "published": "2026-09-29T19:52:37Z",
-   "summary": "The new round is anticipated to be the company's last before its delayed 2027 public debut.",
-   "firstSeen": "2026-09-30T05:30:05Z",
-   "tags": [
-    "gpt"
-   ],
-   "layers": [
-    "models"
-   ],
-   "score": 1.6
-  },
-  {
-   "id": "2abb956bfece",
-   "title": "Bring near-Astra intelligence to everyday work with GPT-6.1 Sol on Amazon Bedrock",
-   "url": "https://aws.amazon.com/blogs/machine-learning/bring-near-astra-intelligence-to-everyday-work-with-gpt-6-1-sol-on-amazon-bedrock/",
-   "source": "aws-ml",
-   "sourceName": "AWS Machine Learning Blog",
-   "type": "lab",
-   "published": "2026-09-29T19:34:14Z",
-   "summary": "GPT-6.1 Sol is now generally available on Amazon Bedrock, bringing stronger reasoning to coding, computer use, and professional workloads that run frequently.",
-   "firstSeen": "2026-09-29T22:13:32Z",
-   "tags": [
-    "hyperscalers",
-    "gpt",
-    "computer-use"
-   ],
-   "layers": [
-    "agents",
-    "inference",
-    "models"
-   ],
-   "score": 2.8
   }
  ]
 }
