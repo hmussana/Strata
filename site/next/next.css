@@ -841,3 +841,23 @@ footer.site a { display: inline-block; padding: 5px 0; }
 @media (max-width: 400px) {
   .bar .brand > span { display: none; } /* logo only; the link keeps its aria-label */
 }
+
+/* landing intro: what Strata is and how to use it */
+.intro { display: grid; grid-template-columns: minmax(0, 1.1fr) minmax(0, 1fr) auto; gap: 10px 28px; align-items: start;
+  background: var(--surface); border: 1px solid var(--border); border-left: 4px solid var(--accent); border-radius: var(--radius);
+  padding: 14px 18px; margin: 0 0 14px; }
+.intro[hidden] { display: none; }
+.intro h2 { font-size: 1.05rem; margin: 0 0 4px; }
+.intro h2:focus { outline: none; }
+.intro p { margin: 0; font-size: .93rem; }
+.intro-steps { margin: 0; padding-left: 1.2em; font-size: .93rem; display: grid; gap: 3px; }
+.intro-hide { white-space: nowrap; }
+@media (max-width: 980px) {
+  .intro { grid-template-columns: minmax(0, 1fr); }
+  .intro-hide { justify-self: start; }
+}
+/* with the intro showing, the landing scrolls instead of squeezing the layer rows into one screen */
+.z0:has(> .intro:not([hidden])) { height: auto; min-height: 0; }
+.z0:has(> .intro:not([hidden])) .land-rows { height: auto; }
+.z0:has(> .intro:not([hidden])) .land-row { flex: none; min-height: 46px; }
+.z0:has(> .intro:not([hidden])) .cc-band { height: auto; }

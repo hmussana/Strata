@@ -19,7 +19,7 @@ with the latest news tagged onto it every three hours.</p>
 > **The homepage is now The AI Stack:** a visual, zoomable explainer of nine layers (landscape → stack → layer →
 > concept, at depths from "story" to "frontier"). Its content model is documented in
 > [docs/content-model.md](docs/content-model.md). Pages marked draft haven't had a human review yet. The seven-layer
-> news map described below lives on at [`/latest/`](https://hmussana.github.io/Strata/latest/); old `#c=` and `#l=`
+> news map described below now runs the [AI news feed](https://hmussana.github.io/Strata/news/) at `/news/`; old `#c=` and `#l=`
 > links and `/next/` links redirect automatically.
 
 ## Why
@@ -93,7 +93,7 @@ After editing `concepts.json`, run `python3 scripts/fetch_news.py --reindex` to 
 
 1. Fork the repo and enable **Settings → Pages → Source: GitHub Actions**.
 2. Run **Actions → Update news & deploy → Run workflow** once. It then runs every 3 hours.
-3. Set a repository variable `SITE_URL` if your Pages URL differs (used for the Atom feed), and update the `og:` and canonical URLs in `site/index.html` and `site/latest/index.html`.
+3. Set a repository variable `SITE_URL` if your Pages URL differs (used for the Atom feed), and update the `og:` and canonical URLs in `site/index.html` and `site/news/index.html`.
 
 ### Optional: LLM summaries and smarter tagging
 
