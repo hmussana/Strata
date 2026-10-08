@@ -1,4 +1,4 @@
-// Minimal 24px stroke icons for the Strata Model layers. Colour comes from `currentColor`.
+// Minimal 24px stroke icons for the seven-layer news map's layers. Colour comes from `currentColor`.
 const P = {
   agent: '<rect x="5" y="8" width="14" height="11" rx="3"/><path d="M12 8V4.5"/><circle cx="12" cy="3.5" r="1"/><circle cx="9.5" cy="13" r="1.2"/><circle cx="14.5" cy="13" r="1.2"/><path d="M9.5 16.5h5M3 12v3M21 12v3"/>',
   plug: '<path d="M9 3v5M15 3v5"/><path d="M6 8h12v3a6 6 0 0 1-12 0z"/><path d="M12 17v4"/>',

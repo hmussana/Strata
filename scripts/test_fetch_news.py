@@ -23,7 +23,7 @@ class ConceptMapTests(unittest.TestCase):
                     for r in i.get("related", []):
                         self.assertIn(r, known, f"{i['id']} -> unknown related id {r}")
 
-    def test_strata_model_layers(self):
+    def test_news_map_layers(self):
         concepts = json.loads((fn.DATA / "concepts.json").read_text())
         known = {i["id"] for L in concepts["layers"] for c in L["categories"] for i in c["items"]}
         layers = [L for L in concepts["layers"] if not L.get("pillar")]

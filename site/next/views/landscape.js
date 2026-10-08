@@ -71,7 +71,7 @@ export function landscape(route, c) {
     const d = dash.layers[l.id] || {};
     const h = heat[l.id];
     const trend = showTrend && h ? `<span class="trend" title="${h.prev7} the week before">${h.d7 > h.prev7 ? '↑' : h.d7 < h.prev7 ? '↓' : '→'}</span>` : '';
-    return `<a class="land-row ${lclass(l)} ${focus === l.id ? 'vt-target is-focus' : ''}" role="listitem" href="${href.stack(l.id)}" data-zoom aria-label="Layer ${l.order}: ${esc(l.name)}. Zoom in to the stack">
+    return `<a class="land-row ${lclass(l)} ${focus === l.id ? 'vt-target is-focus' : ''}" role="listitem" href="${href.stack(l.id)}" data-zoom aria-label="Lumai Layer ${l.order}: ${esc(l.name)}. Zoom in to the stack">
       <span class="land-name">${lnum(l)}${icon(l.icon)}<span>${esc(l.name)}</span></span>
       <span class="land-players">${players(d.players)}</span>
       <span class="ind-maturity">${scoreCell(d.maturity, ind.maturity || {})}</span>
@@ -106,8 +106,8 @@ export function landscape(route, c) {
         ${explainerHtml(c)}
         <div class="intro-side">
           <div class="intro-text">
-            <h2 id="intro-title">What is Strata?</h2>
-            <p>A visual guide to how today's AI works, from the power plants and chips at the bottom to the chatbots and agents at the top.
+            <h2 id="intro-title">What is Lumai?</h2>
+            <p>Lumai (say "loo-my", from <i>lumen</i>, light) shines a light into AI's black box. It is a visual guide to how today's AI works, from the power plants and chips at the bottom to the chatbots and agents at the top.
               It's for anyone who wants the whole picture without a computer science degree, and for people who work with AI and want to see how the parts fit.</p>
           </div>
           <ol class="intro-steps">
@@ -121,8 +121,9 @@ export function landscape(route, c) {
       <header class="z0-head">
         <div>
           <p class="eyebrow">${zoomLabel('Z0')} Landscape</p>
+          <p class="tagline">How AI works, layer by layer.</p>
           <h1>The whole AI world, in nine layers</h1>
-          <p class="lede">From power plants to the apps you use; each layer builds on the one below. Select a layer to zoom in.</p>
+          <p class="lede">The Lumai Model runs from power plants to the apps you use; each layer builds on the one below. Select a layer to zoom in.</p>
         </div>
         <div class="z0-actions">${freshness(dash, c.model)}<button class="btn-ghost" type="button" data-intro="show" ${prefs.introHidden ? '' : 'hidden'}>What is this?</button><button class="btn-ghost" type="button" popovertarget="ind-info">${icon('bulb', 'ico-s')}How these are measured</button></div>
       </header>

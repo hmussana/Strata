@@ -1,0 +1,6 @@
+User-agent: *
+Allow: /
+Disallow: /next/
+Disallow: /latest/
+
+Sitemap: https://lumai.how/sitemap.xml
