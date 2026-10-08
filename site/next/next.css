@@ -1,4 +1,4 @@
-/* The AI Stack: visual grammar.
+/* Lumai: visual grammar.
    Each layer has three tokens per theme: --lN (fill, strokes, bands), --lN-ink (text-safe, WCAG AA on bg,
    surface and soft), --lN-soft (tinted background). Colour never carries meaning alone: every use is paired
    with the layer number, icon or name. Cross-cutting concerns share one neutral (--cc) plus distinct icons. */
@@ -264,6 +264,22 @@ main:focus { outline: none; }
 .type-scale > * { margin: 4px 0; }
 
 footer.site { padding: 20px 28px 40px; color: var(--muted); font-size: .82rem; border-top: 1px solid var(--border); }
+.foot-tag { margin: 0 0 4px; color: var(--text); }
+.z0-head .tagline { margin: 0 0 2px; font-size: .95rem; font-weight: 600; color: var(--accent-ink); }
+
+/* ---------- Lumai light motif ----------
+   A soft band of light that travels down the page once when the reader zooms in (app.js shine()). It is neutral
+   light layered over the per-layer colours, never a replacement for them, and never runs under reduced motion. */
+:root { --beam: rgba(255, 226, 160, .30); --beam-blend: multiply; }
+:root[data-theme="dark"] { --beam: rgba(255, 244, 214, .16); --beam-blend: screen; }
+.beam { position: fixed; inset: 0; pointer-events: none; z-index: 40; overflow: hidden; display: none; }
+.beam.is-on { display: block; }
+.beam::before { content: ""; position: absolute; left: -10%; right: -10%; top: 0; height: 38vh;
+  background: radial-gradient(60% 50% at 50% 50%, var(--beam), transparent 70%); mix-blend-mode: var(--beam-blend);
+  transform: translateY(-40vh); }
+.beam.is-on::before { animation: lumai-beam .9s cubic-bezier(.3, .6, .3, 1) both; }
+@keyframes lumai-beam { 0% { transform: translateY(-40vh); opacity: 0; } 20% { opacity: 1; } 100% { transform: translateY(100vh); opacity: 0; } }
+@media (prefers-reduced-motion: reduce) { .beam { display: none !important; } }
 
 /* ---------- view transitions ---------- */
 ::view-transition-old(root), ::view-transition-new(root) { animation-duration: .22s; }
@@ -842,7 +858,7 @@ footer.site a { display: inline-block; padding: 5px 0; }
   .bar .brand > span { display: none; } /* logo only; the link keeps its aria-label */
 }
 
-/* landing intro: what Strata is and how to use it */
+/* landing intro: what Lumai is and how to use it */
 .intro { display: grid; grid-template-columns: minmax(0, 1.1fr) minmax(0, 1fr) auto; gap: 10px 28px; align-items: start;
   background: var(--surface); border: 1px solid var(--border); border-left: 4px solid var(--accent); border-radius: var(--radius);
   padding: 14px 18px; margin: 0 0 14px; }

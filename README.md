@@ -1,34 +1,39 @@
 <p align="center">
-  <img src="site/assets/icon-192.png" width="96" height="96" alt="Strata logo">
+  <img src="site/assets/icon-192.png" width="96" height="96" alt="Lumai logo">
 </p>
 
-<h1 align="center">Strata</h1>
+<h1 align="center">Lumai</h1>
 
-<p align="center"><strong>The AI stack, mapped and kept current.</strong><br>
+<p align="center"><strong>How AI works, layer by layer.</strong><br>
+Lumai (say "loo-my", from <em>lumen</em>, light) brings light into AI's black box. It teaches <strong>the Lumai Model</strong>,<br>
+short for the <em>Layered Understanding Model of AI</em>: nine layers, named the way the OSI Model names network layers<br>
+(Lumai Layer 1, Physical &amp; Energy, up to Lumai Layer 9, Applications &amp; Interfaces).<br>
 Every model, tool, technique and chip on one layered map, each explained with a diagram,<br>
 with the latest news tagged onto it every three hours.</p>
 
 <p align="center">
-  <a href="https://hmussana.github.io/Strata/"><strong>Open the site →</strong></a> ·
-  <a href="https://hmussana.github.io/Strata/feed.xml">Atom feed</a> ·
+  <a href="https://lumai.how/"><strong>Open the site →</strong></a> ·
+  <a href="https://lumai.how/feed.xml">Atom feed</a> ·
   <a href="CONTRIBUTING.md">Contribute</a>
 </p>
 
 ---
 
-> **The homepage is now The AI Stack:** a visual, zoomable explainer of nine layers (landscape → stack → layer →
+> **The homepage is the Lumai Model:** a visual, zoomable explainer of nine layers (landscape → stack → layer →
 > concept, at depths from "story" to "frontier"). Its content model is documented in
 > [docs/content-model.md](docs/content-model.md). Pages marked draft haven't had a human review yet. The seven-layer
-> news map described below now runs the [AI news feed](https://hmussana.github.io/Strata/news/) at `/news/`; old `#c=` and `#l=`
+> news map described below now runs the [AI news feed](https://lumai.how/news/) at `/news/`; old `#c=` and `#l=`
 > links and `/next/` links redirect automatically.
 
 ## Why
 
 Newsletters and feeds tell you *what* happened. They rarely tell you *where it fits*. If you work with LLMs, it is easy to feel permanently behind: new frontier models, agent harnesses, quantisation formats, desktop AI boxes, routers and protocols every week.
 
-Strata is a map first and a news board second. Every story lands on a concept, and every concept sits on a layer, so a headline like "new 4-bit MoE runs on a DGX Spark" becomes three things you can click: *quantisation* (L2), *mixture of experts* (L3) and *desktop AI machines* (L1).
+Lumai is a map first and a news board second. Every story lands on a concept, and every concept sits on a layer, so a headline like "new 4-bit MoE runs on a DGX Spark" becomes three things you can click: *quantisation* (L2), *mixture of experts* (L3) and *desktop AI machines* (L1).
 
-## The Strata Model: an OSI model for AI
+## The seven-layer news map: an OSI-style map for AI
+
+The news feed still files stories on this earlier seven-layer map. The explainer on the homepage uses the nine layers of the Lumai Model.
 
 | # | Layer | ≈ OSI | What moves | Example threat |
 |---|---|---|---|---|
@@ -42,7 +47,7 @@ Strata is a map first and a news board second. Every story lands on a concept, a
 
 Security, safety and governance run across all seven. Remember it top-down: **A**ll **T**ools **C**an **I**nvoke **M**odels **W**ith **C**ompute.
 
-<p align="center"><img src="site/assets/social-card.png" width="720" alt="The Strata Model: seven layers of AI"></p>
+<p align="center"><img src="site/assets/social-card-stack.png" width="720" alt="Lumai: how AI works, layer by layer. The nine layers of the Lumai Model."></p>
 
 ## What's inside
 
@@ -93,7 +98,7 @@ After editing `concepts.json`, run `python3 scripts/fetch_news.py --reindex` to 
 
 1. Fork the repo and enable **Settings → Pages → Source: GitHub Actions**.
 2. Run **Actions → Update news & deploy → Run workflow** once. It then runs every 3 hours.
-3. Set a repository variable `SITE_URL` if your Pages URL differs (used for the Atom feed), and update the `og:` and canonical URLs in `site/index.html` and `site/news/index.html`.
+3. Set a repository variable `SITE_URL` if your Pages URL differs (used for the Atom feed), and update the `og:`, `twitter:` and canonical URLs in `site/index.html` and `site/news/index.html`, plus `site/sitemap.xml` and `site/robots.txt`.
 
 ### Optional: LLM summaries and smarter tagging
 
@@ -112,6 +117,9 @@ Only new stories are sent (at most `LLM_MAX_ITEMS`, default 40 per run), and mod
 ```
 site/                   static site, deployed as-is
   index.html
+  manifest.webmanifest  app name and icons
+  sitemap.xml, robots.txt
+  assets/icon.svg       placeholder "L" mark (final logo goes here, plus icon-192.png and icon-512.png)
   assets/app.js         stack map, drawer, learning paths, news board, search
   assets/diagrams.js    diagram DSL → inline SVG
   assets/styles.css     design tokens, light/dark themes

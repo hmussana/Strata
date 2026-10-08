@@ -1,4 +1,4 @@
-// Data-driven SVG diagrams for The AI Stack. Every diagram ships with a text alternative.
+// Data-driven SVG diagrams for Lumai. Every diagram ships with a text alternative.
 // Types: flow (optionally numbered, with loop), stack, hub, bars, compare, sequence.
 // Arrow styles follow model.json "arrows": solid / dashed / dotted / thick strokes; arrow / none / diamond heads.
 

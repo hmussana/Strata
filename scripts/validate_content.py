@@ -1,5 +1,5 @@
 #!/usr/bin/env python3
-"""Validate The AI Stack content (site/content) and report what still needs a human.
+"""Validate the Lumai Model content (site/content) and report what still needs a human.
 
     python3 scripts/validate_content.py            # errors only, non-zero exit if any
     python3 scripts/validate_content.py --report   # markdown report of placeholders, drafts, unverified sources
@@ -333,7 +333,7 @@ def walk(node, path=""):
 
 
 def report(d: dict) -> str:
-    out = ["# The AI Stack: content review report", ""]
+    out = ["# The Lumai Model: content review report", ""]
     files = {"model.json": d["model"], "dashboard.json": d["dashboard"], "flows.json": d["flows"],
              "crosscutting.json": {"crosscutting": d["crosscutting"]}}
     files.update({f"layers/{l['id']}.json": l for l in d["layers"]})

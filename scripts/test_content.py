@@ -1,4 +1,4 @@
-"""Content checks for The AI Stack. Run: python3 -m unittest discover -s scripts"""
+"""Content checks for the Lumai Model. Run: python3 -m unittest discover -s scripts"""
 import unittest
 
 import validate_content as vc
