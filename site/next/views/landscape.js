@@ -4,6 +4,7 @@
 // layer names visible so later screens build on familiar terms). Every row is a zoom target into Z1.
 import { icon } from '../icons.js';
 import { href } from '../router.js';
+import { prefs } from '../store.js';
 import { esc, val, lclass, lnum, freshness, zoomLabel, isPlaceholder } from '../ui.js';
 
 const TREND_MIN_DAYS = 14;
@@ -100,13 +101,26 @@ export function landscape(route, c) {
     zoom: 'Z0', layer: focus, title: 'The AI landscape', bodyClass: 'is-z0',
     crumbs: [{ label: 'Landscape', z: 'Z0' }],
     html: `<div class="z0">
+      <section class="intro" id="intro" aria-labelledby="intro-title" ${prefs.introHidden ? 'hidden' : ''}>
+        <div class="intro-text">
+          <h2 id="intro-title">What is Strata?</h2>
+          <p>A visual guide to how today's AI works, from the power plants and chips at the bottom to the chatbots and agents at the top.
+            It's for anyone who wants the whole picture without a computer science degree, and for people who work with AI and want to see how the parts fit.</p>
+        </div>
+        <ol class="intro-steps">
+          <li><strong>Pick a layer</strong> below to see its main ideas on one map.</li>
+          <li><strong>Open an idea</strong> and choose how deep to go, from a one-minute story to the open research questions.</li>
+          <li><strong>Check what you know</strong> with a <a href="${href.quiz()}">short quiz</a>, or follow the <a href="news/">AI news feed</a>.</li>
+        </ol>
+        <button class="btn-ghost intro-hide" type="button" data-intro="hide">Got it, hide this</button>
+      </section>
       <header class="z0-head">
         <div>
           <p class="eyebrow">${zoomLabel('Z0')} Landscape</p>
           <h1>The whole AI world, in nine layers</h1>
           <p class="lede">From power plants to the apps you use; each layer builds on the one below. Select a layer to zoom in.</p>
         </div>
-        <div class="z0-actions">${freshness(dash, c.model)}<button class="btn-ghost" type="button" popovertarget="ind-info">${icon('bulb', 'ico-s')}How these are measured</button></div>
+        <div class="z0-actions">${freshness(dash, c.model)}<button class="btn-ghost" type="button" data-intro="show" ${prefs.introHidden ? '' : 'hidden'}>What is this?</button><button class="btn-ghost" type="button" popovertarget="ind-info">${icon('bulb', 'ico-s')}How these are measured</button></div>
       </header>
       <div class="land">
         <div class="land-rows" role="list" aria-label="Layers, top to bottom">
@@ -125,5 +139,16 @@ export function landscape(route, c) {
         <button class="btn" type="button" popovertarget="ind-info" popovertargetaction="hide">Close</button>
       </div>
     </div>`,
+    mount(root) {
+      const intro = root.querySelector('#intro'), show = root.querySelector('[data-intro="show"]');
+      const set = (hidden) => {
+        prefs.introHidden = hidden;
+        intro.hidden = hidden; show.hidden = !hidden;
+        (hidden ? show : intro.querySelector('h2')).focus?.();
+      };
+      intro.querySelector('h2').tabIndex = -1;
+      root.querySelector('[data-intro="hide"]').addEventListener('click', () => set(true));
+      show.addEventListener('click', () => set(false));
+    },
   };
 }

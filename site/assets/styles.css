@@ -394,7 +394,7 @@ main { padding: 0 16px; }
 .hero { margin-top: 30px; }
 .hero-head { display: flex; justify-content: space-between; align-items: flex-end; gap: 16px; flex-wrap: wrap; margin-bottom: 16px; }
 .eyebrow { text-transform: uppercase; letter-spacing: .12em; font-size: .74rem; font-weight: 700; color: var(--accent); margin: 0 0 6px; }
-.hero h1 { font-size: clamp(1.7rem, 4vw, 2.7rem); max-width: 24ch; }
+.hero h1, .hero h2#map-title { font-size: clamp(1.7rem, 4vw, 2.7rem); max-width: 24ch; }
 .hero .grad {
   background: linear-gradient(90deg, var(--agents), var(--tools) 30%, var(--context) 50%, var(--inference) 65%, var(--models) 85%, var(--weights));
   -webkit-background-clip: text; background-clip: text; color: transparent;
@@ -509,3 +509,8 @@ main { padding: 0 16px; }
   .journey-wrap { grid-template-columns: minmax(0, 1fr); }
   .mini-tower { position: static; }
 }
+
+/* news feed intro (the page at /news/) */
+.news-intro { padding-bottom: 0; }
+.news-intro h1 { font-size: clamp(1.6rem, 3.6vw, 2.4rem); margin: 4px 0 10px; max-width: 26ch; }
+.news-intro p { max-width: 70ch; margin: 0 0 8px; }

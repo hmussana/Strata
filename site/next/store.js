@@ -25,6 +25,8 @@ export const prefs = {
   set theme(t) {
     try { localStorage.setItem(PREFIX + 'theme', t); } catch { /* ignore */ }
   },
+  get introHidden() { return read('introHidden', false) === true; },
+  set introHidden(v) { write('introHidden', !!v); },
 };
 
 // Best quiz score per scope ('stack' or a layer id), compared as a share of questions right

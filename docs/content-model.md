@@ -2,7 +2,7 @@
 
 All content lives in `site/content/` as JSON. Components never hard-code layers, concepts or relationships, so you
 can add and edit content without touching code. The app is the homepage (`site/index.html`, code in `site/next/`);
-the older news map is at `/latest/`.
+the AI news feed (the older seven-layer news map) is at `/news/`.
 
 ```
 site/content/
