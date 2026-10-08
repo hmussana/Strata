@@ -861,3 +861,80 @@ footer.site a { display: inline-block; padding: 5px 0; }
 .z0:has(> .intro:not([hidden])) .land-rows { height: auto; }
 .z0:has(> .intro:not([hidden])) .land-row { flex: none; min-height: 46px; }
 .z0:has(> .intro:not([hidden])) .cc-band { height: auto; }
+
+/* landing explainer film (explainer.js): scenes are cumulative classes .on1…on6 on .ex */
+.intro.has-film { grid-template-columns: minmax(0, 1.25fr) minmax(0, 1fr); gap: 14px 28px; align-items: center; }
+.intro-side { display: grid; gap: 12px; align-content: start; }
+.ex { margin: 0; display: grid; gap: 6px; }
+.ex-svg { display: block; width: 100%; height: auto; background: var(--surface-2); border-radius: 10px; font-family: var(--font); }
+.ex-cap { min-height: 2.9em; font-size: .93rem; font-weight: 600; margin: 2px 2px 0; }
+.ex-ctl { display: flex; align-items: center; gap: 10px; }
+.ex-play { min-width: 64px; }
+.ex-steps { display: flex; gap: 4px; flex: 1; }
+.ex-step { flex: 1; min-width: 24px; height: 24px; padding: 0; border: 0; background: none; cursor: pointer; display: grid; align-items: center; }
+.ex-step span { display: block; height: 4px; border-radius: 2px; background: var(--border); }
+.ex-step.is-done span, .ex-step.is-on span { background: var(--accent); }
+.ex-step.is-on span { box-shadow: 0 0 0 2px color-mix(in srgb, var(--accent) 30%, transparent); }
+.ex-step:focus-visible { outline: 2px solid var(--focus); outline-offset: 1px; border-radius: 4px; }
+.ex.is-cut *, .ex.is-cut { transition: none !important; }
+
+.ex-svg g, .ex-svg line, .ex-svg path { transform-box: fill-box; transform-origin: center; }
+/* 1: headlines arrive, scattered */
+.ex-chip { opacity: 0; transform: translate(var(--x1), var(--y1)) scale(.85); transform-origin: 0 0; transform-box: view-box;
+  transition: opacity .5s var(--d), transform .6s var(--d); }
+.ex-chip-bg { fill: var(--surface); stroke: var(--border); }
+.ex-chip-dot { fill: var(--muted); transition: fill .4s; }
+.ex-chip-line { fill: var(--border); }
+.ex.on1 .ex-chip { opacity: 1; transform: translate(var(--x1), var(--y1)) scale(1); }
+/* 2: each headline flies into its layer, the stack builds bottom-up */
+.ex.on2 .ex-chip { opacity: 0; transform: translate(var(--x2), var(--y2)) scale(.3);
+  transition: transform 1s cubic-bezier(.6, 0, .3, 1) calc(var(--d) / 2), opacity .35s calc(900ms + var(--d) / 2); }
+.ex.on2 .ex-chip-dot { fill: var(--c); }
+.ex-bar { opacity: 0; transform: scaleX(.2); transition: opacity .5s, transform .6s cubic-bezier(.3, 1.3, .5, 1); }
+.ex.on2 .ex-bar { opacity: 1; transform: none; transition-delay: calc(500ms + var(--d)); }
+.ex-bar-bg { fill: var(--c-soft); stroke: var(--c); stroke-width: 1.5; }
+.ex-bar-n, .ex-bar-t { fill: var(--c-ink); font-size: 13px; opacity: 0; transition: opacity .5s calc(var(--d) * 1.2); }
+.ex-bar-n { font-weight: 700; font-size: 11px; }
+/* 3: the layers get their names */
+.ex.on3 .ex-bar-n, .ex.on3 .ex-bar-t { opacity: 1; }
+/* 4: zoom into one layer's map */
+.ex-stack { transition: transform .9s cubic-bezier(.6, 0, .3, 1), opacity .6s; }
+.ex.on4 .ex-stack { transform: translateX(-175px); transform-box: view-box; }
+.ex.on4 .ex-bar:not(.is-focus) { opacity: .3; transition-delay: 0s; }
+.ex.on4 .ex-bar.is-focus .ex-bar-bg { stroke-width: 3; }
+.ex-link { fill: none; stroke: var(--l5); stroke-width: 2; stroke-dasharray: 120; stroke-dashoffset: 120; opacity: 0; transition: stroke-dashoffset .8s .8s, opacity .3s .8s; }
+.ex.on4 .ex-link { stroke-dashoffset: 0; opacity: 1; }
+.ex-map { opacity: 1; transition: opacity .5s; }
+.ex-node { opacity: 0; transform: scale(.7); transition: opacity .4s calc(900ms + var(--d)), transform .5s cubic-bezier(.3, 1.4, .5, 1) calc(900ms + var(--d)); }
+.ex-node rect { fill: var(--surface); stroke: var(--c); stroke-width: 1.5; }
+.ex-node text { fill: var(--text); font-size: 12.5px; }
+.ex-edge { stroke: var(--c); stroke-width: 1.5; opacity: 0; transition: opacity .6s 1.7s; }
+.ex.on4 .ex-node { opacity: 1; transform: none; }
+.ex.on4 .ex-edge { opacity: .5; }
+/* 5: open one idea and choose a depth */
+.ex.on5 .ex-map, .ex.on5 .ex-link { opacity: 0; transition-delay: 0s; }
+.ex-card { opacity: 0; transform: translateY(14px) scale(.96); transition: opacity .5s .3s, transform .6s .3s; }
+.ex-card-bg { fill: var(--surface); stroke: var(--c); stroke-width: 2; }
+.ex-card-k { fill: var(--c-ink); font-size: 12px; font-weight: 700; letter-spacing: .04em; text-transform: uppercase; }
+.ex-card-t { fill: var(--text); font-size: 19px; font-weight: 700; }
+.ex-depth circle { fill: var(--surface); stroke: var(--c); stroke-width: 2; transition: fill .35s var(--d); }
+.ex-depth-n { fill: var(--c-ink); font-size: 12px; font-weight: 700; text-anchor: middle; transition: fill .35s var(--d); }
+.ex-depth-t { fill: var(--muted); font-size: 11.5px; text-anchor: middle; }
+.ex.on5 .ex-card { opacity: 1; transform: none; }
+.ex.on5 .ex-depth circle { fill: var(--c); }
+.ex.on5 .ex-depth-n { fill: var(--surface); }
+/* 6: who it is for */
+.ex.on6 .ex-stack, .ex.on6 .ex-card { opacity: 0; transition: opacity .5s; }
+.ex-end { opacity: 0; transition: opacity .6s .5s; }
+.ex.on6 .ex-end { opacity: 1; }
+.ex-brand { fill: var(--text); font-size: 44px; font-weight: 800; text-anchor: middle; letter-spacing: -.01em; }
+.ex-tag { fill: var(--muted); font-size: 18px; text-anchor: middle; }
+.ex-person { opacity: 0; transform: translateY(10px); transition: opacity .5s calc(500ms + var(--d)), transform .5s calc(500ms + var(--d)); }
+.ex-person circle, .ex-person path { fill: var(--c); }
+.ex-person text { fill: var(--text); font-size: 13.5px; text-anchor: middle; }
+.ex.on6 .ex-person { opacity: 1; transform: none; }
+@media (max-width: 980px) { .intro.has-film { grid-template-columns: minmax(0, 1fr); } }
+@media (prefers-reduced-motion: reduce) { .ex *, .ex { transition: none !important; } }
+.intro-side .intro-hide { justify-self: start; }
+/* phones: the film's labels are illustrative (the HTML caption carries the message), so give it every pixel */
+@media (max-width: 480px) { .intro.has-film { padding: 10px; } .ex-svg { border-radius: 8px; } }

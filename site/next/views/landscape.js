@@ -5,6 +5,7 @@
 import { icon } from '../icons.js';
 import { href } from '../router.js';
 import { prefs } from '../store.js';
+import { explainerHtml, mountExplainer } from '../explainer.js';
 import { esc, val, lclass, lnum, freshness, zoomLabel, isPlaceholder } from '../ui.js';
 
 const TREND_MIN_DAYS = 14;
@@ -101,18 +102,21 @@ export function landscape(route, c) {
     zoom: 'Z0', layer: focus, title: 'The AI landscape', bodyClass: 'is-z0',
     crumbs: [{ label: 'Landscape', z: 'Z0' }],
     html: `<div class="z0">
-      <section class="intro" id="intro" aria-labelledby="intro-title" ${prefs.introHidden ? 'hidden' : ''}>
-        <div class="intro-text">
-          <h2 id="intro-title">What is Strata?</h2>
-          <p>A visual guide to how today's AI works, from the power plants and chips at the bottom to the chatbots and agents at the top.
-            It's for anyone who wants the whole picture without a computer science degree, and for people who work with AI and want to see how the parts fit.</p>
+      <section class="intro has-film" id="intro" aria-labelledby="intro-title" ${prefs.introHidden ? 'hidden' : ''}>
+        ${explainerHtml(c)}
+        <div class="intro-side">
+          <div class="intro-text">
+            <h2 id="intro-title">What is Strata?</h2>
+            <p>A visual guide to how today's AI works, from the power plants and chips at the bottom to the chatbots and agents at the top.
+              It's for anyone who wants the whole picture without a computer science degree, and for people who work with AI and want to see how the parts fit.</p>
+          </div>
+          <ol class="intro-steps">
+            <li><strong>Pick a layer</strong> below to see its main ideas on one map.</li>
+            <li><strong>Open an idea</strong> and choose how deep to go, from a one-minute story to the open research questions.</li>
+            <li><strong>Check what you know</strong> with a <a href="${href.quiz()}">short quiz</a>, or follow the <a href="news/">AI news feed</a>.</li>
+          </ol>
+          <button class="btn-ghost intro-hide" type="button" data-intro="hide">Got it, hide this</button>
         </div>
-        <ol class="intro-steps">
-          <li><strong>Pick a layer</strong> below to see its main ideas on one map.</li>
-          <li><strong>Open an idea</strong> and choose how deep to go, from a one-minute story to the open research questions.</li>
-          <li><strong>Check what you know</strong> with a <a href="${href.quiz()}">short quiz</a>, or follow the <a href="news/">AI news feed</a>.</li>
-        </ol>
-        <button class="btn-ghost intro-hide" type="button" data-intro="hide">Got it, hide this</button>
       </section>
       <header class="z0-head">
         <div>
@@ -149,6 +153,7 @@ export function landscape(route, c) {
       intro.querySelector('h2').tabIndex = -1;
       root.querySelector('[data-intro="hide"]').addEventListener('click', () => set(true));
       show.addEventListener('click', () => set(false));
+      mountExplainer(intro.querySelector('.ex'));
     },
   };
 }
