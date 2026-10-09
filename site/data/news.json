@@ -1,5 +1,5 @@
 {
- "generated": "2026-10-08T22:59:08Z",
+ "generated": "2026-10-09T01:12:46Z",
  "retentionDays": 45,
  "llmEnriched": 0,
  "sources": [
@@ -10,16 +10,16 @@
    "ok": true,
    "count": 15,
    "error": null,
-   "lastOk": "2026-10-08T22:59:08Z"
+   "lastOk": "2026-10-09T01:12:46Z"
   },
   {
    "id": "deepmind",
    "name": "Google DeepMind",
    "type": "lab",
-   "ok": false,
-   "count": 0,
-   "error": "ParseError: not well-formed (invalid token): line 1, column 0",
-   "lastOk": "2026-10-08T22:40:39Z"
+   "ok": true,
+   "count": 10,
+   "error": null,
+   "lastOk": "2026-10-09T01:12:46Z"
   },
   {
    "id": "google-ai",
@@ -28,7 +28,7 @@
    "ok": true,
    "count": 10,
    "error": null,
-   "lastOk": "2026-10-08T22:59:08Z"
+   "lastOk": "2026-10-09T01:12:46Z"
   },
   {
    "id": "hf-blog",
@@ -37,7 +37,7 @@
    "ok": true,
    "count": 15,
    "error": null,
-   "lastOk": "2026-10-08T22:59:08Z"
+   "lastOk": "2026-10-09T01:12:46Z"
   },
   {
    "id": "nvidia-dev",
@@ -46,7 +46,7 @@
    "ok": true,
    "count": 10,
    "error": null,
-   "lastOk": "2026-10-08T22:59:08Z"
+   "lastOk": "2026-10-09T01:12:46Z"
   },
   {
    "id": "msr",
@@ -55,7 +55,7 @@
    "ok": true,
    "count": 10,
    "error": null,
-   "lastOk": "2026-10-08T22:59:08Z"
+   "lastOk": "2026-10-09T01:12:46Z"
   },
   {
    "id": "aws-ml",
@@ -64,7 +64,7 @@
    "ok": true,
    "count": 8,
    "error": null,
-   "lastOk": "2026-10-08T22:59:08Z"
+   "lastOk": "2026-10-09T01:12:46Z"
   },
   {
    "id": "qwen",
@@ -73,16 +73,16 @@
    "ok": true,
    "count": 8,
    "error": null,
-   "lastOk": "2026-10-08T22:59:08Z"
+   "lastOk": "2026-10-09T01:12:46Z"
   },
   {
    "id": "hn",
    "name": "Hacker News (best, AI-filtered)",
    "type": "community",
    "ok": true,
-   "count": 10,
+   "count": 9,
    "error": null,
-   "lastOk": "2026-10-08T22:59:08Z"
+   "lastOk": "2026-10-09T01:12:46Z"
   },
   {
    "id": "localllama",
@@ -91,7 +91,7 @@
    "ok": true,
    "count": 15,
    "error": null,
-   "lastOk": "2026-10-08T22:59:08Z"
+   "lastOk": "2026-10-09T01:12:46Z"
   },
   {
    "id": "simonw",
@@ -100,7 +100,7 @@
    "ok": true,
    "count": 15,
    "error": null,
-   "lastOk": "2026-10-08T22:59:08Z"
+   "lastOk": "2026-10-09T01:12:46Z"
   },
   {
    "id": "hf-papers",
@@ -109,7 +109,7 @@
    "ok": true,
    "count": 15,
    "error": null,
-   "lastOk": "2026-10-08T22:59:08Z"
+   "lastOk": "2026-10-09T01:12:46Z"
   },
   {
    "id": "arxiv-cl",
@@ -118,7 +118,7 @@
    "ok": true,
    "count": 12,
    "error": null,
-   "lastOk": "2026-10-08T22:59:08Z"
+   "lastOk": "2026-10-09T01:12:46Z"
   },
   {
    "id": "latent-space",
@@ -127,7 +127,7 @@
    "ok": true,
    "count": 8,
    "error": null,
-   "lastOk": "2026-10-08T22:59:08Z"
+   "lastOk": "2026-10-09T01:12:46Z"
   },
   {
    "id": "interconnects",
@@ -136,7 +136,7 @@
    "ok": true,
    "count": 8,
    "error": null,
-   "lastOk": "2026-10-08T22:59:08Z"
+   "lastOk": "2026-10-09T01:12:46Z"
   },
   {
    "id": "import-ai",
@@ -145,7 +145,7 @@
    "ok": true,
    "count": 5,
    "error": null,
-   "lastOk": "2026-10-08T22:59:08Z"
+   "lastOk": "2026-10-09T01:12:46Z"
   },
   {
    "id": "verge-ai",
@@ -154,7 +154,7 @@
    "ok": true,
    "count": 10,
    "error": null,
-   "lastOk": "2026-10-08T22:59:08Z"
+   "lastOk": "2026-10-09T01:12:46Z"
   },
   {
    "id": "ars-ai",
@@ -163,7 +163,7 @@
    "ok": true,
    "count": 12,
    "error": null,
-   "lastOk": "2026-10-08T22:59:08Z"
+   "lastOk": "2026-10-09T01:12:46Z"
   },
   {
    "id": "techcrunch-ai",
@@ -172,7 +172,7 @@
    "ok": true,
    "count": 12,
    "error": null,
-   "lastOk": "2026-10-08T22:59:08Z"
+   "lastOk": "2026-10-09T01:12:46Z"
   },
   {
    "id": "mit-tr",
@@ -181,7 +181,7 @@
    "ok": true,
    "count": 8,
    "error": null,
-   "lastOk": "2026-10-08T22:59:08Z"
+   "lastOk": "2026-10-09T01:12:46Z"
   },
   {
    "id": "decoder",
@@ -190,7 +190,7 @@
    "ok": true,
    "count": 10,
    "error": null,
-   "lastOk": "2026-10-08T22:59:08Z"
+   "lastOk": "2026-10-09T01:12:46Z"
   },
   {
    "id": "sth",
@@ -199,7 +199,7 @@
    "ok": true,
    "count": 1,
    "error": null,
-   "lastOk": "2026-10-08T22:59:08Z"
+   "lastOk": "2026-10-09T01:12:46Z"
   },
   {
    "id": "embrace-red",
@@ -208,7 +208,7 @@
    "ok": true,
    "count": 6,
    "error": null,
-   "lastOk": "2026-10-08T22:59:08Z"
+   "lastOk": "2026-10-09T01:12:46Z"
   },
   {
    "id": "rel-ollama",
@@ -217,7 +217,7 @@
    "ok": true,
    "count": 3,
    "error": null,
-   "lastOk": "2026-10-08T22:59:08Z"
+   "lastOk": "2026-10-09T01:12:46Z"
   },
   {
    "id": "rel-vllm",
@@ -226,7 +226,7 @@
    "ok": true,
    "count": 3,
    "error": null,
-   "lastOk": "2026-10-08T22:59:08Z"
+   "lastOk": "2026-10-09T01:12:46Z"
   },
   {
    "id": "rel-opencode",
@@ -235,7 +235,7 @@
    "ok": true,
    "count": 3,
    "error": null,
-   "lastOk": "2026-10-08T22:59:08Z"
+   "lastOk": "2026-10-09T01:12:46Z"
   },
   {
    "id": "rel-claude-code",
@@ -244,20 +244,30 @@
    "ok": true,
    "count": 3,
    "error": null,
-   "lastOk": "2026-10-08T22:59:08Z"
+   "lastOk": "2026-10-09T01:12:46Z"
   }
  ],
  "heat": {
   "concepts": {
+   "qwen": {
+    "d7": 60,
+    "prev7": 19,
+    "d30": 79
+   },
+   "gguf": {
+    "d7": 9,
+    "prev7": 4,
+    "d30": 13
+   },
    "claude": {
-    "d7": 43,
+    "d7": 44,
     "prev7": 15,
-    "d30": 58
+    "d30": 59
    },
    "frontier-capabilities": {
-    "d7": 10,
+    "d7": 11,
     "prev7": 2,
-    "d30": 12
+    "d30": 13
    },
    "world-models": {
     "d7": 14,
@@ -265,9 +275,9 @@
     "d30": 24
    },
    "gpt": {
-    "d7": 75,
-    "prev7": 28,
-    "d30": 103
+    "d7": 76,
+    "prev7": 29,
+    "d30": 105
    },
    "alignment": {
     "d7": 11,
@@ -291,23 +301,23 @@
    },
    "agent-loop": {
     "d7": 48,
-    "prev7": 18,
-    "d30": 66
+    "prev7": 17,
+    "d30": 65
    },
    "ollama": {
-    "d7": 15,
-    "prev7": 3,
+    "d7": 14,
+    "prev7": 4,
     "d30": 18
    },
    "open-weights": {
-    "d7": 33,
-    "prev7": 13,
+    "d7": 32,
+    "prev7": 14,
     "d30": 46
    },
    "benchmarks": {
     "d7": 30,
-    "prev7": 10,
-    "d30": 40
+    "prev7": 9,
+    "d30": 39
    },
    "gemini": {
     "d7": 15,
@@ -334,19 +344,14 @@
     "prev7": 3,
     "d30": 13
    },
-   "qwen": {
-    "d7": 60,
-    "prev7": 18,
-    "d30": 78
-   },
    "vram-math": {
     "d7": 15,
     "prev7": 4,
     "d30": 19
    },
    "rtx-rigs": {
-    "d7": 10,
-    "prev7": 2,
+    "d7": 9,
+    "prev7": 3,
     "d30": 12
    },
    "openai-compat": {
@@ -355,14 +360,14 @@
     "d30": 1
    },
    "multimodal": {
-    "d7": 30,
-    "prev7": 19,
+    "d7": 31,
+    "prev7": 18,
     "d30": 49
    },
    "codex": {
     "d7": 5,
-    "prev7": 2,
-    "d30": 7
+    "prev7": 3,
+    "d30": 8
    },
    "llama-cpp": {
     "d7": 21,
@@ -376,8 +381,8 @@
    },
    "moe": {
     "d7": 17,
-    "prev7": 5,
-    "d30": 22
+    "prev7": 4,
+    "d30": 21
    },
    "small-models": {
     "d7": 5,
@@ -390,9 +395,9 @@
     "d30": 8
    },
    "rl-reasoning": {
-    "d7": 15,
-    "prev7": 5,
-    "d30": 20
+    "d7": 16,
+    "prev7": 3,
+    "d30": 19
    },
    "openclaw": {
     "d7": 3,
@@ -411,8 +416,8 @@
    },
    "computer-use": {
     "d7": 3,
-    "prev7": 3,
-    "d30": 6
+    "prev7": 2,
+    "d30": 5
    },
    "deepseek": {
     "d7": 14,
@@ -430,19 +435,14 @@
     "d30": 4
    },
    "lora": {
-    "d7": 12,
+    "d7": 13,
     "prev7": 7,
-    "d30": 19
+    "d30": 20
    },
    "amd-instinct": {
     "d7": 3,
     "prev7": 0,
     "d30": 3
-   },
-   "gguf": {
-    "d7": 8,
-    "prev7": 4,
-    "d30": 12
    },
    "bandwidth": {
     "d7": 10,
@@ -460,8 +460,8 @@
     "d30": 5
    },
    "dgx-spark": {
-    "d7": 10,
-    "prev7": 2,
+    "d7": 9,
+    "prev7": 3,
     "d30": 12
    },
    "hermes-agent": {
@@ -505,9 +505,9 @@
     "d30": 2
    },
    "distillation": {
-    "d7": 9,
+    "d7": 10,
     "prev7": 8,
-    "d30": 17
+    "d30": 18
    },
    "tool-calling": {
     "d7": 1,
@@ -545,8 +545,8 @@
     "d30": 5
    },
    "mcp": {
-    "d7": 6,
-    "prev7": 1,
+    "d7": 5,
+    "prev7": 2,
     "d30": 7
    },
    "context-engineering": {
@@ -632,35 +632,35 @@
   },
   "layers": {
    "models": {
-    "d7": 320,
-    "d30": 442
+    "d7": 325,
+    "d30": 445
+   },
+   "weights": {
+    "d7": 24,
+    "d30": 30
    },
    "security": {
     "d7": 46,
-    "d30": 68
+    "d30": 67
    },
    "agents": {
     "d7": 91,
-    "d30": 124
+    "d30": 123
    },
    "inference": {
-    "d7": 67,
+    "d7": 66,
     "d30": 90
    },
    "compute": {
-    "d7": 58,
+    "d7": 57,
     "d30": 77
-   },
-   "weights": {
-    "d7": 23,
-    "d30": 29
    },
    "context": {
     "d7": 19,
     "d30": 32
    },
    "tools": {
-    "d7": 7,
+    "d7": 6,
     "d30": 9
    }
   },
@@ -670,8 +670,8 @@
     "prev7": 6
    },
    "compute-hardware": {
-    "d7": 46,
-    "prev7": 10
+    "d7": 45,
+    "prev7": 11
    },
    "cloud-infrastructure": {
     "d7": 27,
@@ -679,27 +679,27 @@
    },
    "data": {
     "d7": 17,
-    "prev7": 6
+    "prev7": 5
    },
    "foundation-models": {
-    "d7": 247,
-    "prev7": 94
+    "d7": 248,
+    "prev7": 92
    },
    "inference-optimization": {
-    "d7": 69,
-    "prev7": 28
+    "d7": 70,
+    "prev7": 27
    },
    "orchestration-tooling": {
-    "d7": 32,
-    "prev7": 14
+    "d7": 31,
+    "prev7": 15
    },
    "agents": {
     "d7": 104,
-    "prev7": 44
+    "prev7": 42
    },
    "applications-interfaces": {
-    "d7": 40,
-    "prev7": 15
+    "d7": 39,
+    "prev7": 16
    }
   }
  },
@@ -813,15 +813,15 @@
    }
   },
   "d7": {
-   "physical-energy": 29,
-   "compute-hardware": 221,
-   "cloud-infrastructure": 86,
-   "data": 94,
-   "foundation-models": 1547,
-   "inference-optimization": 299,
-   "orchestration-tooling": 507,
-   "agents": 833,
-   "applications-interfaces": 103
+   "physical-energy": 23,
+   "compute-hardware": 192,
+   "cloud-infrastructure": 71,
+   "data": 73,
+   "foundation-models": 1250,
+   "inference-optimization": 249,
+   "orchestration-tooling": 422,
+   "agents": 696,
+   "applications-interfaces": 78
   },
   "since": "2026-09-30",
   "errors": []
@@ -855,7 +855,7 @@
   },
   {
    "term": "Astra",
-   "items": 10,
+   "items": 11,
    "sources": 6,
    "sample": [
     "3829a2db4d27",
@@ -903,6 +903,19 @@
     "2e46a7d4f323",
     "57abf975fc97",
     "77eada53234b"
+   ]
+  },
+  {
+   "term": "Sol",
+   "items": 6,
+   "sources": 5,
+   "sample": [
+    "1a42fb5dbf32",
+    "6ffbc5b2f228",
+    "817c9a8f947a",
+    "a94c9036ef87",
+    "da4fbb5beeed",
+    "f6d3626eb7c8"
    ]
   },
   {
@@ -956,15 +969,14 @@
    ]
   },
   {
-   "term": "Sol",
-   "items": 5,
+   "term": "Luna",
+   "items": 4,
    "sources": 4,
    "sample": [
     "1a42fb5dbf32",
-    "6ffbc5b2f228",
-    "817c9a8f947a",
-    "a94c9036ef87",
-    "da4fbb5beeed"
+    "67f15c0c5696",
+    "d52167838f81",
+    "f6d3626eb7c8"
    ]
   },
   {
@@ -1070,13 +1082,13 @@
    ]
   },
   {
-   "term": "Luna",
+   "term": "Foresight",
    "items": 3,
    "sources": 3,
    "sample": [
-    "1a42fb5dbf32",
-    "67f15c0c5696",
-    "d52167838f81"
+    "19e26c83b268",
+    "2b147874bb88",
+    "472b20c3e805"
    ]
   },
   {
@@ -1100,19 +1112,75 @@
     "7c6789b8cbf3",
     "ecc087a7b297"
    ]
-  },
-  {
-   "term": "Playground",
-   "items": 3,
-   "sources": 3,
-   "sample": [
-    "a7cd3ac1dead",
-    "ea4f899dc8df",
-    "f6af23db22d6"
-   ]
   }
  ],
  "items": [
+  {
+   "id": "a12bc3db4144",
+   "title": "Qwen 3.6 35B appreciation post",
+   "url": "https://www.reddit.com/r/LocalLLaMA/comments/1x17brf/qwen_36_35b_appreciation_post/",
+   "source": "localllama",
+   "sourceName": "r/LocalLLaMA (top today)",
+   "type": "community",
+   "published": "2026-10-09T00:27:06Z",
+   "summary": "Referring to specifically Unsloth's UD_Q4_K_XL quant because that's going to be a question, and is relevant regardless. It's old now. It's not great at coding medium sized or even small-ish projects. I wouldn't hand my codebase to it by any means. It hallucinates, like any other model. It's not perfect, by any means…",
+   "firstSeen": "2026-10-09T01:12:46Z",
+   "tags": [
+    "qwen",
+    "gguf"
+   ],
+   "layers": [
+    "models",
+    "weights"
+   ],
+   "score": 3.2
+  },
+  {
+   "id": "ca5fcc9baf2e",
+   "title": "Roundtables: A Conversation With the Creator of AI-Designed Viruses",
+   "url": "https://www.technologyreview.com/2026/10/08/1146224/roundtables-a-conversation-with-the-creator-of-ai-designed-viruses/",
+   "source": "mit-tr",
+   "sourceName": "MIT Technology Review AI",
+   "type": "press",
+   "published": "2026-10-09T00:08:24Z",
+   "summary": "Friday, October 16, 2026 Can AI design new life forms? In 2025, Stanford University PhD student Samuel King came up with a preliminary answer when he used a generative AI model to propose genetic blueprints for microscopic viruses. It isn’t yet an example of AI-generated life, but that could be next. Join senior AI…",
+   "firstSeen": "2026-10-09T01:12:46Z",
+   "tags": [],
+   "layers": [],
+   "score": 2.0
+  },
+  {
+   "id": "595120ff2481",
+   "title": "[AINews] not much happened today",
+   "url": "https://www.latent.space/p/ainews-not-much-happened-today-60f",
+   "source": "latent-space",
+   "sourceName": "Latent Space",
+   "type": "press",
+   "published": "2026-10-08T23:29:43Z",
+   "summary": "a quiet day.",
+   "firstSeen": "2026-10-09T01:12:46Z",
+   "tags": [],
+   "layers": [],
+   "score": 3.0
+  },
+  {
+   "id": "f24b922f9b07",
+   "title": "Strata rewrote their Github history to wipe evidence of Claude-authoring",
+   "url": "https://www.reddit.com/r/LocalLLaMA/comments/1x15a8w/strata_rewrote_their_github_history_to_wipe/",
+   "source": "localllama",
+   "sourceName": "r/LocalLLaMA (top today)",
+   "type": "community",
+   "published": "2026-10-08T22:52:03Z",
+   "summary": "Just noticed this today when I went to run the built-in \"UPDATE\" script and git failed because there was no common ancestor. Looked into why, and apparently every historical commit has been re-written to strip the \"Co-Authored by Claude\" text from the descriptions. Personally I think that's pretty gross. I'm…",
+   "firstSeen": "2026-10-09T01:12:46Z",
+   "tags": [
+    "claude"
+   ],
+   "layers": [
+    "models"
+   ],
+   "score": 2.6
+  },
   {
    "id": "df7e5433800b",
    "title": "Anthropic launches free AI security scans for open-source projects",
@@ -1599,7 +1667,7 @@
    "type": "community",
    "published": "2026-10-08T16:45:58Z",
    "summary": "",
-   "points": 340,
+   "points": 346,
    "discussion": "https://news.ycombinator.com/item?id=50008187",
    "firstSeen": "2026-10-08T22:40:39Z",
    "tags": [
@@ -1608,7 +1676,7 @@
    "layers": [
     "models"
    ],
-   "score": 5.13
+   "score": 5.14
   },
   {
    "id": "88f6db94b106",
@@ -2042,6 +2110,24 @@
    "score": 3.6
   },
   {
+   "id": "f6d3626eb7c8",
+   "title": "LegalOn halves Codex costs while maintaining development speed",
+   "url": "https://openai.com/index/legalon-halves-codex-costs",
+   "source": "openai",
+   "sourceName": "OpenAI News",
+   "type": "lab",
+   "published": "2026-10-08T12:00:00Z",
+   "summary": "LegalOn cut estimated daily Codex costs by 65% while maintaining development speed. It matched Astra, Sol, and Luna to tasks and managed budgets strategically.",
+   "firstSeen": "2026-10-09T01:12:46Z",
+   "tags": [
+    "codex"
+   ],
+   "layers": [
+    "agents"
+   ],
+   "score": 3.6
+  },
+  {
    "id": "6c0d8f7083cf",
    "title": "I trained Turkish TTS from scratch using the Drifting method with an RTX 5090.",
    "url": "https://www.reddit.com/r/LocalLLaMA/comments/1x0oaum/i_trained_turkish_tts_from_scratch_using_the/",
@@ -2070,7 +2156,7 @@
    "type": "press",
    "published": "2026-10-08T11:15:33Z",
    "summary": "Full-stack safety solution for physical AI is being used by robotics companies.",
-   "discussion": "43",
+   "discussion": "46",
    "firstSeen": "2026-10-08T18:50:08Z",
    "tags": [
     "world-models"
@@ -2378,6 +2464,26 @@
     "models"
    ],
    "score": 4.2
+  },
+  {
+   "id": "26cfcf0b2273",
+   "title": "OpenAI withdraws three mathematical results",
+   "url": "https://twitter.com/danintheory/status/2108065033070789090",
+   "source": "hn",
+   "sourceName": "Hacker News (best, AI-filtered)",
+   "type": "community",
+   "published": "2026-10-08T07:05:40Z",
+   "summary": "",
+   "points": 242,
+   "discussion": "https://news.ycombinator.com/item?id=50002650",
+   "firstSeen": "2026-10-09T01:12:46Z",
+   "tags": [
+    "gpt"
+   ],
+   "layers": [
+    "models"
+   ],
+   "score": 4.99
   },
   {
    "id": "f3e0cb5068fc",
@@ -2697,7 +2803,7 @@
    "type": "community",
    "published": "2026-10-08T00:14:48Z",
    "summary": "",
-   "points": 266,
+   "points": 352,
    "discussion": "https://news.ycombinator.com/item?id=50000488",
    "firstSeen": "2026-10-08T22:40:39Z",
    "tags": [
@@ -2706,7 +2812,7 @@
    "layers": [
     "models"
    ],
-   "score": 5.03
+   "score": 5.15
   },
   {
    "id": "b7d1e3ccac45",
@@ -2717,7 +2823,7 @@
    "type": "press",
    "published": "2026-10-08T00:00:24Z",
    "summary": "Get ready for more AI in your Windows and more AI on the desktop.",
-   "discussion": "152",
+   "discussion": "158",
    "firstSeen": "2026-10-08T00:58:56Z",
    "tags": [],
    "layers": [],
@@ -2822,7 +2928,7 @@
    "type": "press",
    "published": "2026-10-07T21:56:42Z",
    "summary": "Opus-built Creative Cloud alternatives are ambitious, free, and nowhere near finished.",
-   "discussion": "294",
+   "discussion": "306",
    "firstSeen": "2026-10-08T00:58:56Z",
    "tags": [],
    "layers": [],
@@ -3203,7 +3309,7 @@
    "type": "community",
    "published": "2026-10-07T18:01:32Z",
    "summary": "",
-   "points": 1030,
+   "points": 1032,
    "discussion": "https://news.ycombinator.com/item?id=49996437",
    "firstSeen": "2026-10-07T20:36:09Z",
    "tags": [
@@ -3294,7 +3400,7 @@
    "type": "press",
    "published": "2026-10-07T17:57:39Z",
    "summary": "Man gets 18 months for AI scheme stealing $8M in music streaming royalties.",
-   "discussion": "87",
+   "discussion": "88",
    "firstSeen": "2026-10-07T20:36:09Z",
    "tags": [],
    "layers": [],
@@ -3328,7 +3434,7 @@
    "type": "community",
    "published": "2026-10-07T17:48:38Z",
    "summary": "",
-   "points": 293,
+   "points": 294,
    "discussion": "https://news.ycombinator.com/item?id=49996259",
    "firstSeen": "2026-10-08T18:50:08Z",
    "tags": [],
@@ -4542,22 +4648,6 @@
    "score": 1.0
   },
   {
-   "id": "47b9255d8fa0",
-   "title": "Sharing AI progress in mathematics",
-   "url": "https://openai.com/index/sharing-ai-progress-in-mathematics/",
-   "source": "hn",
-   "sourceName": "Hacker News (best, AI-filtered)",
-   "type": "community",
-   "published": "2026-10-06T22:17:21Z",
-   "summary": "",
-   "points": 1320,
-   "discussion": "https://news.ycombinator.com/item?id=49984923",
-   "firstSeen": "2026-10-07T05:56:31Z",
-   "tags": [],
-   "layers": [],
-   "score": 5.12
-  },
-  {
    "id": "455499dd8d4c",
    "title": "Penguin Mail – open-source Rust email client for Linux with AI",
    "url": "https://penguin-mail.com/",
@@ -4600,7 +4690,7 @@
    "type": "press",
    "published": "2026-10-06T20:50:32Z",
    "summary": "Like other solutions, it is not especially reliable, and it's easy to circumvent.",
-   "discussion": "108",
+   "discussion": "110",
    "firstSeen": "2026-10-06T22:38:51Z",
    "tags": [
     "gpt"
@@ -4774,7 +4864,7 @@
    "type": "research",
    "published": "2026-10-06T20:00:00Z",
    "summary": "Dense visual text requires image generators to reproduce long strings across multiple regions with correct placement and legibility. As short-string rendering improves, evaluation must test sustained performance across more demanding scenes. We introduce UltraText Bench, a bilingual benchmark for prompt-only…",
-   "points": 56,
+   "points": 63,
    "firstSeen": "2026-10-08T18:50:08Z",
    "tags": [
     "multimodal",
@@ -4784,7 +4874,7 @@
     "models",
     "security"
    ],
-   "score": 4.96
+   "score": 5.01
   },
   {
    "id": "e586c32013d3",
@@ -4865,6 +4955,44 @@
     "models"
    ],
    "score": 4.43
+  },
+  {
+   "id": "565d913e5753",
+   "title": "Q-Learning with Scalar Adjoint Matching",
+   "url": "https://huggingface.co/papers/2610.10437",
+   "source": "hf-papers",
+   "sourceName": "Hugging Face Daily Papers",
+   "type": "research",
+   "published": "2026-10-06T20:00:00Z",
+   "summary": "Flow policies capture rich and diverse action distributions, and fine-tuning them with off-policy RL to improve beyond the demonstrations has drawn growing interest. However, fine-tuning a flow policy against a learned value function is not trivial, because the policy generates its action over many flow steps. Adjoint…",
+   "points": 16,
+   "firstSeen": "2026-10-09T01:12:46Z",
+   "tags": [
+    "lora"
+   ],
+   "layers": [
+    "models"
+   ],
+   "score": 3.83
+  },
+  {
+   "id": "7d492d9345bc",
+   "title": "QuadTok: Quadtree Visual Tokenizer for Autoregressive Image Generation",
+   "url": "https://huggingface.co/papers/2610.10497",
+   "source": "hf-papers",
+   "sourceName": "Hugging Face Daily Papers",
+   "type": "research",
+   "published": "2026-10-06T20:00:00Z",
+   "summary": "We introduce QuadTok, a novel framework for visual tokenization and autoregressive image generation. Compared to traditional approaches using 2D grids or 1D token sequences, we propose a hierarchical quadtree structure, bridging the gap between 2D spatial binding and 1D sequence-level flexibility. The QuadTok…",
+   "points": 12,
+   "firstSeen": "2026-10-09T01:12:46Z",
+   "tags": [
+    "multimodal"
+   ],
+   "layers": [
+    "models"
+   ],
+   "score": 3.71
   },
   {
    "id": "2435ebd74585",
@@ -5967,6 +6095,25 @@
     "models"
    ],
    "score": 2.8
+  },
+  {
+   "id": "47b9255d8fa0",
+   "title": "Sharing AI progress in mathematics",
+   "url": "https://openai.com/index/sharing-ai-progress-in-mathematics",
+   "source": "openai",
+   "sourceName": "OpenAI News",
+   "type": "lab",
+   "published": "2026-10-06T12:00:00Z",
+   "summary": "OpenAI publishes new results on open problems in mathematics from an internal frontier model and shares Lean proof formalizations and research details on GitHub.",
+   "firstSeen": "2026-10-07T05:56:31Z",
+   "tags": [
+    "frontier-capabilities",
+    "gpt"
+   ],
+   "layers": [
+    "models"
+   ],
+   "score": 4.2
   },
   {
    "id": "342677ae7ead",
@@ -7092,6 +7239,26 @@
     "models"
    ],
    "score": 4.43
+  },
+  {
+   "id": "2b147874bb88",
+   "title": "Self-Retrospection Distillation: Turning Post-hoc Experiences into Prior Foresight",
+   "url": "https://huggingface.co/papers/2610.08077",
+   "source": "hf-papers",
+   "sourceName": "Hugging Face Daily Papers",
+   "type": "research",
+   "published": "2026-10-05T20:00:00Z",
+   "summary": "Reinforcement learning with verifiable rewards (RLVR) turns agent experience into learning signals primarily through scalar outcome rewards after interaction. For group-relative objectives, however, this signal vanishes when all rollouts receive the same reward, even though their trajectories may reveal useful…",
+   "points": 15,
+   "firstSeen": "2026-10-09T01:12:46Z",
+   "tags": [
+    "distillation",
+    "rl-reasoning"
+   ],
+   "layers": [
+    "models"
+   ],
+   "score": 4.4
   },
   {
    "id": "4e85d9ec23f8",
@@ -15219,7 +15386,7 @@
    "type": "research",
    "published": "2026-09-30T20:00:00Z",
    "summary": "Vision-language-action models benefit from the understanding and reasoning capabilities of pretrained vision-language models, but action-only supervision provides limited grounding in world dynamics. Conversely, world-action models inherit spatiotemporal priors from video generation models, yet remain limited in…",
-   "points": 47,
+   "points": 48,
    "firstSeen": "2026-10-08T10:32:04Z",
    "tags": [
     "multimodal",
@@ -15228,7 +15395,7 @@
    "layers": [
     "models"
    ],
-   "score": 4.88
+   "score": 4.89
   },
   {
    "id": "d4bc4b0a0db6",
@@ -17065,165 +17232,6 @@
    "tags": [],
    "layers": [],
    "score": 4.01
-  },
-  {
-   "id": "ef14ecc53dd8",
-   "title": "More Choices, Fewer Decisions: Ordinal-Scale Bias in JEV-like Direct-Decision Models",
-   "url": "https://huggingface.co/papers/2609.38827",
-   "source": "hf-papers",
-   "sourceName": "Hugging Face Daily Papers",
-   "type": "research",
-   "published": "2026-09-29T20:00:00Z",
-   "summary": "Direct-decision models turn text into low-latency structured labels and scores, making them attractive for classification and automatic evaluation. Yet reliability requires more than accuracy: a model must also use the ordinal decision scale supplied by the user faithfully. We analyze JEV~1.13 and three open KEV…",
-   "points": 29,
-   "firstSeen": "2026-10-01T07:05:22Z",
-   "tags": [],
-   "layers": [],
-   "score": 3.48
-  },
-  {
-   "id": "45507557a3ac",
-   "title": "False Frontiers: Diagnosing and Mitigating Co-Cheating in Self-Evolving Search Agents",
-   "url": "https://huggingface.co/papers/2609.39102",
-   "source": "hf-papers",
-   "sourceName": "Hugging Face Daily Papers",
-   "type": "research",
-   "published": "2026-09-29T20:00:00Z",
-   "summary": "Self-evolving search agents build their own training curricula by jointly optimizing a proposer that generates questions and a solver that answers them. This closed loop introduces a failure mode we call co-cheating: the proposer and solver increasingly agree on shared errors, so internal reward improves without a…",
-   "points": 189,
-   "firstSeen": "2026-10-01T07:05:22Z",
-   "tags": [],
-   "layers": [],
-   "score": 4.28
-  },
-  {
-   "id": "bab64e24f68b",
-   "title": "Agent Error Dataset: Scaling 50,000 Error--Diagnosis Pairs for Failure Analysis and Error-Aware Post-Training",
-   "url": "https://huggingface.co/papers/2609.40111",
-   "source": "hf-papers",
-   "sourceName": "Hugging Face Daily Papers",
-   "type": "research",
-   "published": "2026-09-29T20:00:00Z",
-   "summary": "An unsuccessful LLM agent rollout contains more information than its final reward: the observations available to the agent, the actions it chose, and the environment's responses. Reusing this experience for learning requires identifying a decision to revise and testing a concrete alternative. We introduce the Agent…",
-   "points": 19,
-   "firstSeen": "2026-10-01T07:05:22Z",
-   "tags": [
-    "rl-reasoning"
-   ],
-   "layers": [
-    "models"
-   ],
-   "score": 3.9
-  },
-  {
-   "id": "cc071d1dcdd1",
-   "title": "RSIGame: Autonomous Agentic Game Development with Recursive Self-improvement",
-   "url": "https://huggingface.co/papers/2609.39045",
-   "source": "hf-papers",
-   "sourceName": "Hugging Face Daily Papers",
-   "type": "research",
-   "published": "2026-09-29T20:00:00Z",
-   "summary": "Recent advances in large language models have made automatic game generation increasingly feasible, yet reliably improving generated games beyond a playable version remains challenging. Naive iterative refinement can easily overfit a small set of test cases, producing fragile games with unresolved bugs, missing…",
-   "points": 20,
-   "firstSeen": "2026-10-01T10:05:39Z",
-   "tags": [
-    "agent-loop"
-   ],
-   "layers": [
-    "agents"
-   ],
-   "score": 3.92
-  },
-  {
-   "id": "916d4b3683d4",
-   "title": "DyRAD: Radar Novel View Synthesis for Dynamic Driving Scenes",
-   "url": "https://huggingface.co/papers/2609.39841",
-   "source": "hf-papers",
-   "sourceName": "Hugging Face Daily Papers",
-   "type": "research",
-   "published": "2026-09-29T20:00:00Z",
-   "summary": "Reconstructing dynamic driving scenes from recorded sensor data supports closed-loop evaluation of autonomous driving systems by synthesizing observations beyond the original trajectory. Unlike cameras and LiDAR, radar measures radial velocity directly through Doppler. Yet existing radar novel-view synthesis fails to…",
-   "points": 31,
-   "firstSeen": "2026-10-01T18:24:40Z",
-   "tags": [],
-   "layers": [],
-   "score": 3.51
-  },
-  {
-   "id": "c28e33ad5596",
-   "title": "OSWorld-Science: A Benchmark of Computer Use Agents for Learning and Using Scientific Software",
-   "url": "https://huggingface.co/papers/2609.39903",
-   "source": "hf-papers",
-   "sourceName": "Hugging Face Daily Papers",
-   "type": "research",
-   "published": "2026-09-29T20:00:00Z",
-   "summary": "Scientific software presents a demanding test for computer-using agents based on visual language models (VLMs): completing a research workflow requires interpreting specialized interfaces, manipulating scientific objects, and producing verifiable results. We thus introduce OSWorld-Science, a benchmark and evaluation…",
-   "points": 24,
-   "firstSeen": "2026-10-01T18:24:40Z",
-   "tags": [
-    "benchmarks",
-    "computer-use",
-    "multimodal"
-   ],
-   "layers": [
-    "agents",
-    "models",
-    "security"
-   ],
-   "score": 5.2
-  },
-  {
-   "id": "db5b6383b0e9",
-   "title": "Scaling Laws for Looped Mixture of Experts",
-   "url": "https://huggingface.co/papers/2609.40316",
-   "source": "hf-papers",
-   "sourceName": "Hugging Face Daily Papers",
-   "type": "research",
-   "published": "2026-09-29T20:00:00Z",
-   "summary": "Looped transformers and Mixture-of-Experts (MoE) offer complementary routes to efficient scaling: recurrence increases computational depth at fixed parameters, while MoE sparsity expands total capacity at fixed active compute. Yet existing scaling laws model recurrence or sparsity in isolation. In this work, we…",
-   "points": 16,
-   "firstSeen": "2026-10-02T00:46:08Z",
-   "tags": [
-    "moe"
-   ],
-   "layers": [
-    "models"
-   ],
-   "score": 3.83
-  },
-  {
-   "id": "e6995d5dfec9",
-   "title": "A Missing Piece for Trustworthy AI Reviewers: From Benchmarking Rhetorical Robustness to SciCore Review",
-   "url": "https://huggingface.co/papers/2609.39027",
-   "source": "hf-papers",
-   "sourceName": "Hugging Face Daily Papers",
-   "type": "research",
-   "published": "2026-09-29T20:00:00Z",
-   "summary": "AI reviewers can assign different judgments to manuscripts that report the same science in different wording, potentially rewarding rhetorical optimization over scientific improvement. We formulate Rhetorical Robustness as the joint requirement of stability across content-preserving rewrites and discrimination across…",
-   "points": 59,
-   "firstSeen": "2026-10-02T09:43:30Z",
-   "tags": [],
-   "layers": [],
-   "score": 3.78
-  },
-  {
-   "id": "f9ed3d0d2c1a",
-   "title": "Make Sparse Rewards Count: Density-Aware Reward Aggregation for Multi-Reward RL",
-   "url": "https://huggingface.co/papers/2610.00574",
-   "source": "hf-papers",
-   "sourceName": "Hugging Face Daily Papers",
-   "type": "research",
-   "published": "2026-09-29T20:00:00Z",
-   "summary": "Multi-reward reinforcement learning trains large language models to satisfy multiple behavioral objectives simultaneously. Reward-wise normalization, as used in GDPO, preserves reward-specific relative information within rollout groups, but different objectives can still exhibit uneven learning progress. We study this…",
-   "points": 57,
-   "firstSeen": "2026-10-02T09:43:30Z",
-   "tags": [
-    "rl-reasoning"
-   ],
-   "layers": [
-    "models"
-   ],
-   "score": 4.36
   }
  ]
 }
