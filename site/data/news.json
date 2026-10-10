@@ -1,5 +1,5 @@
 {
- "generated": "2026-10-10T09:47:48Z",
+ "generated": "2026-10-10T17:20:00Z",
  "retentionDays": 45,
  "llmEnriched": 0,
  "sources": [
@@ -10,7 +10,7 @@
    "ok": true,
    "count": 15,
    "error": null,
-   "lastOk": "2026-10-10T09:47:48Z"
+   "lastOk": "2026-10-10T17:20:00Z"
   },
   {
    "id": "deepmind",
@@ -19,7 +19,7 @@
    "ok": true,
    "count": 10,
    "error": null,
-   "lastOk": "2026-10-10T09:47:48Z"
+   "lastOk": "2026-10-10T17:20:00Z"
   },
   {
    "id": "google-ai",
@@ -28,7 +28,7 @@
    "ok": true,
    "count": 10,
    "error": null,
-   "lastOk": "2026-10-10T09:47:48Z"
+   "lastOk": "2026-10-10T17:20:00Z"
   },
   {
    "id": "hf-blog",
@@ -37,7 +37,7 @@
    "ok": true,
    "count": 15,
    "error": null,
-   "lastOk": "2026-10-10T09:47:48Z"
+   "lastOk": "2026-10-10T17:20:00Z"
   },
   {
    "id": "nvidia-dev",
@@ -46,7 +46,7 @@
    "ok": true,
    "count": 10,
    "error": null,
-   "lastOk": "2026-10-10T09:47:48Z"
+   "lastOk": "2026-10-10T17:20:00Z"
   },
   {
    "id": "msr",
@@ -55,7 +55,7 @@
    "ok": true,
    "count": 10,
    "error": null,
-   "lastOk": "2026-10-10T09:47:48Z"
+   "lastOk": "2026-10-10T17:20:00Z"
   },
   {
    "id": "aws-ml",
@@ -64,7 +64,7 @@
    "ok": true,
    "count": 8,
    "error": null,
-   "lastOk": "2026-10-10T09:47:48Z"
+   "lastOk": "2026-10-10T17:20:00Z"
   },
   {
    "id": "qwen",
@@ -73,7 +73,7 @@
    "ok": true,
    "count": 8,
    "error": null,
-   "lastOk": "2026-10-10T09:47:48Z"
+   "lastOk": "2026-10-10T17:20:00Z"
   },
   {
    "id": "hn",
@@ -82,7 +82,7 @@
    "ok": true,
    "count": 5,
    "error": null,
-   "lastOk": "2026-10-10T09:47:48Z"
+   "lastOk": "2026-10-10T17:20:00Z"
   },
   {
    "id": "localllama",
@@ -91,7 +91,7 @@
    "ok": true,
    "count": 15,
    "error": null,
-   "lastOk": "2026-10-10T09:47:48Z"
+   "lastOk": "2026-10-10T17:20:00Z"
   },
   {
    "id": "simonw",
@@ -100,7 +100,7 @@
    "ok": true,
    "count": 15,
    "error": null,
-   "lastOk": "2026-10-10T09:47:48Z"
+   "lastOk": "2026-10-10T17:20:00Z"
   },
   {
    "id": "hf-papers",
@@ -109,7 +109,7 @@
    "ok": true,
    "count": 15,
    "error": null,
-   "lastOk": "2026-10-10T09:47:48Z"
+   "lastOk": "2026-10-10T17:20:00Z"
   },
   {
    "id": "arxiv-cl",
@@ -118,7 +118,7 @@
    "ok": true,
    "count": 0,
    "error": null,
-   "lastOk": "2026-10-10T09:47:48Z"
+   "lastOk": "2026-10-10T17:20:00Z"
   },
   {
    "id": "latent-space",
@@ -127,7 +127,7 @@
    "ok": true,
    "count": 8,
    "error": null,
-   "lastOk": "2026-10-10T09:47:48Z"
+   "lastOk": "2026-10-10T17:20:00Z"
   },
   {
    "id": "interconnects",
@@ -136,7 +136,7 @@
    "ok": true,
    "count": 8,
    "error": null,
-   "lastOk": "2026-10-10T09:47:48Z"
+   "lastOk": "2026-10-10T17:20:00Z"
   },
   {
    "id": "import-ai",
@@ -145,7 +145,7 @@
    "ok": true,
    "count": 5,
    "error": null,
-   "lastOk": "2026-10-10T09:47:48Z"
+   "lastOk": "2026-10-10T17:20:00Z"
   },
   {
    "id": "verge-ai",
@@ -154,7 +154,7 @@
    "ok": true,
    "count": 10,
    "error": null,
-   "lastOk": "2026-10-10T09:47:48Z"
+   "lastOk": "2026-10-10T17:20:00Z"
   },
   {
    "id": "ars-ai",
@@ -163,7 +163,7 @@
    "ok": true,
    "count": 12,
    "error": null,
-   "lastOk": "2026-10-10T09:47:48Z"
+   "lastOk": "2026-10-10T17:20:00Z"
   },
   {
    "id": "techcrunch-ai",
@@ -172,7 +172,7 @@
    "ok": true,
    "count": 12,
    "error": null,
-   "lastOk": "2026-10-10T09:47:48Z"
+   "lastOk": "2026-10-10T17:20:00Z"
   },
   {
    "id": "mit-tr",
@@ -181,7 +181,7 @@
    "ok": true,
    "count": 8,
    "error": null,
-   "lastOk": "2026-10-10T09:47:48Z"
+   "lastOk": "2026-10-10T17:20:00Z"
   },
   {
    "id": "decoder",
@@ -190,7 +190,7 @@
    "ok": true,
    "count": 10,
    "error": null,
-   "lastOk": "2026-10-10T09:47:48Z"
+   "lastOk": "2026-10-10T17:20:00Z"
   },
   {
    "id": "sth",
@@ -199,7 +199,7 @@
    "ok": true,
    "count": 2,
    "error": null,
-   "lastOk": "2026-10-10T09:47:48Z"
+   "lastOk": "2026-10-10T17:20:00Z"
   },
   {
    "id": "embrace-red",
@@ -208,7 +208,7 @@
    "ok": true,
    "count": 6,
    "error": null,
-   "lastOk": "2026-10-10T09:47:48Z"
+   "lastOk": "2026-10-10T17:20:00Z"
   },
   {
    "id": "rel-ollama",
@@ -217,7 +217,7 @@
    "ok": true,
    "count": 3,
    "error": null,
-   "lastOk": "2026-10-10T09:47:48Z"
+   "lastOk": "2026-10-10T17:20:00Z"
   },
   {
    "id": "rel-vllm",
@@ -226,7 +226,7 @@
    "ok": true,
    "count": 3,
    "error": null,
-   "lastOk": "2026-10-10T09:47:48Z"
+   "lastOk": "2026-10-10T17:20:00Z"
   },
   {
    "id": "rel-opencode",
@@ -235,7 +235,7 @@
    "ok": true,
    "count": 3,
    "error": null,
-   "lastOk": "2026-10-10T09:47:48Z"
+   "lastOk": "2026-10-10T17:20:00Z"
   },
   {
    "id": "rel-claude-code",
@@ -244,35 +244,110 @@
    "ok": true,
    "count": 3,
    "error": null,
-   "lastOk": "2026-10-10T09:47:48Z"
+   "lastOk": "2026-10-10T17:20:00Z"
   }
  ],
  "heat": {
   "concepts": {
+   "rtx-rigs": {
+    "d7": 15,
+    "prev7": 5,
+    "d30": 20
+   },
+   "ai-datacenters": {
+    "d7": 9,
+    "prev7": 6,
+    "d30": 15
+   },
+   "gpt": {
+    "d7": 78,
+    "prev7": 23,
+    "d30": 101
+   },
+   "opencode": {
+    "d7": 7,
+    "prev7": 3,
+    "d30": 10
+   },
+   "qwen": {
+    "d7": 59,
+    "prev7": 31,
+    "d30": 90
+   },
+   "benchmarks": {
+    "d7": 29,
+    "prev7": 13,
+    "d30": 42
+   },
+   "claude": {
+    "d7": 50,
+    "prev7": 15,
+    "d30": 65
+   },
+   "agent-loop": {
+    "d7": 53,
+    "prev7": 21,
+    "d30": 74
+   },
+   "world-models": {
+    "d7": 20,
+    "prev7": 4,
+    "d30": 24
+   },
+   "bandwidth": {
+    "d7": 15,
+    "prev7": 7,
+    "d30": 22
+   },
+   "llama-cpp": {
+    "d7": 20,
+    "prev7": 11,
+    "d30": 31
+   },
    "gemma": {
+    "d7": 37,
+    "prev7": 15,
+    "d30": 52
+   },
+   "frontier-capabilities": {
+    "d7": 11,
+    "prev7": 4,
+    "d30": 15
+   },
+   "gemini": {
+    "d7": 17,
+    "prev7": 9,
+    "d30": 26
+   },
+   "multimodal": {
     "d7": 36,
-    "prev7": 14,
-    "d30": 50
+    "prev7": 10,
+    "d30": 46
+   },
+   "langgraph": {
+    "d7": 2,
+    "prev7": 0,
+    "d30": 2
+   },
+   "gguf": {
+    "d7": 9,
+    "prev7": 4,
+    "d30": 13
+   },
+   "consumer-assistants": {
+    "d7": 3,
+    "prev7": 1,
+    "d30": 4
    },
    "apple-silicon": {
     "d7": 2,
     "prev7": 2,
     "d30": 4
    },
-   "qwen": {
-    "d7": 57,
-    "prev7": 30,
-    "d30": 87
-   },
    "vram-math": {
-    "d7": 14,
-    "prev7": 5,
+    "d7": 12,
+    "prev7": 7,
     "d30": 19
-   },
-   "bandwidth": {
-    "d7": 15,
-    "prev7": 6,
-    "d30": 21
    },
    "kv-cache": {
     "d7": 4,
@@ -280,19 +355,14 @@
     "d30": 4
    },
    "open-weights": {
-    "d7": 37,
-    "prev7": 13,
+    "d7": 35,
+    "prev7": 15,
     "d30": 50
    },
    "model-files": {
     "d7": 3,
     "prev7": 0,
     "d30": 3
-   },
-   "rtx-rigs": {
-    "d7": 11,
-    "prev7": 5,
-    "d30": 16
    },
    "nvidia-dc": {
     "d7": 5,
@@ -304,31 +374,6 @@
     "prev7": 4,
     "d30": 13
    },
-   "gemini": {
-    "d7": 16,
-    "prev7": 9,
-    "d30": 25
-   },
-   "agent-loop": {
-    "d7": 52,
-    "prev7": 18,
-    "d30": 70
-   },
-   "claude": {
-    "d7": 48,
-    "prev7": 14,
-    "d30": 62
-   },
-   "benchmarks": {
-    "d7": 28,
-    "prev7": 16,
-    "d30": 44
-   },
-   "gpt": {
-    "d7": 79,
-    "prev7": 20,
-    "d30": 99
-   },
    "speculative-decoding": {
     "d7": 9,
     "prev7": 3,
@@ -339,19 +384,14 @@
     "prev7": 0,
     "d30": 2
    },
-   "ai-datacenters": {
-    "d7": 8,
-    "prev7": 6,
-    "d30": 14
-   },
    "oss-coding-agents": {
-    "d7": 7,
-    "prev7": 0,
+    "d7": 6,
+    "prev7": 1,
     "d30": 7
    },
    "claude-code": {
-    "d7": 17,
-    "prev7": 3,
+    "d7": 16,
+    "prev7": 4,
     "d30": 20
    },
    "multi-agent": {
@@ -366,43 +406,33 @@
    },
    "distillation": {
     "d7": 11,
-    "prev7": 8,
-    "d30": 19
+    "prev7": 6,
+    "d30": 17
    },
    "moe": {
-    "d7": 19,
-    "prev7": 4,
+    "d7": 18,
+    "prev7": 5,
     "d30": 23
    },
    "mcp": {
-    "d7": 5,
-    "prev7": 2,
+    "d7": 4,
+    "prev7": 3,
     "d30": 7
    },
    "context-engineering": {
     "d7": 6,
-    "prev7": 2,
-    "d30": 8
+    "prev7": 1,
+    "d30": 7
    },
    "strix-halo": {
-    "d7": 8,
-    "prev7": 1,
+    "d7": 7,
+    "prev7": 2,
     "d30": 9
-   },
-   "world-models": {
-    "d7": 19,
-    "prev7": 8,
-    "d30": 27
    },
    "small-models": {
     "d7": 7,
     "prev7": 1,
     "d30": 8
-   },
-   "llama-cpp": {
-    "d7": 19,
-    "prev7": 11,
-    "d30": 30
    },
    "hyperscalers": {
     "d7": 16,
@@ -425,8 +455,8 @@
     "d30": 15
    },
    "dgx-spark": {
-    "d7": 8,
-    "prev7": 3,
+    "d7": 7,
+    "prev7": 4,
     "d30": 11
    },
    "computer-use": {
@@ -443,11 +473,6 @@
     "d7": 13,
     "prev7": 7,
     "d30": 20
-   },
-   "frontier-capabilities": {
-    "d7": 10,
-    "prev7": 4,
-    "d30": 14
    },
    "agent-memory": {
     "d7": 5,
@@ -470,24 +495,14 @@
     "d30": 1
    },
    "kimi-glm": {
-    "d7": 11,
-    "prev7": 3,
+    "d7": 10,
+    "prev7": 4,
     "d30": 14
    },
    "quantization": {
-    "d7": 7,
-    "prev7": 3,
-    "d30": 10
-   },
-   "gguf": {
-    "d7": 9,
-    "prev7": 3,
-    "d30": 12
-   },
-   "opencode": {
     "d7": 6,
-    "prev7": 3,
-    "d30": 9
+    "prev7": 4,
+    "d30": 10
    },
    "ai-policy": {
     "d7": 3,
@@ -504,15 +519,10 @@
     "prev7": 0,
     "d30": 1
    },
-   "multimodal": {
-    "d7": 35,
-    "prev7": 13,
-    "d30": 48
-   },
    "rl-reasoning": {
-    "d7": 15,
+    "d7": 14,
     "prev7": 6,
-    "d30": 21
+    "d30": 20
    },
    "openclaw": {
     "d7": 3,
@@ -525,18 +535,18 @@
     "d30": 2
    },
    "amd-instinct": {
-    "d7": 3,
-    "prev7": 0,
+    "d7": 2,
+    "prev7": 1,
     "d30": 3
    },
    "awq-gptq": {
-    "d7": 4,
-    "prev7": 0,
+    "d7": 3,
+    "prev7": 1,
     "d30": 4
    },
    "low-bit-formats": {
-    "d7": 4,
-    "prev7": 1,
+    "d7": 3,
+    "prev7": 2,
     "d30": 5
    },
    "hermes-agent": {
@@ -545,13 +555,13 @@
     "d30": 1
    },
    "agent-harness": {
-    "d7": 3,
-    "prev7": 1,
+    "d7": 2,
+    "prev7": 2,
     "d30": 4
    },
    "rag": {
-    "d7": 5,
-    "prev7": 5,
+    "d7": 4,
+    "prev7": 6,
     "d30": 10
    },
    "guardrails": {
@@ -570,13 +580,8 @@
     "d30": 1
    },
    "vector-dbs": {
-    "d7": 2,
-    "prev7": 1,
-    "d30": 3
-   },
-   "consumer-assistants": {
-    "d7": 2,
-    "prev7": 1,
+    "d7": 1,
+    "prev7": 2,
     "d30": 3
    },
    "mlx": {
@@ -590,11 +595,6 @@
     "d30": 4
    },
    "a2a": {
-    "d7": 1,
-    "prev7": 0,
-    "d30": 1
-   },
-   "langgraph": {
     "d7": 1,
     "prev7": 0,
     "d30": 1
@@ -636,47 +636,47 @@
    }
   },
   "layers": {
-   "models": {
-    "d7": 336,
-    "d30": 457
-   },
    "compute": {
     "d7": 61,
-    "d30": 85
+    "d30": 89
    },
-   "context": {
-    "d7": 19,
-    "d30": 29
-   },
-   "weights": {
-    "d7": 24,
-    "d30": 31
-   },
-   "inference": {
-    "d7": 65,
-    "d30": 88
+   "models": {
+    "d7": 338,
+    "d30": 460
    },
    "agents": {
-    "d7": 101,
-    "d30": 132
+    "d7": 103,
+    "d30": 139
    },
    "security": {
-    "d7": 44,
-    "d30": 68
+    "d7": 45,
+    "d30": 66
+   },
+   "inference": {
+    "d7": 66,
+    "d30": 89
+   },
+   "weights": {
+    "d7": 22,
+    "d30": 32
+   },
+   "context": {
+    "d7": 18,
+    "d30": 28
    },
    "tools": {
-    "d7": 6,
+    "d7": 5,
     "d30": 9
    }
   },
   "stack": {
    "physical-energy": {
     "d7": 8,
-    "prev7": 6
+    "prev7": 7
    },
    "compute-hardware": {
-    "d7": 46,
-    "prev7": 12
+    "d7": 48,
+    "prev7": 13
    },
    "cloud-infrastructure": {
     "d7": 28,
@@ -687,24 +687,24 @@
     "prev7": 8
    },
    "foundation-models": {
-    "d7": 255,
-    "prev7": 101
+    "d7": 253,
+    "prev7": 98
    },
    "inference-optimization": {
-    "d7": 75,
-    "prev7": 27
+    "d7": 76,
+    "prev7": 25
    },
    "orchestration-tooling": {
-    "d7": 32,
-    "prev7": 15
+    "d7": 31,
+    "prev7": 16
    },
    "agents": {
-    "d7": 113,
-    "prev7": 41
+    "d7": 110,
+    "prev7": 43
    },
    "applications-interfaces": {
     "d7": 39,
-    "prev7": 14
+    "prev7": 15
    }
   }
  },
@@ -862,7 +862,7 @@
  "radar": [
   {
    "term": "GB",
-   "items": 44,
+   "items": 46,
    "sources": 4,
    "sample": [
     "0493cf4b2731",
@@ -871,19 +871,6 @@
     "1db10cd1c604",
     "1f5c01240b45",
     "22552b8cdbab"
-   ]
-  },
-  {
-   "term": "Astra",
-   "items": 12,
-   "sources": 6,
-   "sample": [
-    "3829a2db4d27",
-    "7f87085606c5",
-    "817c9a8f947a",
-    "90995f7dbc9c",
-    "94580c0cfb12",
-    "9c6f1560c622"
    ]
   },
   {
@@ -900,16 +887,42 @@
    ]
   },
   {
+   "term": "Astra",
+   "items": 11,
+   "sources": 5,
+   "sample": [
+    "3829a2db4d27",
+    "7f87085606c5",
+    "817c9a8f947a",
+    "90995f7dbc9c",
+    "9c6f1560c622",
+    "ca1ec6c6a1a1"
+   ]
+  },
+  {
+   "term": "EmbeddingGemma",
+   "items": 10,
+   "sources": 5,
+   "sample": [
+    "0a7d6e8e8b6e",
+    "2435ebd74585",
+    "472b20c3e805",
+    "5419b493bda8",
+    "63ebe30321d6",
+    "64551cb1894f"
+   ]
+  },
+  {
    "term": "Argon",
    "items": 8,
-   "sources": 7,
+   "sources": 6,
    "sample": [
-    "311e095023e6",
     "5c1f615d64d2",
     "7f87085606c5",
     "94349d4a2730",
     "97fa5252aa29",
-    "9e57e69aee78"
+    "9e57e69aee78",
+    "d579ab095fb7"
    ]
   },
   {
@@ -923,19 +936,6 @@
     "2e46a7d4f323",
     "57abf975fc97",
     "77eada53234b"
-   ]
-  },
-  {
-   "term": "EmbeddingGemma",
-   "items": 9,
-   "sources": 5,
-   "sample": [
-    "0a7d6e8e8b6e",
-    "2435ebd74585",
-    "472b20c3e805",
-    "5419b493bda8",
-    "63ebe30321d6",
-    "64551cb1894f"
    ]
   },
   {
@@ -962,6 +962,19 @@
     "90995f7dbc9c",
     "a94c9036ef87",
     "f6d3626eb7c8"
+   ]
+  },
+  {
+   "term": "PC",
+   "items": 9,
+   "sources": 2,
+   "sample": [
+    "0493cf4b2731",
+    "2c81a4fbc76b",
+    "3d4c5f0283e1",
+    "6c1243d0775d",
+    "6e622edc9d24",
+    "8efd11003847"
    ]
   },
   {
@@ -1012,19 +1025,6 @@
    ]
   },
   {
-   "term": "PC",
-   "items": 8,
-   "sources": 2,
-   "sample": [
-    "0493cf4b2731",
-    "2c81a4fbc76b",
-    "3d4c5f0283e1",
-    "6c1243d0775d",
-    "6e622edc9d24",
-    "8efd11003847"
-   ]
-  },
-  {
    "term": "SynthID",
    "items": 4,
    "sources": 4,
@@ -1046,19 +1046,6 @@
     "c8ef56c1464d",
     "f3e88c226581",
     "f9e7dbff8741"
-   ]
-  },
-  {
-   "term": "On-Policy",
-   "items": 7,
-   "sources": 2,
-   "sample": [
-    "09142ad66017",
-    "287275124a79",
-    "44418c421909",
-    "77eaf7d3362a",
-    "d02cc9f69ebf",
-    "e63f03cbbc60"
    ]
   },
   {
@@ -1096,19 +1083,6 @@
    ]
   },
   {
-   "term": "OPD",
-   "items": 6,
-   "sources": 2,
-   "sample": [
-    "09142ad66017",
-    "44418c421909",
-    "77eaf7d3362a",
-    "d02cc9f69ebf",
-    "e63f03cbbc60",
-    "edc5cd454095"
-   ]
-  },
-  {
    "term": "Intelligent UI",
    "items": 3,
    "sources": 3,
@@ -1116,6 +1090,26 @@
     "0ca1450969b5",
     "1a42fb5dbf32",
     "876648c3358f"
+   ]
+  },
+  {
+   "term": "V2",
+   "items": 3,
+   "sources": 3,
+   "sample": [
+    "1053b61d4822",
+    "85a452e5b829",
+    "9d3f0f527ebd"
+   ]
+  },
+  {
+   "term": "Philadelphia",
+   "items": 3,
+   "sources": 3,
+   "sample": [
+    "0ad44f3ce5c4",
+    "2a1c784f84b9",
+    "ed9a6102a10b"
    ]
   },
   {
@@ -1150,6 +1144,354 @@
   }
  ],
  "items": [
+  {
+   "id": "d5d71f99c4bb",
+   "title": "No more RTX 5090",
+   "url": "https://www.reddit.com/r/LocalLLaMA/comments/1x2hs1e/no_more_rtx_5090/",
+   "source": "localllama",
+   "sourceName": "r/LocalLLaMA (top today)",
+   "type": "community",
+   "published": "2026-10-10T15:16:16Z",
+   "summary": "Nvidia reportedly halts GeForce RTX 5090 production in favor of AI data center and professional GPUs — impending supply drought expected to drive up prices, RTX 5080 24GB rumored as new gaming flagship…",
+   "firstSeen": "2026-10-10T17:20:00Z",
+   "tags": [
+    "rtx-rigs",
+    "ai-datacenters"
+   ],
+   "layers": [
+    "compute"
+   ],
+   "score": 3.2
+  },
+  {
+   "id": "a2469c577dc4",
+   "title": "OpenAI says a misaligned model deliberately destroyed its own environment hoping for a fresh start with better data",
+   "url": "https://the-decoder.com/openai-says-a-misaligned-model-deliberately-destroyed-its-own-environment-hoping-for-a-fresh-start-with-better-data/",
+   "source": "decoder",
+   "sourceName": "The Decoder",
+   "type": "press",
+   "published": "2026-10-10T15:15:40Z",
+   "summary": "OpenAI has documented new cases of misaligned model behavior. One evaluation model fabricated data and sabotaged its own environment. Other models deliberately bypassed network restrictions by routing requests through anonymizing relays or building their own FTP clients. The article OpenAI says a misaligned model…",
+   "discussion": "0",
+   "firstSeen": "2026-10-10T17:20:00Z",
+   "tags": [
+    "gpt"
+   ],
+   "layers": [
+    "models"
+   ],
+   "score": 1.6
+  },
+  {
+   "id": "1053b61d4822",
+   "title": "github-v1.2.26: chore: promote v2 to dev",
+   "url": "https://github.com/anomalyco/opencode/releases/tag/github-v1.2.26",
+   "source": "rel-opencode",
+   "sourceName": "OpenCode releases",
+   "type": "release",
+   "published": "2026-10-10T14:58:08Z",
+   "summary": "Takes the v2 tree, with packages/console, packages/web, packages/stats, packages/function, infra and sst.config.ts merged up to latest dev, and retargets V2 publishing and deploys from the v2 branch to dev.",
+   "firstSeen": "2026-10-10T17:20:00Z",
+   "tags": [
+    "opencode"
+   ],
+   "layers": [
+    "agents"
+   ],
+   "score": 1.6
+  },
+  {
+   "id": "7ffb5f1c21c9",
+   "title": "Microsoft's Decision-1 model enters the fast-growing AI decision model race",
+   "url": "https://the-decoder.com/microsofts-decision-1-model-enters-the-fast-growing-ai-decision-model-race/",
+   "source": "decoder",
+   "sourceName": "The Decoder",
+   "type": "press",
+   "published": "2026-10-10T14:57:33Z",
+   "summary": "With Decision-1, Microsoft enters the growing decision model space. Built on Qwen3.5-9B and optimized for fast classification and routing, it hits 83.5 percent accuracy with 85 ms latency across 36 benchmarks, according to the company's own tests. The article Microsoft's Decision-1 model enters the fast-growing AI…",
+   "discussion": "0",
+   "firstSeen": "2026-10-10T17:20:00Z",
+   "tags": [
+    "qwen",
+    "benchmarks"
+   ],
+   "layers": [
+    "models",
+    "security"
+   ],
+   "score": 2.2
+  },
+  {
+   "id": "0decde66c5ee",
+   "title": "Anthropic is cutting off its internal evaluations from the internet",
+   "url": "https://www.theverge.com/ai-artificial-intelligence/1009286/anthropic-is-cutting-off-its-internal-evaluations-from-the-internet",
+   "source": "verge-ai",
+   "sourceName": "The Verge AI",
+   "type": "press",
+   "published": "2026-10-10T14:41:16Z",
+   "summary": "After a recent spate of high-profile incidents in which AI agents escaped containment, Anthropic is cutting off internet access for all internal evaluations. In a report Friday, the company detailed \"unintended model actions,\" including submitting a false tip regarding an unsolved murder, that led to the decision…",
+   "firstSeen": "2026-10-10T17:20:00Z",
+   "tags": [
+    "claude",
+    "agent-loop"
+   ],
+   "layers": [
+    "agents",
+    "models"
+   ],
+   "score": 2.2
+  },
+  {
+   "id": "37d5b84c7a91",
+   "title": "Building AI for Reliable Execution: Lessons From Industrial Robotics",
+   "url": "https://www.latent.space/p/standard-bots",
+   "source": "latent-space",
+   "sourceName": "Latent Space",
+   "type": "press",
+   "published": "2026-10-10T14:04:11Z",
+   "summary": "Inside Standard Bots’ AI stack, pretrained models learn factory tasks from demonstrations and improve through corrections from real deployments.",
+   "firstSeen": "2026-10-10T17:20:00Z",
+   "tags": [
+    "world-models"
+   ],
+   "layers": [
+    "models"
+   ],
+   "score": 3.6
+  },
+  {
+   "id": "92e4233ce3ff",
+   "title": "Here are the top AI agents that can live in your text messages",
+   "url": "https://techcrunch.com/2026/10/10/all-the-ai-agents-that-can-live-in-your-text-messages/",
+   "source": "techcrunch-ai",
+   "sourceName": "TechCrunch AI",
+   "type": "press",
+   "published": "2026-10-10T14:00:00Z",
+   "summary": "We created a list of the most notable AI agents that can live in your text messages, from general assistants to agents designed for families, travel, and work.",
+   "firstSeen": "2026-10-10T17:20:00Z",
+   "tags": [
+    "agent-loop"
+   ],
+   "layers": [
+    "agents"
+   ],
+   "score": 1.6
+  },
+  {
+   "id": "f95c4a1ce24c",
+   "title": "\"How much beauty have we lost?\" Mathematicians react with shock and disgust as OpenAI bulldozes their field",
+   "url": "https://the-decoder.com/how-much-beauty-have-we-lost-mathematicians-react-with-shock-and-disgust-as-openai-bulldozes-their-field/",
+   "source": "decoder",
+   "sourceName": "The Decoder",
+   "type": "press",
+   "published": "2026-10-10T13:03:59Z",
+   "summary": "OpenAI published more than 700 AI-generated manuscripts claiming solutions to open math problems. A math blog then collected over 100 responses from researchers, ranging from fascination with new ideas to existential fears and grief over a lost way of working. Fields Medalist Hugo Duminil-Copin wrote, \"I am…",
+   "discussion": "0",
+   "firstSeen": "2026-10-10T17:20:00Z",
+   "tags": [
+    "agent-loop",
+    "gpt"
+   ],
+   "layers": [
+    "agents",
+    "models"
+   ],
+   "score": 2.2
+  },
+  {
+   "id": "d0df291663c4",
+   "title": "Qwen3.8-27B on a single 3090: 140 tok/s on code with a custom megakernel",
+   "url": "https://www.reddit.com/r/LocalLLaMA/comments/1x2erdj/qwen3827b_on_a_single_3090_140_toks_on_code_with/",
+   "source": "localllama",
+   "sourceName": "r/LocalLLaMA (top today)",
+   "type": "community",
+   "published": "2026-10-10T13:01:23Z",
+   "summary": "I've been using Claude Opus 5.5 to speed up Qwen3.8-27B on my PC (rtx 3090), it wrote a CUDA megakernel that is 1.4-1.9x faster than llama.cpp depending on the task/context length. The results and code are below: Results (same hardware, my megakernel vs llama.cpp with MTP): - Writing code: 140 tok/s vs 73 (1.9x…",
+   "firstSeen": "2026-10-10T17:20:00Z",
+   "tags": [
+    "qwen",
+    "bandwidth",
+    "rtx-rigs",
+    "llama-cpp",
+    "gemma"
+   ],
+   "layers": [
+    "compute",
+    "inference",
+    "models"
+   ],
+   "score": 4.4
+  },
+  {
+   "id": "0ea9d786e45e",
+   "title": "AI agent makers are promising privacy — will they deliver?",
+   "url": "https://www.theverge.com/ai-artificial-intelligence/1009051/privacy-ai-agent-promises-openai-meta-muse-dots",
+   "source": "verge-ai",
+   "sourceName": "The Verge AI",
+   "type": "press",
+   "published": "2026-10-10T13:00:00Z",
+   "summary": "At this year's OpenAI DevDay, CEO Sam Altman unveiled the company's new AI agent Dots - and told the crowd that the company wants to \"set a new standard for privacy in frontier AI.\" OpenAI would spend the day taking veiled shots at Meta's Muse, its primary competitor, for failing to keep users' data safe. […]",
+   "firstSeen": "2026-10-10T17:20:00Z",
+   "tags": [
+    "agent-loop",
+    "gpt",
+    "frontier-capabilities"
+   ],
+   "layers": [
+    "agents",
+    "models"
+   ],
+   "score": 2.8
+  },
+  {
+   "id": "717169f1e7cf",
+   "title": "Open-source Mac app that runs EmbeddingGemma 2 locally to search your files by what’s in them",
+   "url": "https://www.reddit.com/r/LocalLLaMA/comments/1x2eeds/opensource_mac_app_that_runs_embeddinggemma_2/",
+   "source": "localllama",
+   "sourceName": "r/LocalLLaMA (top today)",
+   "type": "community",
+   "published": "2026-10-10T12:43:33Z",
+   "summary": "DigUp is a free Mac app that runs Google DeepMind’s new EmbeddingGemma 2 locally over your own files. The model puts text, images, audio and video in one space, so you describe what you remember and land on it: “zebra in a video” opens the clip at the moment it shows up “where they talk about sleep” jumps to that…",
+   "firstSeen": "2026-10-10T17:20:00Z",
+   "tags": [
+    "gemini"
+   ],
+   "layers": [
+    "models"
+   ],
+   "score": 2.6
+  },
+  {
+   "id": "b758cfe48735",
+   "title": "Fully local conversational AI: Whisper + Hermes 8B + Kokoro, zero cloud, running inside a plush toy",
+   "url": "https://www.reddit.com/r/LocalLLaMA/comments/1x2cztv/fully_local_conversational_ai_whisper_hermes_8b/",
+   "source": "localllama",
+   "sourceName": "r/LocalLLaMA (top today)",
+   "type": "community",
+   "published": "2026-10-10T11:28:41Z",
+   "summary": "A conversational AI plush toy where nothing leaves my network. Everything runs on my LAN: STT: Whisper LLM: Hermes 3 Llama 3.1 8B (Q8_0) TTS: Kokoro Memory: per-person (LangGraph). It knows who it's talking to and remembers past conversations Vision: face identity (dlib) + emotion recognition (FER+), so it knows who's…",
+   "firstSeen": "2026-10-10T17:20:00Z",
+   "tags": [
+    "multimodal",
+    "langgraph",
+    "gemma"
+   ],
+   "layers": [
+    "agents",
+    "models"
+   ],
+   "score": 3.8
+  },
+  {
+   "id": "bedd958202e3",
+   "title": "Few people pay for AI, but those who do spend big",
+   "url": "https://the-decoder.com/few-people-pay-for-ai-but-those-who-do-spend-bigonly-a-few-users-pay-for-ai-but-those-who-do-pay-a-lot/",
+   "source": "decoder",
+   "sourceName": "The Decoder",
+   "type": "press",
+   "published": "2026-10-10T10:54:56Z",
+   "summary": "Andreessen Horowitz tracks actual US consumer spending for the first time in its latest Top 100 AI list. Nearly half of US consumers use AI, but only 4.5 percent pay for a subscription. The top one percent of payers spend about $900 a month, mostly on professional tools for development and automation. The article Few…",
+   "discussion": "0",
+   "firstSeen": "2026-10-10T17:20:00Z",
+   "tags": [],
+   "layers": [],
+   "score": 1.0
+  },
+  {
+   "id": "41aebb0681b8",
+   "title": "NVIDIA reportedly discontinuing RTX 5090, GB202 GPUs to be reserved for RTX PRO series",
+   "url": "https://www.reddit.com/r/LocalLLaMA/comments/1x2bt6r/nvidia_reportedly_discontinuing_rtx_5090_gb202/",
+   "source": "localllama",
+   "sourceName": "r/LocalLLaMA (top today)",
+   "type": "community",
+   "published": "2026-10-10T10:20:08Z",
+   "summary": "No.....",
+   "firstSeen": "2026-10-10T17:20:00Z",
+   "tags": [
+    "rtx-rigs"
+   ],
+   "layers": [
+    "compute"
+   ],
+   "score": 2.6
+  },
+  {
+   "id": "ed9a6102a10b",
+   "title": "Anthropic cuts off Claude's internet access after the model autonomously filed a fake homicide tip with Philadelphia police",
+   "url": "https://the-decoder.com/anthropic-cuts-off-claudes-internet-access-after-the-model-autonomously-filed-a-fake-homicide-tip-with-philadelphia-police/",
+   "source": "decoder",
+   "sourceName": "The Decoder",
+   "type": "press",
+   "published": "2026-10-10T10:16:26Z",
+   "summary": "Anthropic's Claude independently submitted a fake homicide tip to the Philadelphia police, exploited vulnerabilities on university servers, and bypassed access restrictions. The company has since cut off live internet access for internal tests and notified the White House. The article Anthropic cuts off Claude's…",
+   "discussion": "0",
+   "firstSeen": "2026-10-10T17:20:00Z",
+   "tags": [
+    "claude"
+   ],
+   "layers": [
+    "models"
+   ],
+   "score": 1.6
+  },
+  {
+   "id": "95633920d0fa",
+   "title": "Strata with Qwen3.8 Flash Next UD-Q4_K_XL",
+   "url": "https://www.reddit.com/r/LocalLLaMA/comments/1x2bbx6/strata_with_qwen38_flash_next_udq4_k_xl/",
+   "source": "localllama",
+   "sourceName": "r/LocalLLaMA (top today)",
+   "type": "community",
+   "published": "2026-10-10T09:50:37Z",
+   "summary": "Been seeing quite a few posts about Strata lately, so I figured I'd give it a shot on my RTX PRO 6000 and I am very impressed. Most of the benchmarks I've seen are using IQ2 or IQ3 quants, so I wanted to see how Unsloth's UD-Q4_K_XL performs instead. Setup: GPU: 1x RTX PRO 6000 Workstation (96GB) Model…",
+   "firstSeen": "2026-10-10T17:20:00Z",
+   "tags": [
+    "qwen",
+    "rtx-rigs",
+    "gguf"
+   ],
+   "layers": [
+    "compute",
+    "models",
+    "weights"
+   ],
+   "score": 3.8
+  },
+  {
+   "id": "fd9d677d057d",
+   "title": "Google's Gemini 4 \"Carbon\" model reportedly feels like Anthropic's Opus 5.5 coding performance",
+   "url": "https://the-decoder.com/googles-gemini-4-carbon-model-is-reportedly-matching-anthropics-opus-5-5-coding-performance/",
+   "source": "decoder",
+   "sourceName": "The Decoder",
+   "type": "press",
+   "published": "2026-10-10T08:59:49Z",
+   "summary": "Gemini 4 Argon isn't even widely available yet, and rumors about a more powerful version codenamed Carbon are already making the rounds. According to Business Insider, one employee compared Carbon's coding abilities to Anthropic's Opus 5.5. Meanwhile, new modes are showing up in the Gemini app and AI Studio…",
+   "discussion": "0",
+   "firstSeen": "2026-10-10T17:20:00Z",
+   "tags": [
+    "claude",
+    "gemini",
+    "consumer-assistants"
+   ],
+   "layers": [
+    "agents",
+    "models"
+   ],
+   "score": 2.8
+  },
+  {
+   "id": "03dcab1b0bc3",
+   "title": "What are people doing with decisions Jev-like models?",
+   "url": "https://www.reddit.com/r/LocalLLaMA/comments/1x29q4a/what_are_people_doing_with_decisions_jevlike/",
+   "source": "localllama",
+   "sourceName": "r/LocalLLaMA (top today)",
+   "type": "community",
+   "published": "2026-10-10T08:07:55Z",
+   "summary": "Let's say I run a local Jev-like decision model on my machine. What are the use cases? I already use it for deep eval testing but what are people usually doing with them? It a bit of \"solution in search of a problem\" but I'm exploring and want to be sure that I'm not missing anything...",
+   "firstSeen": "2026-10-10T17:20:00Z",
+   "tags": [],
+   "layers": [],
+   "score": 2.0
+  },
   {
    "id": "7e30a8df5a33",
    "title": "big or small?",
@@ -1441,7 +1783,7 @@
    "type": "press",
    "published": "2026-10-09T22:04:07Z",
    "summary": "One damaged data center has supercomputers used for training Yandex’s AI model.",
-   "discussion": "40",
+   "discussion": "55",
    "firstSeen": "2026-10-10T00:48:28Z",
    "tags": [
     "ai-datacenters"
@@ -1546,7 +1888,7 @@
    "type": "press",
    "published": "2026-10-09T19:43:50Z",
    "summary": "Study finds coding efficiency gains get \"absorbed\" by human review \"bottleneck.\"",
-   "discussion": "128",
+   "discussion": "147",
    "firstSeen": "2026-10-10T00:48:28Z",
    "tags": [
     "oss-coding-agents"
@@ -1622,7 +1964,7 @@
    "type": "press",
    "published": "2026-10-09T18:44:06Z",
    "summary": "New winner is Nguyen Nam Nhat of Vietnam for video of a roundworm and single-celled Dileptus.",
-   "discussion": "28",
+   "discussion": "32",
    "firstSeen": "2026-10-10T00:48:28Z",
    "tags": [],
    "layers": [],
@@ -1795,7 +2137,7 @@
    "type": "press",
    "published": "2026-10-09T17:30:25Z",
    "summary": "Today we are taking a look at GMKtec's latest Ryzen AI Max+ 395 mini-PC, the EVO-X3, an interesting AI workstation with the added twist of an OCuLink Port The post GMKtec EVO-X3 Mini-PC Review Looking at a 128GB AMD Local AI Box appeared first on ServeTheHome.",
-   "discussion": "1",
+   "discussion": "2",
    "firstSeen": "2026-10-09T18:20:36Z",
    "tags": [
     "strix-halo"
@@ -1833,12 +2175,12 @@
    "type": "community",
    "published": "2026-10-09T17:02:31Z",
    "summary": "",
-   "points": 372,
+   "points": 415,
    "discussion": "https://news.ycombinator.com/item?id=50023450",
    "firstSeen": "2026-10-10T00:48:28Z",
    "tags": [],
    "layers": [],
-   "score": 4.57
+   "score": 4.62
   },
   {
    "id": "e053ae3b334d",
@@ -2076,7 +2418,7 @@
    "type": "community",
    "published": "2026-10-09T14:20:19Z",
    "summary": "",
-   "points": 219,
+   "points": 227,
    "discussion": "https://news.ycombinator.com/item?id=50020927",
    "firstSeen": "2026-10-10T09:47:48Z",
    "tags": [
@@ -2085,7 +2427,7 @@
    "layers": [
     "compute"
    ],
-   "score": 4.94
+   "score": 4.96
   },
   {
    "id": "3e04105beca7",
@@ -2240,7 +2582,7 @@
    "type": "community",
    "published": "2026-10-09T11:03:48Z",
    "summary": "",
-   "points": 397,
+   "points": 404,
    "discussion": "https://news.ycombinator.com/item?id=50018817",
    "firstSeen": "2026-10-09T18:20:36Z",
    "tags": [
@@ -2249,7 +2591,7 @@
    "layers": [
     "agents"
    ],
-   "score": 5.2
+   "score": 5.21
   },
   {
    "id": "15717a6b7c9a",
@@ -3329,7 +3671,7 @@
    "type": "community",
    "published": "2026-10-08T16:45:58Z",
    "summary": "",
-   "points": 424,
+   "points": 427,
    "discussion": "https://news.ycombinator.com/item?id=50008187",
    "firstSeen": "2026-10-08T22:40:39Z",
    "tags": [
@@ -4612,7 +4954,7 @@
    "type": "press",
    "published": "2026-10-07T21:56:42Z",
    "summary": "Opus-built Creative Cloud alternatives are ambitious, free, and nowhere near finished.",
-   "discussion": "356",
+   "discussion": "361",
    "firstSeen": "2026-10-08T00:58:56Z",
    "tags": [],
    "layers": [],
@@ -4811,7 +5153,7 @@
    "type": "research",
    "published": "2026-10-07T20:00:00Z",
    "summary": "Reinforcement learning (RL) is the central training paradigm for advancing large foundation models towards self-improvement. This report introduces the MiMo-V2.6 series, an omni-modal family that pushes the frontier of model intelligence by scaling RL compute. Prior to RL, we conduct mid-training on a broad multimodal…",
-   "points": 62,
+   "points": 65,
    "firstSeen": "2026-10-09T10:30:18Z",
    "tags": [
     "kimi-glm",
@@ -4821,7 +5163,7 @@
    "layers": [
     "models"
    ],
-   "score": 5.6
+   "score": 5.62
   },
   {
    "id": "aa022ee1cf32",
@@ -4832,7 +5174,7 @@
    "type": "research",
    "published": "2026-10-07T20:00:00Z",
    "summary": "Egocentric world models predict first-person observations conditioned on an agent's actions, but most focus on a single agent. Real embodied settings often involve multiple agents that act and interact within a shared environment. Existing multi-agent world models rely on coarse actions like locomotion, camera…",
-   "points": 46,
+   "points": 47,
    "firstSeen": "2026-10-09T10:30:18Z",
    "tags": [
     "world-models",
@@ -4842,7 +5184,7 @@
     "agents",
     "models"
    ],
-   "score": 4.87
+   "score": 4.88
   },
   {
    "id": "3acedd8c1f1a",
@@ -4873,7 +5215,7 @@
    "type": "research",
    "published": "2026-10-07T20:00:00Z",
    "summary": "Recent 3D world models generate photorealistic, explorable scenes that remain frozen in time. OuroWorld is a mask-free framework that turns any static 3D Gaussian Splatting scene into a 3D cinemagraph: a dynamic scene with vivid, diverse motion looping seamlessly from any viewpoint. A vision-language model infers…",
-   "points": 34,
+   "points": 37,
    "firstSeen": "2026-10-09T10:30:18Z",
    "tags": [
     "multimodal",
@@ -4882,7 +5224,7 @@
    "layers": [
     "models"
    ],
-   "score": 4.74
+   "score": 4.78
   },
   {
    "id": "9486c6ecbc69",
@@ -4893,11 +5235,11 @@
    "type": "research",
    "published": "2026-10-07T20:00:00Z",
    "summary": "Dense correspondence matching has historically been bounded by simplifying spatio-temporal priors, such as smooth motion and rigid geometry. While effective for classical tasks, these assumptions break down in image editing and reference-guided generation (IEG), where transformations can preserve visual identity while…",
-   "points": 33,
+   "points": 34,
    "firstSeen": "2026-10-09T10:30:18Z",
    "tags": [],
    "layers": [],
-   "score": 3.53
+   "score": 3.54
   },
   {
    "id": "1434ebbf0d28",
@@ -4908,7 +5250,7 @@
    "type": "research",
    "published": "2026-10-07T20:00:00Z",
    "summary": "Large language model (LLM) coding agents have advanced test generation across diverse programming tasks. However, the common practice of evaluating tests against a single reference solution overlooks alternative valid implementations and can overstate test quality. We introduce TestPrism, comprising 300 test tasks…",
-   "points": 29,
+   "points": 30,
    "firstSeen": "2026-10-09T10:30:18Z",
    "tags": [
     "oss-coding-agents"
@@ -4916,7 +5258,7 @@
    "layers": [
     "agents"
    ],
-   "score": 4.08
+   "score": 4.09
   },
   {
    "id": "76a083bc368b",
@@ -4946,7 +5288,7 @@
    "type": "research",
    "published": "2026-10-07T20:00:00Z",
    "summary": "This is a book about large language models. As indicated by the title, it primarily focuses on foundational concepts rather than comprehensive coverage of all cutting-edge technologies. The book is structured into six main chapters, each exploring a key area: pre-training, generative models, prompting, alignment…",
-   "points": 36,
+   "points": 38,
    "firstSeen": "2026-10-09T18:20:36Z",
    "tags": [
     "alignment"
@@ -4954,7 +5296,7 @@
    "layers": [
     "security"
    ],
-   "score": 4.17
+   "score": 4.19
   },
   {
    "id": "f3e93a591542",
@@ -4965,7 +5307,7 @@
    "type": "research",
    "published": "2026-10-07T20:00:00Z",
    "summary": "Learning to act in unfamiliar environments requires agents to infer how the world works and revise that understanding as new evidence arrives. Yet limited observations can support multiple world models that explain past interactions but predict different outcomes in unseen states. We introduce Memento 3, building on…",
-   "points": 27,
+   "points": 28,
    "firstSeen": "2026-10-09T18:20:36Z",
    "tags": [
     "world-models"
@@ -4973,7 +5315,7 @@
    "layers": [
     "models"
    ],
-   "score": 4.05
+   "score": 4.06
   },
   {
    "id": "b53ea79cbd9e",
@@ -5003,7 +5345,7 @@
    "type": "research",
    "published": "2026-10-07T20:00:00Z",
    "summary": "Single-image, multi-image, and video deep research require different visual operations but share a workflow of visual grounding, external retrieval, and fact composition. A key challenge is to preserve the dependencies linking localized visual anchors, entity relations, source-supported facts, and answer-producing…",
-   "points": 19,
+   "points": 20,
    "firstSeen": "2026-10-09T18:20:36Z",
    "tags": [
     "multimodal"
@@ -5011,7 +5353,7 @@
    "layers": [
     "models"
    ],
-   "score": 3.9
+   "score": 3.92
   },
   {
    "id": "752389d88eac",
@@ -5043,7 +5385,7 @@
    "type": "research",
    "published": "2026-10-07T20:00:00Z",
    "summary": "Most robot policies keep a model in the control loop: a VLA maps observations to actions, and an Agent Harness, such as Agent-as-Policy or Harness VLA queries a VLM for decision making at run time. We propose a different view: the embodied world is an Embodied Turing Machine, whose tape is the robot and environment…",
-   "points": 12,
+   "points": 13,
    "firstSeen": "2026-10-10T00:48:28Z",
    "tags": [
     "world-models",
@@ -5054,7 +5396,7 @@
     "agents",
     "models"
    ],
-   "score": 4.91
+   "score": 4.95
   },
   {
    "id": "0c0b6f0b1a7f",
@@ -9295,11 +9637,11 @@
    "type": "research",
    "published": "2026-10-05T20:00:00Z",
    "summary": "Large language models are informing decisions with ever-higher stakes. As the consequences of their errors grow, a central question becomes harder to ignore: how much can we trust an individual answer? Yet recognizing when to defer remains difficult because language models can present incorrect conclusions with fluent…",
-   "points": 32,
+   "points": 33,
    "firstSeen": "2026-10-09T18:20:36Z",
    "tags": [],
    "layers": [],
-   "score": 3.52
+   "score": 3.53
   },
   {
    "id": "4e85d9ec23f8",
@@ -11208,7 +11550,7 @@
    "type": "research",
    "published": "2026-10-04T20:00:00Z",
    "summary": "Sparse attention is a primary approach to reducing the latency of diffusion transformers in long-sequence generation tasks, such as video and high-resolution 3D asset generation. However, existing methods can degrade generation quality and fidelity at high sparsity levels. Through controlled oracle comparisons, we…",
-   "points": 31,
+   "points": 33,
    "firstSeen": "2026-10-09T10:30:18Z",
    "tags": [
     "attention-efficiency"
@@ -11216,7 +11558,7 @@
    "layers": [
     "models"
    ],
-   "score": 4.11
+   "score": 4.13
   },
   {
    "id": "7c6789b8cbf3",
@@ -15299,7 +15641,7 @@
    "type": "research",
    "published": "2026-10-01T20:00:00Z",
    "summary": "Recent text-to-image generation models have achieved remarkable visual quality, but improving them through post-training remains challenging because no single reward signal captures the full range of human preference. In this work, we develop a simple and effective post-training recipe for open-domain text-to-image…",
-   "points": 25,
+   "points": 26,
    "firstSeen": "2026-10-09T10:30:18Z",
    "tags": [
     "rl-reasoning",
@@ -15308,7 +15650,7 @@
    "layers": [
     "models"
    ],
-   "score": 4.61
+   "score": 4.63
   },
   {
    "id": "bd12dc0a481e",
@@ -17032,330 +17374,6 @@
     "models"
    ],
    "score": 5.83
-  },
-  {
-   "id": "311e095023e6",
-   "title": "Gemini 4 Argon: our next era of frontier intelligence",
-   "url": "https://deepmind.google/blog/gemini-4-argon-our-next-era-of-frontier-intelligence/",
-   "source": "deepmind",
-   "sourceName": "Google DeepMind",
-   "type": "lab",
-   "published": "2026-09-30T20:01:45Z",
-   "summary": "",
-   "firstSeen": "2026-09-30T20:44:12Z",
-   "tags": [
-    "gemini"
-   ],
-   "layers": [
-    "models"
-   ],
-   "score": 3.6
-  },
-  {
-   "id": "e25873c69d79",
-   "title": "Beyond Memory: Harnessing Long-Horizon Agents with Explicit Belief States",
-   "url": "https://huggingface.co/papers/2610.01415",
-   "source": "hf-papers",
-   "sourceName": "Hugging Face Daily Papers",
-   "type": "research",
-   "published": "2026-09-30T20:00:00Z",
-   "summary": "Large language model (LLM) agents can now undertake increasingly complex tasks, but the way they organize interaction history into memory does not ensure a coherent understanding of the current world. We introduce PoS, an inference-time framework that constructs and continually maintains explicit belief states as the…",
-   "points": 59,
-   "firstSeen": "2026-10-02T09:43:30Z",
-   "tags": [],
-   "layers": [],
-   "score": 3.78
-  },
-  {
-   "id": "36ee8bdf3ffd",
-   "title": "World Observer: Joint Actor-Observer Generation for Persistent World Modeling",
-   "url": "https://huggingface.co/papers/2610.02162",
-   "source": "hf-papers",
-   "sourceName": "Hugging Face Daily Papers",
-   "type": "research",
-   "published": "2026-09-30T20:00:00Z",
-   "summary": "How can a world model continuously observe regions beyond the actor's current view? Video world models simulate how an environment evolves from an agent's actions, yet remain actor-centric. Once an object leaves the actor's view, they lose direct evidence of its evolution, often failing to preserve its state and…",
-   "points": 44,
-   "firstSeen": "2026-10-02T09:43:30Z",
-   "tags": [
-    "world-models"
-   ],
-   "layers": [
-    "models"
-   ],
-   "score": 4.25
-  },
-  {
-   "id": "5ee0ec80a881",
-   "title": "Sharpening Tax in Post-Training",
-   "url": "https://huggingface.co/papers/2610.01509",
-   "source": "hf-papers",
-   "sourceName": "Hugging Face Daily Papers",
-   "type": "research",
-   "published": "2026-09-30T20:00:00Z",
-   "summary": "An emerging hypothesis about reinforcement learning (RL) post-training of large language models (LLMs) is that it merely sharpens existing behaviors of a base model, improving single-shot accuracy at the cost of solution coverage. Although this trade-off has been observed in math and coding tasks, it need not extend…",
-   "points": 34,
-   "firstSeen": "2026-10-02T09:43:30Z",
-   "tags": [
-    "rl-reasoning"
-   ],
-   "layers": [
-    "models"
-   ],
-   "score": 4.14
-  },
-  {
-   "id": "8f020abdf366",
-   "title": "OneStreamer: Unifying Perception, Memory, and Proactive Response in Streaming Video Interaction",
-   "url": "https://huggingface.co/papers/2610.01762",
-   "source": "hf-papers",
-   "sourceName": "Hugging Face Daily Papers",
-   "type": "research",
-   "published": "2026-09-30T20:00:00Z",
-   "summary": "Streaming video LLMs must retain evidence before its relevance to future tasks is known and respond when sufficient evidence becomes available. The challenge is to form reusable factual memory without compromising real-time perception. We introduce OneStreamer, which jointly learns query-independent evidence recording…",
-   "points": 165,
-   "firstSeen": "2026-10-02T09:43:30Z",
-   "tags": [],
-   "layers": [],
-   "score": 4.22
-  },
-  {
-   "id": "ca27ecbf3b7a",
-   "title": "4Director: Controlling Video World Models with Rigid 3D Geometry",
-   "url": "https://huggingface.co/papers/2610.02160",
-   "source": "hf-papers",
-   "sourceName": "Hugging Face Daily Papers",
-   "type": "research",
-   "published": "2026-09-30T20:00:00Z",
-   "summary": "Precise control over camera and object motion is essential for professional video production. Existing methods control objects only coarsely, through image-plane cues that are ambiguous in depth and rotation or through 3D tracks and blobs that lack complete geometry and lose consistency across viewpoint changes. We…",
-   "points": 13,
-   "firstSeen": "2026-10-02T09:43:30Z",
-   "tags": [
-    "world-models"
-   ],
-   "layers": [
-    "models"
-   ],
-   "score": 3.75
-  },
-  {
-   "id": "6befe50e7f1a",
-   "title": "RPTune: Learned Context Curation for LLM Catalog Search",
-   "url": "https://huggingface.co/papers/2610.00964",
-   "source": "hf-papers",
-   "sourceName": "Hugging Face Daily Papers",
-   "type": "research",
-   "published": "2026-09-30T20:00:00Z",
-   "summary": "For small merchant businesses (SMBs) whose catalogs fit within a long-context LLM, full-catalog prompting offers a compelling alternative to multi-stage retrieval designed primarily for large marketplaces with millions of items. However, fitting the full catalog into the context window does not ensure that the model…",
-   "points": 10,
-   "firstSeen": "2026-10-02T09:43:30Z",
-   "tags": [
-    "context-engineering"
-   ],
-   "layers": [
-    "context"
-   ],
-   "score": 3.64
-  },
-  {
-   "id": "94580c0cfb12",
-   "title": "Fewer Tokens, Better Action: GPT-6 Astra Robot Agents with 14% Higher Success Rate but 65% Fewer Tokens",
-   "url": "https://huggingface.co/papers/2610.01939",
-   "source": "hf-papers",
-   "sourceName": "Hugging Face Daily Papers",
-   "type": "research",
-   "published": "2026-09-30T20:00:00Z",
-   "summary": "Vision language model (VLM) agents can control robots through visual feedback and action primitives, but repeated model invocations and redundant observations incur substantial token overhead. We introduce PyRUA-Lean, an interactive code-execution framework that couples feedback-driven primitive composition with…",
-   "points": 45,
-   "firstSeen": "2026-10-02T09:43:30Z",
-   "tags": [
-    "gpt",
-    "multimodal"
-   ],
-   "layers": [
-    "models"
-   ],
-   "score": 4.86
-  },
-  {
-   "id": "d735305da6a4",
-   "title": "InterEvolve: Test-Time Evolution of Reward Programs for Humanoid Loco-Manipulation",
-   "url": "https://huggingface.co/papers/2610.02196",
-   "source": "hf-papers",
-   "sourceName": "Hugging Face Daily Papers",
-   "type": "research",
-   "published": "2026-09-30T20:00:00Z",
-   "summary": "We study test-time evolution for humanoid loco-manipulation: solving tasks that a controller was never trained for by repurposing its existing skills, improving from its own attempts, and retaining what it learns, without retraining. Our key insight is that a broad controller already holds much of the competence a new…",
-   "points": 55,
-   "firstSeen": "2026-10-02T12:15:38Z",
-   "tags": [
-    "world-models"
-   ],
-   "layers": [
-    "models"
-   ],
-   "score": 4.35
-  },
-  {
-   "id": "ca41d921766f",
-   "title": "SILSA: Sliding-Window Slice Latents for Topology-Preserving High-Resolution 3D Generation",
-   "url": "https://huggingface.co/papers/2610.02201",
-   "source": "hf-papers",
-   "sourceName": "Hugging Face Daily Papers",
-   "type": "research",
-   "published": "2026-09-30T20:00:00Z",
-   "summary": "High-resolution 3D generation increasingly relies on voxel latents and multi-stage pipelines that first predict active structure and then synthesize local geometry. While effective, this design fragments continuous surfaces into many local tokens, inflates generation cost, and often weakens topological consistency for…",
-   "points": 28,
-   "firstSeen": "2026-10-02T14:13:07Z",
-   "tags": [],
-   "layers": [],
-   "score": 3.46
-  },
-  {
-   "id": "986ad7a20607",
-   "title": "Argo-Bench: Evaluating Data Agents on Enterprise-Scale Workflows",
-   "url": "https://huggingface.co/papers/2610.02122",
-   "source": "hf-papers",
-   "sourceName": "Hugging Face Daily Papers",
-   "type": "research",
-   "published": "2026-09-30T20:00:00Z",
-   "summary": "Real-world enterprise data science and analytics workflows require reasoning across dozens of tables, performing statistical analyses, and acting on the results. Established text-to-SQL benchmarks evaluate query generation alone, and audits have found their answer keys frequently wrong. Because real enterprise…",
-   "points": 18,
-   "firstSeen": "2026-10-02T17:51:49Z",
-   "tags": [
-    "benchmarks"
-   ],
-   "layers": [
-    "security"
-   ],
-   "score": 3.88
-  },
-  {
-   "id": "32424a0e652d",
-   "title": "Decoding Looped Transformers Better for (Almost) Free",
-   "url": "https://huggingface.co/papers/2610.02185",
-   "source": "hf-papers",
-   "sourceName": "Hugging Face Daily Papers",
-   "type": "research",
-   "published": "2026-09-30T20:00:00Z",
-   "summary": "Looped Transformers achieve parameter efficiency by repeatedly executing a shared block across recurrent loops. Each loop yields an intermediate representation decodable for the same next token, yet standard decoding discards earlier states. Because earlier loops embody less computation, recurrence inherently supplies…",
-   "points": 42,
-   "firstSeen": "2026-10-02T22:12:05Z",
-   "tags": [],
-   "layers": [],
-   "score": 3.63
-  },
-  {
-   "id": "81699000d923",
-   "title": "Ego2Act: Evaluating Goal-Directed Manipulation in Egocentric Video Generation",
-   "url": "https://huggingface.co/papers/2610.01092",
-   "source": "hf-papers",
-   "sourceName": "Hugging Face Daily Papers",
-   "type": "research",
-   "published": "2026-09-30T20:00:00Z",
-   "summary": "Video generation models are increasingly being explored as world simulators for embodied planning and learning. To do so effectively, these models must not only generate visually appealing frames, but also predict how environments dynamically evolve when executing goal-directed actions. While evaluating these…",
-   "points": 26,
-   "firstSeen": "2026-10-05T05:35:56Z",
-   "tags": [
-    "multimodal",
-    "world-models"
-   ],
-   "layers": [
-    "models"
-   ],
-   "score": 4.63
-  },
-  {
-   "id": "287275124a79",
-   "title": "Where-OPD: Spatially Guided On-Policy Self-Distillation of MLLMs with Synthetic Scenes",
-   "url": "https://huggingface.co/papers/2610.02117",
-   "source": "hf-papers",
-   "sourceName": "Hugging Face Daily Papers",
-   "type": "research",
-   "published": "2026-09-30T20:00:00Z",
-   "summary": "On-policy self-distillation has recently emerged as an effective approach for improving language-model reasoning by supervising students with a frozen or EMA version of themselves that receives privileged information. Its application to multimodal large language models (MLLMs), however, remains largely unexplored…",
-   "points": 17,
-   "firstSeen": "2026-10-05T05:35:56Z",
-   "tags": [
-    "distillation",
-    "multimodal"
-   ],
-   "layers": [
-    "models"
-   ],
-   "score": 4.46
-  },
-  {
-   "id": "b85cab548511",
-   "title": "World Action Modeling with Progressive Visual Planning",
-   "url": "https://huggingface.co/papers/2610.02508",
-   "source": "hf-papers",
-   "sourceName": "Hugging Face Daily Papers",
-   "type": "research",
-   "published": "2026-09-30T20:00:00Z",
-   "summary": "World action models (WAMs) have emerged as a promising paradigm for robotic control by jointly predicting future visual dynamics and actions from an initial observation and instruction. However, existing WAMs struggle with long-horizon prediction, as generating dense video rollouts is highly inefficient. Some recent…",
-   "points": 69,
-   "firstSeen": "2026-10-05T14:33:23Z",
-   "tags": [],
-   "layers": [],
-   "score": 3.85
-  },
-  {
-   "id": "9f0277e45818",
-   "title": "SimuVerity: Benchmarking Agents for Engineering-Grade Simulink Model Generation",
-   "url": "https://huggingface.co/papers/2610.02304",
-   "source": "hf-papers",
-   "sourceName": "Hugging Face Daily Papers",
-   "type": "research",
-   "published": "2026-09-30T20:00:00Z",
-   "summary": "Existing Simulink benchmarks mainly evaluate whether generated models compile, execute, or resemble a reference model. These criteria do not establish whether a model satisfies its engineering requirements. We introduce SimuVerity, a benchmark of 101 text-to-executable Simulink model-generation tasks across ten…",
-   "points": 31,
-   "firstSeen": "2026-10-05T14:33:23Z",
-   "tags": [
-    "benchmarks"
-   ],
-   "layers": [
-    "security"
-   ],
-   "score": 4.11
-  },
-  {
-   "id": "e0ffcafb487a",
-   "title": "RealCompanion: Benchmarking Human Understanding from Reasoning over Longitudinal Real-World Conversations",
-   "url": "https://huggingface.co/papers/2610.01780",
-   "source": "hf-papers",
-   "sourceName": "Hugging Face Daily Papers",
-   "type": "research",
-   "published": "2026-09-30T20:00:00Z",
-   "summary": "A companion that talks with a person for months should come to understand them. It should remember what they said, infer who they are, and know when the past bears on the message in front of it. Testing this requires a real person's record, and such records are private, so benchmarks generate the person and the…",
-   "points": 257,
-   "firstSeen": "2026-10-05T22:00:28Z",
-   "tags": [
-    "benchmarks"
-   ],
-   "layers": [
-    "security"
-   ],
-   "score": 5.01
-  },
-  {
-   "id": "44418c421909",
-   "title": "Latent-MOPD: Latent Multi-Teacher On-Policy Distillation",
-   "url": "https://huggingface.co/papers/2610.02381",
-   "source": "hf-papers",
-   "sourceName": "Hugging Face Daily Papers",
-   "type": "research",
-   "published": "2026-09-30T20:00:00Z",
-   "summary": "On-policy distillation (OPD) trains a student on the responses it generates. Existing LLM multi-teacher OPD transfers what specialists predict through their output distributions. We introduce Latent-MOPD, to our knowledge the first representation-level multi-teacher OPD method for LLMs. It integrates existing…",
-   "points": 55,
-   "firstSeen": "2026-10-05T22:00:28Z",
-   "tags": [
-    "distillation"
-   ],
-   "layers": [
-    "models"
-   ],
-   "score": 4.35
   }
  ]
 }
